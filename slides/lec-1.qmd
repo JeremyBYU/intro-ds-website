@@ -1,0 +1,33 @@
+---
+title: "Welcome to CISC 482"
+subtitle: "CISC 482 - Spring 2023"
+author: "Dr. Jeremy Castagno"
+footer:  "[[sta210-s22.github.io/website](https://jeremybyu.github.io/intro-ds-website/)](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+editor: visual
+execute:
+  freeze: auto
+---
+
+
+# Welcome
+
+## Meet the professor
+
+::: columns
+::: {.column width="50%"}
+
+
+:::
+
+::: {.column width="50%"}
+
+:::
+:::
+

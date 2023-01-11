@@ -1,0 +1,5 @@
+---
+title: 404 Page Not Found
+---
+
+![](images/404.jpg){fig-alt="Illustration of robot injured with a speech bubble that says \"Error\"." width="900"}
