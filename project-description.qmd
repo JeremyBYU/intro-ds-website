@@ -32,7 +32,7 @@ This project will be your Core Capstone work. A Core Capstone Work is an assignm
 The six deliverables for the final project are
 
 -   Topic Ideas - Identify 2-3 data sets that connect with the topics you covered in the Core Curriculum. Write a brief report of the data (Core Capstone Work LO1 and L02).
--   Proposal - Begin your analysis of your chosen dataset and its connection with two (2) of you signature assignments (Core Capstone Work LO1 and L02)
+-   Proposal - Begin your analysis of your chosen dataset and its connection with two (2) of your signature assignments (Core Capstone Work LO1 and L02)
 -   Draft Report - First draft of your final report (Core Capstone Work LO1 and LO2)
 -   Peer Review - Formal peer review on another students project. This will provide important feedback to others and provide you an opportunity to serve and aid others (Core Capstone Work LO3).
 -   Final Report - A written, reproducible report detailing your analysis (Core Capstone Work LO1).  Include an ending discussion of how your coursework has helped you to be a leader in service to others (Core Capstone Work LO3)
