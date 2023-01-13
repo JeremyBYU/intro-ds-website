@@ -4,12 +4,18 @@ title: "Project tips + resources"
 
 ## Data sources
 
-### Some resources that may be helpful as you find data:
+### Example Project Ideas
 
-TBD
+- You took Philosphy 106 (ethics) and you discussed the relationship between employers and employees. You submitted a signature assignment of a paper on unions (pro or against, it doesn't matter). A possible dataset you could choose 
+is the [Right to Work Dataset](https://www.kaggle.com/datasets/brandonconrady/right-to-work-dataset) and do an analysis on the relationship between state laws and their effect on union participation.
+- You took a BIO 101 class and discussed the biologcal mechanisms of diabetes. A possible dataset you could choose 
+is the [Diabetes Dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set ) and create a model that predict diabetes based on diagnostic measurements.
+- You took ARTS 104 (Creativity: Methods and Practices). A possible dataset you could choose is the [Best Artworks of All Time](https://www.kaggle.com/datasets/ikarus777/best-artworks-of-all-time) and do a clustering analysis to see if there exists any patterns about great artists in our times (country, age, sex, etc.).
+- You took SOCIO 101. A possible dataset you could choose is the [Student Performance Dataset](https://www.kaggle.com/datasets/larsen0966/student-performance-data-set) that looks at student achievement in secondary education. You could create a regression model that predicts performance based upon a variety of factors.
 
 ### Other data repositories
 
+-   [Kaggle Datasets](https://www.kaggle.com/datasets)
 -   [World Health Organization](https://www.who.int/gho/database/en/)
 -   [The National Bureau of Economic Research](https://data.nber.org/data/)
 -   [International Monetary Fund](https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329328660)
@@ -46,7 +52,7 @@ TBD
 
 ## Formatting + communication tips
 
-### Suppress Code, Warnings, & Messages
+<!-- ### Suppress Code, Warnings, & Messages
 
 -   Include the following code in a code chunk at the top of your .qmd file to suppress all code, warnings, and other messages. Use the code chunk header `{r set-up, include = FALSE}` to suppress this set up code.
 
@@ -54,7 +60,7 @@ TBD
 knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE, 
                       message = FALSE)
-```
+``` -->
 
 ### Headers
 

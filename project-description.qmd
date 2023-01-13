@@ -21,40 +21,40 @@ title: "Project Description (Core Capstone)"
 
 **TL;DR**: *Pick a data set and do a regression or classification analysis.*
 
-The goal of the final project is for you to use data science methods to analyze data of your choosing. The data should broadly connect to topics you studied in Core Curriculum (first-year seminar, foundations for the future and understanding the world domains, and the themed explorations). The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class and apply them to a data set to analyze it in a meaningful way. 
+The goal of the final project is for you to use data science methods to analyze data of your choosing. The data should broadly connect to topics you studied in the [Core Curriculum](http://catalog.springfield.edu/preview_program.php?catoid=88&poid=4256) (first-year seminar, foundations for the future and understanding the world domains, and the themed explorations). The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class and apply them to a data set to analyze it in a meaningful way. 
 
-This project will be your Core Capstone work. A Core Capstone Work is an assignment (or set of assignments) in students’ major capstone/seminar course where students integrate their Core Curriculum coursework with their major course work. Students will use their collected Signature Assignments (one assignment from each Core course, collected in Brightspace ePortfolios) to help in this work. This Core Capstone work will have size (6) deliverables that fulfill the learning outcomes of the Core Capstone.
+This project will be your Core Capstone work. A Core Capstone Work is an assignment (or set of assignments) in students’ major capstone/seminar course where students integrate their Core Curriculum coursework with their major course work. Students will use their collected Signature Assignments (one assignment from each Core course, collected in Brightspace ePortfolios) to help in this work. This Core Capstone work will have six (6) deliverables that fulfill the learning outcomes of the Core Capstone.
 
 <!-- Choose the data based on your interests and topics you have covered in other core classes (first-year seminar, foundations for the future and understanding the world domains, and the themed explorations) -->
 
-## Logistics
+## Deliverables
 
 The six deliverables for the final project are
 
 -   Topic Ideas - Identify 2-3 data sets that connect with the topics you covered in the Core Curriculum. Write a brief report of the data (Core Capstone Work LO1 and L02).
 -   Proposal - Begin your analysis of your chosen dataset and its connection with two (2) of you signature assignments (Core Capstone Work LO1 and L02)
 -   Draft Report - First draft of your final report (Core Capstone Work LO1 and LO2)
--   Peer Review - Formal peer review on another students project. This will provide important feedback to others and provides you an opportunity to serve and help others. (Core Capstone Work LO3)
--   Final Report - A written, reproducible report detailing your analysis (Core Capstone Work LO1).  Include an ending discussion of how your coursework has helped (or prepared) you to be a leader in service to others (Core Capstone Work LO3)
--   FInal Presentation - A brief 7-10 minutes presentation that summarizes your work (Core Capstone Work LO1).
+-   Peer Review - Formal peer review on another students project. This will provide important feedback to others and provide you an opportunity to serve and aid others (Core Capstone Work LO3).
+-   Final Report - A written, reproducible report detailing your analysis (Core Capstone Work LO1).  Include an ending discussion of how your coursework has helped you to be a leader in service to others (Core Capstone Work LO3)
+-   Final Presentation - A brief 7-10 minutes presentation that summarizes your work (Core Capstone Work LO1).
 
 
-All analyses must be done in a Jupyter Notebook stored in a shared Google Drive Folder. All components of the project **must be reproducible** (with the exception of the presentation).
+All analyses must be done in Jupyter Notebooks stored in a shared Google Drive Folder. All components of the project **must be reproducible** (with the exception of the presentation).
 
 ## Topic ideas {#topic-ideas}
 
-Identify 2-3 data sets you're interested in potentially using for the final project.
-If you're unsure where to find data, you can use the list of potential data sources in the [Tips + Resources](#tips--resources) section as a starting point.
+Identify 2-3 data sets you're interested in potentially using for the final project that connect with the topics you covered in the Core Curriculum.
+If you're unsure where to find data, you can use the list of potential data sources in the [Tips + Resources](./project-tips-resources.qmd) section as a starting point. Example project ideas and datasets can be found in the [Example Project Ideas](#example-project-ideas) section.
 It may also help to think of topics you're interested in investigating and find data sets on those topics.
 
 The purpose of submitting project ideas is to give you time to find data for the project and to make sure you have a data set that can help you be successful in the project.
-**Therefore, you must use one of the data sets submitted as a topic idea, unless otherwise notified by the teaching team.**
+**Therefore, you must use one of the data sets submitted as a topic idea, unless otherwise notified by me.**
 
 The data sets should meet the following criteria:
 
--   At least 500 observations
+-   At least 100 observations
 
--   At least 10 columns
+-   At least 8 columns
 
 -   At least 6 of the columns must be useful and unique predictor variables.
 
@@ -78,8 +78,9 @@ Please write a report in the file `topic-ideas.ipynb` which is in you shared Goo
 #### Introduction and data
 
 -   State the source of the data set.
--   Describe when and how it was originally collected (by the original data curator, not necessarily how you found the data)
--   Describe the observations and the general characteristics being measured in the data
+-   Describe when and how it was originally collected (by the original data curator, not necessarily how you found the data).
+-   Describe the observations and the general characteristics being measured in the data.
+-   Describe how the data set connect to your Core Studies.
 
 #### Research question
 
@@ -91,7 +92,7 @@ Please write a report in the file `topic-ideas.ipynb` which is in you shared Goo
 
 Print your Jupyter notebook as PDF and submit to Brightspace
 
-### Save Dataset
+#### Save Dataset
 
 Please save each dataset in the `data` folder in your Google Drive Folder.
 
@@ -109,6 +110,7 @@ The introduction section includes
 
 -   an introduction to the subject matter you're investigating
 -   the motivation for your research question (citing any relevant literature)
+-   briefyly describe its connection to Core classes
 -   the general research question you wish to explore
 -   your hypotheses regarding the research question of interest.
 
@@ -185,7 +187,7 @@ Below is a brief description of the sections to focus on in the draft:
 
 ### Introduction and data
 
-This section includes an introduction to the project motivation, data, and research question.
+This section includes an introduction to the project motivation, data, and research question. Include this papers connection to at least two core classes.
 Describe the data and definitions of key variables.
 It should also include some exploratory data analysis (EDA).
 All of the EDA won't fit in the paper, so focus on the EDA for the response variable and a few other interesting variables and relationships.
@@ -196,7 +198,7 @@ This section includes a brief description of your modeling process.
 Explain the reasoning for the type of model you're fitting, predictor variables considered for the model including any interactions.
 Additionally, show how you arrived at the final model by describing the model selection process, any variable transformations (if needed), and any other relevant considerations that were part of the model fitting process.
 
-### Results
+### Results and Discussion
 
 In this section, you will output the final model and include a brief discussion of the model assumptions, diagnostics, and any relevant model fit statistics. If you are doing a classificaiton problem please include a confusion matrix.
 
@@ -221,7 +223,7 @@ I will assign which two teams your team will reivew shortely before the peer rei
 
 ### Process and questions
 
-Write your reviews inside your shared Google Drive folder called `peer-review`. Inside wil be two Google documents for you to fill out for each team you review. Please ensure each review has the following:
+Write your reviews inside your shared Google Drive folder called `peer-review`. Inside will be two Google documents for you to fill out for each team you review. Please ensure each review has the following:
 
     -   Names of team members that participated in this review: \[FULL NAMES OF TEAM MEMBERS DOING THE REVIEW\]
 
@@ -281,7 +283,7 @@ The written report is worth 40 points, broken down as follows
 
 ### Introduction and data
 
-This section includes an introduction to the project motivation, data, and research question.
+This section includes an introduction to the project motivation, data, and research question. Include this papers connection to at least two core classes.
 Describe the data and definitions of key variables.
 It should also include some exploratory data analysis.
 All of the EDA won't fit in the paper, so focus on the EDA for the response variable and a few other interesting variables and relationships.
@@ -326,7 +328,7 @@ If the primary modeling objective is prediction, the model's predictive power is
 In this section you'll include a summary of what you have learned about your research question along with statistical arguments supporting your conclusions.
 In addition, discuss the limitations of your analysis and provide suggestions on ways the analysis could be improved.
 Any potential issues pertaining to the reliability and validity of your data and appropriateness of the statistical analysis should also be discussed here.
-Please also inlcude an ending discussion of how your coursework has helped (or prepared) you to be a leader in service to others
+**Please also inlcude an ending discussion of how your coursework has helped (or prepared) you to be a leader in service to others**
 
 #### Grading criteria
 
@@ -427,3 +429,12 @@ A general breakdown of scoring is as follows:
 ### Late work policy
 
 **There is no late work accepted on this project.** Be sure to turn in your work early to avoid any technological mishaps.
+
+## Example Project Ideas {#example-project-ideas}
+
+- You took Philosphy 106 (ethics) and you discussed the relationship between employers and employees. You submitted a signature assignment of a paper on unions (pro or against, it doesn't matter). A possible dataset you could choose 
+is the [Right to Work Dataset](https://www.kaggle.com/datasets/brandonconrady/right-to-work-dataset) and do an analysis on the relationship between state laws and their effect on union participation.
+- You took a BIO 101 class and discussed the biologcal mechanisms of diabetes. A possible dataset you could choose 
+is the [Diabetes Dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set ) and create a model that predict diabetes based on diagnostic measurements.
+- You took ARTS 104 (Creativity: Methods and Practices). A possible dataset you could choose is the [Best Artworks of All Time](https://www.kaggle.com/datasets/ikarus777/best-artworks-of-all-time) and do a clustering analysis to see if there exists any patterns about great artists in our times (country, age, sex, etc.).
+- You took SOCIO 101. A possible dataset you could choose is the [Student Performance Dataset](https://www.kaggle.com/datasets/larsen0966/student-performance-data-set) that looks at student achievement in secondary education. You could create a regression model that predicts performance based upon a variety of factors.
