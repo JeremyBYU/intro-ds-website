@@ -179,7 +179,154 @@
     "href": "slides/lec-1.html#meet-the-professor",
     "title": "Welcome to CISC 482",
     "section": "Meet the professor",
-    "text": "Meet the professor\n\n\n\n\n\n\n\n\n\n\n[sta210-s22.github.io/website](https://jeremybyu.github.io/intro-ds-website/)"
+    "text": "Meet the professor\n\n\n\nChemical Engineering & Computer Science @ BYU\nWorked as Control Systems Engineer for 3 Years\nPhD Graduate in Robotics @ UMICH\n\nStatistics, Machine Learning, Artificial Intelligence, Comptuter Vision"
+  },
+  {
+    "objectID": "slides/lec-1.html#welcome-to-computer-systems-seminar",
+    "href": "slides/lec-1.html#welcome-to-computer-systems-seminar",
+    "title": "Welcome to CISC 482",
+    "section": "Welcome to Computer Systems Seminar",
+    "text": "Welcome to Computer Systems Seminar\n\n\nThis course is designed to address various current technical and managerial problems encountered in computer information systems, including those dealing with hardware architecture, systems software, and applications software.\n\n\n\n\n\nTeach whatever you want!\n\n\n\n\n\nPicutre of James O’Brien"
+  },
+  {
+    "objectID": "slides/lec-1.html#welcome-to-computer-systems-seminar-intro-to-data-science",
+    "href": "slides/lec-1.html#welcome-to-computer-systems-seminar-intro-to-data-science",
+    "title": "Welcome to CISC 482",
+    "section": "Welcome to ~Computer Systems Seminar Intro to Data Science",
+    "text": "Welcome to ~Computer Systems Seminar Intro to Data Science\n\nLogo for Class, Example of Class Separation"
+  },
+  {
+    "objectID": "slides/lec-1.html#data-science",
+    "href": "slides/lec-1.html#data-science",
+    "title": "Welcome to CISC 482",
+    "section": "Data Science",
+    "text": "Data Science\n\n\nFirst Half\n\nProbability and Stats\nData Wrangling\nData Exploration and Viz\nRegression\nEvauluation Model Performance\n\n\nSecond Half\n\nSupervised Learning\nUnsupervised Learning\nCapstone Project Work"
+  },
+  {
+    "objectID": "slides/lec-1.html#course-faq",
+    "href": "slides/lec-1.html#course-faq",
+    "title": "Welcome to CISC 482",
+    "section": "Course FAQ",
+    "text": "Course FAQ\n\n\nWhat background is assumed for the course? Probability and Statistics and Basic Programming (Python)\nWill we be doing computing? Yes. We will use Python Jupyter Notebooks\nWill we learn the mathematical theory? Yes and No. The course is primarily focused on application; however, we will discuss some of the mathematics of simple linear regression."
+  },
+  {
+    "objectID": "slides/lec-1.html#course-learning-objectives",
+    "href": "slides/lec-1.html#course-learning-objectives",
+    "title": "Welcome to CISC 482",
+    "section": "Course learning objectives",
+    "text": "Course learning objectives\n\nAnalyze real-world data to answer questions about multivariable relationships.\nFit and evaluate linear and logistic regression models.\nAssess whether a proposed model is appropriate and describe its performance and limitations.\nUse Google Collab to write reproducible reports.\nCommunicate results from statistical analyses to a general audience."
+  },
+  {
+    "objectID": "slides/lec-1.html#examples-of-data-science-in-practice",
+    "href": "slides/lec-1.html#examples-of-data-science-in-practice",
+    "title": "Welcome to CISC 482",
+    "section": "Examples of data science in practice",
+    "text": "Examples of data science in practice\n\n\nNew Yorkers Will Pay $56 A Month To Trim A Minute Off Their Commute\nHow FiveThirtyEight’s 2020 Presidential Forecast Works — And What’s Different Because Of COVID-19\nEffect of Forensic Evidence on Criminal Justice Case Processing\nWhy it’s so freaking hard to make a good COVID-19 model\nHow severe is the threat of wildfire to your home?"
+  },
+  {
+    "objectID": "slides/lec-1.html#zybooks",
+    "href": "slides/lec-1.html#zybooks",
+    "title": "Welcome to CISC 482",
+    "section": "Zybooks",
+    "text": "Zybooks\nOur required book is online: Zybooks\n\nSign in or create an account at learn.zybooks.com\nEnter zyBook code: SPRINGFIELDCISC482CastagnoSpring2023\nSubscribe (~$58)"
+  },
+  {
+    "objectID": "slides/lec-1.html#zybook-walkthrough",
+    "href": "slides/lec-1.html#zybook-walkthrough",
+    "title": "Welcome to CISC 482",
+    "section": "Zybook Walkthrough",
+    "text": "Zybook Walkthrough"
+  },
+  {
+    "objectID": "slides/lec-1.html#course-toolkit",
+    "href": "slides/lec-1.html#course-toolkit",
+    "title": "Welcome to CISC 482",
+    "section": "Course toolkit",
+    "text": "Course toolkit\n\nZybook: https://learn.zybooks.com/)\nGoogle Collab (Free): https://colab.research.google.com/\nDiscussion forum: Use Brightspace Discussion. Activities -> Discussions\nAssignment submission and feedback: Submit through Brightspace\n\n\n\n\n\n\n\nImportant\n\n\nPlease purchase the book as soon as possible. Reading assignments are due this Sunday night!"
+  },
+  {
+    "objectID": "slides/lec-1.html#activities-prepare-participate-practice-perform",
+    "href": "slides/lec-1.html#activities-prepare-participate-practice-perform",
+    "title": "Welcome to CISC 482",
+    "section": "Activities: Prepare, Participate, Practice, Perform",
+    "text": "Activities: Prepare, Participate, Practice, Perform\n\nPrepare: Introduce new content and prepare for lectures by completing the readings\nParticipate: Attend and actively participate in lectures and labs, office hours\nPractice: Practice applying statistical concepts and computing with application exercises during lecture (usually 30 minutes every Friday)\nPerform: Put together what you’ve learned to analyze real-world data\n\nHomework assignments x 6 (individual submission, but encouraged to collaborate)\nThree exams\nTerm project (Core Capstone Work) presented during the final exam period"
+  },
+  {
+    "objectID": "slides/lec-1.html#cadence",
+    "href": "slides/lec-1.html#cadence",
+    "title": "Welcome to CISC 482",
+    "section": "Cadence",
+    "text": "Cadence\n\n\nLabs: Start and make large progress on Monday in lab section, finish up by Friday 5pm of that week\nHWs: Posted Wednesday morning, due following Wednesday @ midnight\nExams: Exam review Thursday in class, exam posted Friday morning, no lab on Monday of following week, due Monday 11:59pm\nProject: Deadlines throughout the semester, with some lab and lecture time dedicated to working on them, and most work done outside of class. This is a major part of this class."
+  },
+  {
+    "objectID": "slides/lec-1.html#grading",
+    "href": "slides/lec-1.html#grading",
+    "title": "Welcome to CISC 482",
+    "section": "Grading",
+    "text": "Grading\n\n\n\nCategory\nPercentage\n\n\n\n\nClass Reading\n15%\n\n\nHomework\n30% (6% x 5)\n\n\nProject\n25%\n\n\nExam 01\n15%\n\n\nExam 02\n15%\n\n\n\nSee course syllabus for how the final letter grade will be determined."
+  },
+  {
+    "objectID": "slides/lec-1.html#support",
+    "href": "slides/lec-1.html#support",
+    "title": "Welcome to CISC 482",
+    "section": "Support",
+    "text": "Support\n\nAttend office hours\nAsk and answer questions on the discussion forum on Brightspace\nAung Thet Htwe is our graduate assistant for this course.\n\nReserve and Appointment: https://calendly.com/aung-t-htwe/r-and-data-science-tutoring-with-aung"
+  },
+  {
+    "objectID": "slides/lec-1.html#announcements",
+    "href": "slides/lec-1.html#announcements",
+    "title": "Welcome to CISC 482",
+    "section": "Announcements",
+    "text": "Announcements\n\nPosted on Brightspace and sent via email, be sure to check both regularly\nI’ll assume that you’ve read an announcement by the next “business” day"
+  },
+  {
+    "objectID": "slides/lec-1.html#diversity-inclusion",
+    "href": "slides/lec-1.html#diversity-inclusion",
+    "title": "Welcome to CISC 482",
+    "section": "Diversity + inclusion",
+    "text": "Diversity + inclusion\nIt is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.\n\n\nIf you have a name that differs from those that appear in your official Springfield College records, please let me know!\nPlease let me know your preferred pronouns. You’ll also be able to note this in the Getting to know you survey.\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.\nI (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it."
+  },
+  {
+    "objectID": "slides/lec-1.html#late-work-waivers-regrades-policy",
+    "href": "slides/lec-1.html#late-work-waivers-regrades-policy",
+    "title": "Welcome to CISC 482",
+    "section": "Late work, waivers, regrades policy",
+    "text": "Late work, waivers, regrades policy\n\nNo Late Work is accepted unless do to illness or pre approved absence\nThree (3) of your lowest reading assignments will be dropped\nNo HW (labs) are dropped\nNo late submission for project work"
+  },
+  {
+    "objectID": "slides/lec-1.html#collaboration-policy",
+    "href": "slides/lec-1.html#collaboration-policy",
+    "title": "Welcome to CISC 482",
+    "section": "Collaboration policy",
+    "text": "Collaboration policy\n\nOnly work that is clearly assigned as team work should be completed collaboratively.\nHomeworks must be completed individually. You may not directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice.\nExams must be completed individually. You may not discuss any aspect of the exam with peers. If you have questions, post as private questions on the course forum, only the teaching team will see and answer."
+  },
+  {
+    "objectID": "slides/lec-1.html#sharing-reusing-code-policy",
+    "href": "slides/lec-1.html#sharing-reusing-code-policy",
+    "title": "Welcome to CISC 482",
+    "section": "Sharing / reusing code policy",
+    "text": "Sharing / reusing code policy\n\nWe are aware that a huge volume of code is available on the web, and many tasks may have solutions posted\nUnless explicitly stated otherwise, this course’s policy is that you may make use of any online resources (e.g. StackOverflow, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source"
+  },
+  {
+    "objectID": "slides/lec-1.html#most-importantly",
+    "href": "slides/lec-1.html#most-importantly",
+    "title": "Welcome to CISC 482",
+    "section": "Most importantly!",
+    "text": "Most importantly!\nAsk if you’re not sure if something violates a policy!"
+  },
+  {
+    "objectID": "slides/lec-1.html#five-tips-for-success",
+    "href": "slides/lec-1.html#five-tips-for-success",
+    "title": "Welcome to CISC 482",
+    "section": "Five tips for success",
+    "text": "Five tips for success\n\nComplete all the preparation work before class (reading, participation activity, challenge quizzes)\nAsk questions.\nDo the homeworks\nDon’t procrastinate and don’t let a week pass by with lingering questions.\nStart thinking about your project early"
+  },
+  {
+    "objectID": "slides/lec-1.html#this-weeks-tasks",
+    "href": "slides/lec-1.html#this-weeks-tasks",
+    "title": "Welcome to CISC 482",
+    "section": "This week’s tasks",
+    "text": "This week’s tasks\n\nSign up for the Zybook\nRead the syllabus\nHW1 - Markdown\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "computing-access.html",
