@@ -2,8 +2,8 @@
 title: "Welcome to CISC 482"
 subtitle: "CISC 482 - Spring 2023"
 author: "Dr. Jeremy Castagno"
-footer:  "[[sta210-s22.github.io/website](https://jeremybyu.github.io/intro-ds-website/)](https://jeremybyu.github.io/intro-ds-website/)"
-logo: "images/logo.png"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
 format: 
   revealjs: 
     theme: slides.scss
@@ -23,11 +23,233 @@ execute:
 ::: columns
 ::: {.column width="50%"}
 
+- Chemical Engineering & Computer Science @ BYU 
+- Worked as Control Systems Engineer for 3 Years
+- PhD Graduate in Robotics @ UMICH
 
+Statistics, Machine Learning, Artificial Intelligence, Comptuter Vision
 :::
 
 ::: {.column width="50%"}
 
+![](../images/castagno-family.jpg)
 :::
 :::
+
+## Welcome to Computer Systems Seminar
+
+::: {style="font-size: 0.8em;"}
+> This course is designed to address various current technical and managerial problems encountered in computer information systems, including those dealing with hardware architecture, systems software, and **applications** software.
+:::
+
+::: {.columns .fragment}
+
+::: {.column width="60%"}
+
+> Teach whatever you want!
+
+:::
+
+::: {.column width="40%"}
+
+![Picutre of James O'Brien](./lec1_images/jobrien.jpg)
+
+:::
+
+:::
+
+
+## Welcome to ~~~Computer Systems Seminar~~ Intro to Data Science
+
+![Logo for Class, Example of Class Separation](../images/logo.png)
+
+
+## Data Science
+
+::: columns
+
+:::: {.column width="50%" .fragment}
+
+**First Half**
+
+- Probability and Stats
+- Data Wrangling
+- Data Exploration and Viz
+- Regression
+- Evauluation Model Performance
+
+::::
+
+:::: {.column width="50%" .fragment}
+
+**Second Half**
+
+- Supervised Learning
+- Unsupervised Learning
+- Capstone Project Work
+
+::::
+
+:::
+
+## Course FAQ
+
+::: incremental
+-   **What background is assumed for the course?** Probability and Statistics and Basic Programming (Python)
+-   **Will we be doing computing?** Yes. We will use [Python Jupyter Notebooks](https://jupyter.org/)
+-   **Will we learn the mathematical theory?** Yes and No. The course is primarily focused on application; however, we will discuss some of the mathematics of simple linear regression.
+:::
+
+## Course learning objectives
+
+-   Analyze real-world data to answer questions about multivariable relationships.
+-   Fit and evaluate linear and logistic regression models.
+-   Assess whether a proposed model is appropriate and describe its performance and limitations.
+-   Use [Google Collab](https://quarto.org/) to write reproducible reports.
+-   Communicate results from statistical analyses to a general audience.
+
+## Examples of data science in practice
+
+::: incremental
+-   [New Yorkers Will Pay \$56 A Month To Trim A Minute Off Their Commute](https://fivethirtyeight.com/features/new-yorkers-will-pay-56-a-month-to-trim-a-minute-off-their-commute/)
+-   [How FiveThirtyEight's 2020 Presidential Forecast Works --- And What's Different Because Of COVID-19](https://fivethirtyeight.com/features/how-fivethirtyeights-2020-presidential-forecast-works-and-whats-different-because-of-covid-19/)
+-   [Effect of Forensic Evidence on Criminal Justice Case Processing](https://onlinelibrary.wiley.com/doi/10.1111/1556-4029.12020)
+-   [Why it's so freaking hard to make a good COVID-19 model](https://fivethirtyeight.com/features/why-its-so-freaking-hard-to-make-a-good-covid-19-model/)
+- [How severe is the threat of wildfire to your home?](https://www.plumasnews.com/how-severe-is-the-threat-of-wildfire-to-your-home-learn-more-at-public-meeting-jan-17/)
+:::
+
+# Course overview
+
+## Zybooks
+
+Our **required** book is online: [Zybooks](https://learn.zybooks.com/library)
+
+1. Sign in or create an account at learn.zybooks.com
+2. Enter zyBook code: SPRINGFIELDCISC482CastagnoSpring2023
+3. Subscribe (~$58)
+
+## Zybook Walkthrough
+
+![](lec1_images/zybook-walkthrough.png)
+
+## Course toolkit
+
+-  Zybook: [https://learn.zybooks.com/)](https://learn.zybooks.com/)
+-   Google Collab (Free): [https://colab.research.google.com/](https://colab.research.google.com/)
+-   Discussion forum: Use Brightspace Discussion. Activities -> Discussions
+-   Assignment submission and feedback: Submit through Brightspace
+
+::: callout-important
+Please purchase the book as soon as possible. Reading assignments are due this Sunday night!
+:::
+
+## Activities: Prepare, Participate, Practice, Perform {.smaller}
+
+-   **Prepare:** Introduce new content and prepare for lectures by completing the readings
+-   **Participate:** Attend and actively participate in lectures and labs, office hours
+-   **Practice:** Practice applying statistical concepts and computing with application exercises during lecture (usually 30 minutes every Friday)
+-   **Perform:** Put together what you've learned to analyze real-world data
+    -   Homework assignments x 6 (individual submission, but encouraged to collaborate)
+    -   Three exams
+    -   Term project (Core Capstone Work) presented during the final exam period
+
+## Cadence
+
+::: incremental
+-   **Labs:** Start and make large progress on Monday in lab section, finish up by Friday 5pm of that week
+-   **HWs:** Posted Wednesday morning, due following Wednesday @ midnight
+-   **Exams:** Exam review Thursday in class, exam posted Friday morning, no lab on Monday of following week, due Monday 11:59pm
+-   **Project:** Deadlines throughout the semester, with some lab and lecture time dedicated to working on them, and most work done outside of class. This is a major part of this class.
+:::
+
+## Grading {.smaller}
+
+| Category              | Percentage   |
+|-----------------------|--------------|
+| Class Reading         | 15%          |
+| Homework              | 30% (6% x 5) |
+| Project               | 25%          |
+| Exam 01               | 15%          |
+| Exam 02               | 15%          |
+
+See [course syllabus](../documents/CISC_482_Castagno_Syllabus_SP23.pdf) for how the final letter grade will be determined.
+
+## Support
+
+-   Attend office hours
+-   Ask and answer questions on the discussion forum on Brightspace
+-   Aung Thet Htwe is our graduate assistant for this course.
+    -    Reserve and Appointment:  https://calendly.com/aung-t-htwe/r-and-data-science-tutoring-with-aung
+
+## Announcements
+
+-   Posted on Brightspace and sent via email, be sure to check both regularly
+-   I'll assume that you've read an announcement by the next "business" day
+
+## Diversity + inclusion {.smaller}
+
+It is my intent that students from all diverse backgrounds and perspectives be well-served by this course, that students' learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit.
+
+::: incremental
+-   If you have a name that differs from those that appear in your official Springfield College records, please let me know!
+-   Please let me know your preferred pronouns. You'll also be able to note this in the Getting to know you survey.
+-   If you feel like your performance in the class is being impacted by your experiences outside of class, please don't hesitate to come and talk with me. I want to be a resource for you. If you prefer to speak with someone outside of the course, your advisers and deans are excellent resources.
+-   I (like many people) am still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it.
+:::
+
+
+# Course policies
+
+## Late work, waivers, regrades policy
+
+-   No Late Work is accepted unless do to illness or pre approved absence
+-   Three (3) of your lowest reading assignments will be dropped
+-   No HW (labs) are dropped
+-   No late submission for project work
+
+## Collaboration policy
+
+-   Only work that is clearly assigned as team work should be completed collaboratively.
+
+-   Homeworks must be completed individually.
+    You may **not** directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice.
+
+-   Exams must be completed individually.
+    You may **not** discuss any aspect of the exam with peers.
+    If you have questions, post as private questions on the course forum, only the teaching team will see and answer.
+
+## Sharing / reusing code policy
+
+-   We are aware that a huge volume of code is available on the web, and many tasks may have solutions posted
+
+-   Unless explicitly stated otherwise, this course's policy is that you may make use of any online resources (e.g. StackOverflow, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).
+
+-   Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source
+
+
+## Most importantly!
+
+Ask if you're not sure if something violates a policy!
+
+# Making CISC 482 a success
+
+## Five tips for success
+
+1.  Complete all the preparation work before class (reading, participation activity, challenge quizzes)
+2.  Ask questions.
+4.  Do the homeworks
+5.  Don't procrastinate and don't let a week pass by with lingering questions.
+6.  Start thinking about your project early
+
+
+## This week's tasks
+
+-   Sign up for the Zybook
+-   Read the syllabus
+-   HW1 - Markdown
+
+
+
+
+
 

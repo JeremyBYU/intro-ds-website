@@ -1,6 +1,7 @@
 .quarto
 _site
 *speaker.html
+.vscode
 
 *.tex
 *.aux
