@@ -10,6 +10,8 @@ format:
     multiplex: true
     transition: fade
     slide-number: true
+    show-slide-number: all
+    chalkboard: true
 editor: visual
 execute:
   freeze: auto
@@ -24,10 +26,13 @@ execute:
 ::: {.column width="50%"}
 
 - Chemical Engineering & Computer Science @ BYU 
-- Worked as Control Systems Engineer for 3 Years
-- PhD Graduate in Robotics @ UMICH
+- Control Systems Engineer & NASA Research Scientist
+- Robotics PhD @ UMICH
 
-Statistics, Machine Learning, Artificial Intelligence, Comptuter Vision
+
+Machine Learning <br>
+Artificial Intelligence
+Computer Vision
 :::
 
 ::: {.column width="50%"}
@@ -61,7 +66,7 @@ Statistics, Machine Learning, Artificial Intelligence, Comptuter Vision
 
 ## Welcome to ~~~Computer Systems Seminar~~ Intro to Data Science
 
-![Logo for Class, Example of Class Separation](../images/logo.png)
+![Logo for Class, Example of Group Separation](../images/logo.png)
 
 
 ## Data Science
@@ -76,7 +81,7 @@ Statistics, Machine Learning, Artificial Intelligence, Comptuter Vision
 - Data Wrangling
 - Data Exploration and Viz
 - Regression
-- Evauluation Model Performance
+- Evaluation Model Performance
 
 ::::
 
@@ -104,6 +109,7 @@ Statistics, Machine Learning, Artificial Intelligence, Comptuter Vision
 
 -   Analyze real-world data to answer questions about multivariable relationships.
 -   Fit and evaluate linear and logistic regression models.
+-   Understand and be able to use supervised and unsupervised learning methods
 -   Assess whether a proposed model is appropriate and describe its performance and limitations.
 -   Use [Google Collab](https://quarto.org/) to write reproducible reports.
 -   Communicate results from statistical analyses to a general audience.
@@ -130,7 +136,7 @@ Our **required** book is online: [Zybooks](https://learn.zybooks.com/library)
 
 ## Zybook Walkthrough
 
-![](lec1_images/zybook-walkthrough.png)
+![](lec1_images/zybook-walkthrough.png){fig-align="center"}
 
 ## Course toolkit
 
@@ -146,19 +152,18 @@ Please purchase the book as soon as possible. Reading assignments are due this S
 ## Activities: Prepare, Participate, Practice, Perform {.smaller}
 
 -   **Prepare:** Introduce new content and prepare for lectures by completing the readings
--   **Participate:** Attend and actively participate in lectures and labs, office hours
+-   **Participate:** Attend and actively participate in lectures and activities, office hours
 -   **Practice:** Practice applying statistical concepts and computing with application exercises during lecture (usually 30 minutes every Friday)
 -   **Perform:** Put together what you've learned to analyze real-world data
     -   Homework assignments x 6 (individual submission, but encouraged to collaborate)
-    -   Three exams
+    -   Two exams
     -   Term project (Core Capstone Work) presented during the final exam period
 
 ## Cadence
 
 ::: incremental
--   **Labs:** Start and make large progress on Monday in lab section, finish up by Friday 5pm of that week
+-   **Lectures:** Posted before lecture. Encouraged to read before and follow along 
 -   **HWs:** Posted Wednesday morning, due following Wednesday @ midnight
--   **Exams:** Exam review Thursday in class, exam posted Friday morning, no lab on Monday of following week, due Monday 11:59pm
 -   **Project:** Deadlines throughout the semester, with some lab and lecture time dedicated to working on them, and most work done outside of class. This is a major part of this class.
 :::
 
@@ -208,8 +213,6 @@ It is my intent that students from all diverse backgrounds and perspectives be w
 -   No late submission for project work
 
 ## Collaboration policy
-
--   Only work that is clearly assigned as team work should be completed collaboratively.
 
 -   Homeworks must be completed individually.
     You may **not** directly share answers / code with others, however you are welcome to discuss the problems in general and ask for advice.
