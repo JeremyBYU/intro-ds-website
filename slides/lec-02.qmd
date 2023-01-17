@@ -1,0 +1,183 @@
+---
+title: "CISC482 - Lecture02"
+subtitle: "What is Data Science?"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+from palmerpenguins import load_penguins
+sns.set_style('whitegrid')
+```
+
+# Historical Overview
+
+## Data Science
+
+::: incremental
+> Data science is an interdisciplinary field focused on *discovering* **patterns** and *describing* **relationships** using data.
+
+
+-   Data science uses techniques from computer science and statistics. 
+-   Data scientists use computers to write code and store, modify, and visualize large datasets. 
+-   Data scientists also build, test, and interpret models that describe real-life situations, then use models to make predictions for new data. 
+:::
+
+
+## DS early history
+
+![](./lec2_images/ds_early_timeline.jpg){fig-align="center"}
+
+## DS 20th Century
+
+![](./lec2_images/ds_late_timeline.jpg){fig-align="center"}
+
+- Peter Naur won the Turing Award
+- Astronomer -> Computer Science -> Professor 
+- Inventor of Algol Programming Language (PL)\
+
+## Statistics and Computer Science
+
+![](./lec2_images/cs_vs_ds.jpg){fig-align="center"}
+
+
+## Focus of Task
+
+![](./lec2_images/exploratory_prediction_confirmation.png){fig-align="center"}
+
+## Statistics and Machine Learning
+
+![](./lec2_images/statistics_machine_learning.png){fig-align="center"}
+
+## Where are we?
+
+![](./lec2_images/statistics_machine_learning_us.png){fig-align="center"}
+
+- Equal Exploratory and Predictive
+- Little bit of statistics
+
+# Foundations of Data Science
+
+## Learning Goals
+
+- Identify **features** and **instances** in a dataset
+- Three V's- **volume**, **velocity**, and **variety**
+
+## Data sets
+
+- A dataset is a collection of information.  Consists of features and instances
+- A **feature**, or **variable**, is a characteristic that can be *measured* or *observed* on an observational unit.
+- An **instance**, or observational units, is a tuple of features. Often called data points or observations.
+
+## Example Data Set
+
+```{python}
+penguins = load_penguins()
+penguins.head()
+```
+
+- **ROW** is an instance.
+- **COLUMN** represents a different feature.
+
+::: {.notes}
+
+- Researchers at the Palmer Archipelago in the Antarctic collected data on three local penguin species: Adelie, Chinstrap, and Gentoo.
+:::
+
+
+## **Volume**, Variety, Velocity 
+
+- **Volume** - The amount of data being collected digitally is exponentially increasing.
+- Billions of people are being digitally indexed and catalogued
+- Estimate that 2.5 quintillion bytes of data is created each day
+- We now have the processing power where large data sets can now be processed
+
+:::
+- Big data is really, really big. In 1986, the total estimated data in the world was 2.6 exabytes (EB).
+- One exabyte (EB) equals
+bytes, or 1 million TB. Most laptops come with 1 TB storage at most.
+- By 1993, the total estimated data in the world had grown to 15.8 EB.
+- In 2000, the total estimated data in the world had reached 54.5 EB.
+- In 2007, the total estimated data in the world was 295 EB.
+- By 2020, the total estimated data had increased to 6800 EB, or 6.8 PB - the equivalent of over 7 trillion laptop computers.
+:::
+
+## Volume, **Variety**, Velocity
+
+- **Variety** - Data from a variety of difference sources are being collected and combined
+- Its not just your name and your playlist.
+  - Its how long you listened
+  - How long it took you swipe next
+  - Your search history on the subject
+  - Your bloody e-mails
+  - Your phones resolution, battery information, browser, time zone
+
+
+## Volume, Variety, **Velocity**
+
+- **Velocity** - Data is being created and ingested at a faster time
+- The search you just made was fed into an algorithm to give you an add within 10 seconds
+- Sensor Data - Your recorded heart rate was just noted and used to indicate the statistical likelihood of sending you an add now or later 
+- With more up to date information, data scientist can make better predictions
+
+
+## Reproducibility
+
+::: {.incremental}
+
+- Two data scientists are building models to classify brain tumors as benign or malignant.
+- One data scientist uses a programming language, such as Python, to write code to fit the model.
+- Another data scientist uses software instead of coding to fit the model.
+- New brain scans arrive. The data scientist who used coding re-runs the analysis -> a few minutes.
+- Since the software uses a point and click interface, re-analyzing could take several hours.
+
+:::
+
+
+# Data Science as Career 
+
+## Job Titles
+
+:::{style="margin-top: 0px; font-size: 0.60em;"}
+| Title                          | Description                                                                                                                                                                                                                                       |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data engineers                 | Data engineers specialize in data gathering and storage. Data  engineers extract, transform, and load datasets for later analysis.                                                                                                                |
+| Data scientists                | Data scientists gather data, transform data, and use models and algorithms to extract meaningful insights from datasets.                                                                                                                          |
+| Data analysts                  | Data analysts work with industry experts to analyze datasets and  create visualizations. Data analysts use some data science models, but  tend to use data visualization and summary more than modeling.                                          |
+| Business intelligence analysts | Business intelligence analysts specialize in data related to  financial and market transactions. Data analysts and business  intelligence analysts are similar roles, but the term business  intelligence is more common in business and finance. |
+| Machine learning engineers     | Machine learning engineers specialize in machine learning models  instead of statistical models. Machine learning engineers often focus  on the implementation and development of a model rather than selection  and interpretation.              |
+:::
+
+## Life Cycle
+
+:::{style="margin-top: 0px; font-size: 0.60em;"}
+|            Step            |                                                     Description                                                    |
+|:--------------------------:|:------------------------------------------------------------------------------------------------------------------:|
+| Step 1: Gathering data     | Identify available and relevant data; gather new data if needed.                                                   |
+| Step 2: Cleaning data      | Reformat datasets, create new features, and address missing values.                                                |
+| Step 3: Exploring data     | Create data visualizations and calculate summary statistics to explore potential relationships in the dataset.     |
+| Step 4: Modeling data      | Use modeling skills and content knowledge to fit and evaluate models, measure relationships, and make predictions. |
+| Step 5:  Interpreting data |  Describe and interpret conclusions from data through written reports and presentations.                           |
+:::
+
+## Visualizing the 5 Steps
+
+![](./lec2_images/five_steps.png){fig-align="center"}

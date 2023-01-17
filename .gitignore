@@ -2,6 +2,7 @@
 _site
 *speaker.html
 .vscode
+_freeze
 
 *.tex
 *.aux
