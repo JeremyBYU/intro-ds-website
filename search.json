@@ -109,35 +109,28 @@
     "href": "weeks/week-1.html",
     "title": "Week 1",
     "section": "",
-    "text": "Important\n\n\n\nClasses are virtual this week. Find Zoom links here."
-  },
-  {
-    "objectID": "weeks/week-1.html#prepare",
-    "href": "weeks/week-1.html#prepare",
-    "title": "Week 1",
-    "section": "Prepare",
-    "text": "Prepare\n📖 Read the syllabus\n📖 Read the support resources"
+    "text": "📖 Read the syllabus"
   },
   {
     "objectID": "weeks/week-1.html#participate",
     "href": "weeks/week-1.html#participate",
     "title": "Week 1",
     "section": "Participate",
-    "text": "Participate\n🖥️ Lab 0 -Meet+ greet\n🖥️ Lecture 1 - Welcome to STA 210"
+    "text": "Participate\n🖥️ Lecture 1 - Welcome to CISC 482\n🖥️ Lecture 2 - What is Data Science"
   },
   {
     "objectID": "weeks/week-1.html#practice",
     "href": "weeks/week-1.html#practice",
     "title": "Week 1",
     "section": "Practice",
-    "text": "Practice\n📋 AE 0 - Movies"
+    "text": "Practice"
   },
   {
     "objectID": "weeks/week-1.html#perform",
     "href": "weeks/week-1.html#perform",
     "title": "Week 1",
     "section": "Perform",
-    "text": "Perform\n⌨️ Lab 0 - Meet + greet\n\n\nBack to course schedule ⏎"
+    "text": "Perform\n⌨️ HW 1- Practice Markdown"
   },
   {
     "objectID": "project-tips-resources.html",
@@ -173,6 +166,125 @@
     "title": "Syllabus",
     "section": "",
     "text": "Click here to download a PDF copy of the syllabus."
+  },
+  {
+    "objectID": "slides/lec-02.html#data-science",
+    "href": "slides/lec-02.html#data-science",
+    "title": "CISC482 - Lecture02",
+    "section": "Data Science",
+    "text": "Data Science\n\n\nData science is an interdisciplinary field focused on discovering patterns and describing relationships using data.\n\n\nData science uses techniques from computer science and statistics.\nData scientists use computers to write code and store, modify, and visualize large datasets.\nData scientists also build, test, and interpret models that describe real-life situations, then use models to make predictions for new data."
+  },
+  {
+    "objectID": "slides/lec-02.html#ds-early-history",
+    "href": "slides/lec-02.html#ds-early-history",
+    "title": "CISC482 - Lecture02",
+    "section": "DS early history",
+    "text": "DS early history"
+  },
+  {
+    "objectID": "slides/lec-02.html#ds-20th-century",
+    "href": "slides/lec-02.html#ds-20th-century",
+    "title": "CISC482 - Lecture02",
+    "section": "DS 20th Century",
+    "text": "DS 20th Century\n\n\nPeter Naur won the Turing Award\nAstronomer -> Computer Science -> Professor\nInventor of Algol Programming Language (PL)"
+  },
+  {
+    "objectID": "slides/lec-02.html#statistics-and-computer-science",
+    "href": "slides/lec-02.html#statistics-and-computer-science",
+    "title": "CISC482 - Lecture02",
+    "section": "Statistics and Computer Science",
+    "text": "Statistics and Computer Science"
+  },
+  {
+    "objectID": "slides/lec-02.html#focus-of-task",
+    "href": "slides/lec-02.html#focus-of-task",
+    "title": "CISC482 - Lecture02",
+    "section": "Focus of Task",
+    "text": "Focus of Task"
+  },
+  {
+    "objectID": "slides/lec-02.html#statistics-and-machine-learning",
+    "href": "slides/lec-02.html#statistics-and-machine-learning",
+    "title": "CISC482 - Lecture02",
+    "section": "Statistics and Machine Learning",
+    "text": "Statistics and Machine Learning"
+  },
+  {
+    "objectID": "slides/lec-02.html#where-are-we",
+    "href": "slides/lec-02.html#where-are-we",
+    "title": "CISC482 - Lecture02",
+    "section": "Where are we?",
+    "text": "Where are we?\n\n\nEqual Exploratory and Predictive\nLittle bit of statistics"
+  },
+  {
+    "objectID": "slides/lec-02.html#learning-goals",
+    "href": "slides/lec-02.html#learning-goals",
+    "title": "CISC482 - Lecture02",
+    "section": "Learning Goals",
+    "text": "Learning Goals\n\nIdentify features and instances in a dataset\nThree V’s- volume, velocity, and variety"
+  },
+  {
+    "objectID": "slides/lec-02.html#data-sets",
+    "href": "slides/lec-02.html#data-sets",
+    "title": "CISC482 - Lecture02",
+    "section": "Data sets",
+    "text": "Data sets\n\nA dataset is a collection of information. Consists of features and instances\nA feature, or variable, is a characteristic that can be measured or observed on an observational unit.\nAn instance, or observational units, is a tuple of features. Often called data points or observations."
+  },
+  {
+    "objectID": "slides/lec-02.html#example-data-set",
+    "href": "slides/lec-02.html#example-data-set",
+    "title": "CISC482 - Lecture02",
+    "section": "Example Data Set",
+    "text": "Example Data Set\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007\n    \n  \n\n\n\n\n\nROW is an instance.\nCOLUMN represents a different feature.\n\n\n\nResearchers at the Palmer Archipelago in the Antarctic collected data on three local penguin species: Adelie, Chinstrap, and Gentoo."
+  },
+  {
+    "objectID": "slides/lec-02.html#volume-variety-velocity",
+    "href": "slides/lec-02.html#volume-variety-velocity",
+    "title": "CISC482 - Lecture02",
+    "section": "Volume, Variety, Velocity",
+    "text": "Volume, Variety, Velocity\n\nVolume - The amount of data being collected digitally is exponentially increasing.\nBillions of people are being digitally indexed and catalogued\nEstimate that 2.5 quintillion bytes of data is created each day\nWe now have the processing power where large data sets can now be processed\n\n::: - Big data is really, really big. In 1986, the total estimated data in the world was 2.6 exabytes (EB). - One exabyte (EB) equals bytes, or 1 million TB. Most laptops come with 1 TB storage at most. - By 1993, the total estimated data in the world had grown to 15.8 EB. - In 2000, the total estimated data in the world had reached 54.5 EB. - In 2007, the total estimated data in the world was 295 EB. - By 2020, the total estimated data had increased to 6800 EB, or 6.8 PB - the equivalent of over 7 trillion laptop computers. :::"
+  },
+  {
+    "objectID": "slides/lec-02.html#volume-variety-velocity-1",
+    "href": "slides/lec-02.html#volume-variety-velocity-1",
+    "title": "CISC482 - Lecture02",
+    "section": "Volume, Variety, Velocity",
+    "text": "Volume, Variety, Velocity\n\nVariety - Data from a variety of difference sources are being collected and combined\nIts not just your name and your playlist.\n\nIts how long you listened\nHow long it took you swipe next\nYour search history on the subject\nYour bloody e-mails\nYour phones resolution, battery information, browser, time zone"
+  },
+  {
+    "objectID": "slides/lec-02.html#volume-variety-velocity-2",
+    "href": "slides/lec-02.html#volume-variety-velocity-2",
+    "title": "CISC482 - Lecture02",
+    "section": "Volume, Variety, Velocity",
+    "text": "Volume, Variety, Velocity\n\nVelocity - Data is being created and ingested at a faster time\nThe search you just made was fed into an algorithm to give you an add within 10 seconds\nSensor Data - Your recorded heart rate was just noted and used to indicate the statistical likelihood of sending you an add now or later\nWith more up to date information, data scientist can make better predictions"
+  },
+  {
+    "objectID": "slides/lec-02.html#reproducibility",
+    "href": "slides/lec-02.html#reproducibility",
+    "title": "CISC482 - Lecture02",
+    "section": "Reproducibility",
+    "text": "Reproducibility\n\n\nTwo data scientists are building models to classify brain tumors as benign or malignant.\nOne data scientist uses a programming language, such as Python, to write code to fit the model.\nAnother data scientist uses software instead of coding to fit the model.\nNew brain scans arrive. The data scientist who used coding re-runs the analysis -> a few minutes.\nSince the software uses a point and click interface, re-analyzing could take several hours."
+  },
+  {
+    "objectID": "slides/lec-02.html#job-titles",
+    "href": "slides/lec-02.html#job-titles",
+    "title": "CISC482 - Lecture02",
+    "section": "Job Titles",
+    "text": "Job Titles\n\n\n\n\n\n\n\n\nTitle\nDescription\n\n\n\n\nData engineers\nData engineers specialize in data gathering and storage. Data engineers extract, transform, and load datasets for later analysis.\n\n\nData scientists\nData scientists gather data, transform data, and use models and algorithms to extract meaningful insights from datasets.\n\n\nData analysts\nData analysts work with industry experts to analyze datasets and create visualizations. Data analysts use some data science models, but tend to use data visualization and summary more than modeling.\n\n\nBusiness intelligence analysts\nBusiness intelligence analysts specialize in data related to financial and market transactions. Data analysts and business intelligence analysts are similar roles, but the term business intelligence is more common in business and finance.\n\n\nMachine learning engineers\nMachine learning engineers specialize in machine learning models instead of statistical models. Machine learning engineers often focus on the implementation and development of a model rather than selection and interpretation."
+  },
+  {
+    "objectID": "slides/lec-02.html#life-cycle",
+    "href": "slides/lec-02.html#life-cycle",
+    "title": "CISC482 - Lecture02",
+    "section": "Life Cycle",
+    "text": "Life Cycle\n\n\n\n\n\n\n\n\nStep\nDescription\n\n\n\n\nStep 1: Gathering data\nIdentify available and relevant data; gather new data if needed.\n\n\nStep 2: Cleaning data\nReformat datasets, create new features, and address missing values.\n\n\nStep 3: Exploring data\nCreate data visualizations and calculate summary statistics to explore potential relationships in the dataset.\n\n\nStep 4: Modeling data\nUse modeling skills and content knowledge to fit and evaluate models, measure relationships, and make predictions.\n\n\nStep 5: Interpreting data\nDescribe and interpret conclusions from data through written reports and presentations."
+  },
+  {
+    "objectID": "slides/lec-02.html#visualizing-the-5-steps",
+    "href": "slides/lec-02.html#visualizing-the-5-steps",
+    "title": "CISC482 - Lecture02",
+    "section": "Visualizing the 5 Steps",
+    "text": "Visualizing the 5 Steps\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-01.html#meet-the-professor",
