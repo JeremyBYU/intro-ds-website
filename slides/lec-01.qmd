@@ -124,6 +124,12 @@ Computer Vision
 - [How severe is the threat of wildfire to your home?](https://www.plumasnews.com/how-severe-is-the-threat-of-wildfire-to-your-home-learn-more-at-public-meeting-jan-17/)
 :::
 
+## Getting to know you
+
+- Your name, major
+- If you could write a book, what would it be about?
+- What is your dream job?
+
 # Course overview
 
 ## Zybooks
