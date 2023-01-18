@@ -1,0 +1,21 @@
+---
+title: "Week 1"
+subtitle: "Welcome to CISC 482"
+editor: visual
+---
+
+## Prepare
+
+📖 Read the 2-1 and 2-2 in Zybooks.
+
+## Participate
+
+🖥️ [Lecture 3 - Probability and Stats](/slides/lec-03.html)
+
+🖥️ [Lecture 4 - Probability and Stats](/slides/lec-04.html)
+
+## Practice
+
+## Perform
+
+⌨️ [HW 1- Practice Markdown](https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=sharing)

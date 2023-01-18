@@ -218,21 +218,22 @@ Getting a dataset is easier then ever
 ## Cleaning Data - Before {.scrollable .smaller}
 
 :::{.smaller}
-
+<div data-prevent-swipe>
 ```{python}
 df_raw = load_penguins_raw()
 df_raw.head()
 ```
-
+</div>
 :::
 
 ## Cleaning Data - After {.scrollable}
 
+<div data-prevent-swipe>
 ```{python}
 df = load_penguins()
 df.head()
 ```
-
+</div>
 
 ## Exploring Data
 
@@ -249,6 +250,7 @@ g.set_ylabel('Body Mass');
 
 ## Modelling Data
 
+<div data-prevent-swipe>
 ```{python}
 g = sns.lmplot(x="flipper_length_mm",
                y="body_mass_g",
@@ -259,6 +261,7 @@ g = sns.lmplot(x="flipper_length_mm",
 g.set_xlabels('Flipper Length')
 g.set_ylabels('Body Mass');
 ```
+</div>
 
 ## Interpreting Data
 
