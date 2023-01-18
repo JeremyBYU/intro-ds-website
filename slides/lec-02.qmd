@@ -24,7 +24,7 @@ execute:
 #| include: false
 import pandas as pd
 import seaborn as sns 
-from palmerpenguins import load_penguins
+from palmerpenguins import load_penguins, load_penguins_raw
 sns.set_style('whitegrid')
 ```
 
@@ -110,7 +110,7 @@ penguins.head()
 - Estimate that 2.5 quintillion bytes of data is created each day
 - We now have the processing power where large data sets can now be processed
 
-:::
+::: {.notes}
 - Big data is really, really big. In 1986, the total estimated data in the world was 2.6 exabytes (EB).
 - One exabyte (EB) equals
 bytes, or 1 million TB. Most laptops come with 1 TB storage at most.
@@ -166,7 +166,9 @@ bytes, or 1 million TB. Most laptops come with 1 TB storage at most.
 | Machine learning engineers     | Machine learning engineers specialize in machine learning models  instead of statistical models. Machine learning engineers often focus  on the implementation and development of a model rather than selection  and interpretation.              |
 :::
 
-## Life Cycle
+# 5 Steps of Data Science
+
+## Your new life
 
 :::{style="margin-top: 0px; font-size: 0.60em;"}
 |            Step            |                                                     Description                                                    |
@@ -181,3 +183,104 @@ bytes, or 1 million TB. Most laptops come with 1 TB storage at most.
 ## Visualizing the 5 Steps
 
 ![](./lec2_images/five_steps.png){fig-align="center"}
+
+
+## Gathering Data {.scrollable}
+
+Getting a dataset is easier then ever
+
+-   [Kaggle Datasets](https://www.kaggle.com/datasets)
+-   [World Health Organization](https://www.who.int/gho/database/en/)
+-   [The National Bureau of Economic Research](https://data.nber.org/data/)
+-   [International Monetary Fund](https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329328660)
+-   [General Social Survey](http://gss.norc.org/)
+-   [United Nations Data](http://data.un.org/)
+-   [United Nations Statistics Division](https://unstats.un.org/home/)
+-   [U.K. Data](https://data.gov.uk/)
+-   [U.S. Data](https://www.data.gov/)
+-   [U.S. Census Data](https://www.census.gov/data.html)
+-   [European Statistics](https://ec.europa.eu/eurostat/)
+-   [Statistics Canada](https://www.statcan.gc.ca/eng/start)
+-   [Pew Research](https://www.pewresearch.org/download-datasets/)
+-   [UNICEF](https://data.unicef.org/)
+-   [CDC](https://www.cdc.gov/datastatistics/index.html)
+-   [World Bank](https://datacatalog.worldbank.org/)
+-   [Election Studies](https://electionstudies.org//)
+
+
+## Example Dataset - Palmer Penguins
+
+- The Palmer penguins dataset by Allison Horst, Alison Hill, and Kristen Gorman 
+
+![](./lec2_images/penguin_pictures.png)
+
+
+## Cleaning Data - Before {.scrollable .smaller}
+
+:::{.smaller}
+
+```{python}
+df_raw = load_penguins_raw()
+df_raw.head()
+```
+
+:::
+
+## Cleaning Data - After {.scrollable}
+
+```{python}
+df = load_penguins()
+df.head()
+```
+
+
+## Exploring Data
+
+```{python}
+g = sns.boxplot(x = 'island',
+            y ='body_mass_g',
+            hue = 'species',
+            data = penguins,
+            palette=['#FF8C00','#159090','#A034F0'],
+            linewidth=0.3)
+g.set_xlabel('Island')
+g.set_ylabel('Body Mass');
+```
+
+## Modelling Data
+
+```{python}
+g = sns.lmplot(x="flipper_length_mm",
+               y="body_mass_g",
+               hue="species",
+               data=penguins,
+               palette=['#FF8C00','#159090','#A034F0'],
+               aspect=1.5)
+g.set_xlabels('Flipper Length')
+g.set_ylabels('Body Mass');
+```
+
+## Interpreting Data
+
+- There is a linear relationship between flipper length and body length
+- Gentoo penguins have significantly higher body length and body mass then Adelie or Chinstrap.
+- etc.
+
+# Conclusion
+
+## Big Takeaways
+
+- What is data science relationship with Statistics? Computer Science?
+- Three V's
+- Five steps of data science
+
+
+## This week's tasks
+
+-   Sign up for the Zybook
+-   Read the syllabus
+-   HW1 - Markdown
+
+## HW1
+
+[HW Link](https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=share_link)
