@@ -221,7 +221,84 @@
     "href": "slides/lec-03.html#types-of-sampling",
     "title": "CISC482 - Lecture03",
     "section": "Types of Sampling",
-    "text": "Types of Sampling\n\n\nRandom Sampling\n\nOU are selected at random\n\nStratified Sampling\nCluster Sampling\nSystematic Sampling\nConvenience Sampling\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Types of Sampling\n\n\nRandom Sampling\n\nOU are selected at random\n\nStratified Sampling\n\nPopulation is divided into groups (primary feature). Each group is sampled.\n\nCluster Sampling\n\nPopulation divided into groups (not a primary feature, geography)\n\nSystematic Sampling\n\nEvery k’th observational unit is sampled\n\nConvenience Sampling\n\nOU are selected that are easier"
+  },
+  {
+    "objectID": "slides/lec-03.html#observational-vs-experiement",
+    "href": "slides/lec-03.html#observational-vs-experiement",
+    "title": "CISC482 - Lecture03",
+    "section": "Observational vs Experiement",
+    "text": "Observational vs Experiement\n\nObservational\n\nObserving or collecting data\nNot trying to control or influence an outcome\n\nExperimental\n\nYou are controlling a varaible\nYou manipulate that variable to get a different response"
+  },
+  {
+    "objectID": "slides/lec-03.html#descriptive-statistics",
+    "href": "slides/lec-03.html#descriptive-statistics",
+    "title": "CISC482 - Lecture03",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics"
+  },
+  {
+    "objectID": "slides/lec-03.html#oveview",
+    "href": "slides/lec-03.html#oveview",
+    "title": "CISC482 - Lecture03",
+    "section": "Oveview",
+    "text": "Oveview\n\nTerminology\nMeasure of center\nMeasure of spread\nMeasure of position\nMeasure of shape"
+  },
+  {
+    "objectID": "slides/lec-03.html#terminology",
+    "href": "slides/lec-03.html#terminology",
+    "title": "CISC482 - Lecture03",
+    "section": "Terminology",
+    "text": "Terminology\n\nDescriptive Statistics - summarize and describe a features important characteristics\ndistribution - the possible values the feature can take\ncluster - a distinct group of neighboring values in a distribution\ntails - the end values of a distributution"
+  },
+  {
+    "objectID": "slides/lec-03.html#terminology---visualized",
+    "href": "slides/lec-03.html#terminology---visualized",
+    "title": "CISC482 - Lecture03",
+    "section": "Terminology - Visualized",
+    "text": "Terminology - Visualized"
+  },
+  {
+    "objectID": "slides/lec-03.html#measure-of-center",
+    "href": "slides/lec-03.html#measure-of-center",
+    "title": "CISC482 - Lecture03",
+    "section": "Measure of Center",
+    "text": "Measure of Center\n\nMean - average, sum of all values divided by the total number of values, n \\[\n\\frac{1}{n} \\sum_{i=i}^{n} x_{i}\n\\]\nMedian - the middle value of the ordered data"
+  },
+  {
+    "objectID": "slides/lec-03.html#code-example",
+    "href": "slides/lec-03.html#code-example",
+    "title": "CISC482 - Lecture03",
+    "section": "Code Example!",
+    "text": "Code Example!\n\nheights = [5.5, 5.7, 5.8, 5.9]\navg_height = sum(heights) / len(heights)\nprint(f\"Average Height: {avg_height:.2f}\")\n\nAverage Height: 5.72\n\n\n\n\nUsing Numpy\n\nimport numpy as np\nheights = np.array([5.5, 5.7, 5.8, 5.9, 6.2])\navg_height = np.average(heights)\nprint(f\"Average Height: {avg_height:.2f}\")\n\nAverage Height: 5.82"
+  },
+  {
+    "objectID": "slides/lec-03.html#what-is-numpy",
+    "href": "slides/lec-03.html#what-is-numpy",
+    "title": "CISC482 - Lecture03",
+    "section": "What is NumPy",
+    "text": "What is NumPy\n\nNumPy is the fundamental package for scientific computing in Python.\nPython library that provides a multidimensional array object.\nStores data very effeciently very fast\n\n\na = np.array([1, 2])\n\n\n2D array - rows and columns\nb = np.array([\n  [1, 2], # first row\n  [3, 4]  # second row\n])"
+  },
+  {
+    "objectID": "slides/lec-03.html#question",
+    "href": "slides/lec-03.html#question",
+    "title": "CISC482 - Lecture03",
+    "section": "Question",
+    "text": "Question\nnp.average(...) - finds the average\n\n\n\n\n\n\nTip\n\n\nWhat function to get the median?\n\n\n\n\n\nheights = np.array([5.5, 5.7, 5.8, 5.9, 6.2])\nmedian_height = np.median(heights)\nprint(f\"Median Height: {median_height:.2f}\")\n\nMedian Height: 5.80"
+  },
+  {
+    "objectID": "slides/lec-03.html#spread",
+    "href": "slides/lec-03.html#spread",
+    "title": "CISC482 - Lecture03",
+    "section": "Spread",
+    "text": "Spread"
+  },
+  {
+    "objectID": "slides/lec-03.html#spread-terminology",
+    "href": "slides/lec-03.html#spread-terminology",
+    "title": "CISC482 - Lecture03",
+    "section": "Spread Terminology",
+    "text": "Spread Terminology\n\nrange - distance b\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-02.html#data-science",
