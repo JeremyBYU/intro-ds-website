@@ -7,6 +7,8 @@ editor: visual
 ## Prepare
 
 📖 Read the [syllabus](/course-syllabus.html)
+📖 Read the [project description](/project-description)
+📖 Read Chapter 1 in Zybook
 
 ## Participate
 
@@ -16,8 +18,9 @@ editor: visual
 
 ## Practice
 
+📋 [Class Activity 01 - Practice Mardown](https://colab.research.google.com/drive/1rm5O6qu5w_475KXuXDsj4Ex7Q8eVVczw?usp=sharing)
+
 ## Perform
 
 ⌨️ [HW 1- Practice Markdown](https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=sharing)
 
-<br><br>

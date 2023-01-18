@@ -284,6 +284,12 @@ g.set_ylabels('Body Mass');
 -   Read the syllabus
 -   HW1 - Markdown
 
+
+## Practice
+
+📋 [Class Activity 01 - Practice Mardown](https://colab.research.google.com/drive/1rm5O6qu5w_475KXuXDsj4Ex7Q8eVVczw?usp=sharing)
+
+
 ## HW1
 
 [HW Link](https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=share_link)

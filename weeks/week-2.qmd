@@ -6,7 +6,7 @@ editor: visual
 
 ## Prepare
 
-📖 Read the 2-1 and 2-2 in Zybooks.
+📖 Read Assignments 2-1 and 2-2 in Zybooks.
 
 ## Participate
 
@@ -16,6 +16,8 @@ editor: visual
 
 ## Practice
 
+📋 [Class Activity 02 - Practice Numpy](https://colab.research.google.com/drive/1bB_p2iiX6_zwGW7VY0SevrH9TzZ9RMRJ?usp=sharing)
+
 ## Perform
 
-⌨️ [HW 1- Practice Markdown](https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=sharing)
+⌨️ [HW 2 - Analyize Data](https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=sharing)
