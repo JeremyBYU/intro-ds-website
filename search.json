@@ -105,6 +105,34 @@
     "text": "TBD"
   },
   {
+    "objectID": "weeks/week-2.html",
+    "href": "weeks/week-2.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "📖 Read the 2-1 and 2-2 in Zybooks."
+  },
+  {
+    "objectID": "weeks/week-2.html#participate",
+    "href": "weeks/week-2.html#participate",
+    "title": "Week 1",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Lecture 3 - Probability and Stats\n🖥️ Lecture 4 - Probability and Stats"
+  },
+  {
+    "objectID": "weeks/week-2.html#practice",
+    "href": "weeks/week-2.html#practice",
+    "title": "Week 1",
+    "section": "Practice",
+    "text": "Practice"
+  },
+  {
+    "objectID": "weeks/week-2.html#perform",
+    "href": "weeks/week-2.html#perform",
+    "title": "Week 1",
+    "section": "Perform",
+    "text": "Perform\n⌨️ HW 1- Practice Markdown"
+  },
+  {
     "objectID": "weeks/week-1.html",
     "href": "weeks/week-1.html",
     "title": "Week 1",
@@ -305,14 +333,14 @@
     "href": "slides/lec-02.html#cleaning-data---before",
     "title": "CISC482 - Lecture02",
     "section": "Cleaning Data - Before",
-    "text": "Cleaning Data - Before\n\n\n\n\n\n\n\n  \n    \n      \n      studyName\n      Sample Number\n      Species\n      Region\n      Island\n      Stage\n      Individual ID\n      Clutch Completion\n      Date Egg\n      Culmen Length (mm)\n      Culmen Depth (mm)\n      Flipper Length (mm)\n      Body Mass (g)\n      Sex\n      Delta 15 N (o/oo)\n      Delta 13 C (o/oo)\n      Comments\n    \n  \n  \n    \n      0\n      PAL0708\n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A1\n      Yes\n      2007-11-11\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      NaN\n      NaN\n      Not enough blood for isotopes.\n    \n    \n      1\n      PAL0708\n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A2\n      Yes\n      2007-11-11\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      8.94956\n      -24.69454\n      NaN\n    \n    \n      2\n      PAL0708\n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A1\n      Yes\n      2007-11-16\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      8.36821\n      -25.33302\n      NaN\n    \n    \n      3\n      PAL0708\n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A2\n      Yes\n      2007-11-16\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      Adult not sampled.\n    \n    \n      4\n      PAL0708\n      5\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N3A1\n      Yes\n      2007-11-16\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      8.76651\n      -25.32426\n      NaN"
+    "text": "Cleaning Data - Before\n\n\n\n\n\n\n\n\n  \n    \n      \n      studyName\n      Sample Number\n      Species\n      Region\n      Island\n      Stage\n      Individual ID\n      Clutch Completion\n      Date Egg\n      Culmen Length (mm)\n      Culmen Depth (mm)\n      Flipper Length (mm)\n      Body Mass (g)\n      Sex\n      Delta 15 N (o/oo)\n      Delta 13 C (o/oo)\n      Comments\n    \n  \n  \n    \n      0\n      PAL0708\n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A1\n      Yes\n      2007-11-11\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      NaN\n      NaN\n      Not enough blood for isotopes.\n    \n    \n      1\n      PAL0708\n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A2\n      Yes\n      2007-11-11\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      8.94956\n      -24.69454\n      NaN\n    \n    \n      2\n      PAL0708\n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A1\n      Yes\n      2007-11-16\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      8.36821\n      -25.33302\n      NaN\n    \n    \n      3\n      PAL0708\n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A2\n      Yes\n      2007-11-16\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      Adult not sampled.\n    \n    \n      4\n      PAL0708\n      5\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N3A1\n      Yes\n      2007-11-16\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      8.76651\n      -25.32426\n      NaN"
   },
   {
     "objectID": "slides/lec-02.html#cleaning-data---after",
     "href": "slides/lec-02.html#cleaning-data---after",
     "title": "CISC482 - Lecture02",
     "section": "Cleaning Data - After",
-    "text": "Cleaning Data - After\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007"
+    "text": "Cleaning Data - After\n\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007"
   },
   {
     "objectID": "slides/lec-02.html#exploring-data",
