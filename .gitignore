@@ -3,7 +3,7 @@ _site
 *speaker.html
 .vscode
 _freeze
-
+.DS_store
 *.tex
 *.aux
 

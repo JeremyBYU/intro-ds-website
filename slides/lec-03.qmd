@@ -1,0 +1,82 @@
+---
+title: "CISC482 - Lecture03"
+subtitle: "Probability and Statistics"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from palmerpenguins import load_penguins, load_penguins_raw
+sns.set_style('whitegrid')
+```
+
+# Data Collection
+
+## Stats for data science
+
+- Data science relies on statistics to make data driven decisions
+- Sampling methods are used to efeciently collect data and reduce bias
+
+::: {.callout-note .smaller}
+**Bias** - anything that leads to a systematic difference between the true parameters of a population and the statistics used to estimate those parameters.  E.g., sampling only men.
+:::
+
+## Stats for data science
+
+:::: {.columns}
+
+::: {.smaller .column width="40%"}
+- Descriptive statistics -> explore visualizations
+- Inferential statistics -> modeling and estimation
+- Statisitcs is foundational to ensure results are interpreted correctly
+:::
+
+::: {.column width="60%"}
+![](./lec3_images/stats_intro.png)
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+## Sampling
+
+- **Population** - Entire set of individuals, items, or events of interest
+- **Observational Unit** - individual item or event
+- **Sample** - *subset* of observational units from the population
+
+## Types of Sampling
+
+::: incremental
+- Random Sampling
+  - OU are selected at random
+- Stratified Sampling
+  - 
+- Cluster Sampling
+- Systematic Sampling
+- Convenience Sampling
+:::
+
+
+
