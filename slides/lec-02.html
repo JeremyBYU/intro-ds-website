@@ -538,7 +538,26 @@ Dr.&nbsp;Jeremy Castagno
 <li>Estimate that 2.5 quintillion bytes of data is created each day</li>
 <li>We now have the processing power where large data sets can now be processed</li>
 </ul>
-<p>::: - Big data is really, really big. In 1986, the total estimated data in the world was 2.6 exabytes (EB). - One exabyte (EB) equals bytes, or 1 million TB. Most laptops come with 1 TB storage at most. - By 1993, the total estimated data in the world had grown to 15.8 EB. - In 2000, the total estimated data in the world had reached 54.5 EB. - In 2007, the total estimated data in the world was 295 EB. - By 2020, the total estimated data had increased to 6800 EB, or 6.8 PB - the equivalent of over 7 trillion laptop computers. :::</p>
+<aside class="notes">
+<ul>
+<li>Big data is really, really big. In 1986, the total estimated data in the world was 2.6 exabytes (EB).</li>
+<li>One exabyte (EB) equals bytes, or 1 million TB. Most laptops come with 1 TB storage at most.</li>
+<li>By 1993, the total estimated data in the world had grown to 15.8 EB.</li>
+<li>In 2000, the total estimated data in the world had reached 54.5 EB.</li>
+<li>In 2007, the total estimated data in the world was 295 EB.</li>
+<li>By 2020, the total estimated data had increased to 6800 EB, or 6.8 PB - the equivalent of over 7 trillion laptop computers.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="volume-variety-velocity-1" class="slide level2">
 <h2>Volume, <strong>Variety</strong>, Velocity</h2>
@@ -618,9 +637,14 @@ Dr.&nbsp;Jeremy Castagno
 </tbody>
 </table>
 </div>
+</section></section>
+<section>
+<section id="steps-of-data-science" class="title-slide slide level1 center">
+<h1>5 Steps of Data Science</h1>
+
 </section>
-<section id="life-cycle" class="slide level2">
-<h2>Life Cycle</h2>
+<section id="your-new-life" class="slide level2">
+<h2>Your new life</h2>
 <div style="margin-top: 0px; font-size: 0.60em;">
 <table>
 <colgroup>
@@ -660,14 +684,335 @@ Dr.&nbsp;Jeremy Castagno
 </section>
 <section id="visualizing-the-5-steps" class="slide level2">
 <h2>Visualizing the 5 Steps</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./lec2_images/five_steps.png"></p>
-</figure>
-</div>
 
-<p><img src="../images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<img data-src="./lec2_images/five_steps.png" class="r-stretch quarto-figure-center"></section>
+<section id="gathering-data" class="slide level2 scrollable">
+<h2>Gathering Data</h2>
+<p>Getting a dataset is easier then ever</p>
+<ul>
+<li><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a></li>
+<li><a href="https://www.who.int/gho/database/en/">World Health Organization</a></li>
+<li><a href="https://data.nber.org/data/">The National Bureau of Economic Research</a></li>
+<li><a href="https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&amp;sId=1479329328660">International Monetary Fund</a></li>
+<li><a href="http://gss.norc.org/">General Social Survey</a></li>
+<li><a href="http://data.un.org/">United Nations Data</a></li>
+<li><a href="https://unstats.un.org/home/">United Nations Statistics Division</a></li>
+<li><a href="https://data.gov.uk/">U.K. Data</a></li>
+<li><a href="https://www.data.gov/">U.S. Data</a></li>
+<li><a href="https://www.census.gov/data.html">U.S. Census Data</a></li>
+<li><a href="https://ec.europa.eu/eurostat/">European Statistics</a></li>
+<li><a href="https://www.statcan.gc.ca/eng/start">Statistics Canada</a></li>
+<li><a href="https://www.pewresearch.org/download-datasets/">Pew Research</a></li>
+<li><a href="https://data.unicef.org/">UNICEF</a></li>
+<li><a href="https://www.cdc.gov/datastatistics/index.html">CDC</a></li>
+<li><a href="https://datacatalog.worldbank.org/">World Bank</a></li>
+<li><a href="https://electionstudies.org//">Election Studies</a></li>
+</ul>
+</section>
+<section id="example-dataset---palmer-penguins" class="slide level2">
+<h2>Example Dataset - Palmer Penguins</h2>
+<ul>
+<li>The Palmer penguins dataset by Allison Horst, Alison Hill, and Kristen Gorman</li>
+</ul>
+
+<img data-src="./lec2_images/penguin_pictures.png" class="r-stretch"></section>
+<section id="cleaning-data---before" class="slide level2 scrollable smaller">
+<h2>Cleaning Data - Before</h2>
+<div class="smaller">
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>studyName</th>
+      <th>Sample Number</th>
+      <th>Species</th>
+      <th>Region</th>
+      <th>Island</th>
+      <th>Stage</th>
+      <th>Individual ID</th>
+      <th>Clutch Completion</th>
+      <th>Date Egg</th>
+      <th>Culmen Length (mm)</th>
+      <th>Culmen Depth (mm)</th>
+      <th>Flipper Length (mm)</th>
+      <th>Body Mass (g)</th>
+      <th>Sex</th>
+      <th>Delta 15 N (o/oo)</th>
+      <th>Delta 13 C (o/oo)</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PAL0708</td>
+      <td>1</td>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Anvers</td>
+      <td>Torgersen</td>
+      <td>Adult, 1 Egg Stage</td>
+      <td>N1A1</td>
+      <td>Yes</td>
+      <td>2007-11-11</td>
+      <td>39.1</td>
+      <td>18.7</td>
+      <td>181.0</td>
+      <td>3750.0</td>
+      <td>MALE</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Not enough blood for isotopes.</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PAL0708</td>
+      <td>2</td>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Anvers</td>
+      <td>Torgersen</td>
+      <td>Adult, 1 Egg Stage</td>
+      <td>N1A2</td>
+      <td>Yes</td>
+      <td>2007-11-11</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>FEMALE</td>
+      <td>8.94956</td>
+      <td>-24.69454</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PAL0708</td>
+      <td>3</td>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Anvers</td>
+      <td>Torgersen</td>
+      <td>Adult, 1 Egg Stage</td>
+      <td>N2A1</td>
+      <td>Yes</td>
+      <td>2007-11-16</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>FEMALE</td>
+      <td>8.36821</td>
+      <td>-25.33302</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PAL0708</td>
+      <td>4</td>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Anvers</td>
+      <td>Torgersen</td>
+      <td>Adult, 1 Egg Stage</td>
+      <td>N2A2</td>
+      <td>Yes</td>
+      <td>2007-11-16</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Adult not sampled.</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PAL0708</td>
+      <td>5</td>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Anvers</td>
+      <td>Torgersen</td>
+      <td>Adult, 1 Egg Stage</td>
+      <td>N3A1</td>
+      <td>Yes</td>
+      <td>2007-11-16</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>FEMALE</td>
+      <td>8.76651</td>
+      <td>-25.32426</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="cleaning-data---after" class="slide level2 scrollable">
+<h2>Cleaning Data - After</h2>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.1</td>
+      <td>18.7</td>
+      <td>181.0</td>
+      <td>3750.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="exploring-data" class="slide level2">
+<h2>Exploring Data</h2>
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-02_files/figure-revealjs/cell-6-output-1.png" width="825" height="429"></p>
+</div>
+</div>
+</section>
+<section id="modelling-data" class="slide level2">
+<h2>Modelling Data</h2>
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-02_files/figure-revealjs/cell-7-output-1.png" width="819" height="470"></p>
+</div>
+</div>
+</section>
+<section id="interpreting-data" class="slide level2">
+<h2>Interpreting Data</h2>
+<ul>
+<li>There is a linear relationship between flipper length and body length</li>
+<li>Gentoo penguins have significantly higher body length and body mass then Adelie or Chinstrap.</li>
+<li>etc.</li>
+</ul>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section id="big-takeaways" class="slide level2">
+<h2>Big Takeaways</h2>
+<ul>
+<li>What is data science relationship with Statistics? Computer Science?</li>
+<li>Three V’s</li>
+<li>Five steps of data science</li>
+</ul>
+</section>
+<section id="this-weeks-tasks" class="slide level2">
+<h2>This week’s tasks</h2>
+<ul>
+<li>Sign up for the Zybook</li>
+<li>Read the syllabus</li>
+<li>HW1 - Markdown</li>
+</ul>
+</section>
+<section id="hw1" class="slide level2">
+<h2>HW1</h2>
+<p><a href="https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=share_link">HW Link</a></p>
+
+
+<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>
@@ -707,7 +1052,7 @@ Dr.&nbsp;Jeremy Castagno
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"b23ee10120f3cc6c","url":"https://reveal-multiplex.glitch.me/"},
+'multiplex': {"secret":null,"id":"bdda4acbb2317405","url":"https://reveal-multiplex.glitch.me/"},
 'smaller': false,
  
         // Display controls in the bottom right corner

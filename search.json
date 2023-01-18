@@ -242,7 +242,7 @@
     "href": "slides/lec-02.html#volume-variety-velocity",
     "title": "CISC482 - Lecture02",
     "section": "Volume, Variety, Velocity",
-    "text": "Volume, Variety, Velocity\n\nVolume - The amount of data being collected digitally is exponentially increasing.\nBillions of people are being digitally indexed and catalogued\nEstimate that 2.5 quintillion bytes of data is created each day\nWe now have the processing power where large data sets can now be processed\n\n::: - Big data is really, really big. In 1986, the total estimated data in the world was 2.6 exabytes (EB). - One exabyte (EB) equals bytes, or 1 million TB. Most laptops come with 1 TB storage at most. - By 1993, the total estimated data in the world had grown to 15.8 EB. - In 2000, the total estimated data in the world had reached 54.5 EB. - In 2007, the total estimated data in the world was 295 EB. - By 2020, the total estimated data had increased to 6800 EB, or 6.8 PB - the equivalent of over 7 trillion laptop computers. :::"
+    "text": "Volume, Variety, Velocity\n\nVolume - The amount of data being collected digitally is exponentially increasing.\nBillions of people are being digitally indexed and catalogued\nEstimate that 2.5 quintillion bytes of data is created each day\nWe now have the processing power where large data sets can now be processed\n\n\n\nBig data is really, really big. In 1986, the total estimated data in the world was 2.6 exabytes (EB).\nOne exabyte (EB) equals bytes, or 1 million TB. Most laptops come with 1 TB storage at most.\nBy 1993, the total estimated data in the world had grown to 15.8 EB.\nIn 2000, the total estimated data in the world had reached 54.5 EB.\nIn 2007, the total estimated data in the world was 295 EB.\nBy 2020, the total estimated data had increased to 6800 EB, or 6.8 PB - the equivalent of over 7 trillion laptop computers."
   },
   {
     "objectID": "slides/lec-02.html#volume-variety-velocity-1",
@@ -273,18 +273,88 @@
     "text": "Job Titles\n\n\n\n\n\n\n\n\nTitle\nDescription\n\n\n\n\nData engineers\nData engineers specialize in data gathering and storage. Data engineers extract, transform, and load datasets for later analysis.\n\n\nData scientists\nData scientists gather data, transform data, and use models and algorithms to extract meaningful insights from datasets.\n\n\nData analysts\nData analysts work with industry experts to analyze datasets and create visualizations. Data analysts use some data science models, but tend to use data visualization and summary more than modeling.\n\n\nBusiness intelligence analysts\nBusiness intelligence analysts specialize in data related to financial and market transactions. Data analysts and business intelligence analysts are similar roles, but the term business intelligence is more common in business and finance.\n\n\nMachine learning engineers\nMachine learning engineers specialize in machine learning models instead of statistical models. Machine learning engineers often focus on the implementation and development of a model rather than selection and interpretation."
   },
   {
-    "objectID": "slides/lec-02.html#life-cycle",
-    "href": "slides/lec-02.html#life-cycle",
+    "objectID": "slides/lec-02.html#your-new-life",
+    "href": "slides/lec-02.html#your-new-life",
     "title": "CISC482 - Lecture02",
-    "section": "Life Cycle",
-    "text": "Life Cycle\n\n\n\n\n\n\n\n\nStep\nDescription\n\n\n\n\nStep 1: Gathering data\nIdentify available and relevant data; gather new data if needed.\n\n\nStep 2: Cleaning data\nReformat datasets, create new features, and address missing values.\n\n\nStep 3: Exploring data\nCreate data visualizations and calculate summary statistics to explore potential relationships in the dataset.\n\n\nStep 4: Modeling data\nUse modeling skills and content knowledge to fit and evaluate models, measure relationships, and make predictions.\n\n\nStep 5: Interpreting data\nDescribe and interpret conclusions from data through written reports and presentations."
+    "section": "Your new life",
+    "text": "Your new life\n\n\n\n\n\n\n\n\nStep\nDescription\n\n\n\n\nStep 1: Gathering data\nIdentify available and relevant data; gather new data if needed.\n\n\nStep 2: Cleaning data\nReformat datasets, create new features, and address missing values.\n\n\nStep 3: Exploring data\nCreate data visualizations and calculate summary statistics to explore potential relationships in the dataset.\n\n\nStep 4: Modeling data\nUse modeling skills and content knowledge to fit and evaluate models, measure relationships, and make predictions.\n\n\nStep 5: Interpreting data\nDescribe and interpret conclusions from data through written reports and presentations."
   },
   {
     "objectID": "slides/lec-02.html#visualizing-the-5-steps",
     "href": "slides/lec-02.html#visualizing-the-5-steps",
     "title": "CISC482 - Lecture02",
     "section": "Visualizing the 5 Steps",
-    "text": "Visualizing the 5 Steps\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Visualizing the 5 Steps"
+  },
+  {
+    "objectID": "slides/lec-02.html#gathering-data",
+    "href": "slides/lec-02.html#gathering-data",
+    "title": "CISC482 - Lecture02",
+    "section": "Gathering Data",
+    "text": "Gathering Data\nGetting a dataset is easier then ever\n\nKaggle Datasets\nWorld Health Organization\nThe National Bureau of Economic Research\nInternational Monetary Fund\nGeneral Social Survey\nUnited Nations Data\nUnited Nations Statistics Division\nU.K. Data\nU.S. Data\nU.S. Census Data\nEuropean Statistics\nStatistics Canada\nPew Research\nUNICEF\nCDC\nWorld Bank\nElection Studies"
+  },
+  {
+    "objectID": "slides/lec-02.html#example-dataset---palmer-penguins",
+    "href": "slides/lec-02.html#example-dataset---palmer-penguins",
+    "title": "CISC482 - Lecture02",
+    "section": "Example Dataset - Palmer Penguins",
+    "text": "Example Dataset - Palmer Penguins\n\nThe Palmer penguins dataset by Allison Horst, Alison Hill, and Kristen Gorman"
+  },
+  {
+    "objectID": "slides/lec-02.html#cleaning-data---before",
+    "href": "slides/lec-02.html#cleaning-data---before",
+    "title": "CISC482 - Lecture02",
+    "section": "Cleaning Data - Before",
+    "text": "Cleaning Data - Before\n\n\n\n\n\n\n\n  \n    \n      \n      studyName\n      Sample Number\n      Species\n      Region\n      Island\n      Stage\n      Individual ID\n      Clutch Completion\n      Date Egg\n      Culmen Length (mm)\n      Culmen Depth (mm)\n      Flipper Length (mm)\n      Body Mass (g)\n      Sex\n      Delta 15 N (o/oo)\n      Delta 13 C (o/oo)\n      Comments\n    \n  \n  \n    \n      0\n      PAL0708\n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A1\n      Yes\n      2007-11-11\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      NaN\n      NaN\n      Not enough blood for isotopes.\n    \n    \n      1\n      PAL0708\n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A2\n      Yes\n      2007-11-11\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      8.94956\n      -24.69454\n      NaN\n    \n    \n      2\n      PAL0708\n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A1\n      Yes\n      2007-11-16\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      8.36821\n      -25.33302\n      NaN\n    \n    \n      3\n      PAL0708\n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A2\n      Yes\n      2007-11-16\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      Adult not sampled.\n    \n    \n      4\n      PAL0708\n      5\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N3A1\n      Yes\n      2007-11-16\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      8.76651\n      -25.32426\n      NaN"
+  },
+  {
+    "objectID": "slides/lec-02.html#cleaning-data---after",
+    "href": "slides/lec-02.html#cleaning-data---after",
+    "title": "CISC482 - Lecture02",
+    "section": "Cleaning Data - After",
+    "text": "Cleaning Data - After\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007"
+  },
+  {
+    "objectID": "slides/lec-02.html#exploring-data",
+    "href": "slides/lec-02.html#exploring-data",
+    "title": "CISC482 - Lecture02",
+    "section": "Exploring Data",
+    "text": "Exploring Data"
+  },
+  {
+    "objectID": "slides/lec-02.html#modelling-data",
+    "href": "slides/lec-02.html#modelling-data",
+    "title": "CISC482 - Lecture02",
+    "section": "Modelling Data",
+    "text": "Modelling Data"
+  },
+  {
+    "objectID": "slides/lec-02.html#interpreting-data",
+    "href": "slides/lec-02.html#interpreting-data",
+    "title": "CISC482 - Lecture02",
+    "section": "Interpreting Data",
+    "text": "Interpreting Data\n\nThere is a linear relationship between flipper length and body length\nGentoo penguins have significantly higher body length and body mass then Adelie or Chinstrap.\netc."
+  },
+  {
+    "objectID": "slides/lec-02.html#big-takeaways",
+    "href": "slides/lec-02.html#big-takeaways",
+    "title": "CISC482 - Lecture02",
+    "section": "Big Takeaways",
+    "text": "Big Takeaways\n\nWhat is data science relationship with Statistics? Computer Science?\nThree V’s\nFive steps of data science"
+  },
+  {
+    "objectID": "slides/lec-02.html#this-weeks-tasks",
+    "href": "slides/lec-02.html#this-weeks-tasks",
+    "title": "CISC482 - Lecture02",
+    "section": "This week’s tasks",
+    "text": "This week’s tasks\n\nSign up for the Zybook\nRead the syllabus\nHW1 - Markdown"
+  },
+  {
+    "objectID": "slides/lec-02.html#hw1",
+    "href": "slides/lec-02.html#hw1",
+    "title": "CISC482 - Lecture02",
+    "section": "HW1",
+    "text": "HW1\nHW Link\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-01.html#meet-the-professor",
