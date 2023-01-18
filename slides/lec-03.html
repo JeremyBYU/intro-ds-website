@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
-  <title>Intro to Data Science - CISC482 - Lecture02</title>
+  <title>Intro to Data Science - CISC482 - Lecture03</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -320,11 +320,8 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture02">
-<meta property="og:description" content="What is Data Science?">
+<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture03">
+<meta property="og:description" content="Probability and Statistics">
 <meta property="og:site-name" content="Intro to Data Science">
 </head>
 <body class="quarto-light">
@@ -332,8 +329,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CISC482 - Lecture02</h1>
-  <p class="subtitle">What is Data Science?</p>
+  <h1 class="title">CISC482 - Lecture03</h1>
+  <p class="subtitle">Probability and Statistics</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -345,179 +342,45 @@ Dr.&nbsp;Jeremy Castagno
 
 </section>
 <section>
-<section id="historical-overview" class="title-slide slide level1 center">
-<h1>Historical Overview</h1>
+<section id="data-collection" class="title-slide slide level1 center">
+<h1>Data Collection</h1>
 
 </section>
-<section id="data-science" class="slide level2">
-<h2>Data Science</h2>
-<div>
-<blockquote>
-<p>Data science is an interdisciplinary field focused on <em>discovering</em> <strong>patterns</strong> and <em>describing</em> <strong>relationships</strong> using data.</p>
-</blockquote>
+<section id="stats-for-data-science" class="slide level2">
+<h2>Stats for data science</h2>
 <ul>
-<li class="fragment">Data science uses techniques from computer science and statistics.</li>
-<li class="fragment">Data scientists use computers to write code and store, modify, and visualize large datasets.</li>
-<li class="fragment">Data scientists also build, test, and interpret models that describe real-life situations, then use models to make predictions for new data.</li>
+<li>Data science relies on statistics to make data driven decisions</li>
+<li>Sampling methods are used to efeciently collect data and reduce bias</li>
 </ul>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-<section id="ds-early-history" class="slide level2">
-<h2>DS early history</h2>
-
-<img data-src="./lec2_images/ds_early_timeline.jpg" class="r-stretch quarto-figure-center"></section>
-<section id="ds-20th-century" class="slide level2">
-<h2>DS 20th Century</h2>
-
-<img data-src="./lec2_images/ds_late_timeline.jpg" class="r-stretch quarto-figure-center"><ul>
-<li>Peter Naur won the Turing Award</li>
-<li>Astronomer -&gt; Computer Science -&gt; Professor</li>
-<li>Inventor of Algol Programming Language (PL)<br>
-</li>
-</ul>
-</section>
-<section id="statistics-and-computer-science" class="slide level2">
-<h2>Statistics and Computer Science</h2>
-
-<img data-src="./lec2_images/cs_vs_ds.jpg" class="r-stretch quarto-figure-center"></section>
-<section id="focus-of-task" class="slide level2">
-<h2>Focus of Task</h2>
-
-<img data-src="./lec2_images/exploratory_prediction_confirmation.png" class="r-stretch quarto-figure-center"></section>
-<section id="statistics-and-machine-learning" class="slide level2">
-<h2>Statistics and Machine Learning</h2>
-
-<img data-src="./lec2_images/statistics_machine_learning.png" class="r-stretch quarto-figure-center"></section>
-<section id="where-are-we" class="slide level2">
-<h2>Where are we?</h2>
-
-<img data-src="./lec2_images/statistics_machine_learning_us.png" class="r-stretch quarto-figure-center"><ul>
-<li>Equal Exploratory and Predictive</li>
-<li>Little bit of statistics</li>
-</ul>
-</section></section>
-<section>
-<section id="foundations-of-data-science" class="title-slide slide level1 center">
-<h1>Foundations of Data Science</h1>
-
-</section>
-<section id="learning-goals" class="slide level2">
-<h2>Learning Goals</h2>
-<ul>
-<li>Identify <strong>features</strong> and <strong>instances</strong> in a dataset</li>
-<li>Three V’s- <strong>volume</strong>, <strong>velocity</strong>, and <strong>variety</strong></li>
-</ul>
-</section>
-<section id="data-sets" class="slide level2">
-<h2>Data sets</h2>
-<ul>
-<li>A dataset is a collection of information. Consists of features and instances</li>
-<li>A <strong>feature</strong>, or <strong>variable</strong>, is a characteristic that can be <em>measured</em> or <em>observed</em> on an observational unit.</li>
-<li>An <strong>instance</strong>, or observational units, is a tuple of features. Often called data points or observations.</li>
-</ul>
-</section>
-<section id="example-data-set" class="slide level2">
-<h2>Example Data Set</h2>
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="2">
-
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>species</th>
-      <th>island</th>
-      <th>bill_length_mm</th>
-      <th>bill_depth_mm</th>
-      <th>flipper_length_mm</th>
-      <th>body_mass_g</th>
-      <th>sex</th>
-      <th>year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.1</td>
-      <td>18.7</td>
-      <td>181.0</td>
-      <td>3750.0</td>
-      <td>male</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.5</td>
-      <td>17.4</td>
-      <td>186.0</td>
-      <td>3800.0</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>40.3</td>
-      <td>18.0</td>
-      <td>195.0</td>
-      <td>3250.0</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>36.7</td>
-      <td>19.3</td>
-      <td>193.0</td>
-      <td>3450.0</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-  </tbody>
-</table>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Bias</strong> - anything that leads to a systematic difference between the true parameters of a population and the statistics used to estimate those parameters. E.g., sampling only men.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="stats-for-data-science-1" class="slide level2">
+<h2>Stats for data science</h2>
+<div class="columns">
+<div class="smaller column" style="width:40%;">
 <ul>
-<li><strong>ROW</strong> is an instance.</li>
-<li><strong>COLUMN</strong> represents a different feature.</li>
+<li>Descriptive statistics -&gt; explore visualizations</li>
+<li>Inferential statistics -&gt; modeling and estimation</li>
+<li>Statisitcs is foundational to ensure results are interpreted correctly</li>
 </ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="./lec3_images/stats_intro.png"></p>
+</div>
+</div>
 <aside class="notes">
-<ul>
-<li>Researchers at the Palmer Archipelago in the Antarctic collected data on three local penguin species: Adelie, Chinstrap, and Gentoo.</li>
-</ul>
+<p>Speaker notes go here.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -530,492 +393,28 @@ Dr.&nbsp;Jeremy Castagno
           display:block!important;
       }</style></aside>
 </section>
-<section id="volume-variety-velocity" class="slide level2">
-<h2><strong>Volume</strong>, Variety, Velocity</h2>
+<section id="sampling" class="slide level2">
+<h2>Sampling</h2>
 <ul>
-<li><strong>Volume</strong> - The amount of data being collected digitally is exponentially increasing.</li>
-<li>Billions of people are being digitally indexed and catalogued</li>
-<li>Estimate that 2.5 quintillion bytes of data is created each day</li>
-<li>We now have the processing power where large data sets can now be processed</li>
+<li><strong>Population</strong> - Entire set of individuals, items, or events of interest</li>
+<li><strong>Observational Unit</strong> - individual item or event</li>
+<li><strong>Sample</strong> - <em>subset</em> of observational units from the population</li>
 </ul>
-<aside class="notes">
-<ul>
-<li>Big data is really, really big. In 1986, the total estimated data in the world was 2.6 exabytes (EB).</li>
-<li>One exabyte (EB) equals bytes, or 1 million TB. Most laptops come with 1 TB storage at most.</li>
-<li>By 1993, the total estimated data in the world had grown to 15.8 EB.</li>
-<li>In 2000, the total estimated data in the world had reached 54.5 EB.</li>
-<li>In 2007, the total estimated data in the world was 295 EB.</li>
-<li>By 2020, the total estimated data had increased to 6800 EB, or 6.8 PB - the equivalent of over 7 trillion laptop computers.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="volume-variety-velocity-1" class="slide level2">
-<h2>Volume, <strong>Variety</strong>, Velocity</h2>
+<section id="types-of-sampling" class="slide level2">
+<h2>Types of Sampling</h2>
+<div>
 <ul>
-<li><strong>Variety</strong> - Data from a variety of difference sources are being collected and combined</li>
-<li>Its not just your name and your playlist.
+<li class="fragment">Random Sampling
 <ul>
-<li>Its how long you listened</li>
-<li>How long it took you swipe next</li>
-<li>Your search history on the subject</li>
-<li>Your bloody e-mails</li>
-<li>Your phones resolution, battery information, browser, time zone</li>
+<li class="fragment">OU are selected at random</li>
 </ul></li>
-</ul>
-</section>
-<section id="volume-variety-velocity-2" class="slide level2">
-<h2>Volume, Variety, <strong>Velocity</strong></h2>
-<ul>
-<li><strong>Velocity</strong> - Data is being created and ingested at a faster time</li>
-<li>The search you just made was fed into an algorithm to give you an add within 10 seconds</li>
-<li>Sensor Data - Your recorded heart rate was just noted and used to indicate the statistical likelihood of sending you an add now or later</li>
-<li>With more up to date information, data scientist can make better predictions</li>
-</ul>
-</section>
-<section id="reproducibility" class="slide level2">
-<h2>Reproducibility</h2>
-<div>
-<ul>
-<li class="fragment">Two data scientists are building models to classify brain tumors as benign or malignant.</li>
-<li class="fragment">One data scientist uses a programming language, such as Python, to write code to fit the model.</li>
-<li class="fragment">Another data scientist uses software instead of coding to fit the model.</li>
-<li class="fragment">New brain scans arrive. The data scientist who used coding re-runs the analysis -&gt; a few minutes.</li>
-<li class="fragment">Since the software uses a point and click interface, re-analyzing could take several hours.</li>
+<li class="fragment"><h2 id="stratified-sampling">Stratified Sampling</h2></li>
+<li class="fragment">Cluster Sampling</li>
+<li class="fragment">Systematic Sampling</li>
+<li class="fragment">Convenience Sampling</li>
 </ul>
 </div>
-</section></section>
-<section>
-<section id="data-science-as-career" class="title-slide slide level1 center">
-<h1>Data Science as Career</h1>
-
-</section>
-<section id="job-titles" class="slide level2">
-<h2>Job Titles</h2>
-<div style="margin-top: 0px; font-size: 0.60em;">
-<table>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Title</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Data engineers</td>
-<td>Data engineers specialize in data gathering and storage. Data engineers extract, transform, and load datasets for later analysis.</td>
-</tr>
-<tr class="even">
-<td>Data scientists</td>
-<td>Data scientists gather data, transform data, and use models and algorithms to extract meaningful insights from datasets.</td>
-</tr>
-<tr class="odd">
-<td>Data analysts</td>
-<td>Data analysts work with industry experts to analyze datasets and create visualizations. Data analysts use some data science models, but tend to use data visualization and summary more than modeling.</td>
-</tr>
-<tr class="even">
-<td>Business intelligence analysts</td>
-<td>Business intelligence analysts specialize in data related to financial and market transactions. Data analysts and business intelligence analysts are similar roles, but the term business intelligence is more common in business and finance.</td>
-</tr>
-<tr class="odd">
-<td>Machine learning engineers</td>
-<td>Machine learning engineers specialize in machine learning models instead of statistical models. Machine learning engineers often focus on the implementation and development of a model rather than selection and interpretation.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section></section>
-<section>
-<section id="steps-of-data-science" class="title-slide slide level1 center">
-<h1>5 Steps of Data Science</h1>
-
-</section>
-<section id="your-new-life" class="slide level2">
-<h2>Your new life</h2>
-<div style="margin-top: 0px; font-size: 0.60em;">
-<table>
-<colgroup>
-<col style="width: 19%">
-<col style="width: 80%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Step</th>
-<th style="text-align: center;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Step 1: Gathering data</td>
-<td style="text-align: center;">Identify available and relevant data; gather new data if needed.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Step 2: Cleaning data</td>
-<td style="text-align: center;">Reformat datasets, create new features, and address missing values.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Step 3: Exploring data</td>
-<td style="text-align: center;">Create data visualizations and calculate summary statistics to explore potential relationships in the dataset.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Step 4: Modeling data</td>
-<td style="text-align: center;">Use modeling skills and content knowledge to fit and evaluate models, measure relationships, and make predictions.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Step 5: Interpreting data</td>
-<td style="text-align: center;">Describe and interpret conclusions from data through written reports and presentations.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="visualizing-the-5-steps" class="slide level2">
-<h2>Visualizing the 5 Steps</h2>
-
-<img data-src="./lec2_images/five_steps.png" class="r-stretch quarto-figure-center"></section>
-<section id="gathering-data" class="slide level2 scrollable">
-<h2>Gathering Data</h2>
-<p>Getting a dataset is easier then ever</p>
-<ul>
-<li><a href="https://www.kaggle.com/datasets">Kaggle Datasets</a></li>
-<li><a href="https://www.who.int/gho/database/en/">World Health Organization</a></li>
-<li><a href="https://data.nber.org/data/">The National Bureau of Economic Research</a></li>
-<li><a href="https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&amp;sId=1479329328660">International Monetary Fund</a></li>
-<li><a href="http://gss.norc.org/">General Social Survey</a></li>
-<li><a href="http://data.un.org/">United Nations Data</a></li>
-<li><a href="https://unstats.un.org/home/">United Nations Statistics Division</a></li>
-<li><a href="https://data.gov.uk/">U.K. Data</a></li>
-<li><a href="https://www.data.gov/">U.S. Data</a></li>
-<li><a href="https://www.census.gov/data.html">U.S. Census Data</a></li>
-<li><a href="https://ec.europa.eu/eurostat/">European Statistics</a></li>
-<li><a href="https://www.statcan.gc.ca/eng/start">Statistics Canada</a></li>
-<li><a href="https://www.pewresearch.org/download-datasets/">Pew Research</a></li>
-<li><a href="https://data.unicef.org/">UNICEF</a></li>
-<li><a href="https://www.cdc.gov/datastatistics/index.html">CDC</a></li>
-<li><a href="https://datacatalog.worldbank.org/">World Bank</a></li>
-<li><a href="https://electionstudies.org//">Election Studies</a></li>
-</ul>
-</section>
-<section id="example-dataset---palmer-penguins" class="slide level2">
-<h2>Example Dataset - Palmer Penguins</h2>
-<ul>
-<li>The Palmer penguins dataset by Allison Horst, Alison Hill, and Kristen Gorman</li>
-</ul>
-
-<img data-src="./lec2_images/penguin_pictures.png" class="r-stretch"></section>
-<section id="cleaning-data---before" class="slide level2 scrollable smaller">
-<h2>Cleaning Data - Before</h2>
-<div class="smaller">
-<div data-prevent-swipe="">
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
-
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>studyName</th>
-      <th>Sample Number</th>
-      <th>Species</th>
-      <th>Region</th>
-      <th>Island</th>
-      <th>Stage</th>
-      <th>Individual ID</th>
-      <th>Clutch Completion</th>
-      <th>Date Egg</th>
-      <th>Culmen Length (mm)</th>
-      <th>Culmen Depth (mm)</th>
-      <th>Flipper Length (mm)</th>
-      <th>Body Mass (g)</th>
-      <th>Sex</th>
-      <th>Delta 15 N (o/oo)</th>
-      <th>Delta 13 C (o/oo)</th>
-      <th>Comments</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>PAL0708</td>
-      <td>1</td>
-      <td>Adelie Penguin (Pygoscelis adeliae)</td>
-      <td>Anvers</td>
-      <td>Torgersen</td>
-      <td>Adult, 1 Egg Stage</td>
-      <td>N1A1</td>
-      <td>Yes</td>
-      <td>2007-11-11</td>
-      <td>39.1</td>
-      <td>18.7</td>
-      <td>181.0</td>
-      <td>3750.0</td>
-      <td>MALE</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Not enough blood for isotopes.</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>PAL0708</td>
-      <td>2</td>
-      <td>Adelie Penguin (Pygoscelis adeliae)</td>
-      <td>Anvers</td>
-      <td>Torgersen</td>
-      <td>Adult, 1 Egg Stage</td>
-      <td>N1A2</td>
-      <td>Yes</td>
-      <td>2007-11-11</td>
-      <td>39.5</td>
-      <td>17.4</td>
-      <td>186.0</td>
-      <td>3800.0</td>
-      <td>FEMALE</td>
-      <td>8.94956</td>
-      <td>-24.69454</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>PAL0708</td>
-      <td>3</td>
-      <td>Adelie Penguin (Pygoscelis adeliae)</td>
-      <td>Anvers</td>
-      <td>Torgersen</td>
-      <td>Adult, 1 Egg Stage</td>
-      <td>N2A1</td>
-      <td>Yes</td>
-      <td>2007-11-16</td>
-      <td>40.3</td>
-      <td>18.0</td>
-      <td>195.0</td>
-      <td>3250.0</td>
-      <td>FEMALE</td>
-      <td>8.36821</td>
-      <td>-25.33302</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>PAL0708</td>
-      <td>4</td>
-      <td>Adelie Penguin (Pygoscelis adeliae)</td>
-      <td>Anvers</td>
-      <td>Torgersen</td>
-      <td>Adult, 1 Egg Stage</td>
-      <td>N2A2</td>
-      <td>Yes</td>
-      <td>2007-11-16</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Adult not sampled.</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>PAL0708</td>
-      <td>5</td>
-      <td>Adelie Penguin (Pygoscelis adeliae)</td>
-      <td>Anvers</td>
-      <td>Torgersen</td>
-      <td>Adult, 1 Egg Stage</td>
-      <td>N3A1</td>
-      <td>Yes</td>
-      <td>2007-11-16</td>
-      <td>36.7</td>
-      <td>19.3</td>
-      <td>193.0</td>
-      <td>3450.0</td>
-      <td>FEMALE</td>
-      <td>8.76651</td>
-      <td>-25.32426</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="cleaning-data---after" class="slide level2 scrollable">
-<h2>Cleaning Data - After</h2>
-<div data-prevent-swipe="">
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
-
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>species</th>
-      <th>island</th>
-      <th>bill_length_mm</th>
-      <th>bill_depth_mm</th>
-      <th>flipper_length_mm</th>
-      <th>body_mass_g</th>
-      <th>sex</th>
-      <th>year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.1</td>
-      <td>18.7</td>
-      <td>181.0</td>
-      <td>3750.0</td>
-      <td>male</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.5</td>
-      <td>17.4</td>
-      <td>186.0</td>
-      <td>3800.0</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>40.3</td>
-      <td>18.0</td>
-      <td>195.0</td>
-      <td>3250.0</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>36.7</td>
-      <td>19.3</td>
-      <td>193.0</td>
-      <td>3450.0</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="exploring-data" class="slide level2">
-<h2>Exploring Data</h2>
-<div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-02_files/figure-revealjs/cell-6-output-1.png" width="825" height="429"></p>
-</div>
-</div>
-</section>
-<section id="modelling-data" class="slide level2">
-<h2>Modelling Data</h2>
-<div data-prevent-swipe="">
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-02_files/figure-revealjs/cell-7-output-1.png" width="819" height="470"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="interpreting-data" class="slide level2">
-<h2>Interpreting Data</h2>
-<ul>
-<li>There is a linear relationship between flipper length and body length</li>
-<li>Gentoo penguins have significantly higher body length and body mass then Adelie or Chinstrap.</li>
-<li>etc.</li>
-</ul>
-</section></section>
-<section>
-<section id="conclusion" class="title-slide slide level1 center">
-<h1>Conclusion</h1>
-
-</section>
-<section id="big-takeaways" class="slide level2">
-<h2>Big Takeaways</h2>
-<ul>
-<li>What is data science relationship with Statistics? Computer Science?</li>
-<li>Three V’s</li>
-<li>Five steps of data science</li>
-</ul>
-</section>
-<section id="this-weeks-tasks" class="slide level2">
-<h2>This week’s tasks</h2>
-<ul>
-<li>Sign up for the Zybook</li>
-<li>Read the syllabus</li>
-<li>HW1 - Markdown</li>
-</ul>
-</section>
-<section id="hw1" class="slide level2">
-<h2>HW1</h2>
-<p><a href="https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=share_link">HW Link</a></p>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -1058,7 +457,7 @@ Dr.&nbsp;Jeremy Castagno
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"ba32489fb78db77a","url":"https://reveal-multiplex.glitch.me/"},
+'multiplex': {"secret":null,"id":"4b07eda32cb6fc65","url":"https://reveal-multiplex.glitch.me/"},
 'smaller': false,
  
         // Display controls in the bottom right corner

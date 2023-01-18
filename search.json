@@ -196,6 +196,34 @@
     "text": "Click here to download a PDF copy of the syllabus."
   },
   {
+    "objectID": "slides/lec-03.html#stats-for-data-science",
+    "href": "slides/lec-03.html#stats-for-data-science",
+    "title": "CISC482 - Lecture03",
+    "section": "Stats for data science",
+    "text": "Stats for data science\n\nData science relies on statistics to make data driven decisions\nSampling methods are used to efeciently collect data and reduce bias\n\n\n\n\n\n\n\nNote\n\n\nBias - anything that leads to a systematic difference between the true parameters of a population and the statistics used to estimate those parameters. E.g., sampling only men."
+  },
+  {
+    "objectID": "slides/lec-03.html#stats-for-data-science-1",
+    "href": "slides/lec-03.html#stats-for-data-science-1",
+    "title": "CISC482 - Lecture03",
+    "section": "Stats for data science",
+    "text": "Stats for data science\n\n\n\nDescriptive statistics -> explore visualizations\nInferential statistics -> modeling and estimation\nStatisitcs is foundational to ensure results are interpreted correctly\n\n\n\n\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "slides/lec-03.html#sampling",
+    "href": "slides/lec-03.html#sampling",
+    "title": "CISC482 - Lecture03",
+    "section": "Sampling",
+    "text": "Sampling\n\nPopulation - Entire set of individuals, items, or events of interest\nObservational Unit - individual item or event\nSample - subset of observational units from the population"
+  },
+  {
+    "objectID": "slides/lec-03.html#types-of-sampling",
+    "href": "slides/lec-03.html#types-of-sampling",
+    "title": "CISC482 - Lecture03",
+    "section": "Types of Sampling",
+    "text": "Types of Sampling\n\n\nRandom Sampling\n\nOU are selected at random\n\nStratified Sampling\nCluster Sampling\nSystematic Sampling\nConvenience Sampling\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
     "objectID": "slides/lec-02.html#data-science",
     "href": "slides/lec-02.html#data-science",
     "title": "CISC482 - Lecture02",
