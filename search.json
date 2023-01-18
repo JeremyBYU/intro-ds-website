@@ -109,7 +109,7 @@
     "href": "weeks/week-2.html",
     "title": "Week 1",
     "section": "",
-    "text": "📖 Read the 2-1 and 2-2 in Zybooks."
+    "text": "📖 Read Assignments 2-1 and 2-2 in Zybooks."
   },
   {
     "objectID": "weeks/week-2.html#participate",
@@ -123,21 +123,21 @@
     "href": "weeks/week-2.html#practice",
     "title": "Week 1",
     "section": "Practice",
-    "text": "Practice"
+    "text": "Practice\n📋 Class Activity 02 - Practice Numpy"
   },
   {
     "objectID": "weeks/week-2.html#perform",
     "href": "weeks/week-2.html#perform",
     "title": "Week 1",
     "section": "Perform",
-    "text": "Perform\n⌨️ HW 1- Practice Markdown"
+    "text": "Perform\n⌨️ HW 2 - Analyize Data"
   },
   {
     "objectID": "weeks/week-1.html",
     "href": "weeks/week-1.html",
     "title": "Week 1",
     "section": "",
-    "text": "📖 Read the syllabus"
+    "text": "📖 Read the syllabus 📖 Read the project description 📖 Read Chapter 1 in Zybook"
   },
   {
     "objectID": "weeks/week-1.html#participate",
@@ -151,7 +151,7 @@
     "href": "weeks/week-1.html#practice",
     "title": "Week 1",
     "section": "Practice",
-    "text": "Practice"
+    "text": "Practice\n📋 Class Activity 01 - Practice Mardown"
   },
   {
     "objectID": "weeks/week-1.html#perform",
@@ -404,6 +404,13 @@
     "title": "CISC482 - Lecture02",
     "section": "This week’s tasks",
     "text": "This week’s tasks\n\nSign up for the Zybook\nRead the syllabus\nHW1 - Markdown"
+  },
+  {
+    "objectID": "slides/lec-02.html#practice",
+    "href": "slides/lec-02.html#practice",
+    "title": "CISC482 - Lecture02",
+    "section": "Practice",
+    "text": "Practice\n📋 Class Activity 01 - Practice Mardown"
   },
   {
     "objectID": "slides/lec-02.html#hw1",
