@@ -12,6 +12,7 @@ format:
     slide-number: true
     show-slide-number: all 
     chalkboard: true
+    code-copy: false
 editor: visual
 execute:
   freeze: auto
@@ -27,6 +28,7 @@ import seaborn as sns
 import numpy as np
 from palmerpenguins import load_penguins, load_penguins_raw
 sns.set_style('whitegrid')
+sns.set_context("poster", font_scale=1.25)
 ```
 
 # Data Collection
@@ -72,11 +74,133 @@ Speaker notes go here.
 - Random Sampling
   - OU are selected at random
 - Stratified Sampling
-  - 
+  - Population is divided into groups (primary feature). Each group is sampled.
 - Cluster Sampling
+  - Population divided into groups (not a primary feature, geography)
 - Systematic Sampling
+  - Every k'th observational unit is sampled
 - Convenience Sampling
+  - OU are selected that are easier   
 :::
+
+## Observational vs Experiement
+
+- Observational
+  - Observing or collecting data
+  - Not trying to control or influence an outcome
+- Experimental
+  - You are controlling a varaible
+  - You manipulate that variable to get a different response
+
+
+## Descriptive Statistics
+
+## Oveview
+
+- Terminology
+- Measure of center
+- Measure of spread
+- Measure of position
+- Measure of shape
+
+## Terminology
+
+- **Descriptive Statistics** - summarize and describe a features important characteristics
+- **distribution** - the possible values the feature can take
+- **cluster** - a distinct group of neighboring values in a distribution
+- **tails** - the end values of a distributution
+
+## Terminology - Visualized
+
+![](./lec3_images/descriptive_stats.png){fig-align="center"}
+
+## Measure of Center
+
+- **Mean** - average, sum of all values divided by the total number of values, *n*
+$$
+\frac{1}{n} \sum_{i=i}^{n} x_{i} 
+$$
+- **Median** - the middle value of the ordered data
+
+![](./lec3_images/median_mean.png){fig-align="center"}
+
+## Code Example!
+
+```{python}
+#| echo: true
+#| code-line-numbers: 1|2|3
+heights = [5.5, 5.7, 5.8, 5.9]
+avg_height = sum(heights) / len(heights)
+print(f"Average Height: {avg_height:.2f}")
+```
+
+<br>
+
+::: fragment
+**Using Numpy** 
+```{python}
+#| echo: true
+#| code-line-numbers: 1|2|3|4
+import numpy as np
+heights = np.array([5.5, 5.7, 5.8, 5.9, 6.2])
+avg_height = np.average(heights)
+print(f"Average Height: {avg_height:.2f}")
+```
+:::
+
+## What is NumPy
+
+- NumPy is **the fundamental package** for scientific computing in Python. 
+- Python library that provides a multidimensional array object. 
+- Stores data *very* effeciently \rightarrow very fast
+
+::: fragment
+```python
+a = np.array([1, 2])
+```
+:::
+  
+::: fragment
+2D array - rows and columns
+```python
+b = np.array([
+  [1, 2], # first row
+  [3, 4]  # second row
+])
+```
+:::
+
+## Question
+
+`np.average(...)` - finds the average
+
+::: callout-tip
+What function to get the median?
+:::
+
+:::fragment
+```{python}
+#| echo: true
+heights = np.array([5.5, 5.7, 5.8, 5.9, 6.2])
+median_height = np.median(heights)
+print(f"Median Height: {median_height:.2f}")
+```
+:::
+
+## Spread
+
+```{python}
+from sklearn.datasets import make_blobs
+X, y = make_blobs(n_samples=200, centers=2, n_features=1,cluster_std=[0.5, 2], random_state=0)
+g = sns.displot(x=X.flatten(), col=y, binwidth=0.25)
+g.set_titles("Dataset {col_name} ");
+```
+
+
+## Spread Terminology
+
+- **range** - distance b
+
 
 
 
