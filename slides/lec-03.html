@@ -384,7 +384,7 @@
     }
   </style>
 <meta property="og:title" content="Intro to Data Science - CISC482 - Lecture03">
-<meta property="og:description" content="Probability and Statistics">
+<meta property="og:description" content="Statistics">
 <meta property="og:site-name" content="Intro to Data Science">
 </head>
 <body class="quarto-light">
@@ -393,7 +393,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">CISC482 - Lecture03</h1>
-  <p class="subtitle">Probability and Statistics</p>
+  <p class="subtitle">Statistics</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -404,6 +404,19 @@ Dr.&nbsp;Jeremy Castagno
 </div>
 
 </section>
+<section>
+<section id="class-business" class="title-slide slide level1 center">
+<h1>Class Business</h1>
+
+</section>
+<section id="schedule" class="slide level2">
+<h2>Schedule</h2>
+<ul>
+<li>Reading 2-2: Jan 27 @ 12PM, Friday</li>
+<li>Reading 2-3:</li>
+<li>HW2: Feb 1 @ Midnight, Wed</li>
+</ul>
+</section></section>
 <section>
 <section id="data-collection" class="title-slide slide level1 center">
 <h1>Data Collection</h1>
@@ -621,7 +634,7 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Spread</h2>
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-03_files/figure-revealjs/cell-6-output-1.png" width="892" height="411"></p>
+<p><img data-src="lec-03_files/figure-revealjs/cell-6-output-1.png" width="892" height="410"></p>
 </div>
 </div>
 </section>
@@ -647,12 +660,179 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Example</h2>
 <div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-03_files/figure-revealjs/cell-7-output-1.png" width="763" height="445"></p>
+<p><img data-src="lec-03_files/figure-revealjs/cell-7-output-1.png" width="1084" height="506"></p>
+</div>
+</div>
+</section>
+<section id="measures-of-shape" class="slide level2">
+<h2>Measures of Shape</h2>
+
+<img data-src="./lec3_images/shape_measure.png" class="r-stretch quarto-figure-center"><ul>
+<li><strong>Skewness</strong> - measure of the amount and direction of skew</li>
+<li><strong>Kurtosis</strong> - measure of tail heaviness</li>
+</ul>
+</section></section>
+<section>
+<section id="code" class="title-slide slide level1 center">
+<h1>Code</h1>
+
+</section>
+<section id="mean" class="slide level2">
+<h2>Mean</h2>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>                            <span class="co"># mean,  std,    n</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>samples <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="fl">5.0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>samples</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>array([6.624, 4.388, 4.472, 3.927, 5.865, 2.698, 6.745, 4.239, 5.319,
+       4.751, 6.462])</code></pre>
+</div>
+</div>
+<p>How would I get the mean?</p>
+<div class="fragment">
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">print</span>(np.mean(samples))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.044609002634907</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="standard-deviation" class="slide level2">
+<h2>Standard Deviation</h2>
+<div class="fragment">
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>std <span class="op">=</span> np.std(samples)</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="bu">print</span>(<span class="ss">f"The standard deviation is: </span><span class="sc">{</span>std<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The standard deviation is: 1.22</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>The variance?</p>
+</div>
+<div class="fragment">
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>var <span class="op">=</span> std <span class="op">*</span> std</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">print</span>(<span class="ss">f"The variance is: </span><span class="sc">{</span>var<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The variance is: 1.49</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="quantiles" class="slide level2">
+<h2>Quantiles</h2>
+<div class="fragment">
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>samples_sorted <span class="op">=</span> np.sort(samples)</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="bu">print</span>(samples_sorted)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2.698 3.927 4.239 4.388 4.472 4.751 5.319 5.865 6.462 6.624 6.745]</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Getting the quantile</p>
+</div>
+<div class="fragment">
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>fifty_percent_quantile <span class="op">=</span> np.quantile(samples, <span class="fl">0.50</span>)</span>
+<span id="cb19-2"><a href="#cb19-2"></a>median <span class="op">=</span> np.median(samples)</span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>fifty_percent_quantile<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>median<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4.751
+4.751</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>quantiles <span class="op">=</span> np.quantile(samples, [<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>])</span>
+<span id="cb21-2"><a href="#cb21-2"></a></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="bu">print</span>(quantiles)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[4.314 4.751 6.164]</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="shape" class="slide level2">
+<h2>Shape</h2>
+<p>Advanced statistics -&gt; I recommend using the library <code>scipy</code>. This library is built on top of <code>numpy</code> but has more functionality.</p>
+<div class="fragment">
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> skewnorm</span>
+<span id="cb23-2"><a href="#cb23-2"></a>samples_skewed <span class="op">=</span> skewnorm.rvs(<span class="dv">3</span>, loc<span class="op">=</span><span class="dv">15</span>, scale<span class="op">=</span><span class="dv">2</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb23-3"><a href="#cb23-3"></a>samples <span class="op">=</span> skewnorm.rvs(<span class="dv">0</span>, loc<span class="op">=</span><span class="dv">5</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">1000</span>)</span></code></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f2eacf44430&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-03_files/figure-revealjs/cell-16-output-2.png" width="1333" height="315"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="skewness-and-kurtosis" class="slide level2">
+<h2>Skewness and Kurtosis</h2>
+<p>Calculate the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skew.html">skewness</a></p>
+<div class="fragment">
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="bu">print</span>(<span class="ss">f"Skewed sample data set, skewnewss is: </span><span class="sc">{</span>stats<span class="sc">.</span>skew(samples_skewed)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="bu">print</span>(<span class="ss">f"Normal sample data set, skewnewss is: </span><span class="sc">{</span>stats<span class="sc">.</span>skew(samples)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Skewed sample data set, skewnewss is: 0.790
+Normal sample data set, skewnewss is: -0.003</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Calculate the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kurtosis.html#scipy.stats.kurtosis">kurtosis</a></p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="bu">print</span>(<span class="ss">f"Skewed sample data set, kurtosis is: </span><span class="sc">{</span>stats<span class="sc">.</span>kurtosis(samples_skewed)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="bu">print</span>(<span class="ss">f"Normal sample data set, kurtosis is: </span><span class="sc">{</span>stats<span class="sc">.</span>kurtosis(samples)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Skewed sample data set, kurtosis is: 0.938
+Normal sample data set, kurtosis is: -0.067</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>This skewed distribution is not very good at demonstrating kurtosis.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="all" class="slide level2">
+<h2>All</h2>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
+<span id="cb29-2"><a href="#cb29-2"></a>stats.describe(samples)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>DescribeResult(nobs=1000, minmax=(1.7616568032476234, 7.787361447950662), mean=5.053665979218166, variance=1.0126662448100565, skewness=-0.0026145821525120016, kurtosis=-0.06654059199852824)</code></pre>
 </div>
 </div>
 
-<p><img src="../images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+
+<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>
@@ -692,7 +872,7 @@ Dr.&nbsp;Jeremy Castagno
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"e19727dbc37d9877","url":"https://reveal-multiplex.glitch.me/"},
+'multiplex': {"secret":null,"id":"6c41ed49646940b8","url":"https://reveal-multiplex.glitch.me/"},
 'smaller': false,
  
         // Display controls in the bottom right corner
