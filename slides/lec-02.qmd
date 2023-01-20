@@ -46,13 +46,16 @@ sns.set_style('whitegrid')
 
 ![](./lec2_images/ds_early_timeline.jpg){fig-align="center"}
 
+
+- Peter Naur won the Turing Award
+- Astronomer -> Computer Science -> Professor 
+- Inventor of Algol Programming Language (PL)
+
 ## DS 20th Century
 
 ![](./lec2_images/ds_late_timeline.jpg){fig-align="center"}
 
-- Peter Naur won the Turing Award
-- Astronomer -> Computer Science -> Professor 
-- Inventor of Algol Programming Language (PL)\
+
 
 ## Statistics and Computer Science
 
@@ -159,11 +162,11 @@ bytes, or 1 million TB. Most laptops come with 1 TB storage at most.
 :::{style="margin-top: 0px; font-size: 0.60em;"}
 | Title                          | Description                                                                                                                                                                                                                                       |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Data engineers                 | Data engineers specialize in data gathering and storage. Data  engineers extract, transform, and load datasets for later analysis.                                                                                                                |
-| Data scientists                | Data scientists gather data, transform data, and use models and algorithms to extract meaningful insights from datasets.                                                                                                                          |
-| Data analysts                  | Data analysts work with industry experts to analyze datasets and  create visualizations. Data analysts use some data science models, but  tend to use data visualization and summary more than modeling.                                          |
+| Data engineers                 | Data engineers specialize in data gathering and storage for **production**. Data  engineers extract, transform, and load datasets for later analysis.                                                                                                                |
+| Data scientists                | Data scientists gather data, transform data, and use models and algorithms to extract meaningful insights from datasets. **Development**                                                                                                                         |
+| Data analysts                  | Data analysts work with industry experts to analyze datasets and  create visualizations. Data analysts use some data science models, but tend to use data visualization and summary more than modeling.                                          |
 | Business intelligence analysts | Business intelligence analysts specialize in data related to  financial and market transactions. Data analysts and business  intelligence analysts are similar roles, but the term business  intelligence is more common in business and finance. |
-| Machine learning engineers     | Machine learning engineers specialize in machine learning models  instead of statistical models. Machine learning engineers often focus  on the implementation and development of a model rather than selection  and interpretation.              |
+| Machine learning engineers     | Machine learning engineers specialize in machine learning models  instead of statistical models. Machine learning engineers often focus  on the implementation and development of a model rather than selection  and interpretation. **Production**             |
 :::
 
 # 5 Steps of Data Science
@@ -214,6 +217,12 @@ Getting a dataset is easier then ever
 
 ![](./lec2_images/penguin_pictures.png)
 
+## The Researchers
+
+```{=html}
+<iframe width="1280" height="600" src="https://pallter.marine.rutgers.edu/" title="Palmer Stations"></iframe>
+```{fig-align="center"}
+
 
 ## Cleaning Data - Before {.scrollable .smaller}
 
@@ -224,6 +233,14 @@ df_raw = load_penguins_raw()
 df_raw.head()
 ```
 </div>
+:::
+
+## Important Features
+
+::: {.r-stack}
+![](./lec2_images/bill_length_vs_depth.png){.fragment}
+
+![](./lec2_images/palmer_penguins_beaks.png){.fragment width="800"}
 :::
 
 ## Cleaning Data - After {.scrollable}
@@ -287,7 +304,7 @@ g.set_ylabels('Body Mass');
 
 ## Practice
 
-📋 [Class Activity 01 - Practice Mardown](https://colab.research.google.com/drive/1rm5O6qu5w_475KXuXDsj4Ex7Q8eVVczw?usp=sharing)
+📋 [Class Activity 01 - Practice Markdown](https://colab.research.google.com/drive/1rm5O6qu5w_475KXuXDsj4Ex7Q8eVVczw?usp=sharing)
 
 
 ## HW1
