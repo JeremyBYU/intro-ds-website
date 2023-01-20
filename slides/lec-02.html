@@ -365,17 +365,16 @@ Dr.&nbsp;Jeremy Castagno
 <section id="ds-early-history" class="slide level2">
 <h2>DS early history</h2>
 
-<img data-src="./lec2_images/ds_early_timeline.jpg" class="r-stretch quarto-figure-center"></section>
+<img data-src="./lec2_images/ds_early_timeline.jpg" class="r-stretch quarto-figure-center"><ul>
+<li>Peter Naur won the Turing Award</li>
+<li>Astronomer -&gt; Computer Science -&gt; Professor</li>
+<li>Inventor of Algol Programming Language (PL)</li>
+</ul>
+</section>
 <section id="ds-20th-century" class="slide level2">
 <h2>DS 20th Century</h2>
 
-<img data-src="./lec2_images/ds_late_timeline.jpg" class="r-stretch quarto-figure-center"><ul>
-<li>Peter Naur won the Turing Award</li>
-<li>Astronomer -&gt; Computer Science -&gt; Professor</li>
-<li>Inventor of Algol Programming Language (PL)<br>
-</li>
-</ul>
-</section>
+<img data-src="./lec2_images/ds_late_timeline.jpg" class="r-stretch quarto-figure-center"></section>
 <section id="statistics-and-computer-science" class="slide level2">
 <h2>Statistics and Computer Science</h2>
 
@@ -616,11 +615,11 @@ Dr.&nbsp;Jeremy Castagno
 <tbody>
 <tr class="odd">
 <td>Data engineers</td>
-<td>Data engineers specialize in data gathering and storage. Data engineers extract, transform, and load datasets for later analysis.</td>
+<td>Data engineers specialize in data gathering and storage for <strong>production</strong>. Data engineers extract, transform, and load datasets for later analysis.</td>
 </tr>
 <tr class="even">
 <td>Data scientists</td>
-<td>Data scientists gather data, transform data, and use models and algorithms to extract meaningful insights from datasets.</td>
+<td>Data scientists gather data, transform data, and use models and algorithms to extract meaningful insights from datasets. <strong>Development</strong></td>
 </tr>
 <tr class="odd">
 <td>Data analysts</td>
@@ -632,7 +631,7 @@ Dr.&nbsp;Jeremy Castagno
 </tr>
 <tr class="odd">
 <td>Machine learning engineers</td>
-<td>Machine learning engineers specialize in machine learning models instead of statistical models. Machine learning engineers often focus on the implementation and development of a model rather than selection and interpretation.</td>
+<td>Machine learning engineers specialize in machine learning models instead of statistical models. Machine learning engineers often focus on the implementation and development of a model rather than selection and interpretation. <strong>Production</strong></td>
 </tr>
 </tbody>
 </table>
@@ -716,13 +715,22 @@ Dr.&nbsp;Jeremy Castagno
 </ul>
 
 <img data-src="./lec2_images/penguin_pictures.png" class="r-stretch"></section>
-<section id="cleaning-data---before" class="slide level2 scrollable smaller">
-<h2>Cleaning Data - Before</h2>
-<div class="smaller">
-<div data-prevent-swipe="">
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<section id="the-researchers" class="slide level2">
+<h2>The Researchers</h2>
 
+<iframe width="1280" height="600" src="https://pallter.marine.rutgers.edu/" title="Palmer Stations"></iframe>
+```{fig-align="center"}
+
+
+## Cleaning Data - Before {.scrollable .smaller}
+
+:::{.smaller}
+<div data-prevent-swipe="">
+
+::: {.cell execution_count=3}
+
+::: {.cell-output .cell-output-display execution_count=3}
+```{=html}
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -864,9 +872,15 @@ Dr.&nbsp;Jeremy Castagno
   </tbody>
 </table>
 </div>
+<p>::: :::</p>
 </div>
-</div>
-</div>
+<p>:::</p>
+</section>
+<section id="important-features" class="slide level2">
+<h2>Important Features</h2>
+<div class="r-stack">
+<p><img data-src="./lec2_images/bill_length_vs_depth.png" class="fragment"></p>
+<p><img data-src="./lec2_images/palmer_penguins_beaks.png" class="fragment" width="800"></p>
 </div>
 </section>
 <section id="cleaning-data---after" class="slide level2 scrollable">
@@ -1015,7 +1029,7 @@ Dr.&nbsp;Jeremy Castagno
 </section>
 <section id="practice" class="slide level2">
 <h2>Practice</h2>
-<p>📋 <a href="https://colab.research.google.com/drive/1rm5O6qu5w_475KXuXDsj4Ex7Q8eVVczw?usp=sharing">Class Activity 01 - Practice Mardown</a></p>
+<p>📋 <a href="https://colab.research.google.com/drive/1rm5O6qu5w_475KXuXDsj4Ex7Q8eVVczw?usp=sharing">Class Activity 01 - Practice Markdown</a></p>
 </section>
 <section id="hw1" class="slide level2">
 <h2>HW1</h2>
@@ -1062,7 +1076,7 @@ Dr.&nbsp;Jeremy Castagno
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"328377dd9d616bef","url":"https://reveal-multiplex.glitch.me/"},
+'multiplex': {"secret":null,"id":"1138fffa66d6f0a3","url":"https://reveal-multiplex.glitch.me/"},
 'smaller': false,
  
         // Display controls in the bottom right corner
