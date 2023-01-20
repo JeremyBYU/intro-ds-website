@@ -187,6 +187,8 @@ print(f"Median Height: {median_height:.2f}")
 ```
 :::
 
+# Descriptive Stats
+
 ## Spread
 
 ```{python}
@@ -199,8 +201,26 @@ g.set_titles("Dataset {col_name} ");
 
 ## Spread Terminology
 
-- **range** - distance b
+- **range** - distance between the min and max
+- **interquartile range (IQR)** - range of the middle 50% 
+- **variance** - the **average squared distance** between a feature and its discribution *mean*
 
+
+$$
+\sigma^2 = Var(x) = \frac{\sum_{i=1}^{n} (x_i - \bar{x} )^2}{n-1}
+$$
+
+- Standard deviation - $\sigma = sqrt(Var(X))$
+
+## Postion Terminology (Quantiles)
+
+![](./lec3_images/iqr.png)
+
+## Example
+
+```{python}
+sns.boxplot(x=X.flatten(), hue=y);
+```
 
 
 
