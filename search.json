@@ -270,7 +270,21 @@
     "href": "slides/lec-03.html#spread-terminology",
     "title": "CISC482 - Lecture03",
     "section": "Spread Terminology",
-    "text": "Spread Terminology\n\nrange - distance b\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Spread Terminology\n\nrange - distance between the min and max\ninterquartile range (IQR) - range of the middle 50%\nvariance - the average squared distance between a feature and its discribution mean\n\n\\[\n\\sigma^2 = Var(x) = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x} )^2}{n-1}\n\\]\n\nStandard deviation - \\(\\sigma = sqrt(Var(X))\\)"
+  },
+  {
+    "objectID": "slides/lec-03.html#postion-terminology-quantiles",
+    "href": "slides/lec-03.html#postion-terminology-quantiles",
+    "title": "CISC482 - Lecture03",
+    "section": "Postion Terminology (Quantiles)",
+    "text": "Postion Terminology (Quantiles)"
+  },
+  {
+    "objectID": "slides/lec-03.html#example",
+    "href": "slides/lec-03.html#example",
+    "title": "CISC482 - Lecture03",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-01.html#meet-the-professor",

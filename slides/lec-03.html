@@ -611,6 +611,11 @@ Dr.&nbsp;Jeremy Castagno
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="descriptive-stats" class="title-slide slide level1 center">
+<h1>Descriptive Stats</h1>
+
 </section>
 <section id="spread" class="slide level2">
 <h2>Spread</h2>
@@ -623,11 +628,31 @@ Dr.&nbsp;Jeremy Castagno
 <section id="spread-terminology" class="slide level2">
 <h2>Spread Terminology</h2>
 <ul>
-<li><strong>range</strong> - distance b</li>
+<li><strong>range</strong> - distance between the min and max</li>
+<li><strong>interquartile range (IQR)</strong> - range of the middle 50%</li>
+<li><strong>variance</strong> - the <strong>average squared distance</strong> between a feature and its discribution <em>mean</em></li>
 </ul>
+<p><span class="math display">\[
+\sigma^2 = Var(x) = \frac{\sum_{i=1}^{n} (x_i - \bar{x} )^2}{n-1}
+\]</span></p>
+<ul>
+<li>Standard deviation - <span class="math inline">\(\sigma = sqrt(Var(X))\)</span></li>
+</ul>
+</section>
+<section id="postion-terminology-quantiles" class="slide level2">
+<h2>Postion Terminology (Quantiles)</h2>
 
+<img data-src="./lec3_images/iqr.png" class="r-stretch"></section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-03_files/figure-revealjs/cell-7-output-1.png" width="763" height="445"></p>
+</div>
+</div>
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>
@@ -667,7 +692,7 @@ Dr.&nbsp;Jeremy Castagno
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"8998ce080cd0220b","url":"https://reveal-multiplex.glitch.me/"},
+'multiplex': {"secret":null,"id":"e19727dbc37d9877","url":"https://reveal-multiplex.glitch.me/"},
 'smaller': false,
  
         // Display controls in the bottom right corner
