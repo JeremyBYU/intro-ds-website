@@ -28,6 +28,26 @@ from palmerpenguins import load_penguins, load_penguins_raw
 sns.set_style('whitegrid')
 ```
 
+# Class Business
+
+## Subscibre to Zybook
+
+```{=html}
+<iframe width="1280" height="600" src="https://learn.zybooks.com/zybook/SPRINGFIELDCISC482CastagnoSpring2023?selectedPanel=view-activity" title="Zybooks"></iframe>
+```
+
+- Brightspace integration seems to be working now
+
+## Due Dates
+
+- Reading 1-1: Jan 22, Sunday
+- HW1: Jan 25 @ Midnight, Wed
+- Reading 2-1: Jan 25 @ 12PM, Wed
+- Reading 2-2: Jan 27 @ 12PM, Friday
+- HW2: Feb 1 @ Midnight, Wed
+
+
+
 # Historical Overview
 
 ## Data Science
@@ -221,7 +241,7 @@ Getting a dataset is easier then ever
 
 ```{=html}
 <iframe width="1280" height="600" src="https://pallter.marine.rutgers.edu/" title="Palmer Stations"></iframe>
-```{fig-align="center"}
+```
 
 
 ## Cleaning Data - Before {.scrollable .smaller}
