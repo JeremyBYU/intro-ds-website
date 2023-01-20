@@ -1,0 +1,44 @@
+---
+title: "CISC482 - Lecture03"
+subtitle: "Probability"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    multiplex: true
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from palmerpenguins import load_penguins, load_penguins_raw
+sns.set_style('whitegrid')
+sns.set_context("poster", font_scale=1.25)
+np.set_printoptions(precision=3, suppress=True, formatter={'float_kind': "{:.3f}".format})
+np.random.seed(1)
+
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 2-2: Jan 27 @ 12PM, Friday
+- Reading 2-3: 
+- HW2: Feb 1 @ Midnight, Wed

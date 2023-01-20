@@ -1,6 +1,6 @@
 ---
 title: "CISC482 - Lecture03"
-subtitle: "Probability and Statistics"
+subtitle: "Statistics"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
 logo: "../images/logo.png"
@@ -29,7 +29,18 @@ import numpy as np
 from palmerpenguins import load_penguins, load_penguins_raw
 sns.set_style('whitegrid')
 sns.set_context("poster", font_scale=1.25)
+np.set_printoptions(precision=3, suppress=True, formatter={'float_kind': "{:.3f}".format})
+np.random.seed(1)
+
 ```
+
+# Class Business
+
+## Schedule
+
+- Reading 2-2: Jan 27 @ 12PM, Friday
+- Reading 2-3: 
+- HW2: Feb 1 @ Midnight, Wed
 
 # Data Collection
 
@@ -194,8 +205,12 @@ print(f"Median Height: {median_height:.2f}")
 ```{python}
 from sklearn.datasets import make_blobs
 X, y = make_blobs(n_samples=200, centers=2, n_features=1,cluster_std=[0.5, 2], random_state=0)
-g = sns.displot(x=X.flatten(), col=y, binwidth=0.25)
-g.set_titles("Dataset {col_name} ");
+
+df = pd.DataFrame(data={"children": X.flatten(), "y": y})
+df['Graduate'] = "Yes"
+df.loc[df['y'] == 0, ["Graduate"]]= "No"
+g = sns.displot(df, x="children", col="Graduate", binwidth=0.25)
+g.set_titles("Gradaute: {col_name} ");
 ```
 
 
@@ -219,8 +234,158 @@ $$
 ## Example
 
 ```{python}
-sns.boxplot(x=X.flatten(), hue=y);
+sns.catplot(df, x="children", y="Graduate",  kind="box", height=6, aspect=2);
 ```
 
 
+## Measures of Shape
+
+
+![](./lec3_images/shape_measure.png){fig-align="center"}
+
+- **Skewness** - measure of the amount and direction of skew
+- **Kurtosis** - measure of tail heaviness
+
+# Code
+
+## Mean
+
+```{python}
+#| echo: true
+                            # mean,  std,    n
+samples = np.random.normal(loc=5.0, scale=1, size=11)
+samples
+```
+How would I get the mean?
+
+::: fragment
+```{python}
+#| echo: true
+print(np.mean(samples))
+```
+:::
+
+## Standard Deviation
+
+::: fragment
+```{python}
+#| echo: true
+std = np.std(samples)
+print(f"The standard deviation is: {std:.2f}")
+```
+:::
+
+::: fragment
+The variance?
+:::
+
+::: fragment
+```{python}
+#| echo: true
+var = std * std
+print(f"The variance is: {var:.2f}")
+```
+:::
+
+## Quantiles
+
+::: fragment
+```{python}
+#| echo: true
+samples_sorted = np.sort(samples)
+print(samples_sorted)
+```
+:::
+
+::: fragment
+Getting the quantile
+:::
+
+::: fragment
+```{python}
+#| echo: true
+fifty_percent_quantile = np.quantile(samples, 0.50)
+median = np.median(samples)
+
+print(f"{fifty_percent_quantile:.3f}")
+print(f"{median:.3f}")
+```
+:::
+
+::: fragment
+```{python}
+#| echo: true
+quantiles = np.quantile(samples, [0.25, 0.5, 0.75])
+
+print(quantiles)
+```
+:::
+
+
+## Shape
+
+Advanced statistics -> I recommend using the library `scipy`. This library is built on top of `numpy` but has more functionality.
+
+::: fragment
+```{python}
+#| echo: true
+from scipy.stats import skewnorm
+samples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)
+samples = skewnorm.rvs(0, loc=5, scale=1, size=1000)
+```
+
+```{python}
+df_samples = np.concatenate([samples_skewed, samples], axis=0)
+df = pd.DataFrame(data={"value": df_samples})
+df['Skewed?'] = True
+df.loc[1000:, ['Skewed?']] = False
+sns.displot(data=df, x="value", hue="Skewed?", multiple="stack", height=4, aspect=3, binwidth=0.25)
+```
+
+:::
+
+
+## Skewness and Kurtosis
+
+Calculate the [skewness](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skew.html)
+
+::: fragment
+```{python}
+#| echo: true
+import scipy.stats as stats
+print(f"Skewed sample data set, skewnewss is: {stats.skew(samples_skewed):.3f}")
+print(f"Normal sample data set, skewnewss is: {stats.skew(samples):.3f}")
+```
+:::
+
+
+::: fragment
+
+Calculate the [kurtosis](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kurtosis.html#scipy.stats.kurtosis)
+
+```{python}
+#| echo: true
+import scipy.stats as stats
+print(f"Skewed sample data set, kurtosis is: {stats.kurtosis(samples_skewed):.3f}")
+print(f"Normal sample data set, kurtosis is: {stats.kurtosis(samples):.3f}")
+```
+:::
+
+::: fragment
+
+::: callout-warning
+This skewed distribution is not very good at demonstrating kurtosis.
+:::
+
+::: 
+
+
+## All
+
+
+```{python}
+#| echo: true
+import scipy.stats as stats
+stats.describe(samples)
+```
 
