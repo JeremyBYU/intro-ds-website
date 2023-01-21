@@ -1,5 +1,5 @@
 ---
-title: "Week 1"
+title: "Week 2"
 subtitle: "Welcome to CISC 482"
 editor: visual
 ---
@@ -16,8 +16,8 @@ editor: visual
 
 ## Practice
 
-📋 [Class Activity 02 - Practice Numpy](https://colab.research.google.com/drive/1bB_p2iiX6_zwGW7VY0SevrH9TzZ9RMRJ?usp=sharing)
+📋 [Class Activity 02 - Practice NumPy](https://colab.research.google.com/drive/1bB_p2iiX6_zwGW7VY0SevrH9TzZ9RMRJ?usp=sharing)
 
 ## Perform
 
-⌨️ [HW 2 - Analyize Data](https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=sharing)
+⌨️ [HW 2 - Analyze Data](https://colab.research.google.com/drive/1X-0pJkS2kBKX3-yro_u-Zh-l3XEMpvYF?usp=sharing)

@@ -2,4 +2,4 @@
 title: "Computing access"
 ---
 
-TDB
+We will be using Google Collab for all Class Activities and Homework. Please just use your Springfield College e-mail for access.
