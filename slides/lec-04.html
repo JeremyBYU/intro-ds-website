@@ -349,12 +349,294 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Schedule</h2>
 <ul>
 <li>Reading 2-2: Jan 27 @ 12PM, Friday</li>
-<li>Reading 2-3:</li>
-<li>HW2: Feb 1 @ Midnight, Wed</li>
+<li>Reading 2-3: Feb 1 @ 12PM, Wednesday</li>
+<li>HW2: Feb 1 @ Midnight, Wednesday</li>
+<li>Reading 3-1: Feb 3 @ 12PM, Friday</li>
 </ul>
+</section></section>
+<section>
+<section id="probability-terms" class="title-slide slide level1 center">
+<h1>Probability Terms</h1>
 
+</section>
+<section id="terms" class="slide level2">
+<h2>Terms</h2>
+<ul>
+<li><strong>Random Process</strong> - action or process which results in an outcome determined by chance</li>
+<li><strong>Outcome</strong> - one possible result from a random process</li>
+<li><strong>Sample Space</strong> - set of all possible outcomes of a random process and denoted as <span class="math inline">\(S\)</span></li>
+<li><strong>Event</strong> - an outcome or collection of outcomes from a sample space. Typically denoted with Capital letters: <span class="math inline">\(A,B,C\)</span>, etc.</li>
+<li><strong>Probability of an event A</strong> - denoted, <span class="math inline">\(P(A)\)</span>, number of outcomes of A divided by the total number of equally likely outcomes in the sample space <span class="math inline">\(S\)</span>. How often does <span class="math inline">\(A\)</span> occur in <span class="math inline">\(S\)</span></li>
+</ul>
+</section>
+<section id="visualizing-probability" class="slide level2">
+<h2>Visualizing Probability</h2>
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img data-src="./lec04_images/probability_example.png" class="r-stretch"></section>
+<section id="operations" class="slide level2">
+<h2>Operations</h2>
+<ul>
+<li><strong>Compliment of A</strong> - denoted <em>not</em> <span class="math inline">\(A\)</span>, <span class="math inline">\(A'\)</span>, <span class="math inline">\(\bar{A}\)</span>, <span class="math inline">\(A^C\)</span>, <span class="math inline">\(\neg A\)</span>
+<ul>
+<li>We will use <span class="math inline">\(A'\)</span></li>
+</ul></li>
+<li><strong>Union</strong> of two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is denoted as <span class="math inline">\(A\)</span> <strong>or</strong> <span class="math inline">\(B\)</span>. Consists of <em>all</em> outcomes in <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span></li>
+<li><strong>Intersection</strong> of two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is denoted as <span class="math inline">\(A\)</span> <strong>and</strong> <span class="math inline">\(B\)</span>. Consists of <em>only</em> outcomes in <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span></li>
+</ul>
+</section>
+<section id="practice" class="slide level2">
+<h2>Practice</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li>Compliment</li>
+<li>Union</li>
+<li>Intersection</li>
+<li>Difference</li>
+</ul>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+</section>
+<section id="cheat-sheet" class="slide level2">
+<h2>Cheat Sheet</h2>
+
+<img data-src="./lec04_images/Set_Theory_Operations.svg.png" style="width:100.0%" class="r-stretch"></section></section>
+<section>
+<section id="probability-rules" class="title-slide slide level1 center">
+<h1>Probability Rules</h1>
+
+</section>
+<section id="three-foundational-rules" class="slide level2">
+<h2>Three Foundational Rules</h2>
+<div>
+<ul>
+<li class="fragment">The probability of any event is non-negative, <span class="math inline">\(P(A) &gt; 0\)</span></li>
+<li class="fragment">The probability of the sample space is <span class="math inline">\(P(S) = 1\)</span></li>
+<li class="fragment">If A and be are <strong>disjoint</strong> events, <span class="math inline">\(P(A \; or \; B) = P(A) + P(B)\)</span>
+<ul>
+<li class="fragment">Fresh deck of normal cards. Probability of getting a king <strong>and</strong> a queen from lifting one card is 0.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="three-derived-rules" class="slide level2">
+<h2>Three Derived Rules</h2>
+<ul>
+<li><span class="math inline">\(P(A') = 1 - P(A)\)</span></li>
+<li><span class="math inline">\(P(A \; or \; B) = P(A) + P(B) - P(A \; and \; B)\)</span></li>
+<li><em>independent</em> events: <span class="math inline">\(P(A\; and\; B) = P(A) * P(B)\)</span></li>
+</ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>You dont need to derive any of these, you just need to <em>know</em> them! Know the 6 rules</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-1" class="slide level2 scrollable">
+<h2>Practice</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+<th style="text-align: center;">6</th>
+<th style="text-align: center;">7+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Proportion</td>
+<td style="text-align: center;">0.29</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">0.02</td>
+<td style="text-align: center;">0.01</td>
+</tr>
+</tbody>
+</table>
+<div>
+<ul>
+<li class="fragment">Find the probability of randomly selecting a household with a size of more than 1
+<ul>
+<li class="fragment">0.71</li>
+</ul></li>
+<li class="fragment">Find the probability of randomly selecting a household with a size of 1 or more than 1
+<ul>
+<li class="fragment">1.0</li>
+</ul></li>
+<li class="fragment">Find the probability of randomly selecting a household with a size of 5 or more
+<ul>
+<li class="fragment">0.09</li>
+</ul></li>
+<li class="fragment">Find the probability of randomly selecting a household with size 1 or 5 or more
+<ul>
+<li class="fragment">0.38</li>
+</ul></li>
+<li class="fragment">One household will be randomly selected from all households, and then a second household will be randomly selected from all households. Find the probability that both selected households are of size 1.
+<ul>
+<li class="fragment">0.08</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="conditional-probability" class="title-slide slide level1 center">
+<h1>Conditional Probability</h1>
+
+</section>
+<section id="prepare-to-be-amazed" class="slide level2">
+<h2>Prepare to be amazed</h2>
+<ul>
+<li>The probability of an event occurring can also be determined under the condition of knowing another event has occurred.</li>
+<li>A <strong>conditioning probability</strong> is a measure of the likelihood of one event occurring, given another event occurred</li>
+</ul>
+<p>The conditional probability of event <span class="math inline">\(A\)</span> given event <span class="math inline">\(B\)</span>, denoted <span class="math inline">\(P(A|B)\)</span></p>
+<p><span class="math display">\[
+P(A|B) = \frac{P(A\; and\; B)}{P(B)} = \frac{P(A \cap B)}{P(B)}
+\]</span></p>
+<!-- If its raining you are more likely to be wearing a rain coat. The events are correlated/connected -->
+</section>
+<section id="thinking-independently" class="slide level2">
+<h2>Thinking Independently</h2>
+<div>
+<ul>
+<li class="fragment">What if we have <em>independent</em> events, <span class="math inline">\(A,B\)</span></li>
+<li class="fragment"><span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></li>
+<li class="fragment"><span class="math inline">\(P(A|B) = \frac{P(A) * P(B)}{P(B)}\)</span></li>
+<li class="fragment"><span class="math inline">\(P(A|B) = P(A)\)</span></li>
+</ul>
+</div>
+</section>
+<section id="conditional-example" class="slide level2">
+<h2>Conditional Example</h2>
+<div class="r-stack">
+<p><img data-src="./lec04_images/example_conditional_question.png" class="fragment"></p>
+<p><img data-src="./lec04_images/example_conditional.png" class="fragment"></p>
+</div>
+</section>
+<section id="bayes-rule" class="slide level2">
+<h2>Bayes Rule</h2>
+<ul>
+<li>Sometimes you don’t have nice table with all these probabilities filled out</li>
+<li>You may <strong>not</strong> know $P(A B). Is all lost?
+<ul>
+<li>No Bayes rule to the rescue!</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+P(A | B) = \frac{P(B | A) * P(A)}{P(B)}
+\]</span></p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>This rule is the foundation of data science and machine learning!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="./lec04_images/bayes_rule.png" class="r-stretch"></section></section>
+<section>
+<section id="probability-distributions" class="title-slide slide level1 center">
+<h1>Probability Distributions</h1>
+
+</section>
+<section id="random-variables" class="slide level2">
+<h2>Random Variables</h2>
+<ul>
+<li><strong>Random Variable</strong> - Defines numerical values for a random processes outcome.</li>
+<li>Typically denote them like: <span class="math inline">\(X,Y, Z\)</span></li>
+<li>Discrete vs Continuous - Flip of coin (1 or 0), GPA of students</li>
+<li><strong>Probability Distribution</strong> - gives probability of an occurrence for a a random variable
+<ul>
+<li>This distribution can be visualized! We often use histograms.</li>
+</ul></li>
+</ul>
+</section>
+<section id="normal-distribution" class="slide level2">
+<h2>Normal Distribution</h2>
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-04_files/figure-revealjs/cell-3-output-1.png" width="898" height="445"></p>
+</div>
+</div>
+</section>
+<section id="normal-details" class="slide level2">
+<h2>Normal Details</h2>
+
+<img data-src="./lec04_images/normal_details.png" class="r-stretch"></section>
+<section id="bernoulli-distribution" class="slide level2">
+<h2>Bernoulli Distribution</h2>
+<ul>
+<li>True or False, 1 or 0, Success or Failure</li>
+<li><span class="math inline">\(\pi\)</span>, determines the probaility of success</li>
+<li>What is <span class="math inline">\(\pi\)</span> for this bernoulli distribution</li>
+</ul>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-04_files/figure-revealjs/cell-4-output-1.png" width="922" height="445"></p>
+</div>
+</div>
+</section>
+<section id="binomial-distribution" class="slide level2">
+<h2>Binomial Distribution</h2>
+<ul>
+<li>A random variable describing the number of “successes” from <strong>independent</strong> observations of a random process in which the probability of a success is <span class="math inline">\(\pi\)</span> follows a <strong>binomial</strong> distribution</li>
+<li>Flip a coin 10 times (trials) count how many heads.
+<ul>
+<li>Repeat 10,000 times</li>
+</ul></li>
+<li><span class="math inline">\(n\)</span> how many trials, <span class="math inline">\(\pi\)</span> probability of one success</li>
+<li><span class="math inline">\(\mu = n * \pi\)</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="math inline">\(\sigma^2 = n * \pi * (1- \pi)\)</span></li>
+</ul>
+</section>
+<section id="flipping-a-coin-10-times" class="slide level2">
+<h2>Flipping a Coin 10 Times</h2>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-04_files/figure-revealjs/cell-5-output-1.png" width="922" height="445"></p>
+</div>
+</div>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Does this seem right?</p>
+</div>
+</div>
+</div>
+
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>
