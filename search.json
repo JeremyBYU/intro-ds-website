@@ -121,30 +121,30 @@
   {
     "objectID": "weeks/week-2.html",
     "href": "weeks/week-2.html",
-    "title": "Week 1",
+    "title": "Week 2",
     "section": "",
     "text": "📖 Read Assignments 2-1 and 2-2 in Zybooks."
   },
   {
     "objectID": "weeks/week-2.html#participate",
     "href": "weeks/week-2.html#participate",
-    "title": "Week 1",
+    "title": "Week 2",
     "section": "Participate",
     "text": "Participate\n🖥️ Lecture 3 - Probability and Stats\n🖥️ Lecture 4 - Probability and Stats"
   },
   {
     "objectID": "weeks/week-2.html#practice",
     "href": "weeks/week-2.html#practice",
-    "title": "Week 1",
+    "title": "Week 2",
     "section": "Practice",
-    "text": "Practice\n📋 Class Activity 02 - Practice Numpy"
+    "text": "Practice\n📋 Class Activity 02 - Practice NumPy"
   },
   {
     "objectID": "weeks/week-2.html#perform",
     "href": "weeks/week-2.html#perform",
-    "title": "Week 1",
+    "title": "Week 2",
     "section": "Perform",
-    "text": "Perform\n⌨️ HW 2 - Analyize Data"
+    "text": "Perform\n⌨️ HW 2 - Analyze Data"
   },
   {
     "objectID": "course-syllabus.html",
@@ -326,7 +326,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fcff92399f0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f4a4de8f190>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -875,18 +875,11 @@
     "text": "HW1\nHW Link"
   },
   {
-    "objectID": "course-faq.html",
-    "href": "course-faq.html",
-    "title": "FAQ",
-    "section": "",
-    "text": "TBD"
-  },
-  {
     "objectID": "computing-access.html",
     "href": "computing-access.html",
     "title": "Computing access",
     "section": "",
-    "text": "TDB"
+    "text": "We will be using Google Collab for all Class Activities and Homework. Please just use your Springfield College e-mail for access."
   },
   {
     "objectID": "project-tips-resources.html",
