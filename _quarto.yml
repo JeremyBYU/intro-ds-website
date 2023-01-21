@@ -60,6 +60,8 @@ website:
             text: "Week 1"
           - href: weeks/week-2.qmd
             text: "Week 2"
+          - href: weeks/week-3.qmd
+            text: "Week 3"
 
 format:
   html:

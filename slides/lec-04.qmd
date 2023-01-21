@@ -250,6 +250,11 @@ Does this seem right?
 :::
 
 
+# Activity
+
+[Click here](https://colab.research.google.com/drive/1bB_p2iiX6_zwGW7VY0SevrH9TzZ9RMRJ?usp=sharing)
+
+
 
 
 
