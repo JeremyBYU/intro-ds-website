@@ -39,5 +39,220 @@ np.random.seed(1)
 ## Schedule
 
 - Reading 2-2: Jan 27 @ 12PM, Friday
-- Reading 2-3: 
-- HW2: Feb 1 @ Midnight, Wed
+- Reading 2-3: Feb 1 @ 12PM, Wednesday
+- HW2: Feb 1 @ Midnight, Wednesday
+- Reading 3-1: Feb 3 @ 12PM, Friday
+
+
+# Probability Terms
+
+
+## Terms
+
+- **Random Process** - action or process which results in an outcome determined by chance
+- **Outcome** - one possible result from a random process
+- **Sample Space** -  set of all possible outcomes of a random process and denoted as $S$
+- **Event** - an outcome or collection of outcomes from a sample space. Typically denoted with Capital letters: $A,B,C$, etc.
+- **Probability of an event A** - denoted, $P(A)$, number of outcomes of A divided by the total number of equally likely outcomes in the sample space $S$. How often does $A$ occur in $S$
+
+
+## Visualizing Probability
+
+![](./lec04_images/probability_example.png)
+
+## Operations
+
+- **Compliment of A** - denoted *not* $A$, $A'$, $\bar{A}$, $A^C$, $\neg A$ 
+  - We will use $A'$
+- **Union** of two events $A$ and $B$ is denoted as $A$ **or** $B$. Consists of *all* outcomes in $A$ or $B$
+- **Intersection** of two events $A$ and $B$ is denoted as $A$ **and** $B$. Consists of *only* outcomes in $A$ and $B$
+
+
+## Practice
+
+:::: columns
+
+::: {.column width="30%"}
+
+- Compliment
+- Union
+- Intersection
+- Difference
+
+:::
+
+::: {.column width="50%"}
+
+:::
+
+
+::::
+
+## Cheat Sheet
+
+![](./lec04_images/Set_Theory_Operations.svg.png){ width=100% }
+
+
+# Probability Rules 
+
+## Three Foundational Rules
+
+::: {.incremental}
+- The probability of any event is non-negative, $P(A) > 0$
+- The probability of the sample space is $P(S) = 1$
+- If A and be are **disjoint** events, $P(A \; or \; B) = P(A) + P(B)$
+  - Fresh deck of normal cards. Probability of getting a king **and** a queen from lifting one card is 0. 
+:::
+
+## Three Derived Rules
+
+- $P(A') = 1 - P(A)$
+- $P(A \; or \; B) = P(A) + P(B) - P(A \; and \; B)$
+- *independent* events: $P(A\; and\; B) = P(A) * P(B)$
+
+
+::: callout-tip
+You dont need to derive any of these, you just need to *know* them! Know the 6 rules
+:::
+
+
+## Practice {.scrollable}
+
+|    Size    |   1  |   2  |   3  |   4  |   5  |   6  |  7+  |
+|:----------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| Proportion | 0.29 | 0.35 | 0.15 | 0.12 | 0.06 | 0.02 | 0.01 |
+
+
+::: incremental
+- Find the probability of randomly selecting a household with a size of more than 1
+  - 0.71
+- Find the probability of randomly selecting a household with a size of 1 or more than 1
+  - 1.0
+- Find the probability of randomly selecting a household with a size of 5 or more
+  - 0.09
+- Find the probability of randomly selecting a household with size 1 or 5 or more
+  - 0.38
+- One household will be randomly selected from all households, and then a second household will be randomly selected from all households. Find the probability that both selected households are of size 1.
+  - 0.08
+
+
+:::
+
+
+# Conditional Probability
+
+## Prepare to be amazed
+
+- The probability of an event occurring can also be determined under the condition of knowing another event has occurred.
+- A **conditioning probability** is a measure of the likelihood of one event occurring, given another event occurred
+
+The conditional probability of event $A$ given event $B$, denoted $P(A|B)$
+
+$$
+P(A|B) = \frac{P(A\; and\; B)}{P(B)} = \frac{P(A \cap B)}{P(B)}
+$$
+
+<!-- If its raining you are more likely to be wearing a rain coat. The events are correlated/connected -->
+
+## Thinking Independently
+
+::: incremental
+- What if we have *independent* events, $A,B$
+- $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+- $P(A|B) = \frac{P(A) * P(B)}{P(B)}$
+- $P(A|B) = P(A)$
+:::
+
+## Conditional Example
+
+::: {.r-stack}
+
+![](./lec04_images/example_conditional_question.png){.fragment}
+
+![](./lec04_images/example_conditional.png){.fragment}
+
+:::
+
+## Bayes Rule
+
+- Sometimes you don't have nice table with all these probabilities filled out
+- You may **not** know $P(A \cap B). Is all lost? 
+  - No Bayes rule to the rescue!
+
+$$
+P(A | B) = \frac{P(B | A) * P(A)}{P(B)}
+$$
+
+::: callout-tip
+This rule is the foundation of data science and machine learning!
+:::
+
+## Example
+
+
+![](./lec04_images/bayes_rule.png)
+
+
+# Probability Distributions
+
+## Random Variables
+
+- **Random Variable** - Defines numerical values for a random processes outcome.
+- Typically denote them like: $X,Y, Z$
+- Discrete vs Continuous - Flip of coin (1 or 0), GPA of students
+- **Probability Distribution** - gives probability of an occurrence for a a random variable
+  - This distribution can be visualized! We often use histograms.
+
+
+
+## Normal Distribution
+
+```{python}
+samples = np.random.normal(loc=5.0, scale=1, size=10000)
+sns.histplot(x=samples, kde=True);
+```
+
+## Normal Details
+
+![](./lec04_images/normal_details.png)
+
+
+## Bernoulli Distribution
+
+- True or False, 1 or 0, Success or Failure
+- $\pi$, determines the probaility of success
+- What is $\pi$ for this bernoulli distribution
+
+```{python}
+samples = np.random.choice(2, 10000, p=[0.80, 0.20])
+sns.histplot(x=samples, kde=False);
+```
+
+
+## Binomial Distribution
+
+- A random variable describing the number of "successes" from **independent** observations of a random process in which the probability of a success is $\pi$ follows a **binomial** distribution
+- Flip a coin 10 times (trials) count how many heads. 
+  -  Repeat 10,000 times
+- $n$ how many trials, $\pi$ probability of one success
+- $\mu = n * \pi$ &nbsp; &nbsp; &nbsp; &nbsp;  $\sigma^2 = n * \pi * (1- \pi)$
+
+## Flipping a Coin 10 Times
+
+
+```{python}
+samples = np.random.binomial(10, 0.6, 10_000)
+sns.histplot(x=samples, kde=False);
+```
+
+::: callout-note
+Does this seem right?
+:::
+
+
+
+
+
+
+
+

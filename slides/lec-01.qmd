@@ -56,7 +56,7 @@ Computer Vision
 
 ::: {.column width="40%"}
 
-![Picutre of James O'Brien](./lec1_images/jobrien.jpg)
+![Picutre of James O'Brien](./lec01_images/jobrien.jpg)
 
 :::
 
@@ -141,7 +141,7 @@ Our **required** book is online: [Zybooks](https://learn.zybooks.com/library)
 
 ## Zybook Walkthrough
 
-![](lec1_images/zybook-walkthrough.png){fig-align="center"}
+![](lec01_images/zybook-walkthrough.png){fig-align="center"}
 
 ## Course toolkit
 

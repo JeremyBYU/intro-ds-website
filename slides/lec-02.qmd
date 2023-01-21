@@ -1,4 +1,4 @@
----
+---number
 title: "CISC482 - Lecture02"
 subtitle: "What is Data Science?"
 author: "Dr. Jeremy Castagno"
@@ -63,7 +63,7 @@ sns.set_style('whitegrid')
 
 ## DS early history
 
-![](./lec2_images/ds_early_timeline.jpg){fig-align="center"}
+![](./lec02_images/ds_early_timeline.jpg){fig-align="center"}
 
 
 - Peter Naur won the Turing Award
@@ -72,26 +72,26 @@ sns.set_style('whitegrid')
 
 ## DS 20th Century
 
-![](./lec2_images/ds_late_timeline.jpg){fig-align="center"}
+![](./lec02_images/ds_late_timeline.jpg){fig-align="center"}
 
 
 
 ## Statistics and Computer Science
 
-![](./lec2_images/cs_vs_ds.jpg){fig-align="center"}
+![](./lec02_images/cs_vs_ds.jpg){fig-align="center"}
 
 
 ## Focus of Task
 
-![](./lec2_images/exploratory_prediction_confirmation.png){fig-align="center"}
+![](./lec02_images/exploratory_prediction_confirmation.png){fig-align="center"}
 
 ## Statistics and Machine Learning
 
-![](./lec2_images/statistics_machine_learning.png){fig-align="center"}
+![](./lec02_images/statistics_machine_learning.png){fig-align="center"}
 
 ## Where are we?
 
-![](./lec2_images/statistics_machine_learning_us.png){fig-align="center"}
+![](./lec02_images/statistics_machine_learning_us.png){fig-align="center"}
 
 - Equal Exploratory and Predictive
 - Little bit of statistics
@@ -204,7 +204,7 @@ bytes, or 1 million TB. Most laptops come with 1 TB storage at most.
 
 ## Visualizing the 5 Steps
 
-![](./lec2_images/five_steps.png){fig-align="center"}
+![](./lec02_images/five_steps.png){fig-align="center"}
 
 
 ## Gathering Data {.scrollable}
@@ -234,7 +234,7 @@ Getting a dataset is easier then ever
 
 - The Palmer penguins dataset by Allison Horst, Alison Hill, and Kristen Gorman 
 
-![](./lec2_images/penguin_pictures.png)
+![](./lec02_images/penguin_pictures.png)
 
 ## The Researchers
 
@@ -257,9 +257,9 @@ df_raw.head()
 ## Important Features
 
 ::: {.r-stack}
-![](./lec2_images/bill_length_vs_depth.png){.fragment}
+![](./lec02_images/bill_length_vs_depth.png){.fragment}
 
-![](./lec2_images/palmer_penguins_beaks.png){.fragment width="800"}
+![](./lec02_images/palmer_penguins_beaks.png){.fragment width="800"}
 :::
 
 ## Cleaning Data - After {.scrollable}
