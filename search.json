@@ -91,6 +91,34 @@
     "text": "TBD"
   },
   {
+    "objectID": "weeks/week-3.html",
+    "href": "weeks/week-3.html",
+    "title": "Week 3",
+    "section": "",
+    "text": "📖 Read Assignments 2-1 and 2-2 in Zybooks."
+  },
+  {
+    "objectID": "weeks/week-3.html#participate",
+    "href": "weeks/week-3.html#participate",
+    "title": "Week 3",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Lecture 5 - Probability Inference\n🖥️ Lecture 6 - Data Wrangling"
+  },
+  {
+    "objectID": "weeks/week-3.html#practice",
+    "href": "weeks/week-3.html#practice",
+    "title": "Week 3",
+    "section": "Practice",
+    "text": "Practice\n📋 Class Activity 03 - Practice Pandas"
+  },
+  {
+    "objectID": "weeks/week-3.html#perform",
+    "href": "weeks/week-3.html#perform",
+    "title": "Week 3",
+    "section": "Perform",
+    "text": "Perform\n⌨️ HW 3 - Cleaning Data and Graphing"
+  },
+  {
     "objectID": "weeks/week-1.html",
     "href": "weeks/week-1.html",
     "title": "Week 1",
@@ -326,7 +354,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f4a4de8f190>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f552724e1d0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -341,6 +369,13 @@
     "title": "CISC482 - Lecture03",
     "section": "All",
     "text": "All\n\nimport scipy.stats as stats\nstats.describe(samples)\n\nDescribeResult(nobs=1000, minmax=(1.7616568032476234, 7.787361447950662), mean=5.053665979218166, variance=1.0126662448100565, skewness=-0.0026145821525120016, kurtosis=-0.06654059199852824)\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
+    "objectID": "slides/lec-05.html#schedule",
+    "href": "slides/lec-05.html#schedule",
+    "title": "CISC482 - Lecture03",
+    "section": "Schedule",
+    "text": "Schedule\n\nHW2: Feb 1 @ Midnight, Wednesday\nReading 3-1: Feb 3 @ 12PM, Friday\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-04.html#schedule",
@@ -480,7 +515,7 @@
     "href": "slides/lec-04.html#flipping-a-coin-10-times",
     "title": "CISC482 - Lecture03",
     "section": "Flipping a Coin 10 Times",
-    "text": "Flipping a Coin 10 Times\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nDoes this seem right?\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Flipping a Coin 10 Times\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nDoes this seem right?"
   },
   {
     "objectID": "slides/lec-01.html#meet-the-professor",
