@@ -354,7 +354,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f9388bcbfd0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f156ac48ac0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -438,7 +438,70 @@
     "href": "slides/lec-05.html#table",
     "title": "CISC482 - Lecture03",
     "section": "Table",
-    "text": "Table\n\n\n\n\nActual Positive\nActual Negative\n\n\n\n\nPredict Positive\nTP\nFP, Type I\n\n\nPredict Negative\nFN, Type II\nTN\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Table\n\n\n\n\nActual Positive\nActual Negative\n\n\n\n\nPredict Positive\nTP\nFP, Type I\n\n\nPredict Negative\nFN, Type II\nTN"
+  },
+  {
+    "objectID": "slides/lec-05.html#confidence-intervals",
+    "href": "slides/lec-05.html#confidence-intervals",
+    "title": "CISC482 - Lecture03",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\n\nSometimes you want to estimate the value of a population parameter (e.g., the mean)\nConfidence Interval provides an interval of possible values for the parameter being estimated\n\nestimate +- margin of error\n\nMargin of error includes\n\nthe standard error, or measure of sampling variability\nConfidence level, or measure of interval reliability. Usually set at 95%."
+  },
+  {
+    "objectID": "slides/lec-05.html#example",
+    "href": "slides/lec-05.html#example",
+    "title": "CISC482 - Lecture03",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "slides/lec-05.html#confirming-reported-statistic",
+    "href": "slides/lec-05.html#confirming-reported-statistic",
+    "title": "CISC482 - Lecture03",
+    "section": "Confirming reported statistic",
+    "text": "Confirming reported statistic\n\n\nGiven a statistic about a population, \\(\\hat{\\pi}\\). Mean radon levels of houses in Iowa.\nYou gather samples that are IID. Independent and identically distributed\nCompute the mean and standard deviation from your sample: \\(\\hat{p}, \\hat{\\sigma}\\)\n\\(H_0\\): The true population mean is \\(\\hat{\\pi}\\). \\(\\pi = \\hat{\\pi}\\)\n\\(H_a\\): The true population mean is not \\(\\hat{\\pi}\\). \\(\\pi \\neq \\hat{\\pi}\\)"
+  },
+  {
+    "objectID": "slides/lec-05.html#procedure",
+    "href": "slides/lec-05.html#procedure",
+    "title": "CISC482 - Lecture03",
+    "section": "Procedure",
+    "text": "Procedure"
+  },
+  {
+    "objectID": "slides/lec-05.html#z-table",
+    "href": "slides/lec-05.html#z-table",
+    "title": "CISC482 - Lecture03",
+    "section": "Z-table",
+    "text": "Z-table\nZ Table\n\n\n\n\n\n\n\nDanger\n\n\nWhat if we didn’t gather that many samples, e.g., \\(< 30\\)? Then our sampling distribution follows a t-distribution."
+  },
+  {
+    "objectID": "slides/lec-05.html#t-vs-normal-distribution",
+    "href": "slides/lec-05.html#t-vs-normal-distribution",
+    "title": "CISC482 - Lecture03",
+    "section": "T vs Normal Distribution",
+    "text": "T vs Normal Distribution"
+  },
+  {
+    "objectID": "slides/lec-05.html#t-table",
+    "href": "slides/lec-05.html#t-table",
+    "title": "CISC482 - Lecture03",
+    "section": "T-table",
+    "text": "T-table\nLink"
+  },
+  {
+    "objectID": "slides/lec-05.html#highlights",
+    "href": "slides/lec-05.html#highlights",
+    "title": "CISC482 - Lecture03",
+    "section": "Highlights",
+    "text": "Highlights\n\nInferential statistics are methods that result in conclusions and estimates about the population based on a sample\nHypothesis Testing - create a null hypothesis, gather data, compute sample statistics, compute z-score and generate p-value.\nConfidence Interval - sample data, compute sample statistics, use confidence multiplier (z-value) and standard deviation of samples to compute margin of error"
+  },
+  {
+    "objectID": "slides/lec-05.html#whats-next",
+    "href": "slides/lec-05.html#whats-next",
+    "title": "CISC482 - Lecture03",
+    "section": "Whats next?",
+    "text": "Whats next?\n\nStart playing more with data!\nWill be using the software pandas to help analyze the data\nCleaning data\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-04.html#schedule",
@@ -971,6 +1034,13 @@
     "title": "Intro to Data Science",
     "section": "HW1",
     "text": "HW1\nHW Link"
+  },
+  {
+    "objectID": "slides/lec-06.html#schedule",
+    "href": "slides/lec-06.html#schedule",
+    "title": "CISC482 - Lecture03",
+    "section": "Schedule",
+    "text": "Schedule\n\nReading 3-1: Feb 3 @ 12PM, Friday\nReading 3-2: Feb 8 @ 12PM, Wednesday\nReading 4-1: Feb 10 @ 12PM, Friday\nHW3: Feb 15 @ Midnight, Wednesday\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "computing-access.html",
