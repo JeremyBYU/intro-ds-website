@@ -133,6 +133,92 @@ This does not mean the dog detects cancer! This just means the dog is doing bett
 
 
 
+# Estimation
+
+## Confidence Intervals
+
+- Sometimes you want to estimate the value of a population parameter (e.g., the mean)
+- **Confidence Interval** provides an interval of *possible* values for the parameter being estimated
+  - *estimate* +- *margin of error*
+- Margin of error includes 
+  - the standard error, or measure of sampling variability
+  - Confidence level, or measure of interval reliability. Usually set at 95%.
+
+
+## Example
+
+![](./lec05_images/estimation.png)
+
+
+# Inference for proportions and means
+
+## Confirming reported statistic
+
+::: incremental
+- Given a statistic about a population, $\hat{\pi}$. Mean radon levels of houses in Iowa.
+- You gather samples that are IID. Independent and identically distributed
+- Compute the mean and standard deviation from your sample: $\hat{p}, \hat{\sigma}$
+- $H_0$: The true population mean is $\hat{\pi}$. $\pi = \hat{\pi}$
+- $H_a$: The true population mean is not $\hat{\pi}$. $\pi \neq \hat{\pi}$
+:::
+
+
+## Procedure
+
+![](./lec05_images/test_reported_mean.png){fig-align="center"}
+
+## Z-table
+
+
+[Z Table](https://www.sjsu.edu/faculty/gerstman/StatPrimer/z-two-tails.pdf)
+
+::: fragment
+
+::: callout-caution
+What if we didn't gather that many samples, e.g., $< 30$? Then our sampling distribution follows a t-distribution.
+:::
+
+:::
+
+
+## T vs Normal Distribution
+
+![](./lec05_images/t_vs_normal.webp){fig-align="center"}
+
+
+## T-table
+
+[Link](https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf)
+
+
+# Conclusion
+
+## Highlights
+
+- **Inferential statistics** are methods that result in *conclusions* and *estimates* about the population based on a *sample*
+- **Hypothesis Testing** - create a null hypothesis, gather data, compute sample statistics, compute z-score and generate p-value.
+- **Confidence Interval** - sample data, compute sample statistics, use confidence multiplier (z-value) and standard deviation of samples to compute margin of error
+
+## Whats next?
+
+- Start playing more with data!
+- Will be using the software `pandas` to help analyze the data
+- Cleaning data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
