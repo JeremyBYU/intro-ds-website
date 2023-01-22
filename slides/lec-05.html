@@ -5,7 +5,9 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
@@ -351,6 +353,172 @@ Dr.&nbsp;Jeremy Castagno
 <li>HW2: Feb 1 @ Midnight, Wednesday</li>
 <li>Reading 3-1: Feb 3 @ 12PM, Friday</li>
 </ul>
+</section></section>
+<section>
+<section id="inferential-statistics" class="title-slide slide level1 center">
+<h1>Inferential Statistics</h1>
+
+</section>
+<section id="main-ideas" class="slide level2 smaller">
+<h2>Main Ideas</h2>
+<ul>
+<li><strong>Inferential statistics</strong> are methods that result in <em>conclusions</em> and <em>estimates</em> about the population based on a <em>sample</em></li>
+<li>Seek to <em>estimate</em> the <strong>parameters</strong> that describe a <em>populations</em> distribution
+<ul>
+<li>mean, std, etc.</li>
+</ul></li>
+<li>Remember, we collect data from a population, this creates a <em>sample</em></li>
+<li>Using that sample, we make <strong>inferences</strong> about the underlying <em>population</em></li>
+<li>The sample proportion of voters who plan to vote by mail is a statistic and estimates the parameter, or the population proportion, of all voters who plan to vote by mail.</li>
+</ul>
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>We will not go <em>too</em> deeply into this subject. We will only focus on the most important points.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sampling" class="slide level2">
+<h2>Sampling</h2>
+<ul>
+<li>Because calculated statistics will vary from sample to sample due to natural sampling variability, statistics do not estimate parameters with 100% accuracy.</li>
+<li>The overall behavior of a statistic from repeated sampling is described by a <strong>sampling distribution</strong>.</li>
+<li>The sampling distribution of a statistic describes the statistic’s possible values and a measure of how likely the values are to occur.</li>
+</ul>
+</section>
+<section id="sampling-video" class="slide level2">
+<h2>Sampling Video</h2>
+<video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./lec05_images/sampling.mp4"></video>
+<aside class="notes">
+<p>Mean of many <em>means</em></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="central-limit-theorem" class="slide level2">
+<h2>Central Limit Theorem</h2>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>Central Limit Theorem (CLT)</strong> states that if random samples of size are drawn from a large population and is large enough, then the <strong>sampling distribution</strong> of the <strong>sample mean</strong> will follow approximately a <em>normal</em> distribution.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="hypothesis-testing" class="title-slide slide level1 center">
+<h1>Hypothesis Testing</h1>
+
+</section>
+<section id="hypothesis-test" class="slide level2">
+<h2>Hypothesis Test</h2>
+<ul>
+<li><strong>Hypothesis Test</strong> - method for examining a claim, or hypothesis, about a population parameter.</li>
+<li><strong>null hypothesis</strong>, <span class="math inline">\(H_0\)</span>, by-chance, no-effect explanation
+<ul>
+<li>medicine has not effect</li>
+</ul></li>
+<li><strong>alternative hypothesis</strong>, <span class="math inline">\(H_a\)</span>, explanation of an effect
+<ul>
+<li>medicine had a positive effect</li>
+</ul></li>
+<li><strong>p-value</strong></li>
+</ul>
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Danger</strong></p>
+</div>
+<div class="callout-content">
+<p>Statistics is widely and notoriously misunderstood. Even by experts. Including me.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
+
+<img data-src="./lec05_images/hypothesis_testing.png" class="r-stretch"></section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<ol type="1">
+<li><p>A graph of the sampling distribution of the sample proportion of correct detections out of 37 trials when the null hypothesis is true is given below. Based on this graph, observing a sample proportion of 0.78 or greater is</p></li>
+<li><p>Can the dog detect cancer?</p></li>
+</ol>
+<p>::: fragment</p>
+<div class="callout callout-danger callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Danger</strong></p>
+</div>
+<div class="callout-content">
+<p>This does not mean the dog detects cancer! This just means the dog is doing better than guessing! Maybe cancer patients eat PB sandwiches and thats what the dog is smelling!</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="errors" class="title-slide slide level1 center">
+<h1>Errors</h1>
+
+</section>
+<section id="type-1-and-type-2-errors" class="slide level2">
+<h2>Type 1 and Type 2 Errors</h2>
+<ul>
+<li><strong>Type 1 Error</strong> - is rejecting the null hypothesis in favor of the alternative when in reality the null hypothesis is true. <strong>False Positive</strong></li>
+<li><strong>Type 2 Error</strong> - is failing to reject (accepting) the null hypothesis when in reality the alternative hypothesis is true.</li>
+</ul>
+</section>
+<section id="table" class="slide level2">
+<h2>Table</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Actual Positive</th>
+<th style="text-align: center;">Actual Negative</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Predict Positive</td>
+<td style="text-align: center;">TP</td>
+<td style="text-align: center;">FP, Type I</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Predict Negative</td>
+<td style="text-align: center;">FN, Type II</td>
+<td style="text-align: center;">TN</td>
+</tr>
+</tbody>
+</table>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -664,6 +832,7 @@ Dr.&nbsp;Jeremy Castagno
       }
     });
     </script>
+    
     
 
 </body></html>
