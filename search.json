@@ -354,7 +354,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f156ac48ac0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fdc7c37bd30>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1040,7 +1040,21 @@
     "href": "slides/lec-06.html#schedule",
     "title": "CISC482 - Lecture03",
     "section": "Schedule",
-    "text": "Schedule\n\nReading 3-1: Feb 3 @ 12PM, Friday\nReading 3-2: Feb 8 @ 12PM, Wednesday\nReading 4-1: Feb 10 @ 12PM, Friday\nHW3: Feb 15 @ Midnight, Wednesday\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Schedule\n\nReading 3-1: Feb 3 @ 12PM, Friday\nReading 3-2: Feb 8 @ 12PM, Wednesday\nReading 4-1: Feb 10 @ 12PM, Friday\nHW3: Feb 15 @ Midnight, Wednesday"
+  },
+  {
+    "objectID": "slides/lec-06.html#steps",
+    "href": "slides/lec-06.html#steps",
+    "title": "CISC482 - Lecture03",
+    "section": "Steps",
+    "text": "Steps\n\nDiscovery - Familiarize with source data\nStructuring - Transforms features to uniform formats, units, and scales.\nCleaning - Removes or replaces missing and outlier data.\nEnriching - Derives new features from existing features and appends new data from external sources.\nValidating - Verifies that the dataset is internally consistent and accurate\nPublishing - Makes the dataset available to others"
+  },
+  {
+    "objectID": "slides/lec-06.html#practice-pandas",
+    "href": "slides/lec-06.html#practice-pandas",
+    "title": "CISC482 - Lecture03",
+    "section": "Practice Pandas",
+    "text": "Practice Pandas\nCleaning Data and Graphing\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "computing-access.html",
