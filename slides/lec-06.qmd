@@ -44,3 +44,20 @@ np.random.seed(1)
 - HW3: Feb 15 @ Midnight, Wednesday
 
 
+# Data Wrangling
+
+## Steps
+
+1. **Discovery** - Familiarize  with source data
+2. **Structuring** - Transforms features to uniform formats, units, and scales. 
+3. **Cleaning** - Removes or replaces missing and outlier data. 
+4. **Enriching** - Derives new features from existing features and appends new data from external sources.
+5. **Validating** - Verifies that the dataset is internally consistent and accurate
+6. **Publishing** - Makes the dataset available to others 
+
+
+# Class Activity
+
+## Practice Pandas
+
+[Cleaning Data and Graphing](https://colab.research.google.com/drive/1JfP7piEf21u3U-y57Tr_JYk0wMT_0XwS?usp=sharing)
