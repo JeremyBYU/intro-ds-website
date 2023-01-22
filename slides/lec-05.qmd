@@ -41,3 +41,100 @@ np.random.seed(1)
 - HW2: Feb 1 @ Midnight, Wednesday
 - Reading 3-1: Feb 3 @ 12PM, Friday
 
+
+# Inferential Statistics
+
+## Main Ideas {.smaller}
+
+
+- **Inferential statistics** are methods that result in *conclusions* and *estimates* about the population based on a *sample*
+- Seek to *estimate* the **parameters** that describe a *populations* distribution
+  - mean, std, etc.
+- Remember, we collect data from a population, this creates a *sample*
+- Using that sample, we make **inferences** about the underlying *population*
+-  The sample proportion of voters who plan to vote by mail is a statistic and estimates the parameter, or the population proportion, of all voters who plan to vote by mail.
+
+
+::: callout-warning
+We will not go *too* deeply into this subject. We will only focus on the most important points.
+:::
+
+## Sampling
+
+- Because calculated statistics will vary from sample to sample due to natural sampling variability, statistics do not estimate parameters with 100% accuracy.
+- The overall behavior of a statistic from repeated sampling is described by a **sampling distribution**.
+- The sampling distribution of a statistic describes the statistic's possible values and a measure of how likely the values are to occur.
+
+## Sampling Video
+
+{{< video ./lec05_images/sampling.mp4 >}}
+
+::: notes
+
+Mean of many *means*
+:::
+
+## Central Limit Theorem
+
+::: callout-tip
+The **Central Limit Theorem (CLT)** states that if random samples of size are drawn from a large population and is large enough, then the **sampling distribution** of the **sample mean** will follow approximately a *normal* distribution.
+:::
+
+
+# Hypothesis Testing
+
+
+## Hypothesis Test
+
+- **Hypothesis Test** - method for examining a claim, or hypothesis, about a population parameter.
+- **null hypothesis**, $H_0$, by-chance, no-effect explanation
+  - medicine has not effect
+- **alternative hypothesis**, $H_a$, explanation of an effect
+  - medicine had a positive effect
+- **p-value**
+
+::: callout-caution
+Statistics is widely and notoriously misunderstood. Even by experts. Including me. 
+:::
+
+
+## Visualization
+
+![](./lec05_images/hypothesis_testing.png)
+
+## Questions
+
+1. A graph of the sampling distribution of the sample proportion of correct detections out of 37 trials when the null hypothesis is true is given below. Based on this graph, observing a sample proportion of 0.78 or greater is
+
+2. Can the dog detect cancer?
+
+::: fragment
+
+::: callout-danger
+
+This does not mean the dog detects cancer! This just means the dog is doing better than guessing!  Maybe cancer patients eat PB sandwiches and thats what the dog is smelling!
+
+:::
+
+# Errors
+
+## Type 1 and Type 2 Errors
+
+- **Type 1 Error** - is rejecting the null hypothesis in favor of the alternative when in reality the null hypothesis is true. **False Positive**
+- **Type 2 Error** - is failing to reject (accepting) the null hypothesis when in reality the alternative hypothesis is true.
+
+
+## Table
+
+|                  | Actual Positive | Actual Negative |
+|:----------------:|:---------------:|:---------------:|
+| Predict Positive |        TP       |    FP, Type I   |
+| Predict Negative |   FN, Type II   |        TN       |
+
+
+
+
+
+
+
+

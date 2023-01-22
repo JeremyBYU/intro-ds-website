@@ -1,5 +1,7 @@
 project:
   type: website
+  resources: 
+    - slides/lec05_images
 
 website:
   page-navigation: true
