@@ -1,4 +1,4 @@
----number
+---
 title: "CISC482 - Lecture02"
 subtitle: "What is Data Science?"
 author: "Dr. Jeremy Castagno"
