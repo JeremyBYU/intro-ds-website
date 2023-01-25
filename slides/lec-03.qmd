@@ -37,8 +37,9 @@ np.random.seed(1)
 
 ## Schedule
 
+- Reading 2-1: Jan 25 @ 12PM, Wed
 - Reading 2-2: Jan 27 @ 12PM, Friday
-- Reading 2-3: 
+- Reading 2-3: Feb 1 @ 12PM, Wed
 - HW2: Feb 1 @ Midnight, Wed
 
 # Data Collection
@@ -51,6 +52,19 @@ np.random.seed(1)
 ::: {.callout-note .smaller}
 **Bias** - anything that leads to a systematic difference between the true parameters of a population and the statistics used to estimate those parameters.  E.g., sampling only men.
 :::
+
+## It's hard...
+
+![](./lec02_images/hillary_clinton.png){fig-align="center"}
+
+
+## Sampling Errors
+
+- A small, systematic polling error made a big difference
+- All polls were off in the same direction (5 pts) in swing states
+- Correlatated sampling errors in the midwest
+- Failure to appreciate uncertainty
+
 
 ## Stats for data science
 
