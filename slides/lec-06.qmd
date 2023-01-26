@@ -56,6 +56,39 @@ np.random.seed(1)
 6. **Publishing** - Makes the dataset available to others 
 
 
+## Example
+
+![](./lec06_images/exmaple_wrangle.png)
+
+
+## Extract, Transform, Load
+
+- **Extract, Transform, Load (ETL)** is a process that extracts data from *databases*, transforms the data, and loads the data into an **analytic** database.
+- Similar to data wrangling: process data, clean, enrich, etc.
+- Difference is that data wrangling is more informal, where ETL is a usually a business process or service.
+
+## Pandas
+
+::: columns
+
+:::: {.column width="70%"}
+- Pandas is an open source Python package
+- Widely used for data science/data analysis
+- Key idea is organizing data into a **dataframe**
+- Tabular data, effecient queries, uses numpy if possible
+::::
+
+:::: {.column width="30%"}
+
+![](./lec06_images/pandas_icon.png){.absolute top=150 right=50 width="300px"}
+::::
+
+:::
+
+## 
+
+
+
 # Class Activity
 
 ## Practice Pandas
