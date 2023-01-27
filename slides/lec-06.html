@@ -480,7 +480,7 @@ Dr.&nbsp;Jeremy Castagno
 <span id="cb1-5"><a href="#cb1-5"></a>df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>d)</span>
 <span id="cb1-6"><a href="#cb1-6"></a>df</span></code></pre></div>
 </div><div class="column">
-<div class="cell-output cell-output-display" data-execution_count="106">
+<div class="cell-output cell-output-display" data-execution_count="2">
 
 <div>
 <style scoped="">
@@ -540,7 +540,7 @@ Dr.&nbsp;Jeremy Castagno
 <span id="cb2-4"><a href="#cb2-4"></a>df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>d)</span>
 <span id="cb2-5"><a href="#cb2-5"></a>df</span></code></pre></div>
 </div><div class="column">
-<div class="cell-output cell-output-display" data-execution_count="107">
+<div class="cell-output cell-output-display" data-execution_count="3">
 
 <div>
 <style scoped="">
@@ -603,7 +603,7 @@ Dr.&nbsp;Jeremy Castagno
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> IPython <span class="im">import</span> display</span>
 <span id="cb3-2"><a href="#cb3-2"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3"></a>df.head()  <span class="co">#display.Markdown(df.head().to_markdown())</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="108">
+<div class="cell-output cell-output-display" data-execution_count="4">
 
 <div>
 <style scoped="">
@@ -790,7 +790,7 @@ memory usage: 45.8+ KB</code></pre>
 <span id="cb6-2"><a href="#cb6-2"></a>interesting_columns <span class="op">=</span> [<span class="st">'Species'</span>, <span class="st">'Island'</span>, <span class="st">'Culmen Length (mm)'</span>, <span class="st">'Culmen Depth (mm)'</span>, <span class="st">'Flipper Length (mm)'</span>, <span class="st">'Body Mass (g)'</span>, <span class="st">'Sex'</span>, <span class="st">'Date Egg'</span>]</span>
 <span id="cb6-3"><a href="#cb6-3"></a>df <span class="op">=</span> df[interesting_columns]</span>
 <span id="cb6-4"><a href="#cb6-4"></a>df.head()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="110">
+<div class="cell-output cell-output-display" data-execution_count="6">
 
 <div>
 <style scoped="">
@@ -902,7 +902,7 @@ memory usage: 45.8+ KB</code></pre>
  'Sex': 'sex',
  'Species': 'species'}</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="111">
+<div class="cell-output cell-output-display" data-execution_count="7">
 
 <div>
 <style scoped="">
@@ -1020,6 +1020,19 @@ memory usage: 23.4+ KB</code></pre>
 </div>
 </div>
 </div>
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li>Got raw data by using <code>pd.read_csv(..)</code></li>
+<li>Looked at data</li>
+<li>Selected columns of interest</li>
+<li>Renamed columns</li>
+<li>TODO
+<ul>
+<li>Extract year,</li>
+</ul></li>
+</ul>
 </section></section>
 <section>
 <section id="class-activity" class="title-slide slide level1 center">
