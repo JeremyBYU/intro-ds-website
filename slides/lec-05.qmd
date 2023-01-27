@@ -1,5 +1,5 @@
 ---
-title: "CISC482 - Lecture03"
+title: "CISC482 - Lecture05"
 subtitle: "Probability Inference"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"

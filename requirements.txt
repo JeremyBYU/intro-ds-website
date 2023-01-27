@@ -6,3 +6,4 @@ threadpoolctl
 seaborn
 palmerpenguins
 pandas
+tabulate

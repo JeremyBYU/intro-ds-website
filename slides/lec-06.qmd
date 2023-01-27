@@ -1,5 +1,5 @@
 ---
-title: "CISC482 - Lecture03"
+title: "CISC482 - Lecture06"
 subtitle: "Data Wrangling"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
@@ -67,7 +67,9 @@ np.random.seed(1)
 - Similar to data wrangling: process data, clean, enrich, etc.
 - Difference is that data wrangling is more informal, where ETL is a usually a business process or service.
 
-## Pandas
+# Pandas
+
+## What is Pandas
 
 ::: columns
 
@@ -85,7 +87,108 @@ np.random.seed(1)
 
 :::
 
-## 
+## Loading Pandas from python lists
+
+```{python}
+#| echo: true
+#| output-location: column
+import pandas as pd
+d = {'a': [1, 2, 3], 
+    'b': [4.0, 5.0, 6.0]
+    }
+df = pd.DataFrame(data=d)
+df
+```
+- Pandas creates an index automatically (unnamed column)
+
+## Loading Pandas from NumPy
+
+
+```{python}
+#| echo: true
+#| output-location: column
+d = {'a': np.array([1, 2, 3]), 
+    'b': np.array([4.0, 5.0, 6.0])
+    }
+df = pd.DataFrame(data=d)
+df
+```
+- You can also use NumPy arrays
+
+## CSV Files
+
+```{=html}
+<iframe width="1280" height="600" src="https://github.com/mcnakhaee/palmerpenguins/blob/master/palmerpenguins/data/penguins-raw.csv" title="Palmer Penguins CSV File"></iframe>
+```
+<!-- https://github.com/mcnakhaee/palmerpenguins/blob/master/palmerpenguins/data/penguins-raw.csv -->
+<!-- https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv -->
+
+## Loading Pandas from a CSV {.scrollable}
+
+:::{.smaller}
+```{python}
+#| echo: true
+from IPython import display
+df = pd.read_csv('https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv')
+df.head()  #display.Markdown(df.head().to_markdown())
+```
+:::
+
+## Pandas Methods - Info
+
+```{python}
+#| echo: true
+df.info()
+```
+
+## Select Only Interesting Columns
+
+::: {.smaller}
+```{python}
+#| echo: true
+from pprint import pprint
+interesting_columns = ['Species', 'Island', 'Culmen Length (mm)', 'Culmen Depth (mm)', 'Flipper Length (mm)', 'Body Mass (g)', 'Sex', 'Date Egg']
+df = df[interesting_columns]
+df.head()
+```
+::: 
+
+## Rename Columns
+
+::: {.smaller}
+```{python}
+#| echo: true
+new_names = ['species', 'island', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g', 'sex', 'year']
+mapping = dict(zip(interesting_columns, new_names))
+pprint(mapping)
+df = df.rename(columns=mapping)
+df.head()
+```
+::: 
+
+## Remove Nan
+
+::: {.smaller}
+```{python}
+#| echo: true
+df = df[~df.isna().any(axis=1)] # quickly see any NA. NA means Null or NaN
+df.info()
+```
+::: 
+
+## Recap
+
+- Got raw data by using `pd.read_csv(..)`
+- Looked at data
+- Selected columns of interest
+- Renamed columns
+- TODO
+  - Extract year, 
+
+
+
+
+
 
 
 
