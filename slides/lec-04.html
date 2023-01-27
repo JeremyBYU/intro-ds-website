@@ -6,7 +6,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.313">
+  <meta name="generator" content="quarto-1.2.269">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
   <title>Intro to Data Science - CISC482 - Lecture04</title>
@@ -358,7 +358,8 @@ Dr.&nbsp;Jeremy Castagno
 <h2>CS Faculty Candidate</h2>
 <ul>
 <li>Medha Pujari is here today!</li>
-<li>Meet and Greet @ 3:15 PM in SBSC Room 112</li>
+<li>Please attend a meet and greet at 3:15 in SBSC 112</li>
+<li>Extra Credit!</li>
 </ul>
 </section></section>
 <section>
@@ -419,11 +420,11 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Three Foundational Rules</h2>
 <div>
 <ul>
-<li class="fragment">The probability of any event is non-negative, <span class="math inline">\(P(A) &gt; 0\)</span></li>
+<li class="fragment">The probability of any event is non-negative, <span class="math inline">\(P(A) &gt;= 0\)</span></li>
 <li class="fragment">The probability of the sample space is <span class="math inline">\(P(S) = 1\)</span></li>
 <li class="fragment">If A and be are <strong>disjoint</strong> events, <span class="math inline">\(P(A \; or \; B) = P(A) + P(B)\)</span>
 <ul>
-<li class="fragment">Fresh deck of normal cards. Probability of getting a king <strong>and</strong> a queen from lifting one card is 0.</li>
+<li class="fragment">No outcomes in common.</li>
 </ul></li>
 </ul>
 </div>
@@ -433,7 +434,7 @@ Dr.&nbsp;Jeremy Castagno
 <ul>
 <li><span class="math inline">\(P(A') = 1 - P(A)\)</span></li>
 <li><span class="math inline">\(P(A \; or \; B) = P(A) + P(B) - P(A \; and \; B)\)</span></li>
-<li><em>independent</em> events: <span class="math inline">\(P(A\; and\; B) = P(A) * P(B)\)</span></li>
+<li><em>independent</em> events: <span class="math inline">\(P(A\; and\; B) = P(A) * P(B)\)</span> <!-- - $P(A \; and \; B) = P(A) * P(B | A)$ --></li>
 </ul>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -541,7 +542,7 @@ P(A|B) = \frac{P(A\; and\; B)}{P(B)} = \frac{P(A \cap B)}{P(B)}
 <h2>Bayes Rule</h2>
 <ul>
 <li>Sometimes you don’t have nice table with all these probabilities filled out</li>
-<li>You may <strong>not</strong> know $P(A B). Is all lost?
+<li>You may <strong>not</strong> know <span class="math inline">\(P(A \cap B)\)</span>. Is all lost?
 <ul>
 <li>No Bayes rule to the rescue!</li>
 </ul></li>
@@ -596,7 +597,7 @@ P(A | B) = \frac{P(B | A) * P(A)}{P(B)}
 <h2>Normal Details</h2>
 
 <img data-src="./lec04_images/normal_details.png" class="r-stretch"></section>
-<section id="bernoulli-distribution" class="slide level2">
+<section id="bernoulli-distribution" class="slide level2 smaller">
 <h2>Bernoulli Distribution</h2>
 <ul>
 <li>True or False, 1 or 0, Success or Failure</li>
@@ -615,7 +616,7 @@ P(A | B) = \frac{P(B | A) * P(A)}{P(B)}
 <li>A random variable describing the number of “successes” from <strong>independent</strong> observations of a random process in which the probability of a success is <span class="math inline">\(\pi\)</span> follows a <strong>binomial</strong> distribution</li>
 <li>Flip a coin 10 times (trials) count how many heads.
 <ul>
-<li>Repeat 10,000 times</li>
+<li>Repeat 10,000 times to create <em>samples</em></li>
 </ul></li>
 <li><span class="math inline">\(n\)</span> how many trials, <span class="math inline">\(\pi\)</span> probability of one success</li>
 <li><span class="math inline">\(\mu = n * \pi\)</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="math inline">\(\sigma^2 = n * \pi * (1- \pi)\)</span></li>
