@@ -43,6 +43,11 @@ np.random.seed(1)
 - HW2: Feb 1 @ Midnight, Wednesday
 - Reading 3-1: Feb 3 @ 12PM, Friday
 
+## CS Faculty Candidate
+
+- Medha Pujari is here today!
+- Please attend a meet and greet at 3:15 in SBSC 112 
+- Extra Credit!
 
 # Probability Terms
 
@@ -98,10 +103,10 @@ np.random.seed(1)
 ## Three Foundational Rules
 
 ::: {.incremental}
-- The probability of any event is non-negative, $P(A) > 0$
+- The probability of any event is non-negative, $P(A) >= 0$
 - The probability of the sample space is $P(S) = 1$
 - If A and be are **disjoint** events, $P(A \; or \; B) = P(A) + P(B)$
-  - Fresh deck of normal cards. Probability of getting a king **and** a queen from lifting one card is 0. 
+  - No outcomes in common.
 :::
 
 ## Three Derived Rules
@@ -109,6 +114,7 @@ np.random.seed(1)
 - $P(A') = 1 - P(A)$
 - $P(A \; or \; B) = P(A) + P(B) - P(A \; and \; B)$
 - *independent* events: $P(A\; and\; B) = P(A) * P(B)$
+<!-- - $P(A \; and \; B) = P(A) * P(B | A)$ -->
 
 
 ::: callout-tip
@@ -176,7 +182,7 @@ $$
 ## Bayes Rule
 
 - Sometimes you don't have nice table with all these probabilities filled out
-- You may **not** know $P(A \cap B). Is all lost? 
+- You may **not** know $P(A \cap B)$. Is all lost? 
   - No Bayes rule to the rescue!
 
 $$
@@ -217,7 +223,7 @@ sns.histplot(x=samples, kde=True);
 ![](./lec04_images/normal_details.png)
 
 
-## Bernoulli Distribution
+## Bernoulli Distribution {.smaller}
 
 - True or False, 1 or 0, Success or Failure
 - $\pi$, determines the probaility of success
@@ -233,7 +239,7 @@ sns.histplot(x=samples, kde=False);
 
 - A random variable describing the number of "successes" from **independent** observations of a random process in which the probability of a success is $\pi$ follows a **binomial** distribution
 - Flip a coin 10 times (trials) count how many heads. 
-  -  Repeat 10,000 times
+  -  Repeat 10,000 times to create *samples*
 - $n$ how many trials, $\pi$ probability of one success
 - $\mu = n * \pi$ &nbsp; &nbsp; &nbsp; &nbsp;  $\sigma^2 = n * \pi * (1- \pi)$
 
