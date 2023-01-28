@@ -25,7 +25,9 @@ execute:
 import pandas as pd
 import seaborn as sns 
 import numpy as np
+from sklearn.datasets import make_blobs
 from palmerpenguins import load_penguins, load_penguins_raw
+df = load_penguins()
 sns.set_style('whitegrid')
 sns.set_context("poster", font_scale=1.25)
 np.set_printoptions(precision=3, suppress=True, formatter={'float_kind': "{:.3f}".format})
@@ -51,4 +53,56 @@ np.random.seed(1)
 - Extra Credit!
 
 
+# Data Plotting Tools
+
+## [Matplotlib](https://matplotlib.org/)
+
+- Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. 
+- The most popular graphic library (**2D** and 3D)
+- Out of the box, plots are functional but don't look *too* nice
+
+## Matplotlib Example
+
+```{=html}
+<iframe width="1280" height="600" src="https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_colors.html#sphx-glr-gallery-lines-bars-and-markers-bar-colors-py" title="Matplotlib"></iframe>
+```
+
+
+## Seaborn
+
+- Seaborn is a Python data visualization library based on matplotlib
+- Nice and simple api that integrates very nicely with pandas
+- Just pass it a data frame and call functions like
+  - `histplot`
+  - `scatterplot` 
+  - `relplot`
+  - `boxplot` 
+
+## [Seaborn Examples](https://seaborn.pydata.org/examples/index.html)
+
+```{=html}
+<iframe width="1280" height="600" src="https://seaborn.pydata.org/examples/index.html" title="Seaborn"></iframe>
+```
+
+
+
 # Visualizing Data with *one** feature
+
+## Bar Chart
+
+-A bar chart:  groups on one axis, rectangles with heights that represent the number of samples. 
+
+```{python}
+#| echo: True
+#| code-fold: true
+species_count = df.groupby(['species'])['species'].count()
+sns.barplot(x=species_count.index.values, y=species_count.values);
+```
+
+## Histogram Bar Chart
+
+```{python}
+#| echo: True
+#| code-fold: true
+sns.histplot(data=df, x="flipper_length_mm");
+```
