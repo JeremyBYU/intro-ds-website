@@ -44,6 +44,12 @@ np.random.seed(1)
 - HW3: Feb 15 @ Midnight, Wednesday
 
 
+## CS Faculty Candidate
+
+- Bang Tran is here today!
+- Please attend a meet and greet at 3:15 in SBSC 112 
+- Extra Credit!
+
 # Data Wrangling
 
 ## Steps
@@ -128,9 +134,8 @@ df
 :::{.smaller}
 ```{python}
 #| echo: true
-from IPython import display
 df = pd.read_csv('https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv')
-df.head()  #display.Markdown(df.head().to_markdown())
+df.head()
 ```
 :::
 
@@ -171,10 +176,14 @@ df.head()
 ::: {.smaller}
 ```{python}
 #| echo: true
-df = df[~df.isna().any(axis=1)] # quickly see any NA. NA means Null or NaN
+df = df.dropna()
+df = df.reset_index(drop=True) # used to be 343, now 333
 df.info()
 ```
 ::: 
+
+
+<!-- # df = df[~df.isna().any(axis=1)] # quickly see any NA. NA means Null or NaN -->
 
 ## Recap
 
@@ -183,7 +192,150 @@ df.info()
 - Selected columns of interest
 - Renamed columns
 - TODO
-  - Extract year, 
+  - Extract year from `year` column
+  - lower case `sex` column
+  - simplify species name
+
+# Advanced Pandas
+
+## Selecting Data
+
+- You can select a column by using the `[]` notation
+- Once column wil return a **series**, more than one will return a new data frame is returned
+
+```{python}
+#| echo: true
+#| output-location: column
+column = df['year']
+column
+```
+
+## Selecting Data, View
+
+```{python}
+#| echo: true
+#| output-location: column
+df2 = df[['year', 'sex']]
+df2.head()
+```
+
+## Create a new column
+
+```{python}
+#| echo: true
+#| output-location: column
+df2['test'] = 'CISC482'
+df2.head()
+```
+
+## **Changing** Column
+
+```{python}
+#| echo: true
+#| output-location: column
+df2.loc[:, 'test'] = 'DataScience'
+# df2['test'] = "Data Science" # don't do it!
+df2.head()
+```
+
+## Selecting *Some* Rows
+
+::: {.smaller}
+```{python}
+#| echo: true
+#| output-location: column
+df_big_bills = df[df['bill_length_mm'] > 56]
+df_big_bills
+```
+::: 
+
+::: fragment
+::: callout-note
+How would I just select the male penguins
+:::
+:::
+
+::: fragment
+```python
+df_male = df[df['sex'] == "MALE"]
+```
+:::
+
+# Back to Wrangling
+
+## Fixing the Year
+
+::: {.smaller}
+```{python}
+#| echo: true
+df.loc[:, 'year'] = df['year'].str[:4]
+# df.loc[:, 'year'] = df['year'].apply(lambda x: str(x).split('-')[0])
+df.head()
+```
+::: 
+
+## Fixing the Species
+
+::: {.smaller}
+```{python}
+#| echo: true
+mapping = {
+  "Adelie Penguin (Pygoscelis adeliae)": "Adelie", 
+  "Gentoo penguin (Pygoscelis papua)": "Gentoo",
+  "Chinstrap penguin (Pygoscelis antarctica)": "Chinstrap"
+}
+df.loc[:, 'species'] = df['species'].map(mapping)
+# df.loc[:, 'species'] = df['species'].apply(lambda x: str(x).split('-')[0])
+df.head()
+```
+::: 
+
+## Fixing the sex
+
+::: {.smaller}
+```{python}
+df.loc[:, 'sex'] = df['sex'].str.lower()
+df.head()
+```
+::: 
+
+::: {.fragment}
+```python
+df.loc[:, 'sex'] = df['sex'].str.lower()
+```
+::: 
+
+## Checking Data Types
+
+::: {.smaller}
+```{python}
+#| echo: true
+df.info()
+```
+::: 
+
+## Checking Data Types
+
+::: {.smaller}
+```{python}
+#| echo: true
+df.loc[:, 'year'] = pd.to_numeric(df['year'])
+df.info()
+```
+::: 
+
+<!-- ## Did we do good
+
+::: {.smaller}
+```{python}
+#| echo: true
+df_test = load_penguins()
+df_test.info()
+```
+::: 
+
+ -->
+
 
 
 
