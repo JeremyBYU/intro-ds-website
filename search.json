@@ -368,7 +368,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f196df995a0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f24feb65c90>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -838,6 +838,48 @@
     "title": "CISC482 - Lecture07",
     "section": "CS Faculty Candidate",
     "text": "CS Faculty Candidate\n\nRazuan Hossain is here on Friday\nPlease attend a meet and greet at 3:15 in SBSC 112\nExtra Credit!"
+  },
+  {
+    "objectID": "slides/lec-07.html#matplotlib",
+    "href": "slides/lec-07.html#matplotlib",
+    "title": "CISC482 - Lecture07",
+    "section": "Matplotlib",
+    "text": "Matplotlib\n\nMatplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.\nThe most popular graphic library (2D and 3D)\nOut of the box, plots are functional but don’t look too nice"
+  },
+  {
+    "objectID": "slides/lec-07.html#matplotlib-example",
+    "href": "slides/lec-07.html#matplotlib-example",
+    "title": "CISC482 - Lecture07",
+    "section": "Matplotlib Example",
+    "text": "Matplotlib Example"
+  },
+  {
+    "objectID": "slides/lec-07.html#seaborn",
+    "href": "slides/lec-07.html#seaborn",
+    "title": "CISC482 - Lecture07",
+    "section": "Seaborn",
+    "text": "Seaborn\n\nSeaborn is a Python data visualization library based on matplotlib\nNice and simple api that integrates very nicely with pandas\nJust pass it a data frame and call functions like\n\nhistplot\nscatterplot\nrelplot\nboxplot"
+  },
+  {
+    "objectID": "slides/lec-07.html#seaborn-examples",
+    "href": "slides/lec-07.html#seaborn-examples",
+    "title": "CISC482 - Lecture07",
+    "section": "Seaborn Examples",
+    "text": "Seaborn Examples"
+  },
+  {
+    "objectID": "slides/lec-07.html#bar-chart",
+    "href": "slides/lec-07.html#bar-chart",
+    "title": "CISC482 - Lecture07",
+    "section": "Bar Chart",
+    "text": "Bar Chart\n-A bar chart: groups on one axis, rectangles with heights that represent the number of samples.\n\n\nCode\nspecies_count = df.groupby(['species'])['species'].count()\nsns.barplot(x=species_count.index.values, y=species_count.values);"
+  },
+  {
+    "objectID": "slides/lec-07.html#histogram-bar-chart",
+    "href": "slides/lec-07.html#histogram-bar-chart",
+    "title": "CISC482 - Lecture07",
+    "section": "Histogram Bar Chart",
+    "text": "Histogram Bar Chart\n\n\nCode\nsns.histplot(data=df, x=\"flipper_length_mm\");\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-02.html#subscibre-to-zybook",
