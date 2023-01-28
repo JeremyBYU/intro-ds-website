@@ -8,3 +8,4 @@ palmerpenguins
 pandas
 tabulate
 jupyter
+jupyter_client < 8.0.0

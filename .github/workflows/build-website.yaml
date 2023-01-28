@@ -31,7 +31,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Publish to GitHub Pages (and render)
-        uses: quarto-dev/quarto-actions/publish@v2.1.1
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
