@@ -420,6 +420,14 @@ Dr.&nbsp;Jeremy Castagno
 <li>Reading 4-1: Feb 10 @ 12PM, Friday</li>
 <li>HW3: Feb 15 @ Midnight, Wednesday</li>
 </ul>
+</section>
+<section id="cs-faculty-candidate" class="slide level2">
+<h2>CS Faculty Candidate</h2>
+<ul>
+<li>Bang Tran is here today!</li>
+<li>Please attend a meet and greet at 3:15 in SBSC 112</li>
+<li>Extra Credit!</li>
+</ul>
 </section></section>
 <section>
 <section id="data-wrangling" class="title-slide slide level1 center">
@@ -600,9 +608,8 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Loading Pandas from a CSV</h2>
 <div class="smaller">
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> IPython <span class="im">import</span> display</span>
-<span id="cb3-2"><a href="#cb3-2"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>df.head()  <span class="co">#display.Markdown(df.head().to_markdown())</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>df.head()</span></code></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 
 <div>
@@ -999,11 +1006,12 @@ memory usage: 45.8+ KB</code></pre>
 <h2>Remove Nan</h2>
 <div class="smaller">
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>df <span class="op">=</span> df[<span class="op">~</span>df.isna().<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)] <span class="co"># quickly see any NA. NA means Null or NaN</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>df <span class="op">=</span> df.dropna()</span>
+<span id="cb9-2"><a href="#cb9-2"></a>df <span class="op">=</span> df.reset_index(drop<span class="op">=</span><span class="va">True</span>) <span class="co"># used to be 343, now 333</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>df.info()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-Int64Index: 333 entries, 0 to 343
+RangeIndex: 333 entries, 0 to 332
 Data columns (total 8 columns):
  #   Column             Non-Null Count  Dtype  
 ---  ------             --------------  -----  
@@ -1016,10 +1024,11 @@ Data columns (total 8 columns):
  6   sex                333 non-null    object 
  7   year               333 non-null    object 
 dtypes: float64(4), object(4)
-memory usage: 23.4+ KB</code></pre>
+memory usage: 20.9+ KB</code></pre>
 </div>
 </div>
 </div>
+<!-- # df = df[~df.isna().any(axis=1)] # quickly see any NA. NA means Null or NaN -->
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
@@ -1030,9 +1039,732 @@ memory usage: 23.4+ KB</code></pre>
 <li>Renamed columns</li>
 <li>TODO
 <ul>
-<li>Extract year,</li>
+<li>Extract year from <code>year</code> column</li>
+<li>lower case <code>sex</code> column</li>
+<li>simplify species name</li>
 </ul></li>
 </ul>
+</section></section>
+<section>
+<section id="advanced-pandas" class="title-slide slide level1 center">
+<h1>Advanced Pandas</h1>
+
+</section>
+<section id="selecting-data" class="slide level2">
+<h2>Selecting Data</h2>
+<ul>
+<li>You can select a column by using the <code>[]</code> notation</li>
+<li>Once column wil return a <strong>series</strong>, more than one will return a new data frame is returned</li>
+</ul>
+<div class="cell columns column-output-location" data-execution_count="9">
+<div class="column">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>column <span class="op">=</span> df[<span class="st">'year'</span>]</span>
+<span id="cb11-2"><a href="#cb11-2"></a>column</span></code></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>0      2007-11-11
+1      2007-11-11
+2      2007-11-16
+3      2007-11-16
+4      2007-11-16
+          ...    
+328    2009-11-19
+329    2009-11-21
+330    2009-11-21
+331    2009-11-21
+332    2009-11-21
+Name: year, Length: 333, dtype: object</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-data-view" class="slide level2">
+<h2>Selecting Data, View</h2>
+<div class="cell columns column-output-location" data-execution_count="10">
+<div class="column">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>df2 <span class="op">=</span> df[[<span class="st">'year'</span>, <span class="st">'sex'</span>]]</span>
+<span id="cb13-2"><a href="#cb13-2"></a>df2.head()</span></code></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-display" data-execution_count="10">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>sex</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2007-11-11</td>
+      <td>MALE</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2007-11-11</td>
+      <td>FEMALE</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2007-11-16</td>
+      <td>FEMALE</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2007-11-16</td>
+      <td>FEMALE</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2007-11-16</td>
+      <td>MALE</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-new-column" class="slide level2">
+<h2>Create a new column</h2>
+<div class="cell columns column-output-location" data-execution_count="11">
+<div class="column">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>df2[<span class="st">'test'</span>] <span class="op">=</span> <span class="st">'CISC482'</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>df2.head()</span></code></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-display" data-execution_count="11">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>sex</th>
+      <th>test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2007-11-11</td>
+      <td>MALE</td>
+      <td>CISC482</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2007-11-11</td>
+      <td>FEMALE</td>
+      <td>CISC482</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2007-11-16</td>
+      <td>FEMALE</td>
+      <td>CISC482</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2007-11-16</td>
+      <td>FEMALE</td>
+      <td>CISC482</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2007-11-16</td>
+      <td>MALE</td>
+      <td>CISC482</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="changing-column" class="slide level2">
+<h2><strong>Changing</strong> Column</h2>
+<div class="cell columns column-output-location" data-execution_count="12">
+<div class="column">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>df2.loc[:, <span class="st">'test'</span>] <span class="op">=</span> <span class="st">'DataScience'</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="co"># df2['test'] = "Data Science" # don't do it!</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>df2.head()</span></code></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-display" data-execution_count="12">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>sex</th>
+      <th>test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2007-11-11</td>
+      <td>MALE</td>
+      <td>DataScience</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2007-11-11</td>
+      <td>FEMALE</td>
+      <td>DataScience</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2007-11-16</td>
+      <td>FEMALE</td>
+      <td>DataScience</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2007-11-16</td>
+      <td>FEMALE</td>
+      <td>DataScience</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2007-11-16</td>
+      <td>MALE</td>
+      <td>DataScience</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-some-rows" class="slide level2">
+<h2>Selecting <em>Some</em> Rows</h2>
+<div class="smaller">
+<div class="cell columns column-output-location" data-execution_count="13">
+<div class="column">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>df_big_bills <span class="op">=</span> df[df[<span class="st">'bill_length_mm'</span>] <span class="op">&gt;</span> <span class="dv">56</span>]</span>
+<span id="cb16-2"><a href="#cb16-2"></a>df_big_bills</span></code></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-display" data-execution_count="13">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>178</th>
+      <td>Gentoo penguin (Pygoscelis papua)</td>
+      <td>Biscoe</td>
+      <td>59.6</td>
+      <td>17.0</td>
+      <td>230.0</td>
+      <td>6050.0</td>
+      <td>MALE</td>
+      <td>2007-12-03</td>
+    </tr>
+    <tr>
+      <th>282</th>
+      <td>Chinstrap penguin (Pygoscelis antarctica)</td>
+      <td>Dream</td>
+      <td>58.0</td>
+      <td>17.8</td>
+      <td>181.0</td>
+      <td>3700.0</td>
+      <td>FEMALE</td>
+      <td>2007-11-30</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>How would I just select the male penguins</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>df_male <span class="op">=</span> df[df[<span class="st">'sex'</span>] <span class="op">==</span> <span class="st">"MALE"</span>]</span></code></pre></div>
+</div>
+</section></section>
+<section>
+<section id="back-to-wrangling" class="title-slide slide level1 center">
+<h1>Back to Wrangling</h1>
+
+</section>
+<section id="fixing-the-year" class="slide level2">
+<h2>Fixing the Year</h2>
+<div class="smaller">
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>df.loc[:, <span class="st">'year'</span>] <span class="op">=</span> df[<span class="st">'year'</span>].<span class="bu">str</span>[:<span class="dv">4</span>]</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="co"># df.loc[:, 'year'] = df['year'].apply(lambda x: str(x).split('-')[0])</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>df.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Torgersen</td>
+      <td>39.1</td>
+      <td>18.7</td>
+      <td>181.0</td>
+      <td>3750.0</td>
+      <td>MALE</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Torgersen</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>FEMALE</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Torgersen</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>FEMALE</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Torgersen</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>FEMALE</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie Penguin (Pygoscelis adeliae)</td>
+      <td>Torgersen</td>
+      <td>39.3</td>
+      <td>20.6</td>
+      <td>190.0</td>
+      <td>3650.0</td>
+      <td>MALE</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="fixing-the-species" class="slide level2">
+<h2>Fixing the Species</h2>
+<div class="smaller">
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>mapping <span class="op">=</span> {</span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="st">"Adelie Penguin (Pygoscelis adeliae)"</span>: <span class="st">"Adelie"</span>, </span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="st">"Gentoo penguin (Pygoscelis papua)"</span>: <span class="st">"Gentoo"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="st">"Chinstrap penguin (Pygoscelis antarctica)"</span>: <span class="st">"Chinstrap"</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>}</span>
+<span id="cb19-6"><a href="#cb19-6"></a>df.loc[:, <span class="st">'species'</span>] <span class="op">=</span> df[<span class="st">'species'</span>].<span class="bu">map</span>(mapping)</span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># df.loc[:, 'species'] = df['species'].apply(lambda x: str(x).split('-')[0])</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>df.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.1</td>
+      <td>18.7</td>
+      <td>181.0</td>
+      <td>3750.0</td>
+      <td>MALE</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>FEMALE</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>FEMALE</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>FEMALE</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.3</td>
+      <td>20.6</td>
+      <td>190.0</td>
+      <td>3650.0</td>
+      <td>MALE</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="fixing-the-sex" class="slide level2">
+<h2>Fixing the sex</h2>
+<div class="smaller">
+<div class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="16">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.1</td>
+      <td>18.7</td>
+      <td>181.0</td>
+      <td>3750.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.5</td>
+      <td>17.4</td>
+      <td>186.0</td>
+      <td>3800.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.3</td>
+      <td>18.0</td>
+      <td>195.0</td>
+      <td>3250.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>36.7</td>
+      <td>19.3</td>
+      <td>193.0</td>
+      <td>3450.0</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.3</td>
+      <td>20.6</td>
+      <td>190.0</td>
+      <td>3650.0</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>df.loc[:, <span class="st">'sex'</span>] <span class="op">=</span> df[<span class="st">'sex'</span>].<span class="bu">str</span>.lower()</span></code></pre></div>
+</div>
+</section>
+<section id="checking-data-types" class="slide level2">
+<h2>Checking Data Types</h2>
+<div class="smaller">
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>df.info()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 333 entries, 0 to 332
+Data columns (total 8 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   species            333 non-null    object 
+ 1   island             333 non-null    object 
+ 2   bill_length_mm     333 non-null    float64
+ 3   bill_depth_mm      333 non-null    float64
+ 4   flipper_length_mm  333 non-null    float64
+ 5   body_mass_g        333 non-null    float64
+ 6   sex                333 non-null    object 
+ 7   year               333 non-null    object 
+dtypes: float64(4), object(4)
+memory usage: 20.9+ KB</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="checking-data-types-1" class="slide level2">
+<h2>Checking Data Types</h2>
+<div class="smaller">
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>df.loc[:, <span class="st">'year'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'year'</span>])</span>
+<span id="cb23-2"><a href="#cb23-2"></a>df.info()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 333 entries, 0 to 332
+Data columns (total 8 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   species            333 non-null    object 
+ 1   island             333 non-null    object 
+ 2   bill_length_mm     333 non-null    float64
+ 3   bill_depth_mm      333 non-null    float64
+ 4   flipper_length_mm  333 non-null    float64
+ 5   body_mass_g        333 non-null    float64
+ 6   sex                333 non-null    object 
+ 7   year               333 non-null    int64  
+dtypes: float64(4), int64(1), object(3)
+memory usage: 20.9+ KB</code></pre>
+</div>
+</div>
+</div>
+<!-- ## Did we do good
+
+::: {.smaller}
+
+::: {.cell execution_count=19}
+``` {.python .cell-code}
+df_test = load_penguins()
+df_test.info()
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 344 entries, 0 to 343
+Data columns (total 8 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   species            344 non-null    object 
+ 1   island             344 non-null    object 
+ 2   bill_length_mm     342 non-null    float64
+ 3   bill_depth_mm      342 non-null    float64
+ 4   flipper_length_mm  342 non-null    float64
+ 5   body_mass_g        342 non-null    float64
+ 6   sex                333 non-null    object 
+ 7   year               344 non-null    int64  
+dtypes: float64(4), int64(1), object(3)
+memory usage: 21.6+ KB
+```
+:::
+:::
+
+
+::: 
+
+ -->
 </section></section>
 <section>
 <section id="class-activity" class="title-slide slide level1 center">
