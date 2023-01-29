@@ -90,19 +90,185 @@ np.random.seed(1)
 
 ## Bar Chart
 
--A bar chart:  groups on one axis, rectangles with heights that represent the number of samples. 
+- A bar chart:  groups on one axis, rectangles with heights that represent the number of samples. 
 
 ```{python}
 #| echo: True
 #| code-fold: true
 species_count = df.groupby(['species'])['species'].count()
-sns.barplot(x=species_count.index.values, y=species_count.values);
+ax = sns.barplot(x=species_count.index.values, y=species_count.values)
+ax.bar_label(ax.containers[0])
+ax;
 ```
 
+## Numerical Features
+
+- Sometimes we want visualize numerical features
+- We are interested in showing users the *variation* of this feature
+- Histograms
+- Density Plots
+- Box Plots
+
+
 ## Histogram Bar Chart
+
+## Histogram Bar Chart
+
+::: columns
+
+:::{.smaller .column width="50%"}
+
+::: {.r-stack}
+
+::: {.fragment .fade-out}
+- Dividing the numerical feature into small regions and then count the number of values in each region
+- Notice - axis have labels!
+- Notice - bar widths are small enough that you can see the distributions shape
+:::
+
+::: {.fragment .fade-up}
+- What do you notice about this distribution?
+- What is (roughly) the most likely flipper length
+:::
+
+:::
+
+:::
+
+
+::: {.column width="50%"}
+
 
 ```{python}
 #| echo: True
 #| code-fold: true
-sns.histplot(data=df, x="flipper_length_mm");
+ax = sns.histplot(data=df, x="flipper_length_mm");
 ```
+
+
+:::
+
+:::
+
+
+## Histogram Bar Horizontal Bar Chart
+
+::: columns
+
+:::{.smaller .column width="50%"}
+
+- Sometimes its better to have the bar chart grow horizontal
+
+:::
+
+
+::: {.column width="50%"}
+
+
+```{python}
+#| echo: True
+#| code-fold: true
+species_count = df.groupby(['species'])['species'].count()
+ax = sns.barplot(data=df, y="island", x="body_mass_g", errorbar=None)
+ax.bar_label(ax.containers[0]);
+```
+
+
+:::
+
+:::
+
+
+## Density Plot
+
+::: columns
+
+:::{.smaller .column width="50%"}
+
+- A plot that **approximates** the density function of the distribution for the feature. 
+- Density plots can be thought of as a smoothed histogram
+
+:::
+
+::: {.column width="50%"}
+
+
+```{python}
+#| echo: True
+#| code-fold: true
+ax = sns.kdeplot(data=df, x="body_mass_g");
+```
+
+:::
+
+:::
+
+## Density Plot with Histogram
+
+```{python}
+#| echo: True
+#| code-fold: true
+ax = sns.histplot(data=df, x="body_mass_g", kde=True);
+```
+
+
+## Density Plot with Histogram, Hue
+
+```{python}
+#| echo: True
+#| code-fold: true
+ax = sns.histplot(data=df, x="body_mass_g", kde=True, hue='species');
+```
+
+
+## Box Plot
+
+::: columns
+
+:::{.smaller .column width="50%"}
+
+- A visual representation of the summary:
+  - minimum, maximum
+  - first quartile, median, third quartiles
+  - outliers
+
+:::
+
+::: {.column width="50%"}
+
+
+```{python}
+#| echo: True
+#| code-fold: true
+ax = sns.boxplot(data=df, x="body_mass_g");
+```
+
+:::
+
+:::
+
+
+## Boxen Plot
+
+::: columns
+
+:::{.smaller .column width="50%"}
+
+- Plots more quantiles
+- Provides more information about the shape of the distribution, particularly in the tails.
+- 50%, 25%, 12.5%, 6.25%, 3.13%
+
+:::
+
+::: {.column width="50%"}
+
+
+```{python}
+#| echo: True
+#| code-fold: true
+ax = sns.boxenplot(data=df, x="body_mass_g");
+```
+
+:::
+
+:::
