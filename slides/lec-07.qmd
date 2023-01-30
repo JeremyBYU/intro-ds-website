@@ -53,38 +53,6 @@ np.random.seed(1)
 - Extra Credit!
 
 
-# Data Plotting Tools
-
-## [Matplotlib](https://matplotlib.org/)
-
-- Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. 
-- The most popular graphic library (**2D** and 3D)
-- Out of the box, plots are functional but don't look *too* nice
-
-## Matplotlib Example
-
-```{=html}
-<iframe width="1280" height="600" src="https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_colors.html#sphx-glr-gallery-lines-bars-and-markers-bar-colors-py" title="Matplotlib"></iframe>
-```
-
-
-## Seaborn
-
-- Seaborn is a Python data visualization library based on matplotlib
-- Nice and simple api that integrates very nicely with pandas
-- Just pass it a data frame and call functions like
-  - `histplot`
-  - `scatterplot` 
-  - `relplot`
-  - `boxplot` 
-
-## [Seaborn Examples](https://seaborn.pydata.org/examples/index.html)
-
-```{=html}
-<iframe width="1280" height="600" src="https://seaborn.pydata.org/examples/index.html" title="Seaborn"></iframe>
-```
-
-
 
 # Visualizing Data with *one** feature
 
@@ -212,14 +180,6 @@ ax = sns.histplot(data=df, x="body_mass_g", kde=True);
 ```
 
 
-## Density Plot with Histogram, Hue
-
-```{python}
-#| echo: True
-#| code-fold: true
-ax = sns.histplot(data=df, x="body_mass_g", kde=True, hue='species');
-```
-
 
 ## Box Plot
 
@@ -272,3 +232,250 @@ ax = sns.boxenplot(data=df, x="body_mass_g");
 :::
 
 :::
+
+# Multiple Features
+
+## Two features
+
+- We visualized a single feature uses one axis to display the feature value and another axis to display the value's frequency
+- However, what if we want to communicate or investigate the **relationship** between two variables?
+  - Scatterplot, line plots, etc!
+
+
+## Example Scatter Plot Data
+
+
+```{python}
+#| echo: True
+tips = sns.load_dataset("tips")
+tips.head()
+```
+
+## Example Scatter Plot
+
+::: columns
+
+:::{.smaller .column width="50%"}
+
+- Every point is a data point
+- Point out the best tips
+- Point out the worst tips
+
+:::
+
+
+::: {.column width="50%"}
+```{python}
+#| echo: True
+#| code-fold: True
+sns.relplot(data=tips, x="total_bill", y="tip", aspect=1.5);
+```
+:::
+
+:::
+
+## Example Line Plot
+
+::: {fig-align="left"}
+```{python}
+#| echo: True
+#| code-fold: True
+tips = sns.load_dataset("tips")
+sns.relplot(data=tips, x="total_bill", y="tip", aspect=1.5, kind='line');
+```
+:::
+
+## Combined Plot
+
+- Data points and linear regression model
+
+::: {fig-align="left"}
+```{python}
+#| echo: False
+#| code-fold: True
+sns.set_theme(style="ticks")
+df_anscombe = sns.load_dataset("anscombe")
+# Show the results of a linear regression within each dataset
+sns.lmplot(
+    data=df_anscombe[df_anscombe.dataset == 'I'], x="x", y="y", col="dataset", hue="dataset",
+    col_wrap=2, palette="muted", ci=None,
+    height=4, scatter_kws={"s": 50, "alpha": 1}
+);
+```
+:::
+
+## Looks can be deceiving
+
+- Always show the points...
+
+::: {fig-align="left"}
+```{python}
+#| echo: False
+#| code-fold: True
+sns.set_theme(style="ticks")
+df_anscombe = sns.load_dataset("anscombe")
+# Show the results of a linear regression within each dataset
+sns.lmplot(
+    data=df_anscombe[df_anscombe.dataset == 'II'], x="x", y="y", col="dataset", hue="dataset",
+    col_wrap=2, palette="muted", ci=None,
+    height=4, scatter_kws={"s": 50, "alpha": 1}
+);
+```
+:::
+
+
+
+
+#  Categorical Features
+
+##  Categorical Features
+
+- Sometimes we have a *categorical* feature and see the difference between two different sets
+  - **Category**: Man, Woman. **Feature**: Height
+  - **Category**: Friday, Saturday, Sunday. **Feature**: Avg. Tip 
+  - **Category**: Penguin Species. **Feature**: Body Mass
+
+
+
+## Density Plot with Histogram, Species as Hue
+
+```{python}
+#| echo: True
+#| code-fold: true
+ax = sns.histplot(data=df, x="body_mass_g", kde=True, hue='species');
+```
+
+
+## Bar Plot, Sex as Hue
+
+```{python}
+#| echo: True
+#| code-fold: true
+# Draw a nested barplot by species and sex
+g = sns.catplot(
+    data=df, kind="bar", 
+    x="species", y="body_mass_g", hue="sex", 
+    errorbar=None, alpha=0.6, dodge=False
+)
+```
+
+
+
+
+## Bar Plot, Sex as Hue
+
+::: columns
+
+
+
+:::{.smaller .column width="40%"}
+
+- What species and sex combination is the most prevalent?
+- Which species has the smallest numerical difference between sexes?
+
+:::
+
+
+:::{.smaller .column width="60%"}
+
+
+```{python}
+#| echo: True
+#| code-fold: true
+# Draw a nested barplot by species and sex
+g = sns.catplot(
+    data=df, kind="bar", 
+    x="species", y="body_mass_g", hue="sex", 
+    errorbar=None, alpha=0.6
+)
+```
+
+:::
+
+:::
+
+
+# Awesome Plots
+
+## Strip Plot
+
+```{python}
+#| echo: True
+#| code-fold: true
+g = sns.catplot(
+    data=df, kind="strip", 
+    y="species", x="bill_length_mm", hue="sex",  aspect=2, alpha=0.6
+)
+```
+
+
+## Swarm Plot
+
+
+- A swarm plot is a scatter plot with points *jittered* off the lines for the categorical feature so the points do not overlap. 
+- A swarm plot is useful for small datasets, but with an increasing number of points, the plots get too wide.
+
+
+## Swarm Plot Example
+
+```{python}
+#| echo: True
+#| code-fold: true
+g = sns.swarmplot(
+    data=df, 
+    y="species", x="bill_length_mm", hue='sex', alpha=0.6
+)
+```
+
+
+
+
+## Violin
+
+
+```{python}
+#| echo: True
+#| code-fold: true
+sns.violinplot(data=df, x="bill_length_mm", y="species");
+```
+
+
+## Violin Explained
+
+![](./lec07_images/violin_plot.png){fig-align="center"}
+
+
+
+
+
+# Data Plotting Tools
+
+## [Matplotlib](https://matplotlib.org/)
+
+- Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. 
+- The most popular graphic library (**2D** and 3D)
+- Out of the box, plots are functional but don't look *too* nice
+
+## Matplotlib Example
+
+```{=html}
+<iframe width="1280" height="600" src="https://matplotlib.org/stable/gallery/lines_bars_and_markers/bar_colors.html#sphx-glr-gallery-lines-bars-and-markers-bar-colors-py" title="Matplotlib"></iframe>
+```
+
+
+## Seaborn
+
+- Seaborn is a Python data visualization library based on matplotlib
+- Nice and simple api that integrates very nicely with pandas
+- Just pass it a data frame and call functions like
+  - `histplot`
+  - `scatterplot` 
+  - `relplot`
+  - `boxplot` 
+
+## [Seaborn Examples](https://seaborn.pydata.org/examples/index.html)
+
+```{=html}
+<iframe width="1280" height="600" src="https://seaborn.pydata.org/examples/index.html" title="Seaborn"></iframe>
+```
+
