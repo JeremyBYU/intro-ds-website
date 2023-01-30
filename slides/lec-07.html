@@ -383,6 +383,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="Intro to Data Science - CISC482 - Lecture07">
 <meta property="og:description" content="Data Exploration">
 <meta property="og:site-name" content="Intro to Data Science">
@@ -427,6 +430,474 @@ Dr.&nbsp;Jeremy Castagno
 </ul>
 </section></section>
 <section>
+<section id="visualizing-data-with-one-feature" class="title-slide slide level1 center">
+<h1>Visualizing Data with *one** feature</h1>
+
+</section>
+<section id="bar-chart" class="slide level2">
+<h2>Bar Chart</h2>
+<ul>
+<li>A bar chart: groups on one axis, rectangles with heights that represent the number of samples.</li>
+</ul>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>species_count <span class="op">=</span> df.groupby([<span class="st">'species'</span>])[<span class="st">'species'</span>].count()</span>
+<span id="cb1-2"><a href="#cb1-2"></a>ax <span class="op">=</span> sns.barplot(x<span class="op">=</span>species_count.index.values, y<span class="op">=</span>species_count.values)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>ax.bar_label(ax.containers[<span class="dv">0</span>])</span>
+<span id="cb1-4"><a href="#cb1-4"></a>ax<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-3-output-1.png" width="854" height="466"></p>
+</div>
+</div>
+</section>
+<section id="numerical-features" class="slide level2">
+<h2>Numerical Features</h2>
+<ul>
+<li>Sometimes we want visualize numerical features</li>
+<li>We are interested in showing users the <em>variation</em> of this feature</li>
+<li>Histograms</li>
+<li>Density Plots</li>
+<li>Box Plots</li>
+</ul>
+</section>
+<section id="histogram-bar-chart" class="slide level2">
+<h2>Histogram Bar Chart</h2>
+</section>
+<section id="histogram-bar-chart-1" class="slide level2">
+<h2>Histogram Bar Chart</h2>
+<div class="columns">
+<div class="smaller column" style="width:50%;">
+<div class="r-stack">
+<div class="fragment fade-out">
+<ul>
+<li>Dividing the numerical feature into small regions and then count the number of values in each region</li>
+<li>Notice - axis have labels!</li>
+<li>Notice - bar widths are small enough that you can see the distributions shape</li>
+</ul>
+</div>
+<div class="fragment fade-up">
+<ul>
+<li>What do you notice about this distribution?</li>
+<li>What is (roughly) the most likely flipper length</li>
+</ul>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>ax <span class="op">=</span> sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"flipper_length_mm"</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-4-output-1.png" width="875" height="491"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="histogram-bar-horizontal-bar-chart" class="slide level2">
+<h2>Histogram Bar Horizontal Bar Chart</h2>
+<div class="columns">
+<div class="smaller column" style="width:50%;">
+<ul>
+<li>Sometimes its better to have the bar chart grow horizontal</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>species_count <span class="op">=</span> df.groupby([<span class="st">'species'</span>])[<span class="st">'species'</span>].count()</span>
+<span id="cb3-2"><a href="#cb3-2"></a>ax <span class="op">=</span> sns.barplot(data<span class="op">=</span>df, y<span class="op">=</span><span class="st">"island"</span>, x<span class="op">=</span><span class="st">"body_mass_g"</span>, errorbar<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>ax.bar_label(ax.containers[<span class="dv">0</span>])<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-5-output-1.png" width="1137" height="490"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="density-plot" class="slide level2">
+<h2>Density Plot</h2>
+<div class="columns">
+<div class="smaller column" style="width:50%;">
+<ul>
+<li>A plot that <strong>approximates</strong> the density function of the distribution for the feature.</li>
+<li>Density plots can be thought of as a smoothed histogram</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>ax <span class="op">=</span> sns.kdeplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"body_mass_g"</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-6-output-1.png" width="963" height="490"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="density-plot-with-histogram" class="slide level2">
+<h2>Density Plot with Histogram</h2>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>ax <span class="op">=</span> sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"body_mass_g"</span>, kde<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-7-output-1.png" width="875" height="490"></p>
+</div>
+</div>
+</section>
+<section id="box-plot" class="slide level2">
+<h2>Box Plot</h2>
+<div class="columns">
+<div class="smaller column" style="width:50%;">
+<ul>
+<li>A visual representation of the summary:
+<ul>
+<li>minimum, maximum</li>
+<li>first quartile, median, third quartiles</li>
+<li>outliers</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>ax <span class="op">=</span> sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"body_mass_g"</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-8-output-1.png" width="763" height="490"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="boxen-plot" class="slide level2">
+<h2>Boxen Plot</h2>
+<div class="columns">
+<div class="smaller column" style="width:50%;">
+<ul>
+<li>Plots more quantiles</li>
+<li>Provides more information about the shape of the distribution, particularly in the tails.</li>
+<li>50%, 25%, 12.5%, 6.25%, 3.13%</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>ax <span class="op">=</span> sns.boxenplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"body_mass_g"</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-9-output-1.png" width="763" height="490"></p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="multiple-features" class="title-slide slide level1 center">
+<h1>Multiple Features</h1>
+
+</section>
+<section id="two-features" class="slide level2">
+<h2>Two features</h2>
+<ul>
+<li>We visualized a single feature uses one axis to display the feature value and another axis to display the value’s frequency</li>
+<li>However, what if we want to communicate or investigate the <strong>relationship</strong> between two variables?
+<ul>
+<li>Scatterplot, line plots, etc!</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-scatter-plot-data" class="slide level2">
+<h2>Example Scatter Plot Data</h2>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a>tips.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>sex</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="example-scatter-plot" class="slide level2">
+<h2>Example Scatter Plot</h2>
+<div class="columns">
+<div class="smaller column" style="width:50%;">
+<ul>
+<li>Every point is a data point</li>
+<li>Point out the best tips</li>
+<li>Point out the worst tips</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>sns.relplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, aspect<span class="op">=</span><span class="fl">1.5</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-11-output-1.png" width="617" height="412"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-line-plot" class="slide level2">
+<h2>Example Line Plot</h2>
+<div data-fig-align="left">
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>sns.relplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, aspect<span class="op">=</span><span class="fl">1.5</span>, kind<span class="op">=</span><span class="st">'line'</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-12-output-1.png" width="617" height="412"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="combined-plot" class="slide level2">
+<h2>Combined Plot</h2>
+<ul>
+<li>Data points and linear regression model</li>
+</ul>
+<div data-fig-align="left">
+<div class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-13-output-1.png" width="404" height="368"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="looks-can-be-deceiving" class="slide level2">
+<h2>Looks can be deceiving</h2>
+<ul>
+<li>Always show the points…</li>
+</ul>
+<div data-fig-align="left">
+<div class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-14-output-1.png" width="404" height="368"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="categorical-features" class="title-slide slide level1 center">
+<h1>Categorical Features</h1>
+
+</section>
+<section id="categorical-features-1" class="slide level2">
+<h2>Categorical Features</h2>
+<ul>
+<li>Sometimes we have a <em>categorical</em> feature and see the difference between two different sets
+<ul>
+<li><strong>Category</strong>: Man, Woman. <strong>Feature</strong>: Height</li>
+<li><strong>Category</strong>: Friday, Saturday, Sunday. <strong>Feature</strong>: Avg. Tip</li>
+<li><strong>Category</strong>: Penguin Species. <strong>Feature</strong>: Body Mass</li>
+</ul></li>
+</ul>
+</section>
+<section id="density-plot-with-histogram-species-as-hue" class="slide level2">
+<h2>Density Plot with Histogram, Species as Hue</h2>
+<div class="cell" data-execution_count="14">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>ax <span class="op">=</span> sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"body_mass_g"</span>, kde<span class="op">=</span><span class="va">True</span>, hue<span class="op">=</span><span class="st">'species'</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-15-output-1.png" width="815" height="437"></p>
+</div>
+</div>
+</section>
+<section id="bar-plot-sex-as-hue" class="slide level2">
+<h2>Bar Plot, Sex as Hue</h2>
+<div class="cell" data-execution_count="15">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Draw a nested barplot by species and sex</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>g <span class="op">=</span> sns.catplot(</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    data<span class="op">=</span>df, kind<span class="op">=</span><span class="st">"bar"</span>, </span>
+<span id="cb12-4"><a href="#cb12-4"></a>    x<span class="op">=</span><span class="st">"species"</span>, y<span class="op">=</span><span class="st">"body_mass_g"</span>, hue<span class="op">=</span><span class="st">"sex"</span>, </span>
+<span id="cb12-5"><a href="#cb12-5"></a>    errorbar<span class="op">=</span><span class="va">None</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, dodge<span class="op">=</span><span class="va">False</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-16-output-1.png" width="558" height="464"></p>
+</div>
+</div>
+</section>
+<section id="bar-plot-sex-as-hue-1" class="slide level2">
+<h2>Bar Plot, Sex as Hue</h2>
+<div class="columns">
+<div class="smaller column" style="width:40%;">
+<ul>
+<li>What species and sex combination is the most prevalent?</li>
+<li>Which species has the smallest numerical difference between sexes?</li>
+</ul>
+</div><div class="smaller column" style="width:60%;">
+<div class="cell" data-execution_count="16">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Draw a nested barplot by species and sex</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>g <span class="op">=</span> sns.catplot(</span>
+<span id="cb13-3"><a href="#cb13-3"></a>    data<span class="op">=</span>df, kind<span class="op">=</span><span class="st">"bar"</span>, </span>
+<span id="cb13-4"><a href="#cb13-4"></a>    x<span class="op">=</span><span class="st">"species"</span>, y<span class="op">=</span><span class="st">"body_mass_g"</span>, hue<span class="op">=</span><span class="st">"sex"</span>, </span>
+<span id="cb13-5"><a href="#cb13-5"></a>    errorbar<span class="op">=</span><span class="va">None</span>, alpha<span class="op">=</span><span class="fl">0.6</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-17-output-1.png" width="558" height="464"></p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="awesome-plots" class="title-slide slide level1 center">
+<h1>Awesome Plots</h1>
+
+</section>
+<section id="strip-plot" class="slide level2">
+<h2>Strip Plot</h2>
+<div class="cell" data-execution_count="17">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>g <span class="op">=</span> sns.catplot(</span>
+<span id="cb14-2"><a href="#cb14-2"></a>    data<span class="op">=</span>df, kind<span class="op">=</span><span class="st">"strip"</span>, </span>
+<span id="cb14-3"><a href="#cb14-3"></a>    y<span class="op">=</span><span class="st">"species"</span>, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, hue<span class="op">=</span><span class="st">"sex"</span>,  aspect<span class="op">=</span><span class="dv">2</span>, alpha<span class="op">=</span><span class="fl">0.6</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-18-output-1.png" width="1045" height="463"></p>
+</div>
+</div>
+</section>
+<section id="swarm-plot" class="slide level2">
+<h2>Swarm Plot</h2>
+<ul>
+<li>A swarm plot is a scatter plot with points <em>jittered</em> off the lines for the categorical feature so the points do not overlap.</li>
+<li>A swarm plot is useful for small datasets, but with an increasing number of points, the plots get too wide.</li>
+</ul>
+</section>
+<section id="swarm-plot-example" class="slide level2">
+<h2>Swarm Plot Example</h2>
+<div class="cell" data-execution_count="18">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>g <span class="op">=</span> sns.swarmplot(</span>
+<span id="cb15-2"><a href="#cb15-2"></a>    data<span class="op">=</span>df, </span>
+<span id="cb15-3"><a href="#cb15-3"></a>    y<span class="op">=</span><span class="st">"species"</span>, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, hue<span class="op">=</span><span class="st">'sex'</span>, alpha<span class="op">=</span><span class="fl">0.6</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-19-output-1.png" width="867" height="437"></p>
+</div>
+</div>
+</section>
+<section id="violin" class="slide level2">
+<h2>Violin</h2>
+<div class="cell" data-execution_count="19">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>sns.violinplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"bill_length_mm"</span>, y<span class="op">=</span><span class="st">"species"</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-07_files/figure-revealjs/cell-20-output-1.png" width="867" height="437"></p>
+</div>
+</div>
+</section>
+<section id="violin-explained" class="slide level2">
+<h2>Violin Explained</h2>
+
+<img data-src="./lec07_images/violin_plot.png" class="r-stretch quarto-figure-center"></section></section>
+<section>
 <section id="data-plotting-tools" class="title-slide slide level1 center">
 <h1>Data Plotting Tools</h1>
 
@@ -461,40 +932,9 @@ Dr.&nbsp;Jeremy Castagno
 <section id="seaborn-examples" class="slide level2">
 <h2><a href="https://seaborn.pydata.org/examples/index.html">Seaborn Examples</a></h2>
 <iframe width="1280" height="600" src="https://seaborn.pydata.org/examples/index.html" title="Seaborn"></iframe>
-</section></section>
-<section>
-<section id="visualizing-data-with-one-feature" class="title-slide slide level1 center">
-<h1>Visualizing Data with *one** feature</h1>
 
-</section>
-<section id="bar-chart" class="slide level2">
-<h2>Bar Chart</h2>
-<p>-A bar chart: groups on one axis, rectangles with heights that represent the number of samples.</p>
-<div class="cell" data-execution_count="2">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>species_count <span class="op">=</span> df.groupby([<span class="st">'species'</span>])[<span class="st">'species'</span>].count()</span>
-<span id="cb1-2"><a href="#cb1-2"></a>sns.barplot(x<span class="op">=</span>species_count.index.values, y<span class="op">=</span>species_count.values)<span class="op">;</span></span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-07_files/figure-revealjs/cell-3-output-1.png" width="854" height="445"></p>
-</div>
-</div>
-</section>
-<section id="histogram-bar-chart" class="slide level2">
-<h2>Histogram Bar Chart</h2>
-<div class="cell" data-execution_count="3">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>sns.histplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"flipper_length_mm"</span>)<span class="op">;</span></span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-07_files/figure-revealjs/cell-4-output-1.png" width="875" height="491"></p>
-</div>
-</div>
 
-<p><img src="../images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>

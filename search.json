@@ -368,7 +368,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f24feb65c90>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f0e5e011420>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -840,6 +840,174 @@
     "text": "CS Faculty Candidate\n\nRazuan Hossain is here on Friday\nPlease attend a meet and greet at 3:15 in SBSC 112\nExtra Credit!"
   },
   {
+    "objectID": "slides/lec-07.html#bar-chart",
+    "href": "slides/lec-07.html#bar-chart",
+    "title": "CISC482 - Lecture07",
+    "section": "Bar Chart",
+    "text": "Bar Chart\n\nA bar chart: groups on one axis, rectangles with heights that represent the number of samples.\n\n\n\nCode\nspecies_count = df.groupby(['species'])['species'].count()\nax = sns.barplot(x=species_count.index.values, y=species_count.values)\nax.bar_label(ax.containers[0])\nax;"
+  },
+  {
+    "objectID": "slides/lec-07.html#numerical-features",
+    "href": "slides/lec-07.html#numerical-features",
+    "title": "CISC482 - Lecture07",
+    "section": "Numerical Features",
+    "text": "Numerical Features\n\nSometimes we want visualize numerical features\nWe are interested in showing users the variation of this feature\nHistograms\nDensity Plots\nBox Plots"
+  },
+  {
+    "objectID": "slides/lec-07.html#histogram-bar-chart",
+    "href": "slides/lec-07.html#histogram-bar-chart",
+    "title": "CISC482 - Lecture07",
+    "section": "Histogram Bar Chart",
+    "text": "Histogram Bar Chart"
+  },
+  {
+    "objectID": "slides/lec-07.html#histogram-bar-chart-1",
+    "href": "slides/lec-07.html#histogram-bar-chart-1",
+    "title": "CISC482 - Lecture07",
+    "section": "Histogram Bar Chart",
+    "text": "Histogram Bar Chart\n\n\n\n\n\nDividing the numerical feature into small regions and then count the number of values in each region\nNotice - axis have labels!\nNotice - bar widths are small enough that you can see the distributions shape\n\n\n\n\nWhat do you notice about this distribution?\nWhat is (roughly) the most likely flipper length\n\n\n\n\n\n\nCode\nax = sns.histplot(data=df, x=\"flipper_length_mm\");"
+  },
+  {
+    "objectID": "slides/lec-07.html#histogram-bar-horizontal-bar-chart",
+    "href": "slides/lec-07.html#histogram-bar-horizontal-bar-chart",
+    "title": "CISC482 - Lecture07",
+    "section": "Histogram Bar Horizontal Bar Chart",
+    "text": "Histogram Bar Horizontal Bar Chart\n\n\n\nSometimes its better to have the bar chart grow horizontal\n\n\n\n\nCode\nspecies_count = df.groupby(['species'])['species'].count()\nax = sns.barplot(data=df, y=\"island\", x=\"body_mass_g\", errorbar=None)\nax.bar_label(ax.containers[0]);"
+  },
+  {
+    "objectID": "slides/lec-07.html#density-plot",
+    "href": "slides/lec-07.html#density-plot",
+    "title": "CISC482 - Lecture07",
+    "section": "Density Plot",
+    "text": "Density Plot\n\n\n\nA plot that approximates the density function of the distribution for the feature.\nDensity plots can be thought of as a smoothed histogram\n\n\n\n\nCode\nax = sns.kdeplot(data=df, x=\"body_mass_g\");"
+  },
+  {
+    "objectID": "slides/lec-07.html#density-plot-with-histogram",
+    "href": "slides/lec-07.html#density-plot-with-histogram",
+    "title": "CISC482 - Lecture07",
+    "section": "Density Plot with Histogram",
+    "text": "Density Plot with Histogram\n\n\nCode\nax = sns.histplot(data=df, x=\"body_mass_g\", kde=True);"
+  },
+  {
+    "objectID": "slides/lec-07.html#box-plot",
+    "href": "slides/lec-07.html#box-plot",
+    "title": "CISC482 - Lecture07",
+    "section": "Box Plot",
+    "text": "Box Plot\n\n\n\nA visual representation of the summary:\n\nminimum, maximum\nfirst quartile, median, third quartiles\noutliers\n\n\n\n\n\nCode\nax = sns.boxplot(data=df, x=\"body_mass_g\");"
+  },
+  {
+    "objectID": "slides/lec-07.html#boxen-plot",
+    "href": "slides/lec-07.html#boxen-plot",
+    "title": "CISC482 - Lecture07",
+    "section": "Boxen Plot",
+    "text": "Boxen Plot\n\n\n\nPlots more quantiles\nProvides more information about the shape of the distribution, particularly in the tails.\n50%, 25%, 12.5%, 6.25%, 3.13%\n\n\n\n\nCode\nax = sns.boxenplot(data=df, x=\"body_mass_g\");"
+  },
+  {
+    "objectID": "slides/lec-07.html#two-features",
+    "href": "slides/lec-07.html#two-features",
+    "title": "CISC482 - Lecture07",
+    "section": "Two features",
+    "text": "Two features\n\nWe visualized a single feature uses one axis to display the feature value and another axis to display the value’s frequency\nHowever, what if we want to communicate or investigate the relationship between two variables?\n\nScatterplot, line plots, etc!"
+  },
+  {
+    "objectID": "slides/lec-07.html#example-scatter-plot-data",
+    "href": "slides/lec-07.html#example-scatter-plot-data",
+    "title": "CISC482 - Lecture07",
+    "section": "Example Scatter Plot Data",
+    "text": "Example Scatter Plot Data\n\ntips = sns.load_dataset(\"tips\")\ntips.head()\n\n\n\n\n\n  \n    \n      \n      total_bill\n      tip\n      sex\n      smoker\n      day\n      time\n      size\n    \n  \n  \n    \n      0\n      16.99\n      1.01\n      Female\n      No\n      Sun\n      Dinner\n      2\n    \n    \n      1\n      10.34\n      1.66\n      Male\n      No\n      Sun\n      Dinner\n      3\n    \n    \n      2\n      21.01\n      3.50\n      Male\n      No\n      Sun\n      Dinner\n      3\n    \n    \n      3\n      23.68\n      3.31\n      Male\n      No\n      Sun\n      Dinner\n      2\n    \n    \n      4\n      24.59\n      3.61\n      Female\n      No\n      Sun\n      Dinner\n      4"
+  },
+  {
+    "objectID": "slides/lec-07.html#example-scatter-plot",
+    "href": "slides/lec-07.html#example-scatter-plot",
+    "title": "CISC482 - Lecture07",
+    "section": "Example Scatter Plot",
+    "text": "Example Scatter Plot\n\n\n\nEvery point is a data point\nPoint out the best tips\nPoint out the worst tips\n\n\n\n\nCode\nsns.relplot(data=tips, x=\"total_bill\", y=\"tip\", aspect=1.5);"
+  },
+  {
+    "objectID": "slides/lec-07.html#example-line-plot",
+    "href": "slides/lec-07.html#example-line-plot",
+    "title": "CISC482 - Lecture07",
+    "section": "Example Line Plot",
+    "text": "Example Line Plot\n\n\n\nCode\ntips = sns.load_dataset(\"tips\")\nsns.relplot(data=tips, x=\"total_bill\", y=\"tip\", aspect=1.5, kind='line');"
+  },
+  {
+    "objectID": "slides/lec-07.html#combined-plot",
+    "href": "slides/lec-07.html#combined-plot",
+    "title": "CISC482 - Lecture07",
+    "section": "Combined Plot",
+    "text": "Combined Plot\n\nData points and linear regression model"
+  },
+  {
+    "objectID": "slides/lec-07.html#looks-can-be-deceiving",
+    "href": "slides/lec-07.html#looks-can-be-deceiving",
+    "title": "CISC482 - Lecture07",
+    "section": "Looks can be deceiving",
+    "text": "Looks can be deceiving\n\nAlways show the points…"
+  },
+  {
+    "objectID": "slides/lec-07.html#categorical-features-1",
+    "href": "slides/lec-07.html#categorical-features-1",
+    "title": "CISC482 - Lecture07",
+    "section": "Categorical Features",
+    "text": "Categorical Features\n\nSometimes we have a categorical feature and see the difference between two different sets\n\nCategory: Man, Woman. Feature: Height\nCategory: Friday, Saturday, Sunday. Feature: Avg. Tip\nCategory: Penguin Species. Feature: Body Mass"
+  },
+  {
+    "objectID": "slides/lec-07.html#density-plot-with-histogram-species-as-hue",
+    "href": "slides/lec-07.html#density-plot-with-histogram-species-as-hue",
+    "title": "CISC482 - Lecture07",
+    "section": "Density Plot with Histogram, Species as Hue",
+    "text": "Density Plot with Histogram, Species as Hue\n\n\nCode\nax = sns.histplot(data=df, x=\"body_mass_g\", kde=True, hue='species');"
+  },
+  {
+    "objectID": "slides/lec-07.html#bar-plot-sex-as-hue",
+    "href": "slides/lec-07.html#bar-plot-sex-as-hue",
+    "title": "CISC482 - Lecture07",
+    "section": "Bar Plot, Sex as Hue",
+    "text": "Bar Plot, Sex as Hue\n\n\nCode\n# Draw a nested barplot by species and sex\ng = sns.catplot(\n    data=df, kind=\"bar\", \n    x=\"species\", y=\"body_mass_g\", hue=\"sex\", \n    errorbar=None, alpha=0.6, dodge=False\n)"
+  },
+  {
+    "objectID": "slides/lec-07.html#bar-plot-sex-as-hue-1",
+    "href": "slides/lec-07.html#bar-plot-sex-as-hue-1",
+    "title": "CISC482 - Lecture07",
+    "section": "Bar Plot, Sex as Hue",
+    "text": "Bar Plot, Sex as Hue\n\n\n\nWhat species and sex combination is the most prevalent?\nWhich species has the smallest numerical difference between sexes?\n\n\n\n\nCode\n# Draw a nested barplot by species and sex\ng = sns.catplot(\n    data=df, kind=\"bar\", \n    x=\"species\", y=\"body_mass_g\", hue=\"sex\", \n    errorbar=None, alpha=0.6\n)"
+  },
+  {
+    "objectID": "slides/lec-07.html#strip-plot",
+    "href": "slides/lec-07.html#strip-plot",
+    "title": "CISC482 - Lecture07",
+    "section": "Strip Plot",
+    "text": "Strip Plot\n\n\nCode\ng = sns.catplot(\n    data=df, kind=\"strip\", \n    y=\"species\", x=\"bill_length_mm\", hue=\"sex\",  aspect=2, alpha=0.6\n)"
+  },
+  {
+    "objectID": "slides/lec-07.html#swarm-plot",
+    "href": "slides/lec-07.html#swarm-plot",
+    "title": "CISC482 - Lecture07",
+    "section": "Swarm Plot",
+    "text": "Swarm Plot\n\nA swarm plot is a scatter plot with points jittered off the lines for the categorical feature so the points do not overlap.\nA swarm plot is useful for small datasets, but with an increasing number of points, the plots get too wide."
+  },
+  {
+    "objectID": "slides/lec-07.html#swarm-plot-example",
+    "href": "slides/lec-07.html#swarm-plot-example",
+    "title": "CISC482 - Lecture07",
+    "section": "Swarm Plot Example",
+    "text": "Swarm Plot Example\n\n\nCode\ng = sns.swarmplot(\n    data=df, \n    y=\"species\", x=\"bill_length_mm\", hue='sex', alpha=0.6\n)"
+  },
+  {
+    "objectID": "slides/lec-07.html#violin",
+    "href": "slides/lec-07.html#violin",
+    "title": "CISC482 - Lecture07",
+    "section": "Violin",
+    "text": "Violin\n\n\nCode\nsns.violinplot(data=df, x=\"bill_length_mm\", y=\"species\");"
+  },
+  {
+    "objectID": "slides/lec-07.html#violin-explained",
+    "href": "slides/lec-07.html#violin-explained",
+    "title": "CISC482 - Lecture07",
+    "section": "Violin Explained",
+    "text": "Violin Explained"
+  },
+  {
     "objectID": "slides/lec-07.html#matplotlib",
     "href": "slides/lec-07.html#matplotlib",
     "title": "CISC482 - Lecture07",
@@ -865,21 +1033,7 @@
     "href": "slides/lec-07.html#seaborn-examples",
     "title": "CISC482 - Lecture07",
     "section": "Seaborn Examples",
-    "text": "Seaborn Examples"
-  },
-  {
-    "objectID": "slides/lec-07.html#bar-chart",
-    "href": "slides/lec-07.html#bar-chart",
-    "title": "CISC482 - Lecture07",
-    "section": "Bar Chart",
-    "text": "Bar Chart\n-A bar chart: groups on one axis, rectangles with heights that represent the number of samples.\n\n\nCode\nspecies_count = df.groupby(['species'])['species'].count()\nsns.barplot(x=species_count.index.values, y=species_count.values);"
-  },
-  {
-    "objectID": "slides/lec-07.html#histogram-bar-chart",
-    "href": "slides/lec-07.html#histogram-bar-chart",
-    "title": "CISC482 - Lecture07",
-    "section": "Histogram Bar Chart",
-    "text": "Histogram Bar Chart\n\n\nCode\nsns.histplot(data=df, x=\"flipper_length_mm\");\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Seaborn Examples\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-02.html#subscibre-to-zybook",
