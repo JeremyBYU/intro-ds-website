@@ -1,0 +1,23 @@
+---
+title: "Week 4"
+subtitle: "Welcome to CISC 482"
+editor: visual
+---
+
+## Prepare
+
+📖 Read Assignments 3-2 and 4-1 in Zybooks.
+
+## Participate
+
+🖥️ [Lecture 7 - Probability Inference](/slides/lec-07.html)
+
+🖥️ [Lecture 8 - Data Wrangling](/slides/lec-08.html)
+
+## Practice
+
+📋 [Class Activity 04 - Practice Seaborn](https://colab.research.google.com/drive/1G8FrrL2cENvBuo39dwx9DdPUcOogec5l?usp=sharing)
+
+## Perform
+
+⌨️ [HW 3 - Cleaning Data and Graphing](https://colab.research.google.com/drive/1vqjlLcOAkafEFmlkCGHBjuGjQ8RVxEeB?usp=sharing)

@@ -338,12 +338,6 @@ df_test.info()
 
 
 
-
-
-
-
-
-
 # Class Activity
 
 ## Practice Pandas

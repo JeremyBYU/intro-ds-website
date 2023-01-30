@@ -1,0 +1,76 @@
+---
+title: "CISC482 - Lecture07"
+subtitle: "Data Exploration"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+df = load_penguins()
+sns.set_style('whitegrid')
+sns.set_context("poster", font_scale=1.25)
+np.set_printoptions(precision=3, suppress=True, formatter={'float_kind': "{:.3f}".format})
+np.random.seed(1)
+
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 4-1: Feb 10 @ 12PM, Friday
+- Reading 4-2: Feb 15 @ 12PM, Wednesday
+- **HW3: Feb 15 @ Midnight, Wednesday**
+- Exam 1 - Feb 15 **in class**
+- Topic Ideas - Feb 22 @ Midnight
+
+
+## CS Faculty Candidate
+
+- Razuan Hossain is here!
+- Please attend a meet and greet at 3:15 in SBSC 112 
+- Extra Credit!
+
+
+## Today
+
+- Class Activity, building graphs
+- Exam Review Sheet
+
+# Class Activity
+
+## Class Activity
+
+📋 [Class Activity 04 - Practice Seaborn](https://colab.research.google.com/drive/1G8FrrL2cENvBuo39dwx9DdPUcOogec5l?usp=sharing)
+
+
+# Exam Review
+
+## You can do it!
+
+
+
+
+
