@@ -20,4 +20,4 @@ editor: visual
 
 ## Perform
 
-⌨️ [HW 3 - Cleaning Data and Graphing](https://colab.research.google.com/drive/1vqjlLcOAkafEFmlkCGHBjuGjQ8RVxEeB?usp=sharing)
+⌨️ [HW 3 - Cleaning Data, Graphing, Probability](https://colab.research.google.com/drive/1vqjlLcOAkafEFmlkCGHBjuGjQ8RVxEeB?usp=sharing)

@@ -2,4 +2,24 @@
 title: "Overview"
 ---
 
-TBD
+
+
+
+|   Week  | Slides | Class Activity | HW |
+|:-------:|:------:|:--------------:|:--:|
+|  Week 1 | [🖥️ ](/slides/lec-01.html) [🖥️ ](/slides/lec-02html)       |  [📋](https://colab.research.google.com/drive/1rm5O6qu5w_475KXuXDsj4Ex7Q8eVVczw?usp=sharing)               |   [⌨️](https://colab.research.google.com/drive/1p_a3O1rd9s0ZeNJo5lsiSYSbVaQNpTBt?usp=sharing)    |
+|  Week 2 | [🖥️ ](/slides/lec-03.html) [🖥️ ](/slides/lec-04.html)       |  [📋](https://colab.research.google.com/drive/1bB_p2iiX6_zwGW7VY0SevrH9TzZ9RMRJ?usp=sharing)               |   [⌨️](https://colab.research.google.com/drive/1X-0pJkS2kBKX3-yro_u-Zh-l3XEMpvYF?usp=sharing)    |
+|  Week 3 | [🖥️ ](/slides/lec-05.html) [🖥️ ](/slides/lec-06.html)       |  [📋](https://colab.research.google.com/drive/1JfP7piEf21u3U-y57Tr_JYk0wMT_0XwS?usp=sharing)               |   [⌨️](https://colab.research.google.com/drive/1vqjlLcOAkafEFmlkCGHBjuGjQ8RVxEeB?usp=sharing)    |
+|  Week 4 | [🖥️ ](/slides/lec-07.html) [🖥️ ](/slides/lec-08.html)       |  [📋](https://colab.research.google.com/drive/1G8FrrL2cENvBuo39dwx9DdPUcOogec5l?usp=sharing)               |   [⌨️](https://colab.research.google.com/drive/1vqjlLcOAkafEFmlkCGHBjuGjQ8RVxEeB?usp=sharing)    |
+|  Week 5 |        |                |    |
+|  Week 6 |        |                |    |
+|  Week 7 |        |                |    |
+|  Week 8 |        |                |    |
+|  Week 9 |        |                |    |
+| Week 10 |        |                |    |
+| Week 11 |        |                |    |
+| Week 12 |        |                |    |
+| Week 13 |        |                |    |
+| Week 14 |        |                |    |
+| Week 15 |        |                |    |
+| Week 16 |        |                |    |
