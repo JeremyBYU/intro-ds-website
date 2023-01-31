@@ -116,7 +116,7 @@
     "href": "weeks/week-4.html#perform",
     "title": "Week 4",
     "section": "Perform",
-    "text": "Perform\n⌨️ HW 3 - Cleaning Data and Graphing"
+    "text": "Perform\n⌨️ HW 3 - Cleaning Data, Graphing, Probability"
   },
   {
     "objectID": "weeks/week-3.html",
@@ -214,7 +214,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "TBD"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n\n\n\n\n\nWeek 6\n\n\n\n\n\nWeek 7\n\n\n\n\n\nWeek 8\n\n\n\n\n\nWeek 9\n\n\n\n\n\nWeek 10\n\n\n\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f9e6cc13a60>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f9e10c0b700>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
