@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f063ec12500>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fa7f04d3820>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -425,6 +425,13 @@
     "title": "CISC482 - Lecture05",
     "section": "CS Faculty Candidate",
     "text": "CS Faculty Candidate\n\nBang Tran is here Friday!\nPlease attend a meet and greet at 3:15 in SBSC 112\nExtra Credit!"
+  },
+  {
+    "objectID": "slides/lec-05.html#master-degree",
+    "href": "slides/lec-05.html#master-degree",
+    "title": "CISC482 - Lecture05",
+    "section": "Master Degree",
+    "text": "Master Degree\n\nNortheastern University’s Roux Institute\nTuesday, February 21, 2023, noon to 2 p.m., in the Campus Union\nData Science, Computer Science, Project Management, etc.\n$25,000 scholarships for students who begin their Northeastern University master’s program at The Roux Institute in Fall 2023"
   },
   {
     "objectID": "slides/lec-05.html#main-ideas",
