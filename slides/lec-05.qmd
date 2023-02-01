@@ -33,13 +33,7 @@ np.random.seed(1)
 
 ```
 
-# Class Business {.smaller}
-
-- Northeastern University's Roux Institute
-- Tuesday, February 21, 2023, noon to 2 p.m., in the Campus Union
-- Data Science, Computer Science, Project Management, etc.
-- $25,000 scholarships for students who begin their Northeastern University master's program at The Roux Institute in Fall 2023
-
+# Class Business 
 
 ## Schedule
 
@@ -53,6 +47,14 @@ np.random.seed(1)
 - Bang Tran is here Friday!
 - Please attend a meet and greet at 3:15 in SBSC 112 
 - Extra Credit!
+
+## Master Degree {.smaller}
+
+- Northeastern University's Roux Institute
+- Tuesday, February 21, 2023, noon to 2 p.m., in the Campus Union
+- Data Science, Computer Science, Project Management, etc.
+- $25,000 scholarships for students who begin their Northeastern University master's program at The Roux Institute in Fall 2023
+
 
 
 # Inferential Statistics
