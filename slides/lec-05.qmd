@@ -33,14 +33,28 @@ np.random.seed(1)
 
 ```
 
-# Class Business
+# Class Business {.smaller}
+
+- Northeastern University's Roux Institute
+- Tuesday, February 21, 2023, noon to 2 p.m., in the Campus Union
+- Data Science, Computer Science, Project Management, etc.
+- $25,000 scholarships for students who begin their Northeastern University master's program at The Roux Institute in Fall 2023
 
 
 ## Schedule
 
 - HW2: Feb 1 @ Midnight, Wednesday
 - Reading 3-1: Feb 3 @ 12PM, Friday
+- HW3: Feb 15 @ Midnight, Wednesday
 
+
+## CS Faculty Candidate
+
+- Bang Tran is here Friday!
+- Please attend a meet and greet at 3:15 in SBSC 112 
+- Extra Credit!
+
+##
 
 # Inferential Statistics
 
@@ -86,12 +100,14 @@ The **Central Limit Theorem (CLT)** states that if random samples of size are dr
 
 ## Hypothesis Test
 
+:::{.smaller}
 - **Hypothesis Test** - method for examining a claim, or hypothesis, about a population parameter.
 - **null hypothesis**, $H_0$, by-chance, no-effect explanation
-  - medicine has not effect
+  - medicine has no effect
 - **alternative hypothesis**, $H_a$, explanation of an effect
-  - medicine had a positive effect
-- **p-value**
+  - medicine has a (positive) effect
+- **p-value** - or likelihood, of obtaining a statistic at least as extreme when $H_0$ is true.
+:::
 
 ::: callout-caution
 Statistics is widely and notoriously misunderstood. Even by experts. Including me. 
@@ -115,13 +131,28 @@ Statistics is widely and notoriously misunderstood. Even by experts. Including m
 This does not mean the dog detects cancer! This just means the dog is doing better than guessing!  Maybe cancer patients eat PB sandwiches and thats what the dog is smelling!
 
 :::
+:::
 
 # Errors
 
-## Type 1 and Type 2 Errors
+## Type 1 and Type 2 Errors {.smaller}
 
-- **Type 1 Error** - is rejecting the null hypothesis in favor of the alternative when in reality the null hypothesis is true. **False Positive**
+- **Type 1 Error** - is rejecting the null hypothesis in favor of the alternative when in reality the null hypothesis is true.    
+  - **False Positive**
 - **Type 2 Error** - is failing to reject (accepting) the null hypothesis when in reality the alternative hypothesis is true.
+  - **False Negative**
+
+::: callout-tip
+
+Binary Outcomes, True or False, 1 or 0
+
+False-Positive = Incorrectly Predict a Positive Outcome
+
+$$
+\underbrace{\textbf{False}}_{\textbf{Correct or Incorrect}}-\underbrace{\textbf{Positive}}_{\textbf{Your Prediction}}
+$$
+
+:::
 
 
 ## Table
@@ -148,6 +179,20 @@ This does not mean the dog detects cancer! This just means the dog is doing bett
 ## Example
 
 ![](./lec05_images/estimation.png)
+
+## Standard Deviation of Sampling Distribution {.smaller}
+
+- We don't usually have the standard deviation of sampling distribution.
+- Estimate with the **Standard Error**
+- $SD_{\hat{p}} = SD_{\bar{x}} = \sigma_{\bar{x}} = SEM$
+- $SD_{\bar{p}} = \frac{\sigma_x}{\sqrt{N}}$
+  - $\sigma_x$ - This is the standard deviation of your samples
+  - $N$ - How many samples you took
+
+::: callout-tip
+Use standard error when estimating means.
+:::
+
 
 
 # Inference for proportions and means
