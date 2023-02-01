@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f56256a6c20>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f063ec12500>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -459,7 +459,7 @@
     "href": "slides/lec-05.html#hypothesis-test",
     "title": "CISC482 - Lecture05",
     "section": "Hypothesis Test",
-    "text": "Hypothesis Test\n\n\nHypothesis Test - method for examining a claim, or hypothesis, about a population parameter.\nnull hypothesis, \\(H_0\\), by-chance, no-effect explanation\n\nmedicine has no effect\n\nalternative hypothesis, \\(H_a\\), explanation of an effect\n\nmedicine has a (positive) effect\n\np-value - or likelihood, of obtaining a statistic at least as extreme when \\(H_0\\) is true.\n\n\n\n\n\n\n\n\nDanger\n\n\nStatistics is widely and notoriously misunderstood. Even by experts. Including me."
+    "text": "Hypothesis Test\n\nHypothesis Test - method for examining a claim, or hypothesis, about a population parameter.\nnull hypothesis, \\(H_0\\), by-chance, no-effect explanation\n\nmedicine has no effect\n\nalternative hypothesis, \\(H_a\\), explanation of an effect\n\nmedicine has a (positive) effect\n\np-value - or likelihood, of obtaining a statistic at least as extreme when \\(H_0\\) is true.\n\n\n\n\n\n\n\nDanger\n\n\nStatistics is widely and notoriously misunderstood. Even by experts. Including me."
   },
   {
     "objectID": "slides/lec-05.html#visualization",
