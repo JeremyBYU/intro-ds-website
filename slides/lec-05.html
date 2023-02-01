@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
 <link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.2.313">
+  <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
   <title>Intro to Data Science - CISC482 - Lecture05</title>
@@ -343,16 +343,33 @@ Dr.&nbsp;Jeremy Castagno
 
 </section>
 <section>
-<section id="class-business" class="title-slide slide level1 center">
+<section id="class-business" class="title-slide slide level1 smaller center">
 <h1>Class Business</h1>
-
+<ul>
+<li>Northeastern University’s Roux Institute</li>
+<li>Tuesday, February 21, 2023, noon to 2 p.m., in the Campus Union</li>
+<li>Data Science, Computer Science, Project Management, etc.</li>
+<li>$25,000 scholarships for students who begin their Northeastern University master’s program at The Roux Institute in Fall 2023</li>
+</ul>
 </section>
 <section id="schedule" class="slide level2">
 <h2>Schedule</h2>
 <ul>
 <li>HW2: Feb 1 @ Midnight, Wednesday</li>
 <li>Reading 3-1: Feb 3 @ 12PM, Friday</li>
+<li>HW3: Feb 15 @ Midnight, Wednesday</li>
 </ul>
+</section>
+<section id="cs-faculty-candidate" class="slide level2">
+<h2>CS Faculty Candidate</h2>
+<ul>
+<li>Bang Tran is here Friday!</li>
+<li>Please attend a meet and greet at 3:15 in SBSC 112</li>
+<li>Extra Credit!</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
 </section></section>
 <section>
 <section id="inferential-statistics" class="title-slide slide level1 center">
@@ -433,18 +450,20 @@ Dr.&nbsp;Jeremy Castagno
 </section>
 <section id="hypothesis-test" class="slide level2">
 <h2>Hypothesis Test</h2>
+<div class="smaller">
 <ul>
 <li><strong>Hypothesis Test</strong> - method for examining a claim, or hypothesis, about a population parameter.</li>
 <li><strong>null hypothesis</strong>, <span class="math inline">\(H_0\)</span>, by-chance, no-effect explanation
 <ul>
-<li>medicine has not effect</li>
+<li>medicine has no effect</li>
 </ul></li>
 <li><strong>alternative hypothesis</strong>, <span class="math inline">\(H_a\)</span>, explanation of an effect
 <ul>
-<li>medicine had a positive effect</li>
+<li>medicine has a (positive) effect</li>
 </ul></li>
-<li><strong>p-value</strong></li>
+<li><strong>p-value</strong> - or likelihood, of obtaining a statistic at least as extreme when <span class="math inline">\(H_0\)</span> is true.</li>
 </ul>
+</div>
 <div class="callout callout-caution callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -469,7 +488,7 @@ Dr.&nbsp;Jeremy Castagno
 <li><p>A graph of the sampling distribution of the sample proportion of correct detections out of 37 trials when the null hypothesis is true is given below. Based on this graph, observing a sample proportion of 0.78 or greater is</p></li>
 <li><p>Can the dog detect cancer?</p></li>
 </ol>
-<p>::: fragment</p>
+<div class="fragment">
 <div class="callout callout-danger callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -483,18 +502,42 @@ Dr.&nbsp;Jeremy Castagno
 </div>
 </div>
 </div>
+</div>
 </section></section>
 <section>
 <section id="errors" class="title-slide slide level1 center">
 <h1>Errors</h1>
 
 </section>
-<section id="type-1-and-type-2-errors" class="slide level2">
+<section id="type-1-and-type-2-errors" class="slide level2 smaller">
 <h2>Type 1 and Type 2 Errors</h2>
 <ul>
-<li><strong>Type 1 Error</strong> - is rejecting the null hypothesis in favor of the alternative when in reality the null hypothesis is true. <strong>False Positive</strong></li>
-<li><strong>Type 2 Error</strong> - is failing to reject (accepting) the null hypothesis when in reality the alternative hypothesis is true.</li>
+<li><strong>Type 1 Error</strong> - is rejecting the null hypothesis in favor of the alternative when in reality the null hypothesis is true.
+<ul>
+<li><strong>False Positive</strong></li>
+</ul></li>
+<li><strong>Type 2 Error</strong> - is failing to reject (accepting) the null hypothesis when in reality the alternative hypothesis is true.
+<ul>
+<li><strong>False Negative</strong></li>
+</ul></li>
 </ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Binary Outcomes, True or False, 1 or 0</p>
+<p>False-Positive = Incorrectly Predict a Positive Outcome</p>
+<p><span class="math display">\[
+\underbrace{\textbf{False}}_{\textbf{Correct or Incorrect}}-\underbrace{\textbf{Positive}}_{\textbf{Your Prediction}}
+\]</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="table" class="slide level2">
 <h2>Table</h2>
@@ -543,7 +586,33 @@ Dr.&nbsp;Jeremy Castagno
 <section id="example" class="slide level2">
 <h2>Example</h2>
 
-<img data-src="./lec05_images/estimation.png" class="r-stretch"></section></section>
+<img data-src="./lec05_images/estimation.png" class="r-stretch"></section>
+<section id="standard-deviation-of-sampling-distribution" class="slide level2 smaller">
+<h2>Standard Deviation of Sampling Distribution</h2>
+<ul>
+<li>We don’t usually have the standard deviation of sampling distribution.</li>
+<li>Estimate with the <strong>Standard Error</strong></li>
+<li><span class="math inline">\(SD_{\hat{p}} = SD_{\bar{x}} = \sigma_{\bar{x}} = SEM\)</span></li>
+<li><span class="math inline">\(SD_{\bar{p}} = \frac{\sigma_x}{\sqrt{N}}\)</span>
+<ul>
+<li><span class="math inline">\(\sigma_x\)</span> - This is the standard deviation of your samples</li>
+<li><span class="math inline">\(N\)</span> - How many samples you took</li>
+</ul></li>
+</ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Use standard error when estimating means.</p>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="inference-for-proportions-and-means" class="title-slide slide level1 center">
 <h1>Inference for proportions and means</h1>

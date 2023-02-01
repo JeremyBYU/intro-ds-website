@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f9e10c0b700>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f56256a6c20>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -417,7 +417,14 @@
     "href": "slides/lec-05.html#schedule",
     "title": "CISC482 - Lecture05",
     "section": "Schedule",
-    "text": "Schedule\n\nHW2: Feb 1 @ Midnight, Wednesday\nReading 3-1: Feb 3 @ 12PM, Friday"
+    "text": "Schedule\n\nHW2: Feb 1 @ Midnight, Wednesday\nReading 3-1: Feb 3 @ 12PM, Friday\nHW3: Feb 15 @ Midnight, Wednesday"
+  },
+  {
+    "objectID": "slides/lec-05.html#cs-faculty-candidate",
+    "href": "slides/lec-05.html#cs-faculty-candidate",
+    "title": "CISC482 - Lecture05",
+    "section": "CS Faculty Candidate",
+    "text": "CS Faculty Candidate\n\nBang Tran is here Friday!\nPlease attend a meet and greet at 3:15 in SBSC 112\nExtra Credit!"
   },
   {
     "objectID": "slides/lec-05.html#main-ideas",
@@ -452,7 +459,7 @@
     "href": "slides/lec-05.html#hypothesis-test",
     "title": "CISC482 - Lecture05",
     "section": "Hypothesis Test",
-    "text": "Hypothesis Test\n\nHypothesis Test - method for examining a claim, or hypothesis, about a population parameter.\nnull hypothesis, \\(H_0\\), by-chance, no-effect explanation\n\nmedicine has not effect\n\nalternative hypothesis, \\(H_a\\), explanation of an effect\n\nmedicine had a positive effect\n\np-value\n\n\n\n\n\n\n\nDanger\n\n\nStatistics is widely and notoriously misunderstood. Even by experts. Including me."
+    "text": "Hypothesis Test\n\n\nHypothesis Test - method for examining a claim, or hypothesis, about a population parameter.\nnull hypothesis, \\(H_0\\), by-chance, no-effect explanation\n\nmedicine has no effect\n\nalternative hypothesis, \\(H_a\\), explanation of an effect\n\nmedicine has a (positive) effect\n\np-value - or likelihood, of obtaining a statistic at least as extreme when \\(H_0\\) is true.\n\n\n\n\n\n\n\n\nDanger\n\n\nStatistics is widely and notoriously misunderstood. Even by experts. Including me."
   },
   {
     "objectID": "slides/lec-05.html#visualization",
@@ -466,14 +473,14 @@
     "href": "slides/lec-05.html#questions",
     "title": "CISC482 - Lecture05",
     "section": "Questions",
-    "text": "Questions\n\nA graph of the sampling distribution of the sample proportion of correct detections out of 37 trials when the null hypothesis is true is given below. Based on this graph, observing a sample proportion of 0.78 or greater is\nCan the dog detect cancer?\n\n::: fragment\n\n\n\n\n\n\nDanger\n\n\nThis does not mean the dog detects cancer! This just means the dog is doing better than guessing! Maybe cancer patients eat PB sandwiches and thats what the dog is smelling!"
+    "text": "Questions\n\nA graph of the sampling distribution of the sample proportion of correct detections out of 37 trials when the null hypothesis is true is given below. Based on this graph, observing a sample proportion of 0.78 or greater is\nCan the dog detect cancer?\n\n\n\n\n\n\n\n\nDanger\n\n\nThis does not mean the dog detects cancer! This just means the dog is doing better than guessing! Maybe cancer patients eat PB sandwiches and thats what the dog is smelling!"
   },
   {
     "objectID": "slides/lec-05.html#type-1-and-type-2-errors",
     "href": "slides/lec-05.html#type-1-and-type-2-errors",
     "title": "CISC482 - Lecture05",
     "section": "Type 1 and Type 2 Errors",
-    "text": "Type 1 and Type 2 Errors\n\nType 1 Error - is rejecting the null hypothesis in favor of the alternative when in reality the null hypothesis is true. False Positive\nType 2 Error - is failing to reject (accepting) the null hypothesis when in reality the alternative hypothesis is true."
+    "text": "Type 1 and Type 2 Errors\n\nType 1 Error - is rejecting the null hypothesis in favor of the alternative when in reality the null hypothesis is true.\n\nFalse Positive\n\nType 2 Error - is failing to reject (accepting) the null hypothesis when in reality the alternative hypothesis is true.\n\nFalse Negative\n\n\n\n\n\n\n\n\nTip\n\n\nBinary Outcomes, True or False, 1 or 0\nFalse-Positive = Incorrectly Predict a Positive Outcome\n\\[\n\\underbrace{\\textbf{False}}_{\\textbf{Correct or Incorrect}}-\\underbrace{\\textbf{Positive}}_{\\textbf{Your Prediction}}\n\\]"
   },
   {
     "objectID": "slides/lec-05.html#table",
@@ -495,6 +502,13 @@
     "title": "CISC482 - Lecture05",
     "section": "Example",
     "text": "Example"
+  },
+  {
+    "objectID": "slides/lec-05.html#standard-deviation-of-sampling-distribution",
+    "href": "slides/lec-05.html#standard-deviation-of-sampling-distribution",
+    "title": "CISC482 - Lecture05",
+    "section": "Standard Deviation of Sampling Distribution",
+    "text": "Standard Deviation of Sampling Distribution\n\nWe don’t usually have the standard deviation of sampling distribution.\nEstimate with the Standard Error\n\\(SD_{\\hat{p}} = SD_{\\bar{x}} = \\sigma_{\\bar{x}} = SEM\\)\n\\(SD_{\\bar{p}} = \\frac{\\sigma_x}{\\sqrt{N}}\\)\n\n\\(\\sigma_x\\) - This is the standard deviation of your samples\n\\(N\\) - How many samples you took\n\n\n\n\n\n\n\n\nTip\n\n\nUse standard error when estimating means."
   },
   {
     "objectID": "slides/lec-05.html#confirming-reported-statistic",
