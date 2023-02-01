@@ -54,7 +54,6 @@ np.random.seed(1)
 - Please attend a meet and greet at 3:15 in SBSC 112 
 - Extra Credit!
 
-##
 
 # Inferential Statistics
 
@@ -98,16 +97,15 @@ The **Central Limit Theorem (CLT)** states that if random samples of size are dr
 # Hypothesis Testing
 
 
-## Hypothesis Test
+## Hypothesis Test {.smaller}
 
-:::{.smaller}
+
 - **Hypothesis Test** - method for examining a claim, or hypothesis, about a population parameter.
 - **null hypothesis**, $H_0$, by-chance, no-effect explanation
   - medicine has no effect
 - **alternative hypothesis**, $H_a$, explanation of an effect
   - medicine has a (positive) effect
 - **p-value** - or likelihood, of obtaining a statistic at least as extreme when $H_0$ is true.
-:::
 
 ::: callout-caution
 Statistics is widely and notoriously misunderstood. Even by experts. Including me. 
@@ -126,7 +124,7 @@ Statistics is widely and notoriously misunderstood. Even by experts. Including m
 
 ::: fragment
 
-::: callout-danger
+::: callout-caution
 
 This does not mean the dog detects cancer! This just means the dog is doing better than guessing!  Maybe cancer patients eat PB sandwiches and thats what the dog is smelling!
 
