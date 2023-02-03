@@ -415,16 +415,17 @@ Dr.&nbsp;Jeremy Castagno
 <section id="schedule" class="slide level2">
 <h2>Schedule</h2>
 <ul>
-<li>Reading 3-1: Feb 3 @ 12PM, Friday</li>
+<li>Reading 3-1: Feb 3 @ 12PM, Today!</li>
 <li>Reading 3-2: Feb 8 @ 12PM, Wednesday</li>
 <li>Reading 4-1: Feb 10 @ 12PM, Friday</li>
 <li>HW3: Feb 15 @ Midnight, Wednesday</li>
+<li>Exam 1: Feb 15 in Class</li>
 </ul>
 </section>
 <section id="cs-faculty-candidate" class="slide level2">
 <h2>CS Faculty Candidate</h2>
 <ul>
-<li>Bang Tran is here today!</li>
+<li>Benz Tran is here today!</li>
 <li>Please attend a meet and greet at 3:15 in SBSC 112</li>
 <li>Extra Credit!</li>
 </ul>
@@ -607,6 +608,7 @@ Dr.&nbsp;Jeremy Castagno
 <section id="loading-pandas-from-a-csv" class="slide level2 scrollable">
 <h2>Loading Pandas from a CSV</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2"></a>df.head()</span></code></pre></div>
@@ -756,6 +758,7 @@ Dr.&nbsp;Jeremy Castagno
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="pandas-methods---info" class="slide level2">
 <h2>Pandas Methods - Info</h2>
@@ -792,6 +795,7 @@ memory usage: 45.8+ KB</code></pre>
 <section id="select-only-interesting-columns" class="slide level2">
 <h2>Select Only Interesting Columns</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
 <span id="cb6-2"><a href="#cb6-2"></a>interesting_columns <span class="op">=</span> [<span class="st">'Species'</span>, <span class="st">'Island'</span>, <span class="st">'Culmen Length (mm)'</span>, <span class="st">'Culmen Depth (mm)'</span>, <span class="st">'Flipper Length (mm)'</span>, <span class="st">'Body Mass (g)'</span>, <span class="st">'Sex'</span>, <span class="st">'Date Egg'</span>]</span>
@@ -889,26 +893,31 @@ memory usage: 45.8+ KB</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="rename-columns" class="slide level2">
 <h2>Rename Columns</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>new_names <span class="op">=</span> [<span class="st">'species'</span>, <span class="st">'island'</span>, <span class="st">'bill_length_mm'</span>, <span class="st">'bill_depth_mm'</span>, <span class="st">'flipper_length_mm'</span>, <span class="st">'body_mass_g'</span>, <span class="st">'sex'</span>, <span class="st">'year'</span>]</span>
 <span id="cb7-2"><a href="#cb7-2"></a>mapping <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(interesting_columns, new_names))</span>
-<span id="cb7-3"><a href="#cb7-3"></a>pprint(mapping)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>mapping)</span>
-<span id="cb7-5"><a href="#cb7-5"></a>df.head()</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'Body Mass (g)': 'body_mass_g',
- 'Culmen Depth (mm)': 'bill_depth_mm',
- 'Culmen Length (mm)': 'bill_length_mm',
- 'Date Egg': 'year',
- 'Flipper Length (mm)': 'flipper_length_mm',
- 'Island': 'island',
- 'Sex': 'sex',
- 'Species': 'species'}</code></pre>
+<span id="cb7-3"><a href="#cb7-3"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>mapping)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>df.head()</span></code></pre></div>
 </div>
+
+</div>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>{<span class="st">'Body Mass (g)'</span>: <span class="st">'body_mass_g'</span>,</span>
+<span id="cb8-2"><a href="#cb8-2"></a> <span class="st">'Culmen Depth (mm)'</span>: <span class="st">'bill_depth_mm'</span>,</span>
+<span id="cb8-3"><a href="#cb8-3"></a> <span class="st">'Culmen Length (mm)'</span>: <span class="st">'bill_length_mm'</span>,</span>
+<span id="cb8-4"><a href="#cb8-4"></a> <span class="st">'Date Egg'</span>: <span class="st">'year'</span>,</span>
+<span id="cb8-5"><a href="#cb8-5"></a> <span class="st">'Flipper Length (mm)'</span>: <span class="st">'flipper_length_mm'</span>,</span>
+<span id="cb8-6"><a href="#cb8-6"></a> <span class="st">'Island'</span>: <span class="st">'island'</span>,</span>
+<span id="cb8-7"><a href="#cb8-7"></a> <span class="st">'Sex'</span>: <span class="st">'sex'</span>,</span>
+<span id="cb8-8"><a href="#cb8-8"></a> <span class="st">'Species'</span>: <span class="st">'species'</span>}</span></code></pre></div>
+</section>
+<section id="rename-columns-output" class="slide level2 output-location-slide"><h2>Rename Columns</h2><div class="cell output-location-slide" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 
 <div>
@@ -999,12 +1008,10 @@ memory usage: 45.8+ KB</code></pre>
 </table>
 </div>
 </div>
-</div>
-</div>
-</section>
-<section id="remove-nan" class="slide level2">
+</div></section><section id="remove-nan" class="slide level2">
 <h2>Remove Nan</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>df <span class="op">=</span> df.dropna()</span>
 <span id="cb9-2"><a href="#cb9-2"></a>df <span class="op">=</span> df.reset_index(drop<span class="op">=</span><span class="va">True</span>) <span class="co"># used to be 343, now 333</span></span>
@@ -1028,18 +1035,19 @@ memory usage: 20.9+ KB</code></pre>
 </div>
 </div>
 </div>
+</div>
 <!-- # df = df[~df.isna().any(axis=1)] # quickly see any NA. NA means Null or NaN -->
 </section>
 <section id="recap" class="slide level2">
 <h2>Recap</h2>
 <ul>
 <li>Got raw data by using <code>pd.read_csv(..)</code></li>
-<li>Looked at data</li>
+<li>Look at data</li>
 <li>Selected columns of interest</li>
-<li>Renamed columns</li>
+<li>Rename columns</li>
 <li>TODO
 <ul>
-<li>Extract year from <code>year</code> column</li>
+<li>Extract year as integer from string <code>year</code> column</li>
 <li>lower case <code>sex</code> column</li>
 <li>simplify species name</li>
 </ul></li>
@@ -1054,8 +1062,10 @@ memory usage: 20.9+ KB</code></pre>
 <h2>Selecting Data</h2>
 <ul>
 <li>You can select a column by using the <code>[]</code> notation</li>
-<li>Once column wil return a <strong>series</strong>, more than one will return a new data frame is returned</li>
+<li>One column wil return a <strong>series</strong>, more than one column will return a new data frame is returned</li>
 </ul>
+<div data-prevent-swipe="">
+
 <div class="cell columns column-output-location" data-execution_count="9">
 <div class="column">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>column <span class="op">=</span> df[<span class="st">'year'</span>]</span>
@@ -1077,9 +1087,13 @@ Name: year, Length: 333, dtype: object</code></pre>
 </div>
 </div>
 </div>
-</section>
+<div>
+
+</div></div></section>
 <section id="selecting-data-view" class="slide level2">
 <h2>Selecting Data, View</h2>
+<div data-prevent-swipe="">
+
 <div class="cell columns column-output-location" data-execution_count="10">
 <div class="column">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>df2 <span class="op">=</span> df[[<span class="st">'year'</span>, <span class="st">'sex'</span>]]</span>
@@ -1141,9 +1155,13 @@ Name: year, Length: 333, dtype: object</code></pre>
 </div>
 </div>
 </div>
-</section>
+<div>
+
+</div></div></section>
 <section id="create-a-new-column" class="slide level2">
 <h2>Create a new column</h2>
+<div data-prevent-swipe="">
+
 <div class="cell columns column-output-location" data-execution_count="11">
 <div class="column">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>df2[<span class="st">'test'</span>] <span class="op">=</span> <span class="st">'CISC482'</span></span>
@@ -1211,9 +1229,13 @@ Name: year, Length: 333, dtype: object</code></pre>
 </div>
 </div>
 </div>
-</section>
+<div>
+
+</div></div></section>
 <section id="changing-column" class="slide level2">
 <h2><strong>Changing</strong> Column</h2>
+<div data-prevent-swipe="">
+
 <div class="cell columns column-output-location" data-execution_count="12">
 <div class="column">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>df2.loc[:, <span class="st">'test'</span>] <span class="op">=</span> <span class="st">'DataScience'</span></span>
@@ -1282,10 +1304,13 @@ Name: year, Length: 333, dtype: object</code></pre>
 </div>
 </div>
 </div>
-</section>
+<div>
+
+</div></div></section>
 <section id="selecting-some-rows" class="slide level2">
 <h2>Selecting <em>Some</em> Rows</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell columns column-output-location" data-execution_count="13">
 <div class="column">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>df_big_bills <span class="op">=</span> df[df[<span class="st">'bill_length_mm'</span>] <span class="op">&gt;</span> <span class="dv">56</span>]</span>
@@ -1351,6 +1376,7 @@ Name: year, Length: 333, dtype: object</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="fragment">
 <div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
@@ -1378,6 +1404,7 @@ Name: year, Length: 333, dtype: object</code></pre>
 <section id="fixing-the-year" class="slide level2">
 <h2>Fixing the Year</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>df.loc[:, <span class="st">'year'</span>] <span class="op">=</span> df[<span class="st">'year'</span>].<span class="bu">str</span>[:<span class="dv">4</span>]</span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="co"># df.loc[:, 'year'] = df['year'].apply(lambda x: str(x).split('-')[0])</span></span>
@@ -1474,10 +1501,12 @@ Name: year, Length: 333, dtype: object</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="fixing-the-species" class="slide level2">
 <h2>Fixing the Species</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>mapping <span class="op">=</span> {</span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="st">"Adelie Penguin (Pygoscelis adeliae)"</span>: <span class="st">"Adelie"</span>, </span>
@@ -1579,10 +1608,12 @@ Name: year, Length: 333, dtype: object</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="fixing-the-sex" class="slide level2">
 <h2>Fixing the sex</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display" data-execution_count="16">
 
@@ -1676,6 +1707,7 @@ Name: year, Length: 333, dtype: object</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="fragment">
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>df.loc[:, <span class="st">'sex'</span>] <span class="op">=</span> df[<span class="st">'sex'</span>].<span class="bu">str</span>.lower()</span></code></pre></div>
 </div>
@@ -1683,6 +1715,7 @@ Name: year, Length: 333, dtype: object</code></pre>
 <section id="checking-data-types" class="slide level2">
 <h2>Checking Data Types</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>df.info()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1704,10 +1737,12 @@ memory usage: 20.9+ KB</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="checking-data-types-1" class="slide level2">
 <h2>Checking Data Types</h2>
 <div class="smaller">
+<div data-prevent-swipe="">
 <div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>df.loc[:, <span class="st">'year'</span>] <span class="op">=</span> pd.to_numeric(df[<span class="st">'year'</span>])</span>
 <span id="cb23-2"><a href="#cb23-2"></a>df.info()</span></code></pre></div>
@@ -1727,6 +1762,7 @@ Data columns (total 8 columns):
  7   year               333 non-null    int64  
 dtypes: float64(4), int64(1), object(3)
 memory usage: 20.9+ KB</code></pre>
+</div>
 </div>
 </div>
 </div>
