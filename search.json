@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fc703096e60>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f1ed1c15b40>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1369,7 +1369,7 @@
     "href": "slides/lec-06.html#csv-files",
     "title": "CISC482 - Lecture06",
     "section": "CSV Files",
-    "text": "CSV Files"
+    "text": "CSV Files\nLink"
   },
   {
     "objectID": "slides/lec-06.html#loading-pandas-from-a-csv",
@@ -1390,7 +1390,7 @@
     "href": "slides/lec-06.html#select-only-interesting-columns",
     "title": "CISC482 - Lecture06",
     "section": "Select Only Interesting Columns",
-    "text": "Select Only Interesting Columns\n\n\n\nfrom pprint import pprint\ninteresting_columns = ['Species', 'Island', 'Culmen Length (mm)', 'Culmen Depth (mm)', 'Flipper Length (mm)', 'Body Mass (g)', 'Sex', 'Date Egg']\ndf = df[interesting_columns]\ndf.head()\n\n\n\n\n\n  \n    \n      \n      Species\n      Island\n      Culmen Length (mm)\n      Culmen Depth (mm)\n      Flipper Length (mm)\n      Body Mass (g)\n      Sex\n      Date Egg\n    \n  \n  \n    \n      0\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      2007-11-11\n    \n    \n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      2007-11-11\n    \n    \n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      2007-11-16\n    \n    \n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007-11-16\n    \n    \n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      2007-11-16"
+    "text": "Select Only Interesting Columns\n\n\n\ninteresting_columns = ['Species', 'Island', 'Culmen Length (mm)', 'Culmen Depth (mm)', 'Flipper Length (mm)', 'Body Mass (g)', 'Sex', 'Date Egg']\ndf = df[interesting_columns]\ndf.head()\n\n\n\n\n\n  \n    \n      \n      Species\n      Island\n      Culmen Length (mm)\n      Culmen Depth (mm)\n      Flipper Length (mm)\n      Body Mass (g)\n      Sex\n      Date Egg\n    \n  \n  \n    \n      0\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      2007-11-11\n    \n    \n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      2007-11-11\n    \n    \n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      2007-11-16\n    \n    \n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007-11-16\n    \n    \n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      2007-11-16"
   },
   {
     "objectID": "slides/lec-06.html#rename-columns",
