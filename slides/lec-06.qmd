@@ -38,15 +38,16 @@ np.random.seed(1)
 
 ## Schedule
 
-- Reading 3-1: Feb 3 @ 12PM, Friday
+- Reading 3-1: Feb 3 @ 12PM, Today!
 - Reading 3-2: Feb 8 @ 12PM, Wednesday
 - Reading 4-1: Feb 10 @ 12PM, Friday
 - HW3: Feb 15 @ Midnight, Wednesday
+- Exam 1: Feb 15 in Class
 
 
 ## CS Faculty Candidate
 
-- Bang Tran is here today!
+- Benz Tran is here today!
 - Please attend a meet and greet at 3:15 in SBSC 112 
 - Extra Credit!
 
@@ -132,11 +133,13 @@ df
 ## Loading Pandas from a CSV {.scrollable}
 
 :::{.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 df = pd.read_csv('https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv')
 df.head()
 ```
+</div>
 :::
 
 ## Pandas Methods - Info
@@ -149,6 +152,7 @@ df.info()
 ## Select Only Interesting Columns
 
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 from pprint import pprint
@@ -156,30 +160,46 @@ interesting_columns = ['Species', 'Island', 'Culmen Length (mm)', 'Culmen Depth 
 df = df[interesting_columns]
 df.head()
 ```
+</div>
 ::: 
 
 ## Rename Columns
 
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
+#| output-location: slide
 new_names = ['species', 'island', 'bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g', 'sex', 'year']
 mapping = dict(zip(interesting_columns, new_names))
-pprint(mapping)
 df = df.rename(columns=mapping)
 df.head()
 ```
+</div>
 ::: 
+
+```python
+{'Body Mass (g)': 'body_mass_g',
+ 'Culmen Depth (mm)': 'bill_depth_mm',
+ 'Culmen Length (mm)': 'bill_length_mm',
+ 'Date Egg': 'year',
+ 'Flipper Length (mm)': 'flipper_length_mm',
+ 'Island': 'island',
+ 'Sex': 'sex',
+ 'Species': 'species'}
+```
 
 ## Remove Nan
 
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 df = df.dropna()
 df = df.reset_index(drop=True) # used to be 343, now 333
 df.info()
 ```
+</div>
 ::: 
 
 
@@ -188,11 +208,11 @@ df.info()
 ## Recap
 
 - Got raw data by using `pd.read_csv(..)`
-- Looked at data
+- Look at data
 - Selected columns of interest
-- Renamed columns
+- Rename columns
 - TODO
-  - Extract year from `year` column
+  - Extract year as integer from string `year` column
   - lower case `sex` column
   - simplify species name
 
@@ -201,35 +221,42 @@ df.info()
 ## Selecting Data
 
 - You can select a column by using the `[]` notation
-- Once column wil return a **series**, more than one will return a new data frame is returned
+- One column wil return a **series**, more than one column will return a new data frame is returned
 
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 #| output-location: column
 column = df['year']
 column
 ```
+<div>
 
 ## Selecting Data, View
 
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 #| output-location: column
 df2 = df[['year', 'sex']]
 df2.head()
 ```
+<div>
 
 ## Create a new column
 
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 #| output-location: column
 df2['test'] = 'CISC482'
 df2.head()
 ```
+<div>
 
 ## **Changing** Column
 
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 #| output-location: column
@@ -237,16 +264,20 @@ df2.loc[:, 'test'] = 'DataScience'
 # df2['test'] = "Data Science" # don't do it!
 df2.head()
 ```
+<div>
 
 ## Selecting *Some* Rows
 
+
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 #| output-location: column
 df_big_bills = df[df['bill_length_mm'] > 56]
 df_big_bills
 ```
+</div>
 ::: 
 
 ::: fragment
@@ -266,17 +297,20 @@ df_male = df[df['sex'] == "MALE"]
 ## Fixing the Year
 
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 df.loc[:, 'year'] = df['year'].str[:4]
 # df.loc[:, 'year'] = df['year'].apply(lambda x: str(x).split('-')[0])
 df.head()
 ```
+</div>
 ::: 
 
 ## Fixing the Species
 
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 mapping = {
@@ -288,15 +322,18 @@ df.loc[:, 'species'] = df['species'].map(mapping)
 # df.loc[:, 'species'] = df['species'].apply(lambda x: str(x).split('-')[0])
 df.head()
 ```
+</div>
 ::: 
 
 ## Fixing the sex
 
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 df.loc[:, 'sex'] = df['sex'].str.lower()
 df.head()
 ```
+</div>
 ::: 
 
 ::: {.fragment}
@@ -308,20 +345,24 @@ df.loc[:, 'sex'] = df['sex'].str.lower()
 ## Checking Data Types
 
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 df.info()
 ```
+</div>
 ::: 
 
 ## Checking Data Types
 
 ::: {.smaller}
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 df.loc[:, 'year'] = pd.to_numeric(df['year'])
 df.info()
 ```
+</div>
 ::: 
 
 <!-- ## Did we do good

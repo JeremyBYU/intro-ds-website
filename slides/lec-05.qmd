@@ -45,11 +45,12 @@ np.random.seed(1)
 - HW2: Feb 1 @ Midnight, Wednesday
 - Reading 3-1: Feb 3 @ 12PM, Friday
 - HW3: Feb 15 @ Midnight, Wednesday
+- Exam 1: Feb 15 in Class
 
 
 ## CS Faculty Candidate
 
-- Bang Tran is here Friday!
+- Benz Tran is here Friday!
 - Please attend a meet and greet at 3:15 in SBSC 112 
 - Extra Credit!
 
@@ -59,7 +60,6 @@ np.random.seed(1)
 - Tuesday, February 21, 2023, noon to 2 p.m., in the Campus Union
 - Data Science, Computer Science, Project Management, etc.
 - $25,000 scholarships for students who begin their Northeastern University master's program at The Roux Institute in Fall 2023
-
 
 
 # Inferential Statistics
