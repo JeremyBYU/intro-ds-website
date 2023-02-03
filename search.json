@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fab32f35ea0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fc703096e60>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1383,7 +1383,7 @@
     "href": "slides/lec-06.html#pandas-methods---info",
     "title": "CISC482 - Lecture06",
     "section": "Pandas Methods - Info",
-    "text": "Pandas Methods - Info\n\ndf.info()\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 344 entries, 0 to 343\nData columns (total 17 columns):\n #   Column               Non-Null Count  Dtype  \n---  ------               --------------  -----  \n 0   studyName            344 non-null    object \n 1   Sample Number        344 non-null    int64  \n 2   Species              344 non-null    object \n 3   Region               344 non-null    object \n 4   Island               344 non-null    object \n 5   Stage                344 non-null    object \n 6   Individual ID        344 non-null    object \n 7   Clutch Completion    344 non-null    object \n 8   Date Egg             344 non-null    object \n 9   Culmen Length (mm)   342 non-null    float64\n 10  Culmen Depth (mm)    342 non-null    float64\n 11  Flipper Length (mm)  342 non-null    float64\n 12  Body Mass (g)        342 non-null    float64\n 13  Sex                  333 non-null    object \n 14  Delta 15 N (o/oo)    330 non-null    float64\n 15  Delta 13 C (o/oo)    331 non-null    float64\n 16  Comments             54 non-null     object \ndtypes: float64(6), int64(1), object(10)\nmemory usage: 45.8+ KB"
+    "text": "Pandas Methods - Info\n\n\ndf.info()\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 344 entries, 0 to 343\nData columns (total 17 columns):\n #   Column               Non-Null Count  Dtype  \n---  ------               --------------  -----  \n 0   studyName            344 non-null    object \n 1   Sample Number        344 non-null    int64  \n 2   Species              344 non-null    object \n 3   Region               344 non-null    object \n 4   Island               344 non-null    object \n 5   Stage                344 non-null    object \n 6   Individual ID        344 non-null    object \n 7   Clutch Completion    344 non-null    object \n 8   Date Egg             344 non-null    object \n 9   Culmen Length (mm)   342 non-null    float64\n 10  Culmen Depth (mm)    342 non-null    float64\n 11  Flipper Length (mm)  342 non-null    float64\n 12  Body Mass (g)        342 non-null    float64\n 13  Sex                  333 non-null    object \n 14  Delta 15 N (o/oo)    330 non-null    float64\n 15  Delta 13 C (o/oo)    331 non-null    float64\n 16  Comments             54 non-null     object \ndtypes: float64(6), int64(1), object(10)\nmemory usage: 45.8+ KB"
   },
   {
     "objectID": "slides/lec-06.html#select-only-interesting-columns",
