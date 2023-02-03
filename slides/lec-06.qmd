@@ -144,10 +144,12 @@ df.head()
 
 ## Pandas Methods - Info
 
+<div data-prevent-swipe>
 ```{python}
 #| echo: true
 df.info()
 ```
+</div>
 
 ## Select Only Interesting Columns
 
