@@ -124,9 +124,7 @@ df
 
 ## CSV Files
 
-```{=html}
-<iframe width="1280" height="600" src="https://github.com/mcnakhaee/palmerpenguins/blob/master/palmerpenguins/data/penguins-raw.csv" title="Palmer Penguins CSV File"></iframe>
-```
+[Link](https://github.com/mcnakhaee/palmerpenguins/blob/master/palmerpenguins/data/penguins-raw.csv)
 <!-- https://github.com/mcnakhaee/palmerpenguins/blob/master/palmerpenguins/data/penguins-raw.csv -->
 <!-- https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv -->
 
@@ -157,7 +155,6 @@ df.info()
 <div data-prevent-swipe>
 ```{python}
 #| echo: true
-from pprint import pprint
 interesting_columns = ['Species', 'Island', 'Culmen Length (mm)', 'Culmen Depth (mm)', 'Flipper Length (mm)', 'Body Mass (g)', 'Sex', 'Date Egg']
 df = df[interesting_columns]
 df.head()
