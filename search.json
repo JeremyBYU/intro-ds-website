@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f1ed1c15b40>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f972ce38460>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -411,6 +411,160 @@
     "title": "CISC482 - Lecture03",
     "section": "All",
     "text": "All\n\nimport scipy.stats as stats\nstats.describe(samples)\n\nDescribeResult(nobs=1000, minmax=(1.7616568032476234, 7.787361447950662), mean=5.053665979218166, variance=1.0126662448100565, skewness=-0.0026145821525120016, kurtosis=-0.06654059199852824)\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
+    "objectID": "slides/lec-09.html#schedule",
+    "href": "slides/lec-09.html#schedule",
+    "title": "CISC482 - Lecture09",
+    "section": "Schedule",
+    "text": "Schedule\n\nReading 5-1: Feb 22 @ 12PM, Wednesday\nReading 5-2: Feb 24 @ 12PM, Friday\nTopic Ideas - Feb 22 @ Midnight"
+  },
+  {
+    "objectID": "slides/lec-09.html#today",
+    "href": "slides/lec-09.html#today",
+    "title": "CISC482 - Lecture09",
+    "section": "Today",
+    "text": "Today\n\nReview Exam\nReview Topic Ideas\nMore Exploratory Data Analysis"
+  },
+  {
+    "objectID": "slides/lec-09.html#most-missed-questions",
+    "href": "slides/lec-09.html#most-missed-questions",
+    "title": "CISC482 - Lecture09",
+    "section": "Most Missed Questions",
+    "text": "Most Missed Questions"
+  },
+  {
+    "objectID": "slides/lec-09.html#solution-to-exam",
+    "href": "slides/lec-09.html#solution-to-exam",
+    "title": "CISC482 - Lecture09",
+    "section": "Solution to Exam",
+    "text": "Solution to Exam"
+  },
+  {
+    "objectID": "slides/lec-09.html#purpose",
+    "href": "slides/lec-09.html#purpose",
+    "title": "CISC482 - Lecture09",
+    "section": "Purpose",
+    "text": "Purpose\n\nFind 2-3 datasets that you are interested and are connected to your core signature assignments\nVerify the data is suitable for analysis\nPractice writing concisely and clearly about complex topics"
+  },
+  {
+    "objectID": "slides/lec-09.html#requirements",
+    "href": "slides/lec-09.html#requirements",
+    "title": "CISC482 - Lecture09",
+    "section": "Requirements",
+    "text": "Requirements\n\nData Requirements\nPaper Requirements"
+  },
+  {
+    "objectID": "slides/lec-09.html#data-requirements",
+    "href": "slides/lec-09.html#data-requirements",
+    "title": "CISC482 - Lecture09",
+    "section": "Data Requirements",
+    "text": "Data Requirements\n\nAt least 100 observations\nAt least 8 columns\nAt least 6 of the columns must be useful and unique predictor variables.\nAt least one variable that can be identified as a reasonable response variable\n\nThe response variable can be quantitative or categorical.\n\nObservations should reasonably meet the independence condition."
+  },
+  {
+    "objectID": "slides/lec-09.html#paper-requirements",
+    "href": "slides/lec-09.html#paper-requirements",
+    "title": "CISC482 - Lecture09",
+    "section": "Paper Requirements",
+    "text": "Paper Requirements\n\nIntroduction\nResearch Question\nGlimpse of Data"
+  },
+  {
+    "objectID": "slides/lec-09.html#introduction-section",
+    "href": "slides/lec-09.html#introduction-section",
+    "title": "CISC482 - Lecture09",
+    "section": "Introduction Section",
+    "text": "Introduction Section\n\nState source of data\nDescribe when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nDescribe the observations and the general characteristics being measured in the data.\nDescribe how the data set connect to your Core Studies."
+  },
+  {
+    "objectID": "slides/lec-09.html#research-question",
+    "href": "slides/lec-09.html#research-question",
+    "title": "CISC482 - Lecture09",
+    "section": "Research Question",
+    "text": "Research Question\n\nDescribe a research question you’re interested in answering using this data\nCan you accurately predict whether a person will survive in the titanic data set? What features would be most important to make that prediction?"
+  },
+  {
+    "objectID": "slides/lec-09.html#glimpse-of-data",
+    "href": "slides/lec-09.html#glimpse-of-data",
+    "title": "CISC482 - Lecture09",
+    "section": "Glimpse of Data",
+    "text": "Glimpse of Data\n\nPlease print out the results of the info() function of the dataframe\nAlso print out the first few rows of data head()"
+  },
+  {
+    "objectID": "slides/lec-09.html#steps",
+    "href": "slides/lec-09.html#steps",
+    "title": "CISC482 - Lecture09",
+    "section": "Steps",
+    "text": "Steps\n\nUnderstand the Data\n\nSize of the dataset (rows,cols), features (categorical, numerical).\n\nIdentify Relationships between features\n\nDirection and strength of correlation\n\nDescribe the shape of the data\n\nSymmetric, Skewed\n\nDetect outliers and missing values\n\nBox an Whisker!"
+  },
+  {
+    "objectID": "slides/lec-09.html#understand-the-data",
+    "href": "slides/lec-09.html#understand-the-data",
+    "title": "CISC482 - Lecture09",
+    "section": "Understand the Data",
+    "text": "Understand the Data\n\nNumber of Rows, Columns?\nWhat features are categorical vs numeric?\nAny missing data?"
+  },
+  {
+    "objectID": "slides/lec-09.html#example-data",
+    "href": "slides/lec-09.html#example-data",
+    "title": "CISC482 - Lecture09",
+    "section": "Example Data",
+    "text": "Example Data\n\n\n\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 344 entries, 0 to 343\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            344 non-null    object \n 1   island             344 non-null    object \n 2   bill_length_mm     342 non-null    float64\n 3   bill_depth_mm      342 non-null    float64\n 4   flipper_length_mm  342 non-null    float64\n 5   body_mass_g        342 non-null    float64\n 6   sex                333 non-null    object \n 7   year               344 non-null    int64  \ndtypes: float64(4), int64(1), object(3)\nmemory usage: 21.6+ KB\nNone\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007"
+  },
+  {
+    "objectID": "slides/lec-09.html#relationship-1",
+    "href": "slides/lec-09.html#relationship-1",
+    "title": "CISC482 - Lecture09",
+    "section": "Relationship 1",
+    "text": "Relationship 1"
+  },
+  {
+    "objectID": "slides/lec-09.html#relationship-2",
+    "href": "slides/lec-09.html#relationship-2",
+    "title": "CISC482 - Lecture09",
+    "section": "Relationship 2",
+    "text": "Relationship 2"
+  },
+  {
+    "objectID": "slides/lec-09.html#relationship-3",
+    "href": "slides/lec-09.html#relationship-3",
+    "title": "CISC482 - Lecture09",
+    "section": "Relationship 3",
+    "text": "Relationship 3"
+  },
+  {
+    "objectID": "slides/lec-09.html#quantifying-the-relationship",
+    "href": "slides/lec-09.html#quantifying-the-relationship",
+    "title": "CISC482 - Lecture09",
+    "section": "Quantifying the Relationship",
+    "text": "Quantifying the Relationship\n\nCovariance - measure of the joint variability of two random variables\nThe sign of the covariance, therefore, shows whether it is positive or negative relationship\n\\(Cov(X,Y)= \\frac{\\sum_{i=1}^n(x_i - \\bar{x})(y_i - \\bar{y})}{n}\\)\nThe magnitude doesn’t tell you much….we need a way to normalize it….Correlation to the rescue!"
+  },
+  {
+    "objectID": "slides/lec-09.html#correlation",
+    "href": "slides/lec-09.html#correlation",
+    "title": "CISC482 - Lecture09",
+    "section": "Correlation",
+    "text": "Correlation\n\nA metric between -1 and +1\n\\(r(X,Y)= \\frac{\\sum_{i=1}^n(x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum_{i=1}^n(x_i - \\bar{x})^2 \\cdot \\sum_{i=1}^n(y_i - \\bar{y})}}\\)\n\\(r(X,Y)= \\frac{Cov(X,Y)}{\\sigma_x \\cdot \\sigma_y}\\)"
+  },
+  {
+    "objectID": "slides/lec-09.html#example-data-1",
+    "href": "slides/lec-09.html#example-data-1",
+    "title": "CISC482 - Lecture09",
+    "section": "Example Data",
+    "text": "Example Data\n\n\ndata = np.array([\n  [1, 2,   -2,     3],\n  [2, 4,   -4,     3],\n  [3, 3.5, -3.5,   3],\n  [4, 7.5, -7.5,   3],\n  [5, 10.2, -10.2, 3],\n  [6, 12.1, -12.1, 3],\n])\ncov = np.cov(data, rowvar=False)\nprint(cov)\nprint(np.var(data[:, 0], ddof=1))\nprint(np.var(data[:, 1], ddof=1))\n\n\n[[3.5 7.3 -7.3 0.0]\n [7.3 16.3 -16.3 0.0]\n [-7.3 -16.3 16.3 0.0]\n [0.0 0.0 0.0 0.0]]\n3.5\n16.307"
+  },
+  {
+    "objectID": "slides/lec-09.html#example-correlation-graph",
+    "href": "slides/lec-09.html#example-correlation-graph",
+    "title": "CISC482 - Lecture09",
+    "section": "Example Correlation Graph",
+    "text": "Example Correlation Graph\n\n\ncorr = np.corrcoef(data, rowvar=False)\ndataplot = sns.heatmap(corr, cmap=\"vlag\", annot=True)"
+  },
+  {
+    "objectID": "slides/lec-09.html#class-activity-1",
+    "href": "slides/lec-09.html#class-activity-1",
+    "title": "CISC482 - Lecture09",
+    "section": "Class Activity",
+    "text": "Class Activity\nWork on your Topic Idea!\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-05.html#schedule",
@@ -1500,35 +1654,35 @@
   {
     "objectID": "slides/lec-08.html#schedule",
     "href": "slides/lec-08.html#schedule",
-    "title": "CISC482 - Lecture07",
+    "title": "CISC482 - Lecture08",
     "section": "Schedule",
     "text": "Schedule\n\nReading 4-1: Feb 10 @ 12PM, Friday\nReading 4-2: Feb 15 @ 12PM, Wednesday\nHW3: Feb 15 @ Midnight, Wednesday\nExam 1 - Feb 15 in class\nTopic Ideas - Feb 22 @ Midnight"
   },
   {
     "objectID": "slides/lec-08.html#cs-faculty-candidate",
     "href": "slides/lec-08.html#cs-faculty-candidate",
-    "title": "CISC482 - Lecture07",
+    "title": "CISC482 - Lecture08",
     "section": "CS Faculty Candidate",
     "text": "CS Faculty Candidate\n\nRazuan Hossain is here!\nPlease attend a meet and greet at 3:15 in SBSC 112\nExtra Credit!"
   },
   {
     "objectID": "slides/lec-08.html#today",
     "href": "slides/lec-08.html#today",
-    "title": "CISC482 - Lecture07",
+    "title": "CISC482 - Lecture08",
     "section": "Today",
     "text": "Today\n\nClass Activity, building graphs\nExam Review Sheet"
   },
   {
     "objectID": "slides/lec-08.html#class-activity-1",
     "href": "slides/lec-08.html#class-activity-1",
-    "title": "CISC482 - Lecture07",
+    "title": "CISC482 - Lecture08",
     "section": "Class Activity",
     "text": "Class Activity\n📋 Class Activity 04 - Practice Seaborn"
   },
   {
     "objectID": "slides/lec-08.html#you-can-do-it",
     "href": "slides/lec-08.html#you-can-do-it",
-    "title": "CISC482 - Lecture07",
+    "title": "CISC482 - Lecture08",
     "section": "You can do it!",
     "text": "You can do it!\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
