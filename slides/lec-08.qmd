@@ -1,5 +1,5 @@
 ---
-title: "CISC482 - Lecture07"
+title: "CISC482 - Lecture08"
 subtitle: "Data Exploration"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
