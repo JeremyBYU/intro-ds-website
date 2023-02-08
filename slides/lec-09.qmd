@@ -31,6 +31,7 @@ df = load_penguins()
 sns.set_style('whitegrid')
 sns.set_context("poster", font_scale=1.25)
 np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
 np.random.seed(1)
 
 ```
@@ -202,13 +203,86 @@ print(np.var(data[:, 1], ddof=1))
 
 ## Example Correlation Graph
 
-
 ```{python}
 #| echo: true
 #| output-location: column-fragment
 corr = np.corrcoef(data, rowvar=False)
 dataplot = sns.heatmap(corr, cmap="vlag", annot=True)
 ```
+
+## Secret Weapon
+
+- Now its time to show you my secret weapon
+- Dont tell anyone : )
+- What I am about to show you single handedly landed me an offer to work at a big company in California
+- Now for the story
+
+## The Story
+
+- My job was to predict where on the airport runway you were on using cameras
+- Specifally your lateral position on the runway
+
+![](./lec09_images/runway.jpg){fig-align="center"}
+
+## The Story (Continued)
+
+::: incremental
+- I created a model that predicted cross-track position. 
+  - $\hat{CT} = f(\text{FlightState}) = f(\theta, \psi, \phi, \text{image, etc.})$
+- We had the **true** CT position (from GPS) to compare my model against. $Error =  \hat{CT} -  CT$
+- It worked great *most* of the time!
+- However, we kept getting really large errors sometimes
+- No obvious pattern?
+- WHY!?!?!
+
+:::
+
+## Data
+
+```{python}
+#| echo: False
+n = 1000
+roll = np.random.normal(2, 5, size=n)
+pitch = np.random.normal(-3, 4, size=n)
+yaw = np.random.normal(0, 15, size=n)
+downtracks = np.linspace(0, 1000, num=int(n/4))
+downtracks = np.concatenate([downtracks, downtracks[::-1], downtracks, downtracks[::-1]])
+
+crosstracks = 35 * np.sin(np.linspace(0, np.pi * 2, num=n))
+
+noise = np.random.normal(0, 0.5, size=n)
+ct_error = np.random.poisson(lam=2, size=n) + noise
+alt = np.random.normal(200, 0.5, size=n)
+noise = np.random.normal(0, 0.75, size=n)
+alt = alt + ct_error + noise
+
+df = pd.DataFrame(data={
+  'ct_error': ct_error,
+  'roll': roll,
+  'pitch': pitch,
+  'yaw': yaw,
+  'downtracks': downtracks,
+  'crosstracks': crosstracks,
+  'alt': alt + ct_error
+})
+df.head()
+```
+
+## Pair Plot
+
+```python
+sns.pairplot(df)
+```
+
+##
+
+```{python}
+#| echo: False
+#| output-location: slide
+sns.set_context("paper", font_scale=1)
+sns.pairplot(df, height=1);
+```
+
 
 
 

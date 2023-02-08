@@ -60,6 +60,8 @@ np.random.seed(1)
 
 - A bar chart:  groups on one axis, rectangles with heights that represent the number of samples. 
 
+## Example Bar Chart
+
 ```{python}
 #| echo: True
 #| code-fold: true
