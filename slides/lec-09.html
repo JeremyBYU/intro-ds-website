@@ -595,10 +595,10 @@ None</code></pre>
       <th>0</th>
       <td>Adelie</td>
       <td>Torgersen</td>
-      <td>39.1</td>
-      <td>18.7</td>
-      <td>181.0</td>
-      <td>3750.0</td>
+      <td>39.10</td>
+      <td>18.70</td>
+      <td>181.00</td>
+      <td>3,750.00</td>
       <td>male</td>
       <td>2007</td>
     </tr>
@@ -606,10 +606,10 @@ None</code></pre>
       <th>1</th>
       <td>Adelie</td>
       <td>Torgersen</td>
-      <td>39.5</td>
-      <td>17.4</td>
-      <td>186.0</td>
-      <td>3800.0</td>
+      <td>39.50</td>
+      <td>17.40</td>
+      <td>186.00</td>
+      <td>3,800.00</td>
       <td>female</td>
       <td>2007</td>
     </tr>
@@ -617,10 +617,10 @@ None</code></pre>
       <th>2</th>
       <td>Adelie</td>
       <td>Torgersen</td>
-      <td>40.3</td>
-      <td>18.0</td>
-      <td>195.0</td>
-      <td>3250.0</td>
+      <td>40.30</td>
+      <td>18.00</td>
+      <td>195.00</td>
+      <td>3,250.00</td>
       <td>female</td>
       <td>2007</td>
     </tr>
@@ -639,10 +639,10 @@ None</code></pre>
       <th>4</th>
       <td>Adelie</td>
       <td>Torgersen</td>
-      <td>36.7</td>
-      <td>19.3</td>
-      <td>193.0</td>
-      <td>3450.0</td>
+      <td>36.70</td>
+      <td>19.30</td>
+      <td>193.00</td>
+      <td>3,450.00</td>
       <td>female</td>
       <td>2007</td>
     </tr>
@@ -733,6 +733,140 @@ None</code></pre>
 <div class="cell-output cell-output-display">
 <p><img data-src="lec-09_files/figure-revealjs/cell-8-output-1.png" width="836" height="459"></p>
 </div>
+</div>
+</div>
+</section>
+<section id="secret-weapon" class="slide level2">
+<h2>Secret Weapon</h2>
+<ul>
+<li>Now its time to show you my secret weapon</li>
+<li>Dont tell anyone : )</li>
+<li>What I am about to show you single handedly landed me an offer to work at a big company in California</li>
+<li>Now for the story</li>
+</ul>
+</section>
+<section id="the-story" class="slide level2">
+<h2>The Story</h2>
+<ul>
+<li>My job was to predict where on the airport runway you were on using cameras</li>
+<li>Specifally your lateral position on the runway</li>
+</ul>
+
+<img data-src="./lec09_images/runway.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="the-story-continued" class="slide level2">
+<h2>The Story (Continued)</h2>
+<div>
+<ul>
+<li class="fragment">I created a model that predicted cross-track position.
+<ul>
+<li class="fragment"><span class="math inline">\(\hat{CT} = f(\text{FlightState}) = f(\theta, \psi, \phi, \text{image, etc.})\)</span></li>
+</ul></li>
+<li class="fragment">We had the <strong>true</strong> CT position (from GPS) to compare my model against. <span class="math inline">\(Error = \hat{CT} - CT\)</span></li>
+<li class="fragment">It worked great <em>most</em> of the time!</li>
+<li class="fragment">However, we kept getting really large errors sometimes</li>
+<li class="fragment">No obvious pattern?</li>
+<li class="fragment">WHY!?!?!</li>
+</ul>
+</div>
+</section>
+<section id="data" class="slide level2">
+<h2>Data</h2>
+<div class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="8">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ct_error</th>
+      <th>roll</th>
+      <th>pitch</th>
+      <th>yaw</th>
+      <th>downtracks</th>
+      <th>crosstracks</th>
+      <th>alt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.63</td>
+      <td>7.99</td>
+      <td>2.55</td>
+      <td>3.91</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>203.27</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.33</td>
+      <td>2.93</td>
+      <td>-2.10</td>
+      <td>3.89</td>
+      <td>4.02</td>
+      <td>0.22</td>
+      <td>206.84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.43</td>
+      <td>0.12</td>
+      <td>-0.72</td>
+      <td>-0.41</td>
+      <td>8.03</td>
+      <td>0.44</td>
+      <td>205.51</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.24</td>
+      <td>-1.19</td>
+      <td>-2.21</td>
+      <td>-15.68</td>
+      <td>12.05</td>
+      <td>0.66</td>
+      <td>207.36</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.16</td>
+      <td>4.12</td>
+      <td>-3.75</td>
+      <td>-5.25</td>
+      <td>16.06</td>
+      <td>0.88</td>
+      <td>207.70</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="pair-plot" class="slide level2">
+<h2>Pair Plot</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>sns.pairplot(df)</span></code></pre></div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-09_files/figure-revealjs/cell-10-output-1.png" width="665" height="663"></p>
 </div>
 </div>
 </section></section>

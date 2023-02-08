@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f972ce38460>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f6420f3a140>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -508,7 +508,7 @@
     "href": "slides/lec-09.html#example-data",
     "title": "CISC482 - Lecture09",
     "section": "Example Data",
-    "text": "Example Data\n\n\n\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 344 entries, 0 to 343\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            344 non-null    object \n 1   island             344 non-null    object \n 2   bill_length_mm     342 non-null    float64\n 3   bill_depth_mm      342 non-null    float64\n 4   flipper_length_mm  342 non-null    float64\n 5   body_mass_g        342 non-null    float64\n 6   sex                333 non-null    object \n 7   year               344 non-null    int64  \ndtypes: float64(4), int64(1), object(3)\nmemory usage: 21.6+ KB\nNone\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007"
+    "text": "Example Data\n\n\n\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 344 entries, 0 to 343\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            344 non-null    object \n 1   island             344 non-null    object \n 2   bill_length_mm     342 non-null    float64\n 3   bill_depth_mm      342 non-null    float64\n 4   flipper_length_mm  342 non-null    float64\n 5   body_mass_g        342 non-null    float64\n 6   sex                333 non-null    object \n 7   year               344 non-null    int64  \ndtypes: float64(4), int64(1), object(3)\nmemory usage: 21.6+ KB\nNone\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.10\n      18.70\n      181.00\n      3,750.00\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.50\n      17.40\n      186.00\n      3,800.00\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.30\n      18.00\n      195.00\n      3,250.00\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.70\n      19.30\n      193.00\n      3,450.00\n      female\n      2007"
   },
   {
     "objectID": "slides/lec-09.html#relationship-1",
@@ -558,6 +558,41 @@
     "title": "CISC482 - Lecture09",
     "section": "Example Correlation Graph",
     "text": "Example Correlation Graph\n\n\ncorr = np.corrcoef(data, rowvar=False)\ndataplot = sns.heatmap(corr, cmap=\"vlag\", annot=True)"
+  },
+  {
+    "objectID": "slides/lec-09.html#secret-weapon",
+    "href": "slides/lec-09.html#secret-weapon",
+    "title": "CISC482 - Lecture09",
+    "section": "Secret Weapon",
+    "text": "Secret Weapon\n\nNow its time to show you my secret weapon\nDont tell anyone : )\nWhat I am about to show you single handedly landed me an offer to work at a big company in California\nNow for the story"
+  },
+  {
+    "objectID": "slides/lec-09.html#the-story",
+    "href": "slides/lec-09.html#the-story",
+    "title": "CISC482 - Lecture09",
+    "section": "The Story",
+    "text": "The Story\n\nMy job was to predict where on the airport runway you were on using cameras\nSpecifally your lateral position on the runway"
+  },
+  {
+    "objectID": "slides/lec-09.html#the-story-continued",
+    "href": "slides/lec-09.html#the-story-continued",
+    "title": "CISC482 - Lecture09",
+    "section": "The Story (Continued)",
+    "text": "The Story (Continued)\n\n\nI created a model that predicted cross-track position.\n\n\\(\\hat{CT} = f(\\text{FlightState}) = f(\\theta, \\psi, \\phi, \\text{image, etc.})\\)\n\nWe had the true CT position (from GPS) to compare my model against. \\(Error = \\hat{CT} - CT\\)\nIt worked great most of the time!\nHowever, we kept getting really large errors sometimes\nNo obvious pattern?\nWHY!?!?!"
+  },
+  {
+    "objectID": "slides/lec-09.html#data",
+    "href": "slides/lec-09.html#data",
+    "title": "CISC482 - Lecture09",
+    "section": "Data",
+    "text": "Data\n\n\n\n\n\n\n  \n    \n      \n      ct_error\n      roll\n      pitch\n      yaw\n      downtracks\n      crosstracks\n      alt\n    \n  \n  \n    \n      0\n      1.63\n      7.99\n      2.55\n      3.91\n      0.00\n      0.00\n      203.27\n    \n    \n      1\n      3.33\n      2.93\n      -2.10\n      3.89\n      4.02\n      0.22\n      206.84\n    \n    \n      2\n      2.43\n      0.12\n      -0.72\n      -0.41\n      8.03\n      0.44\n      205.51\n    \n    \n      3\n      3.24\n      -1.19\n      -2.21\n      -15.68\n      12.05\n      0.66\n      207.36\n    \n    \n      4\n      3.16\n      4.12\n      -3.75\n      -5.25\n      16.06\n      0.88\n      207.70"
+  },
+  {
+    "objectID": "slides/lec-09.html#pair-plot",
+    "href": "slides/lec-09.html#pair-plot",
+    "title": "CISC482 - Lecture09",
+    "section": "Pair Plot",
+    "text": "Pair Plot\nsns.pairplot(df)"
   },
   {
     "objectID": "slides/lec-09.html#class-activity-1",
@@ -1047,7 +1082,14 @@
     "href": "slides/lec-07.html#bar-chart",
     "title": "CISC482 - Lecture07",
     "section": "Bar Chart",
-    "text": "Bar Chart\n\nA bar chart: groups on one axis, rectangles with heights that represent the number of samples.\n\n\n\nCode\nspecies_count = df.groupby(['species'])['species'].count()\nax = sns.barplot(x=species_count.index.values, y=species_count.values)\nax.bar_label(ax.containers[0])\nax;"
+    "text": "Bar Chart\n\nA bar chart: groups on one axis, rectangles with heights that represent the number of samples."
+  },
+  {
+    "objectID": "slides/lec-07.html#example-bar-chart",
+    "href": "slides/lec-07.html#example-bar-chart",
+    "title": "CISC482 - Lecture07",
+    "section": "Example Bar Chart",
+    "text": "Example Bar Chart\n\n\nCode\nspecies_count = df.groupby(['species'])['species'].count()\nax = sns.barplot(x=species_count.index.values, y=species_count.values)\nax.bar_label(ax.containers[0])\nax;"
   },
   {
     "objectID": "slides/lec-07.html#numerical-features",
