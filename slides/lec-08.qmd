@@ -68,6 +68,9 @@ np.random.seed(1)
 
 # Exam Review
 
+- Go to brightspace and open up the review sheet
+- [Link](https://docs.google.com/document/d/1buXwn6jIddSoQjoMtH8WLSdOy1TlxdXBUoPJ3TDD5cQ/edit?usp=sharing)
+
 ## You can do it!
 
 
