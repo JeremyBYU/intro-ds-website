@@ -119,6 +119,34 @@
     "text": "Perform\n⌨️ HW 3 - Cleaning Data, Graphing, Probability"
   },
   {
+    "objectID": "weeks/week-5.html",
+    "href": "weeks/week-5.html",
+    "title": "Week 5",
+    "section": "",
+    "text": "📖 Read Assignments 4-2"
+  },
+  {
+    "objectID": "weeks/week-5.html#participate",
+    "href": "weeks/week-5.html#participate",
+    "title": "Week 5",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Lecture 9 - EDA"
+  },
+  {
+    "objectID": "weeks/week-5.html#practice",
+    "href": "weeks/week-5.html#practice",
+    "title": "Week 5",
+    "section": "Practice",
+    "text": "Practice\nNone"
+  },
+  {
+    "objectID": "weeks/week-5.html#perform",
+    "href": "weeks/week-5.html#perform",
+    "title": "Week 5",
+    "section": "Perform",
+    "text": "Perform\nNone"
+  },
+  {
     "objectID": "weeks/week-3.html",
     "href": "weeks/week-3.html",
     "title": "Week 3",
@@ -396,7 +424,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fd6c4edb970>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f653edb37c0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1307,6 +1335,27 @@
     "title": "CISC482 - Lecture07",
     "section": "Seaborn Examples",
     "text": "Seaborn Examples\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
+    "objectID": "slides/lec-10.html#schedule",
+    "href": "slides/lec-10.html#schedule",
+    "title": "CISC482 - Lecture10",
+    "section": "Schedule",
+    "text": "Schedule\n\nTopic Ideas - Feb 22 @ Midnight"
+  },
+  {
+    "objectID": "slides/lec-10.html#today",
+    "href": "slides/lec-10.html#today",
+    "title": "CISC482 - Lecture10",
+    "section": "Today",
+    "text": "Today\n\nIntroduction to Regression\nReview Topic Ideas\nMore Exploratory Data Analysis"
+  },
+  {
+    "objectID": "slides/lec-10.html#class-activity-1",
+    "href": "slides/lec-10.html#class-activity-1",
+    "title": "CISC482 - Lecture10",
+    "section": "Class Activity",
+    "text": "Class Activity\nWork on your Topic Idea!\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-02.html#subscibre-to-zybook",
