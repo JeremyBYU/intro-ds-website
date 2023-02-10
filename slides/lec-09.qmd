@@ -141,7 +141,7 @@ noise = np.random.normal(0, 3, 30)
 y_pos = x * 2 + noise
 ax =sns.scatterplot(x=x, y=y_pos)
 ax.set_xlabel("X")
-ax.set_xlabel("Y");
+ax.set_ylabel("Y");
 ```
 
 ## Relationship 2
@@ -152,7 +152,7 @@ noise = np.random.normal(0, 3, 30)
 y_neg = 60 - x * 2 + noise
 ax =sns.scatterplot(x=x, y=y_neg)
 ax.set_xlabel("X")
-ax.set_xlabel("Y");
+ax.set_ylabel("Y");
 ```
 
 ## Relationship 3
@@ -163,7 +163,7 @@ noise = np.random.normal(0, 3, 30)
 y_none = np.ones(30) * 40
 ax =sns.scatterplot(x=x, y=y_none)
 ax.set_xlabel("X")
-ax.set_xlabel("Y");
+ax.set_ylabel("Y");
 ```
 
 ## Quantifying the Relationship
@@ -217,9 +217,11 @@ dataplot = sns.heatmap(corr, cmap="vlag", annot=True)
 - What I am about to show you single handedly landed me an offer to work at a big company in California
 - Now for the story
 
-## The Story
+# The Story
 
-- My job was to predict where on the airport runway you were on using cameras
+## Background
+
+- My job was to predict **where** on the airport runway the airplane was using cameras
 - Specifally your lateral position on the runway
 
 ![](./lec09_images/runway.jpg){fig-align="center"}
@@ -248,7 +250,7 @@ yaw = np.random.normal(0, 15, size=n)
 downtracks = np.linspace(0, 1000, num=int(n/4))
 downtracks = np.concatenate([downtracks, downtracks[::-1], downtracks, downtracks[::-1]])
 
-crosstracks = 35 * np.sin(np.linspace(0, np.pi * 2, num=n))
+crosstracks = 35 * np.sin(5* np.linspace(0, np.pi * 2, num=n))
 
 noise = np.random.normal(0, 0.5, size=n)
 ct_error = np.random.poisson(lam=2, size=n) + noise
@@ -265,13 +267,14 @@ df = pd.DataFrame(data={
   'crosstracks': crosstracks,
   'alt': alt + ct_error
 })
-df.head()
+df_bad = df.iloc[:, :6]
+df_bad.head()
 ```
 
 ## Pair Plot
 
 ```python
-sns.pairplot(df)
+sns.pairplot(df_bad)
 ```
 
 ##
@@ -280,10 +283,47 @@ sns.pairplot(df)
 #| echo: False
 #| output-location: slide
 sns.set_context("paper", font_scale=1)
+sns.pairplot(df_bad, height=1);
+```
+
+## More Data!
+
+```{python}
+df.head()
+```
+
+## 
+
+
+```{python}
+#| echo: False
+#| output-location: slide
+sns.set_context("paper", font_scale=1)
 sns.pairplot(df, height=1);
 ```
 
+## The Error
 
+- Long story short, the GPS altitude was broken!
+- It was reporting that the airpane was off the ground!
+- My algorithm took into account your height off the ground.
+- At first, my bosses would not beleive me! It was a $10,000 GPS!
+- But the correlation plots and all my subsequent research convinced them
+
+## The True Error
+
+- Someone forgot to renew the subscription service for the High Precision GPS!
+
+# Recap EDA
+
+## Key Workflow and Graphs
+
+- Descriptive Statisitcs
+  - Means, quartiles, etc. for each feature
+- Histogram of any intresting features
+- Shape of Data
+- Missing Data
+- Find relationship (Correlation)
 
 
 # Class Activity
