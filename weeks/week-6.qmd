@@ -1,0 +1,24 @@
+---
+title: "Week 6"
+subtitle: "It's Regression Time!"
+editor: visual
+---
+
+## Prepare
+
+📖 Read Assignments 5-1
+📖 Read Assignments 5-2
+
+## Participate
+
+🖥️ [Lecture 10 - Regression 1](/slides/lec-10.html)
+🖥️ [Lecture 11 - Regression 2](/slides/lec-11.html)
+
+## Practice
+
+📋 [Class Activity 05 - Practice Seaborn](https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing)
+
+## Perform
+
+⌨️ [HW 4 - Regression]()
+

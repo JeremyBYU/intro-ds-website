@@ -33,7 +33,6 @@ sns.set_context("poster", font_scale=1.25)
 np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
 pd.options.display.float_format = '{:,.2f}'.format
 np.random.seed(1)
-
 ```
 
 # Class Business
@@ -42,6 +41,9 @@ np.random.seed(1)
 ## Schedule
 
 - Topic Ideas - Feb 22 @ Midnight
+- Reading 5-1: Feb 22 @ 12PM, Wednesday
+- Reading 5-2: Feb 24 @ 12PM, Friday
+- Reading 5-3: Mar 01 @ 12PM, Wednesday
 
 ## Today
 
@@ -49,12 +51,22 @@ np.random.seed(1)
 - Review Topic Ideas
 - More Exploratory Data Analysis
 
+# Introduction to Regression
+
+## Input and Output
+
+- An **input** feature takes values without being impacted by any other features.
+- An **output** feature has values that vary in **response** to variation in some other feature(s).
+  -  We often called this the **response** variable
+- In an **experiemnt**, input features are often controlled by researchters, and output features are observed
+- We often visualize these 
+
 
 # Class Activity
 
 ## Class Activity
 
-Work on your Topic Idea!
+[Practice Regression]()
 
 
 
