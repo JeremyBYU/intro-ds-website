@@ -396,7 +396,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f6420f3a140>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fd6c4edb970>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -567,11 +567,11 @@
     "text": "Secret Weapon\n\nNow its time to show you my secret weapon\nDont tell anyone : )\nWhat I am about to show you single handedly landed me an offer to work at a big company in California\nNow for the story"
   },
   {
-    "objectID": "slides/lec-09.html#the-story",
-    "href": "slides/lec-09.html#the-story",
+    "objectID": "slides/lec-09.html#background",
+    "href": "slides/lec-09.html#background",
     "title": "CISC482 - Lecture09",
-    "section": "The Story",
-    "text": "The Story\n\nMy job was to predict where on the airport runway you were on using cameras\nSpecifally your lateral position on the runway"
+    "section": "Background",
+    "text": "Background\n\nMy job was to predict where on the airport runway the airplane was using cameras\nSpecifally your lateral position on the runway"
   },
   {
     "objectID": "slides/lec-09.html#the-story-continued",
@@ -585,14 +585,42 @@
     "href": "slides/lec-09.html#data",
     "title": "CISC482 - Lecture09",
     "section": "Data",
-    "text": "Data\n\n\n\n\n\n\n  \n    \n      \n      ct_error\n      roll\n      pitch\n      yaw\n      downtracks\n      crosstracks\n      alt\n    \n  \n  \n    \n      0\n      1.63\n      7.99\n      2.55\n      3.91\n      0.00\n      0.00\n      203.27\n    \n    \n      1\n      3.33\n      2.93\n      -2.10\n      3.89\n      4.02\n      0.22\n      206.84\n    \n    \n      2\n      2.43\n      0.12\n      -0.72\n      -0.41\n      8.03\n      0.44\n      205.51\n    \n    \n      3\n      3.24\n      -1.19\n      -2.21\n      -15.68\n      12.05\n      0.66\n      207.36\n    \n    \n      4\n      3.16\n      4.12\n      -3.75\n      -5.25\n      16.06\n      0.88\n      207.70"
+    "text": "Data\n\n\n\n\n\n\n  \n    \n      \n      ct_error\n      roll\n      pitch\n      yaw\n      downtracks\n      crosstracks\n    \n  \n  \n    \n      0\n      1.63\n      7.99\n      2.55\n      3.91\n      0.00\n      0.00\n    \n    \n      1\n      3.33\n      2.93\n      -2.10\n      3.89\n      4.02\n      1.10\n    \n    \n      2\n      2.43\n      0.12\n      -0.72\n      -0.41\n      8.03\n      2.20\n    \n    \n      3\n      3.24\n      -1.19\n      -2.21\n      -15.68\n      12.05\n      3.30\n    \n    \n      4\n      3.16\n      4.12\n      -3.75\n      -5.25\n      16.06\n      4.39"
   },
   {
     "objectID": "slides/lec-09.html#pair-plot",
     "href": "slides/lec-09.html#pair-plot",
     "title": "CISC482 - Lecture09",
     "section": "Pair Plot",
-    "text": "Pair Plot\nsns.pairplot(df)"
+    "text": "Pair Plot\nsns.pairplot(df_bad)"
+  },
+  {
+    "objectID": "slides/lec-09.html#more-data",
+    "href": "slides/lec-09.html#more-data",
+    "title": "CISC482 - Lecture09",
+    "section": "More Data!",
+    "text": "More Data!\n\n\n\n\n\n\n  \n    \n      \n      ct_error\n      roll\n      pitch\n      yaw\n      downtracks\n      crosstracks\n      alt\n    \n  \n  \n    \n      0\n      1.63\n      7.99\n      2.55\n      3.91\n      0.00\n      0.00\n      203.27\n    \n    \n      1\n      3.33\n      2.93\n      -2.10\n      3.89\n      4.02\n      1.10\n      206.84\n    \n    \n      2\n      2.43\n      0.12\n      -0.72\n      -0.41\n      8.03\n      2.20\n      205.51\n    \n    \n      3\n      3.24\n      -1.19\n      -2.21\n      -15.68\n      12.05\n      3.30\n      207.36\n    \n    \n      4\n      3.16\n      4.12\n      -3.75\n      -5.25\n      16.06\n      4.39\n      207.70"
+  },
+  {
+    "objectID": "slides/lec-09.html#the-error",
+    "href": "slides/lec-09.html#the-error",
+    "title": "CISC482 - Lecture09",
+    "section": "The Error",
+    "text": "The Error\n\nLong story short, the GPS altitude was broken!\nIt was reporting that the airpane was off the ground!\nMy algorithm took into account your height off the ground.\nAt first, my bosses would not beleive me! It was a $10,000 GPS!\nBut the correlation plots and all my subsequent research convinced them"
+  },
+  {
+    "objectID": "slides/lec-09.html#the-true-error",
+    "href": "slides/lec-09.html#the-true-error",
+    "title": "CISC482 - Lecture09",
+    "section": "The True Error",
+    "text": "The True Error\n\nSomeone forgot to renew the subscription service for the High Precision GPS!"
+  },
+  {
+    "objectID": "slides/lec-09.html#key-workflow-and-graphs",
+    "href": "slides/lec-09.html#key-workflow-and-graphs",
+    "title": "CISC482 - Lecture09",
+    "section": "Key Workflow and Graphs",
+    "text": "Key Workflow and Graphs\n\nDescriptive Statisitcs\n\nMeans, quartiles, etc. for each feature\n\nHistogram of any intresting features\nShape of Data\nMissing Data\nFind relationship (Correlation)"
   },
   {
     "objectID": "slides/lec-09.html#class-activity-1",
