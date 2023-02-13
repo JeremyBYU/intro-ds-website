@@ -452,7 +452,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f63fa794dc0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fb7b893d210>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1383,7 +1383,7 @@
     "href": "slides/lec-10.html#input-and-output",
     "title": "CISC482 - Lecture10",
     "section": "Input and Output",
-    "text": "Input and Output\n\nAn input feature takes values without being impacted by any other features.\nAn output feature has values that vary in response to variation in some other feature(s).\n\nWe often called this the response variable\n\nIn an experiemnt, input features are often controlled by researchters, and output features are observed\nWe often visualize these with scatter plots"
+    "text": "Input and Output\n\nAn input feature takes values without being impacted by any other features.\nAn output feature has values that vary in response to variation in some other feature(s).\n\nWe often called this the response variable\n\nIn an experiment, input features are often controlled by researchters, and output features are observed\nWe often visualize these with scatter plots"
   },
   {
     "objectID": "slides/lec-10.html#example-data",
@@ -1391,6 +1391,125 @@
     "title": "CISC482 - Lecture10",
     "section": "Example Data",
     "text": "Example Data\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.10\n      18.70\n      181.00\n      3,750.00\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.50\n      17.40\n      186.00\n      3,800.00\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.30\n      18.00\n      195.00\n      3,250.00\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.70\n      19.30\n      193.00\n      3,450.00\n      female\n      2007"
+  },
+  {
+    "objectID": "slides/lec-10.html#scatter-plot",
+    "href": "slides/lec-10.html#scatter-plot",
+    "title": "CISC482 - Lecture10",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\n\n\nCorrelation: 0.60"
+  },
+  {
+    "objectID": "slides/lec-10.html#describing",
+    "href": "slides/lec-10.html#describing",
+    "title": "CISC482 - Lecture10",
+    "section": "Describing",
+    "text": "Describing\n\nThe direction: positive if larger values of one feature correspond to larger values of the other feature.\nThe form: linear pattern or a nonlinear pattern. Sometimes two features may not have an obvious form.\nThe strength: how closely the observations in a scatter plot follow the form’s pattern."
+  },
+  {
+    "objectID": "slides/lec-10.html#questions",
+    "href": "slides/lec-10.html#questions",
+    "title": "CISC482 - Lecture10",
+    "section": "Questions",
+    "text": "Questions"
+  },
+  {
+    "objectID": "slides/lec-10.html#correlation",
+    "href": "slides/lec-10.html#correlation",
+    "title": "CISC482 - Lecture10",
+    "section": "Correlation",
+    "text": "Correlation\n\nCorrelation is a statistical measure that expresses the extent to which two variables are linearly related\nThey change together at a constant rate\nIt’s a common tool for describing simple relationships without making a statement about cause and effect.\nRange from -1 to 0 to +1"
+  },
+  {
+    "objectID": "slides/lec-10.html#regression-model",
+    "href": "slides/lec-10.html#regression-model",
+    "title": "CISC482 - Lecture10",
+    "section": "Regression Model",
+    "text": "Regression Model\n\nA model for an output feature \\(y\\) using input feature(s) \\(X\\) is a function \\(f(X)\\) that predicts an expected value \\(\\hat{y}\\) for a given value of \\(X\\).and\n\\(\\hat{y} = f(X)\\)\nA regression model is one that has a numerical output feature and input features."
+  },
+  {
+    "objectID": "slides/lec-10.html#regression-example",
+    "href": "slides/lec-10.html#regression-example",
+    "title": "CISC482 - Lecture10",
+    "section": "Regression Example",
+    "text": "Regression Example\n\nWhat is the error of our model (Residual)"
+  },
+  {
+    "objectID": "slides/lec-10.html#main-equation",
+    "href": "slides/lec-10.html#main-equation",
+    "title": "CISC482 - Lecture10",
+    "section": "Main Equation",
+    "text": "Main Equation\n\n\nSet of data: \\(\\{(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\\}\\)\n\nx: input, y: output\n\nModel: \\(\\hat{y} = \\beta_0 + \\beta_1 x\\)\n\n\\(\\hat{y}\\) = prediction\n\\(\\beta_0\\) - y - intercept\n\\(\\beta_1\\) - slope"
+  },
+  {
+    "objectID": "slides/lec-10.html#visual-explanation",
+    "href": "slides/lec-10.html#visual-explanation",
+    "title": "CISC482 - Lecture10",
+    "section": "Visual Explanation",
+    "text": "Visual Explanation\n\n\n\n\n\n\n\nTip\n\n\nHow can we formalize what we are optimizing for?"
+  },
+  {
+    "objectID": "slides/lec-10.html#formulation",
+    "href": "slides/lec-10.html#formulation",
+    "title": "CISC482 - Lecture10",
+    "section": "Formulation",
+    "text": "Formulation\n\n\nWe want to find the \\(\\beta_0\\) and \\(\\beta_1\\) parameters that reduce the combined error.\n\\(f(\\beta_0, \\beta_1) = \\sum\\limits_{i=1}^{n}[y_i - \\hat{y}_i]^2\\)\nWhat is this?\nSum of the Squared Residuals (SSR)\nDo we want this to be big or small?\n\n\n\n\\[\nSSR = \\sum\\limits_{i=1}^{n}[y_i - \\hat{y}_i]^2 = [y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1 x_i)]^2 \\\\\n= [y_i - \\hat{\\beta}_0 - \\hat{\\beta}_1 x_i]^2\n\\]"
+  },
+  {
+    "objectID": "slides/lec-10.html#classic-stats-result",
+    "href": "slides/lec-10.html#classic-stats-result",
+    "title": "CISC482 - Lecture10",
+    "section": "Classic Stats Result",
+    "text": "Classic Stats Result\n\n\\(\\beta_1 (slope) = \\frac{\\sum\\limits_{i=1}^{n}[(x_i-\\bar{x})(y_i- \\bar{y})]}{\\sum\\limits_{i=1}^{n} (x_i - \\bar{x})}\\)\n\\(\\beta_0\\) (intercept) - \\(\\bar{y} - \\beta_1 \\bar{x}\\)\n\n\ndf_r = df[['bill_length_mm', 'body_mass_g']].dropna()\nx = df_r.bill_length_mm\ny = df_r.body_mass_g\nx_bar = x.mean()\ny_bar = y.mean()\nprint(f\"Xbar: {x_bar:.1f}\")\nprint(f\"Ybar: {y_bar:.1f}\")\n\nXbar: 43.9\nYbar: 4201.8"
+  },
+  {
+    "objectID": "slides/lec-10.html#computation",
+    "href": "slides/lec-10.html#computation",
+    "title": "CISC482 - Lecture10",
+    "section": "Computation",
+    "text": "Computation\n\n\nnumerator = np.sum((x - x_bar) * (y - y_bar))\ndenominator = np.sum((x - x_bar)**2)\nslope = numerator / denominator\nintercept = y_bar - slope * x_bar\nprint(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\")\n\n\nSlope: 87.4; \nIntercept: 362.3\n\n\n\n\n\n<matplotlib.lines._AxLine at 0x7f0c10bc43d0>"
+  },
+  {
+    "objectID": "slides/lec-10.html#another-classic-stats-result",
+    "href": "slides/lec-10.html#another-classic-stats-result",
+    "title": "CISC482 - Lecture10",
+    "section": "Another Classic Stats Result",
+    "text": "Another Classic Stats Result\n\\[\n\\begin{aligned}\\hat{\\beta}_1 &= \\frac{\\text{Cov}(x,y)}{s_x^2}\\end{aligned}\n\\]\nThe correlation between \\(x\\) and \\(y\\) is \\(r = \\frac{\\text{Cov}(x,y)}{s_x s_y}\\). Thus, \\(\\text{Cov}(x,y) = r s_xs_y\\). Plugging this into above, we have\n\\[\n\\hat{\\beta}_1 = \\frac{\\text{Cov}(x,y)}{s_x^2} = r\\frac{s_ys_x}{s_x^2} = r\\frac{s_y}{s_x}\n\\]\n\\(\\beta_0\\) (intercept) - \\(\\bar{y} - \\beta_1 \\bar{x}\\)"
+  },
+  {
+    "objectID": "slides/lec-10.html#computation-1",
+    "href": "slides/lec-10.html#computation-1",
+    "title": "CISC482 - Lecture10",
+    "section": "Computation",
+    "text": "Computation\n\nr = df_r.bill_length_mm.corr(df_r.body_mass_g)\nslope = r * (df_r.body_mass_g.std() / df_r.bill_length_mm.std())\nintercept = y_bar - slope * x_bar\nprint(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\")\n\nSlope: 87.4; \nIntercept: 362.3"
+  },
+  {
+    "objectID": "slides/lec-10.html#another-full-example",
+    "href": "slides/lec-10.html#another-full-example",
+    "title": "CISC482 - Lecture10",
+    "section": "Another Full Example",
+    "text": "Another Full Example"
+  },
+  {
+    "objectID": "slides/lec-10.html#matrix-math-result",
+    "href": "slides/lec-10.html#matrix-math-result",
+    "title": "CISC482 - Lecture10",
+    "section": "Matrix Math Result",
+    "text": "Matrix Math Result\n\\[\n\\begin{align*}\nA = \\begin{bmatrix}\nx_1 & 1\\\\\nx_2 & 1 \\\\\n... & ... \\\\\nx_n & 1\n\\end{bmatrix}\n\\qquad\ny = \\begin{bmatrix}\ny_1 \\\\\ny_2 \\\\\n... \\\\\ny_n\n\\end{bmatrix}\n\\end{align*}\n\\qquad\n\\beta = \\begin{bmatrix} \\beta_0 \\\\ \\beta_1 \\end{bmatrix}\n\\]\n\\[\n\\hat{y_1} = x_1 \\cdot \\beta_0 + 1 \\cdot \\beta_1 \\\\\n... \\\\\n\\hat{y} = A \\beta\n\\]\n\n\\[\n\\beta = \\begin{bmatrix} \\beta_0 \\\\ \\beta_1 \\end{bmatrix} = (A^TA)^{-1} A^Ty\n\\]"
+  },
+  {
+    "objectID": "slides/lec-10.html#computation-of-matrix-result",
+    "href": "slides/lec-10.html#computation-of-matrix-result",
+    "title": "CISC482 - Lecture10",
+    "section": "Computation of Matrix Result",
+    "text": "Computation of Matrix Result\n\nn = len(df_r)\nprint(x.shape, type(x))\nx = x.values\nprint(x.shape,type(x))\nx = np.expand_dims(x, axis=1) # convert to matrix\nprint(x.shape)\nA = np.append(x, np.ones(shape=(n, 1)), axis=1) # add one column\nprint(A.shape)\ny = y.values\nprint(x[:5, :]) # sample of matrix\n# intercept = y_bar - slope * x_bar\n# print(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\")\n\n(342,) <class 'pandas.core.series.Series'>\n(342,) <class 'numpy.ndarray'>\n(342, 1)\n(342, 2)\n[[39.1]\n [39.5]\n [40.3]\n [36.7]\n [39.3]]"
+  },
+  {
+    "objectID": "slides/lec-10.html#computation-of-matrix-result-1",
+    "href": "slides/lec-10.html#computation-of-matrix-result-1",
+    "title": "CISC482 - Lecture10",
+    "section": "Computation of Matrix Result",
+    "text": "Computation of Matrix Result\n\nbeta = np.linalg.inv(A.T @ A) @ A.T @ y\nprint(f\"Slope: {beta[0]:.1f}; \\nIntercept: {beta[1]:.1f}\")\n\nSlope: 87.4; \nIntercept: 362.3"
   },
   {
     "objectID": "slides/lec-10.html#class-activity-1",

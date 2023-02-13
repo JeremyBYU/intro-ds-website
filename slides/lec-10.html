@@ -27,6 +27,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -378,7 +442,7 @@ Dr.&nbsp;Jeremy Castagno
 <ul>
 <li>We often called this the <strong>response</strong> variable</li>
 </ul></li>
-<li>In an <strong>experiemnt</strong>, input features are often controlled by researchters, and output features are observed</li>
+<li>In an <strong>experiment</strong>, input features are often controlled by researchters, and output features are observed</li>
 <li>We often visualize these with scatter plots</li>
 </ul>
 </section>
@@ -474,6 +538,257 @@ Dr.&nbsp;Jeremy Castagno
   </tbody>
 </table>
 </div>
+</div>
+</div>
+</section>
+<section id="scatter-plot" class="slide level2">
+<h2>Scatter Plot</h2>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-stdout">
+<pre><code>Correlation: 0.60</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-10_files/figure-revealjs/cell-4-output-2.png" width="923" height="490"></p>
+</div>
+</div>
+</section>
+<section id="describing" class="slide level2">
+<h2>Describing</h2>
+<ul>
+<li>The direction: positive if larger values of one feature correspond to larger values of the other feature.</li>
+<li>The form: linear pattern or a nonlinear pattern. Sometimes two features may not have an obvious form.</li>
+<li>The strength: how closely the observations in a scatter plot follow the form’s pattern.</li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+
+<img data-src="./lec10_images/form_relationship.png" class="r-stretch quarto-figure-center"></section>
+<section id="correlation" class="slide level2">
+<h2>Correlation</h2>
+<ul>
+<li><strong>Correlation</strong> is a statistical measure that expresses the extent to which two variables are linearly related</li>
+<li>They change together at a constant rate</li>
+<li>It’s a common tool for describing simple relationships without making a statement about cause and effect.</li>
+<li>Range from -1 to 0 to +1</li>
+</ul>
+</section>
+<section id="regression-model" class="slide level2">
+<h2>Regression Model</h2>
+<ul>
+<li>A <strong>model</strong> for an output feature <span class="math inline">\(y\)</span> using input feature(s) <span class="math inline">\(X\)</span> is a <em>function</em> <span class="math inline">\(f(X)\)</span> that <strong>predicts</strong> an expected value <span class="math inline">\(\hat{y}\)</span> for a given value of <span class="math inline">\(X\)</span>.and</li>
+<li><span class="math inline">\(\hat{y} = f(X)\)</span></li>
+<li>A <strong>regression</strong> model is one that has a <strong>numerical</strong> output feature and input features.</li>
+</ul>
+</section>
+<section id="regression-example" class="slide level2">
+<h2>Regression Example</h2>
+<ul>
+<li>What is the error of our model (Residual)</li>
+</ul>
+
+<img data-src="./lec10_images/motivation_plot.png" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="simple-linear-regression" class="title-slide slide level1 center">
+<h1>Simple Linear Regression</h1>
+
+</section>
+<section id="main-equation" class="slide level2">
+<h2>Main Equation</h2>
+<div>
+<ul>
+<li class="fragment">Set of data: <span class="math inline">\(\{(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\}\)</span>
+<ul>
+<li class="fragment">x: input, y: output</li>
+</ul></li>
+<li class="fragment">Model: <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(\hat{y}\)</span> = prediction</li>
+<li class="fragment"><span class="math inline">\(\beta_0\)</span> - y - intercept</li>
+<li class="fragment"><span class="math inline">\(\beta_1\)</span> - slope</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="visual-explanation" class="slide level2">
+<h2>Visual Explanation</h2>
+
+<img data-src="./lec10_images/residual_error.png" class="r-stretch quarto-figure-center"><div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>How can we formalize what we are <strong>optimizing</strong> for?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="formulation" class="slide level2">
+<h2>Formulation</h2>
+<div>
+<ul>
+<li class="fragment">We want to <strong>find</strong> the <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> parameters that reduce the combined error.</li>
+<li class="fragment"><span class="math inline">\(f(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2\)</span></li>
+<li class="fragment">What is this?</li>
+<li class="fragment">Sum of the Squared Residuals (SSR)</li>
+<li class="fragment">Do we want this to be big or small?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+SSR = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2 = [y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)]^2 \\
+= [y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i]^2
+\]</span></p>
+</div>
+</section>
+<section id="classic-stats-result" class="slide level2">
+<h2>Classic Stats Result</h2>
+<ul>
+<li><span class="math inline">\(\beta_1 (slope) = \frac{\sum\limits_{i=1}^{n}[(x_i-\bar{x})(y_i- \bar{y})]}{\sum\limits_{i=1}^{n} (x_i - \bar{x})}\)</span></li>
+<li><span class="math inline">\(\beta_0\)</span> (intercept) - <span class="math inline">\(\bar{y} - \beta_1 \bar{x}\)</span></li>
+</ul>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>df_r <span class="op">=</span> df[[<span class="st">'bill_length_mm'</span>, <span class="st">'body_mass_g'</span>]].dropna()</span>
+<span id="cb2-2"><a href="#cb2-2"></a>x <span class="op">=</span> df_r.bill_length_mm</span>
+<span id="cb2-3"><a href="#cb2-3"></a>y <span class="op">=</span> df_r.body_mass_g</span>
+<span id="cb2-4"><a href="#cb2-4"></a>x_bar <span class="op">=</span> x.mean()</span>
+<span id="cb2-5"><a href="#cb2-5"></a>y_bar <span class="op">=</span> y.mean()</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="bu">print</span>(<span class="ss">f"Xbar: </span><span class="sc">{</span>x_bar<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="bu">print</span>(<span class="ss">f"Ybar: </span><span class="sc">{</span>y_bar<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Xbar: 43.9
+Ybar: 4201.8</code></pre>
+</div>
+</div>
+</section>
+<section id="computation" class="slide level2">
+<h2>Computation</h2>
+<div class="cell columns column-output-location" data-execution_count="5">
+<div class="column">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>numerator <span class="op">=</span> np.<span class="bu">sum</span>((x <span class="op">-</span> x_bar) <span class="op">*</span> (y <span class="op">-</span> y_bar))</span>
+<span id="cb4-2"><a href="#cb4-2"></a>denominator <span class="op">=</span> np.<span class="bu">sum</span>((x <span class="op">-</span> x_bar)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>slope <span class="op">=</span> numerator <span class="op">/</span> denominator</span>
+<span id="cb4-4"><a href="#cb4-4"></a>intercept <span class="op">=</span> y_bar <span class="op">-</span> slope <span class="op">*</span> x_bar</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code>Slope: 87.4; 
+Intercept: 362.3</code></pre>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>&lt;matplotlib.lines._AxLine at 0x7f0c10bc43d0&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-10_files/figure-revealjs/cell-7-output-2.png" width="923" height="490"></p>
+</div>
+</div>
+</section>
+<section id="another-classic-stats-result" class="slide level2">
+<h2>Another Classic Stats Result</h2>
+<p><span class="math display">\[
+\begin{aligned}\hat{\beta}_1 &amp;= \frac{\text{Cov}(x,y)}{s_x^2}\end{aligned}
+\]</span></p>
+<p>The correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is <span class="math inline">\(r = \frac{\text{Cov}(x,y)}{s_x s_y}\)</span>. Thus, <span class="math inline">\(\text{Cov}(x,y) = r s_xs_y\)</span>. Plugging this into above, we have</p>
+<p><span class="math display">\[
+\hat{\beta}_1 = \frac{\text{Cov}(x,y)}{s_x^2} = r\frac{s_ys_x}{s_x^2} = r\frac{s_y}{s_x}
+\]</span></p>
+<p><span class="math inline">\(\beta_0\)</span> (intercept) - <span class="math inline">\(\bar{y} - \beta_1 \bar{x}\)</span></p>
+</section>
+<section id="computation-1" class="slide level2">
+<h2>Computation</h2>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>r <span class="op">=</span> df_r.bill_length_mm.corr(df_r.body_mass_g)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>slope <span class="op">=</span> r <span class="op">*</span> (df_r.body_mass_g.std() <span class="op">/</span> df_r.bill_length_mm.std())</span>
+<span id="cb7-3"><a href="#cb7-3"></a>intercept <span class="op">=</span> y_bar <span class="op">-</span> slope <span class="op">*</span> x_bar</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Slope: 87.4; 
+Intercept: 362.3</code></pre>
+</div>
+</div>
+</section>
+<section id="another-full-example" class="slide level2">
+<h2>Another Full Example</h2>
+
+<img data-src="./lec10_images/example_regression.png" class="r-stretch quarto-figure-center"></section>
+<section id="matrix-math-result" class="slide level2">
+<h2>Matrix Math Result</h2>
+<p><span class="math display">\[
+\begin{align*}
+A = \begin{bmatrix}
+x_1 &amp; 1\\
+x_2 &amp; 1 \\
+... &amp; ... \\
+x_n &amp; 1
+\end{bmatrix}
+\qquad
+y = \begin{bmatrix}
+y_1 \\
+y_2 \\
+... \\
+y_n
+\end{bmatrix}
+\end{align*}
+\qquad
+\beta = \begin{bmatrix} \beta_0 \\ \beta_1 \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\hat{y_1} = x_1 \cdot \beta_0 + 1 \cdot \beta_1 \\
+... \\
+\hat{y} = A \beta
+\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\beta = \begin{bmatrix} \beta_0 \\ \beta_1 \end{bmatrix} = (A^TA)^{-1} A^Ty
+\]</span></p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+</section>
+<section id="computation-of-matrix-result" class="slide level2">
+<h2>Computation of Matrix Result</h2>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>n <span class="op">=</span> <span class="bu">len</span>(df_r)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(x.shape, <span class="bu">type</span>(x))</span>
+<span id="cb9-3"><a href="#cb9-3"></a>x <span class="op">=</span> x.values</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="bu">print</span>(x.shape,<span class="bu">type</span>(x))</span>
+<span id="cb9-5"><a href="#cb9-5"></a>x <span class="op">=</span> np.expand_dims(x, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># convert to matrix</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="bu">print</span>(x.shape)</span>
+<span id="cb9-7"><a href="#cb9-7"></a>A <span class="op">=</span> np.append(x, np.ones(shape<span class="op">=</span>(n, <span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># add one column</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="bu">print</span>(A.shape)</span>
+<span id="cb9-9"><a href="#cb9-9"></a>y <span class="op">=</span> y.values</span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="bu">print</span>(x[:<span class="dv">5</span>, :]) <span class="co"># sample of matrix</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># intercept = y_bar - slope * x_bar</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="co"># print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(342,) &lt;class 'pandas.core.series.Series'&gt;
+(342,) &lt;class 'numpy.ndarray'&gt;
+(342, 1)
+(342, 2)
+[[39.1]
+ [39.5]
+ [40.3]
+ [36.7]
+ [39.3]]</code></pre>
+</div>
+</div>
+</section>
+<section id="computation-of-matrix-result-1" class="slide level2">
+<h2>Computation of Matrix Result</h2>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>beta <span class="op">=</span> np.linalg.inv(A.T <span class="op">@</span> A) <span class="op">@</span> A.T <span class="op">@</span> y</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>beta[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>beta[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Slope: 87.4; 
+Intercept: 362.3</code></pre>
 </div>
 </div>
 </section></section>
