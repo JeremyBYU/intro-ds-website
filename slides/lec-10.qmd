@@ -12,6 +12,8 @@ format:
     show-slide-number: all 
     chalkboard: true
     code-copy: false
+    revealjs-plugins:
+      - noswipe
 editor: visual
 execute:
   freeze: auto
@@ -59,7 +61,17 @@ np.random.seed(1)
 - An **output** feature has values that vary in **response** to variation in some other feature(s).
   -  We often called this the **response** variable
 - In an **experiemnt**, input features are often controlled by researchters, and output features are observed
-- We often visualize these 
+- We often visualize these with scatter plots
+
+## Example Data
+
+
+
+```{python}
+df.head()
+# sns.scatterplot(data=df, x='bill_length_mm', y='body_mass')
+
+```
 
 
 # Class Activity
