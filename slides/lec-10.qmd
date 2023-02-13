@@ -60,7 +60,7 @@ np.random.seed(1)
 - An **input** feature takes values without being impacted by any other features.
 - An **output** feature has values that vary in **response** to variation in some other feature(s).
   -  We often called this the **response** variable
-- In an **experiemnt**, input features are often controlled by researchters, and output features are observed
+- In an **experiment**, input features are often controlled by researchters, and output features are observed
 - We often visualize these with scatter plots
 
 ## Example Data
@@ -69,9 +69,213 @@ np.random.seed(1)
 
 ```{python}
 df.head()
-# sns.scatterplot(data=df, x='bill_length_mm', y='body_mass')
-
 ```
+
+## Scatter Plot
+
+```{python}
+sns.scatterplot(data=df, x='bill_length_mm', y='body_mass_g');
+print(f"Correlation: {df.bill_length_mm.corr(df.body_mass_g):.2f}")
+```
+
+
+## Describing
+
+- The direction: positive if larger values of one feature correspond to larger values of the other feature.
+- The form: linear pattern or a nonlinear pattern.  Sometimes two features may not have an obvious form.
+- The strength: how closely the observations in a scatter plot follow the form's pattern.
+
+## Questions
+
+![](./lec10_images/form_relationship.png){fig-align="center"}
+
+## Correlation
+
+- **Correlation** is a statistical measure that expresses the extent to which two variables are linearly related 
+- They change together at a constant rate
+-  It’s a common tool for describing simple relationships without making a statement about cause and effect.
+- Range from -1 to 0 to +1
+
+## Regression Model
+
+- A **model** for an output feature $y$ using input feature(s) $X$ is a *function* $f(X)$ that **predicts** an expected value $\hat{y}$ for a given value of $X$.and
+- $\hat{y} = f(X)$
+- A **regression** model is one that has a **numerical** output feature and input features.
+
+## Regression Example
+
+- What is the error of our model (Residual)
+
+![](./lec10_images/motivation_plot.png){fig-align="center"}
+
+
+# Simple Linear Regression
+
+## Main Equation
+
+::: incremental
+- Set of data: $\{(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\}$
+  - x: input, y: output
+- Model: $\hat{y} = \beta_0 + \beta_1 x$
+  - $\hat{y}$ = prediction
+  - $\beta_0$ - y - intercept 
+  - $\beta_1$ - slope 
+:::
+
+
+## Visual Explanation
+
+
+![](./lec10_images/residual_error.png){fig-align="center"}
+
+::: callout-tip
+How can we formalize what we are **optimizing** for?
+:::
+
+## Formulation
+
+::: incremental
+- We want to **find** the $\beta_0$ and $\beta_1$ parameters that reduce the combined error.
+-  $f(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2$
+- What is this?
+- Sum of the Squared Residuals (SSR)
+- Do we want this to be big or small?
+:::
+
+::: fragment
+$$
+SSR = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2 = [y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)]^2 \\ 
+= [y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i]^2
+$$
+:::
+
+## Classic Stats Result
+
+- $\beta_1 (slope) = \frac{\sum\limits_{i=1}^{n}[(x_i-\bar{x})(y_i- \bar{y})]}{\sum\limits_{i=1}^{n} (x_i - \bar{x})}$ 
+- $\beta_0$ (intercept) - $\bar{y} - \beta_1 \bar{x}$ 
+
+```{python}
+#| echo: True
+df_r = df[['bill_length_mm', 'body_mass_g']].dropna()
+x = df_r.bill_length_mm
+y = df_r.body_mass_g
+x_bar = x.mean()
+y_bar = y.mean()
+print(f"Xbar: {x_bar:.1f}")
+print(f"Ybar: {y_bar:.1f}")
+```
+
+## Computation
+
+```{python}
+#| echo: True
+#| output-location: column
+numerator = np.sum((x - x_bar) * (y - y_bar))
+denominator = np.sum((x - x_bar)**2)
+slope = numerator / denominator
+intercept = y_bar - slope * x_bar
+print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")
+```
+
+```{python}
+ax = sns.scatterplot(data=df, x='bill_length_mm', y='body_mass_g');
+point_y = x.min() * slope + intercept
+ax.axline((x.min(), point_y), slope=slope, color='r', linestyle='--', label='Regressed Line')
+```
+
+## Another Classic Stats Result
+
+$$
+\begin{aligned}\hat{\beta}_1 &= \frac{\text{Cov}(x,y)}{s_x^2}\end{aligned}
+$$ 
+
+The correlation between $x$ and $y$ is $r = \frac{\text{Cov}(x,y)}{s_x s_y}$.
+Thus, $\text{Cov}(x,y) = r s_xs_y$.
+Plugging this into above, we have
+
+$$
+\hat{\beta}_1 = \frac{\text{Cov}(x,y)}{s_x^2} = r\frac{s_ys_x}{s_x^2} = r\frac{s_y}{s_x}
+$$
+
+$\beta_0$ (intercept) - $\bar{y} - \beta_1 \bar{x}$ 
+
+## Computation
+
+```{python}
+#| echo: True
+r = df_r.bill_length_mm.corr(df_r.body_mass_g)
+slope = r * (df_r.body_mass_g.std() / df_r.bill_length_mm.std())
+intercept = y_bar - slope * x_bar
+print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")
+```
+
+## Another Full Example
+
+![](./lec10_images/example_regression.png){fig-align="center"}
+
+## Matrix Math Result
+
+$$
+\begin{align*}
+A = \begin{bmatrix}
+x_1 & 1\\
+x_2 & 1 \\ 
+... & ... \\
+x_n & 1
+\end{bmatrix}
+\qquad
+y = \begin{bmatrix}
+y_1 \\
+y_2 \\
+... \\
+y_n
+\end{bmatrix}
+\end{align*}
+\qquad
+\beta = \begin{bmatrix} \beta_0 \\ \beta_1 \end{bmatrix}
+$$
+
+$$
+\hat{y_1} = x_1 \cdot \beta_0 + 1 \cdot \beta_1 \\
+... \\
+\hat{y} = A \beta 
+$$
+
+::: fragment
+$$
+\beta = \begin{bmatrix} \beta_0 \\ \beta_1 \end{bmatrix} = (A^TA)^{-1} A^Ty
+$$
+:::
+## 
+
+## Computation of Matrix Result 
+
+```{python}
+#| echo: True
+n = len(df_r)
+print(x.shape, type(x))
+x = x.values
+print(x.shape,type(x))
+x = np.expand_dims(x, axis=1) # convert to matrix
+print(x.shape)
+A = np.append(x, np.ones(shape=(n, 1)), axis=1) # add one column
+print(A.shape)
+y = y.values
+print(x[:5, :]) # sample of matrix
+# intercept = y_bar - slope * x_bar
+# print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")
+```
+
+## Computation of Matrix Result 
+
+```{python}
+#| echo: True
+beta = np.linalg.inv(A.T @ A) @ A.T @ y
+print(f"Slope: {beta[0]:.1f}; \nIntercept: {beta[1]:.1f}")
+```
+ 
+
+
 
 
 # Class Activity
