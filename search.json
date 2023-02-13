@@ -452,7 +452,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f8919509720>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f63fa794dc0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1383,7 +1383,14 @@
     "href": "slides/lec-10.html#input-and-output",
     "title": "CISC482 - Lecture10",
     "section": "Input and Output",
-    "text": "Input and Output\n\nAn input feature takes values without being impacted by any other features.\nAn output feature has values that vary in response to variation in some other feature(s).\n\nWe often called this the response variable\n\nIn an experiemnt, input features are often controlled by researchters, and output features are observed\nWe often visualize these"
+    "text": "Input and Output\n\nAn input feature takes values without being impacted by any other features.\nAn output feature has values that vary in response to variation in some other feature(s).\n\nWe often called this the response variable\n\nIn an experiemnt, input features are often controlled by researchters, and output features are observed\nWe often visualize these with scatter plots"
+  },
+  {
+    "objectID": "slides/lec-10.html#example-data",
+    "href": "slides/lec-10.html#example-data",
+    "title": "CISC482 - Lecture10",
+    "section": "Example Data",
+    "text": "Example Data\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.10\n      18.70\n      181.00\n      3,750.00\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.50\n      17.40\n      186.00\n      3,800.00\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.30\n      18.00\n      195.00\n      3,250.00\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.70\n      19.30\n      193.00\n      3,450.00\n      female\n      2007"
   },
   {
     "objectID": "slides/lec-10.html#class-activity-1",
