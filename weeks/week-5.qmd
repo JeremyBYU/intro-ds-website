@@ -14,7 +14,7 @@ editor: visual
 
 ## Practice
 
-None
+📋 [Class Activity 04 - Practice Seaborn](https://colab.research.google.com/drive/1G8FrrL2cENvBuo39dwx9DdPUcOogec5l?usp=sharing)
 
 ## Perform
 

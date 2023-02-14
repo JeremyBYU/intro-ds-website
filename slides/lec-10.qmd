@@ -138,7 +138,7 @@ How can we formalize what we are **optimizing** for?
 - We want to **find** the $\beta_0$ and $\beta_1$ parameters that reduce the combined error.
 -  $f(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2$
 - What is this?
-- Sum of the Squared Residuals (SSR)
+- Sum of the Squared Residuals (SSR/SSE)
 - Do we want this to be big or small?
 :::
 
@@ -275,14 +275,20 @@ print(f"Slope: {beta[0]:.1f}; \nIntercept: {beta[1]:.1f}")
 ```
  
 
+<!-- ## Mean Squared Error
 
+- $SSE = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2$
+- $SSE/n$ is called mean squared errors or (MSE)
+- $\sqrt{SSE/n}$ - Root Mean Squared Error (RMSE) -->
 
 
 # Class Activity
 
 ## Class Activity
 
-[Practice Regression]()
+[Practice Regression](https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing)
+
+
 
 
 

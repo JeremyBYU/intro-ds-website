@@ -16,9 +16,9 @@ editor: visual
 
 ## Practice
 
-📋 [Class Activity 05 - Practice Seaborn](https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing)
+📋 [Class Activity 05 - Practice Regression](https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing)
 
 ## Perform
 
-⌨️ [HW 4 - Regression]()
+⌨️ [HW 4 - Regression](https://colab.research.google.com/drive/1EdakWIOXLV-1UjUytpgKj6yHMbq-Pvz3?usp=sharing)
 
