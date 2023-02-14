@@ -634,7 +634,7 @@ Dr.&nbsp;Jeremy Castagno
 <li class="fragment">We want to <strong>find</strong> the <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> parameters that reduce the combined error.</li>
 <li class="fragment"><span class="math inline">\(f(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2\)</span></li>
 <li class="fragment">What is this?</li>
-<li class="fragment">Sum of the Squared Residuals (SSR)</li>
+<li class="fragment">Sum of the Squared Residuals (SSR/SSE)</li>
 <li class="fragment">Do we want this to be big or small?</li>
 </ul>
 </div>
@@ -683,7 +683,7 @@ Intercept: 362.3</code></pre>
 </div>
 <div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>&lt;matplotlib.lines._AxLine at 0x7f0c10bc43d0&gt;</code></pre>
+<pre><code>&lt;matplotlib.lines._AxLine at 0x7f4d94c4fe80&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img data-src="lec-10_files/figure-revealjs/cell-7-output-2.png" width="923" height="490"></p>
@@ -791,6 +791,11 @@ y_n
 Intercept: 362.3</code></pre>
 </div>
 </div>
+<!-- ## Mean Squared Error
+
+- $SSE = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2$
+- $SSE/n$ is called mean squared errors or (MSE)
+- $\sqrt{SSE/n}$ - Root Mean Squared Error (RMSE) -->
 </section></section>
 <section>
 <section id="class-activity" class="title-slide slide level1 center">
@@ -799,7 +804,7 @@ Intercept: 362.3</code></pre>
 </section>
 <section id="class-activity-1" class="slide level2">
 <h2>Class Activity</h2>
-<p><a href="">Practice Regression</a></p>
+<p><a href="https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing">Practice Regression</a></p>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
