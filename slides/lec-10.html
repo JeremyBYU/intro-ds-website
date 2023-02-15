@@ -601,11 +601,12 @@ Dr.&nbsp;Jeremy Castagno
 <ul>
 <li class="fragment">x: input, y: output</li>
 </ul></li>
-<li class="fragment">Model: <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x\)</span>
+<li class="fragment">Model: <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x + \epsilon\)</span>
 <ul>
 <li class="fragment"><span class="math inline">\(\hat{y}\)</span> = prediction</li>
-<li class="fragment"><span class="math inline">\(\beta_0\)</span> - y - intercept</li>
-<li class="fragment"><span class="math inline">\(\beta_1\)</span> - slope</li>
+<li class="fragment"><span class="math inline">\(\beta_0\)</span> = y-intercept</li>
+<li class="fragment"><span class="math inline">\(\beta_1\)</span> = slope</li>
+<li class="fragment"><span class="math inline">\(\epsilon = error\)</span></li>
 </ul></li>
 </ul>
 </div>
@@ -629,14 +630,15 @@ Dr.&nbsp;Jeremy Castagno
 </section>
 <section id="formulation" class="slide level2">
 <h2>Formulation</h2>
+<div class="smaller">
 <div>
 <ul>
 <li class="fragment">We want to <strong>find</strong> the <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> parameters that reduce the combined error.</li>
-<li class="fragment"><span class="math inline">\(f(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2\)</span></li>
-<li class="fragment">What is this?</li>
-<li class="fragment">Sum of the Squared Residuals (SSR/SSE)</li>
-<li class="fragment">Do we want this to be big or small?</li>
+<li class="fragment">A <em>loss function</em> that takes as input our parameters and whose output is our model error.</li>
+<li class="fragment"><span class="math inline">\(f(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2 = \sum\limits_{i=1}^{n}\epsilon_i^2\)</span></li>
+<li class="fragment">Sum of the Squared Residuals (SSR/SSE). Big or small?</li>
 </ul>
+</div>
 </div>
 <div class="fragment">
 <p><span class="math display">\[
@@ -644,6 +646,15 @@ SSR = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2 = [y_i - (\hat{\beta}_0 + \hat{\b
 = [y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i]^2
 \]</span></p>
 </div>
+</section>
+<section id="derivation" class="slide level2">
+<h2>Derivation</h2>
+<ul>
+<li>Will not be going through the derivation</li>
+<li>Basic idea is take the partial derivaitve of the funciton with respect to the parameters and set equal to 0.</li>
+<li>Do a bunch of algebra and you arrive at some nice equations</li>
+<li>Full derivation is <a href="http://spia.uga.edu/faculty_pages/mlynch/teaching/ols/OLSDerivation.pdf">here</a> and <a href="https://sta210-s22.github.io/website/supplemental/slr-derivations.html">here</a></li>
+</ul>
 </section>
 <section id="classic-stats-result" class="slide level2">
 <h2>Classic Stats Result</h2>
@@ -667,26 +678,20 @@ Ybar: 4201.8</code></pre>
 </section>
 <section id="computation" class="slide level2">
 <h2>Computation</h2>
-<div class="cell columns column-output-location" data-execution_count="5">
-<div class="column">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>numerator <span class="op">=</span> np.<span class="bu">sum</span>((x <span class="op">-</span> x_bar) <span class="op">*</span> (y <span class="op">-</span> y_bar))</span>
 <span id="cb4-2"><a href="#cb4-2"></a>denominator <span class="op">=</span> np.<span class="bu">sum</span>((x <span class="op">-</span> x_bar)<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb4-3"><a href="#cb4-3"></a>slope <span class="op">=</span> numerator <span class="op">/</span> denominator</span>
 <span id="cb4-4"><a href="#cb4-4"></a>intercept <span class="op">=</span> y_bar <span class="op">-</span> slope <span class="op">*</span> x_bar</span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
-</div><div class="column">
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)<span class="op">;</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Slope: 87.4; 
 Intercept: 362.3</code></pre>
 </div>
 </div>
-</div>
 <div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>&lt;matplotlib.lines._AxLine at 0x7f4d94c4fe80&gt;</code></pre>
-</div>
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-10_files/figure-revealjs/cell-7-output-2.png" width="923" height="490"></p>
+<p><img data-src="lec-10_files/figure-revealjs/cell-7-output-1.png" width="923" height="490"></p>
 </div>
 </div>
 </section>
@@ -704,10 +709,10 @@ Intercept: 362.3</code></pre>
 <section id="computation-1" class="slide level2">
 <h2>Computation</h2>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>r <span class="op">=</span> df_r.bill_length_mm.corr(df_r.body_mass_g)</span>
-<span id="cb7-2"><a href="#cb7-2"></a>slope <span class="op">=</span> r <span class="op">*</span> (df_r.body_mass_g.std() <span class="op">/</span> df_r.bill_length_mm.std())</span>
-<span id="cb7-3"><a href="#cb7-3"></a>intercept <span class="op">=</span> y_bar <span class="op">-</span> slope <span class="op">*</span> x_bar</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>r <span class="op">=</span> df_r.bill_length_mm.corr(df_r.body_mass_g)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>slope <span class="op">=</span> r <span class="op">*</span> (df_r.body_mass_g.std() <span class="op">/</span> df_r.bill_length_mm.std())</span>
+<span id="cb6-3"><a href="#cb6-3"></a>intercept <span class="op">=</span> y_bar <span class="op">-</span> slope <span class="op">*</span> x_bar</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Slope: 87.4; 
 Intercept: 362.3</code></pre>
@@ -756,18 +761,18 @@ y_n
 <section id="computation-of-matrix-result" class="slide level2">
 <h2>Computation of Matrix Result</h2>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>n <span class="op">=</span> <span class="bu">len</span>(df_r)</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(x.shape, <span class="bu">type</span>(x))</span>
-<span id="cb9-3"><a href="#cb9-3"></a>x <span class="op">=</span> x.values</span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="bu">print</span>(x.shape,<span class="bu">type</span>(x))</span>
-<span id="cb9-5"><a href="#cb9-5"></a>x <span class="op">=</span> np.expand_dims(x, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># convert to matrix</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="bu">print</span>(x.shape)</span>
-<span id="cb9-7"><a href="#cb9-7"></a>A <span class="op">=</span> np.append(x, np.ones(shape<span class="op">=</span>(n, <span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># add one column</span></span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="bu">print</span>(A.shape)</span>
-<span id="cb9-9"><a href="#cb9-9"></a>y <span class="op">=</span> y.values</span>
-<span id="cb9-10"><a href="#cb9-10"></a><span class="bu">print</span>(x[:<span class="dv">5</span>, :]) <span class="co"># sample of matrix</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># intercept = y_bar - slope * x_bar</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="co"># print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>n <span class="op">=</span> <span class="bu">len</span>(df_r)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(x.shape, <span class="bu">type</span>(x))</span>
+<span id="cb8-3"><a href="#cb8-3"></a>x <span class="op">=</span> x.values</span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="bu">print</span>(x.shape,<span class="bu">type</span>(x))</span>
+<span id="cb8-5"><a href="#cb8-5"></a>x <span class="op">=</span> np.expand_dims(x, axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># convert to matrix</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="bu">print</span>(x.shape)</span>
+<span id="cb8-7"><a href="#cb8-7"></a>A <span class="op">=</span> np.append(x, np.ones(shape<span class="op">=</span>(n, <span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># add one column</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="bu">print</span>(A.shape)</span>
+<span id="cb8-9"><a href="#cb8-9"></a>y <span class="op">=</span> y.values</span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="bu">print</span>(x[:<span class="dv">5</span>, :]) <span class="co"># sample of matrix</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co"># intercept = y_bar - slope * x_bar</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co"># print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(342,) &lt;class 'pandas.core.series.Series'&gt;
 (342,) &lt;class 'numpy.ndarray'&gt;
@@ -784,8 +789,8 @@ y_n
 <section id="computation-of-matrix-result-1" class="slide level2">
 <h2>Computation of Matrix Result</h2>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>beta <span class="op">=</span> np.linalg.inv(A.T <span class="op">@</span> A) <span class="op">@</span> A.T <span class="op">@</span> y</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>beta[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>beta[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>beta <span class="op">=</span> np.linalg.inv(A.T <span class="op">@</span> A) <span class="op">@</span> A.T <span class="op">@</span> y</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>beta[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>beta[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Slope: 87.4; 
 Intercept: 362.3</code></pre>

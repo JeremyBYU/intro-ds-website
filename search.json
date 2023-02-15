@@ -452,7 +452,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fe8a97df010>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fea92f5a560>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -487,14 +487,28 @@
     "href": "slides/lec-09.html#most-missed-questions",
     "title": "CISC482 - Lecture09",
     "section": "Most Missed Questions",
-    "text": "Most Missed Questions"
+    "text": "Most Missed Questions\n\nStudent spending at bookstore is normally distributed with a mean of $130 and a standard deviation of $30. Approximately what percentage of students spend less than $100 a month. Options: - 16, 20, 33, 50\nSpringfield College wants to give gift cards to the top 3% of spenders. What should be monthly spending cutoff to determine which students get gift cards?\n\n130, 160, 186, 220\n\nHypothesis Testing, p-value of 0.01, using 95% confidence when making a decison to reject or accept null hypothesis."
   },
   {
-    "objectID": "slides/lec-09.html#solution-to-exam",
-    "href": "slides/lec-09.html#solution-to-exam",
+    "objectID": "slides/lec-09.html#normal-distribution",
+    "href": "slides/lec-09.html#normal-distribution",
     "title": "CISC482 - Lecture09",
-    "section": "Solution to Exam",
-    "text": "Solution to Exam"
+    "section": "Normal Distribution",
+    "text": "Normal Distribution"
+  },
+  {
+    "objectID": "slides/lec-09.html#normal-distribution-solution",
+    "href": "slides/lec-09.html#normal-distribution-solution",
+    "title": "CISC482 - Lecture09",
+    "section": "Normal Distribution Solution",
+    "text": "Normal Distribution Solution\n\n50% of students spend more than 130. 34% of students spend between 100 and 130. Thefore 50+34=84% students spend more than 100. Thefore 100-84=16% students spend less than 100.\n50% of students spend at least 130. Roughly 34+14=48% of students spend between 130 and 190 dollars. Thefore 50+48=98% students spend less than 190. Thefore the top 2% spends 190 or more. If we want the top 3% it will be must a little less. Looking at the options 186 is the best one."
+  },
+  {
+    "objectID": "slides/lec-09.html#hypothesis-testing-solution",
+    "href": "slides/lec-09.html#hypothesis-testing-solution",
+    "title": "CISC482 - Lecture09",
+    "section": "Hypothesis Testing Solution",
+    "text": "Hypothesis Testing Solution\n\nReject null hypothesis when p-value is less than 0.05 and accept the alternative hypothesis."
   },
   {
     "objectID": "slides/lec-09.html#purpose",
@@ -1439,7 +1453,7 @@
     "href": "slides/lec-10.html#main-equation",
     "title": "CISC482 - Lecture10",
     "section": "Main Equation",
-    "text": "Main Equation\n\n\nSet of data: \\(\\{(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\\}\\)\n\nx: input, y: output\n\nModel: \\(\\hat{y} = \\beta_0 + \\beta_1 x\\)\n\n\\(\\hat{y}\\) = prediction\n\\(\\beta_0\\) - y - intercept\n\\(\\beta_1\\) - slope"
+    "text": "Main Equation\n\n\nSet of data: \\(\\{(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\\}\\)\n\nx: input, y: output\n\nModel: \\(\\hat{y} = \\beta_0 + \\beta_1 x + \\epsilon\\)\n\n\\(\\hat{y}\\) = prediction\n\\(\\beta_0\\) = y-intercept\n\\(\\beta_1\\) = slope\n\\(\\epsilon = error\\)"
   },
   {
     "objectID": "slides/lec-10.html#visual-explanation",
@@ -1453,7 +1467,14 @@
     "href": "slides/lec-10.html#formulation",
     "title": "CISC482 - Lecture10",
     "section": "Formulation",
-    "text": "Formulation\n\n\nWe want to find the \\(\\beta_0\\) and \\(\\beta_1\\) parameters that reduce the combined error.\n\\(f(\\beta_0, \\beta_1) = \\sum\\limits_{i=1}^{n}[y_i - \\hat{y}_i]^2\\)\nWhat is this?\nSum of the Squared Residuals (SSR/SSE)\nDo we want this to be big or small?\n\n\n\n\\[\nSSR = \\sum\\limits_{i=1}^{n}[y_i - \\hat{y}_i]^2 = [y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1 x_i)]^2 \\\\\n= [y_i - \\hat{\\beta}_0 - \\hat{\\beta}_1 x_i]^2\n\\]"
+    "text": "Formulation\n\n\n\nWe want to find the \\(\\beta_0\\) and \\(\\beta_1\\) parameters that reduce the combined error.\nA loss function that takes as input our parameters and whose output is our model error.\n\\(f(\\beta_0, \\beta_1) = \\sum\\limits_{i=1}^{n}[y_i - \\hat{y}_i]^2 = \\sum\\limits_{i=1}^{n}\\epsilon_i^2\\)\nSum of the Squared Residuals (SSR/SSE). Big or small?\n\n\n\n\n\\[\nSSR = \\sum\\limits_{i=1}^{n}[y_i - \\hat{y}_i]^2 = [y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1 x_i)]^2 \\\\\n= [y_i - \\hat{\\beta}_0 - \\hat{\\beta}_1 x_i]^2\n\\]"
+  },
+  {
+    "objectID": "slides/lec-10.html#derivation",
+    "href": "slides/lec-10.html#derivation",
+    "title": "CISC482 - Lecture10",
+    "section": "Derivation",
+    "text": "Derivation\n\nWill not be going through the derivation\nBasic idea is take the partial derivaitve of the funciton with respect to the parameters and set equal to 0.\nDo a bunch of algebra and you arrive at some nice equations\nFull derivation is here and here"
   },
   {
     "objectID": "slides/lec-10.html#classic-stats-result",
@@ -1467,7 +1488,7 @@
     "href": "slides/lec-10.html#computation",
     "title": "CISC482 - Lecture10",
     "section": "Computation",
-    "text": "Computation\n\n\nnumerator = np.sum((x - x_bar) * (y - y_bar))\ndenominator = np.sum((x - x_bar)**2)\nslope = numerator / denominator\nintercept = y_bar - slope * x_bar\nprint(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\")\n\n\nSlope: 87.4; \nIntercept: 362.3\n\n\n\n\n\n<matplotlib.lines._AxLine at 0x7f4d94c4fe80>"
+    "text": "Computation\n\nnumerator = np.sum((x - x_bar) * (y - y_bar))\ndenominator = np.sum((x - x_bar)**2)\nslope = numerator / denominator\nintercept = y_bar - slope * x_bar\nprint(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\");\n\nSlope: 87.4; \nIntercept: 362.3"
   },
   {
     "objectID": "slides/lec-10.html#another-classic-stats-result",
