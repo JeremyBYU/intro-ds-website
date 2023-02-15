@@ -1,0 +1,55 @@
+---
+title: "CISC482 - Lecture11"
+subtitle: "Regression 2"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+df = load_penguins()
+sns.set_style('whitegrid')
+sns.set_context("poster", font_scale=1.25)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(1)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Topic Ideas - Should be turned in! Will grade soon!
+- Reading 5-3: Mar 01 @ 12PM, Wednesday
+- [HW4](https://colab.research.google.com/drive/1EdakWIOXLV-1UjUytpgKj6yHMbq-Pvz3?usp=sharing) - Mar 08 @ Midnight
+- [Proposal](#project-proposal): Mar 22, Wednesday
+
+## Today
+
+- Introduction to Regression
+- Review Topic Ideas
+- More Exploratory Data Analysis
+
