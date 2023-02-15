@@ -55,7 +55,24 @@ np.random.seed(1)
 
 ## Most Missed Questions
 
-## Solution to Exam
+
+- Student spending at bookstore is normally distributed with a mean of $130 and a standard deviation of $30.  Approximately what percentage of students spend less than $100 a month.  Options:  - 16, 20, 33, 50
+- Springfield College wants to give gift cards to the top 3% of spenders. What should be monthly spending cutoff to determine which students get gift cards?
+  - 130, 160, 186, 220
+- Hypothesis Testing, p-value of 0.01, using 95% confidence when making a decison to reject or accept null hypothesis.
+
+## Normal Distribution
+
+![](./lec09_images/normal.jpg){fig-align="center"}
+
+## Normal Distribution Solution
+
+- 50% of students spend more than 130. 34% of students spend between 100 and 130. Thefore 50+34=84% students spend more than 100. Thefore 100-84=16% students spend less than 100.
+- 50% of students spend at least 130. Roughly 34+14=48% of students spend between 130 and 190 dollars. Thefore 50+48=98% students spend less than 190. Thefore the top 2% spends 190 or more. If we want the top 3% it will be must a little less. Looking at the options 186 is the best one.
+
+## Hypothesis Testing Solution
+
+- Reject null hypothesis when p-value is less than 0.05 and accept the alternative hypothesis.
 
 # Topic Ideas
 

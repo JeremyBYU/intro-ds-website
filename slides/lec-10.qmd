@@ -116,10 +116,11 @@ print(f"Correlation: {df.bill_length_mm.corr(df.body_mass_g):.2f}")
 ::: incremental
 - Set of data: $\{(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\}$
   - x: input, y: output
-- Model: $\hat{y} = \beta_0 + \beta_1 x$
+- Model: $\hat{y} = \beta_0 + \beta_1 x + \epsilon$
   - $\hat{y}$ = prediction
-  - $\beta_0$ - y - intercept 
-  - $\beta_1$ - slope 
+  - $\beta_0$ = y-intercept 
+  - $\beta_1$ = slope 
+  - $\epsilon = error$
 :::
 
 
@@ -134,12 +135,13 @@ How can we formalize what we are **optimizing** for?
 
 ## Formulation
 
+:::{.smaller}
 ::: incremental
 - We want to **find** the $\beta_0$ and $\beta_1$ parameters that reduce the combined error.
--  $f(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2$
-- What is this?
-- Sum of the Squared Residuals (SSR/SSE)
-- Do we want this to be big or small?
+- A *loss function* that takes as input our parameters and whose output is our model error.
+-  $f(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2 = \sum\limits_{i=1}^{n}\epsilon_i^2$
+- Sum of the Squared Residuals (SSR/SSE). Big or small?
+:::
 :::
 
 ::: fragment
@@ -148,6 +150,13 @@ SSR = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2 = [y_i - (\hat{\beta}_0 + \hat{\b
 = [y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i]^2
 $$
 :::
+
+## Derivation
+
+- Will not be going through the derivation
+- Basic idea is take the partial derivaitve of the funciton with respect to the parameters and set equal to 0.
+- Do a bunch of algebra and you arrive at some nice equations
+- Full derivation is [here](http://spia.uga.edu/faculty_pages/mlynch/teaching/ols/OLSDerivation.pdf) and [here](https://sta210-s22.github.io/website/supplemental/slr-derivations.html)
 
 ## Classic Stats Result
 
@@ -169,18 +178,17 @@ print(f"Ybar: {y_bar:.1f}")
 
 ```{python}
 #| echo: True
-#| output-location: column
 numerator = np.sum((x - x_bar) * (y - y_bar))
 denominator = np.sum((x - x_bar)**2)
 slope = numerator / denominator
 intercept = y_bar - slope * x_bar
-print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")
+print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}");
 ```
 
 ```{python}
 ax = sns.scatterplot(data=df, x='bill_length_mm', y='body_mass_g');
 point_y = x.min() * slope + intercept
-ax.axline((x.min(), point_y), slope=slope, color='r', linestyle='--', label='Regressed Line')
+ax.axline((x.min(), point_y), slope=slope, color='r', linestyle='--', label='Regressed Line');
 ```
 
 ## Another Classic Stats Result
