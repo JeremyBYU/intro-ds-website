@@ -452,7 +452,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7faee7e57040>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fdd7f534a60>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1775,7 +1775,56 @@
     "href": "slides/lec-11.html#today",
     "title": "CISC482 - Lecture11",
     "section": "Today",
-    "text": "Today\n\nIntroduction to Regression\nReview Topic Ideas\nMore Exploratory Data Analysis\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Today\n\nAssumptions of Linear Regression\nMultiple Linear Regression"
+  },
+  {
+    "objectID": "slides/lec-11.html#assumptions",
+    "href": "slides/lec-11.html#assumptions",
+    "title": "CISC482 - Lecture11",
+    "section": "Assumptions",
+    "text": "Assumptions"
+  },
+  {
+    "objectID": "slides/lec-11.html#assumptions-of-linear-regression",
+    "href": "slides/lec-11.html#assumptions-of-linear-regression",
+    "title": "CISC482 - Lecture11",
+    "section": "Assumptions of Linear Regression",
+    "text": "Assumptions of Linear Regression\n\n\\(x\\) and \\(y\\) have a linear relationship.\nThe residuals of the observations are independent.\nThe mean of the residuals is 0 and the variance of the residuals is constant.\nThe residuals are approximately normally distributed."
+  },
+  {
+    "objectID": "slides/lec-11.html#linear-relationship",
+    "href": "slides/lec-11.html#linear-relationship",
+    "title": "CISC482 - Lecture11",
+    "section": "Linear Relationship?",
+    "text": "Linear Relationship?"
+  },
+  {
+    "objectID": "slides/lec-11.html#residual-plot",
+    "href": "slides/lec-11.html#residual-plot",
+    "title": "CISC482 - Lecture11",
+    "section": "Residual Plot",
+    "text": "Residual Plot"
+  },
+  {
+    "objectID": "slides/lec-11.html#independence-of-error",
+    "href": "slides/lec-11.html#independence-of-error",
+    "title": "CISC482 - Lecture11",
+    "section": "Independence of Error",
+    "text": "Independence of Error\n\nThe distances from the regression line to the points (residuals) should generally be random.\nYou do not want to see patterns\nWas the previous plot of residual showing patterns, or was it more or less random?"
+  },
+  {
+    "objectID": "slides/lec-11.html#residual-are-independent-bad",
+    "href": "slides/lec-11.html#residual-are-independent-bad",
+    "title": "CISC482 - Lecture11",
+    "section": "Residual are independent? Bad",
+    "text": "Residual are independent? Bad"
+  },
+  {
+    "objectID": "slides/lec-11.html#examples-of-dependence",
+    "href": "slides/lec-11.html#examples-of-dependence",
+    "title": "CISC482 - Lecture11",
+    "section": "Examples of Dependence",
+    "text": "Examples of Dependence\n\nTime dependence can often be assessed by analyzing the scatter plot of residuals over time.\nSpatial dependence can often be assessed by analyzing a map of where the data was collected along with further inspection of the residuals for spatial patterns.\nDependencies between observational units must be assessed in context of the study.\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-06.html#schedule",

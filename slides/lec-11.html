@@ -357,9 +357,60 @@ Dr.&nbsp;Jeremy Castagno
 <section id="today" class="slide level2">
 <h2>Today</h2>
 <ul>
-<li>Introduction to Regression</li>
-<li>Review Topic Ideas</li>
-<li>More Exploratory Data Analysis</li>
+<li>Assumptions of Linear Regression</li>
+<li>Multiple Linear Regression</li>
+</ul>
+</section>
+<section id="assumptions" class="slide level2">
+<h2>Assumptions</h2>
+</section>
+<section id="assumptions-of-linear-regression" class="slide level2">
+<h2>Assumptions of Linear Regression</h2>
+<ul>
+<li><span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> have a linear relationship.</li>
+<li>The residuals of the observations are independent.</li>
+<li>The <strong>mean</strong> of the residuals is 0 and the variance of the residuals is <strong>constant</strong>.</li>
+<li>The residuals are approximately normally distributed.</li>
+</ul>
+</section>
+<section id="linear-relationship" class="slide level2">
+<h2>Linear Relationship?</h2>
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-11_files/figure-revealjs/cell-3-output-1.png" width="843" height="445"></p>
+</div>
+</div>
+</section>
+<section id="residual-plot" class="slide level2">
+<h2>Residual Plot</h2>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-11_files/figure-revealjs/cell-4-output-1.png" width="851" height="445"></p>
+</div>
+</div>
+</section>
+<section id="independence-of-error" class="slide level2">
+<h2>Independence of Error</h2>
+<ul>
+<li>The distances from the regression line to the points (residuals) should generally be random.</li>
+<li>You <strong>do not</strong> want to see patterns</li>
+<li>Was the previous plot of residual showing patterns, or was it more or less random?</li>
+</ul>
+</section>
+<section id="residual-are-independent-bad" class="slide level2">
+<h2>Residual are independent? Bad</h2>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-11_files/figure-revealjs/cell-5-output-1.png" width="851" height="445"></p>
+</div>
+</div>
+</section>
+<section id="examples-of-dependence" class="slide level2">
+<h2>Examples of Dependence</h2>
+<ul>
+<li>Time dependence can often be assessed by analyzing the scatter plot of residuals over time.</li>
+<li>Spatial dependence can often be assessed by analyzing a map of where the data was collected along with further inspection of the residuals for spatial patterns.</li>
+<li>Dependencies between observational units must be assessed in context of the study.</li>
 </ul>
 
 
