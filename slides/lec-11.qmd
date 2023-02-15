@@ -34,7 +34,7 @@ sns.set_style('whitegrid')
 sns.set_context("poster", font_scale=1.25)
 np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
 pd.options.display.float_format = '{:,.2f}'.format
-np.random.seed(1)
+np.random.seed(10)
 ```
 
 # Class Business
@@ -49,7 +49,57 @@ np.random.seed(1)
 
 ## Today
 
-- Introduction to Regression
-- Review Topic Ideas
-- More Exploratory Data Analysis
+- Assumptions of Linear Regression
+- Multiple Linear Regression
+
+## Assumptions
+
+
+## Assumptions of Linear Regression
+
+- $x$ and $y$ have a linear relationship.
+- The residuals of the observations are independent.
+- The **mean** of the residuals is 0 and the variance of the residuals is **constant**.
+- The residuals are approximately normally distributed.
+
+
+## Linear Relationship?
+
+```{python}
+noise = np.random.normal(loc=0, scale=3, size=30)
+x = np.arange(30)
+y = (1.5 * x + 4) + noise
+ax = sns.regplot(x=x,y=y, ci=None)
+```
+
+
+## Residual Plot
+
+```{python}
+ax = sns.residplot(x=x,y=y)
+```
+
+## Independence of Error
+
+- The distances from the regression line to the points (residuals) should generally be random.
+- You **do not** want to see patterns
+- Was the previous plot of residual showing patterns, or was it more or less random?
+
+## Residual are independent? Bad
+
+```{python}
+y = (1.5 * x + 4) + np.sin(np.linspace(0, np.pi*2, 30)) * 2 + noise*0.1
+ax = sns.residplot(x=x,y=y)
+```
+
+
+## Examples of Dependence
+
+- Time dependence can often be assessed by analyzing the scatter plot of residuals over time.
+- Spatial dependence can often be assessed by analyzing a map of where the data was collected along with further inspection of the residuals for spatial patterns.
+- Dependencies between observational units must be assessed in context of the study.
+
+
+
+
 
