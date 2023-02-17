@@ -452,7 +452,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fdc64beb910>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f7f49f86cb0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -560,6 +560,13 @@
     "text": "Glimpse of Data\n\nPlease print out the results of the info() function of the dataframe\nAlso print out the first few rows of data head()"
   },
   {
+    "objectID": "slides/lec-09.html#example-template",
+    "href": "slides/lec-09.html#example-template",
+    "title": "CISC482 - Lecture09",
+    "section": "Example Template",
+    "text": "Example Template\n\nBrightspace assignment\nLink to template to follow\nCopy and put in your shared google drive folder\nPrint PDF and submit to brightspace"
+  },
+  {
     "objectID": "slides/lec-09.html#steps",
     "href": "slides/lec-09.html#steps",
     "title": "CISC482 - Lecture09",
@@ -620,7 +627,7 @@
     "href": "slides/lec-09.html#example-data-1",
     "title": "CISC482 - Lecture09",
     "section": "Example Data",
-    "text": "Example Data\n\n\ndata = np.array([\n  [1, 2,   -2,     3],\n  [2, 4,   -4,     3],\n  [3, 3.5, -3.5,   3],\n  [4, 7.5, -7.5,   3],\n  [5, 10.2, -10.2, 3],\n  [6, 12.1, -12.1, 3],\n])\ncov = np.cov(data, rowvar=False)\nprint(cov)\nprint(np.var(data[:, 0], ddof=1))\nprint(np.var(data[:, 1], ddof=1))\n\n\n[[3.5 7.3 -7.3 0.0]\n [7.3 16.3 -16.3 0.0]\n [-7.3 -16.3 16.3 0.0]\n [0.0 0.0 0.0 0.0]]\n3.5\n16.307"
+    "text": "Example Data\n\n\ndata = np.array([\n  [1, 2,   -2,     3],\n  [2, 4,   -4,     3],\n  [3, 3.5, -3.5,   3],\n  [4, 7.5, -7.5,   3],\n  [5, 10.2, -10.2, 3],\n  [6, 12.1, -12.1, 3],\n])\ncov = np.cov(data, rowvar=False)\nprint('Cov:', np.array2string(cov, prefix='Cov: ', formatter={'float_kind':lambda x: f\"{x:5.1f}\"}))\nprint(np.var(data[:, 0], ddof=1))\nprint(np.var(data[:, 1], ddof=1))\n\n\nCov: [[  3.5   7.3  -7.3   0.0]\n      [  7.3  16.3 -16.3   0.0]\n      [ -7.3 -16.3  16.3   0.0]\n      [  0.0   0.0   0.0   0.0]]\n3.5\n16.307"
   },
   {
     "objectID": "slides/lec-09.html#example-correlation-graph",
