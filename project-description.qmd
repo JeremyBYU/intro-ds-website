@@ -39,7 +39,7 @@ The six deliverables for the final project are
 -   Final Presentation - A brief 7-10 minutes presentation that summarizes your work (Core Capstone Work LO1).
 
 
-All analyses must be done in Jupyter Notebooks stored in a shared Google Drive Folder. All components of the project **must be reproducible** (with the exception of the presentation).
+All analyses must be done in Jupyter Notebooks stored in a shared Google Drive Folder. All components of the project **must be reproducible** (written in Google Collab notebook), except the presentation. The template for all deliverables can be found in [here](https://drive.google.com/drive/folders/17c7UofE8xHG9ZQGrmgxi7q7-JpnlXLHd?usp=sharing). You should copy each template component into your shared google drive folder and complete the assignment. 
 
 ## Topic ideas {#topic-ideas}
 
@@ -98,7 +98,7 @@ Please save each dataset in the `data` folder in your Google Drive Folder.
 
 ## Project proposal {#project-proposal}
 
-Please write a report in the file `project-pro.ipynb` which is in you shared Google Drive folder.
+Please write a report in the file `project-proposal.ipynb` which is in you shared Google Drive folder.
 
 The purpose of the project proposal is to help you think about your analysis strategy early. 
 
