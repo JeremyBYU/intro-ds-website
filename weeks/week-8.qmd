@@ -1,0 +1,23 @@
+---
+title: "Week 8"
+subtitle: "Model Performance!"
+editor: visual
+---
+
+## Prepare
+
+📖 Read Assignments 5-3
+
+## Participate
+
+🖥️ [Lecture 14 - Model Performance 1](/slides/lec-14.html)
+🖥️ [Lecture 15 - Model Performance 1](/slides/lec-15.html)
+
+## Practice
+
+📋 [Class Activity 07 - Model Performance]()
+
+## Perform
+
+⌨️ [HW 5 - Model Performance]()
+

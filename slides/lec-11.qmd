@@ -112,7 +112,7 @@ ax = sns.residplot(x=x,y=y)
 
 ## Discussion
 
-- In these graphs wem saw time and spatial dependencies in our data set.
+- In these graphs we saw time and spatial dependencies in our data set.
 - We saw this by plotting residual plots and looking for any patterns.
 - Recall the model was: $MPG = m \cdot Weight + b$
 - Does the independence of error assumption hold in *this* model?
@@ -180,7 +180,7 @@ Clearly see a huge jump in variance around 15
 
 ![](./lec11_images/variance_changing.png){fig-align="center" width=80%}
 
-# Normality of Errors
+## Normality of Errors
 
 ::: incremental
 - As long as the previous assumptions hold you are going to get a good simple linear regression model
@@ -197,6 +197,11 @@ Clearly see a huge jump in variance around 15
 
 
 ## Full Example
+
+- Use library `numpy` and `scikit-learn` to fit our models
+- `scikit-learn` is library made for machine learning. Its awesome!
+
+## Creating data
 
 ```{python}
 #| echo: True
