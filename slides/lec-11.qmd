@@ -76,6 +76,7 @@ ax = sns.regplot(x=x,y=y, ci=None)
 ## Residual Plot
 
 ```{python}
+#| code-fold: true
 ax = sns.residplot(x=x,y=y)
 ```
 
@@ -85,7 +86,7 @@ ax = sns.residplot(x=x,y=y)
 - You **do not** want to see patterns
 - Was the previous plot of residual showing patterns, or was it more or less random?
 
-## Residual are independent? Bad
+## Residual are independent? 
 
 ```{python}
 y = (1.5 * x + 4) + np.sin(np.linspace(0, np.pi*2, 30)) * 2 + noise*0.1
@@ -98,6 +99,159 @@ ax = sns.residplot(x=x,y=y)
 - Time dependence can often be assessed by analyzing the scatter plot of residuals over time.
 - Spatial dependence can often be assessed by analyzing a map of where the data was collected along with further inspection of the residuals for spatial patterns.
 - Dependencies between observational units must be assessed in context of the study.
+
+## Example - Time
+
+![](./lec11_images/resid_time.png){fig-align="center" width=80%}
+
+## Example - Space
+
+![](./lec11_images/resid_space.png){fig-align="center" width=80%}
+
+## Discussion
+
+- In these graphs wem saw time and spatial dependencies in our data set.
+- We saw this by plotting residual plots and looking for any patterns.
+- Recall the model was: $MPG = m \cdot Weight + b$
+- Does the independence of error assumption hold in *this* model?
+- Does that mean we should *never* use this model?
+
+# Mean and Variance of Error
+
+## Keeping error low and consistent
+
+- The residuals of a fitted model have a mean of 0. Always.
+- A mean of 0 means that *on average* the predicted value is equal to to the observed value.
+
+## Example, Residual 0
+
+```{python}
+noise = np.random.normal(loc=0, scale=0.2, size=30)
+y = (1.5 * x + 4) + noise
+ax = sns.residplot(x=x,y=y)
+```
+
+## Example, Residual 1
+
+```{python}
+noise = np.random.normal(loc=0, scale=3, size=30)
+y = (1.5 * x + 4) + np.sin(np.linspace(0, np.pi*2, 30)) * 10 + noise*0.1
+ax = sns.residplot(x=x,y=y)
+```
+
+::: callout-tip
+Look at the y-axis scale!
+:::
+
+## Consistent Variance
+
+- A linear regression *should* have a constant variance for all levels of the input.
+- That means the *spread* of the error should be the same at all levels of input
+- Level of input = x axis changing
+
+
+## Example, Residual 3
+
+```{python}
+noise = np.random.normal(loc=0, scale=3, size=30)
+y = (1.5 * x + 4) + noise
+ax = sns.residplot(x=x,y=y)
+```
+
+
+## Example, Residual 4
+
+```{python}
+noise = np.random.normal(loc=0, scale=0.5, size=15)
+noise2 = np.random.normal(loc=0, scale=4, size=15)
+noise = np.concatenate([noise, noise2])
+y = (1.5 * x + 4) + noise
+ax = sns.residplot(x=x,y=y)
+```
+
+::: callout-caution
+Clearly see a huge jump in variance around 15
+:::
+
+## Example, MPG Prediction
+
+
+![](./lec11_images/variance_changing.png){fig-align="center" width=80%}
+
+# Normality of Errors
+
+::: incremental
+- As long as the previous assumptions hold you are going to get a good simple linear regression model
+  - $x$ and $y$ have a linear relationship
+  - Errors are independent (no spatial, time dependence, or other feature dependence)
+  - Residual mean of 0, variance constant
+- However, if the errors are *also* **normally** distributed, more awesomeness can be done: **Interval Estimates** 
+:::
+
+## Interval Estimates
+
+![](./lec11_images/interval_estimate.png){fig-align="center" width=70%}
+
+
+
+## Full Example
+
+```{python}
+#| echo: True
+#| output-location: slide
+n = 250
+x = np.arange(n)
+noise = np.random.normal(loc=0, scale=5, size=n)
+y = (1.5 * x + 4) + noise
+sns.scatterplot(x=x,y=y);
+```
+
+
+## Fitting the data
+
+
+```{python}
+#| echo: True
+#| output-location: slide
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+
+X = x[:, np.newaxis] # n X 1 matrix
+reg = model.fit(X, y) # X needs to be a matrix
+
+slope, intercept  = reg.coef_[0], reg.intercept_
+print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")
+
+ax = sns.scatterplot(x=x, y=y)
+ax.axline((0, intercept), slope=slope, color='r', label='Regressed Line');
+```
+
+
+## Residual Plot
+```{python}
+#| echo: True
+#| output-location: slide
+from yellowbrick.regressor import ResidualsPlot
+model = LinearRegression()
+visualizer = ResidualsPlot(model)
+
+visualizer.fit(X, y) 
+visualizer.show();
+```
+
+
+# Class Activity
+
+## Class Activity
+
+[Practice Regression](https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing)
+
+
+
+
+
+
+
 
 
 
