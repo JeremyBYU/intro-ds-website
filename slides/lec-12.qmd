@@ -83,7 +83,21 @@ flowchart LR
 ```
 
 
-# Logistic Regression
+# Non Linear Regression
+
+- Linear Regression - Linear Combination  of features
+  - $\hat{y} = \beta_0 + \beta_1 x_1 + ... \beta_k x_k$
+- Parameters $\beta_k$ are simply multiplied by features and added together
+- Non-linear mathematical parameter's with respect to $\beta_k$
+- $f(x, \beta)$
+
+# Example Non Linear
+
+- Trigonometric - $sin(\beta_0 x)$
+- Exponential - $e^{\beta_0 + \beta_1 x}$
+- Logistic - $\frac{e^{\beta_0 + \beta_1 x}}{1 + e^{\beta_0 + \beta_1 x}}$
+
+
 
 # Class Activity
 
