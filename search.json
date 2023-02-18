@@ -130,7 +130,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n\n\n\n\n\nWeek 8\n\n\n\n\n\nWeek 9\n\n\n\n\n\nWeek 10\n\n\n\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 8\n\n\n\n\n\nWeek 9\n\n\n\n\n\nWeek 10\n\n\n\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
   },
   {
     "objectID": "slides/lec-11.html#schedule",
@@ -214,7 +214,7 @@
     "href": "slides/lec-11.html#discussion",
     "title": "CISC482 - Lecture11",
     "section": "Discussion",
-    "text": "Discussion\n\nIn these graphs wem saw time and spatial dependencies in our data set.\nWe saw this by plotting residual plots and looking for any patterns.\nRecall the model was: \\(MPG = m \\cdot Weight + b\\)\nDoes the independence of error assumption hold in this model?\nDoes that mean we should never use this model?"
+    "text": "Discussion\n\nIn these graphs we saw time and spatial dependencies in our data set.\nWe saw this by plotting residual plots and looking for any patterns.\nRecall the model was: \\(MPG = m \\cdot Weight + b\\)\nDoes the independence of error assumption hold in this model?\nDoes that mean we should never use this model?"
   },
   {
     "objectID": "slides/lec-11.html#keeping-error-low-and-consistent",
@@ -266,6 +266,13 @@
     "text": "Example, MPG Prediction"
   },
   {
+    "objectID": "slides/lec-11.html#normality-of-errors",
+    "href": "slides/lec-11.html#normality-of-errors",
+    "title": "CISC482 - Lecture11",
+    "section": "Normality of Errors",
+    "text": "Normality of Errors\n\n\nAs long as the previous assumptions hold you are going to get a good simple linear regression model\n\n\\(x\\) and \\(y\\) have a linear relationship\nErrors are independent (no spatial, time dependence, or other feature dependence)\nResidual mean of 0, variance constant\n\nHowever, if the errors are also normally distributed, more awesomeness can be done: Interval Estimates"
+  },
+  {
     "objectID": "slides/lec-11.html#interval-estimates",
     "href": "slides/lec-11.html#interval-estimates",
     "title": "CISC482 - Lecture11",
@@ -277,14 +284,21 @@
     "href": "slides/lec-11.html#full-example",
     "title": "CISC482 - Lecture11",
     "section": "Full Example",
-    "text": "Full Example\n\nn = 250\nx = np.arange(n)\nnoise = np.random.normal(loc=0, scale=5, size=n)\ny = (1.5 * x + 4) + noise\nsns.scatterplot(x=x,y=y);"
+    "text": "Full Example\n\nUse library numpy and scikit-learn to fit our models\nscikit-learn is library made for machine learning. Its awesome!"
   },
   {
-    "objectID": "slides/lec-11.html#full-example-output",
-    "href": "slides/lec-11.html#full-example-output",
+    "objectID": "slides/lec-11.html#creating-data",
+    "href": "slides/lec-11.html#creating-data",
     "title": "CISC482 - Lecture11",
-    "section": "Full Example",
-    "text": "Full Example"
+    "section": "Creating data",
+    "text": "Creating data\n\nn = 250\nx = np.arange(n)\nnoise = np.random.normal(loc=0, scale=5, size=n)\ny = (1.5 * x + 4) + noise\nsns.scatterplot(x=x,y=y);"
+  },
+  {
+    "objectID": "slides/lec-11.html#creating-data-output",
+    "href": "slides/lec-11.html#creating-data-output",
+    "title": "CISC482 - Lecture11",
+    "section": "Creating data",
+    "text": "Creating data"
   },
   {
     "objectID": "slides/lec-11.html#fitting-the-data",
@@ -368,7 +382,7 @@
     "href": "slides/lec-11.html#visualize-plane-output",
     "title": "CISC482 - Lecture11",
     "section": "Visualize Plane",
-    "text": "Visualize Plane\n\n<matplotlib.legend.Legend at 0x7fd9b79266e0>"
+    "text": "Visualize Plane\n\n<matplotlib.legend.Legend at 0x7ff8d059e890>"
   },
   {
     "objectID": "slides/lec-11.html#polynomial-regression",
@@ -642,6 +656,41 @@
     "title": "CISC482 - Lecture07",
     "section": "Seaborn Examples",
     "text": "Seaborn Examples\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
+    "objectID": "slides/lec-12.html#schedule",
+    "href": "slides/lec-12.html#schedule",
+    "title": "CISC482 - Lecture11",
+    "section": "Schedule",
+    "text": "Schedule\n\nTopic Ideas - Should be turned in! Will grade soon!\nHW4 - Mar 08 @ Midnight\nProposal: Mar 22, Wednesday"
+  },
+  {
+    "objectID": "slides/lec-12.html#today",
+    "href": "slides/lec-12.html#today",
+    "title": "CISC482 - Lecture11",
+    "section": "Today",
+    "text": "Today\n\nReview Linear Regression\nLogistic Regression"
+  },
+  {
+    "objectID": "slides/lec-12.html#what-we-learned",
+    "href": "slides/lec-12.html#what-we-learned",
+    "title": "CISC482 - Lecture11",
+    "section": "What we learned",
+    "text": "What we learned\n\n\nSimple Linear Regression\n\n\\(\\hat{y} = \\beta_0 + x + \\beta_1\\)\n\nSimple Polynomial Linear Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x + ... + \\beta_k x^k\\)\n\nMultiple Linear Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + ... \\beta_k x_k\\)\n\nMultiple (Variable) Polynomial Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_1^2 + \\beta_3 x_1 x_2 + \\beta_4 x_2 + \\beta_5 x_2^2\\)"
+  },
+  {
+    "objectID": "slides/lec-12.html#diagram",
+    "href": "slides/lec-12.html#diagram",
+    "title": "CISC482 - Lecture11",
+    "section": "Diagram",
+    "text": "Diagram\n\n\n\n\nflowchart LR\n  A[Features] --> B{Single Feature}\n  B -- Yes --> C{Curvature}\n  C -- No --> E[Simple Regression]\n  C -- Yes --> D[Simple Polynomial <br> Regression]\n  B -- No --> F{Non-linear Correlation <br> Between Features}\n  F -- No --> G[Multiple Linear <br> Regression]\n  F -- Yes --> H[Polynomial Regression]"
+  },
+  {
+    "objectID": "slides/lec-12.html#class-activity-1",
+    "href": "slides/lec-12.html#class-activity-1",
+    "title": "CISC482 - Lecture11",
+    "section": "Class Activity",
+    "text": "Class Activity\nPractice Multiple Linear Regression\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-02.html#subscibre-to-zybook",
@@ -1593,7 +1642,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f3ec0e7c220>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f28c6005420>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -2154,6 +2203,62 @@
     "title": "Computing access",
     "section": "",
     "text": "We will be using Google Collab for all Class Activities and Homework. Please just use your Springfield College e-mail for access."
+  },
+  {
+    "objectID": "weeks/week-7.html",
+    "href": "weeks/week-7.html",
+    "title": "Week 7",
+    "section": "",
+    "text": "📖 Read Assignments 5-3"
+  },
+  {
+    "objectID": "weeks/week-7.html#participate",
+    "href": "weeks/week-7.html#participate",
+    "title": "Week 7",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Lecture 12 - Regression 3 🖥️ Lecture 13 - Regression 4"
+  },
+  {
+    "objectID": "weeks/week-7.html#practice",
+    "href": "weeks/week-7.html#practice",
+    "title": "Week 7",
+    "section": "Practice",
+    "text": "Practice\n📋 Class Activity 06 - Practice Regression"
+  },
+  {
+    "objectID": "weeks/week-7.html#perform",
+    "href": "weeks/week-7.html#perform",
+    "title": "Week 7",
+    "section": "Perform",
+    "text": "Perform\n⌨️ HW 4 - Regression"
+  },
+  {
+    "objectID": "weeks/week-8.html",
+    "href": "weeks/week-8.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 5-3"
+  },
+  {
+    "objectID": "weeks/week-8.html#participate",
+    "href": "weeks/week-8.html#participate",
+    "title": "Week 8",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Lecture 14 - Model Performance 1 🖥️ Lecture 15 - Model Performance 1"
+  },
+  {
+    "objectID": "weeks/week-8.html#practice",
+    "href": "weeks/week-8.html#practice",
+    "title": "Week 8",
+    "section": "Practice",
+    "text": "Practice\n📋 Class Activity 07 - Model Performance"
+  },
+  {
+    "objectID": "weeks/week-8.html#perform",
+    "href": "weeks/week-8.html#perform",
+    "title": "Week 8",
+    "section": "Perform",
+    "text": "Perform\n⌨️ HW 5 - Model Performance"
   },
   {
     "objectID": "weeks/week-6.html",

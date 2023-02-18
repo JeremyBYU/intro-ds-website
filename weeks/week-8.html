@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intro to Data Science - Week 6</title>
+<title>Intro to Data Science - Week 8</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week-7.html" rel="next">
-<link href="../weeks/week-5.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,8 +61,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Intro to Data Science - Week 6">
-<meta property="og:description" content="It's Regression Time!">
+<meta property="og:title" content="Intro to Data Science - Week 8">
+<meta property="og:description" content="Model Performance!">
 <meta property="og:site-name" content="Intro to Data Science">
 </head>
 
@@ -74,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Week 6</h1>
+      <h1 class="quarto-secondary-nav-title">Week 8</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -169,12 +167,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Weekly materials</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Weekly materials</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week-1.html" class="sidebar-item-text sidebar-link">Week 1</a>
@@ -202,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-6.html" class="sidebar-item-text sidebar-link active">Week 6</a>
+  <a href="../weeks/week-6.html" class="sidebar-item-text sidebar-link">Week 6</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -226,15 +224,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   <li><a href="#perform" id="toc-perform" class="nav-link" data-scroll-target="#perform">Perform</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeremybyu/intro-ds-website/edit/main/weeks/week-6.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeremybyu/intro-ds-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeremybyu/intro-ds-website/edit/main/weeks/week-8.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeremybyu/intro-ds-website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Week 6</h1>
-<p class="subtitle lead">It’s Regression Time!</p>
+<h1 class="title d-none d-lg-block">Week 8</h1>
+<p class="subtitle lead">Model Performance!</p>
 </div>
 
 
@@ -251,19 +249,19 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<p>📖 Read Assignments 5-1 📖 Read Assignments 5-2</p>
+<p>📖 Read Assignments 5-3</p>
 </section>
 <section id="participate" class="level2">
 <h2 class="anchored" data-anchor-id="participate">Participate</h2>
-<p>🖥️ <a href="../slides/lec-10.html">Lecture 10 - Regression 1</a> 🖥️ <a href="../slides/lec-11.html">Lecture 11 - Regression 2</a></p>
+<p>🖥️ <a href="../slides/lec-14.html">Lecture 14 - Model Performance 1</a> 🖥️ <a href="../slides/lec-15.html">Lecture 15 - Model Performance 1</a></p>
 </section>
 <section id="practice" class="level2">
 <h2 class="anchored" data-anchor-id="practice">Practice</h2>
-<p>📋 <a href="https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing">Class Activity 05 - Practice Regression</a></p>
+<p>📋 <a href="">Class Activity 07 - Model Performance</a></p>
 </section>
 <section id="perform" class="level2">
 <h2 class="anchored" data-anchor-id="perform">Perform</h2>
-<p>⌨️ <a href="https://colab.research.google.com/drive/1EdakWIOXLV-1UjUytpgKj6yHMbq-Pvz3?usp=sharing">HW 4 - Regression</a></p>
+<p>⌨️ <a href="">HW 5 - Model Performance</a></p>
 
 
 </section>
@@ -517,18 +515,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-5.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 5</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../weeks/week-7.html" class="pagination-link">
-        <span class="nav-page-text">Week 7</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

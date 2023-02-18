@@ -488,7 +488,7 @@ Dr.&nbsp;Jeremy Castagno
 <section id="discussion" class="slide level2">
 <h2>Discussion</h2>
 <ul>
-<li>In these graphs wem saw time and spatial dependencies in our data set.</li>
+<li>In these graphs we saw time and spatial dependencies in our data set.</li>
 <li>We saw this by plotting residual plots and looking for any patterns.</li>
 <li>Recall the model was: <span class="math inline">\(MPG = m \cdot Weight + b\)</span></li>
 <li>Does the independence of error assumption hold in <em>this</em> model?</li>
@@ -576,10 +576,9 @@ Dr.&nbsp;Jeremy Castagno
 <section id="example-mpg-prediction" class="slide level2">
 <h2>Example, MPG Prediction</h2>
 
-<img data-src="./lec11_images/variance_changing.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="normality-of-errors" class="title-slide slide level1 center">
-<h1>Normality of Errors</h1>
+<img data-src="./lec11_images/variance_changing.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<section id="normality-of-errors" class="slide level2">
+<h2>Normality of Errors</h2>
 <div>
 <ul>
 <li class="fragment">As long as the previous assumptions hold you are going to get a good simple linear regression model
@@ -598,6 +597,13 @@ Dr.&nbsp;Jeremy Castagno
 <img data-src="./lec11_images/interval_estimate.png" style="width:70.0%" class="r-stretch quarto-figure-center"></section>
 <section id="full-example" class="slide level2">
 <h2>Full Example</h2>
+<ul>
+<li>Use library <code>numpy</code> and <code>scikit-learn</code> to fit our models</li>
+<li><code>scikit-learn</code> is library made for machine learning. Its awesome!</li>
+</ul>
+</section>
+<section id="creating-data" class="slide level2">
+<h2>Creating data</h2>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>n <span class="op">=</span> <span class="dv">250</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>x <span class="op">=</span> np.arange(n)</span>
@@ -607,7 +613,7 @@ Dr.&nbsp;Jeremy Castagno
 </div>
 
 </section>
-<section id="full-example-output" class="slide level2 output-location-slide"><h2>Full Example</h2><div class="cell output-location-slide" data-execution_count="9">
+<section id="creating-data-output" class="slide level2 output-location-slide"><h2>Creating data</h2><div class="cell output-location-slide" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <p><img data-src="lec-11_files/figure-revealjs/cell-10-output-1.png" width="845" height="441"></p>
 </div>
@@ -738,7 +744,7 @@ Intercept: -5836.3</code></pre>
 </section>
 <section id="visualize-plane-output" class="slide level2 output-location-slide"><h2>Visualize Plane</h2><div class="cell output-location-slide" data-execution_count="15">
 <div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>&lt;matplotlib.legend.Legend at 0x7fd9b79266e0&gt;</code></pre>
+<pre><code>&lt;matplotlib.legend.Legend at 0x7ff8d059e890&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img data-src="lec-11_files/figure-revealjs/cell-16-output-2.png" width="559" height="541"></p>
