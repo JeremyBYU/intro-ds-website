@@ -13,7 +13,7 @@ title: "Overview"
 |  Week 4 | [🖥️ ](/slides/lec-07.html) [🖥️ ](/slides/lec-08.html)       |  [📋](https://colab.research.google.com/drive/1G8FrrL2cENvBuo39dwx9DdPUcOogec5l?usp=sharing)               |   [⌨️](https://colab.research.google.com/drive/1vqjlLcOAkafEFmlkCGHBjuGjQ8RVxEeB?usp=sharing)    |
 |  Week 5 | [🖥️ ](/slides/lec-09.html)                                   |  None           |   None   |
 |  Week 6 | [🖥️ ](/slides/lec-10.html) [🖥️ ](/slides/lec-11.html)       |  [📋](https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing)               |   [⌨️](https://colab.research.google.com/drive/1EdakWIOXLV-1UjUytpgKj6yHMbq-Pvz3?usp=share_link)    |
-|  Week 7 |        |                |    |
+|  Week 7 | [🖥️ ](/slides/lec-12.html) [🖥️ ](/slides/lec-13.html)       |  [📋](https://colab.research.google.com/drive/1A0OLxu3pIbrNThVtdec3yLRCZmud9fio?usp=sharing)               |   [⌨️](https://colab.research.google.com/drive/1EdakWIOXLV-1UjUytpgKj6yHMbq-Pvz3?usp=share_link)    |
 |  Week 8 |        |                |    |
 |  Week 9 |        |                |    |
 | Week 10 |        |                |    |

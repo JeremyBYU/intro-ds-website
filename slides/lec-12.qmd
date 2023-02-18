@@ -1,0 +1,104 @@
+---
+title: "CISC482 - Lecture11"
+subtitle: "Regression 2"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+df = load_penguins()
+df.dropna(inplace=True)
+sns.set_style('whitegrid')
+sns.set_context("poster", font_scale=1.1)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Topic Ideas - Should be turned in! Will grade soon!
+- [HW4](https://colab.research.google.com/drive/1EdakWIOXLV-1UjUytpgKj6yHMbq-Pvz3?usp=sharing) - Mar 08 @ Midnight
+- [Proposal](#project-proposal): Mar 22, Wednesday
+
+## Today
+
+- Review Linear Regression
+- Logistic Regression
+
+# Review Linear Regression
+
+## What we learned
+
+::: incremental
+- Simple Linear Regression
+  - $\hat{y} = \beta_0 + x + \beta_1$
+- Simple Polynomial Linear Regression 
+  - $\hat{y} = \beta_0 + \beta_1 x + ... + \beta_k x^k$
+- Multiple Linear Regression 
+  - $\hat{y} = \beta_0 + \beta_1 x_1 + ... \beta_k x_k$
+- Multiple (Variable) Polynomial Regression 
+  - $\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \beta_3 x_1 x_2 + \beta_4 x_2 + \beta_5 x_2^2$
+:::
+
+
+## Diagram
+
+```{mermaid}
+flowchart LR
+  A[Features] --> B{Single Feature}
+  B -- Yes --> C{Curvature}
+  C -- No --> E[Simple Regression]
+  C -- Yes --> D[Simple Polynomial <br> Regression]
+  B -- No --> F{Non-linear Correlation <br> Between Features}
+  F -- No --> G[Multiple Linear <br> Regression]
+  F -- Yes --> H[Polynomial Regression]
+```
+
+
+# Logistic Regression
+
+# Class Activity
+
+## Class Activity
+
+[Practice Multiple Linear Regression](https://colab.research.google.com/drive/1A0OLxu3pIbrNThVtdec3yLRCZmud9fio?usp=sharing)
+
+
+
+
+
+
+
+
+
+
+
+
