@@ -29,9 +29,11 @@ import seaborn as sns
 import numpy as np
 from sklearn.datasets import make_blobs
 from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
 df = load_penguins()
+df.dropna(inplace=True)
 sns.set_style('whitegrid')
-sns.set_context("poster", font_scale=1.25)
+sns.set_context("poster", font_scale=1.1)
 np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
 pd.options.display.float_format = '{:,.2f}'.format
 np.random.seed(10)
@@ -240,11 +242,165 @@ visualizer.show();
 ```
 
 
+# Multiple Linear Regression
+
+## Definition
+
+- Dataset has multiple input features
+- Incorporate more than one input feature into a single regression equation -> multiple linear regression 
+- $\hat{y} = \beta_0 + \beta_1 x_1 + ... \beta_k x_k$
+- $x_1, ..., x_k$ = input features
+- $\hat{y}$ = predicted feature
+- $\beta_0$ = y-intercept. $\beta_1, ..., \beta_k$ = slopes
+
+
+## Example
+
+```{python}
+#| echo: True
+#| output-location: slide
+#| 
+pp = sns.pairplot(data=df,
+                  height=7,
+                  y_vars=['body_mass_g'],
+                  x_vars=['bill_length_mm', 'flipper_length_mm'])
+```
+
+
+## 3D plot
+
+```{python}
+#| echo: True
+#| output-location: slide
+
+X = df[['bill_length_mm', 'flipper_length_mm']].values
+y = df['body_mass_g'].values
+def plot_plane(x_coef, y_coef, intercept, ax):
+  x = np.linspace(X[:, 0].min(), X[:, 0].max(),  n)
+  y = np.linspace(X[:, 1].min(), X[:, 1].max(), n)
+  x, y = np.meshgrid(x, y)
+  eq = x_coef * x + y_coef * y + intercept
+  surface = ax.plot_surface(x, y, eq, color='red', alpha=0.5)
+
+fig = plt.figure(figsize = (10, 7))
+ax = plt.axes(projection ="3d")
+ax.scatter(X[:, 0], X[:, 1], y, label='penguins')
+ax.set_xlabel("Bill Length")
+ax.set_ylabel("Flipper Length")
+ax.set_zlabel("Body Mass")
+ax.legend();
+```
+
+
+## Performing Regression
+
+```{python}
+#| echo: True
+#| output-location: default
+
+model = LinearRegression()
+reg = model.fit(X, y) # X needs to be a matrix
+
+slope_bill, slope_flipper, intercept  = reg.coef_[0], reg.coef_[1], reg.intercept_
+print(f"Bill Slope: {slope:.1f}; Flipper Slope: {slope_flipper:.1f}; \nIntercept: {intercept:.1f}")
+```
+
+## Visualize Plane
+
+```{python}
+#| echo: True
+#| output-location: slide
+
+fig = plt.figure(figsize = (10, 7))
+ax = plt.axes(projection ="3d")
+ax.scatter(X[:, 0], X[:, 1], y, label='penguins')
+ax.set_xlabel("Bill Length")
+ax.set_ylabel("Flipper Length")
+ax.set_zlabel("Body Mass")
+plot_plane(slope_bill, slope_flipper, intercept, ax=ax)
+ax.legend()
+```
+
+
+## Polynomial Regression
+
+- Special case of multiple linear regression
+- Include powers of a single features as inputs in the regression equation
+- Simple polynomial linear regression
+- $\hat{y} = \beta_0 + \beta_1 x + \beta_2 x^2 .. \beta_k x^k$
+- Quadratic: $\hat{y} = \beta_0 + \beta_1 x + \beta_2 x^2$
+
+## Example Quadratic
+
+```{python}
+#| echo: True
+#| code-fold: True
+n = 30
+x = np.arange(n)
+noise = np.random.normal(loc=0, scale=5, size=n)
+y = (0.1 * x**2  + 0.3 * x + 4) + noise
+sns.scatterplot(x=x,y=y);
+```
+
+## Fitting a Quadratic (numpy)
+
+```{python}
+#| echo: True
+coeffs = np.polyfit(x, y, deg=2)
+print(coeffs) # beta_2, beta_1, beta_0
+```
+
+## Plotting your regressed polynomial function
+
+```{python}
+#| echo: True
+#| code-fold: True
+regressed_fn = np.poly1d(coeffs)
+y_hat = regressed_fn(x)
+ax = sns.scatterplot(x=x,y=y)
+ax.plot(x, y_hat, color='red', linestyle='--');
+```
+
+## Fitting a Quadratic (SciKit Learn)
+
+- Scikit-learn can also fit polynomials
+- You must first create the additional columns *manually*
+- In other words create a second column that is the first column squared!
+- Helpful class called `PolynomialFeatures` 
+
+## Fitting a Quadratic (SciKit Learn)
+
+```{python}
+#| echo: True
+from sklearn.preprocessing import PolynomialFeatures
+pf = PolynomialFeatures(degree=2,include_bias=False)
+X = x[:, np.newaxis] # n X 1 matrix
+x_features = pf.fit_transform(X)
+print("Transformed Features:\n", x_features[:5, :])
+model = LinearRegression()
+reg = model.fit(x_features, y) # X needs to be a matrix
+print("Coefficients")
+print(reg.coef_, reg.intercept_) # beta_2, beta_1, beta_0
+```
+
+## Plotting your regressed polynomial function
+
+```{python}
+#| echo: True
+#| code-fold: True
+regressed_fn = np.poly1d(coeffs)
+y_hat = reg.predict(x_features)
+ax = sns.scatterplot(x=x,y=y)
+ax.plot(x, y_hat, color='red', linestyle='--');
+```
+
+
+
 # Class Activity
 
 ## Class Activity
 
-[Practice Regression](https://colab.research.google.com/drive/1S9CF1esM6dci019I2WzaFlt1Nt4AcBJi?usp=sharing)
+[Practice Multiple Linear Regression](https://colab.research.google.com/drive/1A0OLxu3pIbrNThVtdec3yLRCZmud9fio?usp=sharing)
 
 
 
