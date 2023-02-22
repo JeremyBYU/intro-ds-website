@@ -382,7 +382,7 @@
     "href": "slides/lec-11.html#visualize-plane-output",
     "title": "CISC482 - Lecture11",
     "section": "Visualize Plane",
-    "text": "Visualize Plane\n\n<matplotlib.legend.Legend at 0x7fc457343160>"
+    "text": "Visualize Plane\n\n<matplotlib.legend.Legend at 0x7f44c413e350>"
   },
   {
     "objectID": "slides/lec-11.html#polynomial-regression",
@@ -660,161 +660,161 @@
   {
     "objectID": "slides/lec-12.html#schedule",
     "href": "slides/lec-12.html#schedule",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Schedule",
     "text": "Schedule\n\nTopic Ideas - Should be turned in! Will grade soon!\nHW4 - Mar 08 @ Midnight\nProposal: Mar 22, Wednesday"
   },
   {
     "objectID": "slides/lec-12.html#today",
     "href": "slides/lec-12.html#today",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Today",
     "text": "Today\n\nReview Linear Regression\nLogistic Regression"
   },
   {
     "objectID": "slides/lec-12.html#what-we-learned",
     "href": "slides/lec-12.html#what-we-learned",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "What we learned",
     "text": "What we learned\n\n\nSimple Linear Regression\n\n\\(\\hat{y} = \\beta_0 + x + \\beta_1\\)\n\nSimple Polynomial Linear Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x + ... + \\beta_k x^k\\)\n\nMultiple Linear Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + ... \\beta_k x_k\\)\n\nMultiple (Variable) Polynomial Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_1^2 + \\beta_3 x_1 x_2 + \\beta_4 x_2 + \\beta_5 x_2^2\\)"
   },
   {
     "objectID": "slides/lec-12.html#regression-diagram",
     "href": "slides/lec-12.html#regression-diagram",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Regression Diagram",
     "text": "Regression Diagram\n\n\n\n\nflowchart LR\n  A[Features] --> B{Single Feature}\n  B -- Yes --> C{Curvature}\n  C -- No --> E[Simple Regression]\n  C -- Yes --> D[Simple Polynomial <br> Regression]\n  B -- No --> F{Non-linear Correlation <br> Between Features}\n  F -- No --> G[Multiple Linear <br> Regression]\n  F -- Yes --> H[Polynomial Regression]"
   },
   {
     "objectID": "slides/lec-12.html#class-activity-1",
     "href": "slides/lec-12.html#class-activity-1",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Class Activity",
     "text": "Class Activity\nClass Activity"
   },
   {
     "objectID": "slides/lec-12.html#classification",
     "href": "slides/lec-12.html#classification",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Classification",
     "text": "Classification\n\nWe are now going to be focusing on problems where we are interested in predicting the group or the class of something\nGive \\(X = {x_1, x_2, ..., x_k}\\) what is the class of this object.\n\nGiven the bill_length is 10 and bill_depth is 20 what is the species of this penguin?\nA person arrives at the emergency room with a set of symptoms. Which of the three medical conditions does the individual have?\n\nLets first focus where there are only 2 classes. Lets just call them (+) positive and (-) negative."
   },
   {
     "objectID": "slides/lec-12.html#example-classification",
     "href": "slides/lec-12.html#example-classification",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Example Classification",
     "text": "Example Classification"
   },
   {
     "objectID": "slides/lec-12.html#linear-regression-for-classification",
     "href": "slides/lec-12.html#linear-regression-for-classification",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Linear Regression for Classification",
     "text": "Linear Regression for Classification\n\nLinear Regression is generally not suitable for classification purposes\nHowever, you can use it to draw a line that whose value predicts the class\nE.g. if \\(\\hat{y} > 0.5 -> Positive\\)"
   },
   {
     "objectID": "slides/lec-12.html#lr-classification-okay",
     "href": "slides/lec-12.html#lr-classification-okay",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "LR Classification (Okay)",
     "text": "LR Classification (Okay)"
   },
   {
     "objectID": "slides/lec-12.html#lr-classification-bad",
     "href": "slides/lec-12.html#lr-classification-bad",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "LR Classification (BAD)",
     "text": "LR Classification (BAD)"
   },
   {
     "objectID": "slides/lec-12.html#lr-classification-really-bad",
     "href": "slides/lec-12.html#lr-classification-really-bad",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "LR Classification (Really BAD)",
     "text": "LR Classification (Really BAD)"
   },
   {
     "objectID": "slides/lec-12.html#logistic-regression",
     "href": "slides/lec-12.html#logistic-regression",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Logistic Regression",
     "text": "Logistic Regression\n\n\n\n\nUse a specific exponential function\n\\(\\hat{y} = \\frac{e^{\\beta_0 + \\beta_1 x}}{1 + e^{\\beta_0 + \\beta_1 x}}\\)\nWhats the range of this function?\n\\(\\hat{p} = \\sigma(z)\\), where\n\n\\(z = \\beta_0 + \\beta_1 x\\)\n\\(\\sigma(z) = \\frac{e^{z}}{1 + e^{z}}\\)\n\\(\\sigma(z) = \\frac{1}{1 + e^{-z}}\\)"
   },
   {
     "objectID": "slides/lec-12.html#example",
     "href": "slides/lec-12.html#example",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Example",
     "text": "Example\n\nfrom sklearn.linear_model import LinearRegression, LogisticRegression\n\nlinear_model = LinearRegression()\nlogistic_model = LogisticRegression(C=1e5)\n\nlinear_model.fit(X, y)\nlogistic_model.fit(X, y)\n\nprint(f\"LINEAR MODEL: {linear_model.coef_[0]:.1f} * x + {linear_model.intercept_:.1f}\")\nprint(f\"LOGISTIC MODEL: sigmoid({logistic_model.coef_[0][0]:.1f} * x + {logistic_model.intercept_[0]:.1f})\");\n\nLINEAR MODEL: 0.1 * x + 0.4\nLOGISTIC MODEL: sigmoid(6.9 * x + -1.6)"
   },
   {
     "objectID": "slides/lec-12.html#visual",
     "href": "slides/lec-12.html#visual",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Visual",
     "text": "Visual\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nWhat do you notice?"
   },
   {
     "objectID": "slides/lec-12.html#multivariable-classification",
     "href": "slides/lec-12.html#multivariable-classification",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Multivariable Classification",
     "text": "Multivariable Classification"
   },
   {
     "objectID": "slides/lec-12.html#in-3d",
     "href": "slides/lec-12.html#in-3d",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "In 3D",
     "text": "In 3D"
   },
   {
     "objectID": "slides/lec-12.html#multivariable-logistic-regression",
     "href": "slides/lec-12.html#multivariable-logistic-regression",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Multivariable Logistic Regression",
     "text": "Multivariable Logistic Regression\n\n\nCode\nlogistic_model = LogisticRegression(C=1e5)\nlogistic_model.fit(X, y)\n\nx_range = np.linspace(X[:, 0].min(), X[:, 0].max(), 20)\ny_range = np.linspace(X[:, 1].min(), X[:, 1].max(), 20)\nXX, YY = np.meshgrid(x_range, y_range)\nP = expit(XX* logistic_model.coef_[0][0] + YY * logistic_model.coef_[0][0] + logistic_model.intercept_)\n\n\nwith sns.plotting_context(\"talk\"):\n  fig = plt.figure(figsize = (10, 7))\n  ax = plt.axes(projection =\"3d\")\n  # ZZ = np.ones_like(XX) * 0.5 \n  # ax.plot_surface(XX, YY, ZZ,  **kwargs, zorder=1)\n  ax.scatter(X[:,0], X[:,1], y, c=y, cmap='jet', zorder=10, edgecolor='k')\n  ax.plot_surface(XX, YY, P, alpha=1.0, cmap='viridis', edgecolor='k');"
   },
   {
     "objectID": "slides/lec-12.html#multivariable-logistic-regression-1",
     "href": "slides/lec-12.html#multivariable-logistic-regression-1",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Multivariable Logistic Regression",
     "text": "Multivariable Logistic Regression\n\n\nCode\nwith sns.plotting_context(\"talk\"):\n  fig = plt.figure(figsize = (10, 7))\n  ax = plt.axes(projection =\"3d\")\n  ZZ = np.ones_like(XX) * 0.5 \n  ax.plot_surface(XX, YY, ZZ,  zorder=1, edgecolor='k')\n  ax.plot_surface(XX, YY, P, alpha=1.0, cmap='viridis', edgecolor='k');"
   },
   {
     "objectID": "slides/lec-12.html#view-decision-boundary",
     "href": "slides/lec-12.html#view-decision-boundary",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "View Decision Boundary",
     "text": "View Decision Boundary\n\n\nCode\nfrom sklearn.inspection import DecisionBoundaryDisplay\ndisp = DecisionBoundaryDisplay.from_estimator(\n    logistic_model, X, response_method=\"predict\", cmap=plt.cm.viridis, alpha=0.5\n)\ndisp.ax_.scatter(X[:,0], X[:,1], c=y, cmap='viridis', edgecolor='k');\ndisp.ax_.set_xlabel(\"X\")\ndisp.ax_.set_ylabel(\"Y\")\n\n\nText(0, 0.5, 'Y')"
   },
   {
     "objectID": "slides/lec-12.html#loss-function",
     "href": "slides/lec-12.html#loss-function",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Loss Function",
     "text": "Loss Function\n\n\nLets create a likelihood function \\(L\\) that is a function of our parameters \\(\\beta\\). We want to find parameters \\(\\beta\\) that make \\(L\\) as big as possible.\n\\(L(\\beta) = \\sum_{i=1}^n \\underbrace{y_i \\cdot \\sigma(\\beta \\; x_i)}_{y = 1} + \\underbrace{(1-y_i) \\cdot (1 - \\sigma(\\beta \\; x_i))}_{y = 0}\\)\nConvert to a loss function \\(J\\). We also take the logarithm. This ensures our cost function is convex.\n\\(J(\\beta) = -\\sum_{i=1}^n y_i \\cdot log(\\sigma(\\beta \\; x_i)) + (1-y_i) \\cdot log(\\sigma(\\beta \\; x_i))\\)\nThis does not have a closed form solution. AKA you can not just take derivative and solve the parameters \\(\\beta\\).\nWe have to use a numerical solver. For example, gradient descent."
   },
   {
     "objectID": "slides/lec-12.html#convex-vs-non-convex",
     "href": "slides/lec-12.html#convex-vs-non-convex",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Convex vs Non Convex",
     "text": "Convex vs Non Convex"
   },
   {
     "objectID": "slides/lec-12.html#convex-function-soccer-ball",
     "href": "slides/lec-12.html#convex-function-soccer-ball",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Convex Function, Soccer Ball",
     "text": "Convex Function, Soccer Ball"
   },
   {
     "objectID": "slides/lec-12.html#gradient-descent",
     "href": "slides/lec-12.html#gradient-descent",
-    "title": "CISC482 - Lecture11",
+    "title": "CISC482 - Lecture12",
     "section": "Gradient Descent",
     "text": "Gradient Descent\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
@@ -1768,7 +1768,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f74a12417e0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f3a9efa2c80>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
