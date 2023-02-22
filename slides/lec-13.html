@@ -9,7 +9,7 @@
   <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
-  <title>Intro to Data Science - CISC482 - Lecture03</title>
+  <title>Intro to Data Science - CISC482 - Lecture13</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -383,8 +383,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture03">
-<meta property="og:description" content="Statistics">
+<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture13">
+<meta property="og:description" content="Regression 2">
 <meta property="og:site-name" content="Intro to Data Science">
 </head>
 <body class="quarto-light">
@@ -392,8 +392,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CISC482 - Lecture03</h1>
-  <p class="subtitle">Statistics</p>
+  <h1 class="title">CISC482 - Lecture13</h1>
+  <p class="subtitle">Regression 2</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -412,209 +412,76 @@ Dr.&nbsp;Jeremy Castagno
 <section id="schedule" class="slide level2">
 <h2>Schedule</h2>
 <ul>
-<li>Reading 2-1: Jan 25 @ 12PM, Wed</li>
-<li>Reading 2-2: Jan 27 @ 12PM, Friday</li>
-<li>Reading 2-3: Feb 1 @ 12PM, Wed</li>
-<li>HW2: Feb 1 @ Midnight, Wed</li>
+<li>Reading 6-1: Mar 08 @ 12PM, Wednesday</li>
+<li><a href="https://colab.research.google.com/drive/1EdakWIOXLV-1UjUytpgKj6yHMbq-Pvz3?usp=sharing">HW4</a> - Mar 08 @ Midnight</li>
+<li><a href="#/project-proposal">Proposal</a>: Mar 22, Wednesday</li>
+</ul>
+</section>
+<section id="today" class="slide level2">
+<h2>Today</h2>
+<ul>
+<li>Review Linear Regression</li>
+<li>Review Logistic Regression</li>
 </ul>
 </section></section>
 <section>
-<section id="data-collection" class="title-slide slide level1 center">
-<h1>Data Collection</h1>
+<section id="review-linear-regression" class="title-slide slide level1 center">
+<h1>Review Linear Regression</h1>
 
 </section>
-<section id="stats-for-data-science" class="slide level2">
-<h2>Stats for data science</h2>
-<ul>
-<li>Data science relies on statistics to make data driven decisions</li>
-<li>Sampling methods are used to efeciently collect data and reduce bias</li>
-</ul>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Bias</strong> - anything that leads to a systematic difference between the true parameters of a population and the statistics used to estimate those parameters. E.g., sampling only men.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="its-hard" class="slide level2">
-<h2>It’s hard…</h2>
-
-<img data-src="./lec02_images/hillary_clinton.png" class="r-stretch quarto-figure-center"></section>
-<section id="sampling-errors" class="slide level2">
-<h2>Sampling Errors</h2>
-<ul>
-<li>A small, systematic polling error made a big difference</li>
-<li>All polls were off in the same direction (5 pts) in swing states</li>
-<li>Correlatated sampling errors in the midwest</li>
-<li>Failure to appreciate uncertainty</li>
-</ul>
-</section>
-<section id="stats-for-data-science-1" class="slide level2">
-<h2>Stats for data science</h2>
-<div class="columns">
-<div class="smaller column" style="width:40%;">
-<ul>
-<li>Descriptive statistics -&gt; explore visualizations</li>
-<li>Inferential statistics -&gt; modeling and estimation</li>
-<li>Statisitcs is foundational to ensure results are interpreted correctly</li>
-</ul>
-</div><div class="column" style="width:60%;">
-<p><img data-src="./lec03_images/stats_intro.png"></p>
-</div>
-</div>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="sampling" class="slide level2">
-<h2>Sampling</h2>
-<ul>
-<li><strong>Population</strong> - Entire set of individuals, items, or events of interest</li>
-<li><strong>Observational Unit</strong> - individual item or event</li>
-<li><strong>Sample</strong> - <em>subset</em> of observational units from the population</li>
-</ul>
-</section>
-<section id="types-of-sampling" class="slide level2">
-<h2>Types of Sampling</h2>
+<section id="give-me-the-function-models" class="slide level2">
+<h2>Give me the function models</h2>
 <div>
 <ul>
-<li class="fragment">Random Sampling
+<li class="fragment">Simple Linear Regression
 <ul>
-<li class="fragment">OU are selected at random</li>
+<li class="fragment"><span class="math inline">\(\hat{y} = \beta_0 + x + \beta_1\)</span></li>
 </ul></li>
-<li class="fragment">Stratified Sampling
+<li class="fragment">Simple Polynomial Linear Regression
 <ul>
-<li class="fragment">Population is divided into groups (primary feature). Each group is sampled.</li>
+<li class="fragment"><span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x + ... + \beta_k x^k\)</span></li>
 </ul></li>
-<li class="fragment">Cluster Sampling
+<li class="fragment">Multiple Linear Regression
 <ul>
-<li class="fragment">Population divided into groups (not a primary feature, geography)</li>
+<li class="fragment"><span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x_1 + ... \beta_k x_k\)</span></li>
 </ul></li>
-<li class="fragment">Systematic Sampling
+<li class="fragment">Multiple (Variable) Polynomial Regression
 <ul>
-<li class="fragment">Every k’th observational unit is sampled</li>
-</ul></li>
-<li class="fragment">Convenience Sampling
-<ul>
-<li class="fragment">OU are selected that are easier<br>
-</li>
+<li class="fragment"><span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \beta_3 x_1 x_2 + \beta_4 x_2 + \beta_5 x_2^2\)</span></li>
 </ul></li>
 </ul>
 </div>
-</section>
-<section id="observational-vs-experiement" class="slide level2">
-<h2>Observational vs Experiement</h2>
-<ul>
-<li>Observational
-<ul>
-<li>Observing or collecting data</li>
-<li>Not trying to control or influence an outcome</li>
-</ul></li>
-<li>Experimental
-<ul>
-<li>You are controlling a varaible</li>
-<li>You manipulate that variable to get a different response</li>
-</ul></li>
-</ul>
-</section>
-<section id="descriptive-statistics" class="slide level2">
-<h2>Descriptive Statistics</h2>
-</section>
-<section id="oveview" class="slide level2">
-<h2>Oveview</h2>
-<ul>
-<li>Terminology</li>
-<li>Measure of center</li>
-<li>Measure of spread</li>
-<li>Measure of position</li>
-<li>Measure of shape</li>
-</ul>
-</section>
-<section id="terminology" class="slide level2">
-<h2>Terminology</h2>
-<ul>
-<li><strong>Descriptive Statistics</strong> - summarize and describe a features important characteristics</li>
-<li><strong>distribution</strong> - the possible values the feature can take</li>
-<li><strong>cluster</strong> - a distinct group of neighboring values in a distribution</li>
-<li><strong>tails</strong> - the end values of a distributution</li>
-</ul>
-</section>
-<section id="terminology---visualized" class="slide level2">
-<h2>Terminology - Visualized</h2>
+</section></section>
+<section>
+<section id="class-activity" class="title-slide slide level1 center">
+<h1>Class Activity</h1>
 
-<img data-src="./lec03_images/descriptive_stats.png" class="r-stretch quarto-figure-center"></section>
-<section id="measure-of-center" class="slide level2">
-<h2>Measure of Center</h2>
+</section>
+<section id="class-activity-1" class="slide level2">
+<h2>Class Activity</h2>
+<p><a href="https://colab.research.google.com/drive/1JFqbWKsVqVGG8q5kPqoUHah-dsVFlENH?usp=share_link">Class Activity</a></p>
+</section></section>
+<section id="non-linear-regression" class="title-slide slide level1 center">
+<h1>Non Linear Regression</h1>
 <ul>
-<li><strong>Mean</strong> - average, sum of all values divided by the total number of values, <em>n</em> <span class="math display">\[
-\frac{1}{n} \sum_{i=i}^{n} x_{i}
-\]</span></li>
-<li><strong>Median</strong> - the middle value of the ordered data</li>
+<li>Linear Regression - Linear Combination of features
+<ul>
+<li><span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x_1 + ... \beta_k x_k\)</span></li>
+</ul></li>
+<li>Parameters <span class="math inline">\(\beta_k\)</span> are simply multiplied by features and added together</li>
+<li>Non-linear mathematical parameter’s with respect to <span class="math inline">\(\beta_k\)</span></li>
+<li><span class="math inline">\(f(x, \beta)\)</span></li>
 </ul>
+</section>
 
-<img data-src="./lec03_images/median_mean.png" class="r-stretch quarto-figure-center"></section>
-<section id="code-example" class="slide level2">
-<h2>Code Example!</h2>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>heights <span class="op">=</span> [<span class="fl">5.5</span>, <span class="fl">5.7</span>, <span class="fl">5.8</span>, <span class="fl">5.9</span>]</span>
-<span id="cb1-2"><a href="#cb1-2"></a>avg_height <span class="op">=</span> <span class="bu">sum</span>(heights) <span class="op">/</span> <span class="bu">len</span>(heights)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="bu">print</span>(<span class="ss">f"Average Height: </span><span class="sc">{</span>avg_height<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Average Height: 5.72</code></pre>
-</div>
-</div>
-<p><br></p>
-<div class="fragment">
-<p><strong>Using Numpy</strong></p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="1|2|3|4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2"></a>heights <span class="op">=</span> np.array([<span class="fl">5.5</span>, <span class="fl">5.7</span>, <span class="fl">5.8</span>, <span class="fl">5.9</span>, <span class="fl">6.2</span>])</span>
-<span id="cb3-3"><a href="#cb3-3"></a>avg_height <span class="op">=</span> np.average(heights)</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="bu">print</span>(<span class="ss">f"Average Height: </span><span class="sc">{</span>avg_height<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Average Height: 5.82</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="what-is-numpy" class="slide level2">
-<h2>What is NumPy</h2>
+<section>
+<section id="example-non-linear" class="title-slide slide level1 center">
+<h1>Example Non Linear</h1>
 <ul>
-<li>NumPy is <strong>the fundamental package</strong> for scientific computing in Python.</li>
-<li>Python library that provides a multidimensional array object.</li>
-<li>Stores data <em>very</em> effeciently very fast</li>
+<li>Trigonometric - <span class="math inline">\(sin(\beta_0 x)\)</span></li>
+<li>Exponential - <span class="math inline">\(e^{\beta_0 + \beta_1 x}\)</span></li>
+<li>Logistic - <span class="math inline">\(\frac{e^{\beta_0 + \beta_1 x}}{1 + e^{\beta_0 + \beta_1 x}}\)</span></li>
 </ul>
-<div class="fragment">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>])</span></code></pre></div>
-</div>
-<div class="fragment">
-<p>2D array - rows and columns</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>b <span class="op">=</span> np.array([</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  [<span class="dv">1</span>, <span class="dv">2</span>], <span class="co"># first row</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>  [<span class="dv">3</span>, <span class="dv">4</span>]  <span class="co"># second row</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>])</span></code></pre></div>
-</div>
-</section>
-<section id="question" class="slide level2">
-<h2>Question</h2>
-<p><code>np.average(...)</code> - finds the average</p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -624,229 +491,241 @@ Dr.&nbsp;Jeremy Castagno
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>What function to get the median?</p>
+<p>This class will be focus on using logistic regression. But lets take a step back and talk about a new problem.</p>
 </div>
 </div>
 </div>
-<div class="fragment">
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>heights <span class="op">=</span> np.array([<span class="fl">5.5</span>, <span class="fl">5.7</span>, <span class="fl">5.8</span>, <span class="fl">5.9</span>, <span class="fl">6.2</span>])</span>
-<span id="cb7-2"><a href="#cb7-2"></a>median_height <span class="op">=</span> np.median(heights)</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(<span class="ss">f"Median Height: </span><span class="sc">{</span>median_height<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Median Height: 5.80</code></pre>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="descriptive-stats" class="title-slide slide level1 center">
-<h1>Descriptive Stats</h1>
-
 </section>
-<section id="spread" class="slide level2">
-<h2>Spread</h2>
+<section id="classification" class="slide level2 smaller">
+<h2>Classification</h2>
+<ul>
+<li>We are now going to be focusing on problems where we are interested in predicting the <em>group</em> or the <em>class</em> of something</li>
+<li>Give <span class="math inline">\(X = {x_1, x_2, ..., x_k}\)</span> what is the class of this object.
+<ul>
+<li>Given the bill_length is 10 and bill_depth is 20 what is the species of this penguin?</li>
+<li>A person arrives at the emergency room with a set of symptoms. Which of the three medical conditions does the individual have?</li>
+</ul></li>
+<li>Lets first focus where there are only 2 classes. Lets just call them (+) positive and (-) negative.</li>
+</ul>
+</section>
+<section id="example-classification" class="slide level2">
+<h2>Example Classification</h2>
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-13_files/figure-revealjs/cell-3-output-1.png" width="812" height="429"></p>
+</div>
+</div>
+</section>
+<section id="linear-regression-for-classification" class="slide level2">
+<h2>Linear Regression for Classification</h2>
+<ul>
+<li>Linear Regression is generally not suitable for classification purposes</li>
+<li>However, you <em>can</em> use it to draw a line that whose value predicts the class</li>
+<li>E.g. if <span class="math inline">\(\hat{y} &gt; 0.5 -&gt; Positive\)</span></li>
+</ul>
+</section>
+<section id="lr-classification-okay" class="slide level2">
+<h2>LR Classification (Okay)</h2>
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-13_files/figure-revealjs/cell-4-output-1.png" width="823" height="429"></p>
+</div>
+</div>
+</section>
+<section id="lr-classification-bad" class="slide level2">
+<h2>LR Classification (BAD)</h2>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-13_files/figure-revealjs/cell-5-output-1.png" width="812" height="429"></p>
+</div>
+</div>
+</section>
+<section id="lr-classification-really-bad" class="slide level2">
+<h2>LR Classification (Really BAD)</h2>
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-03_files/figure-revealjs/cell-6-output-1.png" width="892" height="410"></p>
+<p><img data-src="lec-13_files/figure-revealjs/cell-6-output-1.png" width="812" height="429"></p>
 </div>
 </div>
 </section>
-<section id="spread-terminology" class="slide level2">
-<h2>Spread Terminology</h2>
+<section id="logistic-regression" class="slide level2">
+<h2>Logistic Regression</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
 <ul>
-<li><strong>range</strong> - distance between the min and max</li>
-<li><strong>interquartile range (IQR)</strong> - range of the middle 50%</li>
-<li><strong>variance</strong> - the <strong>average squared distance</strong> between a feature and its discribution <em>mean</em></li>
-</ul>
-<p><span class="math display">\[
-\sigma^2 = Var(x) = \frac{\sum_{i=1}^{n} (x_i - \bar{x} )^2}{n-1}
-\]</span></p>
+<li class="fragment">Use a specific exponential function</li>
+<li class="fragment"><span class="math inline">\(\hat{y} = \frac{e^{\beta_0 + \beta_1 x}}{1 + e^{\beta_0 + \beta_1 x}}\)</span></li>
+<li class="fragment">Whats the range of this function?</li>
+<li class="fragment"><span class="math inline">\(\hat{p} = \sigma(z)\)</span>, where
 <ul>
-<li>Standard deviation - <span class="math inline">\(\sigma = sqrt(Var(X))\)</span></li>
+<li class="fragment"><span class="math inline">\(z = \beta_0 + \beta_1 x\)</span></li>
+<li class="fragment"><span class="math inline">\(\sigma(z) = \frac{e^{z}}{1 + e^{z}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\sigma(z) = \frac{1}{1 + e^{-z}}\)</span></li>
+</ul></li>
 </ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p><img data-src="./lec12_images/sigmoid.jpg"></p>
+</div>
+</div>
+</div>
 </section>
-<section id="postion-terminology-quantiles" class="slide level2">
-<h2>Postion Terminology (Quantiles)</h2>
-
-<img data-src="./lec03_images/iqr.png" class="r-stretch"></section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-03_files/figure-revealjs/cell-7-output-1.png" width="1084" height="506"></p>
-</div>
-</div>
-</section>
-<section id="measures-of-shape" class="slide level2">
-<h2>Measures of Shape</h2>
-
-<img data-src="./lec03_images/shape_measure.png" class="r-stretch quarto-figure-center"><ul>
-<li><strong>Skewness</strong> - measure of the amount and direction of skew</li>
-<li><strong>Kurtosis</strong> - measure of tail heaviness</li>
-</ul>
-</section></section>
-<section>
-<section id="code" class="title-slide slide level1 center">
-<h1>Code</h1>
-
-</section>
-<section id="mean" class="slide level2">
-<h2>Mean</h2>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>                            <span class="co"># mean,  std,    n</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>samples <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="fl">5.0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a>samples</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>array([6.624, 4.388, 4.472, 3.927, 5.865, 2.698, 6.745, 4.239, 5.319,
-       4.751, 6.462])</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression, LogisticRegression</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>linear_model <span class="op">=</span> LinearRegression()</span>
+<span id="cb1-4"><a href="#cb1-4"></a>logistic_model <span class="op">=</span> LogisticRegression(C<span class="op">=</span><span class="fl">1e5</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>linear_model.fit(X, y)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>logistic_model.fit(X, y)</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="bu">print</span>(<span class="ss">f"LINEAR MODEL: </span><span class="sc">{</span>linear_model<span class="sc">.</span>coef_[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss"> * x + </span><span class="sc">{</span>linear_model<span class="sc">.</span>intercept_<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="bu">print</span>(<span class="ss">f"LOGISTIC MODEL: sigmoid(</span><span class="sc">{</span>logistic_model<span class="sc">.</span>coef_[<span class="dv">0</span>][<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss"> * x + </span><span class="sc">{</span>logistic_model<span class="sc">.</span>intercept_[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">)"</span>)<span class="op">;</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>LINEAR MODEL: 0.1 * x + 0.4
+LOGISTIC MODEL: sigmoid(6.9 * x + -1.6)</code></pre>
 </div>
 </div>
-<p>How would I get the mean?</p>
-<div class="fragment">
+</section>
+<section id="visual" class="slide level2">
+<h2>Visual</h2>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">print</span>(np.mean(samples))</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5.044609002634907</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="standard-deviation" class="slide level2">
-<h2>Standard Deviation</h2>
-<div class="fragment">
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>std <span class="op">=</span> np.std(samples)</span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="bu">print</span>(<span class="ss">f"The standard deviation is: </span><span class="sc">{</span>std<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The standard deviation is: 1.22</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>The variance?</p>
-</div>
-<div class="fragment">
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>var <span class="op">=</span> std <span class="op">*</span> std</span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">print</span>(<span class="ss">f"The variance is: </span><span class="sc">{</span>var<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The variance is: 1.49</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="quantiles" class="slide level2">
-<h2>Quantiles</h2>
-<div class="fragment">
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>samples_sorted <span class="op">=</span> np.sort(samples)</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="bu">print</span>(samples_sorted)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[2.698 3.927 4.239 4.388 4.472 4.751 5.319 5.865 6.462 6.624 6.745]</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Getting the quantile</p>
-</div>
-<div class="fragment">
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>fifty_percent_quantile <span class="op">=</span> np.quantile(samples, <span class="fl">0.50</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a>median <span class="op">=</span> np.median(samples)</span>
-<span id="cb19-3"><a href="#cb19-3"></a></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>fifty_percent_quantile<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>median<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>4.751
-4.751</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>quantiles <span class="op">=</span> np.quantile(samples, [<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>])</span>
-<span id="cb21-2"><a href="#cb21-2"></a></span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="bu">print</span>(quantiles)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[4.314 4.751 6.164]</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="shape" class="slide level2">
-<h2>Shape</h2>
-<p>Advanced statistics -&gt; I recommend using the library <code>scipy</code>. This library is built on top of <code>numpy</code> but has more functionality.</p>
-<div class="fragment">
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> skewnorm</span>
-<span id="cb23-2"><a href="#cb23-2"></a>samples_skewed <span class="op">=</span> skewnorm.rvs(<span class="dv">3</span>, loc<span class="op">=</span><span class="dv">15</span>, scale<span class="op">=</span><span class="dv">2</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
-<span id="cb23-3"><a href="#cb23-3"></a>samples <span class="op">=</span> skewnorm.rvs(<span class="dv">0</span>, loc<span class="op">=</span><span class="dv">5</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">1000</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7fb0b41517b0&gt;</code></pre>
-</div>
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-03_files/figure-revealjs/cell-16-output-2.png" width="1333" height="315"></p>
+<p><img data-src="lec-13_files/figure-revealjs/cell-9-output-1.png" width="812" height="429"></p>
 </div>
 </div>
-</div>
-</section>
-<section id="skewness-and-kurtosis" class="slide level2">
-<h2>Skewness and Kurtosis</h2>
-<p>Calculate the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skew.html">skewness</a></p>
-<div class="fragment">
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="bu">print</span>(<span class="ss">f"Skewed sample data set, skewnewss is: </span><span class="sc">{</span>stats<span class="sc">.</span>skew(samples_skewed)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="bu">print</span>(<span class="ss">f"Normal sample data set, skewnewss is: </span><span class="sc">{</span>stats<span class="sc">.</span>skew(samples)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Skewed sample data set, skewnewss is: 0.790
-Normal sample data set, skewnewss is: -0.003</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Calculate the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kurtosis.html#scipy.stats.kurtosis">kurtosis</a></p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="bu">print</span>(<span class="ss">f"Skewed sample data set, kurtosis is: </span><span class="sc">{</span>stats<span class="sc">.</span>kurtosis(samples_skewed)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="bu">print</span>(<span class="ss">f"Normal sample data set, kurtosis is: </span><span class="sc">{</span>stats<span class="sc">.</span>kurtosis(samples)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Skewed sample data set, kurtosis is: 0.938
-Normal sample data set, kurtosis is: -0.067</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout callout-note callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Warning</strong></p>
+<p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>This skewed distribution is not very good at demonstrating kurtosis.</p>
-</div>
+<p>What do you notice?</p>
 </div>
 </div>
 </div>
 </section>
-<section id="all" class="slide level2">
-<h2>All</h2>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb29-2"><a href="#cb29-2"></a>stats.describe(samples)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
-<pre><code>DescribeResult(nobs=1000, minmax=(1.7616568032476234, 7.787361447950662), mean=5.053665979218166, variance=1.0126662448100565, skewness=-0.0026145821525120016, kurtosis=-0.06654059199852824)</code></pre>
+<section id="multivariable-classification" class="slide level2">
+<h2>Multivariable Classification</h2>
+<div class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-13_files/figure-revealjs/cell-10-output-1.png" width="810" height="429"></p>
 </div>
 </div>
+</section>
+<section id="in-3d" class="slide level2">
+<h2>In 3D</h2>
+<div class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-13_files/figure-revealjs/cell-11-output-1.png" width="548" height="537"></p>
+</div>
+</div>
+</section>
+<section id="multivariable-logistic-regression" class="slide level2">
+<h2>Multivariable Logistic Regression</h2>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>logistic_model <span class="op">=</span> LogisticRegression(C<span class="op">=</span><span class="fl">1e5</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>logistic_model.fit(X, y)</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>x_range <span class="op">=</span> np.linspace(X[:, <span class="dv">0</span>].<span class="bu">min</span>(), X[:, <span class="dv">0</span>].<span class="bu">max</span>(), <span class="dv">20</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>y_range <span class="op">=</span> np.linspace(X[:, <span class="dv">1</span>].<span class="bu">min</span>(), X[:, <span class="dv">1</span>].<span class="bu">max</span>(), <span class="dv">20</span>)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>XX, YY <span class="op">=</span> np.meshgrid(x_range, y_range)</span>
+<span id="cb3-7"><a href="#cb3-7"></a>P <span class="op">=</span> expit(XX<span class="op">*</span> logistic_model.coef_[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">+</span> YY <span class="op">*</span> logistic_model.coef_[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">+</span> logistic_model.intercept_)</span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="cf">with</span> sns.plotting_context(<span class="st">"talk"</span>):</span>
+<span id="cb3-11"><a href="#cb3-11"></a>  fig <span class="op">=</span> plt.figure(figsize <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">7</span>))</span>
+<span id="cb3-12"><a href="#cb3-12"></a>  ax <span class="op">=</span> plt.axes(projection <span class="op">=</span><span class="st">"3d"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  <span class="co"># ZZ = np.ones_like(XX) * 0.5 </span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>  <span class="co"># ax.plot_surface(XX, YY, ZZ,  **kwargs, zorder=1)</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>  ax.scatter(X[:,<span class="dv">0</span>], X[:,<span class="dv">1</span>], y, c<span class="op">=</span>y, cmap<span class="op">=</span><span class="st">'jet'</span>, zorder<span class="op">=</span><span class="dv">10</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16"></a>  ax.plot_surface(XX, YY, P, alpha<span class="op">=</span><span class="fl">1.0</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-13_files/figure-revealjs/cell-12-output-1.png" width="555" height="537"></p>
+</div>
+</div>
+</section>
+<section id="multivariable-logistic-regression-1" class="slide level2">
+<h2>Multivariable Logistic Regression</h2>
+<div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">with</span> sns.plotting_context(<span class="st">"talk"</span>):</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  fig <span class="op">=</span> plt.figure(figsize <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">7</span>))</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  ax <span class="op">=</span> plt.axes(projection <span class="op">=</span><span class="st">"3d"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  ZZ <span class="op">=</span> np.ones_like(XX) <span class="op">*</span> <span class="fl">0.5</span> </span>
+<span id="cb4-5"><a href="#cb4-5"></a>  ax.plot_surface(XX, YY, ZZ,  zorder<span class="op">=</span><span class="dv">1</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  ax.plot_surface(XX, YY, P, alpha<span class="op">=</span><span class="fl">1.0</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-13_files/figure-revealjs/cell-13-output-1.png" width="556" height="537"></p>
+</div>
+</div>
+</section>
+<section id="view-decision-boundary" class="slide level2">
+<h2>View Decision Boundary</h2>
+<div class="cell" data-execution_count="13">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> sklearn.inspection <span class="im">import</span> DecisionBoundaryDisplay</span>
+<span id="cb5-2"><a href="#cb5-2"></a>disp <span class="op">=</span> DecisionBoundaryDisplay.from_estimator(</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    logistic_model, X, response_method<span class="op">=</span><span class="st">"predict"</span>, cmap<span class="op">=</span>plt.cm.viridis, alpha<span class="op">=</span><span class="fl">0.5</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>)</span>
+<span id="cb5-5"><a href="#cb5-5"></a>disp.ax_.scatter(X[:,<span class="dv">0</span>], X[:,<span class="dv">1</span>], c<span class="op">=</span>y, cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>)<span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>disp.ax_.set_xlabel(<span class="st">"X"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7"></a>disp.ax_.set_ylabel(<span class="st">"Y"</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>Text(0, 0.5, 'Y')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-13_files/figure-revealjs/cell-14-output-2.png" width="810" height="429"></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="how-it-works" class="title-slide slide level1 smaller center">
+<h1>How it works</h1>
 
+</section>
+<section id="loss-function" class="slide level2">
+<h2>Loss Function</h2>
+<div>
+<ul>
+<li class="fragment">Lets create a likelihood function <span class="math inline">\(L\)</span> that is a function of our parameters <span class="math inline">\(\beta\)</span>. We want to find parameters <span class="math inline">\(\beta\)</span> that make <span class="math inline">\(L\)</span> as big as possible.</li>
+<li class="fragment"><span class="math inline">\(L(\beta) = \sum_{i=1}^n \underbrace{y_i \cdot \sigma(\beta \; x_i)}_{y = 1} + \underbrace{(1-y_i) \cdot (1 - \sigma(\beta \; x_i))}_{y = 0}\)</span></li>
+<li class="fragment">Convert to a loss function <span class="math inline">\(J\)</span>. We also take the logarithm. This ensures our cost function is convex.</li>
+<li class="fragment"><span class="math inline">\(J(\beta) = -\sum_{i=1}^n y_i \cdot log(\sigma(\beta \; x_i)) + (1-y_i) \cdot log(\sigma(\beta \; x_i))\)</span></li>
+<li class="fragment">This does not have a closed form solution. AKA you can not just take derivative and solve the parameters <span class="math inline">\(\beta\)</span>.</li>
+<li class="fragment">We have to use a numerical solver. For example, gradient descent.</li>
+</ul>
+</div>
+</section>
+<section id="convex-vs-non-convex" class="slide level2">
+<h2>Convex vs Non Convex</h2>
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img data-src="./lec12_images/convex_vs_nonconvex.png" class="r-stretch"></section>
+<section id="convex-function-soccer-ball" class="slide level2">
+<h2>Convex Function, Soccer Ball</h2>
+
+<img data-src="./lec12_images/gradient_descent_example.gif" class="r-stretch"></section>
+<section id="gradient-descent" class="slide level2">
+<h2>Gradient Descent</h2>
+<p><img data-src="./lec12_images/example_gradient.gif"></p>
+<!-- https://medium.com/analytics-vidhya/derivative-of-log-loss-function-for-logistic-regression-9b832f025c2d -->
+
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>
@@ -861,6 +740,7 @@ Normal sample data set, kurtosis is: -0.067</code></pre>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-no-swipe/noswipe.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1054,7 +934,7 @@ Normal sample data set, kurtosis is: -0.067</code></pre>
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealNoSwipe, QuartoSupport,
 
           RevealMath,
           RevealNotes,
