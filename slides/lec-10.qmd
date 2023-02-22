@@ -160,7 +160,7 @@ $$
 
 ## Classic Stats Result
 
-- $\beta_1 (slope) = \frac{\sum\limits_{i=1}^{n}[(x_i-\bar{x})(y_i- \bar{y})]}{\sum\limits_{i=1}^{n} (x_i - \bar{x})}$ 
+- $\beta_1 (slope) = \frac{\sum\limits_{i=1}^{n}[(x_i-\bar{x})(y_i- \bar{y})]}{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}$ 
 - $\beta_0$ (intercept) - $\bar{y} - \beta_1 \bar{x}$ 
 
 ```{python}
