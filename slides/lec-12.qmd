@@ -87,7 +87,7 @@ flowchart LR
 
 ## Class Activity
 
-[Class Activity](https://colab.research.google.com/drive/1JFqbWKsVqVGG8q5kPqoUHah-dsVFlENH?usp=share_link)
+[Demo!](https://drive.google.com/file/d/1cfcsp-2b7R2-uKTZ5z300VFaTPfR5ERw/view?usp=sharing)
 
 # Non Linear Regression
 
