@@ -54,7 +54,7 @@ The data sets should meet the following criteria:
 
 -   At least 100 observations
 
--   At least 8 columns
+-   At least 7 columns
 
 -   At least 6 of the columns must be useful and unique predictor variables.
 
@@ -64,6 +64,7 @@ The data sets should meet the following criteria:
 -   At least one variable that can be identified as a reasonable response variable
 
     -   The response variable can be quantitative or categorical.
+    -   **This is the most important part of the dataset! Please identify this variable (column) and be clear that it is your response variable in your topic idea report!**
 
 -   A mix of quantitative and categorical variables that can be used as predictors.
 
@@ -84,7 +85,7 @@ Please write a report in the file `topic-ideas.ipynb` which is in you shared Goo
 
 #### Research question
 
--   Describe a research question you're interested in answering using this data.
+-   Describe a research question you're interested in answering using this data. Remember the main focus of this class is to make a *predictive* model. You shoud frame the question as, "Can one reliabily predict X from Y". Where X is some column in your dataset and Y are 6 or more different columns in your dataset.
 
 #### Glimpse of data
 
