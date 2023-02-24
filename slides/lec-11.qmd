@@ -54,7 +54,7 @@ np.random.seed(10)
 - Assumptions of Linear Regression
 - Multiple Linear Regression
 
-## Assumptions
+# Assumptions
 
 
 ## Assumptions of Linear Regression
@@ -72,14 +72,19 @@ noise = np.random.normal(loc=0, scale=3, size=30)
 x = np.arange(30)
 y = (1.5 * x + 4) + noise
 ax = sns.regplot(x=x,y=y, ci=None)
+ax.set_xlabel("X")
+ax.set_ylabel("Y");
 ```
 
 
 ## Residual Plot
 
 ```{python}
+#| echo: True
 #| code-fold: true
 ax = sns.residplot(x=x,y=y)
+ax.set_xlabel("X")
+ax.set_ylabel("Residuals");
 ```
 
 ## Independence of Error
@@ -93,6 +98,8 @@ ax = sns.residplot(x=x,y=y)
 ```{python}
 y = (1.5 * x + 4) + np.sin(np.linspace(0, np.pi*2, 30)) * 2 + noise*0.1
 ax = sns.residplot(x=x,y=y)
+ax.set_xlabel("X")
+ax.set_ylabel("Residuals");
 ```
 
 
@@ -122,7 +129,7 @@ ax = sns.residplot(x=x,y=y)
 
 ## Keeping error low and consistent
 
-- The residuals of a fitted model have a mean of 0. Always.
+- The residuals of a fitted linear model has a mean of 0. Always.
 - A mean of 0 means that *on average* the predicted value is equal to to the observed value.
 
 ## Example, Residual 0
@@ -131,14 +138,19 @@ ax = sns.residplot(x=x,y=y)
 noise = np.random.normal(loc=0, scale=0.2, size=30)
 y = (1.5 * x + 4) + noise
 ax = sns.residplot(x=x,y=y)
+ax.set_xlabel("X")
+ax.set_ylabel("Residuals");
 ```
 
-## Example, Residual 1
+## Example, Residual 1 {.smaller}
 
 ```{python}
+#| fig-responsive: True
 noise = np.random.normal(loc=0, scale=3, size=30)
 y = (1.5 * x + 4) + np.sin(np.linspace(0, np.pi*2, 30)) * 10 + noise*0.1
 ax = sns.residplot(x=x,y=y)
+ax.set_xlabel("X")
+ax.set_ylabel("Y");
 ```
 
 ::: callout-tip
@@ -158,6 +170,8 @@ Look at the y-axis scale!
 noise = np.random.normal(loc=0, scale=3, size=30)
 y = (1.5 * x + 4) + noise
 ax = sns.residplot(x=x,y=y)
+ax.set_xlabel("X")
+ax.set_ylabel("Residuals");
 ```
 
 
@@ -169,6 +183,8 @@ noise2 = np.random.normal(loc=0, scale=4, size=15)
 noise = np.concatenate([noise, noise2])
 y = (1.5 * x + 4) + noise
 ax = sns.residplot(x=x,y=y)
+ax.set_xlabel("X")
+ax.set_ylabel("Residuals");
 ```
 
 ::: callout-caution
@@ -210,7 +226,9 @@ n = 250
 x = np.arange(n)
 noise = np.random.normal(loc=0, scale=5, size=n)
 y = (1.5 * x + 4) + noise
-sns.scatterplot(x=x,y=y);
+ax = sns.scatterplot(x=x,y=y);
+ax.set_xlabel("X")
+ax.set_ylabel("Y");
 ```
 
 
@@ -231,6 +249,8 @@ print(f"Slope: {slope:.1f}; \nIntercept: {intercept:.1f}")
 
 ax = sns.scatterplot(x=x, y=y)
 ax.axline((0, intercept), slope=slope, color='r', label='Regressed Line');
+ax.set_xlabel("X")
+ax.set_ylabel("Y");
 ```
 
 
@@ -307,7 +327,7 @@ model = LinearRegression()
 reg = model.fit(X, y) # X needs to be a matrix
 
 slope_bill, slope_flipper, intercept  = reg.coef_[0], reg.coef_[1], reg.intercept_
-print(f"Bill Slope: {slope:.1f}; Flipper Slope: {slope_flipper:.1f}; \nIntercept: {intercept:.1f}")
+print(f"Bill Slope: {slope:.1f}; Flipper Slope: {slope_flipper:.1f}; \nIntercept: {intercept:.1f}");
 ```
 
 ## Visualize Plane
@@ -323,11 +343,11 @@ ax.set_xlabel("Bill Length")
 ax.set_ylabel("Flipper Length")
 ax.set_zlabel("Body Mass")
 plot_plane(slope_bill, slope_flipper, intercept, ax=ax)
-ax.legend()
+ax.legend();
 ```
 
 
-## Polynomial Regression
+## Simple Polynomial Regression
 
 - Special case of multiple linear regression
 - Include powers of a single features as inputs in the regression equation
@@ -352,7 +372,7 @@ sns.scatterplot(x=x,y=y);
 ```{python}
 #| echo: True
 coeffs = np.polyfit(x, y, deg=2)
-print(coeffs) # beta_2, beta_1, beta_0
+print(coeffs); # beta_2, beta_1, beta_0
 ```
 
 ## Plotting your regressed polynomial function
@@ -385,7 +405,7 @@ print("Transformed Features:\n", x_features[:5, :])
 model = LinearRegression()
 reg = model.fit(x_features, y) # X needs to be a matrix
 print("Coefficients")
-print(reg.coef_, reg.intercept_) # beta_2, beta_1, beta_0
+print(reg.coef_, reg.intercept_); # beta_2, beta_1, beta_0
 ```
 
 ## Plotting your regressed polynomial function
