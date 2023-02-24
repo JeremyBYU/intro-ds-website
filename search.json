@@ -382,7 +382,7 @@
     "href": "slides/lec-11.html#visualize-plane-output",
     "title": "CISC482 - Lecture11",
     "section": "Visualize Plane",
-    "text": "Visualize Plane\n\n<matplotlib.legend.Legend at 0x7f8290569de0>"
+    "text": "Visualize Plane\n\n<matplotlib.legend.Legend at 0x7fb629347e50>"
   },
   {
     "objectID": "slides/lec-11.html#polynomial-regression",
@@ -1768,7 +1768,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f5e73195d80>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fc624b81690>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1992,14 +1992,14 @@
     "href": "slides/lec-13.html#today",
     "title": "CISC482 - Lecture13",
     "section": "Today",
-    "text": "Today\n\nReview Linear Regression\nReview Logistic Regression"
+    "text": "Today\n\nReview Linear Regression\nReview Logistic Regression\nPractice Problems"
   },
   {
     "objectID": "slides/lec-13.html#give-me-the-function-models",
     "href": "slides/lec-13.html#give-me-the-function-models",
     "title": "CISC482 - Lecture13",
     "section": "Give me the function models",
-    "text": "Give me the function models\n\n\nSimple Linear Regression\n\n\\(\\hat{y} = \\beta_0 + x + \\beta_1\\)\n\nSimple Polynomial Linear Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x + ... + \\beta_k x^k\\)\n\nMultiple Linear Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + ... \\beta_k x_k\\)\n\nMultiple (Variable) Polynomial Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_1^2 + \\beta_3 x_1 x_2 + \\beta_4 x_2 + \\beta_5 x_2^2\\)\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Give me the function models\n\n\nSimple Linear Regression\n\n\\(\\hat{y} = \\beta_0 + x + \\beta_1\\)\n\nSimple Polynomial Linear Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x + ... + \\beta_k x^k\\)\n\nMultiple Linear Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + ... \\beta_k x_k\\)\n\nMultiple (Variable) Polynomial Regression\n\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_1^2 + \\beta_3 x_1 x_2 + \\beta_4 x_2 + \\beta_5 x_2^2\\)"
   },
   {
     "objectID": "slides/lec-06.html#schedule",
