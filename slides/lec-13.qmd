@@ -1,6 +1,6 @@
 ---
 title: "CISC482 - Lecture13"
-subtitle: "Regression 2"
+subtitle: "Regression Practice"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
 logo: "../images/logo.png"
@@ -50,6 +50,7 @@ np.random.seed(10)
 
 - Review Linear Regression
 - Review Logistic Regression
+- Practice Problems
 
 # Review Linear Regression
 
@@ -66,7 +67,16 @@ np.random.seed(10)
   - $\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \beta_3 x_1 x_2 + \beta_4 x_2 + \beta_5 x_2^2$
 :::
 
+# Review Logistic Regression
 
+::: incremental
+- We often use logistic regression for *classification* problems? Then why do we call it logistic *regression*? What is being regressed?
+- What is the function for logistic regression?
+  - $\hat{p}(x) = \frac{e^{\beta_0 + \beta_1 x}}{1+ e^{\beta_0 + \beta_1 x}}$
+- What do we call this non-linear function? HINT - what shape does it make?
+
+
+:::
 
 
 

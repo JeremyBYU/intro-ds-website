@@ -1,6 +1,6 @@
 ---
 title: "CISC482 - Lecture12"
-subtitle: "Logisitc Regression"
+subtitle: "Logistic Regression"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
 logo: "../images/logo.png"

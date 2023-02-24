@@ -1,4 +1,4 @@
-# Website for Introdcution to Data Science
+# Website for Introduction to Data Science
 
 🔗 https://jeremybyu.github.io/intro-ds-website/
 
