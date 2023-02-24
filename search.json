@@ -147,20 +147,6 @@
     "text": "Today\n\nAssumptions of Linear Regression\nMultiple Linear Regression"
   },
   {
-    "objectID": "slides/lec-11.html#review-simple-linear-regression",
-    "href": "slides/lec-11.html#review-simple-linear-regression",
-    "title": "CISC482 - Lecture11",
-    "section": "Review Simple Linear Regression",
-    "text": "Review Simple Linear Regression\n\n\nWhat is the model for linear regresion: \\(\\hat{y} = ?\\)\nWhat is residual?\nWhat is the loss function to solve for the parameters\n\n\\(L(\\beta_0, \\beta_1) = \\sum\\limits_{i=1}^{n}[y_i - \\hat{y}_i]^2\\)\n\\(L(\\beta_0, \\beta_1) = [y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1 x_i)]^2\\)"
-  },
-  {
-    "objectID": "slides/lec-11.html#formulas",
-    "href": "slides/lec-11.html#formulas",
-    "title": "CISC482 - Lecture11",
-    "section": "Formulas?",
-    "text": "Formulas?\n\\(\\beta_1 (slope) = \\frac{\\sum\\limits_{i=1}^{n}[(x_i-\\bar{x})(y_i- \\bar{y})]}{\\sum\\limits_{i=1}^{n} (x_i - \\bar{x})^2}\\)\n\\(\\beta_0\\) (intercept) = \\(\\bar{y} - \\beta_1 \\bar{x}\\) \n\n\n\\(\\hat{\\beta}_1 (slope) = \\frac{\\text{Cov}(x,y)}{s_x^2} = r\\frac{s_y}{s_x}\\)\n\\(\\beta_0\\) (intercept) = \\(\\bar{y} - \\beta_1 \\bar{x}\\)"
-  },
-  {
     "objectID": "slides/lec-11.html#assumptions-of-linear-regression",
     "href": "slides/lec-11.html#assumptions-of-linear-regression",
     "title": "CISC482 - Lecture11",
@@ -1775,7 +1761,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7ff13c122770>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f2109ac4c10>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
