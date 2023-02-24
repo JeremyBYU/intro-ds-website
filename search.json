@@ -147,11 +147,18 @@
     "text": "Today\n\nAssumptions of Linear Regression\nMultiple Linear Regression"
   },
   {
-    "objectID": "slides/lec-11.html#assumptions",
-    "href": "slides/lec-11.html#assumptions",
+    "objectID": "slides/lec-11.html#review-simple-linear-regression",
+    "href": "slides/lec-11.html#review-simple-linear-regression",
     "title": "CISC482 - Lecture11",
-    "section": "Assumptions",
-    "text": "Assumptions"
+    "section": "Review Simple Linear Regression",
+    "text": "Review Simple Linear Regression\n\n\nWhat is the model for linear regresion: \\(\\hat{y} = ?\\)\nWhat is residual?\nWhat is the loss function to solve for the parameters\n\n\\(L(\\beta_0, \\beta_1) = \\sum\\limits_{i=1}^{n}[y_i - \\hat{y}_i]^2\\)\n\\(L(\\beta_0, \\beta_1) = [y_i - (\\hat{\\beta}_0 + \\hat{\\beta}_1 x_i)]^2\\)"
+  },
+  {
+    "objectID": "slides/lec-11.html#formulas",
+    "href": "slides/lec-11.html#formulas",
+    "title": "CISC482 - Lecture11",
+    "section": "Formulas?",
+    "text": "Formulas?\n\\(\\beta_1 (slope) = \\frac{\\sum\\limits_{i=1}^{n}[(x_i-\\bar{x})(y_i- \\bar{y})]}{\\sum\\limits_{i=1}^{n} (x_i - \\bar{x})^2}\\)\n\\(\\beta_0\\) (intercept) = \\(\\bar{y} - \\beta_1 \\bar{x}\\) \n\n\n\\(\\hat{\\beta}_1 (slope) = \\frac{\\text{Cov}(x,y)}{s_x^2} = r\\frac{s_y}{s_x}\\)\n\\(\\beta_0\\) (intercept) = \\(\\bar{y} - \\beta_1 \\bar{x}\\)"
   },
   {
     "objectID": "slides/lec-11.html#assumptions-of-linear-regression",
@@ -172,7 +179,7 @@
     "href": "slides/lec-11.html#residual-plot",
     "title": "CISC482 - Lecture11",
     "section": "Residual Plot",
-    "text": "Residual Plot"
+    "text": "Residual Plot\n\n\nCode\nax = sns.residplot(x=x,y=y)\nax.set_xlabel(\"X\")\nax.set_ylabel(\"Residuals\");"
   },
   {
     "objectID": "slides/lec-11.html#independence-of-error",
@@ -221,7 +228,7 @@
     "href": "slides/lec-11.html#keeping-error-low-and-consistent",
     "title": "CISC482 - Lecture11",
     "section": "Keeping error low and consistent",
-    "text": "Keeping error low and consistent\n\nThe residuals of a fitted model have a mean of 0. Always.\nA mean of 0 means that on average the predicted value is equal to to the observed value."
+    "text": "Keeping error low and consistent\n\nThe residuals of a fitted linear model has a mean of 0. Always.\nA mean of 0 means that on average the predicted value is equal to to the observed value."
   },
   {
     "objectID": "slides/lec-11.html#example-residual-0",
@@ -291,7 +298,7 @@
     "href": "slides/lec-11.html#creating-data",
     "title": "CISC482 - Lecture11",
     "section": "Creating data",
-    "text": "Creating data\n\nn = 250\nx = np.arange(n)\nnoise = np.random.normal(loc=0, scale=5, size=n)\ny = (1.5 * x + 4) + noise\nsns.scatterplot(x=x,y=y);"
+    "text": "Creating data\n\nn = 250\nx = np.arange(n)\nnoise = np.random.normal(loc=0, scale=5, size=n)\ny = (1.5 * x + 4) + noise\nax = sns.scatterplot(x=x,y=y);\nax.set_xlabel(\"X\")\nax.set_ylabel(\"Y\");"
   },
   {
     "objectID": "slides/lec-11.html#creating-data-output",
@@ -305,7 +312,7 @@
     "href": "slides/lec-11.html#fitting-the-data",
     "title": "CISC482 - Lecture11",
     "section": "Fitting the data",
-    "text": "Fitting the data\n\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\n\nX = x[:, np.newaxis] # n X 1 matrix\nreg = model.fit(X, y) # X needs to be a matrix\n\nslope, intercept  = reg.coef_[0], reg.intercept_\nprint(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\")\n\nax = sns.scatterplot(x=x, y=y)\nax.axline((0, intercept), slope=slope, color='r', label='Regressed Line');"
+    "text": "Fitting the data\n\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\n\nX = x[:, np.newaxis] # n X 1 matrix\nreg = model.fit(X, y) # X needs to be a matrix\n\nslope, intercept  = reg.coef_[0], reg.intercept_\nprint(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\")\n\nax = sns.scatterplot(x=x, y=y)\nax.axline((0, intercept), slope=slope, color='r', label='Regressed Line');\nax.set_xlabel(\"X\")\nax.set_ylabel(\"Y\");"
   },
   {
     "objectID": "slides/lec-11.html#fitting-the-data-output",
@@ -368,28 +375,28 @@
     "href": "slides/lec-11.html#performing-regression",
     "title": "CISC482 - Lecture11",
     "section": "Performing Regression",
-    "text": "Performing Regression\n\nmodel = LinearRegression()\nreg = model.fit(X, y) # X needs to be a matrix\n\nslope_bill, slope_flipper, intercept  = reg.coef_[0], reg.coef_[1], reg.intercept_\nprint(f\"Bill Slope: {slope:.1f}; Flipper Slope: {slope_flipper:.1f}; \\nIntercept: {intercept:.1f}\")\n\nBill Slope: 1.5; Flipper Slope: 48.9; \nIntercept: -5836.3"
+    "text": "Performing Regression\n\nmodel = LinearRegression()\nreg = model.fit(X, y) # X needs to be a matrix\n\nslope_bill, slope_flipper, intercept  = reg.coef_[0], reg.coef_[1], reg.intercept_\nprint(f\"Bill Slope: {slope:.1f}; Flipper Slope: {slope_flipper:.1f}; \\nIntercept: {intercept:.1f}\");\n\nBill Slope: 1.5; Flipper Slope: 48.9; \nIntercept: -5836.3"
   },
   {
     "objectID": "slides/lec-11.html#visualize-plane",
     "href": "slides/lec-11.html#visualize-plane",
     "title": "CISC482 - Lecture11",
     "section": "Visualize Plane",
-    "text": "Visualize Plane\n\nfig = plt.figure(figsize = (10, 7))\nax = plt.axes(projection =\"3d\")\nax.scatter(X[:, 0], X[:, 1], y, label='penguins')\nax.set_xlabel(\"Bill Length\")\nax.set_ylabel(\"Flipper Length\")\nax.set_zlabel(\"Body Mass\")\nplot_plane(slope_bill, slope_flipper, intercept, ax=ax)\nax.legend()"
+    "text": "Visualize Plane\n\nfig = plt.figure(figsize = (10, 7))\nax = plt.axes(projection =\"3d\")\nax.scatter(X[:, 0], X[:, 1], y, label='penguins')\nax.set_xlabel(\"Bill Length\")\nax.set_ylabel(\"Flipper Length\")\nax.set_zlabel(\"Body Mass\")\nplot_plane(slope_bill, slope_flipper, intercept, ax=ax)\nax.legend();"
   },
   {
     "objectID": "slides/lec-11.html#visualize-plane-output",
     "href": "slides/lec-11.html#visualize-plane-output",
     "title": "CISC482 - Lecture11",
     "section": "Visualize Plane",
-    "text": "Visualize Plane\n\n<matplotlib.legend.Legend at 0x7fb629347e50>"
+    "text": "Visualize Plane"
   },
   {
-    "objectID": "slides/lec-11.html#polynomial-regression",
-    "href": "slides/lec-11.html#polynomial-regression",
+    "objectID": "slides/lec-11.html#simple-polynomial-regression",
+    "href": "slides/lec-11.html#simple-polynomial-regression",
     "title": "CISC482 - Lecture11",
-    "section": "Polynomial Regression",
-    "text": "Polynomial Regression\n\nSpecial case of multiple linear regression\nInclude powers of a single features as inputs in the regression equation\nSimple polynomial linear regression\n\\(\\hat{y} = \\beta_0 + \\beta_1 x + \\beta_2 x^2 .. \\beta_k x^k\\)\nQuadratic: \\(\\hat{y} = \\beta_0 + \\beta_1 x + \\beta_2 x^2\\)"
+    "section": "Simple Polynomial Regression",
+    "text": "Simple Polynomial Regression\n\nSpecial case of multiple linear regression\nInclude powers of a single features as inputs in the regression equation\nSimple polynomial linear regression\n\\(\\hat{y} = \\beta_0 + \\beta_1 x + \\beta_2 x^2 .. \\beta_k x^k\\)\nQuadratic: \\(\\hat{y} = \\beta_0 + \\beta_1 x + \\beta_2 x^2\\)"
   },
   {
     "objectID": "slides/lec-11.html#example-quadratic",
@@ -403,7 +410,7 @@
     "href": "slides/lec-11.html#fitting-a-quadratic-numpy",
     "title": "CISC482 - Lecture11",
     "section": "Fitting a Quadratic (numpy)",
-    "text": "Fitting a Quadratic (numpy)\n\ncoeffs = np.polyfit(x, y, deg=2)\nprint(coeffs) # beta_2, beta_1, beta_0\n\n[0.1 0.3 3.0]"
+    "text": "Fitting a Quadratic (numpy)\n\ncoeffs = np.polyfit(x, y, deg=2)\nprint(coeffs); # beta_2, beta_1, beta_0\n\n[0.1 0.3 3.0]"
   },
   {
     "objectID": "slides/lec-11.html#plotting-your-regressed-polynomial-function",
@@ -424,7 +431,7 @@
     "href": "slides/lec-11.html#fitting-a-quadratic-scikit-learn-1",
     "title": "CISC482 - Lecture11",
     "section": "Fitting a Quadratic (SciKit Learn)",
-    "text": "Fitting a Quadratic (SciKit Learn)\n\nfrom sklearn.preprocessing import PolynomialFeatures\npf = PolynomialFeatures(degree=2,include_bias=False)\nX = x[:, np.newaxis] # n X 1 matrix\nx_features = pf.fit_transform(X)\nprint(\"Transformed Features:\\n\", x_features[:5, :])\nmodel = LinearRegression()\nreg = model.fit(x_features, y) # X needs to be a matrix\nprint(\"Coefficients\")\nprint(reg.coef_, reg.intercept_) # beta_2, beta_1, beta_0\n\nTransformed Features:\n [[0.0 0.0]\n [1.0 1.0]\n [2.0 4.0]\n [3.0 9.0]\n [4.0 16.0]]\nCoefficients\n[0.3 0.1] 2.965347007117529"
+    "text": "Fitting a Quadratic (SciKit Learn)\n\nfrom sklearn.preprocessing import PolynomialFeatures\npf = PolynomialFeatures(degree=2,include_bias=False)\nX = x[:, np.newaxis] # n X 1 matrix\nx_features = pf.fit_transform(X)\nprint(\"Transformed Features:\\n\", x_features[:5, :])\nmodel = LinearRegression()\nreg = model.fit(x_features, y) # X needs to be a matrix\nprint(\"Coefficients\")\nprint(reg.coef_, reg.intercept_); # beta_2, beta_1, beta_0\n\nTransformed Features:\n [[0.0 0.0]\n [1.0 1.0]\n [2.0 4.0]\n [3.0 9.0]\n [4.0 16.0]]\nCoefficients\n[0.3 0.1] 2.965347007117529"
   },
   {
     "objectID": "slides/lec-11.html#plotting-your-regressed-polynomial-function-1",
@@ -1768,7 +1775,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fc624b81690>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7ff13c122770>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",

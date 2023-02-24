@@ -424,9 +424,39 @@ Dr.&nbsp;Jeremy Castagno
 <li>Assumptions of Linear Regression</li>
 <li>Multiple Linear Regression</li>
 </ul>
+</section></section>
+<section>
+<section id="review" class="title-slide slide level1 center">
+<h1>Review</h1>
+
 </section>
-<section id="assumptions" class="slide level2">
-<h2>Assumptions</h2>
+<section id="review-simple-linear-regression" class="slide level2">
+<h2>Review Simple Linear Regression</h2>
+<div>
+<ul>
+<li class="fragment">What is the model for linear regresion: <span class="math inline">\(\hat{y} = ?\)</span></li>
+<li class="fragment">What is residual?</li>
+<li class="fragment">What is the loss function to solve for the parameters
+<ul>
+<li class="fragment"><span class="math inline">\(L(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2\)</span></li>
+<li class="fragment"><span class="math inline">\(L(\beta_0, \beta_1) = [y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)]^2\)</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="formulas" class="slide level2">
+<h2>Formulas?</h2>
+<p><span class="math inline">\(\beta_1 (slope) = \frac{\sum\limits_{i=1}^{n}[(x_i-\bar{x})(y_i- \bar{y})]}{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}\)</span></p>
+<span class="math inline">\(\beta_0\)</span> (intercept) = <span class="math inline">\(\bar{y} - \beta_1 \bar{x}\)</span> <br>
+<hr>
+<p><br></p>
+<p><span class="math inline">\(\hat{\beta}_1 (slope) = \frac{\text{Cov}(x,y)}{s_x^2} = r\frac{s_y}{s_x}\)</span></p>
+<p><span class="math inline">\(\beta_0\)</span> (intercept) = <span class="math inline">\(\bar{y} - \beta_1 \bar{x}\)</span></p>
+</section></section>
+<section>
+<section id="assumptions" class="title-slide slide level1 center">
+<h1>Assumptions</h1>
+
 </section>
 <section id="assumptions-of-linear-regression" class="slide level2">
 <h2>Assumptions of Linear Regression</h2>
@@ -441,15 +471,21 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Linear Relationship?</h2>
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-3-output-1.png" width="835" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-3-output-1.png" width="874" height="480"></p>
 </div>
 </div>
 </section>
 <section id="residual-plot" class="slide level2">
 <h2>Residual Plot</h2>
 <div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>ax <span class="op">=</span> sns.residplot(x<span class="op">=</span>x,y<span class="op">=</span>y)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>ax.set_xlabel(<span class="st">"X"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>ax.set_ylabel(<span class="st">"Residuals"</span>)<span class="op">;</span></span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-4-output-1.png" width="841" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-4-output-1.png" width="880" height="480"></p>
 </div>
 </div>
 </section>
@@ -465,7 +501,7 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Residual are independent?</h2>
 <div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-5-output-1.png" width="841" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-5-output-1.png" width="880" height="480"></p>
 </div>
 </div>
 </section>
@@ -503,7 +539,7 @@ Dr.&nbsp;Jeremy Castagno
 <section id="keeping-error-low-and-consistent" class="slide level2">
 <h2>Keeping error low and consistent</h2>
 <ul>
-<li>The residuals of a fitted model have a mean of 0. Always.</li>
+<li>The residuals of a fitted linear model has a mean of 0. Always.</li>
 <li>A mean of 0 means that <em>on average</em> the predicted value is equal to to the observed value.</li>
 </ul>
 </section>
@@ -511,15 +547,15 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Example, Residual 0</h2>
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-6-output-1.png" width="872" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-6-output-1.png" width="911" height="480"></p>
 </div>
 </div>
 </section>
-<section id="example-residual-1" class="slide level2">
+<section id="example-residual-1" class="slide level2 smaller">
 <h2>Example, Residual 1</h2>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-fig-responsive="true" data-execution_count="6">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-7-output-1.png" width="841" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-7-output-1.png" width="880" height="480"></p>
 </div>
 </div>
 <div class="callout callout-tip callout-captioned callout-style-default">
@@ -548,7 +584,7 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Example, Residual 3</h2>
 <div class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-8-output-1.png" width="841" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-8-output-1.png" width="880" height="480"></p>
 </div>
 </div>
 </section>
@@ -556,7 +592,7 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Example, Residual 4</h2>
 <div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-9-output-1.png" width="841" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-9-output-1.png" width="880" height="480"></p>
 </div>
 </div>
 <div class="callout callout-caution callout-captioned callout-style-default">
@@ -605,32 +641,36 @@ Dr.&nbsp;Jeremy Castagno
 <section id="creating-data" class="slide level2">
 <h2>Creating data</h2>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>n <span class="op">=</span> <span class="dv">250</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>x <span class="op">=</span> np.arange(n)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>noise <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">5</span>, size<span class="op">=</span>n)</span>
-<span id="cb1-4"><a href="#cb1-4"></a>y <span class="op">=</span> (<span class="fl">1.5</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">4</span>) <span class="op">+</span> noise</span>
-<span id="cb1-5"><a href="#cb1-5"></a>sns.scatterplot(x<span class="op">=</span>x,y<span class="op">=</span>y)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>n <span class="op">=</span> <span class="dv">250</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>x <span class="op">=</span> np.arange(n)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>noise <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">5</span>, size<span class="op">=</span>n)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>y <span class="op">=</span> (<span class="fl">1.5</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">4</span>) <span class="op">+</span> noise</span>
+<span id="cb2-5"><a href="#cb2-5"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>x,y<span class="op">=</span>y)<span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>ax.set_xlabel(<span class="st">"X"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7"></a>ax.set_ylabel(<span class="st">"Y"</span>)<span class="op">;</span></span></code></pre></div>
 </div>
 
 </section>
 <section id="creating-data-output" class="slide level2 output-location-slide"><h2>Creating data</h2><div class="cell output-location-slide" data-execution_count="9">
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-10-output-1.png" width="845" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-10-output-1.png" width="884" height="480"></p>
 </div>
 </div></section><section id="fitting-the-data" class="slide level2">
 <h2>Fitting the data</h2>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb2-2"><a href="#cb2-2"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a>X <span class="op">=</span> x[:, np.newaxis] <span class="co"># n X 1 matrix</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>reg <span class="op">=</span> model.fit(X, y) <span class="co"># X needs to be a matrix</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>slope, intercept  <span class="op">=</span> reg.coef_[<span class="dv">0</span>], reg.intercept_</span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
-<span id="cb2-9"><a href="#cb2-9"></a></span>
-<span id="cb2-10"><a href="#cb2-10"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>x, y<span class="op">=</span>y)</span>
-<span id="cb2-11"><a href="#cb2-11"></a>ax.axline((<span class="dv">0</span>, intercept), slope<span class="op">=</span>slope, color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Regressed Line'</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb3-2"><a href="#cb3-2"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>X <span class="op">=</span> x[:, np.newaxis] <span class="co"># n X 1 matrix</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>reg <span class="op">=</span> model.fit(X, y) <span class="co"># X needs to be a matrix</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a>slope, intercept  <span class="op">=</span> reg.coef_[<span class="dv">0</span>], reg.intercept_</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="bu">print</span>(<span class="ss">f"Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>x, y<span class="op">=</span>y)</span>
+<span id="cb3-11"><a href="#cb3-11"></a>ax.axline((<span class="dv">0</span>, intercept), slope<span class="op">=</span>slope, color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Regressed Line'</span>)<span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>ax.set_xlabel(<span class="st">"X"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13"></a>ax.set_ylabel(<span class="st">"Y"</span>)<span class="op">;</span></span></code></pre></div>
 </div>
 
 </section>
@@ -640,17 +680,17 @@ Dr.&nbsp;Jeremy Castagno
 Intercept: 3.9</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-11-output-2.png" width="845" height="441"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-11-output-2.png" width="884" height="480"></p>
 </div>
 </div></section><section id="residual-plot-1" class="slide level2">
 <h2>Residual Plot</h2>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> yellowbrick.regressor <span class="im">import</span> ResidualsPlot</span>
-<span id="cb4-2"><a href="#cb4-2"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb4-3"><a href="#cb4-3"></a>visualizer <span class="op">=</span> ResidualsPlot(model)</span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a>visualizer.fit(X, y) </span>
-<span id="cb4-6"><a href="#cb4-6"></a>visualizer.show()<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> yellowbrick.regressor <span class="im">import</span> ResidualsPlot</span>
+<span id="cb5-2"><a href="#cb5-2"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb5-3"><a href="#cb5-3"></a>visualizer <span class="op">=</span> ResidualsPlot(model)</span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>visualizer.fit(X, y) </span>
+<span id="cb5-6"><a href="#cb5-6"></a>visualizer.show()<span class="op">;</span></span></code></pre></div>
 </div>
 
 </section><section id="residual-plot-1-output" class="slide level2 output-location-slide"><h2>Residual Plot</h2><div class="cell output-location-slide" data-execution_count="11">
@@ -677,10 +717,10 @@ Intercept: 3.9</code></pre>
 <section id="example" class="slide level2">
 <h2>Example</h2>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>pp <span class="op">=</span> sns.pairplot(data<span class="op">=</span>df,</span>
-<span id="cb5-2"><a href="#cb5-2"></a>                  height<span class="op">=</span><span class="dv">7</span>,</span>
-<span id="cb5-3"><a href="#cb5-3"></a>                  y_vars<span class="op">=</span>[<span class="st">'body_mass_g'</span>],</span>
-<span id="cb5-4"><a href="#cb5-4"></a>                  x_vars<span class="op">=</span>[<span class="st">'bill_length_mm'</span>, <span class="st">'flipper_length_mm'</span>])</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>pp <span class="op">=</span> sns.pairplot(data<span class="op">=</span>df,</span>
+<span id="cb6-2"><a href="#cb6-2"></a>                  height<span class="op">=</span><span class="dv">7</span>,</span>
+<span id="cb6-3"><a href="#cb6-3"></a>                  y_vars<span class="op">=</span>[<span class="st">'body_mass_g'</span>],</span>
+<span id="cb6-4"><a href="#cb6-4"></a>                  x_vars<span class="op">=</span>[<span class="st">'bill_length_mm'</span>, <span class="st">'flipper_length_mm'</span>])</span></code></pre></div>
 </div>
 
 </section>
@@ -691,22 +731,22 @@ Intercept: 3.9</code></pre>
 </div></section><section id="d-plot" class="slide level2">
 <h2>3D plot</h2>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>X <span class="op">=</span> df[[<span class="st">'bill_length_mm'</span>, <span class="st">'flipper_length_mm'</span>]].values</span>
-<span id="cb6-2"><a href="#cb6-2"></a>y <span class="op">=</span> df[<span class="st">'body_mass_g'</span>].values</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="kw">def</span> plot_plane(x_coef, y_coef, intercept, ax):</span>
-<span id="cb6-4"><a href="#cb6-4"></a>  x <span class="op">=</span> np.linspace(X[:, <span class="dv">0</span>].<span class="bu">min</span>(), X[:, <span class="dv">0</span>].<span class="bu">max</span>(),  n)</span>
-<span id="cb6-5"><a href="#cb6-5"></a>  y <span class="op">=</span> np.linspace(X[:, <span class="dv">1</span>].<span class="bu">min</span>(), X[:, <span class="dv">1</span>].<span class="bu">max</span>(), n)</span>
-<span id="cb6-6"><a href="#cb6-6"></a>  x, y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb6-7"><a href="#cb6-7"></a>  eq <span class="op">=</span> x_coef <span class="op">*</span> x <span class="op">+</span> y_coef <span class="op">*</span> y <span class="op">+</span> intercept</span>
-<span id="cb6-8"><a href="#cb6-8"></a>  surface <span class="op">=</span> ax.plot_surface(x, y, eq, color<span class="op">=</span><span class="st">'red'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a></span>
-<span id="cb6-10"><a href="#cb6-10"></a>fig <span class="op">=</span> plt.figure(figsize <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">7</span>))</span>
-<span id="cb6-11"><a href="#cb6-11"></a>ax <span class="op">=</span> plt.axes(projection <span class="op">=</span><span class="st">"3d"</span>)</span>
-<span id="cb6-12"><a href="#cb6-12"></a>ax.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], y, label<span class="op">=</span><span class="st">'penguins'</span>)</span>
-<span id="cb6-13"><a href="#cb6-13"></a>ax.set_xlabel(<span class="st">"Bill Length"</span>)</span>
-<span id="cb6-14"><a href="#cb6-14"></a>ax.set_ylabel(<span class="st">"Flipper Length"</span>)</span>
-<span id="cb6-15"><a href="#cb6-15"></a>ax.set_zlabel(<span class="st">"Body Mass"</span>)</span>
-<span id="cb6-16"><a href="#cb6-16"></a>ax.legend()<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>X <span class="op">=</span> df[[<span class="st">'bill_length_mm'</span>, <span class="st">'flipper_length_mm'</span>]].values</span>
+<span id="cb7-2"><a href="#cb7-2"></a>y <span class="op">=</span> df[<span class="st">'body_mass_g'</span>].values</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="kw">def</span> plot_plane(x_coef, y_coef, intercept, ax):</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  x <span class="op">=</span> np.linspace(X[:, <span class="dv">0</span>].<span class="bu">min</span>(), X[:, <span class="dv">0</span>].<span class="bu">max</span>(),  n)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  y <span class="op">=</span> np.linspace(X[:, <span class="dv">1</span>].<span class="bu">min</span>(), X[:, <span class="dv">1</span>].<span class="bu">max</span>(), n)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  x, y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  eq <span class="op">=</span> x_coef <span class="op">*</span> x <span class="op">+</span> y_coef <span class="op">*</span> y <span class="op">+</span> intercept</span>
+<span id="cb7-8"><a href="#cb7-8"></a>  surface <span class="op">=</span> ax.plot_surface(x, y, eq, color<span class="op">=</span><span class="st">'red'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a>fig <span class="op">=</span> plt.figure(figsize <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">7</span>))</span>
+<span id="cb7-11"><a href="#cb7-11"></a>ax <span class="op">=</span> plt.axes(projection <span class="op">=</span><span class="st">"3d"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12"></a>ax.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], y, label<span class="op">=</span><span class="st">'penguins'</span>)</span>
+<span id="cb7-13"><a href="#cb7-13"></a>ax.set_xlabel(<span class="st">"Bill Length"</span>)</span>
+<span id="cb7-14"><a href="#cb7-14"></a>ax.set_ylabel(<span class="st">"Flipper Length"</span>)</span>
+<span id="cb7-15"><a href="#cb7-15"></a>ax.set_zlabel(<span class="st">"Body Mass"</span>)</span>
+<span id="cb7-16"><a href="#cb7-16"></a>ax.legend()<span class="op">;</span></span></code></pre></div>
 </div>
 
 </section>
@@ -717,11 +757,11 @@ Intercept: 3.9</code></pre>
 </div></section><section id="performing-regression" class="slide level2">
 <h2>Performing Regression</h2>
 <div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb7-2"><a href="#cb7-2"></a>reg <span class="op">=</span> model.fit(X, y) <span class="co"># X needs to be a matrix</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a>slope_bill, slope_flipper, intercept  <span class="op">=</span> reg.coef_[<span class="dv">0</span>], reg.coef_[<span class="dv">1</span>], reg.intercept_</span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="bu">print</span>(<span class="ss">f"Bill Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; Flipper Slope: </span><span class="sc">{</span>slope_flipper<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb8-2"><a href="#cb8-2"></a>reg <span class="op">=</span> model.fit(X, y) <span class="co"># X needs to be a matrix</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>slope_bill, slope_flipper, intercept  <span class="op">=</span> reg.coef_[<span class="dv">0</span>], reg.coef_[<span class="dv">1</span>], reg.intercept_</span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="bu">print</span>(<span class="ss">f"Bill Slope: </span><span class="sc">{</span>slope<span class="sc">:.1f}</span><span class="ss">; Flipper Slope: </span><span class="sc">{</span>slope_flipper<span class="sc">:.1f}</span><span class="ss">; </span><span class="ch">\n</span><span class="ss">Intercept: </span><span class="sc">{</span>intercept<span class="sc">:.1f}</span><span class="ss">"</span>)<span class="op">;</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Bill Slope: 1.5; Flipper Slope: 48.9; 
 Intercept: -5836.3</code></pre>
@@ -731,26 +771,23 @@ Intercept: -5836.3</code></pre>
 <section id="visualize-plane" class="slide level2">
 <h2>Visualize Plane</h2>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>fig <span class="op">=</span> plt.figure(figsize <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">7</span>))</span>
-<span id="cb9-2"><a href="#cb9-2"></a>ax <span class="op">=</span> plt.axes(projection <span class="op">=</span><span class="st">"3d"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a>ax.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], y, label<span class="op">=</span><span class="st">'penguins'</span>)</span>
-<span id="cb9-4"><a href="#cb9-4"></a>ax.set_xlabel(<span class="st">"Bill Length"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5"></a>ax.set_ylabel(<span class="st">"Flipper Length"</span>)</span>
-<span id="cb9-6"><a href="#cb9-6"></a>ax.set_zlabel(<span class="st">"Body Mass"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7"></a>plot_plane(slope_bill, slope_flipper, intercept, ax<span class="op">=</span>ax)</span>
-<span id="cb9-8"><a href="#cb9-8"></a>ax.legend()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>fig <span class="op">=</span> plt.figure(figsize <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">7</span>))</span>
+<span id="cb10-2"><a href="#cb10-2"></a>ax <span class="op">=</span> plt.axes(projection <span class="op">=</span><span class="st">"3d"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a>ax.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], y, label<span class="op">=</span><span class="st">'penguins'</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>ax.set_xlabel(<span class="st">"Bill Length"</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a>ax.set_ylabel(<span class="st">"Flipper Length"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a>ax.set_zlabel(<span class="st">"Body Mass"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a>plot_plane(slope_bill, slope_flipper, intercept, ax<span class="op">=</span>ax)</span>
+<span id="cb10-8"><a href="#cb10-8"></a>ax.legend()<span class="op">;</span></span></code></pre></div>
 </div>
 
 </section>
 <section id="visualize-plane-output" class="slide level2 output-location-slide"><h2>Visualize Plane</h2><div class="cell output-location-slide" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>&lt;matplotlib.legend.Legend at 0x7fb629347e50&gt;</code></pre>
-</div>
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-11_files/figure-revealjs/cell-16-output-2.png" width="559" height="541"></p>
+<p><img data-src="lec-11_files/figure-revealjs/cell-16-output-1.png" width="559" height="541"></p>
 </div>
-</div></section><section id="polynomial-regression" class="slide level2">
-<h2>Polynomial Regression</h2>
+</div></section><section id="simple-polynomial-regression" class="slide level2">
+<h2>Simple Polynomial Regression</h2>
 <ul>
 <li>Special case of multiple linear regression</li>
 <li>Include powers of a single features as inputs in the regression equation</li>
@@ -779,7 +816,7 @@ Intercept: -5836.3</code></pre>
 <h2>Fitting a Quadratic (numpy)</h2>
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>coeffs <span class="op">=</span> np.polyfit(x, y, deg<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(coeffs) <span class="co"># beta_2, beta_1, beta_0</span></span></code></pre></div>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(coeffs)<span class="op">;</span> <span class="co"># beta_2, beta_1, beta_0</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0.1 0.3 3.0]</code></pre>
 </div>
@@ -820,7 +857,7 @@ Intercept: -5836.3</code></pre>
 <span id="cb15-6"><a href="#cb15-6"></a>model <span class="op">=</span> LinearRegression()</span>
 <span id="cb15-7"><a href="#cb15-7"></a>reg <span class="op">=</span> model.fit(x_features, y) <span class="co"># X needs to be a matrix</span></span>
 <span id="cb15-8"><a href="#cb15-8"></a><span class="bu">print</span>(<span class="st">"Coefficients"</span>)</span>
-<span id="cb15-9"><a href="#cb15-9"></a><span class="bu">print</span>(reg.coef_, reg.intercept_) <span class="co"># beta_2, beta_1, beta_0</span></span></code></pre></div>
+<span id="cb15-9"><a href="#cb15-9"></a><span class="bu">print</span>(reg.coef_, reg.intercept_)<span class="op">;</span> <span class="co"># beta_2, beta_1, beta_0</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Transformed Features:
  [[0.0 0.0]
