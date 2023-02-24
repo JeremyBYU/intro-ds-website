@@ -54,6 +54,32 @@ np.random.seed(10)
 - Assumptions of Linear Regression
 - Multiple Linear Regression
 
+
+# Review
+
+## Review Simple Linear Regression
+
+::: incremental
+- What is the model for linear regresion: $\hat{y} = ?$
+- What is residual?
+- What is the loss function to solve for the parameters
+  - $L(\beta_0, \beta_1) = \sum\limits_{i=1}^{n}[y_i - \hat{y}_i]^2$
+  - $L(\beta_0, \beta_1) = [y_i - (\hat{\beta}_0 + \hat{\beta}_1 x_i)]^2$
+:::
+
+## Formulas?
+
+$\beta_1 (slope) = \frac{\sum\limits_{i=1}^{n}[(x_i-\bar{x})(y_i- \bar{y})]}{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}$ 
+
+$\beta_0$ (intercept) = $\bar{y} - \beta_1 \bar{x}$ 
+<br>
+<hr>
+<br>
+
+$\hat{\beta}_1 (slope) = \frac{\text{Cov}(x,y)}{s_x^2} = r\frac{s_y}{s_x}$
+
+$\beta_0$ (intercept) = $\bar{y} - \beta_1 \bar{x}$ 
+
 # Assumptions
 
 
