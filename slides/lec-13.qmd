@@ -67,16 +67,33 @@ np.random.seed(10)
   - $\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_1^2 + \beta_3 x_1 x_2 + \beta_4 x_2 + \beta_5 x_2^2$
 :::
 
+
+
 # Review Logistic Regression
+
+## Logistic Regression
 
 ::: incremental
 - We often use logistic regression for *classification* problems? Then why do we call it logistic *regression*? What is being regressed?
 - What is the function for logistic regression?
   - $\hat{p}(x) = \frac{e^{\beta_0 + \beta_1 x}}{1+ e^{\beta_0 + \beta_1 x}}$
 - What do we call this non-linear function? HINT - what shape does it make?
-
-
 :::
+
+## Why not Linear Regression?
+
+- Linear Regression is strongly affected by outliers
+- Linear Regression is strongly affected by imbalanced classes
+
+## Visual
+
+![](./lec13_images/linear_vs_logistic.png)
+
+# Class Activity
+
+[Class Activity 7](https://colab.research.google.com/drive/1bPCLIcJy9wBEEjL0qkwcWLyDCHoo-hRv?usp=sharing)
+
+
 
 
 
