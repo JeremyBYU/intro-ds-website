@@ -130,7 +130,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 8\n\n\n\n\n\nWeek 9\n\n\n\n\n\nWeek 10\n\n\n\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n\n\n\n\n\nWeek 9\n\n\n\n\n\nWeek 10\n\n\n\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
   },
   {
     "objectID": "slides/lec-11.html#schedule",
@@ -663,6 +663,118 @@
     "title": "CISC482 - Lecture07",
     "section": "Seaborn Examples",
     "text": "Seaborn Examples\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
+    "objectID": "slides/lec-14.html#schedule",
+    "href": "slides/lec-14.html#schedule",
+    "title": "CISC482 - Lecture14",
+    "section": "Schedule",
+    "text": "Schedule\n\nReading 6-1: Mar 08 @ 12PM, Wednesday\nReading 6-2: Mar 10 @ 12PM, Friday\nProposal: Mar 22, Wednesday\nHW5 - Mar 29 @ Midnight, Wednesday"
+  },
+  {
+    "objectID": "slides/lec-14.html#today",
+    "href": "slides/lec-14.html#today",
+    "title": "CISC482 - Lecture14",
+    "section": "Today",
+    "text": "Today\n\nOverfit/Underfit\nBias/Variance Trade off\nRegression Metric\nBinary Classification Metrics"
+  },
+  {
+    "objectID": "slides/lec-14.html#modelling",
+    "href": "slides/lec-14.html#modelling",
+    "title": "CISC482 - Lecture14",
+    "section": "Modelling",
+    "text": "Modelling\n\nWe approximate an output feature \\(y\\), using input features \\(X\\) with function \\(f\\) such that \\(\\hat{y} = f(X)\\)\n\nExample: Predicting penguin body mass by bill length\n\\(\\text{body mass} = \\hat{y} = mx + b\\)\n\nWe have to choose \\(f\\) and \\(X\\): simple linear model, polynomial model, multiple linear regression, logistic regression, etc.\nExample is \\(\\hat{y} = \\beta_0 + \\beta_1 x\\) or is \\(\\hat{y} = \\beta_0 + \\beta_1 x + \\beta_2 x^2\\)"
+  },
+  {
+    "objectID": "slides/lec-14.html#underfit",
+    "href": "slides/lec-14.html#underfit",
+    "title": "CISC482 - Lecture14",
+    "section": "Underfit",
+    "text": "Underfit\n\nUnderfit - model is too simple to fit the data well."
+  },
+  {
+    "objectID": "slides/lec-14.html#underfit-problems",
+    "href": "slides/lec-14.html#underfit-problems",
+    "title": "CISC482 - Lecture14",
+    "section": "Underfit Problems",
+    "text": "Underfit Problems\n\nAn underfit model will miss the underlying trend\nWill score poorly in metrics"
+  },
+  {
+    "objectID": "slides/lec-14.html#overfit",
+    "href": "slides/lec-14.html#overfit",
+    "title": "CISC482 - Lecture14",
+    "section": "Overfit",
+    "text": "Overfit\n\nOverfit - model is too complex to fit the data well."
+  },
+  {
+    "objectID": "slides/lec-14.html#overfit-problems",
+    "href": "slides/lec-14.html#overfit-problems",
+    "title": "CISC482 - Lecture14",
+    "section": "Overfit Problems",
+    "text": "Overfit Problems\n\nFitting the data too closely\nIncorporating too much noise (meaningless variation)\nMisses the general trend of the data despite scoring well in some metrics"
+  },
+  {
+    "objectID": "slides/lec-14.html#optimal",
+    "href": "slides/lec-14.html#optimal",
+    "title": "CISC482 - Lecture14",
+    "section": "Optimal",
+    "text": "Optimal\n\nThis model would be best fit with a quadratic model"
+  },
+  {
+    "objectID": "slides/lec-14.html#note",
+    "href": "slides/lec-14.html#note",
+    "title": "CISC482 - Lecture14",
+    "section": "Note",
+    "text": "Note\n\n\n\n\n\n\nImportant\n\n\nA model that is overfit or underfit is a bad predictor of outcomes outside of the data set and should not be used. In the field of data science, models tend to be overfit, so model selection techniques focus on choosing the least complex model that captures the general trend."
+  },
+  {
+    "objectID": "slides/lec-14.html#find-most-underfit-and-most-overfit",
+    "href": "slides/lec-14.html#find-most-underfit-and-most-overfit",
+    "title": "CISC482 - Lecture14",
+    "section": "Find Most Underfit and Most Overfit",
+    "text": "Find Most Underfit and Most Overfit"
+  },
+  {
+    "objectID": "slides/lec-14.html#breaking-down-error",
+    "href": "slides/lec-14.html#breaking-down-error",
+    "title": "CISC482 - Lecture14",
+    "section": "Breaking down Error",
+    "text": "Breaking down Error\n\nThe total error of a model is how much the observed values differ from predicted values. Total error is broken down into three pieces:\n\nBias - model’s prediction differs from the observed values due to the assumptions built into the model.\nVariance - spread/variance of predictions\nIrreducible error - error inherent to the data (noise)"
+  },
+  {
+    "objectID": "slides/lec-14.html#visual-explanation",
+    "href": "slides/lec-14.html#visual-explanation",
+    "title": "CISC482 - Lecture14",
+    "section": "Visual Explanation",
+    "text": "Visual Explanation"
+  },
+  {
+    "objectID": "slides/lec-14.html#bias-variance-tradeoff",
+    "href": "slides/lec-14.html#bias-variance-tradeoff",
+    "title": "CISC482 - Lecture14",
+    "section": "Bias-Variance Tradeoff",
+    "text": "Bias-Variance Tradeoff\n\nChoosing a more complex model (more features, a more complicated mathematical expression, etc.) means the model’s predictions are closer to the observed sample values, which decreases the bias.\nHowever, doing so makes the model’s predictions more spread out to meet the observed values, increasing the variance.\nAn optimal model should be just complex enough to capture the general trend of the data (low bias) without incorporating too much of the noise from the sample (low variance)."
+  },
+  {
+    "objectID": "slides/lec-14.html#visual-example",
+    "href": "slides/lec-14.html#visual-example",
+    "title": "CISC482 - Lecture14",
+    "section": "Visual Example",
+    "text": "Visual Example"
+  },
+  {
+    "objectID": "slides/lec-14.html#problem-1",
+    "href": "slides/lec-14.html#problem-1",
+    "title": "CISC482 - Lecture14",
+    "section": "Problem 1",
+    "text": "Problem 1"
+  },
+  {
+    "objectID": "slides/lec-14.html#problem-2",
+    "href": "slides/lec-14.html#problem-2",
+    "title": "CISC482 - Lecture14",
+    "section": "Problem 2",
+    "text": "Problem 2"
   },
   {
     "objectID": "slides/lec-12.html#schedule",
@@ -1775,7 +1887,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f1d5a7669e0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7feb1fb9d7e0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
