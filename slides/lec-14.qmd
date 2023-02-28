@@ -1,0 +1,182 @@
+---
+title: "CISC482 - Lecture14"
+subtitle: "Evaluating Model Performance"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 6-1:  Mar 08 @ 12PM, Wednesday
+- Reading 6-2:  Mar 10 @ 12PM, Friday
+- [Proposal](#project-proposal): Mar 22, Wednesday
+- HW5 - Mar 29 @ Midnight, Wednesday
+
+## Today
+
+- Overfit/Underfit
+- Bias/Variance Trade off
+- Regression Metric
+- Binary Classification Metrics
+
+
+# Model Error
+
+## Modelling
+
+- We *approximate* an output feature $y$, using input features $X$ with function $f$ such that $\hat{y} = f(X)$
+  - Example: Predicting penguin body mass by bill length
+  -  $\text{body mass} = \hat{y} = mx + b$
+- We have to choose $f$ and $X$: simple linear model, polynomial model, multiple linear regression, logistic regression, etc.
+- Example is $\hat{y} = \beta_0 + \beta_1 x$ or is $\hat{y} = \beta_0 + \beta_1 x + \beta_2 x^2$ 
+
+
+```{python}
+n = 16
+x = np.linspace(0, 30, num=n)
+noise = np.random.normal(loc=0, scale=4, size=n)
+y = -0.1* (x - 15)**2 + 10 + noise
+```
+
+## Underfit
+
+- **Underfit** - model is too simple to fit the data well.
+
+```{python}
+sns.regplot(x=x,y=y, ci=None, scatter_kws={"color": "black"}, line_kws={"color": "red"});
+```
+
+## Underfit Problems
+
+- An underfit model will miss the underlying trend 
+- Will score poorly in metrics
+
+## Overfit
+
+- **Overfit** - model is too complex to fit the data well.
+
+```{python}
+coeffs = np.polyfit(x, y, deg=15)
+regressed_fn = np.poly1d(coeffs)
+y_hat = regressed_fn(x)
+ax = sns.scatterplot(x=x,y=y, color="k");
+ax.plot(x, y_hat, color='red');
+```
+
+## Overfit Problems
+
+- Fitting the data too closely
+- Incorporating too much noise (meaningless variation)
+- Misses the general trend of the data despite scoring well in some metrics
+
+## Optimal
+
+- This model would be best fit with a quadratic model
+
+```{python}
+coeffs = np.polyfit(x, y, deg=2)
+regressed_fn = np.poly1d(coeffs)
+y_hat = regressed_fn(x)
+ax = sns.scatterplot(x=x,y=y, color="k");
+ax.plot(x, y_hat, color='red');
+```
+
+## Note
+
+::: callout-important
+A model that is overfit or underfit is a **bad** predictor of outcomes outside of the data set and should not be used. In the field of data science, models tend to be overfit, so model selection techniques focus on choosing the **least complex** model that captures the general trend.
+:::
+
+## Find Most Underfit and Most Overfit
+
+![](./lec14_images/overfit_underfit.png){fig-align="center"}
+
+
+# Bias and Variance
+
+## Breaking down Error
+
+- The total error of a model is how much the observed values differ from predicted values. Total error is broken down into three pieces: 
+  - **Bias** - model's prediction differs from the observed values due to the *assumptions* built into the model.
+  - **Variance** - spread/variance of predictions 
+  - **Irreducible error** -  error inherent to the data (noise)
+
+## Visual Explanation
+
+![](./lec14_images/bias_variance.png){fig-align="center"}
+
+
+## Bias-Variance Tradeoff
+
+- Choosing a more complex model (more features, a more complicated mathematical expression, etc.) means the model's predictions are closer to the observed sample values, which decreases the bias.
+- However, doing so makes the model's predictions more spread out to meet the observed values, increasing the variance.
+- An optimal model should be just complex enough to capture the general trend of the data (low bias) without incorporating too much of the noise from the sample (low variance).
+
+## Visual Example
+
+![](./lec14_images/bias_variance_tradeoff.png){fig-align="center"}
+
+## Problem 1
+
+![](./lec14_images/example_problem_bias_variance.png){fig-align="center"}
+
+## Problem 2
+
+![](./lec14_images/example_problem_bias_variance_2.png){fig-align="center"}
+
+
+# Regression Metrics
+
+
+# BInary Classification Metrics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
