@@ -777,6 +777,76 @@
     "text": "Problem 2"
   },
   {
+    "objectID": "slides/lec-14.html#dataset",
+    "href": "slides/lec-14.html#dataset",
+    "title": "CISC482 - Lecture14",
+    "section": "Dataset",
+    "text": "Dataset\n\nWe will be using the penguin dataset\n\n\n\nCode\nX = df['bill_length_mm'].values[:, np.newaxis]\ny = df['body_mass_g'].values\ndf.head()\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.10\n      18.70\n      181.00\n      3,750.00\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.50\n      17.40\n      186.00\n      3,800.00\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.30\n      18.00\n      195.00\n      3,250.00\n      female\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.70\n      19.30\n      193.00\n      3,450.00\n      female\n      2007\n    \n    \n      5\n      Adelie\n      Torgersen\n      39.30\n      20.60\n      190.00\n      3,650.00\n      male\n      2007"
+  },
+  {
+    "objectID": "slides/lec-14.html#two-statistics",
+    "href": "slides/lec-14.html#two-statistics",
+    "title": "CISC482 - Lecture14",
+    "section": "Two statistics",
+    "text": "Two statistics\n\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\\[\nR^2 = \\frac{\\text{variation explained by regression}}{\\text{total variation in the data}} = \\frac{\\sum (\\hat{y}_i - \\bar{y})^2}{\\sum (y_i - \\bar{y})^2}\n\\]\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\n\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i = 1}^n (y_i - \\hat{y}_i)^2}{n}}\n\\]\n\n\nWhat indicates a good model fit? Higher or lower \\(R^2\\)? Higher or lower RMSE?"
+  },
+  {
+    "objectID": "slides/lec-14.html#r-squared",
+    "href": "slides/lec-14.html#r-squared",
+    "title": "CISC482 - Lecture14",
+    "section": "R-squared",
+    "text": "R-squared\n\nRanges between 0 (terrible predictor) and 1 (perfect predictor), Unitless\nCalculate with model.score(X, y):\n\n\nmodel = LinearRegression()\nmodel.fit(X,y)\nr_squared = model.score(X,y)\nprint(f\"R^2 = {r_squared:.2f}\")\n\nR^2 = 0.35"
+  },
+  {
+    "objectID": "slides/lec-14.html#graph",
+    "href": "slides/lec-14.html#graph",
+    "title": "CISC482 - Lecture14",
+    "section": "Graph",
+    "text": "Graph\n\nax = sns.scatterplot(x=X[:,0], y=y, color=\"black\")\nax.plot(X, model.predict(X), color=\"red\", linewidth=3)"
+  },
+  {
+    "objectID": "slides/lec-14.html#r2-example",
+    "href": "slides/lec-14.html#r2-example",
+    "title": "CISC482 - Lecture14",
+    "section": "\\(R^2\\) Example",
+    "text": "\\(R^2\\) Example"
+  },
+  {
+    "objectID": "slides/lec-14.html#interpreting-r-squared",
+    "href": "slides/lec-14.html#interpreting-r-squared",
+    "title": "CISC482 - Lecture14",
+    "section": "Interpreting R-squared",
+    "text": "Interpreting R-squared\n\nThe \\(R^2\\) of the model for predicting penguin mass from bill length is 25%. Which of the following is the correct interpretation of this value?\n\n\nBill Length correctly predicts 25% of penguin mass.\n25% of the variability in penguin mass can be explained by bill length.\n25% of the time penugin mass can be predicted by bill length."
+  },
+  {
+    "objectID": "slides/lec-14.html#rmse",
+    "href": "slides/lec-14.html#rmse",
+    "title": "CISC482 - Lecture14",
+    "section": "RMSE",
+    "text": "RMSE\n\nRanges between 0 (perfect predictor) and infinity (terrible predictor)\nSame units as the outcome variable\nCalculate with means_squared_error(y_true, y_pred):\n\nfrom sklearn import metrics\nrmse = metrics.mean_squared_error(y, model.predict(X))\nprint(f\"RMSE: {rmse:.2f}\")\n\nRMSE: 421823.22\n\n\nThe value of RMSE is not very meaningful on its own, but it’s useful for comparing across models.\nComparing a model that uses bill length for a predictor or using flipper length"
+  },
+  {
+    "objectID": "slides/lec-14.html#rmse-example",
+    "href": "slides/lec-14.html#rmse-example",
+    "title": "CISC482 - Lecture14",
+    "section": "RMSE Example",
+    "text": "RMSE Example"
+  },
+  {
+    "objectID": "slides/lec-14.html#truefalse-positivenegative",
+    "href": "slides/lec-14.html#truefalse-positivenegative",
+    "title": "CISC482 - Lecture14",
+    "section": "True/False Positive/Negative",
+    "text": "True/False Positive/Negative\n\nbinary classifier is used to predict two classes. Positive, Negative\nTrue Positive (TP)is an outcome that was correctly identified as positive\nTrue Negative (TN) is an outcome that was correctly identified as negative.\nFalse Positive (FP) is an outcome that was incorrectly identified as positive\nFalse Negative (TN) is an outcome that was incorrectly identified as negative"
+  },
+  {
+    "objectID": "slides/lec-14.html#confustion-matrix",
+    "href": "slides/lec-14.html#confustion-matrix",
+    "title": "CISC482 - Lecture14",
+    "section": "Confustion Matrix",
+    "text": "Confustion Matrix\n\n\n\n\nPositive (predicted)\nNegative (predicted)\n\n\n\n\nPositive (actual)\n170\n21\n\n\nNegative (actual)\n1\n377\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
     "objectID": "slides/lec-12.html#schedule",
     "href": "slides/lec-12.html#schedule",
     "title": "CISC482 - Lecture12",
@@ -1887,7 +1957,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7feb1fb9d7e0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f6caed6f0a0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",

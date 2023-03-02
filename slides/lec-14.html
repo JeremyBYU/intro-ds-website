@@ -27,6 +27,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -319,6 +383,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <meta property="og:title" content="Intro to Data Science - CISC482 - Lecture14">
 <meta property="og:description" content="Evaluating Model Performance">
 <meta property="og:site-name" content="Intro to Data Science">
@@ -488,19 +555,242 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Problem 2</h2>
 
 <img data-src="./lec14_images/example_problem_bias_variance_2.png" class="r-stretch quarto-figure-center"></section></section>
+<section>
 <section id="regression-metrics" class="title-slide slide level1 center">
 <h1>Regression Metrics</h1>
 
 </section>
+<section id="dataset" class="slide level2">
+<h2>Dataset</h2>
+<ul>
+<li>We will be using the penguin dataset</li>
+</ul>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>X <span class="op">=</span> df[<span class="st">'bill_length_mm'</span>].values[:, np.newaxis]</span>
+<span id="cb1-2"><a href="#cb1-2"></a>y <span class="op">=</span> df[<span class="st">'body_mass_g'</span>].values</span>
+<span id="cb1-3"><a href="#cb1-3"></a>df.head()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
 
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>species</th>
+      <th>island</th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+      <th>sex</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.10</td>
+      <td>18.70</td>
+      <td>181.00</td>
+      <td>3,750.00</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.50</td>
+      <td>17.40</td>
+      <td>186.00</td>
+      <td>3,800.00</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>40.30</td>
+      <td>18.00</td>
+      <td>195.00</td>
+      <td>3,250.00</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>36.70</td>
+      <td>19.30</td>
+      <td>193.00</td>
+      <td>3,450.00</td>
+      <td>female</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Adelie</td>
+      <td>Torgersen</td>
+      <td>39.30</td>
+      <td>20.60</td>
+      <td>190.00</td>
+      <td>3,650.00</td>
+      <td>male</td>
+      <td>2007</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="two-statistics" class="slide level2 smaller">
+<h2>Two statistics</h2>
+<ul>
+<li><p><strong>R-squared</strong>, <span class="math inline">\(R^2\)</span> : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)</p>
+<p><span class="math display">\[
+R^2 = \frac{\text{variation explained by regression}}{\text{total variation in the data}} = \frac{\sum (\hat{y}_i - \bar{y})^2}{\sum (y_i - \bar{y})^2}
+\]</span></p></li>
+<li><p><strong>Root mean square error, RMSE</strong>: A measure of the average error (average difference between observed and predicted values of the outcome)</p></li>
+</ul>
+<p><span class="math display">\[
+RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
+\]</span></p>
+<div class="fragment">
+<div class="question">
+<p>What indicates a good model fit? Higher or lower <span class="math inline">\(R^2\)</span>? Higher or lower RMSE?</p>
+</div>
+</div>
+</section>
+<section id="r-squared" class="slide level2 smaller">
+<h2>R-squared</h2>
+<ul>
+<li>Ranges between 0 (terrible predictor) and 1 (perfect predictor), Unitless</li>
+<li>Calculate with <code>model.score(X, y)</code>:</li>
+</ul>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb2-2"><a href="#cb2-2"></a>model.fit(X,y)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>r_squared <span class="op">=</span> model.score(X,y)</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="bu">print</span>(<span class="ss">f"R^2 = </span><span class="sc">{</span>r_squared<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R^2 = 0.35</code></pre>
+</div>
+</div>
+</section>
+<section id="graph" class="slide level2">
+<h2>Graph</h2>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>X[:,<span class="dv">0</span>], y<span class="op">=</span>y, color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>ax.plot(X, model.predict(X), color<span class="op">=</span><span class="st">"red"</span>, linewidth<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-14_files/figure-revealjs/cell-9-output-1.png" width="806" height="411"></p>
+</div>
+</div>
+</section>
+<section id="r2-example" class="slide level2">
+<h2><span class="math inline">\(R^2\)</span> Example</h2>
+
+<img data-src="./lec14_images/r_2_example.png" class="r-stretch"></section>
+<section id="interpreting-r-squared" class="slide level2 smaller">
+<h2>Interpreting R-squared</h2>
+<div class="poll">
+<p>The <span class="math inline">\(R^2\)</span> of the model for predicting penguin mass from bill length is 25%. Which of the following is the correct interpretation of this value?</p>
+<div>
+<ul>
+<li>Bill Length correctly predicts 25% of penguin mass.</li>
+<li>25% of the variability in penguin mass can be explained by bill length.</li>
+<li>25% of the time penugin mass can be predicted by bill length.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="rmse" class="slide level2 smaller">
+<h2>RMSE</h2>
+<ul>
+<li><p>Ranges between 0 (perfect predictor) and infinity (terrible predictor)</p></li>
+<li><p>Same units as the outcome variable</p></li>
+<li><p>Calculate with <code>means_squared_error(y_true, y_pred)</code>:</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
+<span id="cb5-2"><a href="#cb5-2"></a>rmse <span class="op">=</span> metrics.mean_squared_error(y, model.predict(X))</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="bu">print</span>(<span class="ss">f"RMSE: </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>RMSE: 421823.22</code></pre>
+</div>
+</div></li>
+<li><p>The value of RMSE is not very meaningful on its own, but it’s useful for comparing across models.</p></li>
+<li><p>Comparing a model that uses bill length for a predictor or using flipper length</p></li>
+</ul>
+</section>
+<section id="rmse-example" class="slide level2">
+<h2>RMSE Example</h2>
+
+<img data-src="./lec14_images/mse_comparison.png" class="r-stretch"></section></section>
+<section>
 <section id="binary-classification-metrics" class="title-slide slide level1 center">
-<h1>BInary Classification Metrics</h1>
+<h1>Binary Classification Metrics</h1>
+
+</section>
+<section id="truefalse-positivenegative" class="slide level2">
+<h2>True/False Positive/Negative</h2>
+<ul>
+<li><p><strong>binary</strong> classifier is used to predict two classes. Positive, Negative</p></li>
+<li><p>True Positive (<strong>TP</strong>)is an outcome that was correctly identified as positive</p></li>
+<li><p>True Negative (<strong>TN</strong>) is an outcome that was correctly identified as negative.</p></li>
+<li><p>False Positive (<strong>FP</strong>) is an outcome that was <strong>in</strong>correctly identified as positive</p></li>
+<li><p>False Negative (<strong>TN</strong>) is an outcome that was <strong>in</strong>correctly identified as negative</p></li>
+</ul>
+</section>
+<section id="confustion-matrix" class="slide level2">
+<h2>Confustion Matrix</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Positive (predicted)</th>
+<th style="text-align: center;">Negative (predicted)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Positive (actual)</td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Negative (actual)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">377</td>
+</tr>
+</tbody>
+</table>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
