@@ -30,6 +30,7 @@ import numpy as np
 from sklearn.datasets import make_blobs
 from palmerpenguins import load_penguins, load_penguins_raw
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression, LogisticRegression
 df = load_penguins()
 df.dropna(inplace=True)
 np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
@@ -162,15 +163,120 @@ A model that is overfit or underfit is a **bad** predictor of outcomes outside o
 
 # Regression Metrics
 
+## Dataset
 
-# BInary Classification Metrics
+- We will be using the penguin dataset
+
+```{python}
+#| echo: True
+#| code-fold: True
+X = df['bill_length_mm'].values[:, np.newaxis]
+y = df['body_mass_g'].values
+df.head()
+```
+
+## Two statistics {.smaller}
+
+-   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)
+
+    $$
+    R^2 = \frac{\text{variation explained by regression}}{\text{total variation in the data}} = \frac{\sum (\hat{y}_i - \bar{y})^2}{\sum (y_i - \bar{y})^2}
+    $$
+
+-   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
+
+$$
+RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
+$$
+
+. . .
+
+::: question
+What indicates a good model fit?
+Higher or lower $R^2$?
+Higher or lower RMSE?
+:::
+
+## R-squared {.smaller}
+
+-   Ranges between 0 (terrible predictor) and 1 (perfect predictor), Unitless
+-   Calculate with `model.score(X, y)`:
+
+```{python}
+#| echo: true
+model = LinearRegression()
+model.fit(X,y)
+r_squared = model.score(X,y)
+print(f"R^2 = {r_squared:.2f}")
+```
+
+## Graph
+
+```{python}
+#| echo: true
+ax = sns.scatterplot(x=X[:,0], y=y, color="black")
+ax.plot(X, model.predict(X), color="red", linewidth=3)
+```
+
+## $R^2$ Example
+
+![](./lec14_images/r_2_example.png)
+
+## Interpreting R-squared {.smaller}
+
+::: poll
+
+The $R^2$ of the model for predicting penguin mass from bill length is 25%.
+Which of the following is the correct interpretation of this value?
+
+::: nonincremental
+-   Bill Length correctly predicts 25% of penguin mass.
+-   25% of the variability in penguin mass can be explained by bill length.
+-   25% of the time penugin mass can be predicted by bill length.
+:::
+:::
 
 
+## RMSE {.smaller}
+
+-   Ranges between 0 (perfect predictor) and infinity (terrible predictor)
+-   Same units as the outcome variable
+-   Calculate with `means_squared_error(y_true, y_pred)`:
+
+    ```{python}
+    #| echo: true
+    from sklearn import metrics
+    rmse = metrics.mean_squared_error(y, model.predict(X))
+    print(f"RMSE: {rmse:.2f}")
+    ```
+
+-   The value of RMSE is not very meaningful on its own, but it's useful for comparing across models.
+-  Comparing a model that uses bill length for a predictor or using flipper length
 
 
+## RMSE Example
+
+![](./lec14_images/mse_comparison.png)
 
 
+# Binary Classification Metrics
 
+## True/False Positive/Negative
+
+- **binary** classifier is used to predict two classes. Positive, Negative
+
+* True Positive (**TP**)is an outcome that was correctly identified as positive 
+* True Negative (**TN**) is an outcome that was correctly identified as negative.
+* False Positive (**FP**) is an outcome that was **in**correctly identified as positive 
+* False Negative (**TN**) is an outcome that was **in**correctly identified as negative
+
+
+## Confustion Matrix
+
+|                   | Positive (predicted) | Negative (predicted) |
+|:-----------------:|:--------------------:|:--------------------:|
+| Positive (actual) | 170                  |          21          |
+| Negative (actual) | 1                    |          377         |
 
 
 
