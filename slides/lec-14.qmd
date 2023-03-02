@@ -263,9 +263,7 @@ Which of the following is the correct interpretation of this value?
 
 ## True/False Positive/Negative
 
-- **binary** classifier is used to predict two classes. Positive, Negative
-
-* True Positive (**TP**)is an outcome that was correctly identified as positive 
+* True Positive (**TP**) is an outcome that was correctly identified as positive 
 * True Negative (**TN**) is an outcome that was correctly identified as negative.
 * False Positive (**FP**) is an outcome that was **in**correctly identified as positive 
 * False Negative (**TN**) is an outcome that was **in**correctly identified as negative
@@ -279,6 +277,66 @@ Which of the following is the correct interpretation of this value?
 | Negative (actual) | 1                    |          377         |
 
 
+## Metrics
+
+- Accuracy - useful
+- Precison - very useful
+- Recall - very useful
+
+## Accuracy
+
+::: incremental
+- Accuracy: $\frac{\text{# Correctly Predicted}}{\text{Total}}$
+- $\frac{TP + TN}{TP + TN + FP + FN}$
+:::
+
+## Precision
+
+::: incremental
+- Tell how precise your prediction/is is
+- $\frac{TP}{TP + FP}$
+- The higher this number, the less False Positive you have
+- My research - Identifying an emegency landing location nearby. A precison gives confidence that it truly is safe to land at the locationt he model predicts.
+:::
+
+
+## Recall
+
+::: incremental
+- the proportion of positives that were correctly predicted
+- $\frac{TP}{TP + FN}$
+- The higher this number, the less False Negative you have. 
+- My Research - A high recall means I found nearly *all* the rooftops in the city that you could land on. 
+:::
+
+
+## Example Question
+
+
+|                   | Positive (predicted) | Negative (predicted) |
+|:-----------------:|:--------------------:|:--------------------:|
+| Positive (actual) | 170                  |          21          |
+| Negative (actual) | 1                    |          377         |
+
+::: question
+What is the Accuracy, Precision, and Recall?
+:::
+
+# Tradeoff Between Precision and Recall
+
+# Tradeoff {.smaller}
+
+- In logisitc regression you specify a **threshold** to use a prediciton. By deafult we use 0.5 or 50%. But that is arbitary and you move that threshold
+
+![](./lec14_images/threshold_05.png){fig-align="center"}
+
+## Low Threshold
+
+![](./lec14_images/low_threshold.png){fig-align="center"}
+
+## High Threshold
+
+![](./lec14_images/threshold_high.png){fig-align="center"}
 
 
 
