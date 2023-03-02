@@ -755,11 +755,10 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 <section id="truefalse-positivenegative" class="slide level2">
 <h2>True/False Positive/Negative</h2>
 <ul>
-<li><p><strong>binary</strong> classifier is used to predict two classes. Positive, Negative</p></li>
-<li><p>True Positive (<strong>TP</strong>)is an outcome that was correctly identified as positive</p></li>
-<li><p>True Negative (<strong>TN</strong>) is an outcome that was correctly identified as negative.</p></li>
-<li><p>False Positive (<strong>FP</strong>) is an outcome that was <strong>in</strong>correctly identified as positive</p></li>
-<li><p>False Negative (<strong>TN</strong>) is an outcome that was <strong>in</strong>correctly identified as negative</p></li>
+<li>True Positive (<strong>TP</strong>) is an outcome that was correctly identified as positive</li>
+<li>True Negative (<strong>TN</strong>) is an outcome that was correctly identified as negative.</li>
+<li>False Positive (<strong>FP</strong>) is an outcome that was <strong>in</strong>correctly identified as positive</li>
+<li>False Negative (<strong>TN</strong>) is an outcome that was <strong>in</strong>correctly identified as negative</li>
 </ul>
 </section>
 <section id="confustion-matrix" class="slide level2">
@@ -785,9 +784,99 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 </tr>
 </tbody>
 </table>
+</section>
+<section id="metrics" class="slide level2">
+<h2>Metrics</h2>
+<ul>
+<li>Accuracy - useful</li>
+<li>Precison - very useful</li>
+<li>Recall - very useful</li>
+</ul>
+</section>
+<section id="accuracy" class="slide level2">
+<h2>Accuracy</h2>
+<div>
+<ul>
+<li class="fragment">Accuracy: <span class="math inline">\(\frac{\text{# Correctly Predicted}}{\text{Total}}\)</span></li>
+<li class="fragment"><span class="math inline">\(\frac{TP + TN}{TP + TN + FP + FN}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="precision" class="slide level2">
+<h2>Precision</h2>
+<div>
+<ul>
+<li class="fragment">Tell how precise your prediction/is is</li>
+<li class="fragment"><span class="math inline">\(\frac{TP}{TP + FP}\)</span></li>
+<li class="fragment">The higher this number, the less False Positive you have</li>
+<li class="fragment">My research - Identifying an emegency landing location nearby. A precison gives confidence that it truly is safe to land at the locationt he model predicts.</li>
+</ul>
+</div>
+</section>
+<section id="recall" class="slide level2">
+<h2>Recall</h2>
+<div>
+<ul>
+<li class="fragment">the proportion of positives that were correctly predicted</li>
+<li class="fragment"><span class="math inline">\(\frac{TP}{TP + FN}\)</span></li>
+<li class="fragment">The higher this number, the less False Negative you have.</li>
+<li class="fragment">My Research - A high recall means I found nearly <em>all</em> the rooftops in the city that you could land on.</li>
+</ul>
+</div>
+</section>
+<section id="example-question" class="slide level2">
+<h2>Example Question</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Positive (predicted)</th>
+<th style="text-align: center;">Negative (predicted)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Positive (actual)</td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Negative (actual)</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">377</td>
+</tr>
+</tbody>
+</table>
+<div class="question">
+<p>What is the Accuracy, Precision, and Recall?</p>
+</div>
+</section></section>
+<section>
+<section id="tradeoff-between-precision-and-recall" class="title-slide slide level1 center">
+<h1>Tradeoff Between Precision and Recall</h1>
 
+</section>
+<section id="tradeoff" class="slide level2 smaller">
+<h2>Tradeoff</h2>
+<ul>
+<li>In logisitc regression you specify a <strong>threshold</strong> to use a prediciton. By deafult we use 0.5 or 50%. But that is arbitary and you move that threshold</li>
+</ul>
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img data-src="./lec14_images/threshold_05.png" class="r-stretch quarto-figure-center"></section>
+<section id="low-threshold" class="slide level2">
+<h2>Low Threshold</h2>
+
+<img data-src="./lec14_images/low_threshold.png" class="r-stretch quarto-figure-center"></section>
+<section id="high-threshold" class="slide level2">
+<h2>High Threshold</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./lec14_images/threshold_high.png"></p>
+</figure>
+</div>
+
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>

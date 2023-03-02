@@ -130,7 +130,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n\n\n\n\n\nWeek 9\n\n\n\n\n\nWeek 10\n\n\n\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 9\n\n\n\n\n\nWeek 10\n\n\n\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
   },
   {
     "objectID": "slides/lec-11.html#schedule",
@@ -837,14 +837,70 @@
     "href": "slides/lec-14.html#truefalse-positivenegative",
     "title": "CISC482 - Lecture14",
     "section": "True/False Positive/Negative",
-    "text": "True/False Positive/Negative\n\nbinary classifier is used to predict two classes. Positive, Negative\nTrue Positive (TP)is an outcome that was correctly identified as positive\nTrue Negative (TN) is an outcome that was correctly identified as negative.\nFalse Positive (FP) is an outcome that was incorrectly identified as positive\nFalse Negative (TN) is an outcome that was incorrectly identified as negative"
+    "text": "True/False Positive/Negative\n\nTrue Positive (TP) is an outcome that was correctly identified as positive\nTrue Negative (TN) is an outcome that was correctly identified as negative.\nFalse Positive (FP) is an outcome that was incorrectly identified as positive\nFalse Negative (TN) is an outcome that was incorrectly identified as negative"
   },
   {
     "objectID": "slides/lec-14.html#confustion-matrix",
     "href": "slides/lec-14.html#confustion-matrix",
     "title": "CISC482 - Lecture14",
     "section": "Confustion Matrix",
-    "text": "Confustion Matrix\n\n\n\n\nPositive (predicted)\nNegative (predicted)\n\n\n\n\nPositive (actual)\n170\n21\n\n\nNegative (actual)\n1\n377\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Confustion Matrix\n\n\n\n\nPositive (predicted)\nNegative (predicted)\n\n\n\n\nPositive (actual)\n170\n21\n\n\nNegative (actual)\n1\n377"
+  },
+  {
+    "objectID": "slides/lec-14.html#metrics",
+    "href": "slides/lec-14.html#metrics",
+    "title": "CISC482 - Lecture14",
+    "section": "Metrics",
+    "text": "Metrics\n\nAccuracy - useful\nPrecison - very useful\nRecall - very useful"
+  },
+  {
+    "objectID": "slides/lec-14.html#accuracy",
+    "href": "slides/lec-14.html#accuracy",
+    "title": "CISC482 - Lecture14",
+    "section": "Accuracy",
+    "text": "Accuracy\n\n\nAccuracy: \\(\\frac{\\text{# Correctly Predicted}}{\\text{Total}}\\)\n\\(\\frac{TP + TN}{TP + TN + FP + FN}\\)"
+  },
+  {
+    "objectID": "slides/lec-14.html#precision",
+    "href": "slides/lec-14.html#precision",
+    "title": "CISC482 - Lecture14",
+    "section": "Precision",
+    "text": "Precision\n\n\nTell how precise your prediction/is is\n\\(\\frac{TP}{TP + FP}\\)\nThe higher this number, the less False Positive you have\nMy research - Identifying an emegency landing location nearby. A precison gives confidence that it truly is safe to land at the locationt he model predicts."
+  },
+  {
+    "objectID": "slides/lec-14.html#recall",
+    "href": "slides/lec-14.html#recall",
+    "title": "CISC482 - Lecture14",
+    "section": "Recall",
+    "text": "Recall\n\n\nthe proportion of positives that were correctly predicted\n\\(\\frac{TP}{TP + FN}\\)\nThe higher this number, the less False Negative you have.\nMy Research - A high recall means I found nearly all the rooftops in the city that you could land on."
+  },
+  {
+    "objectID": "slides/lec-14.html#example-question",
+    "href": "slides/lec-14.html#example-question",
+    "title": "CISC482 - Lecture14",
+    "section": "Example Question",
+    "text": "Example Question\n\n\n\n\nPositive (predicted)\nNegative (predicted)\n\n\n\n\nPositive (actual)\n170\n21\n\n\nNegative (actual)\n1\n377\n\n\n\n\nWhat is the Accuracy, Precision, and Recall?"
+  },
+  {
+    "objectID": "slides/lec-14.html#tradeoff",
+    "href": "slides/lec-14.html#tradeoff",
+    "title": "CISC482 - Lecture14",
+    "section": "Tradeoff",
+    "text": "Tradeoff\n\nIn logisitc regression you specify a threshold to use a prediciton. By deafult we use 0.5 or 50%. But that is arbitary and you move that threshold"
+  },
+  {
+    "objectID": "slides/lec-14.html#low-threshold",
+    "href": "slides/lec-14.html#low-threshold",
+    "title": "CISC482 - Lecture14",
+    "section": "Low Threshold",
+    "text": "Low Threshold"
+  },
+  {
+    "objectID": "slides/lec-14.html#high-threshold",
+    "href": "slides/lec-14.html#high-threshold",
+    "title": "CISC482 - Lecture14",
+    "section": "High Threshold",
+    "text": "High Threshold\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-12.html#schedule",
@@ -1957,7 +2013,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f6caed6f0a0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f4f44ad61a0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
