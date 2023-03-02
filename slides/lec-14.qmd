@@ -324,7 +324,7 @@ What is the Accuracy, Precision, and Recall?
 
 # Tradeoff Between Precision and Recall
 
-# Tradeoff {.smaller}
+## Tradeoff {.smaller}
 
 - In logisitc regression you specify a **threshold** to use a prediciton. By deafult we use 0.5 or 50%. But that is arbitary and you move that threshold
 
