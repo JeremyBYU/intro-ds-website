@@ -546,8 +546,8 @@ Polynomial Model R^2 = 0.64</code></pre>
 </div>
 </div>
 </section>
-<section id="traintest-split" class="slide level2">
-<h2>Train/Test Split</h2>
+<section id="split-the-data" class="slide level2">
+<h2>Split the Data!</h2>
 <div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
@@ -555,40 +555,79 @@ Polynomial Model R^2 = 0.64</code></pre>
 <span id="cb3-2"><a href="#cb3-2"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
 <span id="cb3-3"><a href="#cb3-3"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.30</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a>linear_model.fit(X_train, y_train)</span>
-<span id="cb3-6"><a href="#cb3-6"></a>quadratic_model <span class="op">=</span> np.poly1d(np.polyfit(X_train[:,<span class="dv">0</span>], y_train, degree)) <span class="co"># quadratic</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="bu">print</span>(<span class="ss">f"TRAIN SET - Linear Model R^2 = </span><span class="sc">{</span>r2_score(y_train, linear_model.predict(X_train))<span class="sc">:.2f}</span><span class="ss">; Polynomial Model R^2 = </span><span class="sc">{</span>r2_score(y_train, quadratic_model(X_train[:,<span class="dv">0</span>]))<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="bu">print</span>(<span class="ss">f"TEST SET - Linear Model R^2 = </span><span class="sc">{</span>r2_score(y_test, linear_model.predict(X_test))<span class="sc">:.2f}</span><span class="ss">; Polynomial Model R^2 = </span><span class="sc">{</span>r2_score(y_test, quadratic_model(X_test[:,<span class="dv">0</span>]))<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a></span>
-<span id="cb3-12"><a href="#cb3-12"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>) <span class="co"># create 2 plots!</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># Plot training result</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a>sns.scatterplot(x<span class="op">=</span>X_train[:,<span class="dv">0</span>], y<span class="op">=</span>y_train, ax<span class="op">=</span>ax[<span class="dv">0</span>], label<span class="op">=</span><span class="st">"Training Data"</span>)</span>
-<span id="cb3-15"><a href="#cb3-15"></a>ax[<span class="dv">0</span>].plot(np.sort(X_train[:, <span class="dv">0</span>]), linear_model.predict(np.sort(X_train, axis<span class="op">=</span><span class="dv">0</span>)), color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Linear Regression'</span>)</span>
-<span id="cb3-16"><a href="#cb3-16"></a>ax[<span class="dv">0</span>].plot(np.sort(X_train[:, <span class="dv">0</span>]), quadratic_model(np.sort(X_train[:, <span class="dv">0</span>])), color<span class="op">=</span><span class="st">'m'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)<span class="op">;</span></span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="co"># ax[0].scatter(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m');</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Training Set"</span>)</span>
-<span id="cb3-19"><a href="#cb3-19"></a>ax[<span class="dv">0</span>].legend()</span>
-<span id="cb3-20"><a href="#cb3-20"></a><span class="co"># Plot testing result</span></span>
-<span id="cb3-21"><a href="#cb3-21"></a>sns.scatterplot(x<span class="op">=</span>X_test[:,<span class="dv">0</span>], y<span class="op">=</span>y_test, ax<span class="op">=</span>ax[<span class="dv">1</span>], label<span class="op">=</span><span class="st">"Testing Data"</span>)</span>
-<span id="cb3-22"><a href="#cb3-22"></a>ax[<span class="dv">1</span>].plot(np.sort(X_test[:, <span class="dv">0</span>]), linear_model.predict(np.sort(X_test, axis<span class="op">=</span><span class="dv">0</span>)), color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Linear Regression'</span>)</span>
-<span id="cb3-23"><a href="#cb3-23"></a>ax[<span class="dv">1</span>].plot(np.sort(X_test[:, <span class="dv">0</span>]), quadratic_model(np.sort(X_test[:, <span class="dv">0</span>])), color<span class="op">=</span><span class="st">'m'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)<span class="op">;</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a><span class="co"># ax[1].scatter(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m');</span></span>
-<span id="cb3-25"><a href="#cb3-25"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Testing Set"</span>)</span>
-<span id="cb3-26"><a href="#cb3-26"></a>ax[<span class="dv">1</span>].legend()<span class="op">;</span></span></code></pre></div>
+<span id="cb3-5"><a href="#cb3-5"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>) <span class="co"># create 2 plots!</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># Plot training result</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>sns.scatterplot(x<span class="op">=</span>X_train[:,<span class="dv">0</span>], y<span class="op">=</span>y_train, ax<span class="op">=</span>ax[<span class="dv">0</span>], label<span class="op">=</span><span class="st">"Training Data"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Training Set"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"></a>ax[<span class="dv">0</span>].legend()</span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># Plot testing result</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>sns.scatterplot(x<span class="op">=</span>X_test[:,<span class="dv">0</span>], y<span class="op">=</span>y_test, ax<span class="op">=</span>ax[<span class="dv">1</span>], label<span class="op">=</span><span class="st">"Testing Data"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Testing Set"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13"></a>ax[<span class="dv">1</span>].legend()<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-15_files/figure-revealjs/cell-5-output-1.png" width="794" height="431"></p>
+</div>
+</div>
+</section>
+<section id="traintest-split" class="slide level2">
+<h2>Train/Test Split</h2>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb4-2"><a href="#cb4-2"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.30</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>linear_model.fit(X_train, y_train)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>quadratic_model <span class="op">=</span> np.poly1d(np.polyfit(X_train[:,<span class="dv">0</span>], y_train, degree)) <span class="co"># quadratic</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="bu">print</span>(<span class="ss">f"TRAIN SET - Linear Model R^2 = </span><span class="sc">{</span>r2_score(y_train, linear_model.predict(X_train))<span class="sc">:.2f}</span><span class="ss">; Polynomial Model R^2 = </span><span class="sc">{</span>r2_score(y_train, quadratic_model(X_train[:,<span class="dv">0</span>]))<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="bu">print</span>(<span class="ss">f"TEST SET - Linear Model R^2 = </span><span class="sc">{</span>r2_score(y_test, linear_model.predict(X_test))<span class="sc">:.2f}</span><span class="ss">; Polynomial Model R^2 = </span><span class="sc">{</span>r2_score(y_test, quadratic_model(X_test[:,<span class="dv">0</span>]))<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>) <span class="co"># create 2 plots!</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co"># Plot training result</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>sns.scatterplot(x<span class="op">=</span>X_train[:,<span class="dv">0</span>], y<span class="op">=</span>y_train, ax<span class="op">=</span>ax[<span class="dv">0</span>], label<span class="op">=</span><span class="st">"Training Data"</span>)</span>
+<span id="cb4-15"><a href="#cb4-15"></a>ax[<span class="dv">0</span>].plot(np.sort(X_train[:, <span class="dv">0</span>]), linear_model.predict(np.sort(X_train, axis<span class="op">=</span><span class="dv">0</span>)), color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Linear Regression'</span>)</span>
+<span id="cb4-16"><a href="#cb4-16"></a>ax[<span class="dv">0</span>].plot(np.sort(X_train[:, <span class="dv">0</span>]), quadratic_model(np.sort(X_train[:, <span class="dv">0</span>])), color<span class="op">=</span><span class="st">'m'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)<span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co"># ax[0].scatter(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m');</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Training Set"</span>)</span>
+<span id="cb4-19"><a href="#cb4-19"></a>ax[<span class="dv">0</span>].legend()</span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="co"># Plot testing result</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a>sns.scatterplot(x<span class="op">=</span>X_test[:,<span class="dv">0</span>], y<span class="op">=</span>y_test, ax<span class="op">=</span>ax[<span class="dv">1</span>], label<span class="op">=</span><span class="st">"Testing Data"</span>)</span>
+<span id="cb4-22"><a href="#cb4-22"></a>ax[<span class="dv">1</span>].plot(np.sort(X_test[:, <span class="dv">0</span>]), linear_model.predict(np.sort(X_test, axis<span class="op">=</span><span class="dv">0</span>)), color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Linear Regression'</span>)</span>
+<span id="cb4-23"><a href="#cb4-23"></a>ax[<span class="dv">1</span>].plot(np.sort(X_test[:, <span class="dv">0</span>]), quadratic_model(np.sort(X_test[:, <span class="dv">0</span>])), color<span class="op">=</span><span class="st">'m'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)<span class="op">;</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="co"># ax[1].scatter(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m');</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Testing Set"</span>)</span>
+<span id="cb4-26"><a href="#cb4-26"></a>ax[<span class="dv">1</span>].legend()<span class="op">;</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>TRAIN SET - Linear Model R^2 = 0.44; Polynomial Model R^2 = 0.62
 TEST SET - Linear Model R^2 = 0.65; Polynomial Model R^2 = 0.41</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-15_files/figure-revealjs/cell-5-output-2.png" width="794" height="431"></p>
+<p><img data-src="lec-15_files/figure-revealjs/cell-6-output-2.png" width="794" height="431"></p>
 </div>
 </div>
+</section></section>
+<section>
+<section id="cross-validation" class="title-slide slide level1 center">
+<h1>Cross Validation</h1>
 
-<p><img src="../images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+</section>
+<section id="cross-validation-1" class="slide level2">
+<h2>Cross Validation</h2>
+<ul>
+<li>Was there anyting special about the observations in test/validation data set?</li>
+<li>It seems a little strange to now judge all the models just on the random selection of observations of validation/test sets.</li>
+<li>Its like the choice of our model is <em>biased</em> towards this random selection of data.</li>
+<li>Solution: Do this process (fitting a model, testing model) <em>multiple</em> times using different subsets of data -&gt; Cross Validation</li>
+<li>For each model trained/validated, a measure of error is used to measure performance. The distribution of the errors for the models found in cross-validation gives a rough idea of the model’s performance overall.</li>
+</ul>
+
+
+<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>
