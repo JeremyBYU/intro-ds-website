@@ -2013,7 +2013,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f152e91de40>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f13f0530640>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -2195,14 +2195,7 @@
     "href": "slides/lec-15.html#choosing-k",
     "title": "CISC482 - Lecture15",
     "section": "Choosing k",
-    "text": "Choosing k\n\nthe larger the k, the more models need to be trained\nthe larger the k, larger training folds\nthis vastly increases computational requirements.\nFor large models, you need to have a small \\(k\\). e.g. chat gpt!\nMost common for small/medium models is k=10"
-  },
-  {
-    "objectID": "slides/lec-15.html#bootstrapping-1",
-    "href": "slides/lec-15.html#bootstrapping-1",
-    "title": "CISC482 - Lecture15",
-    "section": "Bootstrapping",
-    "text": "Bootstrapping\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Choosing k\n\nthe larger the k, the more models need to be trained\nthe larger the k, larger training folds\nthis vastly increases computational requirements.\nFor large models, you need to have a small \\(k\\). e.g. chat gpt!\nMost common for small/medium models is k=10\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-01.html#meet-the-professor",
