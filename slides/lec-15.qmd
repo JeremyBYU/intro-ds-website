@@ -246,11 +246,7 @@ ax[1].legend();
 - For large models, you need to have a small $k$. e.g. chat gpt!
 - Most common for small/medium models is k=10
 
-# Bootstrapping
 
-## Bootstrapping
-
-- 
 
 
 
