@@ -9,7 +9,7 @@
   <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
-  <title>Intro to Data Science - CISC482 - Lecture14</title>
+  <title>Intro to Data Science - CISC482 - Lecture15</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -383,11 +383,8 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture14">
-<meta property="og:description" content="Evaluating Model Performance 1">
+<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture15">
+<meta property="og:description" content="Evaluating Model Performance 2">
 <meta property="og:site-name" content="Intro to Data Science">
 </head>
 <body class="quarto-light">
@@ -395,8 +392,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CISC482 - Lecture14</h1>
-  <p class="subtitle">Evaluating Model Performance 1</p>
+  <h1 class="title">CISC482 - Lecture15</h1>
+  <p class="subtitle">Evaluating Model Performance 2</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -424,248 +421,37 @@ Dr.&nbsp;Jeremy Castagno
 <section id="today" class="slide level2">
 <h2>Today</h2>
 <ul>
-<li>Overfit/Underfit</li>
-<li>Bias/Variance Trade off</li>
-<li>Regression Metric</li>
-<li>Binary Classification Metrics</li>
+<li>Review Overfit/Underfit</li>
+<li>Reivew Regression and Classification Metrics</li>
+<li>Training vs Testing Set</li>
 </ul>
 </section></section>
 <section>
-<section id="model-error" class="title-slide slide level1 center">
-<h1>Model Error</h1>
+<section id="review" class="title-slide slide level1 center">
+<h1>Review</h1>
 
 </section>
-<section id="modelling" class="slide level2">
-<h2>Modelling</h2>
+<section id="overfitunderfit" class="slide level2">
+<h2>Overfit/Underfit</h2>
 <ul>
-<li>We <em>approximate</em> an output feature <span class="math inline">\(y\)</span>, using input features <span class="math inline">\(X\)</span> with function <span class="math inline">\(f\)</span> such that <span class="math inline">\(\hat{y} = f(X)\)</span>
-<ul>
-<li>Example: Predicting penguin body mass by bill length</li>
-<li><span class="math inline">\(\text{body mass} = \hat{y} = mx + b\)</span></li>
-</ul></li>
-<li>We have to choose <span class="math inline">\(f\)</span> and <span class="math inline">\(X\)</span>: simple linear model, polynomial model, multiple linear regression, logistic regression, etc.</li>
-<li>Example is <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x\)</span> or is <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x + \beta_2 x^2\)</span></li>
-</ul>
-</section>
-<section id="underfit" class="slide level2">
-<h2>Underfit</h2>
-<ul>
-<li><strong>Underfit</strong> - model is too simple to fit the data well.</li>
-</ul>
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-14_files/figure-revealjs/cell-4-output-1.png" width="801" height="411"></p>
-</div>
-</div>
-</section>
-<section id="underfit-problems" class="slide level2">
-<h2>Underfit Problems</h2>
-<ul>
-<li>An underfit model will miss the underlying trend</li>
-<li>Will score poorly in metrics</li>
-</ul>
-</section>
-<section id="overfit" class="slide level2">
-<h2>Overfit</h2>
-<ul>
-<li><strong>Overfit</strong> - model is too complex to fit the data well.</li>
-</ul>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-14_files/figure-revealjs/cell-5-output-1.png" width="801" height="411"></p>
-</div>
-</div>
-</section>
-<section id="overfit-problems" class="slide level2">
-<h2>Overfit Problems</h2>
+<li><strong>Overfit</strong> - model is too complex to fit the data well.
 <ul>
 <li>Fitting the data too closely</li>
 <li>Incorporating too much noise (meaningless variation)</li>
-<li>Misses the general trend of the data despite scoring well in some metrics</li>
-</ul>
-</section>
-<section id="optimal" class="slide level2">
-<h2>Optimal</h2>
+<li>Misses the general trend</li>
+</ul></li>
+<li><strong>Underfit</strong> - model is too simple to fit the data well.
 <ul>
-<li>This model would be best fit with a quadratic model</li>
-</ul>
-<div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-14_files/figure-revealjs/cell-6-output-1.png" width="801" height="411"></p>
-</div>
-</div>
-</section>
-<section id="note" class="slide level2">
-<h2>Note</h2>
-<div class="callout callout-important callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>A model that is overfit or underfit is a <strong>bad</strong> predictor of outcomes outside of the data set and should not be used. In the field of data science, models tend to be overfit, so model selection techniques focus on choosing the <strong>least complex</strong> model that captures the general trend.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="find-most-underfit-and-most-overfit" class="slide level2">
-<h2>Find Most Underfit and Most Overfit</h2>
-
-<img data-src="./lec14_images/overfit_underfit.png" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="bias-and-variance" class="title-slide slide level1 center">
-<h1>Bias and Variance</h1>
-
-</section>
-<section id="breaking-down-error" class="slide level2">
-<h2>Breaking down Error</h2>
-<ul>
-<li>The total error of a model is how much the observed values differ from predicted values. Total error is broken down into three pieces:
-<ul>
-<li><strong>Bias</strong> - model’s prediction differs from the observed values due to the <em>assumptions</em> built into the model.</li>
-<li><strong>Variance</strong> - spread/variance of predictions</li>
-<li><strong>Irreducible error</strong> - error inherent to the data (noise)</li>
+<li>Large systematic errror</li>
 </ul></li>
 </ul>
 </section>
-<section id="visual-explanation" class="slide level2">
-<h2>Visual Explanation</h2>
+<section id="question---underfit-or-overfit" class="slide level2">
+<h2>Question - Underfit or Overfit?</h2>
 
-<img data-src="./lec14_images/bias_variance.png" class="r-stretch quarto-figure-center"></section>
-<section id="bias-variance-tradeoff" class="slide level2">
-<h2>Bias-Variance Tradeoff</h2>
-<ul>
-<li>Choosing a more complex model (more features, a more complicated mathematical expression, etc.) means the model’s predictions are closer to the observed sample values, which decreases the bias.</li>
-<li>However, doing so makes the model’s predictions more spread out to meet the observed values, increasing the variance.</li>
-<li>An optimal model should be just complex enough to capture the general trend of the data (low bias) without incorporating too much of the noise from the sample (low variance).</li>
-</ul>
-</section>
-<section id="visual-example" class="slide level2">
-<h2>Visual Example</h2>
-
-<img data-src="./lec14_images/bias_variance_tradeoff.png" class="r-stretch quarto-figure-center"></section>
-<section id="problem-1" class="slide level2">
-<h2>Problem 1</h2>
-
-<img data-src="./lec14_images/example_problem_bias_variance.png" class="r-stretch quarto-figure-center"></section>
-<section id="problem-2" class="slide level2">
-<h2>Problem 2</h2>
-
-<img data-src="./lec14_images/example_problem_bias_variance_2.png" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="regression-metrics" class="title-slide slide level1 center">
-<h1>Regression Metrics</h1>
-
-</section>
-<section id="dataset" class="slide level2">
-<h2>Dataset</h2>
-<ul>
-<li>We will be using the penguin dataset</li>
-</ul>
-<div class="cell" data-execution_count="6">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>X <span class="op">=</span> df[<span class="st">'bill_length_mm'</span>].values[:, np.newaxis]</span>
-<span id="cb1-2"><a href="#cb1-2"></a>y <span class="op">=</span> df[<span class="st">'body_mass_g'</span>].values</span>
-<span id="cb1-3"><a href="#cb1-3"></a>df.head()</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="6">
-
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>species</th>
-      <th>island</th>
-      <th>bill_length_mm</th>
-      <th>bill_depth_mm</th>
-      <th>flipper_length_mm</th>
-      <th>body_mass_g</th>
-      <th>sex</th>
-      <th>year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.10</td>
-      <td>18.70</td>
-      <td>181.00</td>
-      <td>3,750.00</td>
-      <td>male</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.50</td>
-      <td>17.40</td>
-      <td>186.00</td>
-      <td>3,800.00</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>40.30</td>
-      <td>18.00</td>
-      <td>195.00</td>
-      <td>3,250.00</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>36.70</td>
-      <td>19.30</td>
-      <td>193.00</td>
-      <td>3,450.00</td>
-      <td>female</td>
-      <td>2007</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Adelie</td>
-      <td>Torgersen</td>
-      <td>39.30</td>
-      <td>20.60</td>
-      <td>190.00</td>
-      <td>3,650.00</td>
-      <td>male</td>
-      <td>2007</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="two-statistics" class="slide level2 smaller">
-<h2>Two statistics</h2>
+<img data-src="./lec14_images/overfit_underfit.png" class="r-stretch quarto-figure-center"></section>
+<section id="regression-metrics" class="slide level2 smaller">
+<h2>Regression Metrics</h2>
 <ul>
 <li><p><strong>R-squared</strong>, <span class="math inline">\(R^2\)</span> : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)</p>
 <p><span class="math display">\[
@@ -676,84 +462,12 @@ R^2 = \frac{\text{variation explained by regression}}{\text{total variation in t
 <p><span class="math display">\[
 RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 \]</span></p>
-<div class="fragment">
-<div class="question">
-<p>What indicates a good model fit? Higher or lower <span class="math inline">\(R^2\)</span>? Higher or lower RMSE?</p>
-</div>
-</div>
-</section>
-<section id="r-squared" class="slide level2 smaller">
-<h2>R-squared</h2>
 <ul>
-<li>Ranges between 0 (terrible predictor) and 1 (perfect predictor), Unitless</li>
-<li>Calculate with <code>model.score(X, y)</code>:</li>
-</ul>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb2-2"><a href="#cb2-2"></a>model.fit(X,y)</span>
-<span id="cb2-3"><a href="#cb2-3"></a>r_squared <span class="op">=</span> model.score(X,y)</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="bu">print</span>(<span class="ss">f"R^2 = </span><span class="sc">{</span>r_squared<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>R^2 = 0.35</code></pre>
-</div>
-</div>
-</section>
-<section id="graph" class="slide level2">
-<h2>Graph</h2>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>X[:,<span class="dv">0</span>], y<span class="op">=</span>y, color<span class="op">=</span><span class="st">"black"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>ax.plot(X, model.predict(X), color<span class="op">=</span><span class="st">"red"</span>, linewidth<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-14_files/figure-revealjs/cell-9-output-1.png" width="806" height="411"></p>
-</div>
-</div>
-</section>
-<section id="r2-example" class="slide level2">
-<h2><span class="math inline">\(R^2\)</span> Example</h2>
-
-<img data-src="./lec14_images/r_2_example.png" class="r-stretch"></section>
-<section id="interpreting-r-squared" class="slide level2 smaller">
-<h2>Interpreting R-squared</h2>
-<div class="poll">
-<p>The <span class="math inline">\(R^2\)</span> of the model for predicting penguin mass from bill length is 25%. Which of the following is the correct interpretation of this value?</p>
-<div>
-<ul>
-<li>Bill Length correctly predicts 25% of penguin mass.</li>
-<li>25% of the variability in penguin mass can be explained by bill length.</li>
-<li>25% of the time penugin mass can be predicted by bill length.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="rmse" class="slide level2 smaller">
-<h2>RMSE</h2>
-<ul>
-<li><p>Ranges between 0 (perfect predictor) and infinity (terrible predictor)</p></li>
-<li><p>Same units as the outcome variable</p></li>
-<li><p>Calculate with <code>means_squared_error(y_true, y_pred)</code>:</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
-<span id="cb5-2"><a href="#cb5-2"></a>rmse <span class="op">=</span> metrics.mean_squared_error(y, model.predict(X))</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="bu">print</span>(<span class="ss">f"RMSE: </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>RMSE: 421823.22</code></pre>
-</div>
-</div></li>
-<li><p>The value of RMSE is not very meaningful on its own, but it’s useful for comparing across models.</p></li>
-<li><p>Comparing a model that uses bill length for a predictor or using flipper length</p></li>
+<li>What is the range? Units?</li>
 </ul>
 </section>
-<section id="rmse-example" class="slide level2">
-<h2>RMSE Example</h2>
-
-<img data-src="./lec14_images/mse_comparison.png" class="r-stretch"></section></section>
-<section>
-<section id="binary-classification-metrics" class="title-slide slide level1 center">
-<h1>Binary Classification Metrics</h1>
-
-</section>
-<section id="truefalse-positivenegative" class="slide level2">
-<h2>True/False Positive/Negative</h2>
+<section id="binary-classification-metrics" class="slide level2">
+<h2>Binary Classification Metrics</h2>
 <ul>
 <li>True Positive (<strong>TP</strong>) is an outcome that was correctly identified as positive</li>
 <li>True Negative (<strong>TN</strong>) is an outcome that was correctly identified as negative.</li>
@@ -761,118 +475,116 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 <li>False Negative (<strong>TN</strong>) is an outcome that was <strong>in</strong>correctly identified as negative</li>
 </ul>
 </section>
-<section id="confustion-matrix" class="slide level2">
-<h2>Confustion Matrix</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Positive (predicted)</th>
-<th style="text-align: center;">Negative (predicted)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Positive (actual)</td>
-<td style="text-align: center;">170</td>
-<td style="text-align: center;">21</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Negative (actual)</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">377</td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="metrics" class="slide level2">
 <h2>Metrics</h2>
 <ul>
-<li>Accuracy - useful</li>
-<li>Precison - very useful</li>
-<li>Recall - very useful</li>
+<li>Accuracy: <span class="math inline">\(\frac{TP + TN}{TP + TN + FP + FN}\)</span></li>
+<li>Precision: <span class="math inline">\(\frac{TP}{TP + FP}\)</span></li>
+<li>Recall: <span class="math inline">\(\frac{TP}{TP + FN}\)</span></li>
 </ul>
-</section>
-<section id="accuracy" class="slide level2">
-<h2>Accuracy</h2>
-<div>
-<ul>
-<li class="fragment">Accuracy: <span class="math inline">\(\frac{\text{# Correctly Predicted}}{\text{Total}}\)</span></li>
-<li class="fragment"><span class="math inline">\(\frac{TP + TN}{TP + TN + FP + FN}\)</span></li>
-</ul>
-</div>
-</section>
-<section id="precision" class="slide level2">
-<h2>Precision</h2>
-<div>
-<ul>
-<li class="fragment">Tell how precise your prediction/is is</li>
-<li class="fragment"><span class="math inline">\(\frac{TP}{TP + FP}\)</span></li>
-<li class="fragment">The higher this number, the less False Positive you have</li>
-<li class="fragment">My research - Identifying an emegency landing location nearby. A precison gives confidence that it truly is safe to land at the locationt he model predicts.</li>
-</ul>
-</div>
-</section>
-<section id="recall" class="slide level2">
-<h2>Recall</h2>
-<div>
-<ul>
-<li class="fragment">the proportion of positives that were correctly predicted</li>
-<li class="fragment"><span class="math inline">\(\frac{TP}{TP + FN}\)</span></li>
-<li class="fragment">The higher this number, the less False Negative you have.</li>
-<li class="fragment">My Research - A high recall means I found nearly <em>all</em> the rooftops in the city that you could land on.</li>
-</ul>
-</div>
-</section>
-<section id="example-question" class="slide level2">
-<h2>Example Question</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Positive (predicted)</th>
-<th style="text-align: center;">Negative (predicted)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Positive (actual)</td>
-<td style="text-align: center;">170</td>
-<td style="text-align: center;">21</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Negative (actual)</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">377</td>
-</tr>
-</tbody>
-</table>
-<div class="question">
-<p>What is the Accuracy, Precision, and Recall?</p>
-</div>
 </section></section>
 <section>
-<section id="tradeoff-between-precision-and-recall" class="title-slide slide level1 center">
-<h1>Tradeoff Between Precision and Recall</h1>
+<section id="true-model-evaluation" class="title-slide slide level1 center">
+<h1><em>True</em> Model Evaluation</h1>
 
 </section>
-<section id="tradeoff" class="slide level2 smaller">
-<h2>Tradeoff</h2>
+<section id="purpose-of-model-evaluation" class="slide level2">
+<h2>Purpose of model evaluation</h2>
 <ul>
-<li>In logisitc regression you specify a <strong>threshold</strong> to use a prediciton. By deafult we use 0.5 or 50%. But that is arbitary and you move that threshold</li>
+<li><span class="math inline">\(R^2\)</span>, <span class="math inline">\(recall\)</span>, etc. tells us how our model is doing to predict the data we <em>already have</em></li>
+<li>But generally we are interested in prediction for a <strong>new</strong> observation, not for one that is already in our sample, i.e.&nbsp;<strong>out-of-sample prediction</strong></li>
+<li>We have a couple ways of <em>simulating</em> out-of-sample prediction before actually getting new data to evaluate the performance of our models</li>
 </ul>
+</section>
+<section id="splitting-data" class="slide level2">
+<h2>Splitting data</h2>
+<ul>
+<li>There are several steps to create a useful model: parameter estimation, model selection, performance assessment, etc.</li>
+<li>Doing all of this on the entire data we have available leaves us with no other data to assess our choices</li>
+<li>We can allocate specific subsets of data for different tasks, as opposed to allocating the largest possible amount to the model parameter estimation only (which is what we’ve done so far)</li>
+</ul>
+</section>
+<section id="the-split" class="slide level2">
+<h2>The Split</h2>
+<ul>
+<li><strong>Training</strong> data is used to fit a model.</li>
+<li><strong>Validation</strong> data is used to evaluate model performance while adjusting <em>hyper</em>parameter estimates and conducting feature selection. This is not always needed!</li>
+<li><strong>Test</strong> data is used to evaluate final model performance and compare <strong>different</strong> models.</li>
+<li>The ratio for this split: 80/10/10 or 70/10/20</li>
+</ul>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
 
-<img data-src="./lec14_images/threshold_05.png" class="r-stretch quarto-figure-center"></section>
-<section id="low-threshold" class="slide level2">
-<h2>Low Threshold</h2>
-
-<img data-src="./lec14_images/low_threshold.png" class="r-stretch quarto-figure-center"></section>
-<section id="high-threshold" class="slide level2">
-<h2>High Threshold</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./lec14_images/threshold_high.png"></p>
-</figure>
+<img data-src="./lec15_images/train_valid_test.png" class="r-stretch quarto-figure-center"></section>
+<section id="an-example" class="slide level2">
+<h2>An Example!</h2>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score</span>
+<span id="cb1-2"><a href="#cb1-2"></a>linear_model <span class="op">=</span> LinearRegression()</span>
+<span id="cb1-3"><a href="#cb1-3"></a>linear_model.fit(X, y)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>degree <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="bu">print</span>(<span class="ss">f"Linear Model R^2 = </span><span class="sc">{</span>r2_score(y, linear_model.predict(X))<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>quadratic_model <span class="op">=</span> np.poly1d(np.polyfit(x, y, degree)) <span class="co"># quadratic</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="bu">print</span>(<span class="ss">f"Polynomial Model R^2 = </span><span class="sc">{</span>r2_score(y, quadratic_model(x))<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>x, y<span class="op">=</span>y, label<span class="op">=</span><span class="st">"All Data"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a>ax.plot(x, linear_model.predict(X), color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Linear Regression'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12"></a>ax.plot(x, quadratic_model(x), color<span class="op">=</span><span class="st">'m'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)</span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># ax.scatter(x, quadratic_model(x), color='m')</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>ax.legend()<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear Model R^2 = 0.55
+Polynomial Model R^2 = 0.64</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-15_files/figure-revealjs/cell-4-output-2.png" width="805" height="411"></p>
+</div>
+</div>
+</section>
+<section id="traintest-split" class="slide level2">
+<h2>Train/Test Split</h2>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb3-2"><a href="#cb3-2"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.30</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>linear_model.fit(X_train, y_train)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>quadratic_model <span class="op">=</span> np.poly1d(np.polyfit(X_train[:,<span class="dv">0</span>], y_train, degree)) <span class="co"># quadratic</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="bu">print</span>(<span class="ss">f"TRAIN SET - Linear Model R^2 = </span><span class="sc">{</span>r2_score(y_train, linear_model.predict(X_train))<span class="sc">:.2f}</span><span class="ss">; Polynomial Model R^2 = </span><span class="sc">{</span>r2_score(y_train, quadratic_model(X_train[:,<span class="dv">0</span>]))<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="bu">print</span>(<span class="ss">f"TEST SET - Linear Model R^2 = </span><span class="sc">{</span>r2_score(y_test, linear_model.predict(X_test))<span class="sc">:.2f}</span><span class="ss">; Polynomial Model R^2 = </span><span class="sc">{</span>r2_score(y_test, quadratic_model(X_test[:,<span class="dv">0</span>]))<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>) <span class="co"># create 2 plots!</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># Plot training result</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>sns.scatterplot(x<span class="op">=</span>X_train[:,<span class="dv">0</span>], y<span class="op">=</span>y_train, ax<span class="op">=</span>ax[<span class="dv">0</span>], label<span class="op">=</span><span class="st">"Training Data"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15"></a>ax[<span class="dv">0</span>].plot(np.sort(X_train[:, <span class="dv">0</span>]), linear_model.predict(np.sort(X_train, axis<span class="op">=</span><span class="dv">0</span>)), color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Linear Regression'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16"></a>ax[<span class="dv">0</span>].plot(np.sort(X_train[:, <span class="dv">0</span>]), quadratic_model(np.sort(X_train[:, <span class="dv">0</span>])), color<span class="op">=</span><span class="st">'m'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)<span class="op">;</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co"># ax[0].scatter(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m');</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Training Set"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19"></a>ax[<span class="dv">0</span>].legend()</span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co"># Plot testing result</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a>sns.scatterplot(x<span class="op">=</span>X_test[:,<span class="dv">0</span>], y<span class="op">=</span>y_test, ax<span class="op">=</span>ax[<span class="dv">1</span>], label<span class="op">=</span><span class="st">"Testing Data"</span>)</span>
+<span id="cb3-22"><a href="#cb3-22"></a>ax[<span class="dv">1</span>].plot(np.sort(X_test[:, <span class="dv">0</span>]), linear_model.predict(np.sort(X_test, axis<span class="op">=</span><span class="dv">0</span>)), color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'Linear Regression'</span>)</span>
+<span id="cb3-23"><a href="#cb3-23"></a>ax[<span class="dv">1</span>].plot(np.sort(X_test[:, <span class="dv">0</span>]), quadratic_model(np.sort(X_test[:, <span class="dv">0</span>])), color<span class="op">=</span><span class="st">'m'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)<span class="op">;</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="co"># ax[1].scatter(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m');</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Testing Set"</span>)</span>
+<span id="cb3-26"><a href="#cb3-26"></a>ax[<span class="dv">1</span>].legend()<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>TRAIN SET - Linear Model R^2 = 0.44; Polynomial Model R^2 = 0.62
+TEST SET - Linear Model R^2 = 0.65; Polynomial Model R^2 = 0.41</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-15_files/figure-revealjs/cell-5-output-2.png" width="794" height="431"></p>
+</div>
 </div>
 
 <p><img src="../images/logo.png" class="slide-logo"></p>

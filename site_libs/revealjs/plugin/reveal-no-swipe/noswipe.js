@@ -16,6 +16,10 @@ const initNoTouch = function (Reveal) {
         dataframes.forEach(dataframe => {
             dataframe.setAttribute('data-prevent-swipe', "")
         });
+        let codeblocks = document.querySelectorAll(".cell");
+        codeblocks.forEach(cell => {
+            cell.setAttribute('data-prevent-swipe', "")
+        });
     });
 
 
