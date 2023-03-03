@@ -117,7 +117,7 @@ $$
 ## The Split
 
 - **Training** data is used to fit a model.
-- **Validation** data is used to evaluate model performance while adjusting *hyper*parameter estimates and conducting feature selection. This is not always needed!
+- **Validation** data is used to evaluate model performance while adjusting *hyper*parameter estimates and conducting feature selection. This is not *always* needed!
 - **Test** data is used to evaluate final model performance and compare **different** models.
 - The ratio for this split: 80/10/10 or 70/10/20
 
@@ -212,11 +212,45 @@ ax[1].legend();
 
 ## Cross Validation
 
-- Was there anyting special about the observations in test/validation data set?
-- It seems a little strange to now judge all the models just on the random selection of observations of validation/test sets. 
-- Its like the choice of our model is *biased* towards this random selection of data.
-- Solution: Do this process (fitting a model, testing model) *multiple* times using different subsets of data -> Cross Validation
-- For each model trained/validated, a measure of error is used to measure performance. The distribution of the errors for the models found in cross-validation gives a rough idea of the model's performance overall.
+- It seems a little strange to now judge our  models just on the random selection of observations of validation set. 
+- Its like the choice of our model is *biased* towards this random selection of validation set.
+- Solution: Do this process (fitting a model, validating model) *multiple* times using different subsets of data -> **Cross Validation**
+
+## K-Folds
+
+- **k-fold** cross-validation is a popular method of evaluating model performance 
+- Step 1: Choose k, usually 10
+- Step 2: SuyffleDivide our data, X, into X_fold and X_test.
+- Step 3: Divide X_fold into k groups (folds)
+- Step 4: Model is trained and validated repeatedly using these groups
+
+
+## K-Folds Split (k=10)
+
+![](./lec15_images/k-fold-split.png){fig-align="center"}
+
+## K-Folds Train and Validate
+
+![](./lec15_images/k-folds-validation.png){fig-align="center"}
+
+::: fragment
+![](./lec15_images/k-fold-validation-errors.png){fig-align="center"}
+:::
+
+
+## Choosing k
+
+- the larger the k, the more models need to be trained 
+- the larger the k, larger training folds
+- this vastly increases computational requirements.
+- For large models, you need to have a small $k$. e.g. chat gpt!
+- Most common for small/medium models is k=10
+
+# Bootstrapping
+
+## Bootstrapping
+
+- 
 
 
 
