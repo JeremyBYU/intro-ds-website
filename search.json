@@ -2013,7 +2013,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fd739571c90>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f152e91de40>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -2167,7 +2167,42 @@
     "href": "slides/lec-15.html#cross-validation-1",
     "title": "CISC482 - Lecture15",
     "section": "Cross Validation",
-    "text": "Cross Validation\n\nWas there anyting special about the observations in test/validation data set?\nIt seems a little strange to now judge all the models just on the random selection of observations of validation/test sets.\nIts like the choice of our model is biased towards this random selection of data.\nSolution: Do this process (fitting a model, testing model) multiple times using different subsets of data -> Cross Validation\nFor each model trained/validated, a measure of error is used to measure performance. The distribution of the errors for the models found in cross-validation gives a rough idea of the model’s performance overall.\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Cross Validation\n\nIt seems a little strange to now judge our models just on the random selection of observations of validation set.\nIts like the choice of our model is biased towards this random selection of validation set.\nSolution: Do this process (fitting a model, validating model) multiple times using different subsets of data -> Cross Validation"
+  },
+  {
+    "objectID": "slides/lec-15.html#k-folds",
+    "href": "slides/lec-15.html#k-folds",
+    "title": "CISC482 - Lecture15",
+    "section": "K-Folds",
+    "text": "K-Folds\n\nk-fold cross-validation is a popular method of evaluating model performance\nStep 1: Choose k, usually 10\nStep 2: SuyffleDivide our data, X, into X_fold and X_test.\nStep 3: Divide X_fold into k groups (folds)\nStep 4: Model is trained and validated repeatedly using these groups"
+  },
+  {
+    "objectID": "slides/lec-15.html#k-folds-split-k10",
+    "href": "slides/lec-15.html#k-folds-split-k10",
+    "title": "CISC482 - Lecture15",
+    "section": "K-Folds Split (k=10)",
+    "text": "K-Folds Split (k=10)"
+  },
+  {
+    "objectID": "slides/lec-15.html#k-folds-train-and-validate",
+    "href": "slides/lec-15.html#k-folds-train-and-validate",
+    "title": "CISC482 - Lecture15",
+    "section": "K-Folds Train and Validate",
+    "text": "K-Folds Train and Validate"
+  },
+  {
+    "objectID": "slides/lec-15.html#choosing-k",
+    "href": "slides/lec-15.html#choosing-k",
+    "title": "CISC482 - Lecture15",
+    "section": "Choosing k",
+    "text": "Choosing k\n\nthe larger the k, the more models need to be trained\nthe larger the k, larger training folds\nthis vastly increases computational requirements.\nFor large models, you need to have a small \\(k\\). e.g. chat gpt!\nMost common for small/medium models is k=10"
+  },
+  {
+    "objectID": "slides/lec-15.html#bootstrapping-1",
+    "href": "slides/lec-15.html#bootstrapping-1",
+    "title": "CISC482 - Lecture15",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-01.html#meet-the-professor",

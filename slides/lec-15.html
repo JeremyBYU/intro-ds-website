@@ -508,7 +508,7 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 <h2>The Split</h2>
 <ul>
 <li><strong>Training</strong> data is used to fit a model.</li>
-<li><strong>Validation</strong> data is used to evaluate model performance while adjusting <em>hyper</em>parameter estimates and conducting feature selection. This is not always needed!</li>
+<li><strong>Validation</strong> data is used to evaluate model performance while adjusting <em>hyper</em>parameter estimates and conducting feature selection. This is not <em>always</em> needed!</li>
 <li><strong>Test</strong> data is used to evaluate final model performance and compare <strong>different</strong> models.</li>
 <li>The ratio for this split: 80/10/10 or 70/10/20</li>
 </ul>
@@ -619,11 +619,59 @@ TEST SET - Linear Model R^2 = 0.65; Polynomial Model R^2 = 0.41</code></pre>
 <section id="cross-validation-1" class="slide level2">
 <h2>Cross Validation</h2>
 <ul>
-<li>Was there anyting special about the observations in test/validation data set?</li>
-<li>It seems a little strange to now judge all the models just on the random selection of observations of validation/test sets.</li>
-<li>Its like the choice of our model is <em>biased</em> towards this random selection of data.</li>
-<li>Solution: Do this process (fitting a model, testing model) <em>multiple</em> times using different subsets of data -&gt; Cross Validation</li>
-<li>For each model trained/validated, a measure of error is used to measure performance. The distribution of the errors for the models found in cross-validation gives a rough idea of the model’s performance overall.</li>
+<li>It seems a little strange to now judge our models just on the random selection of observations of validation set.</li>
+<li>Its like the choice of our model is <em>biased</em> towards this random selection of validation set.</li>
+<li>Solution: Do this process (fitting a model, validating model) <em>multiple</em> times using different subsets of data -&gt; <strong>Cross Validation</strong></li>
+</ul>
+</section>
+<section id="k-folds" class="slide level2">
+<h2>K-Folds</h2>
+<ul>
+<li><strong>k-fold</strong> cross-validation is a popular method of evaluating model performance</li>
+<li>Step 1: Choose k, usually 10</li>
+<li>Step 2: SuyffleDivide our data, X, into X_fold and X_test.</li>
+<li>Step 3: Divide X_fold into k groups (folds)</li>
+<li>Step 4: Model is trained and validated repeatedly using these groups</li>
+</ul>
+</section>
+<section id="k-folds-split-k10" class="slide level2">
+<h2>K-Folds Split (k=10)</h2>
+
+<img data-src="./lec15_images/k-fold-split.png" class="r-stretch quarto-figure-center"></section>
+<section id="k-folds-train-and-validate" class="slide level2">
+<h2>K-Folds Train and Validate</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./lec15_images/k-folds-validation.png"></p>
+</figure>
+</div>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./lec15_images/k-fold-validation-errors.png"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="choosing-k" class="slide level2">
+<h2>Choosing k</h2>
+<ul>
+<li>the larger the k, the more models need to be trained</li>
+<li>the larger the k, larger training folds</li>
+<li>this vastly increases computational requirements.</li>
+<li>For large models, you need to have a small <span class="math inline">\(k\)</span>. e.g.&nbsp;chat gpt!</li>
+<li>Most common for small/medium models is k=10</li>
+</ul>
+</section></section>
+<section>
+<section id="bootstrapping" class="title-slide slide level1 center">
+<h1>Bootstrapping</h1>
+
+</section>
+<section id="bootstrapping-1" class="slide level2">
+<h2>Bootstrapping</h2>
+<ul>
+<li></li>
 </ul>
 
 
