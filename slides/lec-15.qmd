@@ -1,0 +1,190 @@
+---
+title: "CISC482 - Lecture15"
+subtitle: "Evaluating Model Performance 2"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 6-1:  Mar 08 @ 12PM, Wednesday
+- Reading 6-2:  Mar 10 @ 12PM, Friday
+- [Proposal](#project-proposal): Mar 22, Wednesday
+- HW5 - Mar 29 @ Midnight, Wednesday
+
+## Today
+
+- Review Overfit/Underfit
+- Reivew Regression and Classification Metrics
+- Training vs Testing Set
+
+# Review
+
+## Overfit/Underfit
+
+- **Overfit** - model is too complex to fit the data well.
+  - Fitting the data too closely
+  - Incorporating too much noise (meaningless variation)
+  - Misses the general trend
+- **Underfit** - model is too simple to fit the data well.
+  - Large systematic errror
+
+## Question - Underfit or Overfit?
+
+![](./lec14_images/overfit_underfit.png){fig-align="center"}
+
+## Regression Metrics {.smaller}
+
+-   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)
+
+    $$
+    R^2 = \frac{\text{variation explained by regression}}{\text{total variation in the data}} = \frac{\sum (\hat{y}_i - \bar{y})^2}{\sum (y_i - \bar{y})^2}
+    $$
+
+-   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
+
+$$
+RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
+$$
+
+- What is the range? Units?
+
+## Binary Classification Metrics
+
+* True Positive (**TP**) is an outcome that was correctly identified as positive 
+* True Negative (**TN**) is an outcome that was correctly identified as negative.
+* False Positive (**FP**) is an outcome that was **in**correctly identified as positive 
+* False Negative (**TN**) is an outcome that was **in**correctly identified as negative
+
+## Metrics
+
+- Accuracy: $\frac{TP + TN}{TP + TN + FP + FN}$
+- Precision: $\frac{TP}{TP + FP}$
+- Recall: $\frac{TP}{TP + FN}$
+
+
+# *True* Model Evaluation
+
+## Purpose of model evaluation
+
+-   $R^2$, $recall$, etc. tells us how our model is doing to predict the data we *already have*
+-   But generally we are interested in prediction for a **new** observation, not for one that is already in our sample, i.e. **out-of-sample prediction**
+-   We have a couple ways of *simulating* out-of-sample prediction before actually getting new data to evaluate the performance of our models
+
+## Splitting data
+
+-   There are several steps to create a useful model: parameter estimation, model selection, performance assessment, etc.
+-   Doing all of this on the entire data we have available leaves us with no other data to assess our choices
+-   We can allocate specific subsets of data for different tasks, as opposed to allocating the largest possible amount to the model parameter estimation only (which is what we've done so far)
+
+## The Split
+
+- **Training** data is used to fit a model.
+- **Validation** data is used to evaluate model performance while adjusting *hyper*parameter estimates and conducting feature selection. This is not always needed!
+- **Test** data is used to evaluate final model performance and compare **different** models.
+- The ratio for this split: 80/10/10 or 70/10/20
+
+## Visualization
+
+![](./lec15_images/train_valid_test.png){fig-align="center"}
+
+## An Example!
+
+```{python}
+x = np.linspace(0, 10, 30)
+X = x[:, np.newaxis]
+noise = np.random.normal(0, scale=3, size=30)
+y = x + noise
+```
+
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.metrics import r2_score
+linear_model = LinearRegression()
+linear_model.fit(X, y)
+degree = 5
+print(f"Linear Model R^2 = {r2_score(y, linear_model.predict(X)):.2f}")
+
+quadratic_model = np.poly1d(np.polyfit(x, y, degree)) # quadratic
+print(f"Polynomial Model R^2 = {r2_score(y, quadratic_model(x)):.2f}")
+
+ax = sns.scatterplot(x=x, y=y, label="All Data")
+ax.plot(x, linear_model.predict(X), color='r', label='Linear Regression')
+ax.plot(x, quadratic_model(x), color='m', label='Polynomial Regression')
+# ax.scatter(x, quadratic_model(x), color='m')
+ax.legend();
+```
+
+## Train/Test Split
+
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.30, random_state=0)
+
+linear_model.fit(X_train, y_train)
+quadratic_model = np.poly1d(np.polyfit(X_train[:,0], y_train, degree)) # quadratic
+
+print(f"TRAIN SET - Linear Model R^2 = {r2_score(y_train, linear_model.predict(X_train)):.2f}; Polynomial Model R^2 = {r2_score(y_train, quadratic_model(X_train[:,0])):.2f}")
+print(f"TEST SET - Linear Model R^2 = {r2_score(y_test, linear_model.predict(X_test)):.2f}; Polynomial Model R^2 = {r2_score(y_test, quadratic_model(X_test[:,0])):.2f}")
+
+
+fig, ax = plt.subplots(nrows=1, ncols=2) # create 2 plots!
+# Plot training result
+sns.scatterplot(x=X_train[:,0], y=y_train, ax=ax[0], label="Training Data")
+ax[0].plot(np.sort(X_train[:, 0]), linear_model.predict(np.sort(X_train, axis=0)), color='r', label='Linear Regression')
+ax[0].plot(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m', label='Polynomial Regression');
+# ax[0].scatter(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m');
+ax[0].set_title("Training Set")
+ax[0].legend()
+# Plot testing result
+sns.scatterplot(x=X_test[:,0], y=y_test, ax=ax[1], label="Testing Data")
+ax[1].plot(np.sort(X_test[:, 0]), linear_model.predict(np.sort(X_test, axis=0)), color='r', label='Linear Regression')
+ax[1].plot(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m', label='Polynomial Regression');
+# ax[1].scatter(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m');
+ax[1].set_title("Testing Set")
+ax[1].legend();
+```
+
+
+

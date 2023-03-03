@@ -1,6 +1,6 @@
 ---
 title: "CISC482 - Lecture14"
-subtitle: "Evaluating Model Performance"
+subtitle: "Evaluating Model Performance 1"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
 logo: "../images/logo.png"
