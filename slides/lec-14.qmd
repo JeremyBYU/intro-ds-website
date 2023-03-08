@@ -226,7 +226,15 @@ regressed_fn = np.poly1d(np.polyfit(x, y, 1))
 y_hat = regressed_fn(x)
 r_squared = np.sum(np.square(y_hat - y.mean())) / np.sum(np.square(y.mean() - y))
 print(f"R^2 = {r_squared:.2f}")
-print(np.corrcoef(y, y_hat) ** 2)
+```
+
+## More Examples
+
+```{python}
+#| echo: true
+r = np.corrcoef(y, y_hat)[0, 1] # matrix, get first row second column
+r_squared = r ** 2
+print(f"R^2 = {r_squared:.2f}")
 ```
 
 ## Graph
@@ -312,10 +320,10 @@ Which of the following is the correct interpretation of this value?
 ## Precision
 
 ::: incremental
-- Tell how precise your prediction/is is
+- Tell how precise your prediction is
 - $\frac{TP}{TP + FP}$
-- The higher this number, the less False Positive you have
-- My research - Identifying an emegency landing location nearby. A precison gives confidence that it truly is safe to land at the locationt he model predicts.
+- The higher this number, the less False Positives you have
+- My research - Identifying an emegency landing location nearby. A precison gives confidence that it truly is safe to land at the location the model predicts.
 :::
 
 
