@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression, LogisticRegression
 df = load_penguins()
 df.dropna(inplace=True)
-np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.2f}".format})
 pd.options.display.float_format = '{:,.2f}'.format
 np.random.seed(10)
 ```
@@ -45,7 +45,7 @@ np.random.seed(10)
 
 - Reading 6-1:  Mar 08 @ 12PM, Wednesday
 - Reading 6-2:  Mar 10 @ 12PM, Friday
-- [Proposal](#project-proposal): Mar 22, Wednesday
+- [Proposal]([#project-proposal](https://jeremybyu.github.io/intro-ds-website/project-description.html#project-proposal)): Mar 22, Wednesday
 - HW5 - Mar 29 @ Midnight, Wednesday
 
 ## Today
@@ -76,7 +76,9 @@ y = -0.1* (x - 15)**2 + 10 + noise
 
 ## Underfit
 
+:::fragment
 - **Underfit** - model is too simple to fit the data well.
+:::
 
 ```{python}
 sns.regplot(x=x,y=y, ci=None, scatter_kws={"color": "black"}, line_kws={"color": "red"});
@@ -89,7 +91,9 @@ sns.regplot(x=x,y=y, ci=None, scatter_kws={"color": "black"}, line_kws={"color":
 
 ## Overfit
 
+:::fragment
 - **Overfit** - model is too complex to fit the data well.
+:::
 
 ```{python}
 coeffs = np.polyfit(x, y, deg=15)
@@ -104,6 +108,7 @@ ax.plot(x, y_hat, color='red');
 - Fitting the data too closely
 - Incorporating too much noise (meaningless variation)
 - Misses the general trend of the data despite scoring well in some metrics
+- In fact, what is the error for this model?
 
 ## Optimal
 
@@ -144,9 +149,12 @@ A model that is overfit or underfit is a **bad** predictor of outcomes outside o
 
 ## Bias-Variance Tradeoff
 
+
+:::incremental
 - Choosing a more complex model (more features, a more complicated mathematical expression, etc.) means the model's predictions are closer to the observed sample values, which decreases the bias.
 - However, doing so makes the model's predictions more spread out to meet the observed values, increasing the variance.
 - An optimal model should be just complex enough to capture the general trend of the data (low bias) without incorporating too much of the noise from the sample (low variance).
+:::
 
 ## Visual Example
 
@@ -180,7 +188,8 @@ df.head()
 -   **R-squared**, $R^2$ : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)
 
     $$
-    R^2 = \frac{\text{variation explained by regression}}{\text{total variation in the data}} = \frac{\sum (\hat{y}_i - \bar{y})^2}{\sum (y_i - \bar{y})^2}
+    R^2 = \frac{\text{variation explained by regression}}{\text{total variation in the data}} = \frac{\sum (\hat{y}_i - \bar{y})^2}{\sum (y_i - \bar{y})^2} \\
+      R^2 = 1 - \frac{\sum (\hat{y}_i - y_i)}{\sum (y_i - \bar{y})^2}
     $$
 
 -   **Root mean square error, RMSE**: A measure of the average error (average difference between observed and predicted values of the outcome)
@@ -208,6 +217,16 @@ model = LinearRegression()
 model.fit(X,y)
 r_squared = model.score(X,y)
 print(f"R^2 = {r_squared:.2f}")
+```
+
+```{python}
+#| echo: true
+x = X[:, 0]
+regressed_fn = np.poly1d(np.polyfit(x, y, 1))
+y_hat = regressed_fn(x)
+r_squared = np.sum(np.square(y_hat - y.mean())) / np.sum(np.square(y.mean() - y))
+print(f"R^2 = {r_squared:.2f}")
+print(np.corrcoef(y, y_hat) ** 2)
 ```
 
 ## Graph

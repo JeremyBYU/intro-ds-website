@@ -111,7 +111,7 @@ The introduction section includes
 
 -   an introduction to the subject matter you're investigating
 -   the motivation for your research question (citing any relevant literature)
--   briefyly describe its connection to Core classes
+-   briefly describe its connection to Core classes
 -   the general research question you wish to explore
 -   your hypotheses regarding the research question of interest.
 
@@ -132,23 +132,25 @@ This includes:
 -   Visualization and summary statistics for the response variable.
 -   List of variables that will be considered as predictors
 -   Model selection (linear regresssion, logistic regression, k-nearest neighbors, support vector machine, etc.)
+    - Explain which models *might* be suitable for making predictions
 
 
 ### Section 4 - Connect to Core Capstone Work
 
 Describe how this dataset and analysis will connect with at least two (2) your signature assignments from the Core (Core Capstone Work LO2)
 
-- Describe each signature assignment
+- Describe each signature assignment 
 - Describe how the dataset and analysis builds upon or connects with your prior work
 
 Example: You took Philosphy 106 (ethics) and you discussed the relationship between employers and employees. You submitted a signature assignment of a paper on unions (pro or against, it doesn't matter). A possible dataset you could choose 
 is the [Right to Work Dataset](https://www.kaggle.com/datasets/brandonconrady/right-to-work-dataset) and do an analysis on the relationship between state laws and their effect on union participation.
 
+**NOTE** - If you are a senior/junior and are are **not** particpating in the new Core you will not have any signature assignments. In this case, just describe in general how your dataset might connect with any general studies/core classes. I am leaving this **very** open.
 
 
 ### Section 5 - Data dictionary (aka code book)
 
-In this section, you will create a markdown table that describes each varible in the dataset. Put your da in the `data` folder.
+In this section, you will create a markdown table that describes each varible in the dataset. Put your data in the `data` folder.
 Link to this file from your proposal writeup.
 
 
@@ -162,7 +164,8 @@ Print your Jupyter notebook as a PDF and submit to Brightspace.
 |----------------------|--------|
 | **Introduction**     | 3 pts  |
 | **Data description** | 2 pts  |
-| **Analysis plan**    | 4 pts  |
+| **Analysis plan**    | 3 pts  |
+| **Connect Core**     | 1 pts  |
 | **Data dictionary**  | 1 pts  |
 
 Each component will be graded as follows:
