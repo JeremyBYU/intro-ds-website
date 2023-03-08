@@ -45,7 +45,7 @@ np.random.seed(10)
 
 - Reading 6-1:  Mar 08 @ 12PM, Wednesday
 - Reading 6-2:  Mar 10 @ 12PM, Friday
-- [Proposal]([#project-proposal](https://jeremybyu.github.io/intro-ds-website/project-description.html#project-proposal)): Mar 22, Wednesday
+- [Proposal](https://jeremybyu.github.io/intro-ds-website/project-description.html#project-proposal): Mar 22, Wednesday
 - HW5 - Mar 29 @ Midnight, Wednesday
 
 ## Today
