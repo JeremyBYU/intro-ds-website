@@ -247,6 +247,13 @@ ax[1].legend();
 - Most common for small/medium models is k=10
 
 
+# Class Activity
+
+## Class Activity
+
+[Model Evaluation](https://colab.research.google.com/drive/1m2vth1QYOhUqCmOv0JTWVvWS8wPkjeXu?usp=sharing)
+
+
 
 
 

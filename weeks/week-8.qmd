@@ -15,9 +15,10 @@ editor: visual
 
 ## Practice
 
-📋 [Class Activity 07 - Model Performance]()
+📋 [Class Activity 07 - Model Evaluation](https://colab.research.google.com/drive/1m2vth1QYOhUqCmOv0JTWVvWS8wPkjeXu?usp=sharing)
 
 ## Perform
 
+Project Proposal!
 ⌨️ [HW 5 - Model Performance]()
 

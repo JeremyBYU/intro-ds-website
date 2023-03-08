@@ -58,7 +58,7 @@ np.random.seed(10)
 
 ::: incremental
 - Simple Linear Regression
-  - $\hat{y} = \beta_0 + x + \beta_1$
+  - $\hat{y} = \beta_0 + \beta_1 x$
 - Simple Polynomial Linear Regression 
   - $\hat{y} = \beta_0 + \beta_1 x + ... + \beta_k x^k$
 - Multiple Linear Regression 
