@@ -710,22 +710,30 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 <span id="cb4-2"><a href="#cb4-2"></a>regressed_fn <span class="op">=</span> np.poly1d(np.polyfit(x, y, <span class="dv">1</span>))</span>
 <span id="cb4-3"><a href="#cb4-3"></a>y_hat <span class="op">=</span> regressed_fn(x)</span>
 <span id="cb4-4"><a href="#cb4-4"></a>r_squared <span class="op">=</span> np.<span class="bu">sum</span>(np.square(y_hat <span class="op">-</span> y.mean())) <span class="op">/</span> np.<span class="bu">sum</span>(np.square(y.mean() <span class="op">-</span> y))</span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(<span class="ss">f"R^2 = </span><span class="sc">{</span>r_squared<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">print</span>(np.corrcoef(y, y_hat) <span class="op">**</span> <span class="dv">2</span>)</span></code></pre></div>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(<span class="ss">f"R^2 = </span><span class="sc">{</span>r_squared<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R^2 = 0.35
-[[1.00 0.35]
- [0.35 1.00]]</code></pre>
+<pre><code>R^2 = 0.35</code></pre>
+</div>
+</div>
+</section>
+<section id="more-examples" class="slide level2">
+<h2>More Examples</h2>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>r <span class="op">=</span> np.corrcoef(y, y_hat)[<span class="dv">0</span>, <span class="dv">1</span>] <span class="co"># matrix, get first row second column</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>r_squared <span class="op">=</span> r <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="bu">print</span>(<span class="ss">f"R^2 = </span><span class="sc">{</span>r_squared<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R^2 = 0.35</code></pre>
 </div>
 </div>
 </section>
 <section id="graph" class="slide level2">
 <h2>Graph</h2>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>X[:,<span class="dv">0</span>], y<span class="op">=</span>y, color<span class="op">=</span><span class="st">"black"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>ax.plot(X, model.predict(X), color<span class="op">=</span><span class="st">"red"</span>, linewidth<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>X[:,<span class="dv">0</span>], y<span class="op">=</span>y, color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a>ax.plot(X, model.predict(X), color<span class="op">=</span><span class="st">"red"</span>, linewidth<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-14_files/figure-revealjs/cell-10-output-1.png" width="806" height="411"></p>
+<p><img data-src="lec-14_files/figure-revealjs/cell-11-output-1.png" width="806" height="411"></p>
 </div>
 </div>
 </section>
@@ -752,10 +760,10 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 <li><p>Ranges between 0 (perfect predictor) and infinity (terrible predictor)</p></li>
 <li><p>Same units as the outcome variable</p></li>
 <li><p>Calculate with <code>means_squared_error(y_true, y_pred)</code>:</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
-<span id="cb7-2"><a href="#cb7-2"></a>rmse <span class="op">=</span> metrics.mean_squared_error(y, model.predict(X))</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(<span class="ss">f"RMSE: </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
+<span id="cb9-2"><a href="#cb9-2"></a>rmse <span class="op">=</span> metrics.mean_squared_error(y, model.predict(X))</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="bu">print</span>(<span class="ss">f"RMSE: </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE: 421823.22</code></pre>
 </div>
@@ -827,10 +835,10 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 <h2>Precision</h2>
 <div>
 <ul>
-<li class="fragment">Tell how precise your prediction/is is</li>
+<li class="fragment">Tell how precise your prediction is</li>
 <li class="fragment"><span class="math inline">\(\frac{TP}{TP + FP}\)</span></li>
-<li class="fragment">The higher this number, the less False Positive you have</li>
-<li class="fragment">My research - Identifying an emegency landing location nearby. A precison gives confidence that it truly is safe to land at the locationt he model predicts.</li>
+<li class="fragment">The higher this number, the less False Positives you have</li>
+<li class="fragment">My research - Identifying an emegency landing location nearby. A precison gives confidence that it truly is safe to land at the location the model predicts.</li>
 </ul>
 </div>
 </section>
