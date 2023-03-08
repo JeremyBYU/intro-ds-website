@@ -46,7 +46,7 @@
     "href": "project-description.html#project-proposal",
     "title": "Project Description (Core Capstone)",
     "section": "Project proposal",
-    "text": "Project proposal\nPlease write a report in the file project-proposal.ipynb which is in you shared Google Drive folder.\nThe purpose of the project proposal is to help you think about your analysis strategy early.\nInclude the following in the proposal:\n\nSection 1 - Introduction\nThe introduction section includes\n\nan introduction to the subject matter you’re investigating\nthe motivation for your research question (citing any relevant literature)\nbriefyly describe its connection to Core classes\nthe general research question you wish to explore\nyour hypotheses regarding the research question of interest.\n\n\n\nSection 2 - Data description\nIn this section, you will describe the data set you wish to explore. This includes\n\ndescription of the observations in the data set,\ndescription of how the data was originally collected (not how you found the data but how the original curator of the data collected it).\n\n\n\nSection 3 - Analysis approach\nIn this section, you will provide a brief overview of your analysis approach. This includes:\n\nDescription of the response variable.\nVisualization and summary statistics for the response variable.\nList of variables that will be considered as predictors\nModel selection (linear regresssion, logistic regression, k-nearest neighbors, support vector machine, etc.)\n\n\n\nSection 4 - Connect to Core Capstone Work\nDescribe how this dataset and analysis will connect with at least two (2) your signature assignments from the Core (Core Capstone Work LO2)\n\nDescribe each signature assignment\nDescribe how the dataset and analysis builds upon or connects with your prior work\n\nExample: You took Philosphy 106 (ethics) and you discussed the relationship between employers and employees. You submitted a signature assignment of a paper on unions (pro or against, it doesn’t matter). A possible dataset you could choose is the Right to Work Dataset and do an analysis on the relationship between state laws and their effect on union participation.\n\n\nSection 5 - Data dictionary (aka code book)\nIn this section, you will create a markdown table that describes each varible in the dataset. Put your da in the data folder. Link to this file from your proposal writeup.\n\n\nSubmission\nPrint your Jupyter notebook as a PDF and submit to Brightspace.\n\n\nProposal grading\n\n\n\nTotal\n10 pts\n\n\n\n\nIntroduction\n3 pts\n\n\nData description\n2 pts\n\n\nAnalysis plan\n4 pts\n\n\nData dictionary\n1 pts\n\n\n\nEach component will be graded as follows:\n\nMeets expectations (full credit): All required elements are completed and are accurate. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.\nClose to expectations (half credit): There are some elements missing and/or inaccurate. There are some issues with formatting.\nDoes not meet expectations (no credit): Major elements missing. Work is not neatly formatted and would not be presentable in a professional setting."
+    "text": "Project proposal\nPlease write a report in the file project-proposal.ipynb which is in you shared Google Drive folder.\nThe purpose of the project proposal is to help you think about your analysis strategy early.\nInclude the following in the proposal:\n\nSection 1 - Introduction\nThe introduction section includes\n\nan introduction to the subject matter you’re investigating\nthe motivation for your research question (citing any relevant literature)\nbriefly describe its connection to Core classes\nthe general research question you wish to explore\nyour hypotheses regarding the research question of interest.\n\n\n\nSection 2 - Data description\nIn this section, you will describe the data set you wish to explore. This includes\n\ndescription of the observations in the data set,\ndescription of how the data was originally collected (not how you found the data but how the original curator of the data collected it).\n\n\n\nSection 3 - Analysis approach\nIn this section, you will provide a brief overview of your analysis approach. This includes:\n\nDescription of the response variable.\nVisualization and summary statistics for the response variable.\nList of variables that will be considered as predictors\nModel selection (linear regresssion, logistic regression, k-nearest neighbors, support vector machine, etc.)\n\nExplain which models might be suitable for making predictions\n\n\n\n\nSection 4 - Connect to Core Capstone Work\nDescribe how this dataset and analysis will connect with at least two (2) your signature assignments from the Core (Core Capstone Work LO2)\n\nDescribe each signature assignment\nDescribe how the dataset and analysis builds upon or connects with your prior work\n\nExample: You took Philosphy 106 (ethics) and you discussed the relationship between employers and employees. You submitted a signature assignment of a paper on unions (pro or against, it doesn’t matter). A possible dataset you could choose is the Right to Work Dataset and do an analysis on the relationship between state laws and their effect on union participation.\nNOTE - If you are a senior/junior and are are not particpating in the new Core you will not have any signature assignments. In this case, just describe in general how your dataset might connect with any general studies/core classes. I am leaving this very open.\n\n\nSection 5 - Data dictionary (aka code book)\nIn this section, you will create a markdown table that describes each varible in the dataset. Put your data in the data folder. Link to this file from your proposal writeup.\n\n\nSubmission\nPrint your Jupyter notebook as a PDF and submit to Brightspace.\n\n\nProposal grading\n\n\n\nTotal\n10 pts\n\n\n\n\nIntroduction\n3 pts\n\n\nData description\n2 pts\n\n\nAnalysis plan\n3 pts\n\n\nConnect Core\n1 pts\n\n\nData dictionary\n1 pts\n\n\n\nEach component will be graded as follows:\n\nMeets expectations (full credit): All required elements are completed and are accurate. The narrative is written clearly, all tables and visualizations are nicely formatted, and the work would be presentable in a professional setting.\nClose to expectations (half credit): There are some elements missing and/or inaccurate. There are some issues with formatting.\nDoes not meet expectations (no credit): Major elements missing. Work is not neatly formatted and would not be presentable in a professional setting."
   },
   {
     "objectID": "project-description.html#draft-report",
@@ -690,7 +690,7 @@
     "href": "slides/lec-14.html#underfit",
     "title": "CISC482 - Lecture14",
     "section": "Underfit",
-    "text": "Underfit\n\nUnderfit - model is too simple to fit the data well."
+    "text": "Underfit\n\n\nUnderfit - model is too simple to fit the data well."
   },
   {
     "objectID": "slides/lec-14.html#underfit-problems",
@@ -704,14 +704,14 @@
     "href": "slides/lec-14.html#overfit",
     "title": "CISC482 - Lecture14",
     "section": "Overfit",
-    "text": "Overfit\n\nOverfit - model is too complex to fit the data well."
+    "text": "Overfit\n\n\nOverfit - model is too complex to fit the data well."
   },
   {
     "objectID": "slides/lec-14.html#overfit-problems",
     "href": "slides/lec-14.html#overfit-problems",
     "title": "CISC482 - Lecture14",
     "section": "Overfit Problems",
-    "text": "Overfit Problems\n\nFitting the data too closely\nIncorporating too much noise (meaningless variation)\nMisses the general trend of the data despite scoring well in some metrics"
+    "text": "Overfit Problems\n\nFitting the data too closely\nIncorporating too much noise (meaningless variation)\nMisses the general trend of the data despite scoring well in some metrics\nIn fact, what is the error for this model?"
   },
   {
     "objectID": "slides/lec-14.html#optimal",
@@ -753,7 +753,7 @@
     "href": "slides/lec-14.html#bias-variance-tradeoff",
     "title": "CISC482 - Lecture14",
     "section": "Bias-Variance Tradeoff",
-    "text": "Bias-Variance Tradeoff\n\nChoosing a more complex model (more features, a more complicated mathematical expression, etc.) means the model’s predictions are closer to the observed sample values, which decreases the bias.\nHowever, doing so makes the model’s predictions more spread out to meet the observed values, increasing the variance.\nAn optimal model should be just complex enough to capture the general trend of the data (low bias) without incorporating too much of the noise from the sample (low variance)."
+    "text": "Bias-Variance Tradeoff\n\n\nChoosing a more complex model (more features, a more complicated mathematical expression, etc.) means the model’s predictions are closer to the observed sample values, which decreases the bias.\nHowever, doing so makes the model’s predictions more spread out to meet the observed values, increasing the variance.\nAn optimal model should be just complex enough to capture the general trend of the data (low bias) without incorporating too much of the noise from the sample (low variance)."
   },
   {
     "objectID": "slides/lec-14.html#visual-example",
@@ -788,14 +788,14 @@
     "href": "slides/lec-14.html#two-statistics",
     "title": "CISC482 - Lecture14",
     "section": "Two statistics",
-    "text": "Two statistics\n\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\\[\nR^2 = \\frac{\\text{variation explained by regression}}{\\text{total variation in the data}} = \\frac{\\sum (\\hat{y}_i - \\bar{y})^2}{\\sum (y_i - \\bar{y})^2}\n\\]\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\n\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i = 1}^n (y_i - \\hat{y}_i)^2}{n}}\n\\]\n\n\nWhat indicates a good model fit? Higher or lower \\(R^2\\)? Higher or lower RMSE?"
+    "text": "Two statistics\n\nR-squared, \\(R^2\\) : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)\n\\[\nR^2 = \\frac{\\text{variation explained by regression}}{\\text{total variation in the data}} = \\frac{\\sum (\\hat{y}_i - \\bar{y})^2}{\\sum (y_i - \\bar{y})^2} \\\\\n  R^2 = 1 - \\frac{\\sum (\\hat{y}_i - y_i)}{\\sum (y_i - \\bar{y})^2}\n\\]\nRoot mean square error, RMSE: A measure of the average error (average difference between observed and predicted values of the outcome)\n\n\\[\nRMSE = \\sqrt{\\frac{\\sum_{i = 1}^n (y_i - \\hat{y}_i)^2}{n}}\n\\]\n\n\nWhat indicates a good model fit? Higher or lower \\(R^2\\)? Higher or lower RMSE?"
   },
   {
     "objectID": "slides/lec-14.html#r-squared",
     "href": "slides/lec-14.html#r-squared",
     "title": "CISC482 - Lecture14",
     "section": "R-squared",
-    "text": "R-squared\n\nRanges between 0 (terrible predictor) and 1 (perfect predictor), Unitless\nCalculate with model.score(X, y):\n\n\nmodel = LinearRegression()\nmodel.fit(X,y)\nr_squared = model.score(X,y)\nprint(f\"R^2 = {r_squared:.2f}\")\n\nR^2 = 0.35"
+    "text": "R-squared\n\nRanges between 0 (terrible predictor) and 1 (perfect predictor), Unitless\nCalculate with model.score(X, y):\n\n\nmodel = LinearRegression()\nmodel.fit(X,y)\nr_squared = model.score(X,y)\nprint(f\"R^2 = {r_squared:.2f}\")\n\nR^2 = 0.35\n\n\n\nx = X[:, 0]\nregressed_fn = np.poly1d(np.polyfit(x, y, 1))\ny_hat = regressed_fn(x)\nr_squared = np.sum(np.square(y_hat - y.mean())) / np.sum(np.square(y.mean() - y))\nprint(f\"R^2 = {r_squared:.2f}\")\nprint(np.corrcoef(y, y_hat) ** 2)\n\nR^2 = 0.35\n[[1.00 0.35]\n [0.35 1.00]]"
   },
   {
     "objectID": "slides/lec-14.html#graph",
@@ -2013,7 +2013,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f13f0530640>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fb33917dc90>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",

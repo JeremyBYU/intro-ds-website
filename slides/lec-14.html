@@ -417,7 +417,7 @@ Dr.&nbsp;Jeremy Castagno
 <ul>
 <li>Reading 6-1: Mar 08 @ 12PM, Wednesday</li>
 <li>Reading 6-2: Mar 10 @ 12PM, Friday</li>
-<li><a href="#/project-proposal">Proposal</a>: Mar 22, Wednesday</li>
+<li><a href="[#project-proposal](https://jeremybyu.github.io/intro-ds-website/project-description.html#project-proposal)">Proposal</a>: Mar 22, Wednesday</li>
 <li>HW5 - Mar 29 @ Midnight, Wednesday</li>
 </ul>
 </section>
@@ -449,9 +449,11 @@ Dr.&nbsp;Jeremy Castagno
 </section>
 <section id="underfit" class="slide level2">
 <h2>Underfit</h2>
+<div class="fragment">
 <ul>
 <li><strong>Underfit</strong> - model is too simple to fit the data well.</li>
 </ul>
+</div>
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <p><img data-src="lec-14_files/figure-revealjs/cell-4-output-1.png" width="801" height="411"></p>
@@ -467,9 +469,11 @@ Dr.&nbsp;Jeremy Castagno
 </section>
 <section id="overfit" class="slide level2">
 <h2>Overfit</h2>
+<div class="fragment">
 <ul>
 <li><strong>Overfit</strong> - model is too complex to fit the data well.</li>
 </ul>
+</div>
 <div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <p><img data-src="lec-14_files/figure-revealjs/cell-5-output-1.png" width="801" height="411"></p>
@@ -482,6 +486,7 @@ Dr.&nbsp;Jeremy Castagno
 <li>Fitting the data too closely</li>
 <li>Incorporating too much noise (meaningless variation)</li>
 <li>Misses the general trend of the data despite scoring well in some metrics</li>
+<li>In fact, what is the error for this model?</li>
 </ul>
 </section>
 <section id="optimal" class="slide level2">
@@ -537,11 +542,13 @@ Dr.&nbsp;Jeremy Castagno
 <img data-src="./lec14_images/bias_variance.png" class="r-stretch quarto-figure-center"></section>
 <section id="bias-variance-tradeoff" class="slide level2">
 <h2>Bias-Variance Tradeoff</h2>
+<div>
 <ul>
-<li>Choosing a more complex model (more features, a more complicated mathematical expression, etc.) means the model’s predictions are closer to the observed sample values, which decreases the bias.</li>
-<li>However, doing so makes the model’s predictions more spread out to meet the observed values, increasing the variance.</li>
-<li>An optimal model should be just complex enough to capture the general trend of the data (low bias) without incorporating too much of the noise from the sample (low variance).</li>
+<li class="fragment">Choosing a more complex model (more features, a more complicated mathematical expression, etc.) means the model’s predictions are closer to the observed sample values, which decreases the bias.</li>
+<li class="fragment">However, doing so makes the model’s predictions more spread out to meet the observed values, increasing the variance.</li>
+<li class="fragment">An optimal model should be just complex enough to capture the general trend of the data (low bias) without incorporating too much of the noise from the sample (low variance).</li>
 </ul>
+</div>
 </section>
 <section id="visual-example" class="slide level2">
 <h2>Visual Example</h2>
@@ -669,7 +676,8 @@ Dr.&nbsp;Jeremy Castagno
 <ul>
 <li><p><strong>R-squared</strong>, <span class="math inline">\(R^2\)</span> : Percentage of variability in the outcome explained by the regression model (in the context of SLR, the predictor)</p>
 <p><span class="math display">\[
-R^2 = \frac{\text{variation explained by regression}}{\text{total variation in the data}} = \frac{\sum (\hat{y}_i - \bar{y})^2}{\sum (y_i - \bar{y})^2}
+R^2 = \frac{\text{variation explained by regression}}{\text{total variation in the data}} = \frac{\sum (\hat{y}_i - \bar{y})^2}{\sum (y_i - \bar{y})^2} \\
+  R^2 = 1 - \frac{\sum (\hat{y}_i - y_i)}{\sum (y_i - \bar{y})^2}
 \]</span></p></li>
 <li><p><strong>Root mean square error, RMSE</strong>: A measure of the average error (average difference between observed and predicted values of the outcome)</p></li>
 </ul>
@@ -697,14 +705,27 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 <pre><code>R^2 = 0.35</code></pre>
 </div>
 </div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="op">=</span> X[:, <span class="dv">0</span>]</span>
+<span id="cb4-2"><a href="#cb4-2"></a>regressed_fn <span class="op">=</span> np.poly1d(np.polyfit(x, y, <span class="dv">1</span>))</span>
+<span id="cb4-3"><a href="#cb4-3"></a>y_hat <span class="op">=</span> regressed_fn(x)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>r_squared <span class="op">=</span> np.<span class="bu">sum</span>(np.square(y_hat <span class="op">-</span> y.mean())) <span class="op">/</span> np.<span class="bu">sum</span>(np.square(y.mean() <span class="op">-</span> y))</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">print</span>(<span class="ss">f"R^2 = </span><span class="sc">{</span>r_squared<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">print</span>(np.corrcoef(y, y_hat) <span class="op">**</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R^2 = 0.35
+[[1.00 0.35]
+ [0.35 1.00]]</code></pre>
+</div>
+</div>
 </section>
 <section id="graph" class="slide level2">
 <h2>Graph</h2>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>X[:,<span class="dv">0</span>], y<span class="op">=</span>y, color<span class="op">=</span><span class="st">"black"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>ax.plot(X, model.predict(X), color<span class="op">=</span><span class="st">"red"</span>, linewidth<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>ax <span class="op">=</span> sns.scatterplot(x<span class="op">=</span>X[:,<span class="dv">0</span>], y<span class="op">=</span>y, color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>ax.plot(X, model.predict(X), color<span class="op">=</span><span class="st">"red"</span>, linewidth<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img data-src="lec-14_files/figure-revealjs/cell-9-output-1.png" width="806" height="411"></p>
+<p><img data-src="lec-14_files/figure-revealjs/cell-10-output-1.png" width="806" height="411"></p>
 </div>
 </div>
 </section>
@@ -731,10 +752,10 @@ RMSE = \sqrt{\frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n}}
 <li><p>Ranges between 0 (perfect predictor) and infinity (terrible predictor)</p></li>
 <li><p>Same units as the outcome variable</p></li>
 <li><p>Calculate with <code>means_squared_error(y_true, y_pred)</code>:</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
-<span id="cb5-2"><a href="#cb5-2"></a>rmse <span class="op">=</span> metrics.mean_squared_error(y, model.predict(X))</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="bu">print</span>(<span class="ss">f"RMSE: </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
+<span id="cb7-2"><a href="#cb7-2"></a>rmse <span class="op">=</span> metrics.mean_squared_error(y, model.predict(X))</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(<span class="ss">f"RMSE: </span><span class="sc">{</span>rmse<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>RMSE: 421823.22</code></pre>
 </div>
