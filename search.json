@@ -2020,7 +2020,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f8a800b2140>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f79dd7c8c40>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -2076,7 +2076,7 @@
     "href": "slides/lec-15.html#schedule",
     "title": "CISC482 - Lecture15",
     "section": "Schedule",
-    "text": "Schedule\n\nReading 6-1: Mar 08 @ 12PM, Wednesday\nReading 6-2: Mar 10 @ 12PM, Friday\nProposal: Mar 22, Wednesday\nHW5 - Mar 29 @ Midnight, Wednesday"
+    "text": "Schedule\n\nReading 6-2: Mar 10 @ 12PM, Friday\nReading 6-3: Mar 22 @ 12PM, Wednesday\nProposal: Mar 22, Wednesday\nHW5 - Mar 29 @ Midnight, Wednesday"
   },
   {
     "objectID": "slides/lec-15.html#today",
@@ -2139,7 +2139,7 @@
     "href": "slides/lec-15.html#the-split",
     "title": "CISC482 - Lecture15",
     "section": "The Split",
-    "text": "The Split\n\nTraining data is used to fit a model.\nValidation data is used to evaluate model performance while adjusting hyperparameter estimates and conducting feature selection. This is not always needed!\nTest data is used to evaluate final model performance and compare different models.\nThe ratio for this split: 80/10/10 or 70/10/20"
+    "text": "The Split\n\nTraining data is used to fit a model.\nValidation data is used to evaluate model performance while adjusting hyperparameter estimates and conducting feature selection. We also use this choose between two models. This is not always needed!\nTest data is used to evaluate final model performance and compare different models.\nThe ratio for this split: 80/10/10 or 70/10/20"
   },
   {
     "objectID": "slides/lec-15.html#visualization",
@@ -2153,7 +2153,14 @@
     "href": "slides/lec-15.html#an-example",
     "title": "CISC482 - Lecture15",
     "section": "An Example!",
-    "text": "An Example!\n\n\nCode\nfrom sklearn.metrics import r2_score\nlinear_model = LinearRegression()\nlinear_model.fit(X, y)\ndegree = 5\nprint(f\"Linear Model R^2 = {r2_score(y, linear_model.predict(X)):.2f}\")\n\nquadratic_model = np.poly1d(np.polyfit(x, y, degree)) # quadratic\nprint(f\"Polynomial Model R^2 = {r2_score(y, quadratic_model(x)):.2f}\")\n\nax = sns.scatterplot(x=x, y=y, label=\"All Data\")\nax.plot(x, linear_model.predict(X), color='r', label='Linear Regression')\nax.plot(x, quadratic_model(x), color='m', label='Polynomial Regression')\n# ax.scatter(x, quadratic_model(x), color='m')\nax.legend();\n\n\nLinear Model R^2 = 0.55\nPolynomial Model R^2 = 0.64"
+    "text": "An Example!\n\n\nCode\nfrom sklearn.metrics import r2_score\nlinear_model = LinearRegression()\nlinear_model.fit(X, y)\nprint(f\"Linear Model R^2 = {r2_score(y, linear_model.predict(X)):.2f}\")\n\ndegree = 5\nquadratic_model = np.poly1d(np.polyfit(x, y, degree)) # quadratic\nprint(f\"Polynomial Model R^2 = {r2_score(y, quadratic_model(x)):.2f}\")\n\nx_graph = np.linspace(0, 10, 100)\nax = sns.scatterplot(x=x, y=y, label=\"All Data\")\nax.plot(x_graph, linear_model.predict(x_graph[:, np.newaxis]), color='r', label='Linear Regression')\nax.plot(x_graph, quadratic_model(x_graph), color='m', label='Polynomial Regression')\nax.legend();"
+  },
+  {
+    "objectID": "slides/lec-15.html#an-example-output",
+    "href": "slides/lec-15.html#an-example-output",
+    "title": "CISC482 - Lecture15",
+    "section": "An Example!",
+    "text": "An Example!\n\nLinear Model R^2 = 0.55\nPolynomial Model R^2 = 0.64"
   },
   {
     "objectID": "slides/lec-15.html#split-the-data",
@@ -2167,7 +2174,7 @@
     "href": "slides/lec-15.html#traintest-split",
     "title": "CISC482 - Lecture15",
     "section": "Train/Test Split",
-    "text": "Train/Test Split\n\n\nCode\nfrom sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.30, random_state=0)\n\nlinear_model.fit(X_train, y_train)\nquadratic_model = np.poly1d(np.polyfit(X_train[:,0], y_train, degree)) # quadratic\n\nprint(f\"TRAIN SET - Linear Model R^2 = {r2_score(y_train, linear_model.predict(X_train)):.2f}; Polynomial Model R^2 = {r2_score(y_train, quadratic_model(X_train[:,0])):.2f}\")\nprint(f\"TEST SET - Linear Model R^2 = {r2_score(y_test, linear_model.predict(X_test)):.2f}; Polynomial Model R^2 = {r2_score(y_test, quadratic_model(X_test[:,0])):.2f}\")\n\n\nfig, ax = plt.subplots(nrows=1, ncols=2) # create 2 plots!\n# Plot training result\nsns.scatterplot(x=X_train[:,0], y=y_train, ax=ax[0], label=\"Training Data\")\nax[0].plot(np.sort(X_train[:, 0]), linear_model.predict(np.sort(X_train, axis=0)), color='r', label='Linear Regression')\nax[0].plot(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m', label='Polynomial Regression');\n# ax[0].scatter(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m');\nax[0].set_title(\"Training Set\")\nax[0].legend()\n# Plot testing result\nsns.scatterplot(x=X_test[:,0], y=y_test, ax=ax[1], label=\"Testing Data\")\nax[1].plot(np.sort(X_test[:, 0]), linear_model.predict(np.sort(X_test, axis=0)), color='r', label='Linear Regression')\nax[1].plot(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m', label='Polynomial Regression');\n# ax[1].scatter(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m');\nax[1].set_title(\"Testing Set\")\nax[1].legend();\n\n\nTRAIN SET - Linear Model R^2 = 0.44; Polynomial Model R^2 = 0.62\nTEST SET - Linear Model R^2 = 0.65; Polynomial Model R^2 = 0.41"
+    "text": "Train/Test Split\n\n\nCode\nfrom sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.30, random_state=0)\n\nlinear_model.fit(X_train, y_train)\nquadratic_model = np.poly1d(np.polyfit(X_train[:,0], y_train, degree)) # quadratic\n\nprint(f\"TRAIN SET - Linear Model R^2 = {r2_score(y_train, linear_model.predict(X_train)):.2f}; Polynomial Model R^2 = {r2_score(y_train, quadratic_model(X_train[:,0])):.2f}\")\nprint(f\"TEST SET - Linear Model R^2 = {r2_score(y_test, linear_model.predict(X_test)):.2f}; Polynomial Model R^2 = {r2_score(y_test, quadratic_model(X_test[:,0])):.2f}\")\n\n\nfig, ax = plt.subplots(nrows=1, ncols=2) # create 2 plots!\n# Plot training result\nx_graph = np.linspace(0, 10, 100)\nsns.scatterplot(x=X_train[:,0], y=y_train, ax=ax[0], label=\"Training Data\")\nax[0].plot(x_graph, linear_model.predict(x_graph[:, np.newaxis]), color='r', label='Linear Regression')\nax[0].plot(x_graph, quadratic_model(x_graph), color='m', label='Polynomial Regression');\n# ax[0].scatter(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m');\nax[0].set_title(\"Training Set\")\nax[0].legend()\n# Plot testing result\nsns.scatterplot(x=X_test[:,0], y=y_test, ax=ax[1], label=\"Testing Data\")\nax[1].plot(x_graph, linear_model.predict(x_graph[:, np.newaxis]), color='r', label='Linear Regression')\nax[1].plot(x_graph, quadratic_model(x_graph), color='m', label='Polynomial Regression');\n# ax[1].scatter(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m');\nax[1].set_title(\"Testing Set\")\nax[1].legend();\n\n\nTRAIN SET - Linear Model R^2 = 0.44; Polynomial Model R^2 = 0.62\nTEST SET - Linear Model R^2 = 0.65; Polynomial Model R^2 = 0.41"
   },
   {
     "objectID": "slides/lec-15.html#cross-validation-1",
