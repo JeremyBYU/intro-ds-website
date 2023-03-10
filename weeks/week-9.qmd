@@ -6,12 +6,12 @@ editor: visual
 
 ## Prepare
 
-📖 Read Assignments 5-3
+📖 Read Assignments 6-3
 
 ## Participate
 
-🖥️ [Lecture 14 - Model Performance 1](/slides/lec-14.html)
-🖥️ [Lecture 15 - Model Performance 1](/slides/lec-15.html)
+🖥️ [Lecture 16 - Model Performance 1](/slides/lec-16.html)
+🖥️ [Lecture 17 - Model Performance 1](/slides/lec-17.html)
 
 ## Practice
 

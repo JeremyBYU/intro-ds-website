@@ -101,7 +101,7 @@ Please save each dataset in the `data` folder in your Google Drive Folder.
 
 Please write a report in the file `project-proposal.ipynb` which is in you shared Google Drive folder.
 
-The purpose of the project proposal is to help you think about your analysis strategy early. 
+The purpose of the project proposal is to help you think about your analysis strategy early. Here is a link to a [sample proposal](https://colab.research.google.com/drive/114Xx14ThCd0e6w2Kk_WfGDK4r2zJ4a9o?usp=sharing)
 
 Include the following in the proposal:
 
@@ -160,11 +160,11 @@ Print your Jupyter notebook as a PDF and submit to Brightspace.
 
 ### Proposal grading
 
-| Total                | 10 pts |
+| Total                | 15 pts |
 |----------------------|--------|
-| **Introduction**     | 3 pts  |
-| **Data description** | 2 pts  |
-| **Analysis plan**    | 3 pts  |
+| **Introduction**     | 5 pts  |
+| **Data description** | 4 pts  |
+| **Analysis plan**    | 4 pts  |
 | **Connect Core**     | 1 pts  |
 | **Data dictionary**  | 1 pts  |
 
