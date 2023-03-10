@@ -1659,6 +1659,20 @@
     "text": "You can do it!\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
+    "objectID": "slides/lec-16.html#schedule",
+    "href": "slides/lec-16.html#schedule",
+    "title": "CISC482 - Lecture15",
+    "section": "Schedule",
+    "text": "Schedule\n\nReading 6-3: Mar 22 @ 12PM, Wednesday\nProposal: Mar 22, Wednesday\nPropsal Template!\nHW5 - Mar 29 @ Midnight, Wednesday"
+  },
+  {
+    "objectID": "slides/lec-16.html#today",
+    "href": "slides/lec-16.html#today",
+    "title": "CISC482 - Lecture15",
+    "section": "Today",
+    "text": "Today\n\nReview Train/Valid/Test\nReivew K-Folds"
+  },
+  {
     "objectID": "slides/lec-09.html#schedule",
     "href": "slides/lec-09.html#schedule",
     "title": "CISC482 - Lecture09",
@@ -2601,7 +2615,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f743cf7b0a0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f9a95250ee0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",

@@ -9,7 +9,7 @@
   <meta name="generator" content="quarto-1.2.335">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
-  <title>Intro to Data Science - CISC482 - Lecture03</title>
+  <title>Intro to Data Science - CISC482 - Lecture15</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,70 +27,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -383,8 +319,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture03">
-<meta property="og:description" content="Statistics">
+<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture15">
+<meta property="og:description" content="Evaluating Model Performance - Bootrapping">
 <meta property="og:site-name" content="Intro to Data Science">
 </head>
 <body class="quarto-light">
@@ -392,8 +328,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CISC482 - Lecture03</h1>
-  <p class="subtitle">Statistics</p>
+  <h1 class="title">CISC482 - Lecture15</h1>
+  <p class="subtitle">Evaluating Model Performance - Bootrapping</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -412,444 +348,37 @@ Dr.&nbsp;Jeremy Castagno
 <section id="schedule" class="slide level2">
 <h2>Schedule</h2>
 <ul>
-<li>Reading 2-1: Jan 25 @ 12PM, Wed</li>
-<li>Reading 2-2: Jan 27 @ 12PM, Friday</li>
-<li>Reading 2-3: Feb 1 @ 12PM, Wed</li>
-<li>HW2: Feb 1 @ Midnight, Wed</li>
+<li>Reading 6-3: Mar 22 @ 12PM, Wednesday</li>
+<li><a href="https://jeremybyu.github.io/intro-ds-website/project-description.html#project-proposal">Proposal</a>: Mar 22, Wednesday</li>
+<li><a href="https://colab.research.google.com/drive/114Xx14ThCd0e6w2Kk_WfGDK4r2zJ4a9o?usp=sharing">Propsal Template!</a></li>
+<li><a href="https://colab.research.google.com/drive/17_0yoHoVZ_Wekp43tvwf5tWSFtxyyyam?usp=sharing">HW5</a> - Mar 29 @ Midnight, Wednesday</li>
+</ul>
+</section>
+<section id="today" class="slide level2">
+<h2>Today</h2>
+<ul>
+<li>Review Train/Valid/Test</li>
+<li>Reivew K-Folds</li>
 </ul>
 </section></section>
-<section>
-<section id="data-collection" class="title-slide slide level1 center">
-<h1>Data Collection</h1>
+<section id="review" class="title-slide slide level1 center">
+<h1>Review</h1>
 
 </section>
-<section id="stats-for-data-science" class="slide level2">
-<h2>Stats for data science</h2>
-<ul>
-<li>Data science relies on statistics to make data driven decisions</li>
-<li>Sampling methods are used to efeciently collect data and reduce bias</li>
-</ul>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Bias</strong> - anything that leads to a systematic difference between the true parameters of a population and the statistics used to estimate those parameters. E.g., sampling only men.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="its-hard" class="slide level2">
-<h2>It’s hard…</h2>
 
-<img data-src="./lec02_images/hillary_clinton.png" class="r-stretch quarto-figure-center"></section>
-<section id="sampling-errors" class="slide level2">
-<h2>Sampling Errors</h2>
-<ul>
-<li>A small, systematic polling error made a big difference</li>
-<li>All polls were off in the same direction (5 pts) in swing states</li>
-<li>Correlatated sampling errors in the midwest</li>
-<li>Failure to appreciate uncertainty</li>
-</ul>
-</section>
-<section id="stats-for-data-science-1" class="slide level2">
-<h2>Stats for data science</h2>
-<div class="columns">
-<div class="smaller column" style="width:40%;">
-<ul>
-<li>Descriptive statistics -&gt; explore visualizations</li>
-<li>Inferential statistics -&gt; modeling and estimation</li>
-<li>Statisitcs is foundational to ensure results are interpreted correctly</li>
-</ul>
-</div><div class="column" style="width:60%;">
-<p><img data-src="./lec03_images/stats_intro.png"></p>
-</div>
-</div>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="sampling" class="slide level2">
-<h2>Sampling</h2>
-<ul>
-<li><strong>Population</strong> - Entire set of individuals, items, or events of interest</li>
-<li><strong>Observational Unit</strong> - individual item or event</li>
-<li><strong>Sample</strong> - <em>subset</em> of observational units from the population</li>
-</ul>
-</section>
-<section id="types-of-sampling" class="slide level2">
-<h2>Types of Sampling</h2>
-<div>
-<ul>
-<li class="fragment">Random Sampling
-<ul>
-<li class="fragment">OU are selected at random</li>
-</ul></li>
-<li class="fragment">Stratified Sampling
-<ul>
-<li class="fragment">Population is divided into groups (primary feature). Each group is sampled.</li>
-</ul></li>
-<li class="fragment">Cluster Sampling
-<ul>
-<li class="fragment">Population divided into groups (not a primary feature, geography)</li>
-</ul></li>
-<li class="fragment">Systematic Sampling
-<ul>
-<li class="fragment">Every k’th observational unit is sampled</li>
-</ul></li>
-<li class="fragment">Convenience Sampling
-<ul>
-<li class="fragment">OU are selected that are easier<br>
-</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="observational-vs-experiement" class="slide level2">
-<h2>Observational vs Experiement</h2>
-<ul>
-<li>Observational
-<ul>
-<li>Observing or collecting data</li>
-<li>Not trying to control or influence an outcome</li>
-</ul></li>
-<li>Experimental
-<ul>
-<li>You are controlling a varaible</li>
-<li>You manipulate that variable to get a different response</li>
-</ul></li>
-</ul>
-</section>
-<section id="descriptive-statistics" class="slide level2">
-<h2>Descriptive Statistics</h2>
-</section>
-<section id="oveview" class="slide level2">
-<h2>Oveview</h2>
-<ul>
-<li>Terminology</li>
-<li>Measure of center</li>
-<li>Measure of spread</li>
-<li>Measure of position</li>
-<li>Measure of shape</li>
-</ul>
-</section>
-<section id="terminology" class="slide level2">
-<h2>Terminology</h2>
-<ul>
-<li><strong>Descriptive Statistics</strong> - summarize and describe a features important characteristics</li>
-<li><strong>distribution</strong> - the possible values the feature can take</li>
-<li><strong>cluster</strong> - a distinct group of neighboring values in a distribution</li>
-<li><strong>tails</strong> - the end values of a distributution</li>
-</ul>
-</section>
-<section id="terminology---visualized" class="slide level2">
-<h2>Terminology - Visualized</h2>
-
-<img data-src="./lec03_images/descriptive_stats.png" class="r-stretch quarto-figure-center"></section>
-<section id="measure-of-center" class="slide level2">
-<h2>Measure of Center</h2>
-<ul>
-<li><strong>Mean</strong> - average, sum of all values divided by the total number of values, <em>n</em> <span class="math display">\[
-\frac{1}{n} \sum_{i=i}^{n} x_{i}
-\]</span></li>
-<li><strong>Median</strong> - the middle value of the ordered data</li>
-</ul>
-
-<img data-src="./lec03_images/median_mean.png" class="r-stretch quarto-figure-center"></section>
-<section id="code-example" class="slide level2">
-<h2>Code Example!</h2>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1|2|3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>heights <span class="op">=</span> [<span class="fl">5.5</span>, <span class="fl">5.7</span>, <span class="fl">5.8</span>, <span class="fl">5.9</span>]</span>
-<span id="cb1-2"><a href="#cb1-2"></a>avg_height <span class="op">=</span> <span class="bu">sum</span>(heights) <span class="op">/</span> <span class="bu">len</span>(heights)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="bu">print</span>(<span class="ss">f"Average Height: </span><span class="sc">{</span>avg_height<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Average Height: 5.72</code></pre>
-</div>
-</div>
-<p><br></p>
-<div class="fragment">
-<p><strong>Using Numpy</strong></p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="1|2|3|4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2"></a>heights <span class="op">=</span> np.array([<span class="fl">5.5</span>, <span class="fl">5.7</span>, <span class="fl">5.8</span>, <span class="fl">5.9</span>, <span class="fl">6.2</span>])</span>
-<span id="cb3-3"><a href="#cb3-3"></a>avg_height <span class="op">=</span> np.average(heights)</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="bu">print</span>(<span class="ss">f"Average Height: </span><span class="sc">{</span>avg_height<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Average Height: 5.82</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="what-is-numpy" class="slide level2">
-<h2>What is NumPy</h2>
-<ul>
-<li>NumPy is <strong>the fundamental package</strong> for scientific computing in Python.</li>
-<li>Python library that provides a multidimensional array object.</li>
-<li>Stores data <em>very</em> effeciently very fast</li>
-</ul>
-<div class="fragment">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>])</span></code></pre></div>
-</div>
-<div class="fragment">
-<p>2D array - rows and columns</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>b <span class="op">=</span> np.array([</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  [<span class="dv">1</span>, <span class="dv">2</span>], <span class="co"># first row</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>  [<span class="dv">3</span>, <span class="dv">4</span>]  <span class="co"># second row</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>])</span></code></pre></div>
-</div>
-</section>
-<section id="question" class="slide level2">
-<h2>Question</h2>
-<p><code>np.average(...)</code> - finds the average</p>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>What function to get the median?</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>heights <span class="op">=</span> np.array([<span class="fl">5.5</span>, <span class="fl">5.7</span>, <span class="fl">5.8</span>, <span class="fl">5.9</span>, <span class="fl">6.2</span>])</span>
-<span id="cb7-2"><a href="#cb7-2"></a>median_height <span class="op">=</span> np.median(heights)</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(<span class="ss">f"Median Height: </span><span class="sc">{</span>median_height<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Median Height: 5.80</code></pre>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="descriptive-stats" class="title-slide slide level1 center">
-<h1>Descriptive Stats</h1>
+<section id="bootrapping" class="title-slide slide level1 center">
+<h1>Bootrapping</h1>
 
 </section>
-<section id="spread" class="slide level2">
-<h2>Spread</h2>
-<div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-03_files/figure-revealjs/cell-6-output-1.png" width="892" height="410"></p>
-</div>
-</div>
-</section>
-<section id="spread-terminology" class="slide level2">
-<h2>Spread Terminology</h2>
-<ul>
-<li><strong>range</strong> - distance between the min and max</li>
-<li><strong>interquartile range (IQR)</strong> - range of the middle 50%</li>
-<li><strong>variance</strong> - the <strong>average squared distance</strong> between a feature and its discribution <em>mean</em></li>
-</ul>
-<p><span class="math display">\[
-\sigma^2 = Var(x) = \frac{\sum_{i=1}^{n} (x_i - \bar{x} )^2}{n-1}
-\]</span></p>
-<ul>
-<li>Standard deviation - <span class="math inline">\(\sigma = sqrt(Var(X))\)</span></li>
-</ul>
-</section>
-<section id="postion-terminology-quantiles" class="slide level2">
-<h2>Postion Terminology (Quantiles)</h2>
 
-<img data-src="./lec03_images/iqr.png" class="r-stretch"></section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<div class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-03_files/figure-revealjs/cell-7-output-1.png" width="1084" height="506"></p>
-</div>
-</div>
-</section>
-<section id="measures-of-shape" class="slide level2">
-<h2>Measures of Shape</h2>
-
-<img data-src="./lec03_images/shape_measure.png" class="r-stretch quarto-figure-center"><ul>
-<li><strong>Skewness</strong> - measure of the amount and direction of skew</li>
-<li><strong>Kurtosis</strong> - measure of tail heaviness</li>
-</ul>
-</section></section>
-<section>
-<section id="code" class="title-slide slide level1 center">
-<h1>Code</h1>
-
-</section>
-<section id="mean" class="slide level2">
-<h2>Mean</h2>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>                            <span class="co"># mean,  std,    n</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>samples <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="fl">5.0</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a>samples</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>array([6.624, 4.388, 4.472, 3.927, 5.865, 2.698, 6.745, 4.239, 5.319,
-       4.751, 6.462])</code></pre>
-</div>
-</div>
-<p>How would I get the mean?</p>
-<div class="fragment">
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">print</span>(np.mean(samples))</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5.044609002634907</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="standard-deviation" class="slide level2">
-<h2>Standard Deviation</h2>
-<div class="fragment">
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>std <span class="op">=</span> np.std(samples)</span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="bu">print</span>(<span class="ss">f"The standard deviation is: </span><span class="sc">{</span>std<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The standard deviation is: 1.22</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>The variance?</p>
-</div>
-<div class="fragment">
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>var <span class="op">=</span> std <span class="op">*</span> std</span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">print</span>(<span class="ss">f"The variance is: </span><span class="sc">{</span>var<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>The variance is: 1.49</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="quantiles" class="slide level2">
-<h2>Quantiles</h2>
-<div class="fragment">
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>samples_sorted <span class="op">=</span> np.sort(samples)</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="bu">print</span>(samples_sorted)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[2.698 3.927 4.239 4.388 4.472 4.751 5.319 5.865 6.462 6.624 6.745]</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Getting the quantile</p>
-</div>
-<div class="fragment">
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>fifty_percent_quantile <span class="op">=</span> np.quantile(samples, <span class="fl">0.50</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a>median <span class="op">=</span> np.median(samples)</span>
-<span id="cb19-3"><a href="#cb19-3"></a></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>fifty_percent_quantile<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>median<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>4.751
-4.751</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>quantiles <span class="op">=</span> np.quantile(samples, [<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>])</span>
-<span id="cb21-2"><a href="#cb21-2"></a></span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="bu">print</span>(quantiles)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[4.314 4.751 6.164]</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="shape" class="slide level2">
-<h2>Shape</h2>
-<p>Advanced statistics -&gt; I recommend using the library <code>scipy</code>. This library is built on top of <code>numpy</code> but has more functionality.</p>
-<div class="fragment">
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> skewnorm</span>
-<span id="cb23-2"><a href="#cb23-2"></a>samples_skewed <span class="op">=</span> skewnorm.rvs(<span class="dv">3</span>, loc<span class="op">=</span><span class="dv">15</span>, scale<span class="op">=</span><span class="dv">2</span>, size<span class="op">=</span><span class="dv">1000</span>)</span>
-<span id="cb23-3"><a href="#cb23-3"></a>samples <span class="op">=</span> skewnorm.rvs(<span class="dv">0</span>, loc<span class="op">=</span><span class="dv">5</span>, scale<span class="op">=</span><span class="dv">1</span>, size<span class="op">=</span><span class="dv">1000</span>)</span></code></pre></div>
-</div>
-<div class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f9a95250ee0&gt;</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-03_files/figure-revealjs/cell-16-output-2.png" width="1333" height="315"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="skewness-and-kurtosis" class="slide level2">
-<h2>Skewness and Kurtosis</h2>
-<p>Calculate the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skew.html">skewness</a></p>
-<div class="fragment">
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="bu">print</span>(<span class="ss">f"Skewed sample data set, skewnewss is: </span><span class="sc">{</span>stats<span class="sc">.</span>skew(samples_skewed)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="bu">print</span>(<span class="ss">f"Normal sample data set, skewnewss is: </span><span class="sc">{</span>stats<span class="sc">.</span>skew(samples)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Skewed sample data set, skewnewss is: 0.790
-Normal sample data set, skewnewss is: -0.003</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Calculate the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kurtosis.html#scipy.stats.kurtosis">kurtosis</a></p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="bu">print</span>(<span class="ss">f"Skewed sample data set, kurtosis is: </span><span class="sc">{</span>stats<span class="sc">.</span>kurtosis(samples_skewed)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="bu">print</span>(<span class="ss">f"Normal sample data set, kurtosis is: </span><span class="sc">{</span>stats<span class="sc">.</span>kurtosis(samples)<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Skewed sample data set, kurtosis is: 0.938
-Normal sample data set, kurtosis is: -0.067</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="callout callout-warning callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Warning</strong></p>
-</div>
-<div class="callout-content">
-<p>This skewed distribution is not very good at demonstrating kurtosis.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="all" class="slide level2">
-<h2>All</h2>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
-<span id="cb29-2"><a href="#cb29-2"></a>stats.describe(samples)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
-<pre><code>DescribeResult(nobs=1000, minmax=(1.7616568032476234, 7.787361447950662), mean=5.053665979218166, variance=1.0126662448100565, skewness=-0.0026145821525120016, kurtosis=-0.06654059199852824)</code></pre>
-</div>
-</div>
+<section id="model-selection" class="title-slide slide level1 center">
+<h1>Model Selection</h1>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -861,6 +390,7 @@ Normal sample data set, kurtosis is: -0.067</code></pre>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-no-swipe/noswipe.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1054,7 +584,7 @@ Normal sample data set, kurtosis is: -0.067</code></pre>
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealNoSwipe, QuartoSupport,
 
           RevealMath,
           RevealNotes,
