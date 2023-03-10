@@ -1,0 +1,61 @@
+---
+title: "CISC482 - Lecture15"
+subtitle: "Evaluating Model Performance - Bootrapping"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 6-3:  Mar 22 @ 12PM, Wednesday
+- [Proposal](https://jeremybyu.github.io/intro-ds-website/project-description.html#project-proposal): Mar 22, Wednesday
+- [Propsal Template!](https://colab.research.google.com/drive/114Xx14ThCd0e6w2Kk_WfGDK4r2zJ4a9o?usp=sharing)
+- [HW5](https://colab.research.google.com/drive/17_0yoHoVZ_Wekp43tvwf5tWSFtxyyyam?usp=sharing) - Mar 29 @ Midnight, Wednesday
+
+## Today
+
+- Review Train/Valid/Test
+- Reivew K-Folds
+
+# Review
+
+# Bootrapping
+
+# Model Selection
