@@ -56,6 +56,219 @@ np.random.seed(10)
 
 # Review
 
+## Purpose of model evaluation
+
+-   $R^2$, $recall$, etc. tells us how our model is doing to predict the data we *already have*
+-   But generally we are interested in prediction for a **new** observation, 
+-   We have a couple ways of *simulating* out-of-sample prediction before actually getting new data to evaluate the performance of our models
+
+## Splitting Data
+
+::: incremental
+- Train/Test/Valid
+  - Train (70% of data) - Used to *fit* a model or multiple models
+  - Validation (15% of data) - Used to compare different models
+  - Test (15% of data) - Final model evaluation
+:::
+```{python}
+x = np.linspace(0, 10, 30)
+X = x[:, np.newaxis]
+noise = np.random.normal(0, scale=3, size=30)
+y = x + noise
+```
+
+## Train/Valid Split
+
+```{python}
+#| echo: false
+#| code-fold: true
+
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.30, random_state=0)
+
+linear_model = LinearRegression()
+linear_model.fit(X_train, y_train)
+degree = 5
+quadratic_model = np.poly1d(np.polyfit(X_train[:,0], y_train, degree)) # quadratic
+
+print(f"TRAIN SET - Linear Model R^2 = {r2_score(y_train, linear_model.predict(X_train)):.2f}; Polynomial Model R^2 = {r2_score(y_train, quadratic_model(X_train[:,0])):.2f}")
+print(f"VALID SET - Linear Model R^2 = {r2_score(y_test, linear_model.predict(X_test)):.2f}; Polynomial Model R^2 = {r2_score(y_test, quadratic_model(X_test[:,0])):.2f}")
+
+
+fig, ax = plt.subplots(nrows=1, ncols=2) # create 2 plots!
+# Plot training result
+x_graph = np.linspace(0, 10, 100)
+sns.scatterplot(x=X_train[:,0], y=y_train, ax=ax[0], label="Training Data")
+ax[0].plot(x_graph, linear_model.predict(x_graph[:, np.newaxis]), color='r', label='Linear Regression')
+ax[0].plot(x_graph, quadratic_model(x_graph), color='m', label='Polynomial Regression');
+# ax[0].scatter(np.sort(X_train[:, 0]), quadratic_model(np.sort(X_train[:, 0])), color='m');
+ax[0].set_title("Training Set")
+ax[0].legend()
+# Plot testing result
+sns.scatterplot(x=X_test[:,0], y=y_test, ax=ax[1], label="Validation Data")
+ax[1].plot(x_graph, linear_model.predict(x_graph[:, np.newaxis]), color='r', label='Linear Regression')
+ax[1].plot(x_graph, quadratic_model(x_graph), color='m', label='Polynomial Regression');
+# ax[1].scatter(np.sort(X_test[:, 0]), quadratic_model(np.sort(X_test[:, 0])), color='m');
+ax[1].set_title("Valdation Set")
+ax[1].legend();
+```
+
+
+## K-folds Cross Validation
+
+::: incremental
+- Split data into Train(80%)/Test(20%)
+- Break the Train data into *k* groups.
+- Train/Validate across the goups
+:::
+
+
+## K-Folds Split (k=10)
+
+![](./lec15_images/k-fold-split.png){fig-align="center"}
+
+## K-Folds Train and Validate
+
+![](./lec15_images/k-folds-validation.png){fig-align="center"}
+
+::: fragment
+![](./lec15_images/k-fold-validation-errors.png){fig-align="center"}
+:::
+
+
 # Bootrapping
 
+## What is it?
+
+- **Bootstrapping** is the process of generating *simulated* samples by repeatedly drawing **with replacement** from an existing sample. 
+- Bootstrap samples are often used to evaluate a statistic's ability to **estimate** a parameter.
+- This process can give you a *distribution* of estimates!
+
+## Bootstrapping starts with a single sample
+
+- Population may have an unknown *n*
+- We have one *sample* from the population. How many observations do we have in this sample?
+
+![](./lec16_images/bootstrap_start.png)
+
+## Repeated sampling with **replacement**
+
+
+![](./lec16_images/bootstrap_final.png)
+
+## Example - Flipper Length vs Body Mass
+
+
+::: columns
+
+::: {.column width="50%"}
+```{python}
+#| code-fold: true
+#| echo: true
+df = df[['flipper_length_mm', 'body_mass_g']]
+df.head()
+```
+:::
+
+::: {.column width="50%"}
+```{python}
+#| code-fold: true
+#| echo: true
+sns.regplot(data=df, x='flipper_length_mm', y='body_mass_g', ci=None);
+```
+:::
+:::
+
+## Bootrapping
+
+
+```{python}
+#| code-fold: true
+#| echo: true
+n_boots = 100 # number of bootrap iterations
+n_points = int(len(df) * 0.50) # sample size with replacement
+boot_slopes = [] # store regressed line slopes
+boot_intercepts = [] # store regressed line intercepts
+plt.figure() # creates a figure that we can plot *multiple* times
+linear_model = LinearRegression()
+for _ in range(n_boots):
+ # sample the rows, same size, with replacement
+ sample_df = df.sample(n=n_points, replace=True)
+ # fit a linear regression
+ linear_model.fit(sample_df[['flipper_length_mm']], sample_df['body_mass_g'])
+ # append regressed coefficients
+ boot_intercepts.append(linear_model.intercept_)
+ boot_slopes.append(linear_model.coef_[0])
+ # plot a greyed out line of the prediction
+ y_pred_temp = linear_model.predict(sample_df[['flipper_length_mm']])
+ plt.plot(sample_df['flipper_length_mm'], y_pred_temp, color='grey', alpha=0.2)# add data points
+
+plt.scatter(sample_df['flipper_length_mm'], sample_df['body_mass_g'])
+plt.grid(True)
+plt.xlabel('Flipper Length')
+plt.ylabel('Body Mass')
+plt.title(f'Bootrapping; Bootstrap interations={n_boots}; Sample Size:{n_points}')
+plt.show();
+```
+
+::: question
+How consistent are the predictions for different samples?
+:::
+
+## Historgram of Model Parameters!
+
+::: columns
+
+::: {.column width="50%"}
+```{python}
+#| code-fold: true
+#| echo: true
+df_p = pd.DataFrame(dict(slope=boot_slopes, intercept=boot_intercepts))
+sns.displot(data=df_p, x='slope');
+```
+:::
+
+::: {.column width="50%"}
+```{python}
+#| code-fold: true
+#| echo: true
+sns.displot(data=df_p, x='intercept');
+```
+:::
+:::
+
+## Inferential Statisitcs
+
+- Since we have a distribution of these popluation parameters we can calculate their **mean** and **variance**
+  - The mean will be the *best* estimator
+  - The variance can be used to calcluate our confidence in the result
+- How do we calculate confidence interval?
+  - $\bar{x} \pm 1.96 \frac{\sigma}{\sqrt{n}}$
+
+
 # Model Selection
+
+## One Standard Error Method
+
+::: incremental
+- Select a few different models you want to try out (linear regression, polynomial regressions, multivariable regression, etc.)
+- Perform K-folds cross validation on each of these models.
+- Each model will have a distribution for error, mean and variance.
+- Find the model with the minimum mean score
+- Then select the **simplest** model whose mean score falls within one standard deviation. 
+:::
+
+## Example One
+
+![](./lec16_images/one_standard_error.png)
+
+## Example Two
+
+![](./lec16_images/one_standard_error_better.png){fig-align="center"}
+
+# Exam Review
+
+## Ask your Questions!

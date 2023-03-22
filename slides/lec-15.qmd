@@ -223,7 +223,7 @@ ax[1].legend();
 
 - **k-fold** cross-validation is a popular method of evaluating model performance 
 - Step 1: Choose k, usually 10
-- Step 2: SuyffleDivide our data, X, into X_fold and X_test.
+- Step 2: ShuffleDivide our data, X, into X_fold and X_test.
 - Step 3: Divide X_fold into k groups (folds)
 - Step 4: Model is trained and validated repeatedly using these groups
 
