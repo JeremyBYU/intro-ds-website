@@ -266,6 +266,34 @@
     "text": "Perform\n⌨️ HW 3 - Cleaning Data, Graphing, Probability"
   },
   {
+    "objectID": "weeks/week-10.html",
+    "href": "weeks/week-10.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 6-3"
+  },
+  {
+    "objectID": "weeks/week-10.html#participate",
+    "href": "weeks/week-10.html#participate",
+    "title": "Week 8",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Lecture 17 - KNN 🖥️ Lecture 18 - Naive Bayes"
+  },
+  {
+    "objectID": "weeks/week-10.html#practice",
+    "href": "weeks/week-10.html#practice",
+    "title": "Week 8",
+    "section": "Practice",
+    "text": "Practice\nTBD"
+  },
+  {
+    "objectID": "weeks/week-10.html#perform",
+    "href": "weeks/week-10.html#perform",
+    "title": "Week 8",
+    "section": "Perform",
+    "text": "Perform\nProject Proposal! ⌨️ HW 6 - Supervised Learning"
+  },
+  {
     "objectID": "project-description.html",
     "href": "project-description.html",
     "title": "Project Description (Core Capstone)",
@@ -998,7 +1026,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fcf588f1e10>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f0025509d80>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -1215,7 +1243,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7ffaa06b7e20>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f2d105d0c70>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1699,6 +1727,27 @@
     "title": "CISC482 - Lecture06",
     "section": "Practice Pandas",
     "text": "Practice Pandas\nCleaning Data and Graphing\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
+    "objectID": "slides/lec-18.html#schedule",
+    "href": "slides/lec-18.html#schedule",
+    "title": "CISC482 - Lecture18",
+    "section": "Schedule",
+    "text": "Schedule\n\nReading 7-1: Mar 29 @ 12PM, Wednesday\nHW5 - Mar 29 @ Midnight, Wednesday\nReading 7-2: Mar 31 @ 12PM, Wednesday\nHW6 - Working on it… April 12 @ Midnight, Wednesday"
+  },
+  {
+    "objectID": "slides/lec-18.html#today",
+    "href": "slides/lec-18.html#today",
+    "title": "CISC482 - Lecture18",
+    "section": "Today",
+    "text": "Today\n\nReview Exam Results\nIntroduction to Supervised Learning\nKNN"
+  },
+  {
+    "objectID": "slides/lec-18.html#terms",
+    "href": "slides/lec-18.html#terms",
+    "title": "CISC482 - Lecture18",
+    "section": "Terms",
+    "text": "Terms\n\nAn instance is labeled if\nSupervised learning is\nRegression vs Classification?\nWhat does KNN stand for?\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-05.html#schedule",
@@ -3364,7 +3413,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 10\n\n\n\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 9\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
   },
   {
     "objectID": "computing-access.html",

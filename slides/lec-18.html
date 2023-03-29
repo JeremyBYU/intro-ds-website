@@ -9,7 +9,7 @@
   <meta name="generator" content="quarto-1.2.475">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
-  <title>Intro to Data Science - CISC482 - Lecture17</title>
+  <title>Intro to Data Science - CISC482 - Lecture18</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,70 +27,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -383,11 +319,8 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture17">
-<meta property="og:description" content="Supervised Learning - KNN">
+<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture18">
+<meta property="og:description" content="Supervised Learning - Naive Bayes">
 <meta property="og:site-name" content="Intro to Data Science">
 </head>
 <body class="quarto-light">
@@ -395,8 +328,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CISC482 - Lecture17</h1>
-  <p class="subtitle">Supervised Learning - KNN</p>
+  <h1 class="title">CISC482 - Lecture18</h1>
+  <p class="subtitle">Supervised Learning - Naive Bayes</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -430,393 +363,18 @@ Dr.&nbsp;Jeremy Castagno
 </ul>
 </section></section>
 <section>
-<section id="exam-review" class="title-slide slide level1 center">
-<h1>Exam Review</h1>
-
-</section>
-<section id="exam-results" class="slide level2">
-<h2>Exam Results</h2>
-
-<img data-src="./lec17_images/exam_results.png" class="r-stretch"><ul>
-<li>Curve: +3 Bonus Points (3 questions, 6% bump)</li>
-<li>Average: 85%</li>
-</ul>
-</section>
-<section id="top-difficult-questions---1" class="slide level2">
-<h2>Top Difficult Questions - #1</h2>
-
-<img data-src="./lec17_images/classification_question.png" class="r-stretch"><ul class="task-list">
-<li><input type="checkbox" disabled="">Linear model has higher precision</li>
-<li><input type="checkbox" disabled="">Linear model has worse recall</li>
-<li><input type="checkbox" disabled="">Linear model has more FP</li>
-<li><input type="checkbox" disabled="">Linear model has more FN</li>
-</ul>
-</section>
-<section id="fn-tp-tn-fp" class="slide level2">
-<h2>FN, TP, TN, FP</h2>
-
-<img data-src="./lec14_images/threshold_05.png" class="r-stretch quarto-figure-center"></section>
-<section id="top-difficult-questions---2" class="slide level2">
-<h2>Top Difficult Questions - #2</h2>
-<p>Select all non-linear functions with respect to model parameters <span class="math inline">\(\mathbf{\beta}\)</span></p>
-<ul class="task-list">
-<li><input type="checkbox" disabled=""><span class="math inline">\(\beta_0 sin(x)\)</span></li>
-<li><input type="checkbox" disabled=""><span class="math inline">\(\beta_0 x^2\)</span></li>
-<li><input type="checkbox" disabled=""><span class="math inline">\(\frac{e^{\beta_0 + \beta_1 x}}{1 + e^{\beta_0 + \beta_1 x}}\)</span></li>
-<li><input type="checkbox" disabled=""><span class="math inline">\(e^{\beta_0 + \beta_1 x}\)</span></li>
-<li><input type="checkbox" disabled=""><span class="math inline">\(sin(\beta_0 x)\)</span></li>
-</ul>
-</section>
-<section id="top-difficult-questions---3" class="slide level2 smaller">
-<h2>Top Difficult Questions - #3</h2>
-
-<img data-src="./lec17_images/non_constant_variance.png" class="r-stretch"><ul>
-<li>Please explain if the assumptions of Linear Regression are met or not.</li>
-<li>You must discuss at least 3 of the assumptions and clearly explain if each assumption is met from looking at the graph.</li>
-</ul>
-</section>
-<section id="top-difficult-questions---4" class="slide level2">
-<h2>Top Difficult Questions - #4</h2>
-
-<img data-src="./lec17_images/largest_tip.png" class="r-stretch"><ul>
-<li>Which day had the largest tip?</li>
-</ul>
-</section></section>
-<section>
-<section id="big-picture" class="title-slide slide level1 center">
-<h1>Big Picture</h1>
-
-</section>
-<section id="first-14" class="slide level2">
-<h2>First 1/4</h2>
-<div class="cell" data-reveal="true">
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-    A[Stats and Prob] --&gt; B[Descriptive Statistics]
-    A --&gt; C[Distribtuions]
-    A --&gt; D[Population Inference]
-
-    E[Data Exploration] --&gt; F[Plotting]
-    E --&gt; G[Dataframes]
-    E --&gt; H[Exploratory Data Analysis]
-</pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="first-12" class="slide level2">
-<h2>First 1/2</h2>
-<div class="cell" data-reveal="true">
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
-    A[Regression] --&gt; B[Linear Regression]
-    A --&gt; C[Mutliple Linear Regression]
-    A --&gt; D[Polynomial Regression]
-    A --&gt; Z[Logistic Regression]
-
-    E[Model Evaluation] --&gt; F[RMSE, R^2]
-    E --&gt; G[Precision, Recall]
-    E --&gt; H[Train,Valid,Test ]
-
-</pre>
-<div id="mermaid-tooltip-2" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="whats-next" class="slide level2">
-<h2>Whats next</h2>
-<ul>
-<li>More advanced <strong>models</strong>!</li>
-<li>We will still be using what we learned! Especially model evaluation!</li>
-<li>Fully define concept of <em>supervised</em> learning</li>
-</ul>
-</section></section>
-<section>
-<section id="supervised-learning" class="title-slide slide level1 center">
-<h1>Supervised Learning</h1>
+<section id="review" class="title-slide slide level1 center">
+<h1>Review</h1>
 
 </section>
 <section id="terms" class="slide level2">
 <h2>Terms</h2>
 <ul>
-<li>An instance is <strong>labeled</strong> if the <em>outcome</em> feature’s value is known for that instance.</li>
-<li><strong>Supervised learning</strong> is <em>training</em> a model to predict a labeled outcome feature based on input features.</li>
-<li>The outcome feature is also known as the <strong>target</strong> or dependent variable.</li>
-<li>The input features are also known as <strong>features</strong> or independent variables</li>
+<li>An instance is <strong>labeled</strong> if</li>
+<li><strong>Supervised learning</strong> is</li>
+<li>Regression vs Classification?</li>
+<li>What does KNN stand for?</li>
 </ul>
-</section>
-<section id="example-regression-problem" class="slide level2">
-<h2>Example Regression Problem</h2>
-
-<img data-src="./lec17_images/regression_example_house.png" class="r-stretch quarto-figure-center"></section>
-<section id="example-classification-problem" class="slide level2">
-<h2>Example Classification Problem</h2>
-
-<img data-src="./lec17_images/classification_example_house.png" class="r-stretch quarto-figure-center"></section>
-<section id="regression-vs-classification" class="slide level2">
-<h2>Regression vs Classification</h2>
-<ul>
-<li>Regression - Predicting a continuous numeric outcome</li>
-<li>Classification - Predicting the class (group) of an instance</li>
-</ul>
-</section>
-<section id="goals-of-supervised-learning" class="slide level2">
-<h2>Goals of Supervised Learning</h2>
-<ul>
-<li><p><em>Predict</em> the values that unlabeled data will have <strong>and</strong> to <em>explain</em> how the inputs lead to the predicted outputs.</p></li>
-<li><p>A model is <strong>interpretable</strong> if the relationship between input and output features in the model are easy to explain.</p></li>
-<li><p>A model is <strong>predictive</strong> if the outcomes produced by the model match the actual outcomes with <em>new</em> data.</p></li>
-</ul>
-</section>
-<section id="what-is-more-important" class="slide level2">
-<h2>What is more important</h2>
-<ul>
-<li>A model can be both predictive and interpretable, but different clients and disciplines value one more than the other.</li>
-<li>Ex: Scientists value interpretability more to explain the effect of experiments; image recognition models value predictiveness more.</li>
-<li>A large business may really only care about results. Being predictive may be the only thing that matters</li>
-</ul>
-</section></section>
-<section>
-<section id="k-nearest-neighbors-knn" class="title-slide slide level1 center">
-<h1>K-nearest Neighbors (KNN)</h1>
-
-</section>
-<section id="introduction" class="slide level2">
-<h2>Introduction</h2>
-<ul>
-<li><strong>k-nearest neighbors (kNN)</strong> is a supervised learning algorithm that predicts the output feature of a new instance using <em>other instances</em> that are <strong>close</strong> for certain input features.</li>
-<li>A value of k is selected and the k instances with the closest input features are found. The output features of those k instances are used to make the prediction.</li>
-</ul>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>Sometimes, the phrase “birds of a feather flock together” is used to describe the k-nearest algorithm, meaning the algorithm assumes that instances with similar inputs will have similar outputs.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="motivation" class="slide level2">
-<h2>Motivation</h2>
-
-<img data-src="./lec17_images/bean_graph.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="example" class="slide level2 smaller">
-<h2>Example</h2>
-
-<img data-src="./lec17_images/example_knn_1.png" style="width:50.0%" class="r-stretch quarto-figure-center"><ul>
-<li>(4, 2.5)</li>
-<li>(0, 4)</li>
-<li>(2, 1)</li>
-</ul>
-</section>
-<section id="finding-your-nearest-neighbors" class="slide level2">
-<h2>Finding your nearest neighbors</h2>
-<div>
-<ul>
-<li class="fragment">How do determine how <strong>close</strong> a point is form the another (<strong>metric</strong>)</li>
-<li class="fragment">distance(x,y) = <span class="math inline">\(\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + ... + (x_p - y_p)^2 }\)</span></li>
-<li class="fragment"><img data-src="./lec17_images/distance_calc.png" title="fig:" alt="Distance Calculation"></li>
-</ul>
-</div>
-</section>
-<section id="using-knn-for-classification" class="slide level2">
-<h2>Using KNN for Classification</h2>
-
-<img data-src="./lec17_images/knn_classify.png" class="r-stretch"></section>
-<section id="regression-with-knn" class="slide level2">
-<h2>Regression with KNN</h2>
-<ol type="1">
-<li>Select k, the number of neighbors to consider.</li>
-<li>Calculate the distance between all labeled instances and the instance to predict.</li>
-<li>The k instances with the shortest distances are the nearest neighbors.</li>
-<li>Predict by averaging the k nearest neighbors’ output values.</li>
-</ol>
-</section></section>
-<section>
-<section id="software" class="title-slide slide level1 center">
-<h1>Software</h1>
-
-</section>
-<section id="scikit-learn" class="slide level2">
-<h2>scikit-learn</h2>
-<ul>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">KNeighborsClassifier</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html">KNeighborsClassifier</a></li>
-<li>Very easy to use! Lets do an example</li>
-</ul>
-</section>
-<section id="example---data" class="slide level2">
-<h2>Example - Data</h2>
-<div class="cell" data-execution_count="2">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>X, y <span class="op">=</span> make_blobs(n_samples<span class="op">=</span><span class="dv">100</span>, centers<span class="op">=</span><span class="dv">2</span>, cluster_std<span class="op">=</span><span class="fl">1.5</span>, n_features<span class="op">=</span><span class="dv">2</span>,</span>
-<span id="cb1-2"><a href="#cb1-2"></a>                  random_state<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>c_names <span class="op">=</span> [<span class="st">"Class 0"</span>, <span class="st">"Class 1"</span>]</span>
-<span id="cb1-4"><a href="#cb1-4"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a>scatter <span class="op">=</span> ax.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], c<span class="op">=</span>y, cmap<span class="op">=</span><span class="st">'viridis'</span>)<span class="op">;</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>ax.legend(handles<span class="op">=</span>scatter.legend_elements()[<span class="dv">0</span>], </span>
-<span id="cb1-7"><a href="#cb1-7"></a>           labels<span class="op">=</span>c_names,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>           title<span class="op">=</span><span class="st">"Class"</span>)</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>&lt;matplotlib.legend.Legend at 0x7f0025509d80&gt;</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-17_files/figure-revealjs/cell-3-output-2.png" width="792" height="411"></p>
-</div>
-</div>
-</section>
-<section id="split-into-train-and-test" class="slide level2">
-<h2>Split into Train and Test</h2>
-<div class="cell" data-execution_count="3">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># Split data</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.30</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># Plot data</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a>data <span class="op">=</span> [(X_train, y_train, <span class="st">'Train Set'</span>), (X_test, y_test, <span class="st">'Test Set'</span>)]</span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="cf">for</span> (X, y, title), ax_ <span class="kw">in</span> <span class="bu">zip</span>(data, ax):</span>
-<span id="cb3-10"><a href="#cb3-10"></a>  scatter <span class="op">=</span> ax_.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], c<span class="op">=</span>y, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
-<span id="cb3-11"><a href="#cb3-11"></a>  ax_.set_title(title)</span>
-<span id="cb3-12"><a href="#cb3-12"></a>  ax_.set_xlabel(<span class="st">"X0"</span>)</span>
-<span id="cb3-13"><a href="#cb3-13"></a>  ax_.set_ylabel(<span class="st">"X1"</span>)</span>
-<span id="cb3-14"><a href="#cb3-14"></a>  ax_.legend(handles<span class="op">=</span>scatter.legend_elements()[<span class="dv">0</span>], </span>
-<span id="cb3-15"><a href="#cb3-15"></a>           labels<span class="op">=</span>c_names,</span>
-<span id="cb3-16"><a href="#cb3-16"></a>           title<span class="op">=</span><span class="st">"Class"</span>)</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-17_files/figure-revealjs/cell-4-output-1.png" width="810" height="449"></p>
-</div>
-</div>
-</section>
-<section id="train-model-sanity-check" class="slide level2">
-<h2>Train Model, Sanity Check</h2>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co"># Create and train model</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>model <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>model.fit(X_train, y_train)</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># Single point sanity check</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>test_point <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">1</span>]</span>
-<span id="cb4-8"><a href="#cb4-8"></a>predicted_group <span class="op">=</span> model.predict([test_point])</span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="bu">print</span>(<span class="ss">f"We predict that </span><span class="sc">{</span>test_point<span class="sc">}</span><span class="ss"> will belong to class: </span><span class="sc">{</span>predicted_group<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>We predict that [2, 1] will belong to class: [1]</code></pre>
-</div>
-</div>
-</section>
-<section id="test-model" class="slide level2">
-<h2>Test Model</h2>
-<div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Make predictions</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>predictions <span class="op">=</span> model.predict(X_test)</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Plot data</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb6-6"><a href="#cb6-6"></a>data <span class="op">=</span> [(X_test, y_test, <span class="st">'Test Set (Ground Truth)'</span>), (X_test, predictions, <span class="st">'Test Set Predicted'</span>)]</span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="cf">for</span> (X, y, title), ax_ <span class="kw">in</span> <span class="bu">zip</span>(data, ax):</span>
-<span id="cb6-8"><a href="#cb6-8"></a>  scatter <span class="op">=</span> ax_.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], c<span class="op">=</span>y, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a>  ax_.set_title(title)</span>
-<span id="cb6-10"><a href="#cb6-10"></a>  ax_.set_xlabel(<span class="st">"X0"</span>)</span>
-<span id="cb6-11"><a href="#cb6-11"></a>  ax_.set_ylabel(<span class="st">"X1"</span>)</span>
-<span id="cb6-12"><a href="#cb6-12"></a>  ax_.legend(handles<span class="op">=</span>scatter.legend_elements()[<span class="dv">0</span>], </span>
-<span id="cb6-13"><a href="#cb6-13"></a>           labels<span class="op">=</span>c_names,</span>
-<span id="cb6-14"><a href="#cb6-14"></a>           title<span class="op">=</span><span class="st">"Class"</span>)</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-17_files/figure-revealjs/cell-6-output-1.png" width="810" height="449"></p>
-</div>
-</div>
-</section>
-<section id="confusion-matrix-plot" class="slide level2">
-<h2>Confusion Matrix, Plot</h2>
-<div class="columns">
-<div class="column" style="width:75%;">
-<div class="cell" data-execution_count="6">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix, ConfusionMatrixDisplay</span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a>cm <span class="op">=</span> confusion_matrix(y_test, predictions)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>disp <span class="op">=</span> ConfusionMatrixDisplay(confusion_matrix<span class="op">=</span>cm,</span>
-<span id="cb7-5"><a href="#cb7-5"></a>                              display_labels<span class="op">=</span>[<span class="st">'Negative'</span>, <span class="st">'Positive'</span>])</span>
-<span id="cb7-6"><a href="#cb7-6"></a>disp.plot()</span>
-<span id="cb7-7"><a href="#cb7-7"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a>plt.show()</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-17_files/figure-revealjs/cell-7-output-1.png" width="558" height="429"></p>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-<div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-stdout">
-<pre><code>Confusion Matrix
-[[12  4]
- [ 1 13]]</code></pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="classication-metrics" class="slide level2">
-<h2>Classication Metrics</h2>
-<ul>
-<li>Accuracy = <span class="math inline">\(\frac{TP+TN}{TP+TN+FP+FN}\)</span></li>
-<li>Precision = <span class="math inline">\(\frac{TP}{TP+FP}\)</span></li>
-<li>Recall = <span class="math inline">\(\frac{TP}{TP+FN}\)</span></li>
-<li>F1 = <span class="math inline">\(\frac{2*Precision*Recall}{Precision+Recall} = \frac{2*TP}{2*TP+FP+FN}\)</span></li>
-</ul>
-</section>
-<section id="classification-report" class="slide level2">
-<h2>Classification Report</h2>
-<div class="cell" data-execution_count="8">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report</span>
-<span id="cb9-2"><a href="#cb9-2"></a>report <span class="op">=</span> classification_report(y_test, predictions, target_names<span class="op">=</span>[<span class="st">"Negative"</span>, <span class="st">"Postive"</span>])</span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="bu">print</span>(report)</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>              precision    recall  f1-score   support
-
-    Negative       0.92      0.75      0.83        16
-     Postive       0.76      0.93      0.84        14
-
-    accuracy                           0.83        30
-   macro avg       0.84      0.84      0.83        30
-weighted avg       0.85      0.83      0.83        30
-</code></pre>
-</div>
-</div>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
