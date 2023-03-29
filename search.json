@@ -826,6 +826,181 @@
     "text": "Class Activity\nPractice Multiple Linear Regression\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
+    "objectID": "slides/lec-17.html#schedule",
+    "href": "slides/lec-17.html#schedule",
+    "title": "CISC482 - Lecture17",
+    "section": "Schedule",
+    "text": "Schedule\n\nReading 7-1: Mar 29 @ 12PM, Wednesday\nHW5 - Mar 29 @ Midnight, Wednesday\nReading 7-2: Mar 31 @ 12PM, Wednesday\nHW6 - Working on it… April 12 @ Midnight, Wednesday"
+  },
+  {
+    "objectID": "slides/lec-17.html#today",
+    "href": "slides/lec-17.html#today",
+    "title": "CISC482 - Lecture17",
+    "section": "Today",
+    "text": "Today\n\nReview Exam Results\nIntroduction to Supervised Learning\nKNN"
+  },
+  {
+    "objectID": "slides/lec-17.html#exam-results",
+    "href": "slides/lec-17.html#exam-results",
+    "title": "CISC482 - Lecture17",
+    "section": "Exam Results",
+    "text": "Exam Results\n\n\nCurve: +3 Bonus Points (3 questions, 6% bump)\nAverage: 85%"
+  },
+  {
+    "objectID": "slides/lec-17.html#top-difficult-questions---1",
+    "href": "slides/lec-17.html#top-difficult-questions---1",
+    "title": "CISC482 - Lecture17",
+    "section": "Top Difficult Questions - #1",
+    "text": "Top Difficult Questions - #1\n\n\nLinear model has higher precision\nLinear model has worse recall\nLinear model has more FP\nLinear model has more FN"
+  },
+  {
+    "objectID": "slides/lec-17.html#fn-tp-tn-fp",
+    "href": "slides/lec-17.html#fn-tp-tn-fp",
+    "title": "CISC482 - Lecture17",
+    "section": "FN, TP, TN, FP",
+    "text": "FN, TP, TN, FP"
+  },
+  {
+    "objectID": "slides/lec-17.html#top-difficult-questions---2",
+    "href": "slides/lec-17.html#top-difficult-questions---2",
+    "title": "CISC482 - Lecture17",
+    "section": "Top Difficult Questions - #2",
+    "text": "Top Difficult Questions - #2\nSelect all non-linear functions with respect to model parameters \\(\\mathbf{\\beta}\\)\n\n\\(\\beta_0 sin(x)\\)\n\\(\\beta_0 x^2\\)\n\\(\\frac{e^{\\beta_0 + \\beta_1 x}}{1 + e^{\\beta_0 + \\beta_1 x}}\\)\n\\(e^{\\beta_0 + \\beta_1 x}\\)\n\\(sin(\\beta_0 x)\\)"
+  },
+  {
+    "objectID": "slides/lec-17.html#top-difficult-questions---3",
+    "href": "slides/lec-17.html#top-difficult-questions---3",
+    "title": "CISC482 - Lecture17",
+    "section": "Top Difficult Questions - #3",
+    "text": "Top Difficult Questions - #3\n\n\nPlease explain if the assumptions of Linear Regression are met or not.\nYou must discuss at least 3 of the assumptions and clearly explain if each assumption is met from looking at the graph."
+  },
+  {
+    "objectID": "slides/lec-17.html#top-difficult-questions---4",
+    "href": "slides/lec-17.html#top-difficult-questions---4",
+    "title": "CISC482 - Lecture17",
+    "section": "Top Difficult Questions - #4",
+    "text": "Top Difficult Questions - #4\n\n\nWhich day had the largest tip?"
+  },
+  {
+    "objectID": "slides/lec-17.html#first-14",
+    "href": "slides/lec-17.html#first-14",
+    "title": "CISC482 - Lecture17",
+    "section": "First 1/4",
+    "text": "First 1/4\n\n\n\n\nflowchart LR\n    A[Stats and Prob] --> B[Descriptive Statistics]\n    A --> C[Distribtuions]\n    A --> D[Population Inference]\n\n    E[Data Exploration] --> F[Plotting]\n    E --> G[Dataframes]\n    E --> H[Exploratory Data Analysis]"
+  },
+  {
+    "objectID": "slides/lec-17.html#first-12",
+    "href": "slides/lec-17.html#first-12",
+    "title": "CISC482 - Lecture17",
+    "section": "First 1/2",
+    "text": "First 1/2\n\n\n\n\nflowchart LR\n    A[Regression] --> B[Linear Regression]\n    A --> C[Mutliple Linear Regression]\n    A --> D[Polynomial Regression]\n    A --> Z[Logistic Regression]\n\n    E[Model Evaluation] --> F[RMSE, R^2]\n    E --> G[Precision, Recall]\n    E --> H[Train,Valid,Test ]"
+  },
+  {
+    "objectID": "slides/lec-17.html#whats-next",
+    "href": "slides/lec-17.html#whats-next",
+    "title": "CISC482 - Lecture17",
+    "section": "Whats next",
+    "text": "Whats next\n\nMore advanced models!\nWe will still be using what we learned! Especially model evaluation!\nFully define concept of supervised learning"
+  },
+  {
+    "objectID": "slides/lec-17.html#terms",
+    "href": "slides/lec-17.html#terms",
+    "title": "CISC482 - Lecture17",
+    "section": "Terms",
+    "text": "Terms\n\nAn instance is labeled if the outcome feature’s value is known for that instance.\nSupervised learning is training a model to predict a labeled outcome feature based on input features.\nThe outcome feature is also known as the target or dependent variable.\nThe input features are also known as features or independent variables"
+  },
+  {
+    "objectID": "slides/lec-17.html#example-regression-problem",
+    "href": "slides/lec-17.html#example-regression-problem",
+    "title": "CISC482 - Lecture17",
+    "section": "Example Regression Problem",
+    "text": "Example Regression Problem"
+  },
+  {
+    "objectID": "slides/lec-17.html#example-classification-problem",
+    "href": "slides/lec-17.html#example-classification-problem",
+    "title": "CISC482 - Lecture17",
+    "section": "Example Classification Problem",
+    "text": "Example Classification Problem"
+  },
+  {
+    "objectID": "slides/lec-17.html#regression-vs-classification",
+    "href": "slides/lec-17.html#regression-vs-classification",
+    "title": "CISC482 - Lecture17",
+    "section": "Regression vs Classification",
+    "text": "Regression vs Classification\n\nRegression - Predicting a continuous numeric outcome\nClassification - Predicting the class (group) of an instance"
+  },
+  {
+    "objectID": "slides/lec-17.html#goals-of-supervised-learning",
+    "href": "slides/lec-17.html#goals-of-supervised-learning",
+    "title": "CISC482 - Lecture17",
+    "section": "Goals of Supervised Learning",
+    "text": "Goals of Supervised Learning\n\nPredict the values that unlabeled data will have and to explain how the inputs lead to the predicted outputs.\nA model is interpretable if the relationship between input and output features in the model are easy to explain.\nA model is predictive if the outcomes produced by the model match the actual outcomes with new data."
+  },
+  {
+    "objectID": "slides/lec-17.html#what-is-more-important",
+    "href": "slides/lec-17.html#what-is-more-important",
+    "title": "CISC482 - Lecture17",
+    "section": "What is more important",
+    "text": "What is more important\n\nA model can be both predictive and interpretable, but different clients and disciplines value one more than the other.\nEx: Scientists value interpretability more to explain the effect of experiments; image recognition models value predictiveness more.\nA large business may really only care about results. Being predictive may be the only thing that matters"
+  },
+  {
+    "objectID": "slides/lec-17.html#introduction",
+    "href": "slides/lec-17.html#introduction",
+    "title": "CISC482 - Lecture17",
+    "section": "Introduction",
+    "text": "Introduction\n\nk-nearest neighbors (kNN) is a supervised learning algorithm that predicts the output feature of a new instance using other instances that are close for certain input features.\nA value of k is selected and the k instances with the closest input features are found. The output features of those k instances are used to make the prediction.\n\n\n\n\n\n\n\nTip\n\n\nSometimes, the phrase “birds of a feather flock together” is used to describe the k-nearest algorithm, meaning the algorithm assumes that instances with similar inputs will have similar outputs."
+  },
+  {
+    "objectID": "slides/lec-17.html#motivation",
+    "href": "slides/lec-17.html#motivation",
+    "title": "CISC482 - Lecture17",
+    "section": "Motivation",
+    "text": "Motivation"
+  },
+  {
+    "objectID": "slides/lec-17.html#example",
+    "href": "slides/lec-17.html#example",
+    "title": "CISC482 - Lecture17",
+    "section": "Example",
+    "text": "Example\n\n\n(4, 2.5)\n(0, 4)\n(2, 1)"
+  },
+  {
+    "objectID": "slides/lec-17.html#finding-your-nearest-neighbors",
+    "href": "slides/lec-17.html#finding-your-nearest-neighbors",
+    "title": "CISC482 - Lecture17",
+    "section": "Finding your nearest neighbors",
+    "text": "Finding your nearest neighbors\n\n\nHow do determine how close a point is form the another (metric)\ndistance(x,y) = \\(\\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + ... + (x_p - y_p)^2 }\\)"
+  },
+  {
+    "objectID": "slides/lec-17.html#using-knn-for-classification",
+    "href": "slides/lec-17.html#using-knn-for-classification",
+    "title": "CISC482 - Lecture17",
+    "section": "Using KNN for Classification",
+    "text": "Using KNN for Classification"
+  },
+  {
+    "objectID": "slides/lec-17.html#regression-with-knn",
+    "href": "slides/lec-17.html#regression-with-knn",
+    "title": "CISC482 - Lecture17",
+    "section": "Regression with KNN",
+    "text": "Regression with KNN\n\nSelect k, the number of neighbors to consider.\nCalculate the distance between all labeled instances and the instance to predict.\nThe k instances with the shortest distances are the nearest neighbors.\nPredict by averaging the k nearest neighbors’ output values."
+  },
+  {
+    "objectID": "slides/lec-17.html#scikit-learn",
+    "href": "slides/lec-17.html#scikit-learn",
+    "title": "CISC482 - Lecture17",
+    "section": "scikit-learn",
+    "text": "scikit-learn\n\nKNeighborsClassifier\nKNeighborsClassifier\nVery easy to use! Lets do an example"
+  },
+  {
+    "objectID": "slides/lec-17.html#example-1",
+    "href": "slides/lec-17.html#example-1",
+    "title": "CISC482 - Lecture17",
+    "section": "Example",
+    "text": "Example\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
     "objectID": "slides/lec-03.html#schedule",
     "href": "slides/lec-03.html#schedule",
     "title": "CISC482 - Lecture03",
@@ -998,7 +1173,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f76b8e9dde0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f49303c8c70>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1017,133 +1192,133 @@
   {
     "objectID": "slides/lec-16.html#schedule",
     "href": "slides/lec-16.html#schedule",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Schedule",
     "text": "Schedule\n\nReading 6-3: Mar 22 @ 12PM, Wednesday\nProposal: Mar 22, Wednesday\nPropsal Template!\nHW5 - Mar 29 @ Midnight, Wednesday"
   },
   {
     "objectID": "slides/lec-16.html#today",
     "href": "slides/lec-16.html#today",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Today",
-    "text": "Today\n\nReview Train/Valid/Test\nReivew K-Folds"
+    "text": "Today\n\nReview Train/Valid/Test\nReview K-Folds"
   },
   {
     "objectID": "slides/lec-16.html#purpose-of-model-evaluation",
     "href": "slides/lec-16.html#purpose-of-model-evaluation",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Purpose of model evaluation",
     "text": "Purpose of model evaluation\n\n\\(R^2\\), \\(recall\\), etc. tells us how our model is doing to predict the data we already have\nBut generally we are interested in prediction for a new observation,\nWe have a couple ways of simulating out-of-sample prediction before actually getting new data to evaluate the performance of our models"
   },
   {
     "objectID": "slides/lec-16.html#splitting-data",
     "href": "slides/lec-16.html#splitting-data",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Splitting Data",
     "text": "Splitting Data\n\n\nTrain/Test/Valid\n\nTrain (70% of data) - Used to fit a model or multiple models\nValidation (15% of data) - Used to compare different models\nTest (15% of data) - Final model evaluation"
   },
   {
     "objectID": "slides/lec-16.html#trainvalid-split",
     "href": "slides/lec-16.html#trainvalid-split",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Train/Valid Split",
     "text": "Train/Valid Split\n\n\nTRAIN SET - Linear Model R^2 = 0.44; Polynomial Model R^2 = 0.62\nVALID SET - Linear Model R^2 = 0.65; Polynomial Model R^2 = 0.41"
   },
   {
     "objectID": "slides/lec-16.html#k-folds-cross-validation",
     "href": "slides/lec-16.html#k-folds-cross-validation",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "K-folds Cross Validation",
     "text": "K-folds Cross Validation\n\n\nSplit data into Train(80%)/Test(20%)\nBreak the Train data into k groups.\nTrain/Validate across the goups"
   },
   {
     "objectID": "slides/lec-16.html#k-folds-split-k10",
     "href": "slides/lec-16.html#k-folds-split-k10",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "K-Folds Split (k=10)",
     "text": "K-Folds Split (k=10)"
   },
   {
     "objectID": "slides/lec-16.html#k-folds-train-and-validate",
     "href": "slides/lec-16.html#k-folds-train-and-validate",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "K-Folds Train and Validate",
     "text": "K-Folds Train and Validate"
   },
   {
     "objectID": "slides/lec-16.html#what-is-it",
     "href": "slides/lec-16.html#what-is-it",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "What is it?",
     "text": "What is it?\n\nBootstrapping is the process of generating simulated samples by repeatedly drawing with replacement from an existing sample.\nBootstrap samples are often used to evaluate a statistic’s ability to estimate a parameter.\nThis process can give you a distribution of estimates!"
   },
   {
     "objectID": "slides/lec-16.html#bootstrapping-starts-with-a-single-sample",
     "href": "slides/lec-16.html#bootstrapping-starts-with-a-single-sample",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Bootstrapping starts with a single sample",
     "text": "Bootstrapping starts with a single sample\n\nPopulation may have an unknown n\nWe have one sample from the population. How many observations do we have in this sample?"
   },
   {
     "objectID": "slides/lec-16.html#repeated-sampling-with-replacement",
     "href": "slides/lec-16.html#repeated-sampling-with-replacement",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Repeated sampling with replacement",
     "text": "Repeated sampling with replacement"
   },
   {
     "objectID": "slides/lec-16.html#example---flipper-length-vs-body-mass",
     "href": "slides/lec-16.html#example---flipper-length-vs-body-mass",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Example - Flipper Length vs Body Mass",
     "text": "Example - Flipper Length vs Body Mass\n\n\n\n\nCode\ndf = df[['flipper_length_mm', 'body_mass_g']]\ndf.head()\n\n\n\n\n\n\n  \n    \n      \n      flipper_length_mm\n      body_mass_g\n    \n  \n  \n    \n      0\n      181.00\n      3,750.00\n    \n    \n      1\n      186.00\n      3,800.00\n    \n    \n      2\n      195.00\n      3,250.00\n    \n    \n      4\n      193.00\n      3,450.00\n    \n    \n      5\n      190.00\n      3,650.00\n    \n  \n\n\n\n\n\n\n\nCode\nsns.regplot(data=df, x='flipper_length_mm', y='body_mass_g', ci=None);"
   },
   {
     "objectID": "slides/lec-16.html#bootrapping-1",
     "href": "slides/lec-16.html#bootrapping-1",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Bootrapping",
     "text": "Bootrapping\n\n\nCode\nn_boots = 100 # number of bootrap iterations\nn_points = int(len(df) * 0.50) # sample size with replacement\nboot_slopes = [] # store regressed line slopes\nboot_intercepts = [] # store regressed line intercepts\nplt.figure() # creates a figure that we can plot *multiple* times\nlinear_model = LinearRegression()\nfor _ in range(n_boots):\n # sample the rows, same size, with replacement\n sample_df = df.sample(n=n_points, replace=True)\n # fit a linear regression\n linear_model.fit(sample_df[['flipper_length_mm']], sample_df['body_mass_g'])\n # append regressed coefficients\n boot_intercepts.append(linear_model.intercept_)\n boot_slopes.append(linear_model.coef_[0])\n # plot a greyed out line of the prediction\n y_pred_temp = linear_model.predict(sample_df[['flipper_length_mm']])\n plt.plot(sample_df['flipper_length_mm'], y_pred_temp, color='grey', alpha=0.2)# add data points\n\nplt.scatter(sample_df['flipper_length_mm'], sample_df['body_mass_g'])\nplt.grid(True)\nplt.xlabel('Flipper Length')\nplt.ylabel('Body Mass')\nplt.title(f'Bootrapping; Bootstrap interations={n_boots}; Sample Size:{n_points}')\nplt.show();\n\n\n\n\n\n\nHow consistent are the predictions for different samples?"
   },
   {
     "objectID": "slides/lec-16.html#historgram-of-model-parameters",
     "href": "slides/lec-16.html#historgram-of-model-parameters",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Historgram of Model Parameters!",
     "text": "Historgram of Model Parameters!\n\n\n\n\nCode\ndf_p = pd.DataFrame(dict(slope=boot_slopes, intercept=boot_intercepts))\nsns.displot(data=df_p, x='slope');\n\n\n\n\n\n\n\n\nCode\nsns.displot(data=df_p, x='intercept');"
   },
   {
     "objectID": "slides/lec-16.html#inferential-statisitcs",
     "href": "slides/lec-16.html#inferential-statisitcs",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Inferential Statisitcs",
     "text": "Inferential Statisitcs\n\nSince we have a distribution of these popluation parameters we can calculate their mean and variance\n\nThe mean will be the best estimator\nThe variance can be used to calcluate our confidence in the result\n\nHow do we calculate confidence interval?\n\n\\(\\bar{x} \\pm 1.96 \\frac{\\sigma}{\\sqrt{n}}\\)"
   },
   {
     "objectID": "slides/lec-16.html#one-standard-error-method",
     "href": "slides/lec-16.html#one-standard-error-method",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "One Standard Error Method",
     "text": "One Standard Error Method\n\n\nSelect a few different models you want to try out (linear regression, polynomial regressions, multivariable regression, etc.)\nPerform K-folds cross validation on each of these models.\nEach model will have a distribution for error, mean and variance.\nFind the model with the minimum mean score\nThen select the simplest model whose mean score falls within one standard deviation."
   },
   {
     "objectID": "slides/lec-16.html#example-one",
     "href": "slides/lec-16.html#example-one",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Example One",
     "text": "Example One"
   },
   {
     "objectID": "slides/lec-16.html#example-two",
     "href": "slides/lec-16.html#example-two",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Example Two",
     "text": "Example Two"
   },
   {
     "objectID": "slides/lec-16.html#ask-your-questions",
     "href": "slides/lec-16.html#ask-your-questions",
-    "title": "CISC482 - Lecture15",
+    "title": "CISC482 - Lecture16",
     "section": "Ask your Questions!",
     "text": "Ask your Questions!\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
