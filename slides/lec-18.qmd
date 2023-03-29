@@ -44,16 +44,15 @@ np.random.seed(10)
 
 ## Schedule
 
-- Reading 7-1:  Mar 29 @ 12PM, Wednesday
-- [HW5](https://colab.research.google.com/drive/17_0yoHoVZ_Wekp43tvwf5tWSFtxyyyam?usp=sharing) - Mar 29 @ Midnight, Wednesday
-- Reading 7-2:  Mar 31 @ 12PM, Wednesday
+- Reading 7-2:  Mar 31 @ 12PM, Friday
+- Reading 7-3:  Apr 5 @ 12PM, Wednesday
 - [HW6]() - Working on it... April 12 @ Midnight, Wednesday
 
 ## Today
 
-- Review Exam Results
-- Introduction to Supervised Learning
-- KNN
+- Short Review
+- Naive Bayes
+- Class Activity
 
 # Review
 
@@ -63,3 +62,48 @@ np.random.seed(10)
 - **Supervised learning** is 
 - Regression vs Classification?
 - What does KNN stand for?
+
+
+# Naive Bayes
+
+## Bascic Idea
+
+- Naive Bayes classification is a supervised learning classifier that uses the number of times a feature occurs in each possible class to estimate the **likelihood** an instance is in the class. 
+- Naive Bayes is often used for applications with large amounts of text data. 
+  - identifying the author of a new document based on prior documents with known authors.
+  - detecting spam emails
+
+## Motiviating Example
+
+
+::: columns
+
+
+::: {.column width="50%"}
+
+Professor Castagno,
+I have a question about when HW6 is due.
+Is it due on Wednesday before class or at midnight. Thank you for your help!
+
+
+:::
+
+::: {.column width="50%"}
+
+Proffesssor Castagno,
+Congratulations!!!1 You won free trip to B@hamas. Give credit card to confirm sh1pping of tickets.  Free no, expense trip! Respond now!
+
+:::
+
+:::
+
+::: question
+Which one is spam? How do you *know*?
+:::
+
+## Input and Output
+
+- Input to our function is a feature vector 
+
+<!-- chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://web.stanford.edu/class/archive/cs/cs109/cs109.1178/lectureHandouts/210-naive-bayes.pdf -->
+  

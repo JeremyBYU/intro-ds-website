@@ -46,7 +46,7 @@ np.random.seed(10)
 
 - Reading 7-1:  Mar 29 @ 12PM, Wednesday
 - [HW5](https://colab.research.google.com/drive/17_0yoHoVZ_Wekp43tvwf5tWSFtxyyyam?usp=sharing) - Mar 29 @ Midnight, Wednesday
-- Reading 7-2:  Mar 31 @ 12PM, Wednesday
+- Reading 7-2:  Mar 31 @ 12PM, Friday
 - [HW6]() - Working on it... April 12 @ Midnight, Wednesday
 
 ## Today
