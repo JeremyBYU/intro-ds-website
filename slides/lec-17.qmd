@@ -237,6 +237,130 @@ Sometimes, the phrase "birds of a feather flock together" is used to describe th
 - [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html)
 - Very easy to use! Lets do an example
 
-## Example
+## Example - Data
 
+```{python}
+#| echo: true
+#| code-fold: true
+X, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,
+                  random_state=0)
+c_names = ["Class 0", "Class 1"]
+fig, ax = plt.subplots(nrows=1, ncols=1)
+scatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');
+ax.legend(handles=scatter.legend_elements()[0], 
+           labels=c_names,
+           title="Class")
+```
+
+
+## Split into Train and Test
+
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.model_selection import train_test_split
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
+
+# Plot data
+fig, ax = plt.subplots(nrows=1, ncols=2)
+
+data = [(X_train, y_train, 'Train Set'), (X_test, y_test, 'Test Set')]
+for (X, y, title), ax_ in zip(data, ax):
+  scatter = ax_.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis')
+  ax_.set_title(title)
+  ax_.set_xlabel("X0")
+  ax_.set_ylabel("X1")
+  ax_.legend(handles=scatter.legend_elements()[0], 
+           labels=c_names,
+           title="Class")
+```
+
+
+## Train Model, Sanity Check
+
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.neighbors import KNeighborsClassifier
+# Create and train model
+model = KNeighborsClassifier(n_neighbors=5)
+model.fit(X_train, y_train)
+
+# Single point sanity check
+test_point = [2, 1]
+predicted_group = model.predict([test_point])
+print(f"We predict that {test_point} will belong to class: {predicted_group}")
+```
+
+## Test Model
+
+```{python}
+#| echo: true
+#| code-fold: true
+
+# Make predictions
+predictions = model.predict(X_test)
+
+# Plot data
+fig, ax = plt.subplots(nrows=1, ncols=2)
+data = [(X_test, y_test, 'Test Set (Ground Truth)'), (X_test, predictions, 'Test Set Predicted')]
+for (X, y, title), ax_ in zip(data, ax):
+  scatter = ax_.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis')
+  ax_.set_title(title)
+  ax_.set_xlabel("X0")
+  ax_.set_ylabel("X1")
+  ax_.legend(handles=scatter.legend_elements()[0], 
+           labels=c_names,
+           title="Class")
+```
+
+
+## Confusion Matrix, Plot
+
+
+::: columns
+::: {.column width="75%"}
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
+cm = confusion_matrix(y_test, predictions)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm,
+                              display_labels=['Negative', 'Positive'])
+disp.plot()
+
+plt.show()
+
+```
+:::
+
+::: {.column width="25%"}
+
+```{python}
+cm = confusion_matrix(y_test, predictions)
+print("Confusion Matrix")
+print(cm)
+```
+:::
+:::
+
+## Classication Metrics
+
+- Accuracy = $\frac{TP+TN}{TP+TN+FP+FN}$
+- Precision = $\frac{TP}{TP+FP}$
+- Recall = $\frac{TP}{TP+FN}$
+- F1 = $\frac{2*Precision*Recall}{Precision+Recall} = \frac{2*TP}{2*TP+FP+FN}$
+
+
+## Classification Report
+
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.metrics import classification_report
+report = classification_report(y_test, predictions, target_names=["Negative", "Postive"])
+print(report)
+```
 
