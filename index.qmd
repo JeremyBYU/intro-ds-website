@@ -16,7 +16,7 @@ title: "Overview"
 |  Week 7 | [🖥️ ](/slides/lec-12.html) [🖥️ ](/slides/lec-13.html)       |  [📋](https://colab.research.google.com/drive/1A0OLxu3pIbrNThVtdec3yLRCZmud9fio?usp=sharing)               |   [⌨️](https://colab.research.google.com/drive/1EdakWIOXLV-1UjUytpgKj6yHMbq-Pvz3?usp=share_link) [⌨️](https://colab.research.google.com/drive/1bPCLIcJy9wBEEjL0qkwcWLyDCHoo-hRv?usp=sharing)    |
 |  Week 8 | [🖥️ ](/slides/lec-14.html) [🖥️ ](/slides/lec-15.html)       |  [📋](https://colab.research.google.com/drive/1m2vth1QYOhUqCmOv0JTWVvWS8wPkjeXu?usp=sharing)               |   Proposal!!!    |
 |  Week 9 | [🖥️ ](/slides/lec-16.html) [🖥️ ](/slides/lec-17.html)       |  [📋](https://colab.research.google.com/drive/1m2vth1QYOhUqCmOv0JTWVvWS8wPkjeXu?usp=sharing)               |   Proposal, [⌨️](https://colab.research.google.com/drive/17_0yoHoVZ_Wekp43tvwf5tWSFtxyyyam?usp=sharing)    |
-| Week 10 |        |                |    |
+|  Week 9 | [🖥️ ](/slides/lec-17.html) [🖥️ ](/slides/lec-18.html)       |  [📋]()               |   [⌨️]()    |
 | Week 11 |        |                |    |
 | Week 12 |        |                |    |
 | Week 13 |        |                |    |

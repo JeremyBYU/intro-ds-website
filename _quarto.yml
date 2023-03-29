@@ -76,7 +76,8 @@ website:
             text: "Week 8"
           - href: weeks/week-9.qmd
             text: "Week 9"
-
+          - href: weeks/week-10.qmd
+            text: "Week 10"
 format:
   html:
     theme:

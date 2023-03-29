@@ -1,0 +1,24 @@
+---
+title: "Week 8"
+subtitle: "Model Performance!"
+editor: visual
+---
+
+## Prepare
+
+📖 Read Assignments 6-3
+
+## Participate
+
+🖥️ [Lecture 17 - KNN](/slides/lec-17.html)
+🖥️ [Lecture 18 - Naive Bayes](/slides/lec-18.html)
+
+## Practice
+
+TBD
+
+## Perform
+
+Project Proposal!
+⌨️ [HW 6 - Supervised Learning]()
+
