@@ -1,0 +1,242 @@
+---
+title: "CISC482 - Lecture17"
+subtitle: "Supervised Learning - KNN"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 7-1:  Mar 29 @ 12PM, Wednesday
+- [HW5](https://colab.research.google.com/drive/17_0yoHoVZ_Wekp43tvwf5tWSFtxyyyam?usp=sharing) - Mar 29 @ Midnight, Wednesday
+- Reading 7-2:  Mar 31 @ 12PM, Wednesday
+- [HW6]() - Working on it... April 12 @ Midnight, Wednesday
+
+## Today
+
+- Review Exam Results
+- Introduction to Supervised Learning
+- KNN
+
+# Exam Review
+
+## Exam Results
+
+![](./lec17_images/exam_results.png)
+
+- Curve: +3 Bonus Points (3 questions, 6% bump)
+- Average: 85%
+
+## Top Difficult Questions - #1
+
+![](./lec17_images/classification_question.png)
+
+- [ ] Linear model has higher precision
+- [ ] Linear model has worse recall
+- [ ] Linear model has more FP
+- [ ] Linear model has more FN
+
+## FN, TP, TN, FP
+
+![](./lec14_images/threshold_05.png){fig-align="center"}
+
+## Top Difficult Questions - #2
+
+Select all non-linear functions with respect to model parameters $\mathbf{\beta}$
+
+- [ ] $\beta_0 sin(x)$
+- [ ] $\beta_0 x^2$
+- [ ] $\frac{e^{\beta_0 + \beta_1 x}}{1 + e^{\beta_0 + \beta_1 x}}$
+- [ ] $e^{\beta_0 + \beta_1 x}$
+- [ ] $sin(\beta_0 x)$
+
+## Top Difficult Questions - #3{.smaller}
+
+![](./lec17_images/non_constant_variance.png)
+
+- Please explain if the assumptions of Linear Regression are met or not. 
+- You must discuss at least 3 of the assumptions and clearly explain if each assumption is met from looking at the graph.
+
+## Top Difficult Questions - #4
+
+![](./lec17_images/largest_tip.png)
+
+- Which day had the largest tip?
+
+
+# Big Picture
+
+## First 1/4
+
+```{mermaid}
+flowchart LR
+    A[Stats and Prob] --> B[Descriptive Statistics]
+    A --> C[Distribtuions]
+    A --> D[Population Inference]
+
+    E[Data Exploration] --> F[Plotting]
+    E --> G[Dataframes]
+    E --> H[Exploratory Data Analysis]
+```
+
+## First 1/2
+
+```{mermaid}
+flowchart LR
+    A[Regression] --> B[Linear Regression]
+    A --> C[Mutliple Linear Regression]
+    A --> D[Polynomial Regression]
+    A --> Z[Logistic Regression]
+
+    E[Model Evaluation] --> F[RMSE, R^2]
+    E --> G[Precision, Recall]
+    E --> H[Train,Valid,Test ]
+
+```
+
+## Whats next
+
+- More advanced **models**!
+- We will still be using what we learned! Especially model evaluation!
+- Fully define concept of *supervised* learning
+
+
+# Supervised Learning
+
+## Terms
+
+- An instance is **labeled** if the *outcome* feature's value is known for that instance. 
+- **Supervised learning** is *training* a model to predict a labeled outcome feature based on input features. 
+- The outcome feature is also known as the **target** or dependent variable.
+- The input features are also known as **features** or independent variables
+
+
+## Example Regression Problem
+
+![](./lec17_images/regression_example_house.png){fig-align="center"}
+
+
+
+
+## Example Classification Problem
+
+![](./lec17_images/classification_example_house.png){fig-align="center"}
+
+## Regression vs Classification
+
+- Regression - Predicting a continuous numeric outcome
+- Classification - Predicting the class (group) of an instance
+
+
+## Goals of Supervised Learning
+
+- *Predict* the values that unlabeled data will have **and** to *explain* how the inputs lead to the predicted outputs. 
+
+- A model is **interpretable** if the relationship between input and output features in the model are easy to explain.
+- A model is **predictive** if the outcomes produced by the model match the actual outcomes with *new* data. 
+
+
+## What is more important
+
+- A model can be both predictive and interpretable, but different clients and disciplines value one more than the other. 
+- Ex: Scientists value interpretability more to explain the effect of experiments; image recognition models value predictiveness more. 
+- A large business may really only care about results. Being predictive may be the only thing that matters
+
+
+# K-nearest Neighbors (KNN)
+
+## Introduction
+
+
+- **k-nearest neighbors (kNN)** is a supervised learning algorithm that predicts the output feature of a new instance using *other instances* that are **close** for certain input features.
+- A value of k is selected and the k instances with the closest input features are found. The output features of those k instances are used to make the prediction.
+
+::: callout-tip
+Sometimes, the phrase "birds of a feather flock together" is used to describe the k-nearest algorithm, meaning the algorithm assumes that instances with similar inputs will have similar outputs.
+:::
+
+
+## Motivation
+
+![](./lec17_images/bean_graph.png){fig-align="center" width="80%"}
+
+
+## Example {.smaller}
+
+![](./lec17_images/example_knn_1.png){fig-align="center" width="50%"}
+
+- (4, 2.5)
+- (0, 4)
+- (2, 1)
+
+## Finding your nearest neighbors
+
+::: incremental
+- How do determine how **close** a point is form the another (**metric**)
+- distance(x,y) = $\sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + ... + (x_p - y_p)^2  }$
+- ![Distance Calculation](./lec17_images/distance_calc.png)
+:::
+
+## Using KNN for Classification
+
+![](./lec17_images/knn_classify.png)
+
+
+## Regression with KNN
+
+
+1. Select k, the number of neighbors to consider.
+2. Calculate the distance between all labeled instances and the instance to predict.
+3.  The k instances with the shortest distances are the nearest neighbors.
+4. Predict by averaging the k nearest neighbors' output values.
+
+
+
+# Software
+
+## scikit-learn
+
+- [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
+- [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html)
+- Very easy to use! Lets do an example
+
+## Example
+
+

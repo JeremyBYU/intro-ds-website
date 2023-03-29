@@ -1,6 +1,6 @@
 ---
-title: "CISC482 - Lecture15"
-subtitle: "Evaluating Model Performance - Bootrapping"
+title: "CISC482 - Lecture16"
+subtitle: "Evaluating Model Performance - Bootsrapping"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
 logo: "../images/logo.png"
@@ -52,7 +52,7 @@ np.random.seed(10)
 ## Today
 
 - Review Train/Valid/Test
-- Reivew K-Folds
+- Review K-Folds
 
 # Review
 
