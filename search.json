@@ -994,11 +994,53 @@
     "text": "scikit-learn\n\nKNeighborsClassifier\nKNeighborsClassifier\nVery easy to use! Lets do an example"
   },
   {
-    "objectID": "slides/lec-17.html#example-1",
-    "href": "slides/lec-17.html#example-1",
+    "objectID": "slides/lec-17.html#example---data",
+    "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
-    "section": "Example",
-    "text": "Example\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "section": "Example - Data",
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fcf588f1e10>"
+  },
+  {
+    "objectID": "slides/lec-17.html#split-into-train-and-test",
+    "href": "slides/lec-17.html#split-into-train-and-test",
+    "title": "CISC482 - Lecture17",
+    "section": "Split into Train and Test",
+    "text": "Split into Train and Test\n\n\nCode\nfrom sklearn.model_selection import train_test_split\n# Split data\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)\n\n# Plot data\nfig, ax = plt.subplots(nrows=1, ncols=2)\n\ndata = [(X_train, y_train, 'Train Set'), (X_test, y_test, 'Test Set')]\nfor (X, y, title), ax_ in zip(data, ax):\n  scatter = ax_.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis')\n  ax_.set_title(title)\n  ax_.set_xlabel(\"X0\")\n  ax_.set_ylabel(\"X1\")\n  ax_.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")"
+  },
+  {
+    "objectID": "slides/lec-17.html#train-model-sanity-check",
+    "href": "slides/lec-17.html#train-model-sanity-check",
+    "title": "CISC482 - Lecture17",
+    "section": "Train Model, Sanity Check",
+    "text": "Train Model, Sanity Check\n\n\nCode\nfrom sklearn.neighbors import KNeighborsClassifier\n# Create and train model\nmodel = KNeighborsClassifier(n_neighbors=5)\nmodel.fit(X_train, y_train)\n\n# Single point sanity check\ntest_point = [2, 1]\npredicted_group = model.predict([test_point])\nprint(f\"We predict that {test_point} will belong to class: {predicted_group}\")\n\n\nWe predict that [2, 1] will belong to class: [1]"
+  },
+  {
+    "objectID": "slides/lec-17.html#test-model",
+    "href": "slides/lec-17.html#test-model",
+    "title": "CISC482 - Lecture17",
+    "section": "Test Model",
+    "text": "Test Model\n\n\nCode\n# Make predictions\npredictions = model.predict(X_test)\n\n# Plot data\nfig, ax = plt.subplots(nrows=1, ncols=2)\ndata = [(X_test, y_test, 'Test Set (Ground Truth)'), (X_test, predictions, 'Test Set Predicted')]\nfor (X, y, title), ax_ in zip(data, ax):\n  scatter = ax_.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis')\n  ax_.set_title(title)\n  ax_.set_xlabel(\"X0\")\n  ax_.set_ylabel(\"X1\")\n  ax_.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")"
+  },
+  {
+    "objectID": "slides/lec-17.html#confusion-matrix-plot",
+    "href": "slides/lec-17.html#confusion-matrix-plot",
+    "title": "CISC482 - Lecture17",
+    "section": "Confusion Matrix, Plot",
+    "text": "Confusion Matrix, Plot\n\n\n\n\nCode\nfrom sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay\n\ncm = confusion_matrix(y_test, predictions)\ndisp = ConfusionMatrixDisplay(confusion_matrix=cm,\n                              display_labels=['Negative', 'Positive'])\ndisp.plot()\n\nplt.show()\n\n\n\n\n\n\n\n\nConfusion Matrix\n[[12  4]\n [ 1 13]]"
+  },
+  {
+    "objectID": "slides/lec-17.html#classication-metrics",
+    "href": "slides/lec-17.html#classication-metrics",
+    "title": "CISC482 - Lecture17",
+    "section": "Classication Metrics",
+    "text": "Classication Metrics\n\nAccuracy = \\(\\frac{TP+TN}{TP+TN+FP+FN}\\)\nPrecision = \\(\\frac{TP}{TP+FP}\\)\nRecall = \\(\\frac{TP}{TP+FN}\\)\nF1 = \\(\\frac{2*Precision*Recall}{Precision+Recall} = \\frac{2*TP}{2*TP+FP+FN}\\)"
+  },
+  {
+    "objectID": "slides/lec-17.html#classification-report",
+    "href": "slides/lec-17.html#classification-report",
+    "title": "CISC482 - Lecture17",
+    "section": "Classification Report",
+    "text": "Classification Report\n\n\nCode\nfrom sklearn.metrics import classification_report\nreport = classification_report(y_test, predictions, target_names=[\"Negative\", \"Postive\"])\nprint(report)\n\n\n              precision    recall  f1-score   support\n\n    Negative       0.92      0.75      0.83        16\n     Postive       0.76      0.93      0.84        14\n\n    accuracy                           0.83        30\n   macro avg       0.84      0.84      0.83        30\nweighted avg       0.85      0.83      0.83        30\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-03.html#schedule",
@@ -1173,7 +1215,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f49303c8c70>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7ffaa06b7e20>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
