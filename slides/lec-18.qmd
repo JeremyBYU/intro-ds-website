@@ -167,12 +167,12 @@ vocabulary = set(vocabulary) -->
 
 ## Creating Features Vectors
 
-Every document $d_i$ has a feature vector, $w_i$, that has $n$ elements in it. Each element will represent information about a unique vocab word in our corpus.
+Every document $d_i$ has a feature vector, $x_i$, that has $n$ elements in it. Each element will represent information about a unique vocab word in our corpus.
 
 - Multinomial Naive Bayes
-  - Each document is broken up to $n$ unique words. The feature vector is then the **frequency** count of those words in the document.
+  - Each document is broken up to tokens. The feature vector is then the **frequency** count of the vocabulary words in the token set.
 - Bernoulli Naive Bayes 
-  - Each document is broken up to $n$ unique words. The feature vector is then a boolean variable if that word was found in the document.
+  - Each document is broken up into tokens. The feature vector is then a boolean variable if the the vocab word was found in the document.
 
 
 ## Multinomial Feature Vector
@@ -202,6 +202,193 @@ print(vectorizer_b.get_feature_names_out())
 print("Feature Vector: ")
 print(X_b.toarray())
 ```
+
+## Which one to use?
+
+- Multinomial is the more complex model. Bernoulli is the simpler model
+- Less Data -> Bernoulli -> Less overfitting
+- Alot of Data -> Multinomial
+- Zybook only shows Multinomial
+
+# Naive Bayes - How to use Feature Vectors?
+
+
+## Bayes Models
+
+::: fragment
+$P(H|\textbf{D}) = P(H ) \frac{P(\textbf{D} | H)}{P(\textbf{D})}$
+:::
+
+::: fragment
+$P(C = Spam|\textbf{X}) = \underbrace{P(C = Spam)}_{Prior} \frac{P(\textbf{X} | C = Spam)}{P(\textbf{X})}$
+:::
+
+::: fragment
+$P(C = Spam|\textbf{X}) = P(C = Spam) \frac{\underbrace{P(\textbf{X} | C = Spam)}_{Likelihood}}{P(\textbf{X})}$
+:::
+
+:::fragment
+Remember that $\textbf{X} = x_1, x_2, ... x_n$, one for each vocaublary word. Mulitnomial $x_i$ is the _____ and for bernoulli it is the _____.
+:::
+
+## The Prior
+
+$P(C = Spam)$ = ?
+
+**Irrepspective** of data, what is the probability that this is a spam document. 
+
+
+:::fragment
+$P(C = Spam)$ = $\frac{\text{# Spam Documents}}{\text{# All Documents}} = \frac{m_s}{m}$
+:::
+
+:::fragment
+$P(C = Ham)$ = $1 - P(C = Spam)$
+:::
+
+
+## The Likelihood (the hard one)
+
+$P(\textbf{X} | C = Spam) = P(x_1, x_2, ... x_i, x_n | Spam)$
+
+This is a very large joint probability! Very difficult to compute! But we have some tricks...
+
+::: fragment
+$P(\textbf{X} | Spam) = P(x_1 | x_2, ... , x_n, Spam) P(x_2, ... x_n | Spam)$
+:::
+
+::: fragment
+$P(\textbf{X} | Spam) = P(x_1 | x_2, ... , x_n, Spam) P(x_2 | x_3, ...,  Spam) P(x_3, ... x_n | Spam)$
+:::
+
+:::fragment
+This is still just incredibly difficult to compute.... But we can make a **naive** assumption.
+:::
+
+## The Naive Assumption
+
+$P(x_1 | x_2, ..., x_n, Spam ) = P(x_1 | Spam)$
+
+::: incremental
+- What is this assumption saying? 
+- Is it true?
+- Is it useful?
+:::
+
+::: fragment
+$P(\textbf{X} | Spam) = \Pi P(x_i | Spam)$
+:::
+
+## Calculating $P(x_i | C=Spam)$, Bernoulli
+
+- Looking at only *spam* documents
+- Number of *spam* **documents** where $x_i$ appeared = $x_{i}^s$
+- Total number of *spam* **documents** = $m_s$
+- $P(x_i | C=Spam) = \frac{x_{i}^s}{m_s}$
+
+## Calculating $P(x_i | C=Ham)$, Bernoulli
+
+- Looking at only *ham* documents
+- Number of *ham* **documents** where $x_i$ appeared = $x_{i}^h$
+- Total number of *ham* **documents** = $m_h$
+- $P(x_i | C=Ham) = \frac{x_{i}^h}{m_h}$
+
+
+## Putting it all together
+
+:::fragment
+$P(C=Spam | \textbf{X}) = P(C=Spam)\dfrac{P(\textbf{X} | C=Spam)}{P(\textbf{X})}$
+:::
+
+:::fragment
+$P(C=Spam | \textbf{X}) \propto P(C=Spam) \; P(\textbf{X} | C=Spam)$
+:::
+
+:::fragment
+$P(C=Spam | \textbf{X}) \propto P(C=Spam) \; \Pi P(x_i | C=Spam)$
+:::
+
+
+:::fragment
+$P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \Pi \dfrac{x_{i}^s}{m_s}$
+:::
+
+::: fragment
+::: callout-warning
+Anyone see a problem here? What happens if a vocab word does not appear in the document?
+:::
+:::
+
+## Laplacian Smoothing for Naive Bayes
+
+
+- $P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \Pi \dfrac{x_{i}^s + 1}{m_s + 2}$
+- $P(C=Ham | \textbf{X}) \propto \dfrac{m_h}{m} \; \Pi \dfrac{x_{i}^h + 1}{m_h + 2}$
+- Compute both numbers. Whichever class has a higher prob, classify as that one
+
+::: fragment
+::: callout-warning
+Any astute computer scientists see a possible problem....
+:::
+:::
+
+## Floating point number inaccuracies
+
+```{python}
+#| echo: true
+import math
+probs = [0.01] * 20
+final_prob = math.prod(probs)
+print(f"Probabilities: {probs}")
+print(f"Final Probability: {final_prob}")
+```
+
+::: fragment
+```{python}
+#| echo: true
+import math
+probs = [0.01] * 10_000
+final_prob = math.prod(probs)
+print(f"Final Probability: {final_prob}")
+```
+:::
+
+::: fragment
+::: question
+Any one have any ideas to fix this?
+:::
+:::
+
+## Log function {.smaller}
+
+::: incremental
+- $P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \prod \dfrac{x_{i}^s + 1}{m_s + 2}$
+- $P(C=Spam | \textbf{X}) \propto \ln \left( \dfrac{m_s}{m} \; \prod \dfrac{x_{i}^s + 1}{m_s + 2} \right)$
+- What is this $\log(a \cdot b) = ?$
+- $\log(a \cdot b) = \log(a) + \log(b)$
+- $P(C=Spam | \textbf{X}) \propto \ln \left(\dfrac{m_s}{m} \right) + \; \sum \ln \left(\dfrac{x_{i}^s + 1}{m_s + 2}\right)$
+:::
+
+## Log Functon Graph
+
+::: columns
+
+:::{.column width="50%"}
+```{python}
+#| echo: true
+
+x = np.linspace(0, 1, 1000000)
+y = np.log(x)
+plt.plot(x, y)
+```
+:::
+
+:::{.column width="50%"}
+::: callout-tip
+We can transfrom our probabilties with log and make everything numerically stable!!
+:::
+:::
+:::
 
 
 
