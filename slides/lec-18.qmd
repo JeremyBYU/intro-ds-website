@@ -63,17 +63,26 @@ np.random.seed(10)
 - Regression vs Classification?
 - What does KNN stand for?
 
+## Metric Space
+A **metric space** is an unordered pair $(M, d)$ where $M$ is a set and $d$ is a metric on $M$, a function where $d: M \times M \rightarrow \mathbb{R}$. Where $d$ satisfies the following axioms for all points $x,y,z \in M$
+
+1. The distance from a point to itself is 0: $d(x,x) = 0$
+2. The distance between any two *distinct* points is always positive: If $x \neq y, then \; d(y,x) > 0$
+3. The distance from x to y is always the same distance from y to x: $d(x,y) = d(y,x)$
+4. Triangle Inequality holds: $d(x,z) \geq d(x,y) + d(y, z)$
+
+
 
 # Naive Bayes
 
-## Bascic Idea
+## Basic Idea
 
 - Naive Bayes classification is a supervised learning classifier that uses the number of times a feature occurs in each possible class to estimate the **likelihood** an instance is in the class. 
 - Naive Bayes is often used for applications with large amounts of text data. 
   - identifying the author of a new document based on prior documents with known authors.
   - detecting spam emails
 
-## Motiviating Example
+## Motivating Example
 
 
 ::: columns
@@ -101,9 +110,105 @@ Congratulations!!!1 You won free trip to B@hamas. Give credit card to confirm sh
 Which one is spam? How do you *know*?
 :::
 
-## Input and Output
+## Example Problem Focus
 
-- Input to our function is a feature vector 
+- For the rest of the class we will be doing examples on spam classification
+- This means we are give a document that has **words** in it and want to predict the **class**: *ham* or *spam*
+- All machine learn learning models need features to learn from, and we expect these to be numbers
+- We need to transform our document into a feature vector: $X$
+
+## Two Approaches
+
+There are two main approaches to Naive Bayes and they boil down to how to transform the document. But first some definitions:
+
+- We denote $D = \{d_1, d_2, ..., d_i, ..., d_m \}$ as the set of all documents. Often called the corpus. $\lvert D \rvert = m$. 
+- Every $d_i$ is composed of *tokens* (words) where spaces are ignored
+- The set of **all** unique tokens from $D$ is called the *vocabulary*. Lets denote the cardinality of this set to be $n$. So there are $n$ unique words in the corpus.
+
+
+## Example
+
+::: question
+D1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.
+
+D2 - You are all great students! I am so proud to be a teacher of great students!
+:::
+
+```{python}
+d_1 = "The best part of waking up is Folgers in your cup. Fill your cup up with Folgers."
+d_2 = "You are all great students! I am so proud to be a teacher of great students!"
+docs = [d_1, d_2]
+```
+
+```{python}
+#| echo: True
+import string
+vocabulary = set(d_1.split(' ') + d_2.split(' '))
+print(vocabulary)
+print(len(vocabulary))
+```
+
+## Preprocess Text {.smaller}
+
+- Remove Punctuation
+- Leading and Ending White space - ' Hey '
+- Replace common occurring text patterns with a single word, Regular Expression
+  -'http://spam.me' --> url
+  - '$' '£'& --> 'mnsymb'
+  - '55555' -- 'shrtcode'
+  - '867-5309' --> 'phonenumber'
+  - '88' --> 'number'
+- Lower case
+- Port Stemmer - 'testing' -> 'test'
+- Remove Stop words - 'the', 'a'
+
+<!-- vocabulary = [word.translate(str.maketrans('', '', string.punctuation )) for word in vocabulary]
+vocabulary = set(vocabulary) -->
+
+## Creating Features Vectors
+
+Every document $d_i$ has a feature vector, $w_i$, that has $n$ elements in it. Each element will represent information about a unique vocab word in our corpus.
+
+- Multinomial Naive Bayes
+  - Each document is broken up to $n$ unique words. The feature vector is then the **frequency** count of those words in the document.
+- Bernoulli Naive Bayes 
+  - Each document is broken up to $n$ unique words. The feature vector is then a boolean variable if that word was found in the document.
+
+
+## Multinomial Feature Vector
+
+```{python}
+#| echo: True
+#| code-fold: true
+from sklearn.feature_extraction.text import CountVectorizer
+vectorizer_m = CountVectorizer()
+X_m = vectorizer_m.fit_transform(docs)
+print(f"Vocab: {len(vectorizer_m.get_feature_names_out())}")
+print(vectorizer_m.get_feature_names_out())
+print("Feature Vector: ")
+print(X_m.toarray())
+```
+
+
+## Bernoulli Feature Vector
+
+```{python}
+#| echo: True
+#| code-fold: true
+vectorizer_b = CountVectorizer(binary=True)
+X_b = vectorizer_b.fit_transform(docs)
+print(f"Vocab: {len(vectorizer_b.get_feature_names_out())}")
+print(vectorizer_b.get_feature_names_out())
+print("Feature Vector: ")
+print(X_b.toarray())
+```
+
+
+
+
 
 <!-- chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://web.stanford.edu/class/archive/cs/cs109/cs109.1178/lectureHandouts/210-naive-bayes.pdf -->
   
+
+
+  <!-- https://deepnote.com/@emmanuelmicron/Spam-Detection-using-Multinomial-Naive-Bayes-Model-a9a6bc89-e723-4c32-8679-86a5ff1978f3 -->
