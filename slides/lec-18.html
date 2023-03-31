@@ -508,7 +508,7 @@ Dr.&nbsp;Jeremy Castagno
 <span id="cb1-3"><a href="#cb1-3"></a><span class="bu">print</span>(vocabulary)</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="bu">len</span>(vocabulary))</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>{'are', 'cup.', 'of', 'up', 'so', 'in', 'best', 'Fill', 'waking', 'You', 'teacher', 'with', 'your', 'proud', 'to', 'is', 'The', 'students!', 'cup', 'Folgers.', 'am', 'Folgers', 'great', 'part', 'a', 'all', 'I', 'be'}
+<pre><code>{'students!', 'of', 'are', 'so', 'Fill', 'I', 'proud', 'is', 'your', 'all', 'am', 'great', 'cup.', 'The', 'cup', 'part', 'best', 'with', 'up', 'teacher', 'waking', 'be', 'Folgers', 'You', 'in', 'a', 'to', 'Folgers.'}
 28</code></pre>
 </div>
 </div>
@@ -534,15 +534,15 @@ vocabulary = set(vocabulary) -->
 </section>
 <section id="creating-features-vectors" class="slide level2">
 <h2>Creating Features Vectors</h2>
-<p>Every document <span class="math inline">\(d_i\)</span> has a feature vector, <span class="math inline">\(w_i\)</span>, that has <span class="math inline">\(n\)</span> elements in it. Each element will represent information about a unique vocab word in our corpus.</p>
+<p>Every document <span class="math inline">\(d_i\)</span> has a feature vector, <span class="math inline">\(x_i\)</span>, that has <span class="math inline">\(n\)</span> elements in it. Each element will represent information about a unique vocab word in our corpus.</p>
 <ul>
 <li>Multinomial Naive Bayes
 <ul>
-<li>Each document is broken up to <span class="math inline">\(n\)</span> unique words. The feature vector is then the <strong>frequency</strong> count of those words in the document.</li>
+<li>Each document is broken up to tokens. The feature vector is then the <strong>frequency</strong> count of the vocabulary words in the token set.</li>
 </ul></li>
 <li>Bernoulli Naive Bayes
 <ul>
-<li>Each document is broken up to <span class="math inline">\(n\)</span> unique words. The feature vector is then a boolean variable if that word was found in the document.</li>
+<li>Each document is broken up into tokens. The feature vector is then a boolean variable if the the vocab word was found in the document.</li>
 </ul></li>
 </ul>
 </section>
@@ -592,11 +592,221 @@ Feature Vector:
  [1 1 1 1 0 0 0 0 1 0 0 1 0 1 1 1 1 0 1 0 0 0 1 0]]</code></pre>
 </div>
 </div>
+</section>
+<section id="which-one-to-use" class="slide level2">
+<h2>Which one to use?</h2>
+<ul>
+<li>Multinomial is the more complex model. Bernoulli is the simpler model</li>
+<li>Less Data -&gt; Bernoulli -&gt; Less overfitting</li>
+<li>Alot of Data -&gt; Multinomial</li>
+<li>Zybook only shows Multinomial</li>
+</ul>
+</section></section>
+<section>
+<section id="naive-bayes---how-to-use-feature-vectors" class="title-slide slide level1 center">
+<h1>Naive Bayes - How to use Feature Vectors?</h1>
+
+</section>
+<section id="bayes-models" class="slide level2">
+<h2>Bayes Models</h2>
+<div class="fragment">
+<p><span class="math inline">\(P(H|\textbf{D}) = P(H ) \frac{P(\textbf{D} | H)}{P(\textbf{D})}\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(P(C = Spam|\textbf{X}) = \underbrace{P(C = Spam)}_{Prior} \frac{P(\textbf{X} | C = Spam)}{P(\textbf{X})}\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(P(C = Spam|\textbf{X}) = P(C = Spam) \frac{\underbrace{P(\textbf{X} | C = Spam)}_{Likelihood}}{P(\textbf{X})}\)</span></p>
+</div>
+<div class="fragment">
+<p>Remember that <span class="math inline">\(\textbf{X} = x_1, x_2, ... x_n\)</span>, one for each vocaublary word. Mulitnomial <span class="math inline">\(x_i\)</span> is the _____ and for bernoulli it is the _____.</p>
+</div>
+</section>
+<section id="the-prior" class="slide level2">
+<h2>The Prior</h2>
+<p><span class="math inline">\(P(C = Spam)\)</span> = ?</p>
+<p><strong>Irrepspective</strong> of data, what is the probability that this is a spam document.</p>
+<div class="fragment">
+<p><span class="math inline">\(P(C = Spam)\)</span> = <span class="math inline">\(\frac{\text{# Spam Documents}}{\text{# All Documents}} = \frac{m_s}{m}\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(P(C = Ham)\)</span> = <span class="math inline">\(1 - P(C = Spam)\)</span></p>
+</div>
+</section>
+<section id="the-likelihood-the-hard-one" class="slide level2">
+<h2>The Likelihood (the hard one)</h2>
+<p><span class="math inline">\(P(\textbf{X} | C = Spam) = P(x_1, x_2, ... x_i, x_n | Spam)\)</span></p>
+<p>This is a very large joint probability! Very difficult to compute! But we have some tricks…</p>
+<div class="fragment">
+<p><span class="math inline">\(P(\textbf{X} | Spam) = P(x_1 | x_2, ... , x_n, Spam) P(x_2, ... x_n | Spam)\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(P(\textbf{X} | Spam) = P(x_1 | x_2, ... , x_n, Spam) P(x_2 | x_3, ..., Spam) P(x_3, ... x_n | Spam)\)</span></p>
+</div>
+<div class="fragment">
+<p>This is still just incredibly difficult to compute…. But we can make a <strong>naive</strong> assumption.</p>
+</div>
+</section>
+<section id="the-naive-assumption" class="slide level2">
+<h2>The Naive Assumption</h2>
+<p><span class="math inline">\(P(x_1 | x_2, ..., x_n, Spam ) = P(x_1 | Spam)\)</span></p>
+<div>
+<ul>
+<li class="fragment">What is this assumption saying?</li>
+<li class="fragment">Is it true?</li>
+<li class="fragment">Is it useful?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(P(\textbf{X} | Spam) = \Pi P(x_i | Spam)\)</span></p>
+</div>
+</section>
+<section id="calculating-px_i-cspam-bernoulli" class="slide level2">
+<h2>Calculating <span class="math inline">\(P(x_i | C=Spam)\)</span>, Bernoulli</h2>
+<ul>
+<li>Looking at only <em>spam</em> documents</li>
+<li>Number of <em>spam</em> <strong>documents</strong> where <span class="math inline">\(x_i\)</span> appeared = <span class="math inline">\(x_{i}^s\)</span></li>
+<li>Total number of <em>spam</em> <strong>documents</strong> = <span class="math inline">\(m_s\)</span></li>
+<li><span class="math inline">\(P(x_i | C=Spam) = \frac{x_{i}^s}{m_s}\)</span></li>
+</ul>
+</section>
+<section id="calculating-px_i-cham-bernoulli" class="slide level2">
+<h2>Calculating <span class="math inline">\(P(x_i | C=Ham)\)</span>, Bernoulli</h2>
+<ul>
+<li>Looking at only <em>ham</em> documents</li>
+<li>Number of <em>ham</em> <strong>documents</strong> where <span class="math inline">\(x_i\)</span> appeared = <span class="math inline">\(x_{i}^h\)</span></li>
+<li>Total number of <em>ham</em> <strong>documents</strong> = <span class="math inline">\(m_h\)</span></li>
+<li><span class="math inline">\(P(x_i | C=Ham) = \frac{x_{i}^h}{m_h}\)</span></li>
+</ul>
+</section>
+<section id="putting-it-all-together" class="slide level2">
+<h2>Putting it all together</h2>
+<div class="fragment">
+<p><span class="math inline">\(P(C=Spam | \textbf{X}) = P(C=Spam)\dfrac{P(\textbf{X} | C=Spam)}{P(\textbf{X})}\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(P(C=Spam | \textbf{X}) \propto P(C=Spam) \; P(\textbf{X} | C=Spam)\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(P(C=Spam | \textbf{X}) \propto P(C=Spam) \; \Pi P(x_i | C=Spam)\)</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \Pi \dfrac{x_{i}^s}{m_s}\)</span></p>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Anyone see a problem here? What happens if a vocab word does not appear in the document?</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="laplacian-smoothing-for-naive-bayes" class="slide level2">
+<h2>Laplacian Smoothing for Naive Bayes</h2>
+<ul>
+<li><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \Pi \dfrac{x_{i}^s + 1}{m_s + 2}\)</span></li>
+<li><span class="math inline">\(P(C=Ham | \textbf{X}) \propto \dfrac{m_h}{m} \; \Pi \dfrac{x_{i}^h + 1}{m_h + 2}\)</span></li>
+<li>Compute both numbers. Whichever class has a higher prob, classify as that one</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-warning callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Any astute computer scientists see a possible problem….</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="floating-point-number-inaccuracies" class="slide level2">
+<h2>Floating point number inaccuracies</h2>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> math</span>
+<span id="cb7-2"><a href="#cb7-2"></a>probs <span class="op">=</span> [<span class="fl">0.01</span>] <span class="op">*</span> <span class="dv">20</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>final_prob <span class="op">=</span> math.prod(probs)</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>(<span class="ss">f"Probabilities: </span><span class="sc">{</span>probs<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="bu">print</span>(<span class="ss">f"Final Probability: </span><span class="sc">{</span>final_prob<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Probabilities: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+Final Probability: 1.0000000000000005e-40</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> math</span>
+<span id="cb9-2"><a href="#cb9-2"></a>probs <span class="op">=</span> [<span class="fl">0.01</span>] <span class="op">*</span> <span class="dv">10_000</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>final_prob <span class="op">=</span> math.prod(probs)</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="bu">print</span>(<span class="ss">f"Final Probability: </span><span class="sc">{</span>final_prob<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Final Probability: 0.0</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="question">
+<p>Any one have any ideas to fix this?</p>
+</div>
+</div>
+</section>
+<section id="log-function" class="slide level2 smaller">
+<h2>Log function</h2>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \prod \dfrac{x_{i}^s + 1}{m_s + 2}\)</span></li>
+<li class="fragment"><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \ln \left( \dfrac{m_s}{m} \; \prod \dfrac{x_{i}^s + 1}{m_s + 2} \right)\)</span></li>
+<li class="fragment">What is this <span class="math inline">\(\log(a \cdot b) = ?\)</span></li>
+<li class="fragment"><span class="math inline">\(\log(a \cdot b) = \log(a) + \log(b)\)</span></li>
+<li class="fragment"><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \ln \left(\dfrac{m_s}{m} \right) + \; \sum \ln \left(\dfrac{x_{i}^s + 1}{m_s + 2}\right)\)</span></li>
+</ul>
+</div>
+</section>
+<section id="log-functon-graph" class="slide level2">
+<h2>Log Functon Graph</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000000</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a>y <span class="op">=</span> np.log(x)</span>
+<span id="cb11-3"><a href="#cb11-3"></a>plt.plot(x, y)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-18_files/figure-revealjs/cell-9-output-1.png" width="801" height="411"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>We can transfrom our probabilties with log and make everything numerically stable!!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <!-- chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://web.stanford.edu/class/archive/cs/cs109/cs109.1178/lectureHandouts/210-naive-bayes.pdf -->
 <p><!-- https://deepnote.com/@emmanuelmicron/Spam-Detection-using-Multinomial-Naive-Bayes-Model-a9a6bc89-e723-4c32-8679-86a5ff1978f3 --></p>
 
-
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>

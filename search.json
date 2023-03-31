@@ -1026,7 +1026,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f00d816a620>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f3c09bd6620>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -1243,7 +1243,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f0d48c72800>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f4c481b7970>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1789,7 +1789,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'are', 'cup.', 'of', 'up', 'so', 'in', 'best', 'Fill', 'waking', 'You', 'teacher', 'with', 'your', 'proud', 'to', 'is', 'The', 'students!', 'cup', 'Folgers.', 'am', 'Folgers', 'great', 'part', 'a', 'all', 'I', 'be'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'students!', 'of', 'are', 'so', 'Fill', 'I', 'proud', 'is', 'your', 'all', 'am', 'great', 'cup.', 'The', 'cup', 'part', 'best', 'with', 'up', 'teacher', 'waking', 'be', 'Folgers', 'You', 'in', 'a', 'to', 'Folgers.'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
@@ -1803,7 +1803,7 @@
     "href": "slides/lec-18.html#creating-features-vectors",
     "title": "CISC482 - Lecture18",
     "section": "Creating Features Vectors",
-    "text": "Creating Features Vectors\nEvery document \\(d_i\\) has a feature vector, \\(w_i\\), that has \\(n\\) elements in it. Each element will represent information about a unique vocab word in our corpus.\n\nMultinomial Naive Bayes\n\nEach document is broken up to \\(n\\) unique words. The feature vector is then the frequency count of those words in the document.\n\nBernoulli Naive Bayes\n\nEach document is broken up to \\(n\\) unique words. The feature vector is then a boolean variable if that word was found in the document."
+    "text": "Creating Features Vectors\nEvery document \\(d_i\\) has a feature vector, \\(x_i\\), that has \\(n\\) elements in it. Each element will represent information about a unique vocab word in our corpus.\n\nMultinomial Naive Bayes\n\nEach document is broken up to tokens. The feature vector is then the frequency count of the vocabulary words in the token set.\n\nBernoulli Naive Bayes\n\nEach document is broken up into tokens. The feature vector is then a boolean variable if the the vocab word was found in the document."
   },
   {
     "objectID": "slides/lec-18.html#multinomial-feature-vector",
@@ -1817,7 +1817,91 @@
     "href": "slides/lec-18.html#bernoulli-feature-vector",
     "title": "CISC482 - Lecture18",
     "section": "Bernoulli Feature Vector",
-    "text": "Bernoulli Feature Vector\n\n\nCode\nvectorizer_b = CountVectorizer(binary=True)\nX_b = vectorizer_b.fit_transform(docs)\nprint(f\"Vocab: {len(vectorizer_b.get_feature_names_out())}\")\nprint(vectorizer_b.get_feature_names_out())\nprint(\"Feature Vector: \")\nprint(X_b.toarray())\n\n\nVocab: 24\n['all' 'am' 'are' 'be' 'best' 'cup' 'fill' 'folgers' 'great' 'in' 'is'\n 'of' 'part' 'proud' 'so' 'students' 'teacher' 'the' 'to' 'up' 'waking'\n 'with' 'you' 'your']\nFeature Vector: \n[[0 0 0 0 1 1 1 1 0 1 1 1 1 0 0 0 0 1 0 1 1 1 0 1]\n [1 1 1 1 0 0 0 0 1 0 0 1 0 1 1 1 1 0 1 0 0 0 1 0]]\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Bernoulli Feature Vector\n\n\nCode\nvectorizer_b = CountVectorizer(binary=True)\nX_b = vectorizer_b.fit_transform(docs)\nprint(f\"Vocab: {len(vectorizer_b.get_feature_names_out())}\")\nprint(vectorizer_b.get_feature_names_out())\nprint(\"Feature Vector: \")\nprint(X_b.toarray())\n\n\nVocab: 24\n['all' 'am' 'are' 'be' 'best' 'cup' 'fill' 'folgers' 'great' 'in' 'is'\n 'of' 'part' 'proud' 'so' 'students' 'teacher' 'the' 'to' 'up' 'waking'\n 'with' 'you' 'your']\nFeature Vector: \n[[0 0 0 0 1 1 1 1 0 1 1 1 1 0 0 0 0 1 0 1 1 1 0 1]\n [1 1 1 1 0 0 0 0 1 0 0 1 0 1 1 1 1 0 1 0 0 0 1 0]]"
+  },
+  {
+    "objectID": "slides/lec-18.html#which-one-to-use",
+    "href": "slides/lec-18.html#which-one-to-use",
+    "title": "CISC482 - Lecture18",
+    "section": "Which one to use?",
+    "text": "Which one to use?\n\nMultinomial is the more complex model. Bernoulli is the simpler model\nLess Data -> Bernoulli -> Less overfitting\nAlot of Data -> Multinomial\nZybook only shows Multinomial"
+  },
+  {
+    "objectID": "slides/lec-18.html#bayes-models",
+    "href": "slides/lec-18.html#bayes-models",
+    "title": "CISC482 - Lecture18",
+    "section": "Bayes Models",
+    "text": "Bayes Models\n\n\\(P(H|\\textbf{D}) = P(H ) \\frac{P(\\textbf{D} | H)}{P(\\textbf{D})}\\)\n\n\n\\(P(C = Spam|\\textbf{X}) = \\underbrace{P(C = Spam)}_{Prior} \\frac{P(\\textbf{X} | C = Spam)}{P(\\textbf{X})}\\)\n\n\n\\(P(C = Spam|\\textbf{X}) = P(C = Spam) \\frac{\\underbrace{P(\\textbf{X} | C = Spam)}_{Likelihood}}{P(\\textbf{X})}\\)\n\n\nRemember that \\(\\textbf{X} = x_1, x_2, ... x_n\\), one for each vocaublary word. Mulitnomial \\(x_i\\) is the _____ and for bernoulli it is the _____."
+  },
+  {
+    "objectID": "slides/lec-18.html#the-prior",
+    "href": "slides/lec-18.html#the-prior",
+    "title": "CISC482 - Lecture18",
+    "section": "The Prior",
+    "text": "The Prior\n\\(P(C = Spam)\\) = ?\nIrrepspective of data, what is the probability that this is a spam document.\n\n\\(P(C = Spam)\\) = \\(\\frac{\\text{# Spam Documents}}{\\text{# All Documents}} = \\frac{m_s}{m}\\)\n\n\n\\(P(C = Ham)\\) = \\(1 - P(C = Spam)\\)"
+  },
+  {
+    "objectID": "slides/lec-18.html#the-likelihood-the-hard-one",
+    "href": "slides/lec-18.html#the-likelihood-the-hard-one",
+    "title": "CISC482 - Lecture18",
+    "section": "The Likelihood (the hard one)",
+    "text": "The Likelihood (the hard one)\n\\(P(\\textbf{X} | C = Spam) = P(x_1, x_2, ... x_i, x_n | Spam)\\)\nThis is a very large joint probability! Very difficult to compute! But we have some tricks…\n\n\\(P(\\textbf{X} | Spam) = P(x_1 | x_2, ... , x_n, Spam) P(x_2, ... x_n | Spam)\\)\n\n\n\\(P(\\textbf{X} | Spam) = P(x_1 | x_2, ... , x_n, Spam) P(x_2 | x_3, ..., Spam) P(x_3, ... x_n | Spam)\\)\n\n\nThis is still just incredibly difficult to compute…. But we can make a naive assumption."
+  },
+  {
+    "objectID": "slides/lec-18.html#the-naive-assumption",
+    "href": "slides/lec-18.html#the-naive-assumption",
+    "title": "CISC482 - Lecture18",
+    "section": "The Naive Assumption",
+    "text": "The Naive Assumption\n\\(P(x_1 | x_2, ..., x_n, Spam ) = P(x_1 | Spam)\\)\n\n\nWhat is this assumption saying?\nIs it true?\nIs it useful?\n\n\n\n\\(P(\\textbf{X} | Spam) = \\Pi P(x_i | Spam)\\)"
+  },
+  {
+    "objectID": "slides/lec-18.html#calculating-px_i-cspam-bernoulli",
+    "href": "slides/lec-18.html#calculating-px_i-cspam-bernoulli",
+    "title": "CISC482 - Lecture18",
+    "section": "Calculating \\(P(x_i | C=Spam)\\), Bernoulli",
+    "text": "Calculating \\(P(x_i | C=Spam)\\), Bernoulli\n\nLooking at only spam documents\nNumber of spam documents where \\(x_i\\) appeared = \\(x_{i}^s\\)\nTotal number of spam documents = \\(m_s\\)\n\\(P(x_i | C=Spam) = \\frac{x_{i}^s}{m_s}\\)"
+  },
+  {
+    "objectID": "slides/lec-18.html#calculating-px_i-cham-bernoulli",
+    "href": "slides/lec-18.html#calculating-px_i-cham-bernoulli",
+    "title": "CISC482 - Lecture18",
+    "section": "Calculating \\(P(x_i | C=Ham)\\), Bernoulli",
+    "text": "Calculating \\(P(x_i | C=Ham)\\), Bernoulli\n\nLooking at only ham documents\nNumber of ham documents where \\(x_i\\) appeared = \\(x_{i}^h\\)\nTotal number of ham documents = \\(m_h\\)\n\\(P(x_i | C=Ham) = \\frac{x_{i}^h}{m_h}\\)"
+  },
+  {
+    "objectID": "slides/lec-18.html#putting-it-all-together",
+    "href": "slides/lec-18.html#putting-it-all-together",
+    "title": "CISC482 - Lecture18",
+    "section": "Putting it all together",
+    "text": "Putting it all together\n\n\\(P(C=Spam | \\textbf{X}) = P(C=Spam)\\dfrac{P(\\textbf{X} | C=Spam)}{P(\\textbf{X})}\\)\n\n\n\\(P(C=Spam | \\textbf{X}) \\propto P(C=Spam) \\; P(\\textbf{X} | C=Spam)\\)\n\n\n\\(P(C=Spam | \\textbf{X}) \\propto P(C=Spam) \\; \\Pi P(x_i | C=Spam)\\)\n\n\n\\(P(C=Spam | \\textbf{X}) \\propto \\dfrac{m_s}{m} \\; \\Pi \\dfrac{x_{i}^s}{m_s}\\)\n\n\n\n\n\n\n\n\nWarning\n\n\nAnyone see a problem here? What happens if a vocab word does not appear in the document?"
+  },
+  {
+    "objectID": "slides/lec-18.html#laplacian-smoothing-for-naive-bayes",
+    "href": "slides/lec-18.html#laplacian-smoothing-for-naive-bayes",
+    "title": "CISC482 - Lecture18",
+    "section": "Laplacian Smoothing for Naive Bayes",
+    "text": "Laplacian Smoothing for Naive Bayes\n\n\\(P(C=Spam | \\textbf{X}) \\propto \\dfrac{m_s}{m} \\; \\Pi \\dfrac{x_{i}^s + 1}{m_s + 2}\\)\n\\(P(C=Ham | \\textbf{X}) \\propto \\dfrac{m_h}{m} \\; \\Pi \\dfrac{x_{i}^h + 1}{m_h + 2}\\)\nCompute both numbers. Whichever class has a higher prob, classify as that one\n\n\n\n\n\n\n\n\nWarning\n\n\nAny astute computer scientists see a possible problem…."
+  },
+  {
+    "objectID": "slides/lec-18.html#floating-point-number-inaccuracies",
+    "href": "slides/lec-18.html#floating-point-number-inaccuracies",
+    "title": "CISC482 - Lecture18",
+    "section": "Floating point number inaccuracies",
+    "text": "Floating point number inaccuracies\n\nimport math\nprobs = [0.01] * 20\nfinal_prob = math.prod(probs)\nprint(f\"Probabilities: {probs}\")\nprint(f\"Final Probability: {final_prob}\")\n\nProbabilities: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]\nFinal Probability: 1.0000000000000005e-40\n\n\n\n\nimport math\nprobs = [0.01] * 10_000\nfinal_prob = math.prod(probs)\nprint(f\"Final Probability: {final_prob}\")\n\nFinal Probability: 0.0\n\n\n\n\n\nAny one have any ideas to fix this?"
+  },
+  {
+    "objectID": "slides/lec-18.html#log-function",
+    "href": "slides/lec-18.html#log-function",
+    "title": "CISC482 - Lecture18",
+    "section": "Log function",
+    "text": "Log function\n\n\n\\(P(C=Spam | \\textbf{X}) \\propto \\dfrac{m_s}{m} \\; \\prod \\dfrac{x_{i}^s + 1}{m_s + 2}\\)\n\\(P(C=Spam | \\textbf{X}) \\propto \\ln \\left( \\dfrac{m_s}{m} \\; \\prod \\dfrac{x_{i}^s + 1}{m_s + 2} \\right)\\)\nWhat is this \\(\\log(a \\cdot b) = ?\\)\n\\(\\log(a \\cdot b) = \\log(a) + \\log(b)\\)\n\\(P(C=Spam | \\textbf{X}) \\propto \\ln \\left(\\dfrac{m_s}{m} \\right) + \\; \\sum \\ln \\left(\\dfrac{x_{i}^s + 1}{m_s + 2}\\right)\\)"
+  },
+  {
+    "objectID": "slides/lec-18.html#log-functon-graph",
+    "href": "slides/lec-18.html#log-functon-graph",
+    "title": "CISC482 - Lecture18",
+    "section": "Log Functon Graph",
+    "text": "Log Functon Graph\n\n\n\nx = np.linspace(0, 1, 1000000)\ny = np.log(x)\nplt.plot(x, y)\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nWe can transfrom our probabilties with log and make everything numerically stable!!\n\n\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-05.html#schedule",
