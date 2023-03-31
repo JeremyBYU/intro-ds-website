@@ -858,7 +858,7 @@
     "href": "slides/lec-17.html#schedule",
     "title": "CISC482 - Lecture17",
     "section": "Schedule",
-    "text": "Schedule\n\nReading 7-1: Mar 29 @ 12PM, Wednesday\nHW5 - Mar 29 @ Midnight, Wednesday\nReading 7-2: Mar 31 @ 12PM, Wednesday\nHW6 - Working on it… April 12 @ Midnight, Wednesday"
+    "text": "Schedule\n\nReading 7-1: Mar 29 @ 12PM, Wednesday\nHW5 - Mar 29 @ Midnight, Wednesday\nReading 7-2: Mar 31 @ 12PM, Friday\nHW6 - Working on it… April 12 @ Midnight, Wednesday"
   },
   {
     "objectID": "slides/lec-17.html#today",
@@ -1026,7 +1026,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f0025509d80>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f00d816a620>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -1243,7 +1243,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f2d105d0c70>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f0d48c72800>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -1733,21 +1733,91 @@
     "href": "slides/lec-18.html#schedule",
     "title": "CISC482 - Lecture18",
     "section": "Schedule",
-    "text": "Schedule\n\nReading 7-1: Mar 29 @ 12PM, Wednesday\nHW5 - Mar 29 @ Midnight, Wednesday\nReading 7-2: Mar 31 @ 12PM, Wednesday\nHW6 - Working on it… April 12 @ Midnight, Wednesday"
+    "text": "Schedule\n\nReading 7-2: Mar 31 @ 12PM, Friday\nReading 7-3: Apr 5 @ 12PM, Wednesday\nHW6 - Working on it… April 12 @ Midnight, Wednesday"
   },
   {
     "objectID": "slides/lec-18.html#today",
     "href": "slides/lec-18.html#today",
     "title": "CISC482 - Lecture18",
     "section": "Today",
-    "text": "Today\n\nReview Exam Results\nIntroduction to Supervised Learning\nKNN"
+    "text": "Today\n\nShort Review\nNaive Bayes\nClass Activity"
   },
   {
     "objectID": "slides/lec-18.html#terms",
     "href": "slides/lec-18.html#terms",
     "title": "CISC482 - Lecture18",
     "section": "Terms",
-    "text": "Terms\n\nAn instance is labeled if\nSupervised learning is\nRegression vs Classification?\nWhat does KNN stand for?\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Terms\n\nAn instance is labeled if\nSupervised learning is\nRegression vs Classification?\nWhat does KNN stand for?"
+  },
+  {
+    "objectID": "slides/lec-18.html#metric-space",
+    "href": "slides/lec-18.html#metric-space",
+    "title": "CISC482 - Lecture18",
+    "section": "Metric Space",
+    "text": "Metric Space\nA metric space is an unordered pair \\((M, d)\\) where \\(M\\) is a set and \\(d\\) is a metric on \\(M\\), a function where \\(d: M \\times M \\rightarrow \\mathbb{R}\\). Where \\(d\\) satisfies the following axioms for all points \\(x,y,z \\in M\\)\n\nThe distance from a point to itself is 0: \\(d(x,x) = 0\\)\nThe distance between any two distinct points is always positive: If \\(x \\neq y, then \\; d(y,x) > 0\\)\nThe distance from x to y is always the same distance from y to x: \\(d(x,y) = d(y,x)\\)\nTriangle Inequality holds: \\(d(x,z) \\geq d(x,y) + d(y, z)\\)"
+  },
+  {
+    "objectID": "slides/lec-18.html#basic-idea",
+    "href": "slides/lec-18.html#basic-idea",
+    "title": "CISC482 - Lecture18",
+    "section": "Basic Idea",
+    "text": "Basic Idea\n\nNaive Bayes classification is a supervised learning classifier that uses the number of times a feature occurs in each possible class to estimate the likelihood an instance is in the class.\nNaive Bayes is often used for applications with large amounts of text data.\n\nidentifying the author of a new document based on prior documents with known authors.\ndetecting spam emails"
+  },
+  {
+    "objectID": "slides/lec-18.html#motivating-example",
+    "href": "slides/lec-18.html#motivating-example",
+    "title": "CISC482 - Lecture18",
+    "section": "Motivating Example",
+    "text": "Motivating Example\n\n\nProfessor Castagno, I have a question about when HW6 is due. Is it due on Wednesday before class or at midnight. Thank you for your help!\n\nProffesssor Castagno, Congratulations!!!1 You won free trip to B@hamas. Give credit card to confirm sh1pping of tickets. Free no, expense trip! Respond now!\n\n\n\nWhich one is spam? How do you know?"
+  },
+  {
+    "objectID": "slides/lec-18.html#example-problem-focus",
+    "href": "slides/lec-18.html#example-problem-focus",
+    "title": "CISC482 - Lecture18",
+    "section": "Example Problem Focus",
+    "text": "Example Problem Focus\n\nFor the rest of the class we will be doing examples on spam classification\nThis means we are give a document that has words in it and want to predict the class: ham or spam\nAll machine learn learning models need features to learn from, and we expect these to be numbers\nWe need to transform our document into a feature vector: \\(X\\)"
+  },
+  {
+    "objectID": "slides/lec-18.html#two-approaches",
+    "href": "slides/lec-18.html#two-approaches",
+    "title": "CISC482 - Lecture18",
+    "section": "Two Approaches",
+    "text": "Two Approaches\nThere are two main approaches to Naive Bayes and they boil down to how to transform the document. But first some definitions:\n\nWe denote \\(D = \\{d_1, d_2, ..., d_i, ..., d_m \\}\\) as the set of all documents. Often called the corpus. \\(\\lvert D \\rvert = m\\).\nEvery \\(d_i\\) is composed of tokens (words) where spaces are ignored\nThe set of all unique tokens from \\(D\\) is called the vocabulary. Lets denote the cardinality of this set to be \\(n\\). So there are \\(n\\) unique words in the corpus."
+  },
+  {
+    "objectID": "slides/lec-18.html#example",
+    "href": "slides/lec-18.html#example",
+    "title": "CISC482 - Lecture18",
+    "section": "Example",
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'are', 'cup.', 'of', 'up', 'so', 'in', 'best', 'Fill', 'waking', 'You', 'teacher', 'with', 'your', 'proud', 'to', 'is', 'The', 'students!', 'cup', 'Folgers.', 'am', 'Folgers', 'great', 'part', 'a', 'all', 'I', 'be'}\n28"
+  },
+  {
+    "objectID": "slides/lec-18.html#preprocess-text",
+    "href": "slides/lec-18.html#preprocess-text",
+    "title": "CISC482 - Lecture18",
+    "section": "Preprocess Text",
+    "text": "Preprocess Text\n\nRemove Punctuation\nLeading and Ending White space - ’ Hey ’\nReplace common occurring text patterns with a single word, Regular Expression -‘http://spam.me’ –> url\n\n‘$’ ‘£’& –> ‘mnsymb’\n‘55555’ – ‘shrtcode’\n‘867-5309’ –> ‘phonenumber’\n‘88’ –> ‘number’\n\nLower case\nPort Stemmer - ‘testing’ -> ‘test’\nRemove Stop words - ‘the’, ‘a’"
+  },
+  {
+    "objectID": "slides/lec-18.html#creating-features-vectors",
+    "href": "slides/lec-18.html#creating-features-vectors",
+    "title": "CISC482 - Lecture18",
+    "section": "Creating Features Vectors",
+    "text": "Creating Features Vectors\nEvery document \\(d_i\\) has a feature vector, \\(w_i\\), that has \\(n\\) elements in it. Each element will represent information about a unique vocab word in our corpus.\n\nMultinomial Naive Bayes\n\nEach document is broken up to \\(n\\) unique words. The feature vector is then the frequency count of those words in the document.\n\nBernoulli Naive Bayes\n\nEach document is broken up to \\(n\\) unique words. The feature vector is then a boolean variable if that word was found in the document."
+  },
+  {
+    "objectID": "slides/lec-18.html#multinomial-feature-vector",
+    "href": "slides/lec-18.html#multinomial-feature-vector",
+    "title": "CISC482 - Lecture18",
+    "section": "Multinomial Feature Vector",
+    "text": "Multinomial Feature Vector\n\n\nCode\nfrom sklearn.feature_extraction.text import CountVectorizer\nvectorizer_m = CountVectorizer()\nX_m = vectorizer_m.fit_transform(docs)\nprint(f\"Vocab: {len(vectorizer_m.get_feature_names_out())}\")\nprint(vectorizer_m.get_feature_names_out())\nprint(\"Feature Vector: \")\nprint(X_m.toarray())\n\n\nVocab: 24\n['all' 'am' 'are' 'be' 'best' 'cup' 'fill' 'folgers' 'great' 'in' 'is'\n 'of' 'part' 'proud' 'so' 'students' 'teacher' 'the' 'to' 'up' 'waking'\n 'with' 'you' 'your']\nFeature Vector: \n[[0 0 0 0 1 2 1 2 0 1 1 1 1 0 0 0 0 1 0 2 1 1 0 2]\n [1 1 1 1 0 0 0 0 2 0 0 1 0 1 1 2 1 0 1 0 0 0 1 0]]"
+  },
+  {
+    "objectID": "slides/lec-18.html#bernoulli-feature-vector",
+    "href": "slides/lec-18.html#bernoulli-feature-vector",
+    "title": "CISC482 - Lecture18",
+    "section": "Bernoulli Feature Vector",
+    "text": "Bernoulli Feature Vector\n\n\nCode\nvectorizer_b = CountVectorizer(binary=True)\nX_b = vectorizer_b.fit_transform(docs)\nprint(f\"Vocab: {len(vectorizer_b.get_feature_names_out())}\")\nprint(vectorizer_b.get_feature_names_out())\nprint(\"Feature Vector: \")\nprint(X_b.toarray())\n\n\nVocab: 24\n['all' 'am' 'are' 'be' 'best' 'cup' 'fill' 'folgers' 'great' 'in' 'is'\n 'of' 'part' 'proud' 'so' 'students' 'teacher' 'the' 'to' 'up' 'waking'\n 'with' 'you' 'your']\nFeature Vector: \n[[0 0 0 0 1 1 1 1 0 1 1 1 1 0 0 0 0 1 0 1 1 1 0 1]\n [1 1 1 1 0 0 0 0 1 0 0 1 0 1 1 1 1 0 1 0 0 0 1 0]]\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-05.html#schedule",
@@ -3413,7 +3483,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 9\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 10\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
   },
   {
     "objectID": "computing-access.html",
