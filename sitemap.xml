@@ -1,147 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/course-syllabus.html</loc>
-    <lastmod>2023-03-31T14:31:36.319Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/course-links.html</loc>
-    <lastmod>2023-03-31T14:31:38.395Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-8.html</loc>
-    <lastmod>2023-03-31T14:31:39.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-1.html</loc>
-    <lastmod>2023-03-31T14:31:39.495Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-3.html</loc>
-    <lastmod>2023-03-31T14:31:39.863Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-6.html</loc>
-    <lastmod>2023-03-31T14:31:40.239Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-2.html</loc>
-    <lastmod>2023-03-31T14:31:40.610Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-9.html</loc>
-    <lastmod>2023-03-31T14:31:40.982Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-5.html</loc>
-    <lastmod>2023-03-31T14:31:41.354Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-7.html</loc>
-    <lastmod>2023-03-31T14:31:41.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-4.html</loc>
-    <lastmod>2023-03-31T14:31:42.102Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-10.html</loc>
-    <lastmod>2023-03-31T14:31:42.462Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/course-faq.html</loc>
-    <lastmod>2023-03-31T14:31:42.810Z</lastmod>
+    <loc>https://jeremybyu.github.io/intro-ds-website/index.html</loc>
+    <lastmod>2023-04-06T23:30:34.319Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/project-description.html</loc>
-    <lastmod>2023-03-31T14:31:43.478Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-10.html</loc>
-    <lastmod>2023-03-31T14:31:51.670Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-11.html</loc>
-    <lastmod>2023-03-31T14:32:02.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-17.html</loc>
-    <lastmod>2023-03-31T14:32:07.874Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-03.html</loc>
-    <lastmod>2023-03-31T14:32:13.982Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-16.html</loc>
-    <lastmod>2023-03-31T14:32:20.146Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-15.html</loc>
-    <lastmod>2023-03-31T14:32:25.610Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-06.html</loc>
-    <lastmod>2023-03-31T14:32:30.066Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-18.html</loc>
-    <lastmod>2023-03-31T14:32:34.646Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-05.html</loc>
-    <lastmod>2023-03-31T14:32:38.426Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-02.html</loc>
-    <lastmod>2023-03-31T14:32:44.650Z</lastmod>
+    <lastmod>2023-04-06T23:30:35.735Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-01.html</loc>
-    <lastmod>2023-03-31T14:32:45.078Z</lastmod>
+    <lastmod>2023-04-06T23:30:36.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-20.html</loc>
+    <lastmod>2023-04-06T23:30:42.739Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-04.html</loc>
-    <lastmod>2023-03-31T14:32:50.014Z</lastmod>
+    <lastmod>2023-04-06T23:30:47.887Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-07.html</loc>
-    <lastmod>2023-03-31T14:33:01.038Z</lastmod>
+    <lastmod>2023-04-06T23:30:59.047Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-09.html</loc>
-    <lastmod>2023-03-31T14:33:25.838Z</lastmod>
+    <lastmod>2023-04-06T23:31:25.659Z</lastmod>
   </url>
   <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-13.html</loc>
-    <lastmod>2023-03-31T14:33:29.806Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-14.html</loc>
-    <lastmod>2023-03-31T14:33:34.942Z</lastmod>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-15.html</loc>
+    <lastmod>2023-04-06T23:31:31.279Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-12.html</loc>
-    <lastmod>2023-03-31T14:33:42.146Z</lastmod>
+    <lastmod>2023-04-06T23:31:38.723Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-05.html</loc>
+    <lastmod>2023-04-06T23:31:42.571Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-02.html</loc>
+    <lastmod>2023-04-06T23:31:47.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-17.html</loc>
+    <lastmod>2023-04-06T23:31:53.703Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-14.html</loc>
+    <lastmod>2023-04-06T23:31:58.955Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-06.html</loc>
+    <lastmod>2023-04-06T23:32:03.503Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-10.html</loc>
+    <lastmod>2023-04-06T23:32:08.387Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-11.html</loc>
+    <lastmod>2023-04-06T23:32:19.384Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-03.html</loc>
+    <lastmod>2023-04-06T23:32:25.668Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-16.html</loc>
+    <lastmod>2023-04-06T23:32:32.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-13.html</loc>
+    <lastmod>2023-04-06T23:32:36.116Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-08.html</loc>
-    <lastmod>2023-03-31T14:33:46.070Z</lastmod>
+    <lastmod>2023-04-06T23:32:40.188Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/slides/lec-18.html</loc>
+    <lastmod>2023-04-06T23:32:44.840Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/course-syllabus.html</loc>
+    <lastmod>2023-04-06T23:32:45.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/course-links.html</loc>
+    <lastmod>2023-04-06T23:32:46.268Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/project-tips-resources.html</loc>
-    <lastmod>2023-03-31T14:33:47.230Z</lastmod>
+    <lastmod>2023-04-06T23:32:47.092Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/LICENSE.html</loc>
-    <lastmod>2023-03-31T14:33:47.814Z</lastmod>
+    <lastmod>2023-04-06T23:32:47.704Z</lastmod>
   </url>
   <url>
-    <loc>https://jeremybyu.github.io/intro-ds-website/index.html</loc>
-    <lastmod>2023-03-31T14:33:48.186Z</lastmod>
+    <loc>https://jeremybyu.github.io/intro-ds-website/course-faq.html</loc>
+    <lastmod>2023-04-06T23:32:48.052Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-6.html</loc>
+    <lastmod>2023-04-06T23:32:48.432Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-10.html</loc>
+    <lastmod>2023-04-06T23:32:48.812Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-2.html</loc>
+    <lastmod>2023-04-06T23:32:49.208Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-7.html</loc>
+    <lastmod>2023-04-06T23:32:49.600Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-3.html</loc>
+    <lastmod>2023-04-06T23:32:49.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-11.html</loc>
+    <lastmod>2023-04-06T23:32:50.364Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-4.html</loc>
+    <lastmod>2023-04-06T23:32:50.744Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-8.html</loc>
+    <lastmod>2023-04-06T23:32:51.144Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-5.html</loc>
+    <lastmod>2023-04-06T23:32:51.524Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-1.html</loc>
+    <lastmod>2023-04-06T23:32:51.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jeremybyu.github.io/intro-ds-website/weeks/week-9.html</loc>
+    <lastmod>2023-04-06T23:32:52.241Z</lastmod>
   </url>
   <url>
     <loc>https://jeremybyu.github.io/intro-ds-website/computing-access.html</loc>
-    <lastmod>2023-03-31T14:33:48.526Z</lastmod>
+    <lastmod>2023-04-06T23:32:52.617Z</lastmod>
   </url>
 </urlset>
