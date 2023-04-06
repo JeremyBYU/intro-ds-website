@@ -1,0 +1,25 @@
+---
+title: "Week 8"
+subtitle: "Model Performance!"
+editor: visual
+---
+
+## Prepare
+
+📖 Read Assignments 7-2
+📖 Read Assignments 7-3
+
+## Participate
+
+🖥️ [Lecture 20 - KNN](/slides/lec-20.html)
+
+
+## Practice
+
+📋 [Class Activity 09 - Naive Bayes](https://colab.research.google.com/drive/1wMVrw4F7gYozLy_s7M097WYl0V5mpDD7?usp=share_link)
+
+
+## Perform
+
+Draft Report due next Wednesday!
+

@@ -1,0 +1,99 @@
+---
+title: "CISC482 - Lecture20"
+subtitle: "Supervised Learning - SVM"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 8-1:  April 12 @ 12PM, Wednesday
+- Reading 8-2:  April 14 @ 12PM, Friday
+- Project Draft Report: April 12 @ Midnight, Wednesday
+- Example Report on Brightspace!!
+
+## Today
+
+- Support Vector Machine
+- Kernels
+
+# SVM
+
+## Terms
+
+- **S**upport **V**ector **M**achine (SVM) is a supervised learning algorithm that uses *hyperplanes* to divide data into different classes. 
+- **Hyperplane** is a flat surface that is *one* dimension lower than the input feature space.
+
+:::incremental
+- In a two-dimensional feature space, a hyperplane is a _____
+- In a three-dimensional feature space, a hyperplane is a ____
+:::
+
+
+## Visual Example 1
+
+![](./lec20_images/hyperplane_1dline.png)
+
+## Visual Example 2
+
+![](./lec20_images/hyperplane_2dplane.png)
+
+## Visual Example 3
+
+![](./lec20_images/hyperplane_1dline_in3d.png){fig-align="center" width="75%"}
+
+## Advantages ans Disadntages
+
+Advantages:
+
+- Flexible
+- Low storage required
+
+Disadvantages:
+
+- Prefers balanced data (we have workarounds)
+- Many hyperparametes (very true)
+
+## Margin
+
+- A dataset is **well-separated** if a hyperplane can divide the dataset so that all the instances of one class fall on one side of the hyperplane, and all instances not in that class fall on the other side. 
+
+- The **margin** is the space between the hyperplanes parallel to the dividing hyperplane that go through the dividing hyperplane's closest instances. W
+hen a dataset is well-separated, SVM seeks to find the dividing hyperplane that has the widest margin. The closest instances to the hyperplane are the hyperplane's support vectors. The support vectors are the only instances that determine, or support, the hyperplane.
