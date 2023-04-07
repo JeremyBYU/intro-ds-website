@@ -30,6 +30,7 @@ import numpy as np
 from sklearn.datasets import make_blobs
 from palmerpenguins import load_penguins, load_penguins_raw
 import matplotlib.pyplot as plt
+import matplotlib
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.datasets import make_blobs, make_regression
 df = load_penguins()
@@ -37,6 +38,98 @@ df.dropna(inplace=True)
 np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
 pd.options.display.float_format = '{:,.2f}'.format
 np.random.seed(10)
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 16}
+
+matplotlib.rc('font', **font)
+```
+
+
+```{python}
+from matplotlib import cm
+from sklearn.inspection import DecisionBoundaryDisplay
+def plot_svm(X, Y,  clf, ax, widen_extra=0.1, s=70, plot_data_points=True, plot_sv=True, plot_df=True, plot_margin=True, plot_hp=True, remove_ticks=True,
+plot_legend=True, classes = ['Class 0', 'Class 1'], xlabel='Feature 0', ylabel='Feature 1'):
+    x_min = np.min(X[:,0])
+    x_max = np.max(X[:,0])
+    y_min = np.min(X[:,1])
+    y_max = np.max(X[:,1])
+
+    delta_x = (x_max-x_min) * widen_extra
+    x_min -= delta_x
+    x_max += delta_x
+
+    delta_y = (y_max-y_min) * widen_extra
+    y_min -= delta_y
+    y_max += delta_y
+    # get the separating hyperplane
+    w = clf.coef_[0]
+    a = -w[0] / w[1]
+    xx = np.linspace(x_min, x_max)
+    yy = a * xx - (clf.intercept_[0]) / w[1]
+
+    # plot the parallels to the separating hyperplane that pass through the
+    # support vectors (margin away from hyperplane in direction
+    # perpendicular to hyperplane). This is sqrt(1+a^2) away vertically in
+    # 2-d.
+    margin = 1 / np.sqrt(np.sum(clf.coef_**2))
+    yy_down = yy - np.sqrt(1 + a**2) * margin
+    yy_up = yy + np.sqrt(1 + a**2) * margin
+
+    # plot the hyperplane decision boundary
+    if plot_hp:
+      ax.plot(xx, yy, "k-")
+    # plot the left and right margins
+    if plot_margin:
+      ax.plot(xx, yy_down, "k--")
+      ax.plot(xx, yy_up, "k--")
+
+    # plot support vectors
+    if plot_sv:
+      ax.scatter(
+          clf.support_vectors_[:, 0],
+          clf.support_vectors_[:, 1],
+          s=s+60,
+          facecolors="none",
+          zorder=10,
+          edgecolors="k",
+          cmap=cm.get_cmap("viridis"),
+      )
+    # plot data points
+    scatter_data = None
+    if plot_data_points:
+      scatter_data = ax.scatter(
+          X[:, 0], X[:, 1], c=Y, s=s, zorder=10, cmap=cm.get_cmap("viridis"), edgecolors="k"
+      )
+
+    ax.axis("tight")
+    # x_min = -4.8
+    # x_max = 4.2
+    # y_min = -6
+    # y_max = 6
+    if plot_df:
+      DecisionBoundaryDisplay.from_estimator(clf, X, alpha=0.4, ax=ax, response_method="predict")
+    # YY, XX = np.meshgrid(yy, xx)
+    # xy = np.vstack([XX.ravel(), YY.ravel()]).T
+    # Z = clf.decision_function(xy).reshape(XX.shape)
+
+    # # Put the result into a contour plot
+    # plt.contourf(XX, YY, Z, cmap=cm.get_cmap("RdBu"), alpha=0.5, linestyles=["-"])
+
+    ax.set_xlim(x_min, x_max)
+    ax.set_ylim(y_min, y_max)
+
+    if remove_ticks:
+      ax.set_xticks(())
+      ax.set_yticks(())
+
+    if plot_legend:
+      if scatter_data:
+        ax.legend(handles=scatter_data.legend_elements()[0], labels=classes, loc='upper right')
+
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel);
 ```
 
 # Class Business
@@ -51,8 +144,14 @@ np.random.seed(10)
 
 ## Today
 
+- Review Draft Report
 - Support Vector Machine
 - Kernels
+
+
+# Draft Report
+
+Go to brightspace!
 
 # SVM
 
@@ -79,7 +178,16 @@ np.random.seed(10)
 
 ![](./lec20_images/hyperplane_1dline_in3d.png){fig-align="center" width="75%"}
 
-## Advantages ans Disadntages
+## Separating Classes with Planes
+
+![](./lec20_images/hyperplanes.png){fig-align="center"}
+
+## Separating Classes with Planes (Optimal)
+
+![](./lec20_images/hyperplanes_optimal.png){fig-align="center"}
+
+
+## Advantages ans Disadvantages
 
 Advantages:
 
@@ -91,9 +199,116 @@ Disadvantages:
 - Prefers balanced data (we have workarounds)
 - Many hyperparametes (very true)
 
-## Margin
+## More Terms!
+
+- **Support vectors** are the sample data points, which are *closest* to the hyperplane. 
+  - These data points will define the separating line 
+- **Margin** is a separation gap between the two lines on the closest data points
+
+
+## Visual Example of Terms
+
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10.)
+model.fit(X, Y)
+
+plot_svm(X, Y, model, ax=ax, plot_df=False);
+# ax.legend(["Class 0", "Class 1"])
+```
+
+
+# Margin
+
+## Margin Terminology
 
 - A dataset is **well-separated** if a hyperplane can divide the dataset so that all the instances of one class fall on one side of the hyperplane, and all instances not in that class fall on the other side. 
 
-- The **margin** is the space between the hyperplanes parallel to the dividing hyperplane that go through the dividing hyperplane's closest instances. W
-hen a dataset is well-separated, SVM seeks to find the dividing hyperplane that has the widest margin. The closest instances to the hyperplane are the hyperplane's support vectors. The support vectors are the only instances that determine, or support, the hyperplane.
+:::question
+Was the prior example well separated?
+:::
+
+:::fragment
+:::callout-tip
+The closest instances to the hyperplane are the hyperplane's support vectors. The support vectors are the only instances that determine, or support, the hyperplane.
+:::
+:::
+
+## Not well Separated
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1.5)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10.)
+model.fit(X, Y)
+
+plot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=False, plot_hp=False, plot_margin=False);
+```
+
+## Sklearn SVM
+
+- We have a *hyperparameter* named **C** that we can change to adjust how to handle misclassifications
+- The **C** parameter tells the SVM optimization how much you want to avoid **mis**classifying each training example
+- `svm.SVC` has as keyword argument C, the smaller C more *penalized* the model to make a *smaller* margin
+
+
+## Visual Example
+
+![](./lec20_images/high_c.png){fig-align="center"}
+
+## Example - Large C
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1.5)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10000.0)
+model.fit(X, Y)
+
+plot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=True, plot_hp=True, plot_margin=True);
+```
+
+
+
+## Example - Small C
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1.5)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=0.000001)
+model.fit(X, Y)
+
+plot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=True, plot_hp=True, plot_margin=True);
+```
+
+
+# Higher Dimensional Kernels
+
+## Motivation
+
+## Feature Space
+
+## Inner Product
+
+## Kernel Trick
+
+## SVM Kernel Example
+
+# Mathematics Behind SVM
+
+## Link to Theory
+
+[Derivation](http://www.cs.toronto.edu/~mbrubake/teaching/C11/Handouts/SupportVectorMachines.pdf)
