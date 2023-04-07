@@ -607,22 +607,173 @@ Dr.&nbsp;Jeremy Castagno
 </div>
 </section></section>
 <section>
+<section id="multiple-categoriesclass" class="title-slide slide level1 center">
+<h1>Multiple Categories/Class</h1>
+
+</section>
+<section id="mulitclass" class="slide level2">
+<h2>Mulitclass</h2>
+<div>
+<ul>
+<li class="fragment">What do you do if you have a multiple classes, <em>not</em> binary.</li>
+<li class="fragment">Can <em>one</em> hyperplane seperate a space into three regions?</li>
+<li class="fragment">But we have a trick! If we have three classes (A,B,C) we are trying to seperate, we just train three <em>binary</em> models!
+<ul>
+<li class="fragment">A vs (B,C)</li>
+<li class="fragment">B vs (A,C)</li>
+<li class="fragment">C vs (A,B)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="one-vs-rest-ovr" class="slide level2">
+<h2>One Vs Rest (OVR)</h2>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb5-2"><a href="#cb5-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-4"><a href="#cb5-4"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb5-5"><a href="#cb5-5"></a>model.fit(X, Y)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_df<span class="op">=</span><span class="va">False</span>, plot_sv<span class="op">=</span><span class="va">False</span>, plot_hp<span class="op">=</span><span class="va">False</span>, plot_margin<span class="op">=</span><span class="va">False</span>, classes<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>])<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-8-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section>
+<section id="a-vs-bc" class="slide level2">
+<h2>A vs (B,C)</h2>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb6-2"><a href="#cb6-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>mask <span class="op">=</span> Y <span class="op">==</span> <span class="dv">2</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>Y[mask] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb6-6"><a href="#cb6-6"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-7"><a href="#cb6-7"></a>model.fit(X, Y)</span>
+<span id="cb6-8"><a href="#cb6-8"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_sv<span class="op">=</span><span class="va">True</span>, plot_hp<span class="op">=</span><span class="va">True</span>, plot_margin<span class="op">=</span><span class="va">True</span>, classes<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B/C'</span>], plot_df<span class="op">=</span><span class="va">False</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-9-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section>
+<section id="b-vs-ac" class="slide level2">
+<h2>B vs (A,C)</h2>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb7-2"><a href="#cb7-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>mask <span class="op">=</span> Y <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>Y[<span class="op">~</span>mask] <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>Y[mask] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-7"><a href="#cb7-7"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>model.fit(X, Y)</span>
+<span id="cb7-9"><a href="#cb7-9"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_sv<span class="op">=</span><span class="va">True</span>, plot_hp<span class="op">=</span><span class="va">True</span>, plot_margin<span class="op">=</span><span class="va">True</span>, classes<span class="op">=</span>[<span class="st">'B'</span>, <span class="st">'A/C'</span>], plot_df<span class="op">=</span><span class="va">False</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-10-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section>
+<section id="c-vs-ab" class="slide level2">
+<h2>C vs (A,B)</h2>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb8-2"><a href="#cb8-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>mask <span class="op">=</span> Y <span class="op">==</span> <span class="dv">2</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>Y[<span class="op">~</span>mask] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>Y[mask] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-7"><a href="#cb8-7"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb8-8"><a href="#cb8-8"></a>model.fit(X, Y)</span>
+<span id="cb8-9"><a href="#cb8-9"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_sv<span class="op">=</span><span class="va">True</span>, plot_hp<span class="op">=</span><span class="va">True</span>, plot_margin<span class="op">=</span><span class="va">True</span>, classes<span class="op">=</span>[<span class="st">'C'</span>, <span class="st">'A/B'</span>], plot_df<span class="op">=</span><span class="va">False</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-11-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section>
+<section id="one-vs-rest-ovr-1" class="slide level2">
+<h2>One Vs Rest (OVR)</h2>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb9-2"><a href="#cb9-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-5"><a href="#cb9-5"></a>model.fit(X, Y)</span>
+<span id="cb9-6"><a href="#cb9-6"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_df<span class="op">=</span><span class="va">True</span>, plot_sv<span class="op">=</span><span class="va">True</span>, plot_hp<span class="op">=</span><span class="va">False</span>, plot_margin<span class="op">=</span><span class="va">False</span>, classes<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>])<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-12-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section></section>
+<section>
 <section id="higher-dimensional-kernels" class="title-slide slide level1 center">
 <h1>Higher Dimensional Kernels</h1>
 
 </section>
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
-</section>
+
+<img data-src="./lec20_images/kernel_motivation.png" class="r-stretch quarto-figure-center"></section>
 <section id="feature-space" class="slide level2">
 <h2>Feature Space</h2>
+<ul>
+<li>The feature space is the higher dimensional space that we can transform our data into!</li>
+<li>The feature space can be much bigger than just 1 dimensional above our data</li>
+<li>Some features spaces can make it easier for us to seperate our data!</li>
+<li>It can be expensive to create these feauture spaces
+<ul>
+<li>Computation!</li>
+<li>Memory!</li>
+</ul></li>
+</ul>
 </section>
 <section id="inner-product" class="slide level2">
 <h2>Inner Product</h2>
+<ul>
+<li>The SVM makes <em>decisions</em> about what class you belong to by determining what side of the hyperplane you are on</li>
+<li>I have never explained the process, but the basic idea is it used inner products (dot product).</li>
+<li>You dont need to understand <em>how</em> it uses the inner products to make decisions. Just trust that that is what it does.</li>
+</ul>
 </section>
+<section id="dot-product-1" class="slide level2">
+<h2>Dot Product 1</h2>
+
+<img data-src="./lec20_images/cosine-similarity.png" class="r-stretch"></section>
+<section id="dot-product-2" class="slide level2">
+<h2>Dot Product 2</h2>
+
+<img data-src="./lec20_images/dot-product-unity.gif" class="r-stretch"><p>So basically all we <em>really</em> need is to get the dot product of these points in the higher dimension.</p>
+</section>
+<section id="example-unseperable" class="slide level2">
+<h2>Example Unseperable</h2>
+
+<img data-src="./lec20_images/2d_cirlce.png" class="r-stretch"></section>
+<section id="mapping" class="slide level2">
+<h2>Mapping</h2>
+
+<img data-src="./lec20_images/tranformation.png" class="r-stretch"></section>
+<section id="example-transformed" class="slide level2">
+<h2>Example Transformed</h2>
+
+<img data-src="./lec20_images/2d_transformed_3d.png" class="r-stretch"></section>
 <section id="kernel-trick" class="slide level2">
 <h2>Kernel Trick</h2>
-</section>
+
+<img data-src="./lec20_images/kernel_trick.png" class="r-stretch"></section>
 <section id="svm-kernel-example" class="slide level2">
 <h2>SVM Kernel Example</h2>
 </section></section>

@@ -371,6 +371,48 @@
     "text": "Example - Small C\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1.5)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=0.000001)\nmodel.fit(X, Y)\n\nplot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=True, plot_hp=True, plot_margin=True);"
   },
   {
+    "objectID": "slides/lec-20.html#mulitclass",
+    "href": "slides/lec-20.html#mulitclass",
+    "title": "CISC482 - Lecture20",
+    "section": "Mulitclass",
+    "text": "Mulitclass\n\n\nWhat do you do if you have a multiple classes, not binary.\nCan one hyperplane seperate a space into three regions?\nBut we have a trick! If we have three classes (A,B,C) we are trying to seperate, we just train three binary models!\n\nA vs (B,C)\nB vs (A,C)\nC vs (A,B)"
+  },
+  {
+    "objectID": "slides/lec-20.html#one-vs-rest-ovr",
+    "href": "slides/lec-20.html#one-vs-rest-ovr",
+    "title": "CISC482 - Lecture20",
+    "section": "One Vs Rest (OVR)",
+    "text": "One Vs Rest (OVR)\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=False, plot_hp=False, plot_margin=False, classes=['A', 'B', 'C']);"
+  },
+  {
+    "objectID": "slides/lec-20.html#a-vs-bc",
+    "href": "slides/lec-20.html#a-vs-bc",
+    "title": "CISC482 - Lecture20",
+    "section": "A vs (B,C)",
+    "text": "A vs (B,C)\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)\nmask = Y == 2\nY[mask] = 1\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_sv=True, plot_hp=True, plot_margin=True, classes=['A', 'B/C'], plot_df=False);"
+  },
+  {
+    "objectID": "slides/lec-20.html#b-vs-ac",
+    "href": "slides/lec-20.html#b-vs-ac",
+    "title": "CISC482 - Lecture20",
+    "section": "B vs (A,C)",
+    "text": "B vs (A,C)\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)\nmask = Y == 1\nY[~mask] = 2\nY[mask] = 0\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_sv=True, plot_hp=True, plot_margin=True, classes=['B', 'A/C'], plot_df=False);"
+  },
+  {
+    "objectID": "slides/lec-20.html#c-vs-ab",
+    "href": "slides/lec-20.html#c-vs-ab",
+    "title": "CISC482 - Lecture20",
+    "section": "C vs (A,B)",
+    "text": "C vs (A,B)\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)\nmask = Y == 2\nY[~mask] = 1\nY[mask] = 0\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_sv=True, plot_hp=True, plot_margin=True, classes=['C', 'A/B'], plot_df=False);"
+  },
+  {
+    "objectID": "slides/lec-20.html#one-vs-rest-ovr-1",
+    "href": "slides/lec-20.html#one-vs-rest-ovr-1",
+    "title": "CISC482 - Lecture20",
+    "section": "One Vs Rest (OVR)",
+    "text": "One Vs Rest (OVR)\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=False, plot_margin=False, classes=['A', 'B', 'C']);"
+  },
+  {
     "objectID": "slides/lec-20.html#motivation",
     "href": "slides/lec-20.html#motivation",
     "title": "CISC482 - Lecture20",
@@ -382,14 +424,49 @@
     "href": "slides/lec-20.html#feature-space",
     "title": "CISC482 - Lecture20",
     "section": "Feature Space",
-    "text": "Feature Space"
+    "text": "Feature Space\n\nThe feature space is the higher dimensional space that we can transform our data into!\nThe feature space can be much bigger than just 1 dimensional above our data\nSome features spaces can make it easier for us to seperate our data!\nIt can be expensive to create these feauture spaces\n\nComputation!\nMemory!"
   },
   {
     "objectID": "slides/lec-20.html#inner-product",
     "href": "slides/lec-20.html#inner-product",
     "title": "CISC482 - Lecture20",
     "section": "Inner Product",
-    "text": "Inner Product"
+    "text": "Inner Product\n\nThe SVM makes decisions about what class you belong to by determining what side of the hyperplane you are on\nI have never explained the process, but the basic idea is it used inner products (dot product).\nYou dont need to understand how it uses the inner products to make decisions. Just trust that that is what it does."
+  },
+  {
+    "objectID": "slides/lec-20.html#dot-product-1",
+    "href": "slides/lec-20.html#dot-product-1",
+    "title": "CISC482 - Lecture20",
+    "section": "Dot Product 1",
+    "text": "Dot Product 1"
+  },
+  {
+    "objectID": "slides/lec-20.html#dot-product-2",
+    "href": "slides/lec-20.html#dot-product-2",
+    "title": "CISC482 - Lecture20",
+    "section": "Dot Product 2",
+    "text": "Dot Product 2\n\nSo basically all we really need is to get the dot product of these points in the higher dimension."
+  },
+  {
+    "objectID": "slides/lec-20.html#example-unseperable",
+    "href": "slides/lec-20.html#example-unseperable",
+    "title": "CISC482 - Lecture20",
+    "section": "Example Unseperable",
+    "text": "Example Unseperable"
+  },
+  {
+    "objectID": "slides/lec-20.html#mapping",
+    "href": "slides/lec-20.html#mapping",
+    "title": "CISC482 - Lecture20",
+    "section": "Mapping",
+    "text": "Mapping"
+  },
+  {
+    "objectID": "slides/lec-20.html#example-transformed",
+    "href": "slides/lec-20.html#example-transformed",
+    "title": "CISC482 - Lecture20",
+    "section": "Example Transformed",
+    "text": "Example Transformed"
   },
   {
     "objectID": "slides/lec-20.html#kernel-trick",
@@ -1873,7 +1950,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fa434a65cf0>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fcb08a81ba0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3000,7 +3077,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f0e774b7df0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f8e4b93c1f0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3287,7 +3364,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'all', 'your', 'teacher', 'The', 'so', 'up', 'is', 'be', 'to', 'cup.', 'Folgers', 'students!', 'of', 'cup', 'in', 'waking', 'Fill', 'with', 'are', 'a', 'I', 'part', 'am', 'Folgers.', 'You', 'best', 'proud', 'great'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'cup.', 'great', 'Folgers.', 'to', 'be', 'Fill', 'am', 'up', 'so', 'with', 'of', 'all', 'students!', 'best', 'You', 'cup', 'are', 'Folgers', 'The', 'waking', 'your', 'is', 'I', 'teacher', 'proud', 'in', 'part', 'a'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
