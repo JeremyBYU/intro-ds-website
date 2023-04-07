@@ -50,7 +50,7 @@ matplotlib.rc('font', **font)
 from matplotlib import cm
 from sklearn.inspection import DecisionBoundaryDisplay
 def plot_svm(X, Y,  clf, ax, widen_extra=0.1, s=70, plot_data_points=True, plot_sv=True, plot_df=True, plot_margin=True, plot_hp=True, remove_ticks=True,
-plot_legend=True, classes = ['Class 0', 'Class 1'], xlabel='Feature 0', ylabel='Feature 1'):
+plot_legend=True, classes=['Class 0', 'Class 1'], xlabel='Feature 0', ylabel='Feature 1', cmap='viridis'):
     x_min = np.min(X[:,0])
     x_max = np.max(X[:,0])
     y_min = np.min(X[:,1])
@@ -94,13 +94,13 @@ plot_legend=True, classes = ['Class 0', 'Class 1'], xlabel='Feature 0', ylabel='
           facecolors="none",
           zorder=10,
           edgecolors="k",
-          cmap=cm.get_cmap("viridis"),
+          cmap=cm.get_cmap(cmap),
       )
     # plot data points
     scatter_data = None
     if plot_data_points:
       scatter_data = ax.scatter(
-          X[:, 0], X[:, 1], c=Y, s=s, zorder=10, cmap=cm.get_cmap("viridis"), edgecolors="k"
+          X[:, 0], X[:, 1], c=Y, s=s, zorder=10, cmap=cm.get_cmap(cmap), edgecolors="k"
       )
 
     ax.axis("tight")
@@ -109,7 +109,7 @@ plot_legend=True, classes = ['Class 0', 'Class 1'], xlabel='Feature 0', ylabel='
     # y_min = -6
     # y_max = 6
     if plot_df:
-      DecisionBoundaryDisplay.from_estimator(clf, X, alpha=0.4, ax=ax, response_method="predict")
+      DecisionBoundaryDisplay.from_estimator(clf, X, alpha=0.2, ax=ax, response_method="predict", cmap=cm.get_cmap(cmap))
     # YY, XX = np.meshgrid(yy, xx)
     # xy = np.vstack([XX.ravel(), YY.ravel()]).T
     # Z = clf.decision_function(xy).reshape(XX.shape)
@@ -294,18 +294,148 @@ model.fit(X, Y)
 plot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=True, plot_hp=True, plot_margin=True);
 ```
 
+# Multiple Categories/Class
+
+## Mulitclass
+
+::: incremental
+- What do you do if you have a multiple classes, *not* binary.
+- Can *one* hyperplane seperate a space into three regions?
+- But we have a trick! If we have three classes (A,B,C)  we are trying to seperate, we just train three *binary* models!
+  - A vs (B,C)
+  - B vs (A,C)
+  - C vs (A,B)
+:::
+
+## One Vs Rest (OVR)
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=False, plot_hp=False, plot_margin=False, classes=['A', 'B', 'C']);
+```
+
+## A vs (B,C)
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)
+mask = Y == 2
+Y[mask] = 1
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_sv=True, plot_hp=True, plot_margin=True, classes=['A', 'B/C'], plot_df=False);
+```
+
+## B vs (A,C)
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)
+mask = Y == 1
+Y[~mask] = 2
+Y[mask] = 0
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_sv=True, plot_hp=True, plot_margin=True, classes=['B', 'A/C'], plot_df=False);
+```
+
+## C vs (A,B)
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)
+mask = Y == 2
+Y[~mask] = 1
+Y[mask] = 0
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_sv=True, plot_hp=True, plot_margin=True, classes=['C', 'A/B'], plot_df=False);
+```
+
+## One Vs Rest (OVR)
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=False, plot_margin=False, classes=['A', 'B', 'C']);
+```
+
 
 # Higher Dimensional Kernels
 
+
 ## Motivation
+
+![](./lec20_images/kernel_motivation.png){fig-align="center"}
 
 ## Feature Space
 
+- The feature space is the higher dimensional space that we can transform our data into!
+- The feature space can be much bigger than just 1 dimensional above our data
+- Some features spaces can make it easier for us to seperate our data!
+- It can be expensive to create these feauture spaces
+  - Computation!
+  - Memory!
+
 ## Inner Product
+
+- The SVM makes *decisions* about what class you belong to by determining what side of the hyperplane you are on
+- I have never explained the process, but the basic idea is it used inner products (dot product). 
+- You dont need to understand *how* it uses the inner products to make decisions. Just trust that that is what it does.
+
+## Dot Product 1
+
+![](./lec20_images/cosine-similarity.png)
+
+## Dot Product 2
+
+![](./lec20_images/dot-product-unity.gif)
+
+So basically all we *really* need is to get the dot product of these points in the higher dimension.
+
+## Example Unseperable
+
+![](./lec20_images/2d_cirlce.png)
+
+
+## Mapping
+
+![](./lec20_images/tranformation.png)
+
+
+## Example Transformed
+
+![](./lec20_images/2d_transformed_3d.png)
+
 
 ## Kernel Trick
 
+![](./lec20_images/kernel_trick.png)
+
+
 ## SVM Kernel Example
+
+
 
 # Mathematics Behind SVM
 
