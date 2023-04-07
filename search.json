@@ -483,6 +483,20 @@
     "text": "SVM Kernel Example"
   },
   {
+    "objectID": "slides/lec-20.html#svm-with-linear-kernel",
+    "href": "slides/lec-20.html#svm-with-linear-kernel",
+    "title": "CISC482 - Lecture20",
+    "section": "SVM With Linear Kernel",
+    "text": "SVM With Linear Kernel\n\n\nCode\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=True, plot_margin=True, classes=['A', 'B']);"
+  },
+  {
+    "objectID": "slides/lec-20.html#svm-with-polynomial-kernel",
+    "href": "slides/lec-20.html#svm-with-polynomial-kernel",
+    "title": "CISC482 - Lecture20",
+    "section": "SVM With Polynomial Kernel",
+    "text": "SVM With Polynomial Kernel\n\n\nCode\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"poly\", degree=2, C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=False, plot_margin=False, classes=['A', 'B']);"
+  },
+  {
     "objectID": "slides/lec-20.html#link-to-theory",
     "href": "slides/lec-20.html#link-to-theory",
     "title": "CISC482 - Lecture20",
@@ -1950,7 +1964,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fcb08a81ba0>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7faa68189cf0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3077,7 +3091,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f8e4b93c1f0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f40ed54d660>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3364,7 +3378,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'cup.', 'great', 'Folgers.', 'to', 'be', 'Fill', 'am', 'up', 'so', 'with', 'of', 'all', 'students!', 'best', 'You', 'cup', 'are', 'Folgers', 'The', 'waking', 'your', 'is', 'I', 'teacher', 'proud', 'in', 'part', 'a'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'a', 'up', 'in', 'proud', 'be', 'teacher', 'Folgers', 'students!', 'so', 'best', 'to', 'waking', 'are', 'am', 'part', 'You', 'Fill', 'all', 'Folgers.', 'The', 'of', 'with', 'cup.', 'great', 'your', 'is', 'I', 'cup'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
