@@ -27,6 +27,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -357,10 +421,16 @@ Dr.&nbsp;Jeremy Castagno
 <section id="today" class="slide level2">
 <h2>Today</h2>
 <ul>
+<li>Review Draft Report</li>
 <li>Support Vector Machine</li>
 <li>Kernels</li>
 </ul>
 </section></section>
+<section id="draft-report" class="title-slide slide level1 center">
+<h1>Draft Report</h1>
+<p>Go to brightspace!</p>
+</section>
+
 <section>
 <section id="svm" class="title-slide slide level1 center">
 <h1>SVM</h1>
@@ -391,8 +461,16 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Visual Example 3</h2>
 
 <img data-src="./lec20_images/hyperplane_1dline_in3d.png" style="width:75.0%" class="r-stretch quarto-figure-center"></section>
-<section id="advantages-ans-disadntages" class="slide level2">
-<h2>Advantages ans Disadntages</h2>
+<section id="separating-classes-with-planes" class="slide level2">
+<h2>Separating Classes with Planes</h2>
+
+<img data-src="./lec20_images/hyperplanes.png" class="r-stretch quarto-figure-center"></section>
+<section id="separating-classes-with-planes-optimal" class="slide level2">
+<h2>Separating Classes with Planes (Optimal)</h2>
+
+<img data-src="./lec20_images/hyperplanes_optimal.png" class="r-stretch quarto-figure-center"></section>
+<section id="advantages-ans-disadvantages" class="slide level2">
+<h2>Advantages ans Disadvantages</h2>
 <p>Advantages:</p>
 <ul>
 <li>Flexible</li>
@@ -404,12 +482,158 @@ Dr.&nbsp;Jeremy Castagno
 <li>Many hyperparametes (very true)</li>
 </ul>
 </section>
-<section id="margin" class="slide level2">
-<h2>Margin</h2>
+<section id="more-terms" class="slide level2">
+<h2>More Terms!</h2>
 <ul>
-<li><p>A dataset is <strong>well-separated</strong> if a hyperplane can divide the dataset so that all the instances of one class fall on one side of the hyperplane, and all instances not in that class fall on the other side.</p></li>
-<li><p>The <strong>margin</strong> is the space between the hyperplanes parallel to the dividing hyperplane that go through the dividing hyperplane’s closest instances. W hen a dataset is well-separated, SVM seeks to find the dividing hyperplane that has the widest margin. The closest instances to the hyperplane are the hyperplane’s support vectors. The support vectors are the only instances that determine, or support, the hyperplane.</p></li>
+<li><strong>Support vectors</strong> are the sample data points, which are <em>closest</em> to the hyperplane.
+<ul>
+<li>These data points will define the separating line</li>
+</ul></li>
+<li><strong>Margin</strong> is a separation gap between the two lines on the closest data points</li>
 </ul>
+</section>
+<section id="visual-example-of-terms" class="slide level2">
+<h2>Visual Example of Terms</h2>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb1-2"><a href="#cb1-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span>[[<span class="op">-</span><span class="dv">2</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">0</span>]], cluster_std<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="fl">10.</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>model.fit(X, Y)</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_df<span class="op">=</span><span class="va">False</span>)<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># ax.legend(["Class 0", "Class 1"])</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-4-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="margin" class="title-slide slide level1 center">
+<h1>Margin</h1>
+
+</section>
+<section id="margin-terminology" class="slide level2">
+<h2>Margin Terminology</h2>
+<ul>
+<li>A dataset is <strong>well-separated</strong> if a hyperplane can divide the dataset so that all the instances of one class fall on one side of the hyperplane, and all instances not in that class fall on the other side.</li>
+</ul>
+<div class="question">
+<p>Was the prior example well separated?</p>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>The closest instances to the hyperplane are the hyperplane’s support vectors. The support vectors are the only instances that determine, or support, the hyperplane.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="not-well-separated" class="slide level2">
+<h2>Not well Separated</h2>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb2-2"><a href="#cb2-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span>[[<span class="op">-</span><span class="dv">2</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">0</span>]], cluster_std<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="fl">10.</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>model.fit(X, Y)</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_df<span class="op">=</span><span class="va">False</span>, plot_sv<span class="op">=</span><span class="va">False</span>, plot_hp<span class="op">=</span><span class="va">False</span>, plot_margin<span class="op">=</span><span class="va">False</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-5-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section>
+<section id="sklearn-svm" class="slide level2">
+<h2>Sklearn SVM</h2>
+<ul>
+<li>We have a <em>hyperparameter</em> named <strong>C</strong> that we can change to adjust how to handle misclassifications</li>
+<li>The <strong>C</strong> parameter tells the SVM optimization how much you want to avoid <strong>mis</strong>classifying each training example</li>
+<li><code>svm.SVC</code> has as keyword argument C, the smaller C more <em>penalized</em> the model to make a <em>smaller</em> margin</li>
+</ul>
+</section>
+<section id="visual-example" class="slide level2">
+<h2>Visual Example</h2>
+
+<img data-src="./lec20_images/high_c.png" class="r-stretch quarto-figure-center"></section>
+<section id="example---large-c" class="slide level2">
+<h2>Example - Large C</h2>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb3-2"><a href="#cb3-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span>[[<span class="op">-</span><span class="dv">2</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">0</span>]], cluster_std<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="fl">10000.0</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>model.fit(X, Y)</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_df<span class="op">=</span><span class="va">False</span>, plot_sv<span class="op">=</span><span class="va">True</span>, plot_hp<span class="op">=</span><span class="va">True</span>, plot_margin<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-6-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section>
+<section id="example---small-c" class="slide level2">
+<h2>Example - Small C</h2>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> sklearn <span class="im">import</span> svm</span>
+<span id="cb4-2"><a href="#cb4-2"></a>X, Y <span class="op">=</span> make_blobs(random_state<span class="op">=</span><span class="dv">42</span>, n_samples<span class="op">=</span><span class="dv">100</span>, n_features<span class="op">=</span><span class="dv">2</span>, centers<span class="op">=</span>[[<span class="op">-</span><span class="dv">2</span>, <span class="dv">5</span>], [<span class="dv">0</span>, <span class="dv">0</span>]], cluster_std<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>fig, ax <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">1</span>, ncols<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>model <span class="op">=</span> svm.SVC(kernel<span class="op">=</span><span class="st">"linear"</span>, C<span class="op">=</span><span class="fl">0.000001</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>model.fit(X, Y)</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>plot_svm(X, Y, model, ax<span class="op">=</span>ax, plot_df<span class="op">=</span><span class="va">False</span>, plot_sv<span class="op">=</span><span class="va">True</span>, plot_hp<span class="op">=</span><span class="va">True</span>, plot_margin<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-20_files/figure-revealjs/cell-7-output-1.png" width="790" height="415"></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="higher-dimensional-kernels" class="title-slide slide level1 center">
+<h1>Higher Dimensional Kernels</h1>
+
+</section>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+</section>
+<section id="feature-space" class="slide level2">
+<h2>Feature Space</h2>
+</section>
+<section id="inner-product" class="slide level2">
+<h2>Inner Product</h2>
+</section>
+<section id="kernel-trick" class="slide level2">
+<h2>Kernel Trick</h2>
+</section>
+<section id="svm-kernel-example" class="slide level2">
+<h2>SVM Kernel Example</h2>
+</section></section>
+<section>
+<section id="mathematics-behind-svm" class="title-slide slide level1 center">
+<h1>Mathematics Behind SVM</h1>
+
+</section>
+<section id="link-to-theory" class="slide level2">
+<h2>Link to Theory</h2>
+<p><a href="http://www.cs.toronto.edu/~mbrubake/teaching/C11/Handouts/SupportVectorMachines.pdf">Derivation</a></p>
 
 
 <img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">

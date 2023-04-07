@@ -263,7 +263,7 @@
     "href": "slides/lec-20.html#today",
     "title": "CISC482 - Lecture20",
     "section": "Today",
-    "text": "Today\n\nSupport Vector Machine\nKernels"
+    "text": "Today\n\nReview Draft Report\nSupport Vector Machine\nKernels"
   },
   {
     "objectID": "slides/lec-20.html#terms",
@@ -294,18 +294,123 @@
     "text": "Visual Example 3"
   },
   {
-    "objectID": "slides/lec-20.html#advantages-ans-disadntages",
-    "href": "slides/lec-20.html#advantages-ans-disadntages",
+    "objectID": "slides/lec-20.html#separating-classes-with-planes",
+    "href": "slides/lec-20.html#separating-classes-with-planes",
     "title": "CISC482 - Lecture20",
-    "section": "Advantages ans Disadntages",
-    "text": "Advantages ans Disadntages\nAdvantages:\n\nFlexible\nLow storage required\n\nDisadvantages:\n\nPrefers balanced data (we have workarounds)\nMany hyperparametes (very true)"
+    "section": "Separating Classes with Planes",
+    "text": "Separating Classes with Planes"
   },
   {
-    "objectID": "slides/lec-20.html#margin",
-    "href": "slides/lec-20.html#margin",
+    "objectID": "slides/lec-20.html#separating-classes-with-planes-optimal",
+    "href": "slides/lec-20.html#separating-classes-with-planes-optimal",
     "title": "CISC482 - Lecture20",
-    "section": "Margin",
-    "text": "Margin\n\nA dataset is well-separated if a hyperplane can divide the dataset so that all the instances of one class fall on one side of the hyperplane, and all instances not in that class fall on the other side.\nThe margin is the space between the hyperplanes parallel to the dividing hyperplane that go through the dividing hyperplane’s closest instances. W hen a dataset is well-separated, SVM seeks to find the dividing hyperplane that has the widest margin. The closest instances to the hyperplane are the hyperplane’s support vectors. The support vectors are the only instances that determine, or support, the hyperplane.\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "section": "Separating Classes with Planes (Optimal)",
+    "text": "Separating Classes with Planes (Optimal)"
+  },
+  {
+    "objectID": "slides/lec-20.html#advantages-ans-disadvantages",
+    "href": "slides/lec-20.html#advantages-ans-disadvantages",
+    "title": "CISC482 - Lecture20",
+    "section": "Advantages ans Disadvantages",
+    "text": "Advantages ans Disadvantages\nAdvantages:\n\nFlexible\nLow storage required\n\nDisadvantages:\n\nPrefers balanced data (we have workarounds)\nMany hyperparametes (very true)"
+  },
+  {
+    "objectID": "slides/lec-20.html#more-terms",
+    "href": "slides/lec-20.html#more-terms",
+    "title": "CISC482 - Lecture20",
+    "section": "More Terms!",
+    "text": "More Terms!\n\nSupport vectors are the sample data points, which are closest to the hyperplane.\n\nThese data points will define the separating line\n\nMargin is a separation gap between the two lines on the closest data points"
+  },
+  {
+    "objectID": "slides/lec-20.html#visual-example-of-terms",
+    "href": "slides/lec-20.html#visual-example-of-terms",
+    "title": "CISC482 - Lecture20",
+    "section": "Visual Example of Terms",
+    "text": "Visual Example of Terms\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10.)\nmodel.fit(X, Y)\n\nplot_svm(X, Y, model, ax=ax, plot_df=False);\n# ax.legend([\"Class 0\", \"Class 1\"])"
+  },
+  {
+    "objectID": "slides/lec-20.html#margin-terminology",
+    "href": "slides/lec-20.html#margin-terminology",
+    "title": "CISC482 - Lecture20",
+    "section": "Margin Terminology",
+    "text": "Margin Terminology\n\nA dataset is well-separated if a hyperplane can divide the dataset so that all the instances of one class fall on one side of the hyperplane, and all instances not in that class fall on the other side.\n\n\nWas the prior example well separated?\n\n\n\n\n\n\n\n\nTip\n\n\nThe closest instances to the hyperplane are the hyperplane’s support vectors. The support vectors are the only instances that determine, or support, the hyperplane."
+  },
+  {
+    "objectID": "slides/lec-20.html#not-well-separated",
+    "href": "slides/lec-20.html#not-well-separated",
+    "title": "CISC482 - Lecture20",
+    "section": "Not well Separated",
+    "text": "Not well Separated\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1.5)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10.)\nmodel.fit(X, Y)\n\nplot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=False, plot_hp=False, plot_margin=False);"
+  },
+  {
+    "objectID": "slides/lec-20.html#sklearn-svm",
+    "href": "slides/lec-20.html#sklearn-svm",
+    "title": "CISC482 - Lecture20",
+    "section": "Sklearn SVM",
+    "text": "Sklearn SVM\n\nWe have a hyperparameter named C that we can change to adjust how to handle misclassifications\nThe C parameter tells the SVM optimization how much you want to avoid misclassifying each training example\nsvm.SVC has as keyword argument C, the smaller C more penalized the model to make a smaller margin"
+  },
+  {
+    "objectID": "slides/lec-20.html#visual-example",
+    "href": "slides/lec-20.html#visual-example",
+    "title": "CISC482 - Lecture20",
+    "section": "Visual Example",
+    "text": "Visual Example"
+  },
+  {
+    "objectID": "slides/lec-20.html#example---large-c",
+    "href": "slides/lec-20.html#example---large-c",
+    "title": "CISC482 - Lecture20",
+    "section": "Example - Large C",
+    "text": "Example - Large C\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1.5)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10000.0)\nmodel.fit(X, Y)\n\nplot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=True, plot_hp=True, plot_margin=True);"
+  },
+  {
+    "objectID": "slides/lec-20.html#example---small-c",
+    "href": "slides/lec-20.html#example---small-c",
+    "title": "CISC482 - Lecture20",
+    "section": "Example - Small C",
+    "text": "Example - Small C\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1.5)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=0.000001)\nmodel.fit(X, Y)\n\nplot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=True, plot_hp=True, plot_margin=True);"
+  },
+  {
+    "objectID": "slides/lec-20.html#motivation",
+    "href": "slides/lec-20.html#motivation",
+    "title": "CISC482 - Lecture20",
+    "section": "Motivation",
+    "text": "Motivation"
+  },
+  {
+    "objectID": "slides/lec-20.html#feature-space",
+    "href": "slides/lec-20.html#feature-space",
+    "title": "CISC482 - Lecture20",
+    "section": "Feature Space",
+    "text": "Feature Space"
+  },
+  {
+    "objectID": "slides/lec-20.html#inner-product",
+    "href": "slides/lec-20.html#inner-product",
+    "title": "CISC482 - Lecture20",
+    "section": "Inner Product",
+    "text": "Inner Product"
+  },
+  {
+    "objectID": "slides/lec-20.html#kernel-trick",
+    "href": "slides/lec-20.html#kernel-trick",
+    "title": "CISC482 - Lecture20",
+    "section": "Kernel Trick",
+    "text": "Kernel Trick"
+  },
+  {
+    "objectID": "slides/lec-20.html#svm-kernel-example",
+    "href": "slides/lec-20.html#svm-kernel-example",
+    "title": "CISC482 - Lecture20",
+    "section": "SVM Kernel Example",
+    "text": "SVM Kernel Example"
+  },
+  {
+    "objectID": "slides/lec-20.html#link-to-theory",
+    "href": "slides/lec-20.html#link-to-theory",
+    "title": "CISC482 - Lecture20",
+    "section": "Link to Theory",
+    "text": "Link to Theory\nDerivation\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-04.html#schedule",
@@ -1768,7 +1873,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fee70a61d50>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fa434a65cf0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -2895,7 +3000,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f441d1c3f70>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f0e774b7df0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3182,7 +3287,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'your', 'is', 'great', 'cup', 'so', 'The', 'teacher', 'with', 'part', 'are', 'be', 'in', 'a', 'best', 'am', 'students!', 'Folgers', 'proud', 'You', 'waking', 'I', 'of', 'all', 'cup.', 'Fill', 'Folgers.', 'up', 'to'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'all', 'your', 'teacher', 'The', 'so', 'up', 'is', 'be', 'to', 'cup.', 'Folgers', 'students!', 'of', 'cup', 'in', 'waking', 'Fill', 'with', 'are', 'a', 'I', 'part', 'am', 'Folgers.', 'You', 'best', 'proud', 'great'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
