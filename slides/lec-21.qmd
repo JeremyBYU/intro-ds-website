@@ -196,9 +196,7 @@ plot_svm(X, Y, model, ax=ax, plot_df=False);
 ## Multiclass
 
 ::: incremental
-- What do you do if you have a multiple classes, *not* binary.
-- Can *one* hyperplane seperate a space into three regions?
-- But we have a trick! If we have three classes (A,B,C)  we are trying to seperate, we just train three *binary* models!
+- What do you do if you have a multiple classes. For example, A, B, and C classes?
   - A vs (B,C)
   - B vs (A,C)
   - C vs (A,B)
@@ -238,18 +236,20 @@ plot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=False, plot_mar
 - What is the input space
   - $X$
 - What is your feature space
-  - $phi(X)$
+  - $\phi(X)$
 - What do we have feature spaces?
   - ![](./lec20_images/kernel_motivation.png){fig-align="center"}
 ::::
 
 ## Kernel Trick
 
+:::incremental
 - What mathematical operation do we use judge similarity between points?
   - Inner Product! (Dot Product)
 - What is the kernel trick?
   - Allows you to compute the product of points in a higher dimensional **feature** space, while *actually still remaining* in the **input** space.
-  
+:::
+ 
 ## SVM Kernel Example
 
 
