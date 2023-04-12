@@ -1,0 +1,417 @@
+---
+title: "CISC482 - Lecture21"
+subtitle: "Unsupervised Learning"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+import matplotlib
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 16}
+
+matplotlib.rc('font', **font)
+```
+
+
+```{python}
+from matplotlib import cm
+from sklearn.inspection import DecisionBoundaryDisplay
+def plot_svm(X, Y,  clf, ax, widen_extra=0.1, s=70, plot_data_points=True, plot_sv=True, plot_df=True, plot_margin=True, plot_hp=True, remove_ticks=True,
+plot_legend=True, classes=['Class 0', 'Class 1'], xlabel='Feature 0', ylabel='Feature 1', cmap='viridis'):
+    x_min = np.min(X[:,0])
+    x_max = np.max(X[:,0])
+    y_min = np.min(X[:,1])
+    y_max = np.max(X[:,1])
+
+    delta_x = (x_max-x_min) * widen_extra
+    x_min -= delta_x
+    x_max += delta_x
+
+    delta_y = (y_max-y_min) * widen_extra
+    y_min -= delta_y
+    y_max += delta_y
+
+    if plot_hp or plot_margin:
+      # get the separating hyperplane
+      w = clf.coef_[0]
+      a = -w[0] / w[1]
+      xx = np.linspace(x_min, x_max)
+      yy = a * xx - (clf.intercept_[0]) / w[1]
+    
+
+      # plot the parallels to the separating hyperplane that pass through the
+      # support vectors (margin away from hyperplane in direction
+      # perpendicular to hyperplane). This is sqrt(1+a^2) away vertically in
+      # 2-d.
+      margin = 1 / np.sqrt(np.sum(clf.coef_**2))
+      yy_down = yy - np.sqrt(1 + a**2) * margin
+      yy_up = yy + np.sqrt(1 + a**2) * margin
+
+    # plot the hyperplane decision boundary
+    if plot_hp:
+      ax.plot(xx, yy, "k-")
+    # plot the left and right margins
+    if plot_margin:
+      ax.plot(xx, yy_down, "k--")
+      ax.plot(xx, yy_up, "k--")
+
+    # plot support vectors
+    if plot_sv:
+      ax.scatter(
+          clf.support_vectors_[:, 0],
+          clf.support_vectors_[:, 1],
+          s=s+60,
+          facecolors="none",
+          zorder=10,
+          edgecolors="k",
+          cmap=cm.get_cmap(cmap),
+      )
+    # plot data points
+    scatter_data = None
+    if plot_data_points:
+      scatter_data = ax.scatter(
+          X[:, 0], X[:, 1], c=Y, s=s, zorder=10, cmap=cm.get_cmap(cmap), edgecolors="k"
+      )
+
+    ax.axis("tight")
+    # x_min = -4.8
+    # x_max = 4.2
+    # y_min = -6
+    # y_max = 6
+    if plot_df:
+      DecisionBoundaryDisplay.from_estimator(clf, X, alpha=0.2, ax=ax, response_method="predict", cmap=cm.get_cmap(cmap))
+    # YY, XX = np.meshgrid(yy, xx)
+    # xy = np.vstack([XX.ravel(), YY.ravel()]).T
+    # Z = clf.decision_function(xy).reshape(XX.shape)
+
+    # # Put the result into a contour plot
+    # plt.contourf(XX, YY, Z, cmap=cm.get_cmap("RdBu"), alpha=0.5, linestyles=["-"])
+
+    ax.set_xlim(x_min, x_max)
+    ax.set_ylim(y_min, y_max)
+
+    if remove_ticks:
+      ax.set_xticks(())
+      ax.set_yticks(())
+
+    if plot_legend:
+      if scatter_data:
+        ax.legend(handles=scatter_data.legend_elements()[0], labels=classes, loc='upper right')
+
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel);
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 8-2:  April 14 @ 12PM, Friday
+- Project Draft Report: April 12 @ Midnight, Wednesday
+- Example Report on Brightspace!!
+
+## Today
+
+- Review SVM
+- Unsupervised Learning
+- K-Means Clustering
+
+
+# Review SVM
+
+## Terms
+
+- **S**upport **V**ector **M**achine (SVM) is a supervised learning algorithm that uses ________ to divide data into different classes. 
+
+:::incremental
+- In a two-dimensional feature space, a hyperplane is a _____
+- In a three-dimensional feature space, a hyperplane is a ____
+:::
+
+
+
+## Hyperplane 1?
+
+![](./lec20_images/hyperplane_2dplane.png)
+
+## Hyperplane 2?
+
+![](./lec20_images/hyperplane_1dline_in3d.png){fig-align="center" width="75%"}
+
+
+## Separating Classes with Planes (Optimal)
+
+![](./lec20_images/hyperplanes_optimal.png){fig-align="center"}
+
+## Visual Example of Terms
+
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10.)
+model.fit(X, Y)
+
+plot_svm(X, Y, model, ax=ax, plot_df=False);
+# ax.legend(["Class 0", "Class 1"])
+```
+
+## Multiclass
+
+::: incremental
+- What do you do if you have a multiple classes, *not* binary.
+- Can *one* hyperplane seperate a space into three regions?
+- But we have a trick! If we have three classes (A,B,C)  we are trying to seperate, we just train three *binary* models!
+  - A vs (B,C)
+  - B vs (A,C)
+  - C vs (A,B)
+:::
+
+## One Vs Rest (OVR)
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=False, plot_hp=False, plot_margin=False, classes=['A', 'B', 'C']);
+```
+
+
+## One Vs Rest (OVR)
+
+```{python}
+#| echo: True
+#| code-fold: True
+from sklearn import svm
+X, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=False, plot_margin=False, classes=['A', 'B', 'C']);
+```
+
+
+## Kernels
+
+:::incremental
+- What is the input space
+  - $X$
+- What is your feature space
+  - $phi(X)$
+- What do we have feature spaces?
+  - ![](./lec20_images/kernel_motivation.png){fig-align="center"}
+::::
+
+## Kernel Trick
+
+- What mathematical operation do we use judge similarity between points?
+  - Inner Product! (Dot Product)
+- What is the kernel trick?
+  - Allows you to compute the product of points in a higher dimensional **feature** space, while *actually still remaining* in the **input** space.
+  
+## SVM Kernel Example
+
+
+```{python}
+from sklearn.datasets import make_circles
+
+X, Y = make_circles(n_samples=1_000, factor=0.3, noise=0.05, random_state=0)
+
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=False, plot_hp=False, plot_margin=False, classes=['A', 'B']);
+```
+
+## SVM With Linear Kernel
+
+```{python}
+#| echo: true
+#| code-fold: true
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="linear", C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=True, plot_margin=True, classes=['A', 'B']);
+```
+
+## SVM With Polynomial Kernel
+
+```{python}
+#| echo: true
+#| code-fold: true
+fig, ax = plt.subplots(nrows=1, ncols=1)
+model = svm.SVC(kernel="poly", degree=2, C=10)
+model.fit(X, Y)
+plot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=False, plot_margin=False, classes=['A', 'B']);
+```
+
+
+# Unsupervised Learning
+
+
+## Terms
+
+- **Unsupervised learning** uses machine learning techniques to identify *patterns* in data *without* any prior knowledge about the data.
+- This means we have **NO** labels. Its like we have a bunch of penguin data, but it is not labeled!
+
+## Visual
+
+![](./lec21_images/K-Means-Clustering.png)
+
+
+## Examples Algs
+
+|                                          Learning algorithm                                         |                         Example                        |
+|:---------------------------------------------------------------------------------------------------:|:------------------------------------------------------:|
+| A clustering algorithm groups observations with similar features.                                   | Hierarchical clustering, k-means clustering            |
+| An outlier detection algorithm identifies deviations within data.                                   | DBSCAN, local outlier factor                           |
+| A latent variable model relates observable variables to a set of latent or  unobservable variables. | Expectation maximization, principal component analysis |
+
+
+## All clustering algs
+
+![](./lec21_images/all_clustering_algs.png)
+
+# K-Means
+
+## Terms
+
+- **Cluster** is a set of samples with *similar* characteristics.
+- Grouping samples into classes with similar characteristics is called clustering. 
+- A natural way of quantifying similarity is by picking a centroid for each cluster and finding the distance between the sample and the centroid.
+- **Centroid** is a point that represents the *center* of each cluster. Samples that are closer to a cluster's centroid are said to be similar to each other and considered part of the cluster.
+
+## Visual Example 1
+
+:::fragment
+![](./lec21_images/k_means_start0.png)
+:::
+
+:::fragment
+![](./lec21_images/k_means_start1.png)
+:::
+
+## Visual Example 2
+
+![](./lec21_images/k_means_start2.png)
+
+## Visual Example 3
+
+![](./lec21_images/k_means_start3.png)
+
+
+## K-means Algorithm{.smaller}
+
+Step 0: Select the number of clusters, $k$.
+
+Step 1: Randomly initialize samples as cluster centroids.
+
+Step 2: For each sample, calculate the distance between that sample and each cluster's centroid, and assign the sample to the cluster with the closest centroid.
+
+Step 3: For each cluster, calculate the **mean** of all samples in the cluster. This mean becomes the **new** centroid.
+
+Step 4: Repeat steps 2 and 3 until a stopping criterion is met. Such as reaching a certain number of iterations or the centroids staying the same. 
+
+## Step 0
+
+Select the number of clusters, $k$. This is hard if you dont have any prior information! However we have some tricks we can discuss later. 
+
+# Step 1
+
+Randomly initialize samples as cluster centroids. If $k=3$ then randomly choose three points to become your *cluster centers*. 
+
+
+## Step 2
+
+For each sample, calculate the distance between that sample and each cluster's centroid, and assign the sample to the cluster with the closest centroid
+
+$d = \sqrt {\left( {x_1 - x_2 } \right)^2 + \left( {y_1 - y_2 } \right)^2 }$
+
+If n=100, how many distance calculation will we have?
+
+## Step 3
+
+For each cluster, calculate the **mean** of all samples in the cluster. This mean becomes the **new** centroid. 
+
+This replaces the random selection you had in the beginning!
+
+## Step 4
+
+Repeat steps 2 and 3 until a stopping criterion is met. Such as reaching a certain number of iterations or the centroids staying the same. 
+
+
+## K-means Animation
+
+![](./lec21_images/k_means_animation.gif)
+
+## Choosing K
+
+::: incremental
+- The number of clusters is not often obvious, especially if the data has more than two features. 
+- The **elbow** method is the most common technique to determine the optimal number of clusters for the data. 
+- The intuition is that good groups should be *close* together.
+- How can we measure how *close* things are together?
+  - The sum of squared distanced between all samples and their centroid
+  - **within-cluster sum of squares** - WCSS
+:::
+
+## Sweet Spot
+
+:::incremental
+- Think of this example with $n$ data points
+- When you have **1 group** things are very spread far apart!
+  - Thats the the sum of squared distances between of all points to the center
+- When you have **n** groups then things are really close together! 
+  - Each sample is its own group and has NO distance from it center!
+- You want the sweet spot, where when you increase the number of groups (k) and the WCSS drops alot.
+:::
+
+## Elbow
+
+![](./lec21_images/elbow.png)
+
+
+
+
+

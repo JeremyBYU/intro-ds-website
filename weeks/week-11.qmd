@@ -1,6 +1,6 @@
 ---
 title: "Week 8"
-subtitle: "Model Performance!"
+subtitle: "SVM"
 editor: visual
 ---
 
@@ -11,7 +11,7 @@ editor: visual
 
 ## Participate
 
-🖥️ [Lecture 20 - KNN](/slides/lec-20.html)
+🖥️ [Lecture 20 - SVM](/slides/lec-20.html)
 
 
 ## Practice

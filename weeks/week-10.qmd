@@ -1,6 +1,6 @@
 ---
 title: "Week 8"
-subtitle: "Model Performance!"
+subtitle: "KNN and Naive Bayes"
 editor: visual
 ---
 
