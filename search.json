@@ -1964,7 +1964,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fd338a660e0>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fe82e3a74c0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3091,7 +3091,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fd8e6a21d20>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fc033e97070>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3161,7 +3161,7 @@
     "href": "slides/lec-21.html#multiclass",
     "title": "CISC482 - Lecture21",
     "section": "Multiclass",
-    "text": "Multiclass\n\n\nWhat do you do if you have a multiple classes, not binary.\nCan one hyperplane seperate a space into three regions?\nBut we have a trick! If we have three classes (A,B,C) we are trying to seperate, we just train three binary models!\n\nA vs (B,C)\nB vs (A,C)\nC vs (A,B)"
+    "text": "Multiclass\n\n\nWhat do you do if you have a multiple classes. For example, A, B, and C classes?\n\nA vs (B,C)\nB vs (A,C)\nC vs (A,B)"
   },
   {
     "objectID": "slides/lec-21.html#one-vs-rest-ovr",
@@ -3182,14 +3182,14 @@
     "href": "slides/lec-21.html#kernels",
     "title": "CISC482 - Lecture21",
     "section": "Kernels",
-    "text": "Kernels\n\n\nWhat is the input space\n\n\\(X\\)\n\nWhat is your feature space\n\n\\(phi(X)\\)\n\nWhat do we have feature spaces?"
+    "text": "Kernels\n\n\nWhat is the input space\n\n\\(X\\)\n\nWhat is your feature space\n\n\\(\\phi(X)\\)\n\nWhat do we have feature spaces?"
   },
   {
     "objectID": "slides/lec-21.html#kernel-trick",
     "href": "slides/lec-21.html#kernel-trick",
     "title": "CISC482 - Lecture21",
     "section": "Kernel Trick",
-    "text": "Kernel Trick\n\nWhat mathematical operation do we use judge similarity between points?\n\nInner Product! (Dot Product)\n\nWhat is the kernel trick?\n\nAllows you to compute the product of points in a higher dimensional feature space, while actually still remaining in the input space."
+    "text": "Kernel Trick\n\n\nWhat mathematical operation do we use judge similarity between points?\n\nInner Product! (Dot Product)\n\nWhat is the kernel trick?\n\nAllows you to compute the product of points in a higher dimensional feature space, while actually still remaining in the input space."
   },
   {
     "objectID": "slides/lec-21.html#svm-kernel-example",
@@ -3602,7 +3602,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'Fill', 'of', 'great', 'You', 'be', 'proud', 'your', 'up', 'am', 'part', 'waking', 'The', 'are', 'to', 'I', 'teacher', 'Folgers', 'students!', 'is', 'so', 'best', 'cup', 'in', 'Folgers.', 'a', 'with', 'cup.', 'all'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'students!', 'The', 'in', 'all', 'You', 'great', 'with', 'best', 'your', 'Folgers.', 'cup.', 'a', 'part', 'Folgers', 'am', 'to', 'of', 'proud', 'teacher', 'are', 'up', 'be', 'is', 'waking', 'so', 'cup', 'Fill', 'I'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",

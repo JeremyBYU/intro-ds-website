@@ -477,9 +477,7 @@ Dr.&nbsp;Jeremy Castagno
 <h2>Multiclass</h2>
 <div>
 <ul>
-<li class="fragment">What do you do if you have a multiple classes, <em>not</em> binary.</li>
-<li class="fragment">Can <em>one</em> hyperplane seperate a space into three regions?</li>
-<li class="fragment">But we have a trick! If we have three classes (A,B,C) we are trying to seperate, we just train three <em>binary</em> models!
+<li class="fragment">What do you do if you have a multiple classes. For example, A, B, and C classes?
 <ul>
 <li class="fragment">A vs (B,C)</li>
 <li class="fragment">B vs (A,C)</li>
@@ -532,7 +530,7 @@ Dr.&nbsp;Jeremy Castagno
 </ul></li>
 <li class="fragment">What is your feature space
 <ul>
-<li class="fragment"><span class="math inline">\(phi(X)\)</span></li>
+<li class="fragment"><span class="math inline">\(\phi(X)\)</span></li>
 </ul></li>
 <li class="fragment">What do we have feature spaces?
 <ul>
@@ -543,16 +541,18 @@ Dr.&nbsp;Jeremy Castagno
 </section>
 <section id="kernel-trick" class="slide level2">
 <h2>Kernel Trick</h2>
+<div>
 <ul>
-<li>What mathematical operation do we use judge similarity between points?
+<li class="fragment">What mathematical operation do we use judge similarity between points?
 <ul>
-<li>Inner Product! (Dot Product)</li>
+<li class="fragment">Inner Product! (Dot Product)</li>
 </ul></li>
-<li>What is the kernel trick?
+<li class="fragment">What is the kernel trick?
 <ul>
-<li>Allows you to compute the product of points in a higher dimensional <strong>feature</strong> space, while <em>actually still remaining</em> in the <strong>input</strong> space.</li>
+<li class="fragment">Allows you to compute the product of points in a higher dimensional <strong>feature</strong> space, while <em>actually still remaining</em> in the <strong>input</strong> space.</li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="svm-kernel-example" class="slide level2">
 <h2>SVM Kernel Example</h2>
