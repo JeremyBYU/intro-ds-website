@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 10\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n\n\n\n\n\nWeek 12\n\n\n\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 10\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 12\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
   },
   {
     "objectID": "project-description.html",
@@ -371,11 +371,11 @@
     "text": "Example - Small C\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1.5)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=0.000001)\nmodel.fit(X, Y)\n\nplot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=True, plot_hp=True, plot_margin=True);"
   },
   {
-    "objectID": "slides/lec-20.html#mulitclass",
-    "href": "slides/lec-20.html#mulitclass",
+    "objectID": "slides/lec-20.html#multiclass",
+    "href": "slides/lec-20.html#multiclass",
     "title": "CISC482 - Lecture20",
-    "section": "Mulitclass",
-    "text": "Mulitclass\n\n\nWhat do you do if you have a multiple classes, not binary.\nCan one hyperplane seperate a space into three regions?\nBut we have a trick! If we have three classes (A,B,C) we are trying to seperate, we just train three binary models!\n\nA vs (B,C)\nB vs (A,C)\nC vs (A,B)"
+    "section": "Multiclass",
+    "text": "Multiclass\n\n\nWhat do you do if you have a multiple classes, not binary.\nCan one hyperplane separate a space into three regions?\nBut we have a trick! If we have three classes (A,B,C) we are trying to seperate, we just train three binary models!\n\nA vs (B,C)\nB vs (A,C)\nC vs (A,B)"
   },
   {
     "objectID": "slides/lec-20.html#one-vs-rest-ovr",
@@ -1964,7 +1964,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7faa68189cf0>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fd338a660e0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3091,7 +3091,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f40ed54d660>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fd8e6a21d20>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3106,6 +3106,230 @@
     "title": "CISC482 - Lecture03",
     "section": "All",
     "text": "All\n\nimport scipy.stats as stats\nstats.describe(samples)\n\nDescribeResult(nobs=1000, minmax=(1.7616568032476234, 7.787361447950662), mean=5.053665979218166, variance=1.0126662448100565, skewness=-0.0026145821525120016, kurtosis=-0.06654059199852824)\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
+    "objectID": "slides/lec-21.html#schedule",
+    "href": "slides/lec-21.html#schedule",
+    "title": "CISC482 - Lecture21",
+    "section": "Schedule",
+    "text": "Schedule\n\nReading 8-2: April 14 @ 12PM, Friday\nProject Draft Report: April 12 @ Midnight, Wednesday\nExample Report on Brightspace!!"
+  },
+  {
+    "objectID": "slides/lec-21.html#today",
+    "href": "slides/lec-21.html#today",
+    "title": "CISC482 - Lecture21",
+    "section": "Today",
+    "text": "Today\n\nReview SVM\nUnsupervised Learning\nK-Means Clustering"
+  },
+  {
+    "objectID": "slides/lec-21.html#terms",
+    "href": "slides/lec-21.html#terms",
+    "title": "CISC482 - Lecture21",
+    "section": "Terms",
+    "text": "Terms\n\nSupport Vector Machine (SVM) is a supervised learning algorithm that uses ________ to divide data into different classes.\n\n\n\nIn a two-dimensional feature space, a hyperplane is a _____\nIn a three-dimensional feature space, a hyperplane is a ____"
+  },
+  {
+    "objectID": "slides/lec-21.html#hyperplane-1",
+    "href": "slides/lec-21.html#hyperplane-1",
+    "title": "CISC482 - Lecture21",
+    "section": "Hyperplane 1?",
+    "text": "Hyperplane 1?"
+  },
+  {
+    "objectID": "slides/lec-21.html#hyperplane-2",
+    "href": "slides/lec-21.html#hyperplane-2",
+    "title": "CISC482 - Lecture21",
+    "section": "Hyperplane 2?",
+    "text": "Hyperplane 2?"
+  },
+  {
+    "objectID": "slides/lec-21.html#separating-classes-with-planes-optimal",
+    "href": "slides/lec-21.html#separating-classes-with-planes-optimal",
+    "title": "CISC482 - Lecture21",
+    "section": "Separating Classes with Planes (Optimal)",
+    "text": "Separating Classes with Planes (Optimal)"
+  },
+  {
+    "objectID": "slides/lec-21.html#visual-example-of-terms",
+    "href": "slides/lec-21.html#visual-example-of-terms",
+    "title": "CISC482 - Lecture21",
+    "section": "Visual Example of Terms",
+    "text": "Visual Example of Terms\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=[[-2, 5], [0, 0]], cluster_std=1)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10.)\nmodel.fit(X, Y)\n\nplot_svm(X, Y, model, ax=ax, plot_df=False);\n# ax.legend([\"Class 0\", \"Class 1\"])"
+  },
+  {
+    "objectID": "slides/lec-21.html#multiclass",
+    "href": "slides/lec-21.html#multiclass",
+    "title": "CISC482 - Lecture21",
+    "section": "Multiclass",
+    "text": "Multiclass\n\n\nWhat do you do if you have a multiple classes, not binary.\nCan one hyperplane seperate a space into three regions?\nBut we have a trick! If we have three classes (A,B,C) we are trying to seperate, we just train three binary models!\n\nA vs (B,C)\nB vs (A,C)\nC vs (A,B)"
+  },
+  {
+    "objectID": "slides/lec-21.html#one-vs-rest-ovr",
+    "href": "slides/lec-21.html#one-vs-rest-ovr",
+    "title": "CISC482 - Lecture21",
+    "section": "One Vs Rest (OVR)",
+    "text": "One Vs Rest (OVR)\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_df=False, plot_sv=False, plot_hp=False, plot_margin=False, classes=['A', 'B', 'C']);"
+  },
+  {
+    "objectID": "slides/lec-21.html#one-vs-rest-ovr-1",
+    "href": "slides/lec-21.html#one-vs-rest-ovr-1",
+    "title": "CISC482 - Lecture21",
+    "section": "One Vs Rest (OVR)",
+    "text": "One Vs Rest (OVR)\n\n\nCode\nfrom sklearn import svm\nX, Y = make_blobs(random_state=42, n_samples=100, n_features=2, centers=3)\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=False, plot_margin=False, classes=['A', 'B', 'C']);"
+  },
+  {
+    "objectID": "slides/lec-21.html#kernels",
+    "href": "slides/lec-21.html#kernels",
+    "title": "CISC482 - Lecture21",
+    "section": "Kernels",
+    "text": "Kernels\n\n\nWhat is the input space\n\n\\(X\\)\n\nWhat is your feature space\n\n\\(phi(X)\\)\n\nWhat do we have feature spaces?"
+  },
+  {
+    "objectID": "slides/lec-21.html#kernel-trick",
+    "href": "slides/lec-21.html#kernel-trick",
+    "title": "CISC482 - Lecture21",
+    "section": "Kernel Trick",
+    "text": "Kernel Trick\n\nWhat mathematical operation do we use judge similarity between points?\n\nInner Product! (Dot Product)\n\nWhat is the kernel trick?\n\nAllows you to compute the product of points in a higher dimensional feature space, while actually still remaining in the input space."
+  },
+  {
+    "objectID": "slides/lec-21.html#svm-kernel-example",
+    "href": "slides/lec-21.html#svm-kernel-example",
+    "title": "CISC482 - Lecture21",
+    "section": "SVM Kernel Example",
+    "text": "SVM Kernel Example"
+  },
+  {
+    "objectID": "slides/lec-21.html#svm-with-linear-kernel",
+    "href": "slides/lec-21.html#svm-with-linear-kernel",
+    "title": "CISC482 - Lecture21",
+    "section": "SVM With Linear Kernel",
+    "text": "SVM With Linear Kernel\n\n\nCode\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"linear\", C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=True, plot_margin=True, classes=['A', 'B']);"
+  },
+  {
+    "objectID": "slides/lec-21.html#svm-with-polynomial-kernel",
+    "href": "slides/lec-21.html#svm-with-polynomial-kernel",
+    "title": "CISC482 - Lecture21",
+    "section": "SVM With Polynomial Kernel",
+    "text": "SVM With Polynomial Kernel\n\n\nCode\nfig, ax = plt.subplots(nrows=1, ncols=1)\nmodel = svm.SVC(kernel=\"poly\", degree=2, C=10)\nmodel.fit(X, Y)\nplot_svm(X, Y, model, ax=ax, plot_df=True, plot_sv=True, plot_hp=False, plot_margin=False, classes=['A', 'B']);"
+  },
+  {
+    "objectID": "slides/lec-21.html#terms-1",
+    "href": "slides/lec-21.html#terms-1",
+    "title": "CISC482 - Lecture21",
+    "section": "Terms",
+    "text": "Terms\n\nUnsupervised learning uses machine learning techniques to identify patterns in data without any prior knowledge about the data.\nThis means we have NO labels. Its like we have a bunch of penguin data, but it is not labeled!"
+  },
+  {
+    "objectID": "slides/lec-21.html#visual",
+    "href": "slides/lec-21.html#visual",
+    "title": "CISC482 - Lecture21",
+    "section": "Visual",
+    "text": "Visual"
+  },
+  {
+    "objectID": "slides/lec-21.html#examples-algs",
+    "href": "slides/lec-21.html#examples-algs",
+    "title": "CISC482 - Lecture21",
+    "section": "Examples Algs",
+    "text": "Examples Algs\n\n\n\n\n\n\n\nLearning algorithm\nExample\n\n\n\n\nA clustering algorithm groups observations with similar features.\nHierarchical clustering, k-means clustering\n\n\nAn outlier detection algorithm identifies deviations within data.\nDBSCAN, local outlier factor\n\n\nA latent variable model relates observable variables to a set of latent or unobservable variables.\nExpectation maximization, principal component analysis"
+  },
+  {
+    "objectID": "slides/lec-21.html#all-clustering-algs",
+    "href": "slides/lec-21.html#all-clustering-algs",
+    "title": "CISC482 - Lecture21",
+    "section": "All clustering algs",
+    "text": "All clustering algs"
+  },
+  {
+    "objectID": "slides/lec-21.html#terms-2",
+    "href": "slides/lec-21.html#terms-2",
+    "title": "CISC482 - Lecture21",
+    "section": "Terms",
+    "text": "Terms\n\nCluster is a set of samples with similar characteristics.\nGrouping samples into classes with similar characteristics is called clustering.\nA natural way of quantifying similarity is by picking a centroid for each cluster and finding the distance between the sample and the centroid.\nCentroid is a point that represents the center of each cluster. Samples that are closer to a cluster’s centroid are said to be similar to each other and considered part of the cluster."
+  },
+  {
+    "objectID": "slides/lec-21.html#visual-example-1",
+    "href": "slides/lec-21.html#visual-example-1",
+    "title": "CISC482 - Lecture21",
+    "section": "Visual Example 1",
+    "text": "Visual Example 1"
+  },
+  {
+    "objectID": "slides/lec-21.html#visual-example-2",
+    "href": "slides/lec-21.html#visual-example-2",
+    "title": "CISC482 - Lecture21",
+    "section": "Visual Example 2",
+    "text": "Visual Example 2"
+  },
+  {
+    "objectID": "slides/lec-21.html#visual-example-3",
+    "href": "slides/lec-21.html#visual-example-3",
+    "title": "CISC482 - Lecture21",
+    "section": "Visual Example 3",
+    "text": "Visual Example 3"
+  },
+  {
+    "objectID": "slides/lec-21.html#k-means-algorithm",
+    "href": "slides/lec-21.html#k-means-algorithm",
+    "title": "CISC482 - Lecture21",
+    "section": "K-means Algorithm",
+    "text": "K-means Algorithm\nStep 0: Select the number of clusters, \\(k\\).\nStep 1: Randomly initialize samples as cluster centroids.\nStep 2: For each sample, calculate the distance between that sample and each cluster’s centroid, and assign the sample to the cluster with the closest centroid.\nStep 3: For each cluster, calculate the mean of all samples in the cluster. This mean becomes the new centroid.\nStep 4: Repeat steps 2 and 3 until a stopping criterion is met. Such as reaching a certain number of iterations or the centroids staying the same."
+  },
+  {
+    "objectID": "slides/lec-21.html#step-0",
+    "href": "slides/lec-21.html#step-0",
+    "title": "CISC482 - Lecture21",
+    "section": "Step 0",
+    "text": "Step 0\nSelect the number of clusters, \\(k\\). This is hard if you dont have any prior information! However we have some tricks we can discuss later."
+  },
+  {
+    "objectID": "slides/lec-21.html#step-2",
+    "href": "slides/lec-21.html#step-2",
+    "title": "CISC482 - Lecture21",
+    "section": "Step 2",
+    "text": "Step 2\nFor each sample, calculate the distance between that sample and each cluster’s centroid, and assign the sample to the cluster with the closest centroid\n\\(d = \\sqrt {\\left( {x_1 - x_2 } \\right)^2 + \\left( {y_1 - y_2 } \\right)^2 }\\)\nIf n=100, how many distance calculation will we have?"
+  },
+  {
+    "objectID": "slides/lec-21.html#step-3",
+    "href": "slides/lec-21.html#step-3",
+    "title": "CISC482 - Lecture21",
+    "section": "Step 3",
+    "text": "Step 3\nFor each cluster, calculate the mean of all samples in the cluster. This mean becomes the new centroid.\nThis replaces the random selection you had in the beginning!"
+  },
+  {
+    "objectID": "slides/lec-21.html#step-4",
+    "href": "slides/lec-21.html#step-4",
+    "title": "CISC482 - Lecture21",
+    "section": "Step 4",
+    "text": "Step 4\nRepeat steps 2 and 3 until a stopping criterion is met. Such as reaching a certain number of iterations or the centroids staying the same."
+  },
+  {
+    "objectID": "slides/lec-21.html#k-means-animation",
+    "href": "slides/lec-21.html#k-means-animation",
+    "title": "CISC482 - Lecture21",
+    "section": "K-means Animation",
+    "text": "K-means Animation"
+  },
+  {
+    "objectID": "slides/lec-21.html#choosing-k",
+    "href": "slides/lec-21.html#choosing-k",
+    "title": "CISC482 - Lecture21",
+    "section": "Choosing K",
+    "text": "Choosing K\n\n\nThe number of clusters is not often obvious, especially if the data has more than two features.\nThe elbow method is the most common technique to determine the optimal number of clusters for the data.\nThe intuition is that good groups should be close together.\nHow can we measure how close things are together?\n\nThe sum of squared distanced between all samples and their centroid\nwithin-cluster sum of squares - WCSS"
+  },
+  {
+    "objectID": "slides/lec-21.html#sweet-spot",
+    "href": "slides/lec-21.html#sweet-spot",
+    "title": "CISC482 - Lecture21",
+    "section": "Sweet Spot",
+    "text": "Sweet Spot\n\n\nThink of this example with \\(n\\) data points\nWhen you have 1 group things are very spread far apart!\n\nThats the the sum of squared distances between of all points to the center\n\nWhen you have n groups then things are really close together!\n\nEach sample is its own group and has NO distance from it center!\n\nYou want the sweet spot, where when you increase the number of groups (k) and the WCSS drops alot."
+  },
+  {
+    "objectID": "slides/lec-21.html#elbow",
+    "href": "slides/lec-21.html#elbow",
+    "title": "CISC482 - Lecture21",
+    "section": "Elbow",
+    "text": "Elbow\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-16.html#schedule",
@@ -3378,7 +3602,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'a', 'up', 'in', 'proud', 'be', 'teacher', 'Folgers', 'students!', 'so', 'best', 'to', 'waking', 'are', 'am', 'part', 'You', 'Fill', 'all', 'Folgers.', 'The', 'of', 'with', 'cup.', 'great', 'your', 'is', 'I', 'cup'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'Fill', 'of', 'great', 'You', 'be', 'proud', 'your', 'up', 'am', 'part', 'waking', 'The', 'are', 'to', 'I', 'teacher', 'Folgers', 'students!', 'is', 'so', 'best', 'cup', 'in', 'Folgers.', 'a', 'with', 'cup.', 'all'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
@@ -3570,6 +3794,34 @@
     "text": "Perform\n⌨️ HW 4 - Regression"
   },
   {
+    "objectID": "weeks/week-12.html",
+    "href": "weeks/week-12.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 8-1 📖 Read Assignments 8-2"
+  },
+  {
+    "objectID": "weeks/week-12.html#participate",
+    "href": "weeks/week-12.html#participate",
+    "title": "Week 8",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Lecture 21 - KNN 🖥️ Lecture 22 - Agglomerative"
+  },
+  {
+    "objectID": "weeks/week-12.html#practice",
+    "href": "weeks/week-12.html#practice",
+    "title": "Week 8",
+    "section": "Practice",
+    "text": "Practice\nN/A"
+  },
+  {
+    "objectID": "weeks/week-12.html#perform",
+    "href": "weeks/week-12.html#perform",
+    "title": "Week 8",
+    "section": "Perform",
+    "text": "Perform\nDraft Report and Peer Review"
+  },
+  {
     "objectID": "weeks/week-10.html",
     "href": "weeks/week-10.html",
     "title": "Week 8",
@@ -3693,7 +3945,7 @@
     "href": "weeks/week-11.html#participate",
     "title": "Week 8",
     "section": "Participate",
-    "text": "Participate\n🖥️ Lecture 20 - KNN"
+    "text": "Participate\n🖥️ Lecture 20 - SVM"
   },
   {
     "objectID": "weeks/week-11.html#practice",
