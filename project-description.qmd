@@ -185,7 +185,6 @@ The purpose of the draft and peer review is to give you an opportunity to get ea
 Therefore, the draft and peer review will focus primarily on the exploratory data analysis, modeling, and initial interpretations.
 
 Write the draft in the **written-report.ipynb** file in your shared Google Drive folder.
-You do not need to submit the draft on Gradescope.
 
 Below is a brief description of the sections to focus on in the draft:
 
@@ -406,7 +405,8 @@ The grade breakdown is as follows:
 |------------------------------------|---------|
 | **Topic ideas**                    | 5 pts   |
 | **Project proposal**               | 15 pts  |
-| **Peer review**                    | 10 pts  |
+| **Draft Report**                   | 5 pts   |
+| **Peer review**                    | 5 pts   |
 | **Written report**                 | 45 pts  |
 | **Slides + video presentation**    | 20 pts  |
 | **Reproducibility + organization** | 5 pts   |
