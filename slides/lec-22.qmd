@@ -141,10 +141,9 @@ You should have been e-mailed view only access to their drafts
 
 - Supriya -&gt; Review Jaydon and Carter
 - Anmol -&gt; Review Carter and Iana
-- Jaydon -&gt; Review Iana and Josh
-- Carter -&gt; Review Josh and Haven
+- Jaydon -&gt; Review Iana and Chhandak
+- Carter -&gt; Review Prashant and Haven
 - Iana -&gt; Review Haven and Chhandak
-- Josh -&gt; Review Chhandak and Prashant
 - Haven -&gt; Review Prashant and Shivay
 - Chhandak -&gt; Review Shivay and Supriya
 - Prashant -&gt; Review Supriya and Anmol
