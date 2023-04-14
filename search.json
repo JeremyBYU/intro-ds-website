@@ -1964,7 +1964,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f2014a3e0e0>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f2a28a6a020>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3091,7 +3091,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7efcdf07fac0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f4e8b2c2650>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3465,6 +3465,83 @@
     "text": "Ask your Questions!\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
+    "objectID": "slides/lec-22.html#schedule",
+    "href": "slides/lec-22.html#schedule",
+    "title": "CISC482 - Lecture21",
+    "section": "Schedule",
+    "text": "Schedule\n\nReading 8-3: April 19 @ 12PM, Wednesday\nExample Report on Brightspace!!\nPeer Review - April 19 @ 12PM, Wednesday\nFinal Report - April 28 @ Midnight\nFinal Presentation - May 5, Final"
+  },
+  {
+    "objectID": "slides/lec-22.html#today",
+    "href": "slides/lec-22.html#today",
+    "title": "CISC482 - Lecture21",
+    "section": "Today",
+    "text": "Today\n\nReview Unsupervised Learning and K-Means\nPeer Review"
+  },
+  {
+    "objectID": "slides/lec-22.html#ideas",
+    "href": "slides/lec-22.html#ideas",
+    "title": "CISC482 - Lecture21",
+    "section": "Ideas",
+    "text": "Ideas\n\n\nWhat is the difference between supervised learning and unsupervised learning?\nWhat is the quintienstial example of unsupervised learning\n\nclustering\n\nNames of some example clustering algs?"
+  },
+  {
+    "objectID": "slides/lec-22.html#all-clustering-algs",
+    "href": "slides/lec-22.html#all-clustering-algs",
+    "title": "CISC482 - Lecture21",
+    "section": "All clustering algs",
+    "text": "All clustering algs"
+  },
+  {
+    "objectID": "slides/lec-22.html#k-means",
+    "href": "slides/lec-22.html#k-means",
+    "title": "CISC482 - Lecture21",
+    "section": "K-Means",
+    "text": "K-Means\n\n\nCluster is a set of samples with similar or dissimilar characteristics?\nGrouping samples into classes with similar characteristics is called clustering.\nCentroid ?\n\nis a point that represents the center of each cluster.\n\nSamples that are closer to a cluster’s centroid are said to be similar to each other and considered part of the cluster.\nWhat do we mean by closer? Can you give a precise definition?"
+  },
+  {
+    "objectID": "slides/lec-22.html#k-means-algorithm",
+    "href": "slides/lec-22.html#k-means-algorithm",
+    "title": "CISC482 - Lecture21",
+    "section": "K-means Algorithm",
+    "text": "K-means Algorithm\n\n\nStep 0: Select the number of clusters, \\(k\\).\nStep 1: Randomly initialize samples as cluster centroids.\nStep 2: For each sample, calculate the distance between that sample and each cluster’s centroid, and assign the sample to the cluster with the closest centroid.\nStep 3: For each cluster, calculate the mean of all samples in the cluster. This mean becomes the new centroid. -Step 4: Repeat steps 2 and 3 until a stopping criterion is met. Such as reaching a certain number of iterations or the centroids staying the same."
+  },
+  {
+    "objectID": "slides/lec-22.html#choosing-k",
+    "href": "slides/lec-22.html#choosing-k",
+    "title": "CISC482 - Lecture21",
+    "section": "Choosing K",
+    "text": "Choosing K\n\n\nThe number of clusters is not often obvious, especially if the data has more than two features.\nThe elbow method is the most common technique to determine the optimal number of clusters for the data.\nThe intuition is that good groups should be close together.\nHow can we measure how close things are together?\n\nThe sum of squared distanced between all samples and their centroid\nwithin-cluster sum of squares - WCSS"
+  },
+  {
+    "objectID": "slides/lec-22.html#sweet-spot",
+    "href": "slides/lec-22.html#sweet-spot",
+    "title": "CISC482 - Lecture21",
+    "section": "Sweet Spot",
+    "text": "Sweet Spot"
+  },
+  {
+    "objectID": "slides/lec-22.html#motivation",
+    "href": "slides/lec-22.html#motivation",
+    "title": "CISC482 - Lecture21",
+    "section": "Motivation",
+    "text": "Motivation\n\n\nMaking the writing process more collaborative\nLearn from one another and to think carefully about the role of writing in this course\nAllows students to clarify your own ideas\n\nYou explain your ideas to classmates and the reviewer formulates questions about your writing\n\nPeer review provides professional experience for you having your writing reviewed\nPeer review minimizes last minute drafting"
+  },
+  {
+    "objectID": "slides/lec-22.html#instructions",
+    "href": "slides/lec-22.html#instructions",
+    "title": "CISC482 - Lecture21",
+    "section": "Instructions",
+    "text": "Instructions\nInstructions"
+  },
+  {
+    "objectID": "slides/lec-22.html#groups",
+    "href": "slides/lec-22.html#groups",
+    "title": "CISC482 - Lecture21",
+    "section": "Groups",
+    "text": "Groups\nYou should have been e-mailed view only access to their drafts\n\nSupriya -> Review Jaydon and Carter\nAnmol -> Review Carter and Iana\nJaydon -> Review Iana and Josh\nCarter -> Review Josh and Haven\nIana -> Review Haven and Chhandak\nJosh -> Review Chhandak and Prashant\nHaven -> Review Prashant and Shivay\nChhandak -> Review Shivay and Supriya\nPrashant -> Review Supriya and Anmol\nShivay -> Review Anmol and Jaydon\n\n\n\n\n\n\n\nTip\n\n\nIf someone does not have their draft report ready, you can skip theirs (luck you!)\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+  },
+  {
     "objectID": "slides/lec-13.html#schedule",
     "href": "slides/lec-13.html#schedule",
     "title": "CISC482 - Lecture13",
@@ -3602,7 +3679,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'all', 'with', 'I', 'The', 'be', 'is', 'part', 'cup', 'waking', 'cup.', 'a', 'your', 'up', 'You', 'in', 'of', 'are', 'Fill', 'am', 'to', 'so', 'teacher', 'best', 'students!', 'Folgers', 'great', 'proud', 'Folgers.'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'of', 'The', 'so', 'to', 'students!', 'great', 'with', 'is', 'in', 'waking', 'proud', 'teacher', 'a', 'Folgers.', 'Fill', 'Folgers', 'your', 'part', 'be', 'You', 'am', 'are', 'up', 'cup.', 'cup', 'I', 'best', 'all'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
@@ -3805,7 +3882,7 @@
     "href": "weeks/week-12.html#participate",
     "title": "Week 8",
     "section": "Participate",
-    "text": "Participate\n🖥️ Lecture 21 - KNN 🖥️ Lecture 22 - Agglomerative"
+    "text": "Participate\n🖥️ Lecture 21 - KMeans 🖥️ Lecture 22 - Peer Review"
   },
   {
     "objectID": "weeks/week-12.html#practice",
