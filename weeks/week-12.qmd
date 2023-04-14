@@ -11,8 +11,8 @@ editor: visual
 
 ## Participate
 
-🖥️ [Lecture 21 - KNN](/slides/lec-21.html)
-🖥️ [Lecture 22 - Agglomerative](/slides/lec-22.html)
+🖥️ [Lecture 21 - KMeans](/slides/lec-21.html)
+🖥️ [Lecture 22 - Peer Review](/slides/lec-22.html)
 
 
 ## Practice

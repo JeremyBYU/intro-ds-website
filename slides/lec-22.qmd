@@ -1,0 +1,155 @@
+---
+title: "CISC482 - Lecture21"
+subtitle: "Unsupervised Learning and Draft Report"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+import matplotlib
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 16}
+
+matplotlib.rc('font', **font)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Reading 8-3:  April 19 @ 12PM, Wednesday
+- Example Report on Brightspace!!
+- [Peer Review](https://docs.google.com/document/d/1iKlK7jYsm8iOCfY-S3eWVHGXIAAhCMxCe4BfGCh43ms/edit?usp=sharing) - April 19 @ 12PM, Wednesday
+- [Final Report](https://jeremybyu.github.io/intro-ds-website/project-description.html#final-report) - April 28 @ Midnight
+- [Final Presentation](https://jeremybyu.github.io/intro-ds-website/project-description.html#slides) - May 5, Final
+
+## Today
+
+- Review Unsupervised Learning and K-Means
+- Peer Review
+
+
+
+# Review Unsupervised Learning
+
+
+## Ideas
+
+:::incremental
+- What is the difference between supervised learning and unsupervised learning?
+- What is the quintienstial example of unsupervised learning
+  - clustering
+- Names of some example clustering algs?
+:::
+
+
+## All clustering algs
+
+![](./lec21_images/all_clustering_algs.png)
+
+## K-Means
+
+::: incremental
+- **Cluster** is a set of samples with *similar* or *dissimilar* characteristics?
+- Grouping samples into classes with similar characteristics is called clustering. 
+- **Centroid** ?
+  - is a point that represents the *center* of each cluster. 
+- Samples that are **closer** to a cluster's centroid are said to be similar to each other and considered part of the cluster.
+- What do we mean by closer? Can you give a precise definition?
+:::
+
+
+## K-means Algorithm{.smaller}
+
+:::incremental
+- Step 0: Select the number of clusters, $k$.
+- Step 1: Randomly initialize samples as cluster centroids.
+- Step 2: For each sample, calculate the distance between that sample and each cluster's centroid, and assign the sample to the cluster with the closest centroid.
+- Step 3: For each cluster, calculate the **mean** of all samples in the cluster. This mean becomes the **new** centroid.
+-Step 4: Repeat steps 2 and 3 until a stopping criterion is met. Such as reaching a certain number of iterations or the centroids staying the same. 
+:::
+
+## Choosing K
+
+::: incremental
+- The number of clusters is not often obvious, especially if the data has more than two features. 
+- The **elbow** method is the most common technique to determine the optimal number of clusters for the data. 
+- The intuition is that good groups should be *close* together.
+- How can we measure how *close* things are together?
+  - The sum of squared distanced between all samples and their centroid
+  - **within-cluster sum of squares** - WCSS
+:::
+
+## Sweet Spot
+
+![](./lec21_images/elbow.png)
+
+
+# Peer Review
+
+## Motivation
+
+:::incremental
+- Making the writing process more **collaborative**
+- **Learn** from one another and to think carefully about the **role of writing in this course**
+- Allows students to **clarify** your own ideas 
+  - You explain your ideas to classmates and the reviewer formulates questions about your writing
+- Peer review provides professional experience for you having your writing reviewed
+- Peer review minimizes last minute drafting
+:::
+
+## Instructions
+
+[Instructions](https://docs.google.com/document/d/1iKlK7jYsm8iOCfY-S3eWVHGXIAAhCMxCe4BfGCh43ms/edit?usp=sharing)
+
+## Groups {.smaller}
+
+You should have been e-mailed view only access to their drafts
+
+- Supriya -&gt; Review Jaydon and Carter
+- Anmol -&gt; Review Carter and Iana
+- Jaydon -&gt; Review Iana and Josh
+- Carter -&gt; Review Josh and Haven
+- Iana -&gt; Review Haven and Chhandak
+- Josh -&gt; Review Chhandak and Prashant
+- Haven -&gt; Review Prashant and Shivay
+- Chhandak -&gt; Review Shivay and Supriya
+- Prashant -&gt; Review Supriya and Anmol
+- Shivay -&gt; Review Anmol and Jaydon
+
+::: callout-tip
+If someone does not have their draft report ready, you can skip theirs (luck you!)
+:::
