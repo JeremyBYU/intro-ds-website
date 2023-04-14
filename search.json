@@ -1964,7 +1964,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f2a28a6a020>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fce446f60e0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3091,7 +3091,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f4e8b2c2650>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7feda1a4c910>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3539,7 +3539,7 @@
     "href": "slides/lec-22.html#groups",
     "title": "CISC482 - Lecture21",
     "section": "Groups",
-    "text": "Groups\nYou should have been e-mailed view only access to their drafts\n\nSupriya -> Review Jaydon and Carter\nAnmol -> Review Carter and Iana\nJaydon -> Review Iana and Josh\nCarter -> Review Josh and Haven\nIana -> Review Haven and Chhandak\nJosh -> Review Chhandak and Prashant\nHaven -> Review Prashant and Shivay\nChhandak -> Review Shivay and Supriya\nPrashant -> Review Supriya and Anmol\nShivay -> Review Anmol and Jaydon\n\n\n\n\n\n\n\nTip\n\n\nIf someone does not have their draft report ready, you can skip theirs (luck you!)\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Groups\nYou should have been e-mailed view only access to their drafts\n\nSupriya -> Review Jaydon and Carter\nAnmol -> Review Carter and Iana\nJaydon -> Review Iana and Chhandak\nCarter -> Review Prashant and Haven\nIana -> Review Haven and Chhandak\nHaven -> Review Prashant and Shivay\nChhandak -> Review Shivay and Supriya\nPrashant -> Review Supriya and Anmol\nShivay -> Review Anmol and Jaydon\n\n\n\n\n\n\n\nTip\n\n\nIf someone does not have their draft report ready, you can skip theirs (luck you!)\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-13.html#schedule",
@@ -3679,7 +3679,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'of', 'The', 'so', 'to', 'students!', 'great', 'with', 'is', 'in', 'waking', 'proud', 'teacher', 'a', 'Folgers.', 'Fill', 'Folgers', 'your', 'part', 'be', 'You', 'am', 'are', 'up', 'cup.', 'cup', 'I', 'best', 'all'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'be', 'part', 'teacher', 'are', 'all', 'waking', 'cup.', 'up', 'proud', 'Folgers.', 'with', 'a', 'your', 'so', 'The', 'of', 'is', 'am', 'students!', 'cup', 'great', 'Folgers', 'best', 'to', 'in', 'I', 'Fill', 'You'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
