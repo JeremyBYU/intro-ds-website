@@ -9,7 +9,7 @@
   <meta name="generator" content="quarto-1.2.475">
 
   <meta name="author" content="Dr.&nbsp;Jeremy Castagno">
-  <title>Intro to Data Science - CISC482 - Lecture18</title>
+  <title>Intro to Data Science - CISC482 - Lecture23</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,70 +27,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -383,8 +319,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture18">
-<meta property="og:description" content="Supervised Learning - Naive Bayes">
+<meta property="og:title" content="Intro to Data Science - CISC482 - Lecture23">
+<meta property="og:description" content="Hierarchial Clustering">
 <meta property="og:site-name" content="Intro to Data Science">
 </head>
 <body class="quarto-light">
@@ -392,8 +328,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">CISC482 - Lecture18</h1>
-  <p class="subtitle">Supervised Learning - Naive Bayes</p>
+  <h1 class="title">CISC482 - Lecture23</h1>
+  <p class="subtitle">Hierarchial Clustering</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -412,381 +348,37 @@ Dr.&nbsp;Jeremy Castagno
 <section id="schedule" class="slide level2">
 <h2>Schedule</h2>
 <ul>
-<li>Reading 7-2: Mar 31 @ 12PM, Friday</li>
-<li>Reading 7-3: Apr 5 @ 12PM, Wednesday</li>
-<li><a href="">HW6</a> - Working on it… April 12 @ Midnight, Wednesday</li>
+<li>Returning Draft Reports</li>
+<li><a href="https://jeremybyu.github.io/intro-ds-website/project-description.html#final-report">Final Report</a> - April 28 @ Midnight</li>
+<li><a href="https://jeremybyu.github.io/intro-ds-website/project-description.html#slides">Final Presentation</a> - May 5, Final</li>
 </ul>
 </section>
 <section id="today" class="slide level2">
 <h2>Today</h2>
 <ul>
-<li>Short Review</li>
-<li>Naive Bayes</li>
-<li>Class Activity</li>
+<li>Recap Peer Review</li>
+<li>Hierarchal Clustering</li>
 </ul>
 </section></section>
 <section>
-<section id="review" class="title-slide slide level1 center">
-<h1>Review</h1>
+<section id="peer-review" class="title-slide slide level1 center">
+<h1>Peer Review</h1>
 
 </section>
-<section id="terms" class="slide level2">
-<h2>Terms</h2>
+<section id="groups" class="slide level2 smaller">
+<h2>Groups</h2>
+<p>You should have been e-mailed view only access to their drafts</p>
 <ul>
-<li>An instance is <strong>labeled</strong> if</li>
-<li><strong>Supervised learning</strong> is</li>
-<li>Regression vs Classification?</li>
-<li>What does KNN stand for?</li>
+<li>Supriya -&gt; Review Jaydon and Carter</li>
+<li>Anmol -&gt; Review Carter and Iana</li>
+<li>Jaydon -&gt; Review Iana and Chhandak</li>
+<li>Carter -&gt; Review Prashant and Haven</li>
+<li>Iana -&gt; Review Haven and Chhandak</li>
+<li>Haven -&gt; Review Prashant and Shivay</li>
+<li>Chhandak -&gt; Review Shivay and Supriya</li>
+<li>Prashant -&gt; Review Supriya and Anmol</li>
+<li>Shivay -&gt; Review Anmol and Jaydon</li>
 </ul>
-</section>
-<section id="metric-space" class="slide level2">
-<h2>Metric Space</h2>
-<p>A <strong>metric space</strong> is an unordered pair <span class="math inline">\((M, d)\)</span> where <span class="math inline">\(M\)</span> is a set and <span class="math inline">\(d\)</span> is a metric on <span class="math inline">\(M\)</span>, a function where <span class="math inline">\(d: M \times M \rightarrow \mathbb{R}\)</span>. Where <span class="math inline">\(d\)</span> satisfies the following axioms for all points <span class="math inline">\(x,y,z \in M\)</span></p>
-<ol type="1">
-<li>The distance from a point to itself is 0: <span class="math inline">\(d(x,x) = 0\)</span></li>
-<li>The distance between any two <em>distinct</em> points is always positive: If <span class="math inline">\(x \neq y, then \; d(y,x) &gt; 0\)</span></li>
-<li>The distance from x to y is always the same distance from y to x: <span class="math inline">\(d(x,y) = d(y,x)\)</span></li>
-<li>Triangle Inequality holds: <span class="math inline">\(d(x,z) \geq d(x,y) + d(y, z)\)</span></li>
-</ol>
-</section></section>
-<section>
-<section id="naive-bayes" class="title-slide slide level1 center">
-<h1>Naive Bayes</h1>
-
-</section>
-<section id="basic-idea" class="slide level2">
-<h2>Basic Idea</h2>
-<ul>
-<li>Naive Bayes classification is a supervised learning classifier that uses the number of times a feature occurs in each possible class to estimate the <strong>likelihood</strong> an instance is in the class.</li>
-<li>Naive Bayes is often used for applications with large amounts of text data.
-<ul>
-<li>identifying the author of a new document based on prior documents with known authors.</li>
-<li>detecting spam emails</li>
-</ul></li>
-</ul>
-</section>
-<section id="motivating-example" class="slide level2">
-<h2>Motivating Example</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Professor Castagno, I have a question about when HW6 is due. Is it due on Wednesday before class or at midnight. Thank you for your help!</p>
-</div><div class="column" style="width:50%;">
-<p>Proffesssor Castagno, Congratulations!!!1 You won free trip to B@hamas. Give credit card to confirm sh1pping of tickets. Free no, expense trip! Respond now!</p>
-</div>
-</div>
-<div class="question">
-<p>Which one is spam? How do you <em>know</em>?</p>
-</div>
-</section>
-<section id="example-problem-focus" class="slide level2">
-<h2>Example Problem Focus</h2>
-<ul>
-<li>For the rest of the class we will be doing examples on spam classification</li>
-<li>This means we are give a document that has <strong>words</strong> in it and want to predict the <strong>class</strong>: <em>ham</em> or <em>spam</em></li>
-<li>All machine learn learning models need features to learn from, and we expect these to be numbers</li>
-<li>We need to transform our document into a feature vector: <span class="math inline">\(X\)</span></li>
-</ul>
-</section>
-<section id="two-approaches" class="slide level2">
-<h2>Two Approaches</h2>
-<p>There are two main approaches to Naive Bayes and they boil down to how to transform the document. But first some definitions:</p>
-<ul>
-<li>We denote <span class="math inline">\(D = \{d_1, d_2, ..., d_i, ..., d_m \}\)</span> as the set of all documents. Often called the corpus. <span class="math inline">\(\lvert D \rvert = m\)</span>.</li>
-<li>Every <span class="math inline">\(d_i\)</span> is composed of <em>tokens</em> (words) where spaces are ignored</li>
-<li>The set of <strong>all</strong> unique tokens from <span class="math inline">\(D\)</span> is called the <em>vocabulary</em>. Lets denote the cardinality of this set to be <span class="math inline">\(n\)</span>. So there are <span class="math inline">\(n\)</span> unique words in the corpus.</li>
-</ul>
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<div class="question">
-<p>D1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.</p>
-<p>D2 - You are all great students! I am so proud to be a teacher of great students!</p>
-</div>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> string</span>
-<span id="cb1-2"><a href="#cb1-2"></a>vocabulary <span class="op">=</span> <span class="bu">set</span>(d_1.split(<span class="st">' '</span>) <span class="op">+</span> d_2.split(<span class="st">' '</span>))</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="bu">print</span>(vocabulary)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="bu">len</span>(vocabulary))</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>{'teacher', 'part', 'cup', 'your', 'great', 'cup.', 'am', 'The', 'in', 'a', 'waking', 'students!', 'are', 'is', 'be', 'proud', 'Fill', 'with', 'so', 'Folgers.', 'best', 'Folgers', 'You', 'up', 'to', 'all', 'I', 'of'}
-28</code></pre>
-</div>
-</div>
-</section>
-<section id="preprocess-text" class="slide level2 smaller">
-<h2>Preprocess Text</h2>
-<ul>
-<li>Remove Punctuation</li>
-<li>Leading and Ending White space - ’ Hey ’</li>
-<li>Replace common occurring text patterns with a single word, Regular Expression -‘http://spam.me’ –&gt; url
-<ul>
-<li>‘$’ ‘£’&amp; –&gt; ‘mnsymb’</li>
-<li>‘55555’ – ‘shrtcode’</li>
-<li>‘867-5309’ –&gt; ‘phonenumber’</li>
-<li>‘88’ –&gt; ‘number’</li>
-</ul></li>
-<li>Lower case</li>
-<li>Port Stemmer - ‘testing’ -&gt; ‘test’</li>
-<li>Remove Stop words - ‘the’, ‘a’</li>
-</ul>
-<!-- vocabulary = [word.translate(str.maketrans('', '', string.punctuation )) for word in vocabulary]
-vocabulary = set(vocabulary) -->
-</section>
-<section id="creating-features-vectors" class="slide level2">
-<h2>Creating Features Vectors</h2>
-<p>Every document <span class="math inline">\(d_i\)</span> has a feature vector, <span class="math inline">\(x_i\)</span>, that has <span class="math inline">\(n\)</span> elements in it. Each element will represent information about a unique vocab word in our corpus.</p>
-<ul>
-<li>Multinomial Naive Bayes
-<ul>
-<li>Each document is broken up to tokens. The feature vector is then the <strong>frequency</strong> count of the vocabulary words in the token set.</li>
-</ul></li>
-<li>Bernoulli Naive Bayes
-<ul>
-<li>Each document is broken up into tokens. The feature vector is then a boolean variable if the the vocab word was found in the document.</li>
-</ul></li>
-</ul>
-</section>
-<section id="multinomial-feature-vector" class="slide level2">
-<h2>Multinomial Feature Vector</h2>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
-<span id="cb3-2"><a href="#cb3-2"></a>vectorizer_m <span class="op">=</span> CountVectorizer()</span>
-<span id="cb3-3"><a href="#cb3-3"></a>X_m <span class="op">=</span> vectorizer_m.fit_transform(docs)</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="bu">print</span>(<span class="ss">f"Vocab: </span><span class="sc">{</span><span class="bu">len</span>(vectorizer_m.get_feature_names_out())<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">print</span>(vectorizer_m.get_feature_names_out())</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="bu">print</span>(<span class="st">"Feature Vector: "</span>)</span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="bu">print</span>(X_m.toarray())</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Vocab: 24
-['all' 'am' 'are' 'be' 'best' 'cup' 'fill' 'folgers' 'great' 'in' 'is'
- 'of' 'part' 'proud' 'so' 'students' 'teacher' 'the' 'to' 'up' 'waking'
- 'with' 'you' 'your']
-Feature Vector: 
-[[0 0 0 0 1 2 1 2 0 1 1 1 1 0 0 0 0 1 0 2 1 1 0 2]
- [1 1 1 1 0 0 0 0 2 0 0 1 0 1 1 2 1 0 1 0 0 0 1 0]]</code></pre>
-</div>
-</div>
-</section>
-<section id="bernoulli-feature-vector" class="slide level2">
-<h2>Bernoulli Feature Vector</h2>
-<div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>vectorizer_b <span class="op">=</span> CountVectorizer(binary<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>X_b <span class="op">=</span> vectorizer_b.fit_transform(docs)</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="bu">print</span>(<span class="ss">f"Vocab: </span><span class="sc">{</span><span class="bu">len</span>(vectorizer_b.get_feature_names_out())<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="bu">print</span>(vectorizer_b.get_feature_names_out())</span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="bu">print</span>(<span class="st">"Feature Vector: "</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="bu">print</span>(X_b.toarray())</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Vocab: 24
-['all' 'am' 'are' 'be' 'best' 'cup' 'fill' 'folgers' 'great' 'in' 'is'
- 'of' 'part' 'proud' 'so' 'students' 'teacher' 'the' 'to' 'up' 'waking'
- 'with' 'you' 'your']
-Feature Vector: 
-[[0 0 0 0 1 1 1 1 0 1 1 1 1 0 0 0 0 1 0 1 1 1 0 1]
- [1 1 1 1 0 0 0 0 1 0 0 1 0 1 1 1 1 0 1 0 0 0 1 0]]</code></pre>
-</div>
-</div>
-</section>
-<section id="which-one-to-use" class="slide level2">
-<h2>Which one to use?</h2>
-<ul>
-<li>Multinomial is the more complex model. Bernoulli is the simpler model</li>
-<li>Less Data -&gt; Bernoulli -&gt; Less overfitting</li>
-<li>Alot of Data -&gt; Multinomial</li>
-<li>Zybook only shows Multinomial</li>
-</ul>
-</section></section>
-<section>
-<section id="naive-bayes---how-to-use-feature-vectors" class="title-slide slide level1 center">
-<h1>Naive Bayes - How to use Feature Vectors?</h1>
-
-</section>
-<section id="bayes-models" class="slide level2">
-<h2>Bayes Models</h2>
-<div class="fragment">
-<p><span class="math inline">\(P(H|\textbf{D}) = P(H ) \frac{P(\textbf{D} | H)}{P(\textbf{D})}\)</span></p>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(P(C = Spam|\textbf{X}) = \underbrace{P(C = Spam)}_{Prior} \frac{P(\textbf{X} | C = Spam)}{P(\textbf{X})}\)</span></p>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(P(C = Spam|\textbf{X}) = P(C = Spam) \frac{\underbrace{P(\textbf{X} | C = Spam)}_{Likelihood}}{P(\textbf{X})}\)</span></p>
-</div>
-<div class="fragment">
-<p>Remember that <span class="math inline">\(\textbf{X} = x_1, x_2, ... x_n\)</span>, one for each vocaublary word. Mulitnomial <span class="math inline">\(x_i\)</span> is the _____ and for bernoulli it is the _____.</p>
-</div>
-</section>
-<section id="the-prior" class="slide level2">
-<h2>The Prior</h2>
-<p><span class="math inline">\(P(C = Spam)\)</span> = ?</p>
-<p><strong>Irrepspective</strong> of data, what is the probability that this is a spam document.</p>
-<div class="fragment">
-<p><span class="math inline">\(P(C = Spam)\)</span> = <span class="math inline">\(\frac{\text{# Spam Documents}}{\text{# All Documents}} = \frac{m_s}{m}\)</span></p>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(P(C = Ham)\)</span> = <span class="math inline">\(1 - P(C = Spam)\)</span></p>
-</div>
-</section>
-<section id="the-likelihood-the-hard-one" class="slide level2">
-<h2>The Likelihood (the hard one)</h2>
-<p><span class="math inline">\(P(\textbf{X} | C = Spam) = P(x_1, x_2, ... x_i, x_n | Spam)\)</span></p>
-<p>This is a very large joint probability! Very difficult to compute! But we have some tricks…</p>
-<div class="fragment">
-<p><span class="math inline">\(P(\textbf{X} | Spam) = P(x_1 | x_2, ... , x_n, Spam) P(x_2, ... x_n | Spam)\)</span></p>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(P(\textbf{X} | Spam) = P(x_1 | x_2, ... , x_n, Spam) P(x_2 | x_3, ..., Spam) P(x_3, ... x_n | Spam)\)</span></p>
-</div>
-<div class="fragment">
-<p>This is still just incredibly difficult to compute…. But we can make a <strong>naive</strong> assumption.</p>
-</div>
-</section>
-<section id="the-naive-assumption" class="slide level2">
-<h2>The Naive Assumption</h2>
-<p><span class="math inline">\(P(x_1 | x_2, ..., x_n, Spam ) = P(x_1 | Spam)\)</span></p>
-<div>
-<ul>
-<li class="fragment">What is this assumption saying?</li>
-<li class="fragment">Is it true?</li>
-<li class="fragment">Is it useful?</li>
-</ul>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(P(\textbf{X} | Spam) = \Pi P(x_i | Spam)\)</span></p>
-</div>
-</section>
-<section id="calculating-px_i-cspam-bernoulli" class="slide level2">
-<h2>Calculating <span class="math inline">\(P(x_i | C=Spam)\)</span>, Bernoulli</h2>
-<ul>
-<li>Looking at only <em>spam</em> documents</li>
-<li>Number of <em>spam</em> <strong>documents</strong> where <span class="math inline">\(x_i\)</span> appeared = <span class="math inline">\(x_{i}^s\)</span></li>
-<li>Total number of <em>spam</em> <strong>documents</strong> = <span class="math inline">\(m_s\)</span></li>
-<li><span class="math inline">\(P(x_i | C=Spam) = \frac{x_{i}^s}{m_s}\)</span></li>
-</ul>
-</section>
-<section id="calculating-px_i-cham-bernoulli" class="slide level2">
-<h2>Calculating <span class="math inline">\(P(x_i | C=Ham)\)</span>, Bernoulli</h2>
-<ul>
-<li>Looking at only <em>ham</em> documents</li>
-<li>Number of <em>ham</em> <strong>documents</strong> where <span class="math inline">\(x_i\)</span> appeared = <span class="math inline">\(x_{i}^h\)</span></li>
-<li>Total number of <em>ham</em> <strong>documents</strong> = <span class="math inline">\(m_h\)</span></li>
-<li><span class="math inline">\(P(x_i | C=Ham) = \frac{x_{i}^h}{m_h}\)</span></li>
-</ul>
-</section>
-<section id="putting-it-all-together" class="slide level2">
-<h2>Putting it all together</h2>
-<div class="fragment">
-<p><span class="math inline">\(P(C=Spam | \textbf{X}) = P(C=Spam)\dfrac{P(\textbf{X} | C=Spam)}{P(\textbf{X})}\)</span></p>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(P(C=Spam | \textbf{X}) \propto P(C=Spam) \; P(\textbf{X} | C=Spam)\)</span></p>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(P(C=Spam | \textbf{X}) \propto P(C=Spam) \; \Pi P(x_i | C=Spam)\)</span></p>
-</div>
-<div class="fragment">
-<p><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \Pi \dfrac{x_{i}^s}{m_s}\)</span></p>
-</div>
-<div class="fragment">
-<div class="callout callout-warning callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Warning</strong></p>
-</div>
-<div class="callout-content">
-<p>Anyone see a problem here? What happens if a vocab word does not appear in the document?</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="laplacian-smoothing-for-naive-bayes" class="slide level2">
-<h2>Laplacian Smoothing for Naive Bayes</h2>
-<ul>
-<li><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \Pi \dfrac{x_{i}^s + 1}{m_s + 2}\)</span></li>
-<li><span class="math inline">\(P(C=Ham | \textbf{X}) \propto \dfrac{m_h}{m} \; \Pi \dfrac{x_{i}^h + 1}{m_h + 2}\)</span></li>
-<li>Compute both numbers. Whichever class has a higher prob, classify as that one</li>
-</ul>
-<div class="fragment">
-<div class="callout callout-warning callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Warning</strong></p>
-</div>
-<div class="callout-content">
-<p>Any astute computer scientists see a possible problem….</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="floating-point-number-inaccuracies" class="slide level2">
-<h2>Floating point number inaccuracies</h2>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> math</span>
-<span id="cb7-2"><a href="#cb7-2"></a>probs <span class="op">=</span> [<span class="fl">0.01</span>] <span class="op">*</span> <span class="dv">20</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>final_prob <span class="op">=</span> math.prod(probs)</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>(<span class="ss">f"Probabilities: </span><span class="sc">{</span>probs<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="bu">print</span>(<span class="ss">f"Final Probability: </span><span class="sc">{</span>final_prob<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Probabilities: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
-Final Probability: 1.0000000000000005e-40</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> math</span>
-<span id="cb9-2"><a href="#cb9-2"></a>probs <span class="op">=</span> [<span class="fl">0.01</span>] <span class="op">*</span> <span class="dv">10_000</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>final_prob <span class="op">=</span> math.prod(probs)</span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="bu">print</span>(<span class="ss">f"Final Probability: </span><span class="sc">{</span>final_prob<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Final Probability: 0.0</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="question">
-<p>Any one have any ideas to fix this?</p>
-</div>
-</div>
-</section>
-<section id="log-function" class="slide level2 smaller">
-<h2>Log function</h2>
-<div>
-<ul>
-<li class="fragment"><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \dfrac{m_s}{m} \; \prod \dfrac{x_{i}^s + 1}{m_s + 2}\)</span></li>
-<li class="fragment"><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \ln \left( \dfrac{m_s}{m} \; \prod \dfrac{x_{i}^s + 1}{m_s + 2} \right)\)</span></li>
-<li class="fragment">What is this <span class="math inline">\(\log(a \cdot b) = ?\)</span></li>
-<li class="fragment"><span class="math inline">\(\log(a \cdot b) = \log(a) + \log(b)\)</span></li>
-<li class="fragment"><span class="math inline">\(P(C=Spam | \textbf{X}) \propto \ln \left(\dfrac{m_s}{m} \right) + \; \sum \ln \left(\dfrac{x_{i}^s + 1}{m_s + 2}\right)\)</span></li>
-</ul>
-</div>
-</section>
-<section id="log-functon-graph" class="slide level2">
-<h2>Log Functon Graph</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000000</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>y <span class="op">=</span> np.log(x)</span>
-<span id="cb11-3"><a href="#cb11-3"></a>plt.plot(x, y)</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<p><img data-src="lec-18_files/figure-revealjs/cell-9-output-1.png" width="801" height="411"></p>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
 <div class="callout-caption">
@@ -796,17 +388,94 @@ Final Probability: 1.0000000000000005e-40</code></pre>
 <p><strong>Tip</strong></p>
 </div>
 <div class="callout-content">
-<p>We can transfrom our probabilties with log and make everything numerically stable!!</p>
+<p>How did it go?</p>
 </div>
 </div>
 </div>
+</section>
+<section id="questions-1" class="slide level2">
+<h2>Questions 1</h2>
+<div>
+<ol type="1">
+<li class="fragment">What did you learn from reviewing your peers’ work? Were there any insights or perspectives that you gained from seeing other students’ writing or ideas?</li>
+<li class="fragment">How did the peer review process impact your own writing or thinking about the assignment? Did you make any changes to your work based on the feedback you received from your peers?</li>
+</ol>
 </div>
+</section>
+<section id="questions-2" class="slide level2">
+<h2>Questions 2</h2>
+<div>
+<ol start="3" type="1">
+<li class="fragment">Looking forward, what advice would you give to someone who is new to peer review? What are some best practices or strategies that you would recommend for someone who wants to give or receive feedback effectively?</li>
+<li class="fragment">What feedback did you receive from your peers? Was it helpful, and if so, why? Did any feedback surprise you, or challenge your assumptions about your own work?</li>
+</ol>
 </div>
-<!-- chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://web.stanford.edu/class/archive/cs/cs109/cs109.1178/lectureHandouts/210-naive-bayes.pdf -->
-<p><!-- https://deepnote.com/@emmanuelmicron/Spam-Detection-using-Multinomial-Naive-Bayes-Model-a9a6bc89-e723-4c32-8679-86a5ff1978f3 --></p>
+</section></section>
+<section>
+<section id="hierarchical-clustering" class="title-slide slide level1 center">
+<h1>Hierarchical clustering</h1>
 
-<p><img src="../images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+</section>
+<section id="what-is-it" class="slide level2">
+<h2>What is it?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="./lec22_images/clustering.mp4" style="width:90.0%" controls=""><a href="./lec22_images/clustering.mp4">Video</a></video></p>
+</figure>
+</div>
+</section>
+<section id="types-of-clustering" class="slide level2">
+<h2>Types of Clustering</h2>
+<ul>
+<li><strong>Agglomerative</strong> hierarchical clustering is a clustering method where each <em>sample</em> is treated as an individual cluster
+<ul>
+<li>If we have 100 samples, we start with 100 clusters!</li>
+<li>Two clusters are combined iteratively until all samples belong to a single cluster</li>
+</ul></li>
+<li><strong>Divisive</strong> hierarchical clustering
+<ul>
+<li>Start with one and split</li>
+</ul></li>
+</ul>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Use agglomerative! It allows us to observe local patterns <em>first</em> before creating groups. It gives really great results!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="measures-of-similarity" class="slide level2">
+<h2>Measures of Similarity</h2>
+<ul>
+<li>The <strong>single linkage</strong> method calculates the distance between a pair of samples, one from each cluster, that are the most similar.</li>
+<li>The <strong>complete linkage</strong> method calculates the distance between a pair of samples, one from each cluster, that are the most different.</li>
+<li>The <strong>centroid linkage</strong> method calculates the distance between the centroids of two clusters.</li>
+</ul>
+</section>
+<section id="single-linkage" class="slide level2">
+<h2>Single Linkage</h2>
+
+<img data-src="./lec22_images/single.png" class="r-stretch quarto-figure-center"></section>
+<section id="complete-linkage" class="slide level2">
+<h2>Complete Linkage</h2>
+
+<img data-src="./lec22_images/complete.png" class="r-stretch quarto-figure-center"></section>
+<section id="centroid-linkage" class="slide level2">
+<h2>Centroid Linkage</h2>
+
+<img data-src="./lec22_images/centroid.png" class="r-stretch quarto-figure-center"></section>
+<section id="tst" class="slide level2">
+<h2>Tst</h2>
+
+
+<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>
