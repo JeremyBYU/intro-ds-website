@@ -20,6 +20,14 @@ execute:
 
 ---
 
+<style>
+    .medium-font {
+    font-size: 0.6em;
+    line-height: 1.2em;
+    vertical-align: top;
+  }
+</style>
+
 
 ```{python}
 #| context: setup
@@ -99,7 +107,7 @@ How did it go?
 
 ## What is it?
 
-![](./lec22_images/clustering.mp4){fig-align="center" width="90%"}
+![](./lec23_images/clustering.mp4){fig-align="center" width="90%"}
 
 ## Types of Clustering
 
@@ -121,14 +129,143 @@ Use agglomerative! It allows us to observe local patterns *first* before creatin
 
 ## Single Linkage
 
-![](./lec22_images/single.png){fig-align="center"}
+![](./lec23_images/single.png){fig-align="center"}
 
 ## Complete Linkage
 
-![](./lec22_images/complete.png){fig-align="center"}
+![](./lec23_images/complete.png){fig-align="center"}
 
 ## Centroid Linkage
 
-![](./lec22_images/centroid.png){fig-align="center"}
+![](./lec23_images/centroid.png){fig-align="center"}
 
-## Tst
+## Questions - 1
+
+![](./lec23_images/question_1_single.png){fig-align="center"}
+
+:::question
+Which two samples should be used to determine similarity using the Single linkage?
+Complete Linkage?
+:::
+
+## Questions - 1
+
+![](./lec23_images/question_1_single.png){fig-align="center"}
+
+:::question
+Which two samples should be used to determine similarity using the Single linkage?
+Complete Linkage?
+:::
+
+
+## Questions - 1{.smaller}
+
+![](./lec23_images/question_2_complete.png){fig-align="center"}
+
+:::question 
+:::incremental
+- How many total samples?
+- How many total clusters?
+- What is the Euclidean distance between the clusters using **complete** linkage?
+:::
+:::
+
+# Dendograms
+
+## Terminology
+
+- The output of a hierarchical clustering algorithm can be visualized using a **dendrogram**. 
+- A **dendrogram** is a tree that shows the *order* in which clusters are grouped together and the *distances* between clusters.
+- Read it from BOTTOM up!
+
+##
+
+::: columns
+
+::: {.column width="50%"}
+
+
+- A **clade** is a branch of a dendrogram/vertical line.
+- A **link** is a horizontal line that connects two clades, height gives the distance between clusters.
+- A leaf is the terminal end of each clade in a dendrogram, which represents a single sample.
+
+
+:::
+
+::: {.column width="50%"}
+
+![](./lec23_images/dendogram.png)
+
+:::question
+::: {.incremental .medium-font}
+- How many total samples?
+- How many total clusters in the beggining?
+- Which clusters get grouped 1st? 2nd? 3rd? 4th?
+:::
+:::
+
+
+:::
+
+:::
+
+## Visual 1 
+
+![](./lec23_images/dendogram_1.png){fig-align="center"}
+
+## Visual 2
+
+![](./lec23_images/dendogram_2.png){fig-align="center"}
+
+## Visual 3
+
+![](./lec23_images/dendogram_3.png){fig-align="center"}
+
+## Visual 4
+
+![](./lec23_images/dendogram_4.png){fig-align="center"}
+
+## Visual 5
+
+![](./lec23_images/dendogram_5.png){fig-align="center"}
+
+
+## Visual 6
+
+![](./lec23_images/dendogram_6_1.png){fig-align="center"}
+
+## Visual 7
+
+![](./lec23_images/dendogram_6_2.png){fig-align="center"}
+
+
+## Thresholding
+
+- A dendrogram can be used as a starting point to find the optimal number of clusters.
+- No conclusions about the optimal number of clusters should be made without using more quantitative techniques like the elbow method. 
+- We can specity a **maximum** distance between groups. 
+- Any clusters *below* that distance *should* be clustered
+- Any clusters *above* that distance *should not* be clustered
+- We call this distance a threshold
+
+## Threshold 1
+
+![](./lec23_images/threshold_1.png){fig-align="center"}
+
+## Threshold 2
+
+![](./lec23_images/threshold_2.png){fig-align="center"}
+
+## Question Threshold
+
+![](./lec23_images/question_treshold.png)
+
+:::question
+::: {.incremental .medium-font}
+- How many total samples?
+- How many clusters would there be with dashed blue line?
+- How many clusters would there be with dashed red line?
+:::
+:::
+
+
