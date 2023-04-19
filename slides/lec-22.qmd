@@ -1,5 +1,5 @@
 ---
-title: "CISC482 - Lecture21"
+title: "CISC482 - Lecture22"
 subtitle: "Unsupervised Learning and Draft Report"
 author: "Dr. Jeremy Castagno"
 footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"

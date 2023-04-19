@@ -1,0 +1,134 @@
+---
+title: "CISC482 - Lecture23"
+subtitle: "Hierarchial Clustering"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+import matplotlib
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 16}
+
+matplotlib.rc('font', **font)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Returning Draft Reports
+- [Final Report](https://jeremybyu.github.io/intro-ds-website/project-description.html#final-report) - April 28 @ Midnight
+- [Final Presentation](https://jeremybyu.github.io/intro-ds-website/project-description.html#slides) - May 5, Final
+
+## Today
+
+- Recap Peer Review
+- Hierarchal Clustering
+
+# Peer Review
+
+
+## Groups {.smaller}
+
+You should have been e-mailed view only access to their drafts
+
+- Supriya -&gt; Review Jaydon and Carter
+- Anmol -&gt; Review Carter and Iana
+- Jaydon -&gt; Review Iana and Chhandak
+- Carter -&gt; Review Prashant and Haven
+- Iana -&gt; Review Haven and Chhandak
+- Haven -&gt; Review Prashant and Shivay
+- Chhandak -&gt; Review Shivay and Supriya
+- Prashant -&gt; Review Supriya and Anmol
+- Shivay -&gt; Review Anmol and Jaydon
+
+::: callout-tip
+How did it go? 
+:::
+
+## Questions 1
+
+:::incremental
+1. What did you learn from reviewing your peers' work? Were there any insights or perspectives that you gained from seeing other students' writing or ideas?
+2. How did the peer review process impact your own writing or thinking about the assignment? Did you make any changes to your work based on the feedback you received from your peers?
+:::
+
+## Questions 2
+
+::: incremental
+3. Looking forward, what advice would you give to someone who is new to peer review? What are some best practices or strategies that you would recommend for someone who wants to give or receive feedback effectively?
+4. What feedback did you receive from your peers? Was it helpful, and if so, why? Did any feedback surprise you, or challenge your assumptions about your own work?
+:::
+
+
+# Hierarchical clustering
+
+## What is it?
+
+![](./lec22_images/clustering.mp4){fig-align="center" width="90%"}
+
+## Types of Clustering
+
+- **Agglomerative** hierarchical clustering is a clustering method where each *sample* is treated as an individual cluster
+  - If we have 100 samples, we start with 100 clusters!
+  - Two clusters are combined iteratively until all samples belong to a single cluster
+- **Divisive** hierarchical clustering
+  - Start with one and split
+
+::: callout-tip
+Use agglomerative! It allows us to observe local patterns *first* before creating groups. It gives really great results!
+:::
+
+## Measures of Similarity
+
+- The **single linkage** method calculates the distance between a pair of samples, one from each cluster, that are the most similar.
+- The **complete linkage** method calculates the distance between a pair of samples, one from each cluster, that are the most different.
+- The **centroid linkage** method calculates the distance between the centroids of two clusters.
+
+## Single Linkage
+
+![](./lec22_images/single.png){fig-align="center"}
+
+## Complete Linkage
+
+![](./lec22_images/complete.png){fig-align="center"}
+
+## Centroid Linkage
+
+![](./lec22_images/centroid.png){fig-align="center"}
+
+## Tst

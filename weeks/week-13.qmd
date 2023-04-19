@@ -1,0 +1,25 @@
+---
+title: "Week 8"
+subtitle: "Unsupervised Learning"
+editor: visual
+---
+
+## Prepare
+
+📖 Read Assignments 8-1
+📖 Read Assignments 8-2
+
+## Participate
+
+🖥️ [Lecture 23 - Hierarchial Clustering](/slides/lec-23.html)
+🖥️ [Lecture 24 - PCA](/slides/lec-24.html)
+
+
+## Practice
+
+N/A
+
+## Perform
+
+Final Report
+
