@@ -340,6 +340,16 @@ Dr.&nbsp;Jeremy Castagno
 </div>
 
 </section>
+<section class="slide level2">
+
+<style>
+    .medium-font {
+    font-size: 0.6em;
+    line-height: 1.2em;
+    vertical-align: top;
+  }
+</style>
+</section>
 <section>
 <section id="class-business" class="title-slide slide level1 center">
 <h1>Class Business</h1>
@@ -420,7 +430,7 @@ Dr.&nbsp;Jeremy Castagno
 <h2>What is it?</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><video data-src="./lec22_images/clustering.mp4" style="width:90.0%" controls=""><a href="./lec22_images/clustering.mp4">Video</a></video></p>
+<p><video data-src="./lec23_images/clustering.mp4" style="width:90.0%" controls=""><a href="./lec23_images/clustering.mp4">Video</a></video></p>
 </figure>
 </div>
 </section>
@@ -462,20 +472,140 @@ Dr.&nbsp;Jeremy Castagno
 <section id="single-linkage" class="slide level2">
 <h2>Single Linkage</h2>
 
-<img data-src="./lec22_images/single.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="./lec23_images/single.png" class="r-stretch quarto-figure-center"></section>
 <section id="complete-linkage" class="slide level2">
 <h2>Complete Linkage</h2>
 
-<img data-src="./lec22_images/complete.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="./lec23_images/complete.png" class="r-stretch quarto-figure-center"></section>
 <section id="centroid-linkage" class="slide level2">
 <h2>Centroid Linkage</h2>
 
-<img data-src="./lec22_images/centroid.png" class="r-stretch quarto-figure-center"></section>
-<section id="tst" class="slide level2">
-<h2>Tst</h2>
+<img data-src="./lec23_images/centroid.png" class="r-stretch quarto-figure-center"></section>
+<section id="questions---1" class="slide level2">
+<h2>Questions - 1</h2>
 
+<img data-src="./lec23_images/question_1_single.png" class="r-stretch quarto-figure-center"><div class="question">
+<p>Which two samples should be used to determine similarity using the Single linkage? Complete Linkage?</p>
+</div>
+</section>
+<section id="questions---1-1" class="slide level2">
+<h2>Questions - 1</h2>
 
-<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<img data-src="./lec23_images/question_1_single.png" class="r-stretch quarto-figure-center"><div class="question">
+<p>Which two samples should be used to determine similarity using the Single linkage? Complete Linkage?</p>
+</div>
+</section>
+<section id="questions---1-2" class="slide level2 smaller">
+<h2>Questions - 1</h2>
+
+<img data-src="./lec23_images/question_2_complete.png" class="r-stretch quarto-figure-center"><div class="question">
+<div>
+<ul>
+<li class="fragment">How many total samples?</li>
+<li class="fragment">How many total clusters?</li>
+<li class="fragment">What is the Euclidean distance between the clusters using <strong>complete</strong> linkage?</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="dendograms" class="title-slide slide level1 center">
+<h1>Dendograms</h1>
+
+</section>
+<section id="terminology" class="slide level2">
+<h2>Terminology</h2>
+<ul>
+<li>The output of a hierarchical clustering algorithm can be visualized using a <strong>dendrogram</strong>.</li>
+<li>A <strong>dendrogram</strong> is a tree that shows the <em>order</em> in which clusters are grouped together and the <em>distances</em> between clusters.</li>
+<li>Read it from BOTTOM up!</li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>A <strong>clade</strong> is a branch of a dendrogram/vertical line.</li>
+<li>A <strong>link</strong> is a horizontal line that connects two clades, height gives the distance between clusters.</li>
+<li>A leaf is the terminal end of each clade in a dendrogram, which represents a single sample.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./lec23_images/dendogram.png"></p>
+<div class="question">
+<div class="medium-font">
+<ul>
+<li class="fragment">How many total samples?</li>
+<li class="fragment">How many total clusters in the beggining?</li>
+<li class="fragment">Which clusters get grouped 1st? 2nd? 3rd? 4th?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visual-1" class="slide level2">
+<h2>Visual 1</h2>
+
+<img data-src="./lec23_images/dendogram_1.png" class="r-stretch quarto-figure-center"></section>
+<section id="visual-2" class="slide level2">
+<h2>Visual 2</h2>
+
+<img data-src="./lec23_images/dendogram_2.png" class="r-stretch quarto-figure-center"></section>
+<section id="visual-3" class="slide level2">
+<h2>Visual 3</h2>
+
+<img data-src="./lec23_images/dendogram_3.png" class="r-stretch quarto-figure-center"></section>
+<section id="visual-4" class="slide level2">
+<h2>Visual 4</h2>
+
+<img data-src="./lec23_images/dendogram_4.png" class="r-stretch quarto-figure-center"></section>
+<section id="visual-5" class="slide level2">
+<h2>Visual 5</h2>
+
+<img data-src="./lec23_images/dendogram_5.png" class="r-stretch quarto-figure-center"></section>
+<section id="visual-6" class="slide level2">
+<h2>Visual 6</h2>
+
+<img data-src="./lec23_images/dendogram_6_1.png" class="r-stretch quarto-figure-center"></section>
+<section id="visual-7" class="slide level2">
+<h2>Visual 7</h2>
+
+<img data-src="./lec23_images/dendogram_6_2.png" class="r-stretch quarto-figure-center"></section>
+<section id="thresholding" class="slide level2">
+<h2>Thresholding</h2>
+<ul>
+<li>A dendrogram can be used as a starting point to find the optimal number of clusters.</li>
+<li>No conclusions about the optimal number of clusters should be made without using more quantitative techniques like the elbow method.</li>
+<li>We can specity a <strong>maximum</strong> distance between groups.</li>
+<li>Any clusters <em>below</em> that distance <em>should</em> be clustered</li>
+<li>Any clusters <em>above</em> that distance <em>should not</em> be clustered</li>
+<li>We call this distance a threshold</li>
+</ul>
+</section>
+<section id="threshold-1" class="slide level2">
+<h2>Threshold 1</h2>
+
+<img data-src="./lec23_images/threshold_1.png" class="r-stretch quarto-figure-center"></section>
+<section id="threshold-2" class="slide level2">
+<h2>Threshold 2</h2>
+
+<img data-src="./lec23_images/threshold_2.png" class="r-stretch quarto-figure-center"></section>
+<section id="question-threshold" class="slide level2">
+<h2>Question Threshold</h2>
+<p><img data-src="./lec23_images/question_treshold.png"></p>
+<div class="question">
+<div class="medium-font">
+<ul>
+<li class="fragment">How many total samples?</li>
+<li class="fragment">How many clusters would there be with dashed blue line?</li>
+<li class="fragment">How many clusters would there be with dashed red line?</li>
+</ul>
+</div>
+</div>
+
+<p><img src="../images/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>

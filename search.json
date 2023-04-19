@@ -1964,7 +1964,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fa3bc3c1150>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f2b486926e0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3091,7 +3091,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f1f3d3fa020>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7ff1b82637f0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3542,11 +3542,116 @@
     "text": "Centroid Linkage"
   },
   {
-    "objectID": "slides/lec-23.html#tst",
-    "href": "slides/lec-23.html#tst",
+    "objectID": "slides/lec-23.html#questions---1",
+    "href": "slides/lec-23.html#questions---1",
     "title": "CISC482 - Lecture23",
-    "section": "Tst",
-    "text": "Tst\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "section": "Questions - 1",
+    "text": "Questions - 1\n\n\nWhich two samples should be used to determine similarity using the Single linkage? Complete Linkage?"
+  },
+  {
+    "objectID": "slides/lec-23.html#questions---1-1",
+    "href": "slides/lec-23.html#questions---1-1",
+    "title": "CISC482 - Lecture23",
+    "section": "Questions - 1",
+    "text": "Questions - 1\n\n\nWhich two samples should be used to determine similarity using the Single linkage? Complete Linkage?"
+  },
+  {
+    "objectID": "slides/lec-23.html#questions---1-2",
+    "href": "slides/lec-23.html#questions---1-2",
+    "title": "CISC482 - Lecture23",
+    "section": "Questions - 1",
+    "text": "Questions - 1\n\n\n\n\nHow many total samples?\nHow many total clusters?\nWhat is the Euclidean distance between the clusters using complete linkage?"
+  },
+  {
+    "objectID": "slides/lec-23.html#terminology",
+    "href": "slides/lec-23.html#terminology",
+    "title": "CISC482 - Lecture23",
+    "section": "Terminology",
+    "text": "Terminology\n\nThe output of a hierarchical clustering algorithm can be visualized using a dendrogram.\nA dendrogram is a tree that shows the order in which clusters are grouped together and the distances between clusters.\nRead it from BOTTOM up!"
+  },
+  {
+    "objectID": "slides/lec-23.html#section",
+    "href": "slides/lec-23.html#section",
+    "title": "CISC482 - Lecture23",
+    "section": "",
+    "text": "A clade is a branch of a dendrogram/vertical line.\nA link is a horizontal line that connects two clades, height gives the distance between clusters.\nA leaf is the terminal end of each clade in a dendrogram, which represents a single sample.\n\n\n\n\n\n\nHow many total samples?\nHow many total clusters in the beggining?\nWhich clusters get grouped 1st? 2nd? 3rd? 4th?"
+  },
+  {
+    "objectID": "slides/lec-23.html#visual-1",
+    "href": "slides/lec-23.html#visual-1",
+    "title": "CISC482 - Lecture23",
+    "section": "Visual 1",
+    "text": "Visual 1"
+  },
+  {
+    "objectID": "slides/lec-23.html#visual-2",
+    "href": "slides/lec-23.html#visual-2",
+    "title": "CISC482 - Lecture23",
+    "section": "Visual 2",
+    "text": "Visual 2"
+  },
+  {
+    "objectID": "slides/lec-23.html#visual-3",
+    "href": "slides/lec-23.html#visual-3",
+    "title": "CISC482 - Lecture23",
+    "section": "Visual 3",
+    "text": "Visual 3"
+  },
+  {
+    "objectID": "slides/lec-23.html#visual-4",
+    "href": "slides/lec-23.html#visual-4",
+    "title": "CISC482 - Lecture23",
+    "section": "Visual 4",
+    "text": "Visual 4"
+  },
+  {
+    "objectID": "slides/lec-23.html#visual-5",
+    "href": "slides/lec-23.html#visual-5",
+    "title": "CISC482 - Lecture23",
+    "section": "Visual 5",
+    "text": "Visual 5"
+  },
+  {
+    "objectID": "slides/lec-23.html#visual-6",
+    "href": "slides/lec-23.html#visual-6",
+    "title": "CISC482 - Lecture23",
+    "section": "Visual 6",
+    "text": "Visual 6"
+  },
+  {
+    "objectID": "slides/lec-23.html#visual-7",
+    "href": "slides/lec-23.html#visual-7",
+    "title": "CISC482 - Lecture23",
+    "section": "Visual 7",
+    "text": "Visual 7"
+  },
+  {
+    "objectID": "slides/lec-23.html#thresholding",
+    "href": "slides/lec-23.html#thresholding",
+    "title": "CISC482 - Lecture23",
+    "section": "Thresholding",
+    "text": "Thresholding\n\nA dendrogram can be used as a starting point to find the optimal number of clusters.\nNo conclusions about the optimal number of clusters should be made without using more quantitative techniques like the elbow method.\nWe can specity a maximum distance between groups.\nAny clusters below that distance should be clustered\nAny clusters above that distance should not be clustered\nWe call this distance a threshold"
+  },
+  {
+    "objectID": "slides/lec-23.html#threshold-1",
+    "href": "slides/lec-23.html#threshold-1",
+    "title": "CISC482 - Lecture23",
+    "section": "Threshold 1",
+    "text": "Threshold 1"
+  },
+  {
+    "objectID": "slides/lec-23.html#threshold-2",
+    "href": "slides/lec-23.html#threshold-2",
+    "title": "CISC482 - Lecture23",
+    "section": "Threshold 2",
+    "text": "Threshold 2"
+  },
+  {
+    "objectID": "slides/lec-23.html#question-threshold",
+    "href": "slides/lec-23.html#question-threshold",
+    "title": "CISC482 - Lecture23",
+    "section": "Question Threshold",
+    "text": "Question Threshold\n\n\n\n\nHow many total samples?\nHow many clusters would there be with dashed blue line?\nHow many clusters would there be with dashed red line?\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-22.html#schedule",
@@ -3763,7 +3868,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'teacher', 'part', 'cup', 'your', 'great', 'cup.', 'am', 'The', 'in', 'a', 'waking', 'students!', 'are', 'is', 'be', 'proud', 'Fill', 'with', 'so', 'Folgers.', 'best', 'Folgers', 'You', 'up', 'to', 'all', 'I', 'of'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'in', 'of', 'Folgers', 'Folgers.', 'waking', 'are', 'to', 'students!', 'be', 'Fill', 'is', 'best', 'The', 'You', 'your', 'I', 'so', 'teacher', 'with', 'cup', 'proud', 'great', 'up', 'cup.', 'part', 'a', 'am', 'all'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
