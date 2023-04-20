@@ -19,7 +19,5 @@ title: "Overview"
 |  Week 10 | [🖥️ ](/slides/lec-17.html) [🖥️ ](/slides/lec-18.html)       |  [📋]()               |   [⌨️]()    |
 |  Week 11 | [🖥️ ](/slides/lec-19.html) [🖥️ ](/slides/lec-20.html)       |  [📋]()               |   [⌨️]()    |
 |  Week 12 | [🖥️ ](/slides/lec-21.html) [🖥️ ](/slides/lec-22.html)       |  [📋]()               |   [⌨️]()    |
-| Week 13 |        |                |    |
+|  Week 13 | [🖥️ ](/slides/lec-23.html) [🖥️ ](/slides/lec-24.html)       |  [📋]()               |   [⌨️]()    |
 | Week 14 |        |                |    |
-| Week 15 |        |                |    |
-| Week 16 |        |                |    |

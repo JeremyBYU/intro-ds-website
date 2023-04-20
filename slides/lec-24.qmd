@@ -1,0 +1,175 @@
+---
+title: "CISC482 - Lecture24"
+subtitle: "Principal Component Analysis"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+import matplotlib
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 16}
+
+matplotlib.rc('font', **font)
+```
+
+# Class Business
+
+
+## Schedule
+
+- Returning Draft Reports
+- [Final Report](https://jeremybyu.github.io/intro-ds-website/project-description.html#final-report) - April 28 @ Midnight
+- [Final Presentation](https://jeremybyu.github.io/intro-ds-website/project-description.html#slides) - May 5, Final
+
+## Today
+
+- Recap Peer Review
+- Review Hierarchal Clustering
+- Principal Component Analysis
+
+# Peer Review
+
+## My Review
+
+- Overall we did a great job! You can find my and your peers feedback on Brightspace.
+  - Its also inside your *shared* Google Drive folder under **PeerReview**
+- I particularly appreciated the detailed walkthrough that many of you did.
+- It was very interesting seeing all your ideas!
+- I did see a few common errors that I wanted to bring up.
+
+## Common Issues 1
+
+- Don't have empty cells.
+- Don’t have grammatical errors.
+- Label all your axes in your figures.
+- The primary goal of this paper is to create a **predictive model**. 
+  - You need to be clear in your **introduction** what your response variable is and if you are doing **classification** or **regression**.
+
+## Common Issues 2
+
+- Be sure to have a good amount of detail in your report that explains **WHY** you are doing what you are doing.
+- I recommend making tables showing your results. You can do this by creating a data frame of your results or by using [this website]( https://www.tablesgenerator.com/markdown_tables ) to make markdown tables.
+- Please review [this document](https://colab.research.google.com/github/bebi103a/bebi103a.github.io/blob/master/lessons/00/intro_to_latex.ipynb) to learn how to write equations in google collab.
+
+## Common Issues 3
+
+- If you are doing regression, please make [Residual Plots](https://www.scikit-yb.org/en/latest/api/regressor/residuals.html) and report $R^2$ metric.
+- If you are doing classification, please report metrics such as accuracy, precision, recall, and f1 score.
+
+
+# Hierarchical clustering
+
+
+## Types of Clustering
+
+- **Agglomerative** hierarchical clustering is _______
+- **Divisive** hierarchical clustering is ____
+
+## Measures of Similarity
+
+- The **single linkage** method calculates the distance between a pair of samples, one from each cluster, that are the _____.
+- The **complete linkage** method calculates the distance between a pair of samples, one from each cluster, that are the _____.
+- The **centroid linkage** method calculates the distance between the ________ of two clusters.
+
+## Questions - 1
+
+![](./lec23_images/question_1_single.png){fig-align="center"}
+
+:::question
+Which two samples should be used to determine similarity using the Single linkage?
+Complete Linkage?
+:::
+
+## Questions - 1
+
+![](./lec23_images/question_1_single.png){fig-align="center"}
+
+:::question
+Which two samples should be used to determine similarity using the Single linkage?
+Complete Linkage?
+:::
+
+
+## Terminology
+
+- A _______ is a ________ that shows the *order* in which clusters are grouped together and the *distances* between clusters.
+- Read it from BOTTOM up!
+
+##
+
+::: columns
+
+::: {.column width="50%"}
+
+
+- A _____ is a branch of a dendogram/vertical line.
+- A _____ is a horizontal line that connects two ______, height gives the distance between clusters.
+- A _____ is the terminal end of each _______ in a dendrogram, which represents a single sample.
+
+
+:::
+
+::: {.column width="50%"}
+
+:::fragment
+
+![](./lec23_images/dendogram.png)
+:::
+
+
+
+:::
+
+:::
+
+
+## Question Threshold
+
+![](./lec23_images/question_treshold.png)
+
+:::question
+::: {.incremental .medium-font}
+- How many total samples?
+- How many clusters would there be with dashed blue line?
+- How many clusters would there be with dashed red line?
+:::
+:::
+
+
+# Principal Component Analysis
+
+
+## Terms
