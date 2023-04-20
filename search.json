@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 10\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 12\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 13\n\n\n\n\n\nWeek 14\n\n\n\n\n\nWeek 15\n\n\n\n\n\nWeek 16"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 10\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 12\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 13\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 14"
   },
   {
     "objectID": "project-description.html",
@@ -649,6 +649,104 @@
     "title": "CISC482 - Lecture04",
     "section": "Flipping a Coin 10 Times",
     "text": "Flipping a Coin 10 Times\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nDoes this seem right?"
+  },
+  {
+    "objectID": "slides/lec-24.html#schedule",
+    "href": "slides/lec-24.html#schedule",
+    "title": "CISC482 - Lecture24",
+    "section": "Schedule",
+    "text": "Schedule\n\nReturning Draft Reports\nFinal Report - April 28 @ Midnight\nFinal Presentation - May 5, Final"
+  },
+  {
+    "objectID": "slides/lec-24.html#today",
+    "href": "slides/lec-24.html#today",
+    "title": "CISC482 - Lecture24",
+    "section": "Today",
+    "text": "Today\n\nRecap Peer Review\nReview Hierarchal Clustering\nPrincipal Component Analysis"
+  },
+  {
+    "objectID": "slides/lec-24.html#my-review",
+    "href": "slides/lec-24.html#my-review",
+    "title": "CISC482 - Lecture24",
+    "section": "My Review",
+    "text": "My Review\n\nOverall we did a great job! You can find my and your peers feedback on Brightspace.\n\nIts also inside your shared Google Drive folder under PeerReview\n\nI particularly appreciated the detailed walkthrough that many of you did.\nIt was very interesting seeing all your ideas!\nI did see a few common errors that I wanted to bring up."
+  },
+  {
+    "objectID": "slides/lec-24.html#common-issues-1",
+    "href": "slides/lec-24.html#common-issues-1",
+    "title": "CISC482 - Lecture24",
+    "section": "Common Issues 1",
+    "text": "Common Issues 1\n\nDon’t have empty cells.\nDon’t have grammatical errors.\nLabel all your axes in your figures.\nThe primary goal of this paper is to create a predictive model.\n\nYou need to be clear in your introduction what your response variable is and if you are doing classification or regression."
+  },
+  {
+    "objectID": "slides/lec-24.html#common-issues-2",
+    "href": "slides/lec-24.html#common-issues-2",
+    "title": "CISC482 - Lecture24",
+    "section": "Common Issues 2",
+    "text": "Common Issues 2\n\nBe sure to have a good amount of detail in your report that explains WHY you are doing what you are doing.\nI recommend making tables showing your results. You can do this by creating a data frame of your results or by using this website to make markdown tables.\nPlease review this document to learn how to write equations in google collab."
+  },
+  {
+    "objectID": "slides/lec-24.html#common-issues-3",
+    "href": "slides/lec-24.html#common-issues-3",
+    "title": "CISC482 - Lecture24",
+    "section": "Common Issues 3",
+    "text": "Common Issues 3\n\nIf you are doing regression, please make Residual Plots and report \\(R^2\\) metric.\nIf you are doing classification, please report metrics such as accuracy, precision, recall, and f1 score."
+  },
+  {
+    "objectID": "slides/lec-24.html#types-of-clustering",
+    "href": "slides/lec-24.html#types-of-clustering",
+    "title": "CISC482 - Lecture24",
+    "section": "Types of Clustering",
+    "text": "Types of Clustering\n\nAgglomerative hierarchical clustering is _______\nDivisive hierarchical clustering is ____"
+  },
+  {
+    "objectID": "slides/lec-24.html#measures-of-similarity",
+    "href": "slides/lec-24.html#measures-of-similarity",
+    "title": "CISC482 - Lecture24",
+    "section": "Measures of Similarity",
+    "text": "Measures of Similarity\n\nThe single linkage method calculates the distance between a pair of samples, one from each cluster, that are the _____.\nThe complete linkage method calculates the distance between a pair of samples, one from each cluster, that are the _____.\nThe centroid linkage method calculates the distance between the ________ of two clusters."
+  },
+  {
+    "objectID": "slides/lec-24.html#questions---1",
+    "href": "slides/lec-24.html#questions---1",
+    "title": "CISC482 - Lecture24",
+    "section": "Questions - 1",
+    "text": "Questions - 1\n\n\nWhich two samples should be used to determine similarity using the Single linkage? Complete Linkage?"
+  },
+  {
+    "objectID": "slides/lec-24.html#questions---1-1",
+    "href": "slides/lec-24.html#questions---1-1",
+    "title": "CISC482 - Lecture24",
+    "section": "Questions - 1",
+    "text": "Questions - 1\n\n\nWhich two samples should be used to determine similarity using the Single linkage? Complete Linkage?"
+  },
+  {
+    "objectID": "slides/lec-24.html#terminology",
+    "href": "slides/lec-24.html#terminology",
+    "title": "CISC482 - Lecture24",
+    "section": "Terminology",
+    "text": "Terminology\n\nA _______ is a ________ that shows the order in which clusters are grouped together and the distances between clusters.\nRead it from BOTTOM up!"
+  },
+  {
+    "objectID": "slides/lec-24.html#section",
+    "href": "slides/lec-24.html#section",
+    "title": "CISC482 - Lecture24",
+    "section": "",
+    "text": "A _____ is a branch of a dendogram/vertical line.\nA _____ is a horizontal line that connects two ______, height gives the distance between clusters.\nA _____ is the terminal end of each _______ in a dendrogram, which represents a single sample."
+  },
+  {
+    "objectID": "slides/lec-24.html#question-threshold",
+    "href": "slides/lec-24.html#question-threshold",
+    "title": "CISC482 - Lecture24",
+    "section": "Question Threshold",
+    "text": "Question Threshold\n\n\n\n\nHow many total samples?\nHow many clusters would there be with dashed blue line?\nHow many clusters would there be with dashed red line?"
+  },
+  {
+    "objectID": "slides/lec-24.html#terms",
+    "href": "slides/lec-24.html#terms",
+    "title": "CISC482 - Lecture24",
+    "section": "Terms",
+    "text": "Terms\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-07.html#schedule",
@@ -1964,7 +2062,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f2b486926e0>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fc79c719240>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3091,7 +3189,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7ff1b82637f0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f142caabbe0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3868,7 +3966,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'in', 'of', 'Folgers', 'Folgers.', 'waking', 'are', 'to', 'students!', 'be', 'Fill', 'is', 'best', 'The', 'You', 'your', 'I', 'so', 'teacher', 'with', 'cup', 'proud', 'great', 'up', 'cup.', 'part', 'a', 'am', 'all'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'are', 'students!', 'cup', 'great', 'with', 'waking', 'so', 'proud', 'Folgers.', 'all', 'part', 'Fill', 'be', 'to', 'am', 'cup.', 'best', 'I', 'of', 'a', 'Folgers', 'is', 'your', 'You', 'The', 'in', 'teacher', 'up'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
