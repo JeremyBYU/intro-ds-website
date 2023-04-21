@@ -310,3 +310,50 @@ plt.legend();
 :::
 
 :::
+
+
+# Higher Dimensions
+
+## 3D
+
+```{python}
+#| echo: true
+#| code-fold: true
+x = np.arange(0, 10) + np.random.randn(10) * 0.1
+y = np.arange(0, 10) + np.random.randn(10) * 0.1
+z = x * 1 + y * 2 + np.random.randn(10) * 1
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+
+X = np.column_stack([x, y, z])
+
+ax.scatter(x, y, z, marker='o')
+ax.set_xlabel('X Label')
+ax.set_ylabel('Y Label')
+ax.set_zlabel('Z Label')
+```
+
+## PCA
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| output-location: column
+from sklearn.decomposition import PCA
+pca = PCA(n_components=1)
+# fit and transform data
+X_pca = pca.fit_transform(X)
+print(X_pca.shape)
+X_comp = pca.inverse_transform(X_pca)
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+
+ax.scatter(x, y, z, marker='o', label='Raw')
+ax.scatter(X_comp[:, 0], X_comp[:, 1], X_comp[:, 2], marker='x', label='compressed')
+ax.set_xlabel('X Label')
+ax.set_ylabel('Y Label')
+ax.set_zlabel('Z Label')
+
+```
+
