@@ -33,6 +33,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.datasets import make_blobs, make_regression
+from sklearn.model_selection import train_test_split
 df = load_penguins()
 df.dropna(inplace=True)
 np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
@@ -356,4 +357,140 @@ ax.set_ylabel('Y Label')
 ax.set_zlabel('Z Label')
 
 ```
+
+# Wine Data Set
+
+## The Data
+
+```{python}
+
+import pandas as pd
+
+df = pd.read_csv('https://archive.ics.uci.edu/ml/'
+                      'machine-learning-databases/wine/wine.data',
+                      header=None)
+
+
+FeatureNames = ['Alcohol', 'Malic acid', 'Ash', 'Alcalinity of ash', 'Magnesium', 'Total phenols', 'Flavanoids', \
+'Nonflavanoid phenols', 'Proanthocyanins', 'Color intensity', 'Hue', 'OD280/OD315 of diluted wines', 'Proline'] 
+print(f"Features: {FeatureNames}")
+df = df.rename(columns={0: 'group'})
+print(f"Classes: {np.unique(df.group, return_counts=True)}")
+df.head()
+```
+
+Can we visualize this data? Why or why not?
+
+## Split Data and Scale
+
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.preprocessing import StandardScaler
+
+df_train, df_test = train_test_split(
+    df, test_size=0.30, random_state=0)
+
+y_train = df_train['group']
+y_test = df_test['group']
+
+scaler = StandardScaler().set_output(transform="pandas")
+scaled_X_train = scaler.fit_transform(df_train.iloc[:, 1:])
+scaled_X_test = scaler.fit_transform(df_test.iloc[:, 1:])
+scaled_X_train.head()
+```
+
+$z = (x - \mu) / \sigma$
+
+## PCA
+
+::: columns
+
+::: {.column width="70%"}
+```{python}
+#| echo: true
+#| code-fold: true
+pca = PCA(n_components=2)
+X_train_pca = pca.fit_transform(scaled_X_train)
+plt.scatter(X_train_pca[:, 0], X_train_pca[:,1], c=y_train, cmap='viridis', edgecolor='k');
+```
+:::
+
+::: {.column width="30%"}
+```{python}
+print(X_train_pca)
+```
+:::
+:::
+
+
+
+
+
+## Separate with Logistic Regression
+
+
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.inspection import DecisionBoundaryDisplay
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression(C=1e5)
+model.fit(X_train_pca, y_train)
+
+disp = DecisionBoundaryDisplay.from_estimator(
+    model, X_train_pca, response_method="predict", cmap=plt.cm.viridis, alpha=0.5, xlabel='PC1', ylabel='PC2'
+)
+disp.ax_.scatter(X_train_pca[:, 0], X_train_pca[:,1], c=y_train, cmap='viridis', edgecolor='k');
+
+```
+
+## Why is this a big deal?
+
+- We just separated this think with only **2** dimensions! We started with 13 Dimensions
+- Remember we did **not** reduce features. We **extracted** two new features, PC1 and PC2 that best expalin the data
+- PC1 is a combination of meany of the 13 features
+```{python}
+print(f"PC1 : {pca.components_[0,:]}")
+```
+
+# Even higher Dimensions (IMAGES!)
+
+
+## MNIST Digits - 8 X 8 Images
+
+
+```{python}
+#| echo: true
+#| code-fold: true
+from sklearn.datasets import load_digits
+mnist = load_digits()
+X = mnist.data
+y = mnist.target
+images = mnist.images
+
+fig, axes = plt.subplots(2, 10, figsize=(16, 6))
+for i in range(20):
+    axes[i//10, i %10].imshow(images[i], cmap='gray');
+    axes[i//10, i %10].axis('off')
+    axes[i//10, i %10].set_title(f"target: {y[i]}")
+    
+plt.tight_layout()
+
+```
+
+## MINST Data
+
+
+```{python}
+#| echo: true
+#| code-fold: true
+pd.DataFrame(X)
+```
+
+
+
+
+
 
