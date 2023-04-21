@@ -891,9 +891,823 @@ Dr.&nbsp;Jeremy Castagno
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="wine-data-set" class="title-slide slide level1 center">
+<h1>Wine Data Set</h1>
 
-<p><img src="../images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+</section>
+<section id="the-data" class="slide level2">
+<h2>The Data</h2>
+<div class="cell" data-execution_count="10">
+<div class="cell-output cell-output-stdout">
+<pre><code>Features: ['Alcohol', 'Malic acid', 'Ash', 'Alcalinity of ash', 'Magnesium', 'Total phenols', 'Flavanoids', 'Nonflavanoid phenols', 'Proanthocyanins', 'Color intensity', 'Hue', 'OD280/OD315 of diluted wines', 'Proline']
+Classes: (array([1, 2, 3]), array([59, 71, 48]))</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>group</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>14.23</td>
+      <td>1.71</td>
+      <td>2.43</td>
+      <td>15.60</td>
+      <td>127</td>
+      <td>2.80</td>
+      <td>3.06</td>
+      <td>0.28</td>
+      <td>2.29</td>
+      <td>5.64</td>
+      <td>1.04</td>
+      <td>3.92</td>
+      <td>1065</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>13.20</td>
+      <td>1.78</td>
+      <td>2.14</td>
+      <td>11.20</td>
+      <td>100</td>
+      <td>2.65</td>
+      <td>2.76</td>
+      <td>0.26</td>
+      <td>1.28</td>
+      <td>4.38</td>
+      <td>1.05</td>
+      <td>3.40</td>
+      <td>1050</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>13.16</td>
+      <td>2.36</td>
+      <td>2.67</td>
+      <td>18.60</td>
+      <td>101</td>
+      <td>2.80</td>
+      <td>3.24</td>
+      <td>0.30</td>
+      <td>2.81</td>
+      <td>5.68</td>
+      <td>1.03</td>
+      <td>3.17</td>
+      <td>1185</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>14.37</td>
+      <td>1.95</td>
+      <td>2.50</td>
+      <td>16.80</td>
+      <td>113</td>
+      <td>3.85</td>
+      <td>3.49</td>
+      <td>0.24</td>
+      <td>2.18</td>
+      <td>7.80</td>
+      <td>0.86</td>
+      <td>3.45</td>
+      <td>1480</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>13.24</td>
+      <td>2.59</td>
+      <td>2.87</td>
+      <td>21.00</td>
+      <td>118</td>
+      <td>2.80</td>
+      <td>2.69</td>
+      <td>0.39</td>
+      <td>1.82</td>
+      <td>4.32</td>
+      <td>1.04</td>
+      <td>2.93</td>
+      <td>735</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Can we visualize this data? Why or why not?</p>
+</section>
+<section id="split-data-and-scale" class="slide level2">
+<h2>Split Data and Scale</h2>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb15-2"><a href="#cb15-2"></a></span>
+<span id="cb15-3"><a href="#cb15-3"></a>df_train, df_test <span class="op">=</span> train_test_split(</span>
+<span id="cb15-4"><a href="#cb15-4"></a>    df, test_size<span class="op">=</span><span class="fl">0.30</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb15-5"><a href="#cb15-5"></a></span>
+<span id="cb15-6"><a href="#cb15-6"></a>y_train <span class="op">=</span> df_train[<span class="st">'group'</span>]</span>
+<span id="cb15-7"><a href="#cb15-7"></a>y_test <span class="op">=</span> df_test[<span class="st">'group'</span>]</span>
+<span id="cb15-8"><a href="#cb15-8"></a></span>
+<span id="cb15-9"><a href="#cb15-9"></a>scaler <span class="op">=</span> StandardScaler().set_output(transform<span class="op">=</span><span class="st">"pandas"</span>)</span>
+<span id="cb15-10"><a href="#cb15-10"></a>scaled_X_train <span class="op">=</span> scaler.fit_transform(df_train.iloc[:, <span class="dv">1</span>:])</span>
+<span id="cb15-11"><a href="#cb15-11"></a>scaled_X_test <span class="op">=</span> scaler.fit_transform(df_test.iloc[:, <span class="dv">1</span>:])</span>
+<span id="cb15-12"><a href="#cb15-12"></a>scaled_X_train.head()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="11">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x0</th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+      <th>x4</th>
+      <th>x5</th>
+      <th>x6</th>
+      <th>x7</th>
+      <th>x8</th>
+      <th>x9</th>
+      <th>x10</th>
+      <th>x11</th>
+      <th>x12</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>22</th>
+      <td>0.91</td>
+      <td>-0.46</td>
+      <td>-0.01</td>
+      <td>-0.82</td>
+      <td>0.06</td>
+      <td>0.59</td>
+      <td>0.94</td>
+      <td>-0.76</td>
+      <td>0.13</td>
+      <td>-0.51</td>
+      <td>0.66</td>
+      <td>1.94</td>
+      <td>0.94</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>-0.96</td>
+      <td>-0.97</td>
+      <td>-1.54</td>
+      <td>-0.15</td>
+      <td>-0.55</td>
+      <td>0.17</td>
+      <td>0.07</td>
+      <td>0.21</td>
+      <td>0.78</td>
+      <td>-0.98</td>
+      <td>-0.41</td>
+      <td>0.58</td>
+      <td>-1.41</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>0.36</td>
+      <td>1.68</td>
+      <td>-0.37</td>
+      <td>0.13</td>
+      <td>1.36</td>
+      <td>-1.12</td>
+      <td>-1.31</td>
+      <td>0.53</td>
+      <td>-0.44</td>
+      <td>2.22</td>
+      <td>-1.56</td>
+      <td>-1.45</td>
+      <td>0.29</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>0.22</td>
+      <td>1.05</td>
+      <td>-0.77</td>
+      <td>0.41</td>
+      <td>0.13</td>
+      <td>-1.27</td>
+      <td>-1.46</td>
+      <td>0.53</td>
+      <td>-0.52</td>
+      <td>-0.43</td>
+      <td>-1.52</td>
+      <td>-1.28</td>
+      <td>0.27</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>1.10</td>
+      <td>-0.77</td>
+      <td>1.11</td>
+      <td>1.54</td>
+      <td>-0.96</td>
+      <td>1.16</td>
+      <td>0.92</td>
+      <td>-1.25</td>
+      <td>0.43</td>
+      <td>-0.69</td>
+      <td>1.72</td>
+      <td>0.78</td>
+      <td>-1.09</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(z = (x - \mu) / \sigma\)</span></p>
+</section>
+<section id="pca-1" class="slide level2">
+<h2>PCA</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a>X_train_pca <span class="op">=</span> pca.fit_transform(scaled_X_train)</span>
+<span id="cb16-3"><a href="#cb16-3"></a>plt.scatter(X_train_pca[:, <span class="dv">0</span>], X_train_pca[:,<span class="dv">1</span>], c<span class="op">=</span>y_train, cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-24_files/figure-revealjs/cell-13-output-1.png" width="805" height="419"></p>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="cell" data-execution_count="13">
+<div class="cell-output cell-output-stdout">
+<pre><code>[[2.6 -0.0]
+ [0.2 2.3]
+ [-2.6 -2.7]
+ [-2.5 -0.5]
+ [1.7 0.9]
+ [-2.8 -0.4]
+ [-2.8 -2.0]
+ [1.4 -0.0]
+ [-2.5 0.1]
+ [-2.3 0.4]
+ [1.1 2.4]
+ [-2.3 1.1]
+ [-2.5 -0.6]
+ [0.2 1.1]
+ [2.5 -1.1]
+ [-0.7 2.8]
+ [2.5 0.2]
+ [-0.6 0.7]
+ [0.5 -0.4]
+ [3.6 -1.4]
+ [1.6 1.5]
+ [2.5 0.1]
+ [-3.6 -0.9]
+ [-1.6 -2.4]
+ [1.5 1.4]
+ [0.0 2.0]
+ [-0.2 2.8]
+ [-2.4 -2.5]
+ [-3.1 0.3]
+ [3.3 -0.4]
+ [-3.5 -1.8]
+ [-0.5 2.6]
+ [-0.6 2.0]
+ [-1.2 0.8]
+ [1.0 1.4]
+ [2.0 1.6]
+ [2.8 -1.9]
+ [2.1 -1.3]
+ [0.8 2.0]
+ [3.5 -1.4]
+ [-3.8 -0.1]
+ [1.7 0.5]
+ [-3.4 -0.9]
+ [3.1 -0.8]
+ [2.3 -1.7]
+ [1.3 0.9]
+ [3.6 -1.8]
+ [0.9 2.3]
+ [0.5 2.0]
+ [3.8 -2.9]
+ [-2.4 -2.2]
+ [-1.6 1.4]
+ [2.5 -1.3]
+ [-0.7 0.2]
+ [-0.8 2.4]
+ [0.8 1.5]
+ [-1.3 -0.0]
+ [2.2 -0.9]
+ [-3.9 -0.5]
+ [-1.8 -1.3]
+ [4.4 -2.3]
+ [3.3 -1.4]
+ [-1.5 1.9]
+ [-2.7 -2.2]
+ [2.8 -1.4]
+ [1.9 -0.7]
+ [-0.5 2.2]
+ [-0.1 1.2]
+ [2.0 -0.2]
+ [2.2 -1.3]
+ [0.8 -0.3]
+ [-3.3 -2.2]
+ [0.9 0.8]
+ [2.3 0.1]
+ [0.8 1.4]
+ [-2.3 -0.6]
+ [3.1 -1.3]
+ [-1.7 1.8]
+ [-2.9 -0.2]
+ [-2.7 -0.3]
+ [1.9 -1.6]
+ [1.6 0.6]
+ [-2.0 -0.3]
+ [2.3 -1.9]
+ [-2.3 -0.2]
+ [-0.4 2.0]
+ [1.4 -0.7]
+ [2.2 -0.7]
+ [-0.4 1.9]
+ [2.8 -1.5]
+ [-2.8 -1.9]
+ [-1.6 1.4]
+ [-3.4 -1.1]
+ [1.7 -0.1]
+ [-2.9 -0.4]
+ [-2.3 -2.2]
+ [-3.5 -1.3]
+ [2.3 -0.3]
+ [1.5 2.1]
+ [-0.4 2.4]
+ [0.4 1.1]
+ [0.5 3.9]
+ [-2.7 -1.6]
+ [-3.2 -2.7]
+ [-0.6 1.0]
+ [-1.4 1.5]
+ [0.9 -0.7]
+ [1.1 1.3]
+ [-2.8 -1.3]
+ [-2.4 -2.4]
+ [2.5 -1.9]
+ [3.2 -1.8]
+ [-2.7 -0.2]
+ [-1.1 1.8]
+ [-1.5 1.0]
+ [-0.5 2.5]
+ [1.4 -0.7]
+ [1.1 -0.2]
+ [2.8 -1.0]
+ [-0.5 2.6]
+ [0.3 2.3]
+ [-0.1 2.0]
+ [2.9 -0.8]
+ [-2.4 -2.2]]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="separate-with-logistic-regression" class="slide level2">
+<h2>Separate with Logistic Regression</h2>
+<div class="cell" data-execution_count="14">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">from</span> sklearn.inspection <span class="im">import</span> DecisionBoundaryDisplay</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb18-3"><a href="#cb18-3"></a></span>
+<span id="cb18-4"><a href="#cb18-4"></a>model <span class="op">=</span> LogisticRegression(C<span class="op">=</span><span class="fl">1e5</span>)</span>
+<span id="cb18-5"><a href="#cb18-5"></a>model.fit(X_train_pca, y_train)</span>
+<span id="cb18-6"><a href="#cb18-6"></a></span>
+<span id="cb18-7"><a href="#cb18-7"></a>disp <span class="op">=</span> DecisionBoundaryDisplay.from_estimator(</span>
+<span id="cb18-8"><a href="#cb18-8"></a>    model, X_train_pca, response_method<span class="op">=</span><span class="st">"predict"</span>, cmap<span class="op">=</span>plt.cm.viridis, alpha<span class="op">=</span><span class="fl">0.5</span>, xlabel<span class="op">=</span><span class="st">'PC1'</span>, ylabel<span class="op">=</span><span class="st">'PC2'</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a>)</span>
+<span id="cb18-10"><a href="#cb18-10"></a>disp.ax_.scatter(X_train_pca[:, <span class="dv">0</span>], X_train_pca[:,<span class="dv">1</span>], c<span class="op">=</span>y_train, cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolor<span class="op">=</span><span class="st">'k'</span>)<span class="op">;</span></span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-24_files/figure-revealjs/cell-15-output-1.png" width="832" height="445"></p>
+</div>
+</div>
+</section>
+<section id="why-is-this-a-big-deal" class="slide level2">
+<h2>Why is this a big deal?</h2>
+<ul>
+<li>We just separated this think with only <strong>2</strong> dimensions! We started with 13 Dimensions</li>
+<li>Remember we did <strong>not</strong> reduce features. We <strong>extracted</strong> two new features, PC1 and PC2 that best expalin the data</li>
+<li>PC1 is a combination of meany of the 13 features</li>
+</ul>
+<div class="cell" data-execution_count="15">
+<div class="cell-output cell-output-stdout">
+<pre><code>PC1 : [0.1 -0.2 -0.0 -0.3 0.1 0.4 0.4 -0.3 0.3 -0.1 0.3 0.4 0.3]</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="even-higher-dimensions-images" class="title-slide slide level1 center">
+<h1>Even higher Dimensions (IMAGES!)</h1>
+
+</section>
+<section id="mnist-digits---8-x-8-images" class="slide level2">
+<h2>MNIST Digits - 8 X 8 Images</h2>
+<div class="cell" data-execution_count="16">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_digits</span>
+<span id="cb20-2"><a href="#cb20-2"></a>mnist <span class="op">=</span> load_digits()</span>
+<span id="cb20-3"><a href="#cb20-3"></a>X <span class="op">=</span> mnist.data</span>
+<span id="cb20-4"><a href="#cb20-4"></a>y <span class="op">=</span> mnist.target</span>
+<span id="cb20-5"><a href="#cb20-5"></a>images <span class="op">=</span> mnist.images</span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">10</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">6</span>))</span>
+<span id="cb20-8"><a href="#cb20-8"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
+<span id="cb20-9"><a href="#cb20-9"></a>    axes[i<span class="op">//</span><span class="dv">10</span>, i <span class="op">%</span><span class="dv">10</span>].imshow(images[i], cmap<span class="op">=</span><span class="st">'gray'</span>)<span class="op">;</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a>    axes[i<span class="op">//</span><span class="dv">10</span>, i <span class="op">%</span><span class="dv">10</span>].axis(<span class="st">'off'</span>)</span>
+<span id="cb20-11"><a href="#cb20-11"></a>    axes[i<span class="op">//</span><span class="dv">10</span>, i <span class="op">%</span><span class="dv">10</span>].set_title(<span class="ss">f"target: </span><span class="sc">{</span>y[i]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-12"><a href="#cb20-12"></a>    </span>
+<span id="cb20-13"><a href="#cb20-13"></a>plt.tight_layout()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img data-src="lec-24_files/figure-revealjs/cell-17-output-1.png" width="1509" height="415"></p>
+</div>
+</div>
+</section>
+<section id="minst-data" class="slide level2">
+<h2>MINST Data</h2>
+<div class="cell" data-execution_count="17">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>pd.DataFrame(X)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="17">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>54</th>
+      <th>55</th>
+      <th>56</th>
+      <th>57</th>
+      <th>58</th>
+      <th>59</th>
+      <th>60</th>
+      <th>61</th>
+      <th>62</th>
+      <th>63</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>5.00</td>
+      <td>13.00</td>
+      <td>9.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>6.00</td>
+      <td>13.00</td>
+      <td>10.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>12.00</td>
+      <td>13.00</td>
+      <td>5.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>11.00</td>
+      <td>16.00</td>
+      <td>10.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.00</td>
+      <td>15.00</td>
+      <td>12.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>5.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>3.00</td>
+      <td>11.00</td>
+      <td>16.00</td>
+      <td>9.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>7.00</td>
+      <td>15.00</td>
+      <td>13.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>8.00</td>
+      <td>...</td>
+      <td>9.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>7.00</td>
+      <td>13.00</td>
+      <td>13.00</td>
+      <td>9.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>11.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.00</td>
+      <td>16.00</td>
+      <td>4.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1792</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>4.00</td>
+      <td>10.00</td>
+      <td>13.00</td>
+      <td>6.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>...</td>
+      <td>4.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.00</td>
+      <td>14.00</td>
+      <td>15.00</td>
+      <td>9.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1793</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>6.00</td>
+      <td>16.00</td>
+      <td>13.00</td>
+      <td>11.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>6.00</td>
+      <td>16.00</td>
+      <td>14.00</td>
+      <td>6.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1794</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>11.00</td>
+      <td>15.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.00</td>
+      <td>9.00</td>
+      <td>13.00</td>
+      <td>6.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1795</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.00</td>
+      <td>10.00</td>
+      <td>7.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>2.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>5.00</td>
+      <td>12.00</td>
+      <td>16.00</td>
+      <td>12.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1796</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>10.00</td>
+      <td>14.00</td>
+      <td>8.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>2.00</td>
+      <td>...</td>
+      <td>8.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>1.00</td>
+      <td>8.00</td>
+      <td>12.00</td>
+      <td>14.00</td>
+      <td>12.00</td>
+      <td>1.00</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+<p>1797 rows × 64 columns</p>
+</div>
+</div>
+</div>
+
+
+<img src="../images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://jeremybyu.github.io/intro-ds-website/">https://jeremybyu.github.io/intro-ds-website</a></p>
 </div>
 </section></section>

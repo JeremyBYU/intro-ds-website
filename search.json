@@ -816,7 +816,56 @@
     "href": "slides/lec-24.html#pca",
     "title": "CISC482 - Lecture24",
     "section": "PCA",
-    "text": "PCA\n\n\n\nCode\nfrom sklearn.decomposition import PCA\npca = PCA(n_components=1)\n# fit and transform data\nX_pca = pca.fit_transform(X)\nprint(X_pca.shape)\nX_comp = pca.inverse_transform(X_pca)\n\nfig = plt.figure()\nax = fig.add_subplot(projection='3d')\n\nax.scatter(x, y, z, marker='o', label='Raw')\nax.scatter(X_comp[:, 0], X_comp[:, 1], X_comp[:, 2], marker='x', label='compressed')\nax.set_xlabel('X Label')\nax.set_ylabel('Y Label')\nax.set_zlabel('Z Label')\n\n\n\n(10, 1)\n\n\nText(0.5, 0, 'Z Label')\n\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "PCA\n\n\n\nCode\nfrom sklearn.decomposition import PCA\npca = PCA(n_components=1)\n# fit and transform data\nX_pca = pca.fit_transform(X)\nprint(X_pca.shape)\nX_comp = pca.inverse_transform(X_pca)\n\nfig = plt.figure()\nax = fig.add_subplot(projection='3d')\n\nax.scatter(x, y, z, marker='o', label='Raw')\nax.scatter(X_comp[:, 0], X_comp[:, 1], X_comp[:, 2], marker='x', label='compressed')\nax.set_xlabel('X Label')\nax.set_ylabel('Y Label')\nax.set_zlabel('Z Label')\n\n\n\n(10, 1)\n\n\nText(0.5, 0, 'Z Label')"
+  },
+  {
+    "objectID": "slides/lec-24.html#the-data",
+    "href": "slides/lec-24.html#the-data",
+    "title": "CISC482 - Lecture24",
+    "section": "The Data",
+    "text": "The Data\n\n\nFeatures: ['Alcohol', 'Malic acid', 'Ash', 'Alcalinity of ash', 'Magnesium', 'Total phenols', 'Flavanoids', 'Nonflavanoid phenols', 'Proanthocyanins', 'Color intensity', 'Hue', 'OD280/OD315 of diluted wines', 'Proline']\nClasses: (array([1, 2, 3]), array([59, 71, 48]))\n\n\n\n\n\n\n  \n    \n      \n      group\n      1\n      2\n      3\n      4\n      5\n      6\n      7\n      8\n      9\n      10\n      11\n      12\n      13\n    \n  \n  \n    \n      0\n      1\n      14.23\n      1.71\n      2.43\n      15.60\n      127\n      2.80\n      3.06\n      0.28\n      2.29\n      5.64\n      1.04\n      3.92\n      1065\n    \n    \n      1\n      1\n      13.20\n      1.78\n      2.14\n      11.20\n      100\n      2.65\n      2.76\n      0.26\n      1.28\n      4.38\n      1.05\n      3.40\n      1050\n    \n    \n      2\n      1\n      13.16\n      2.36\n      2.67\n      18.60\n      101\n      2.80\n      3.24\n      0.30\n      2.81\n      5.68\n      1.03\n      3.17\n      1185\n    \n    \n      3\n      1\n      14.37\n      1.95\n      2.50\n      16.80\n      113\n      3.85\n      3.49\n      0.24\n      2.18\n      7.80\n      0.86\n      3.45\n      1480\n    \n    \n      4\n      1\n      13.24\n      2.59\n      2.87\n      21.00\n      118\n      2.80\n      2.69\n      0.39\n      1.82\n      4.32\n      1.04\n      2.93\n      735\n    \n  \n\n\n\n\nCan we visualize this data? Why or why not?"
+  },
+  {
+    "objectID": "slides/lec-24.html#split-data-and-scale",
+    "href": "slides/lec-24.html#split-data-and-scale",
+    "title": "CISC482 - Lecture24",
+    "section": "Split Data and Scale",
+    "text": "Split Data and Scale\n\n\nCode\nfrom sklearn.preprocessing import StandardScaler\n\ndf_train, df_test = train_test_split(\n    df, test_size=0.30, random_state=0)\n\ny_train = df_train['group']\ny_test = df_test['group']\n\nscaler = StandardScaler().set_output(transform=\"pandas\")\nscaled_X_train = scaler.fit_transform(df_train.iloc[:, 1:])\nscaled_X_test = scaler.fit_transform(df_test.iloc[:, 1:])\nscaled_X_train.head()\n\n\n\n\n\n\n  \n    \n      \n      x0\n      x1\n      x2\n      x3\n      x4\n      x5\n      x6\n      x7\n      x8\n      x9\n      x10\n      x11\n      x12\n    \n  \n  \n    \n      22\n      0.91\n      -0.46\n      -0.01\n      -0.82\n      0.06\n      0.59\n      0.94\n      -0.76\n      0.13\n      -0.51\n      0.66\n      1.94\n      0.94\n    \n    \n      108\n      -0.96\n      -0.97\n      -1.54\n      -0.15\n      -0.55\n      0.17\n      0.07\n      0.21\n      0.78\n      -0.98\n      -0.41\n      0.58\n      -1.41\n    \n    \n      175\n      0.36\n      1.68\n      -0.37\n      0.13\n      1.36\n      -1.12\n      -1.31\n      0.53\n      -0.44\n      2.22\n      -1.56\n      -1.45\n      0.29\n    \n    \n      145\n      0.22\n      1.05\n      -0.77\n      0.41\n      0.13\n      -1.27\n      -1.46\n      0.53\n      -0.52\n      -0.43\n      -1.52\n      -1.28\n      0.27\n    \n    \n      71\n      1.10\n      -0.77\n      1.11\n      1.54\n      -0.96\n      1.16\n      0.92\n      -1.25\n      0.43\n      -0.69\n      1.72\n      0.78\n      -1.09\n    \n  \n\n\n\n\n\\(z = (x - \\mu) / \\sigma\\)"
+  },
+  {
+    "objectID": "slides/lec-24.html#pca-1",
+    "href": "slides/lec-24.html#pca-1",
+    "title": "CISC482 - Lecture24",
+    "section": "PCA",
+    "text": "PCA\n\n\n\n\nCode\npca = PCA(n_components=2)\nX_train_pca = pca.fit_transform(scaled_X_train)\nplt.scatter(X_train_pca[:, 0], X_train_pca[:,1], c=y_train, cmap='viridis', edgecolor='k');\n\n\n\n\n\n\n\n\n[[2.6 -0.0]\n [0.2 2.3]\n [-2.6 -2.7]\n [-2.5 -0.5]\n [1.7 0.9]\n [-2.8 -0.4]\n [-2.8 -2.0]\n [1.4 -0.0]\n [-2.5 0.1]\n [-2.3 0.4]\n [1.1 2.4]\n [-2.3 1.1]\n [-2.5 -0.6]\n [0.2 1.1]\n [2.5 -1.1]\n [-0.7 2.8]\n [2.5 0.2]\n [-0.6 0.7]\n [0.5 -0.4]\n [3.6 -1.4]\n [1.6 1.5]\n [2.5 0.1]\n [-3.6 -0.9]\n [-1.6 -2.4]\n [1.5 1.4]\n [0.0 2.0]\n [-0.2 2.8]\n [-2.4 -2.5]\n [-3.1 0.3]\n [3.3 -0.4]\n [-3.5 -1.8]\n [-0.5 2.6]\n [-0.6 2.0]\n [-1.2 0.8]\n [1.0 1.4]\n [2.0 1.6]\n [2.8 -1.9]\n [2.1 -1.3]\n [0.8 2.0]\n [3.5 -1.4]\n [-3.8 -0.1]\n [1.7 0.5]\n [-3.4 -0.9]\n [3.1 -0.8]\n [2.3 -1.7]\n [1.3 0.9]\n [3.6 -1.8]\n [0.9 2.3]\n [0.5 2.0]\n [3.8 -2.9]\n [-2.4 -2.2]\n [-1.6 1.4]\n [2.5 -1.3]\n [-0.7 0.2]\n [-0.8 2.4]\n [0.8 1.5]\n [-1.3 -0.0]\n [2.2 -0.9]\n [-3.9 -0.5]\n [-1.8 -1.3]\n [4.4 -2.3]\n [3.3 -1.4]\n [-1.5 1.9]\n [-2.7 -2.2]\n [2.8 -1.4]\n [1.9 -0.7]\n [-0.5 2.2]\n [-0.1 1.2]\n [2.0 -0.2]\n [2.2 -1.3]\n [0.8 -0.3]\n [-3.3 -2.2]\n [0.9 0.8]\n [2.3 0.1]\n [0.8 1.4]\n [-2.3 -0.6]\n [3.1 -1.3]\n [-1.7 1.8]\n [-2.9 -0.2]\n [-2.7 -0.3]\n [1.9 -1.6]\n [1.6 0.6]\n [-2.0 -0.3]\n [2.3 -1.9]\n [-2.3 -0.2]\n [-0.4 2.0]\n [1.4 -0.7]\n [2.2 -0.7]\n [-0.4 1.9]\n [2.8 -1.5]\n [-2.8 -1.9]\n [-1.6 1.4]\n [-3.4 -1.1]\n [1.7 -0.1]\n [-2.9 -0.4]\n [-2.3 -2.2]\n [-3.5 -1.3]\n [2.3 -0.3]\n [1.5 2.1]\n [-0.4 2.4]\n [0.4 1.1]\n [0.5 3.9]\n [-2.7 -1.6]\n [-3.2 -2.7]\n [-0.6 1.0]\n [-1.4 1.5]\n [0.9 -0.7]\n [1.1 1.3]\n [-2.8 -1.3]\n [-2.4 -2.4]\n [2.5 -1.9]\n [3.2 -1.8]\n [-2.7 -0.2]\n [-1.1 1.8]\n [-1.5 1.0]\n [-0.5 2.5]\n [1.4 -0.7]\n [1.1 -0.2]\n [2.8 -1.0]\n [-0.5 2.6]\n [0.3 2.3]\n [-0.1 2.0]\n [2.9 -0.8]\n [-2.4 -2.2]]"
+  },
+  {
+    "objectID": "slides/lec-24.html#separate-with-logistic-regression",
+    "href": "slides/lec-24.html#separate-with-logistic-regression",
+    "title": "CISC482 - Lecture24",
+    "section": "Separate with Logistic Regression",
+    "text": "Separate with Logistic Regression\n\n\nCode\nfrom sklearn.inspection import DecisionBoundaryDisplay\nfrom sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression(C=1e5)\nmodel.fit(X_train_pca, y_train)\n\ndisp = DecisionBoundaryDisplay.from_estimator(\n    model, X_train_pca, response_method=\"predict\", cmap=plt.cm.viridis, alpha=0.5, xlabel='PC1', ylabel='PC2'\n)\ndisp.ax_.scatter(X_train_pca[:, 0], X_train_pca[:,1], c=y_train, cmap='viridis', edgecolor='k');"
+  },
+  {
+    "objectID": "slides/lec-24.html#why-is-this-a-big-deal",
+    "href": "slides/lec-24.html#why-is-this-a-big-deal",
+    "title": "CISC482 - Lecture24",
+    "section": "Why is this a big deal?",
+    "text": "Why is this a big deal?\n\nWe just separated this think with only 2 dimensions! We started with 13 Dimensions\nRemember we did not reduce features. We extracted two new features, PC1 and PC2 that best expalin the data\nPC1 is a combination of meany of the 13 features\n\n\n\nPC1 : [0.1 -0.2 -0.0 -0.3 0.1 0.4 0.4 -0.3 0.3 -0.1 0.3 0.4 0.3]"
+  },
+  {
+    "objectID": "slides/lec-24.html#mnist-digits---8-x-8-images",
+    "href": "slides/lec-24.html#mnist-digits---8-x-8-images",
+    "title": "CISC482 - Lecture24",
+    "section": "MNIST Digits - 8 X 8 Images",
+    "text": "MNIST Digits - 8 X 8 Images\n\n\nCode\nfrom sklearn.datasets import load_digits\nmnist = load_digits()\nX = mnist.data\ny = mnist.target\nimages = mnist.images\n\nfig, axes = plt.subplots(2, 10, figsize=(16, 6))\nfor i in range(20):\n    axes[i//10, i %10].imshow(images[i], cmap='gray');\n    axes[i//10, i %10].axis('off')\n    axes[i//10, i %10].set_title(f\"target: {y[i]}\")\n    \nplt.tight_layout()"
+  },
+  {
+    "objectID": "slides/lec-24.html#minst-data",
+    "href": "slides/lec-24.html#minst-data",
+    "title": "CISC482 - Lecture24",
+    "section": "MINST Data",
+    "text": "MINST Data\n\n\nCode\npd.DataFrame(X)\n\n\n\n\n\n\n  \n    \n      \n      0\n      1\n      2\n      3\n      4\n      5\n      6\n      7\n      8\n      9\n      ...\n      54\n      55\n      56\n      57\n      58\n      59\n      60\n      61\n      62\n      63\n    \n  \n  \n    \n      0\n      0.00\n      0.00\n      5.00\n      13.00\n      9.00\n      1.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      6.00\n      13.00\n      10.00\n      0.00\n      0.00\n      0.00\n    \n    \n      1\n      0.00\n      0.00\n      0.00\n      12.00\n      13.00\n      5.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      11.00\n      16.00\n      10.00\n      0.00\n      0.00\n    \n    \n      2\n      0.00\n      0.00\n      0.00\n      4.00\n      15.00\n      12.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      5.00\n      0.00\n      0.00\n      0.00\n      0.00\n      3.00\n      11.00\n      16.00\n      9.00\n      0.00\n    \n    \n      3\n      0.00\n      0.00\n      7.00\n      15.00\n      13.00\n      1.00\n      0.00\n      0.00\n      0.00\n      8.00\n      ...\n      9.00\n      0.00\n      0.00\n      0.00\n      7.00\n      13.00\n      13.00\n      9.00\n      0.00\n      0.00\n    \n    \n      4\n      0.00\n      0.00\n      0.00\n      1.00\n      11.00\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      2.00\n      16.00\n      4.00\n      0.00\n      0.00\n    \n    \n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n    \n    \n      1792\n      0.00\n      0.00\n      4.00\n      10.00\n      13.00\n      6.00\n      0.00\n      0.00\n      0.00\n      1.00\n      ...\n      4.00\n      0.00\n      0.00\n      0.00\n      2.00\n      14.00\n      15.00\n      9.00\n      0.00\n      0.00\n    \n    \n      1793\n      0.00\n      0.00\n      6.00\n      16.00\n      13.00\n      11.00\n      1.00\n      0.00\n      0.00\n      0.00\n      ...\n      1.00\n      0.00\n      0.00\n      0.00\n      6.00\n      16.00\n      14.00\n      6.00\n      0.00\n      0.00\n    \n    \n      1794\n      0.00\n      0.00\n      1.00\n      11.00\n      15.00\n      1.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      2.00\n      9.00\n      13.00\n      6.00\n      0.00\n      0.00\n    \n    \n      1795\n      0.00\n      0.00\n      2.00\n      10.00\n      7.00\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      2.00\n      0.00\n      0.00\n      0.00\n      5.00\n      12.00\n      16.00\n      12.00\n      0.00\n      0.00\n    \n    \n      1796\n      0.00\n      0.00\n      10.00\n      14.00\n      8.00\n      1.00\n      0.00\n      0.00\n      0.00\n      2.00\n      ...\n      8.00\n      0.00\n      0.00\n      1.00\n      8.00\n      12.00\n      14.00\n      12.00\n      1.00\n      0.00\n    \n  \n\n1797 rows × 64 columns\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-07.html#schedule",
@@ -2132,7 +2181,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f4d48f406a0>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fa2843a1480>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3259,7 +3308,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f039c6775e0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f7ba1ce9600>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -4036,7 +4085,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'The', 'Folgers', 'best', 'teacher', 'up', 'is', 'to', 'all', 'a', 'I', 'in', 'You', 'am', 'Fill', 'be', 'so', 'great', 'Folgers.', 'part', 'proud', 'your', 'with', 'cup', 'waking', 'are', 'cup.', 'students!', 'of'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'You', 'great', 'of', 'to', 'Folgers.', 'cup', 'Folgers', 'all', 'students!', 'best', 'in', 'proud', 'cup.', 'teacher', 'waking', 'is', 'part', 'your', 'up', 'a', 'I', 'Fill', 'be', 'so', 'The', 'are', 'am', 'with'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
