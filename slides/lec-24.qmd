@@ -173,3 +173,140 @@ Complete Linkage?
 
 
 ## Terms
+
+- **Principal component analysis**, or PCA, is a **dimensionality** reduction technique.
+- It can be used to **compress** data. 
+- Lets say we have $n=10$ points that such that  $x \in\mathbf{R}^2$ 
+- PCA *can* reduce the data be $n=10$ points inside $R^{1}$
+- It does this by finding the component, or feature *vector* that contains the largest variability
+- Lets looks at an example
+
+
+## Example 1 Start
+
+![](./lec24_images/pca_example1.png)
+
+Find me a **vector** or **axis** that when you project the data to it maximizes the variance 
+
+## Projection
+
+![](./lec24_images/projection.png)
+
+## Example 1 Animation
+
+
+![](./lec24_images/pca_anim.gif)
+
+
+## Example 2 Start
+
+
+::: columns
+
+::: {.column width="70%"}
+
+```{python}
+#| echo: true
+#| code-fold: true
+x = np.arange(0, 10) + np.random.randn(10) * 0.1
+y = x * 1 + np.random.randn(10) * 0.3
+sns.scatterplot(x=x,y=y)
+```
+:::
+
+::: {.column width="30%"}
+
+Find me a **vector** or **axis** that when you project the data to it maximizes the variance 
+
+:::
+
+:::
+
+## Example 2 - First Principle Component
+
+
+::: columns
+
+::: {.column width="70%"}
+
+```{python}
+#| echo: true
+#| code-fold: true
+x = np.arange(0, 10) + np.random.randn(10) * 0.1
+y = x * 1 + np.random.randn(10) * 0.3
+ax = sns.scatterplot(x=x,y=y)
+ax.plot([0, 10], [0, 10], ls='dashed', c='r')
+```
+:::
+
+::: {.column width="30%"}
+
+Do you see how this vector will maximize the variance? The vector is $[1, 1]$ or $[.707, .707]$ when normalized. 
+
+:::
+
+:::
+
+## Intuition
+
+![](./lec24_images/pca_intuition.png)
+
+
+## Back to Example 2
+
+::: columns
+
+::: {.column width="50%"}
+```{python}
+#| echo: true
+#| code-fold: true
+X = np.column_stack([x, y])
+df = pd.DataFrame(X, columns=['x', 'y'])
+df
+```
+:::
+
+::: {.column width="50%"}
+
+::: fragment
+```{python}
+#| echo: true
+#| code-fold: true
+
+pc1 = np.array([[.707], [.707]])
+print(f"PC1 = {pc1.flatten()}")
+pc1_vals = X @ pc1
+df = pd.DataFrame(pc1_vals, columns=['PC1'])
+df
+```
+:::
+:::
+
+:::
+
+
+## Compression from Example 2
+
+::: columns
+
+::: {.column width="50%"}
+```{python}
+#| echo: true
+#| code-fold: true
+sns.scatterplot(x=x,y=y, label="Raw");
+```
+:::
+
+::: {.column width="50%"}
+
+```{python}
+#| echo: true
+#| code-fold: true
+points = pc1.flatten() * pc1_vals
+ax = sns.scatterplot(x=x,y=y, label='Raw')
+ax.scatter(x=points[:, 0],y=points[:, 1], label='Compressed')
+plt.legend();
+```
+:::
+
+:::
