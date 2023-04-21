@@ -46,6 +46,41 @@ font = {'family' : 'normal',
 matplotlib.rc('font', **font)
 ```
 
+
+```{python}
+def show_images_by_digit(digit_to_see, images, y):
+    if digit_to_see in list(range(10)):
+        indices = np.where(y == digit_to_see) # pull indices for num of interest
+        for digit_num in range(0,50): 
+            plt.subplot(5,10, digit_num+1) #create subplots
+            #reshape images
+            image = images[indices][digit_num]
+            if image.shape != (8,8):
+              image = image.reshape(8,8)
+            plt.imshow(image, cmap='gray') #plot the data
+            plt.xticks([]) #removes numbered labels on x-axis
+            plt.yticks([]) #removes numbered labels on y-axis
+
+```
+
+
+```{python}
+
+def plot_components(X, y):
+    x_min, x_max = np.min(X, 0), np.max(X, 0)
+    X = (X - x_min) / (x_max - x_min)
+    plt.figure(figsize=(10, 6))
+    for i in range(X.shape[0]):
+        plt.text(X[i, 0], X[i, 1], str(y[i]), 
+                 color=plt.cm.Set1(y[i]), 
+                 fontdict={'size': 15})
+
+    plt.xticks([]), plt.yticks([]), plt.ylim([-0.1,1.1]), plt.xlim([-0.1,1.1])
+    plt.xlabel("PC1")
+    plt.ylabel("PC2")
+
+```
+
 # Class Business
 
 
@@ -490,7 +525,67 @@ pd.DataFrame(X)
 ```
 
 
+## More Images - Digit 1
+
+```{python}
+show_images_by_digit(1, images, y)
+```
+
+## More Images - Digit 8
+
+```{python}
+show_images_by_digit(8, images, y)
+```
+
+## Apply PCA
 
 
+```{python}
+#| code-fold: true
+#| echo: true
+pca = PCA(n_components=64)
+pca_data = pca.fit_transform(X)
+percentage_var_explained = pca.explained_variance_ / np.sum(pca.explained_variance_)
+cum_var_explained = np.cumsum(percentage_var_explained) * 100
+
+plt.plot(range(1,65), cum_var_explained, linewidth=2)
+plt.xlabel("Number of Components")
+plt.ylabel("Cumulative Variance Explained");
+plt.xticks(np.arange(0, 64, 4));
+plt.ylim(0,100);
+```
+
+## Compression - Using 10 PC - Digit 8
 
 
+```{python}
+
+pca_2 = PCA(n_components=10)
+pca_2comp = pca_2.fit_transform(X)
+compressed_images = pca_2.inverse_transform(pca_2comp)
+
+show_images_by_digit(8, compressed_images, y)
+
+```
+
+
+## Compression - Using 2 PC - Digit 8
+
+
+```{python}
+
+pca_2 = PCA(n_components=2)
+pca_2comp = pca_2.fit_transform(X)
+compressed_images = pca_2.inverse_transform(pca_2comp)
+
+show_images_by_digit(8, compressed_images, y)
+
+```
+
+## Plot PC1 and PC2 
+
+```{python}
+pca_2comp = pca_data[:, :2]
+plot_components(pca_2comp, y)
+
+```

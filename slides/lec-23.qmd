@@ -109,7 +109,7 @@ How did it go?
 
 ![](./lec23_images/clustering.mp4){fig-align="center" width="90%"}
 
-## Types of Clustering
+## Types of Clustering {.smaller}
 
 - **Agglomerative** hierarchical clustering is a clustering method where each *sample* is treated as an individual cluster
   - If we have 100 samples, we start with 100 clusters!
