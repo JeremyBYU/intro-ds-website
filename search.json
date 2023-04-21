@@ -865,7 +865,49 @@
     "href": "slides/lec-24.html#minst-data",
     "title": "CISC482 - Lecture24",
     "section": "MINST Data",
-    "text": "MINST Data\n\n\nCode\npd.DataFrame(X)\n\n\n\n\n\n\n  \n    \n      \n      0\n      1\n      2\n      3\n      4\n      5\n      6\n      7\n      8\n      9\n      ...\n      54\n      55\n      56\n      57\n      58\n      59\n      60\n      61\n      62\n      63\n    \n  \n  \n    \n      0\n      0.00\n      0.00\n      5.00\n      13.00\n      9.00\n      1.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      6.00\n      13.00\n      10.00\n      0.00\n      0.00\n      0.00\n    \n    \n      1\n      0.00\n      0.00\n      0.00\n      12.00\n      13.00\n      5.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      11.00\n      16.00\n      10.00\n      0.00\n      0.00\n    \n    \n      2\n      0.00\n      0.00\n      0.00\n      4.00\n      15.00\n      12.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      5.00\n      0.00\n      0.00\n      0.00\n      0.00\n      3.00\n      11.00\n      16.00\n      9.00\n      0.00\n    \n    \n      3\n      0.00\n      0.00\n      7.00\n      15.00\n      13.00\n      1.00\n      0.00\n      0.00\n      0.00\n      8.00\n      ...\n      9.00\n      0.00\n      0.00\n      0.00\n      7.00\n      13.00\n      13.00\n      9.00\n      0.00\n      0.00\n    \n    \n      4\n      0.00\n      0.00\n      0.00\n      1.00\n      11.00\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      2.00\n      16.00\n      4.00\n      0.00\n      0.00\n    \n    \n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n    \n    \n      1792\n      0.00\n      0.00\n      4.00\n      10.00\n      13.00\n      6.00\n      0.00\n      0.00\n      0.00\n      1.00\n      ...\n      4.00\n      0.00\n      0.00\n      0.00\n      2.00\n      14.00\n      15.00\n      9.00\n      0.00\n      0.00\n    \n    \n      1793\n      0.00\n      0.00\n      6.00\n      16.00\n      13.00\n      11.00\n      1.00\n      0.00\n      0.00\n      0.00\n      ...\n      1.00\n      0.00\n      0.00\n      0.00\n      6.00\n      16.00\n      14.00\n      6.00\n      0.00\n      0.00\n    \n    \n      1794\n      0.00\n      0.00\n      1.00\n      11.00\n      15.00\n      1.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      2.00\n      9.00\n      13.00\n      6.00\n      0.00\n      0.00\n    \n    \n      1795\n      0.00\n      0.00\n      2.00\n      10.00\n      7.00\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      2.00\n      0.00\n      0.00\n      0.00\n      5.00\n      12.00\n      16.00\n      12.00\n      0.00\n      0.00\n    \n    \n      1796\n      0.00\n      0.00\n      10.00\n      14.00\n      8.00\n      1.00\n      0.00\n      0.00\n      0.00\n      2.00\n      ...\n      8.00\n      0.00\n      0.00\n      1.00\n      8.00\n      12.00\n      14.00\n      12.00\n      1.00\n      0.00\n    \n  \n\n1797 rows × 64 columns\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "MINST Data\n\n\nCode\npd.DataFrame(X)\n\n\n\n\n\n\n  \n    \n      \n      0\n      1\n      2\n      3\n      4\n      5\n      6\n      7\n      8\n      9\n      ...\n      54\n      55\n      56\n      57\n      58\n      59\n      60\n      61\n      62\n      63\n    \n  \n  \n    \n      0\n      0.00\n      0.00\n      5.00\n      13.00\n      9.00\n      1.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      6.00\n      13.00\n      10.00\n      0.00\n      0.00\n      0.00\n    \n    \n      1\n      0.00\n      0.00\n      0.00\n      12.00\n      13.00\n      5.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      11.00\n      16.00\n      10.00\n      0.00\n      0.00\n    \n    \n      2\n      0.00\n      0.00\n      0.00\n      4.00\n      15.00\n      12.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      5.00\n      0.00\n      0.00\n      0.00\n      0.00\n      3.00\n      11.00\n      16.00\n      9.00\n      0.00\n    \n    \n      3\n      0.00\n      0.00\n      7.00\n      15.00\n      13.00\n      1.00\n      0.00\n      0.00\n      0.00\n      8.00\n      ...\n      9.00\n      0.00\n      0.00\n      0.00\n      7.00\n      13.00\n      13.00\n      9.00\n      0.00\n      0.00\n    \n    \n      4\n      0.00\n      0.00\n      0.00\n      1.00\n      11.00\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      2.00\n      16.00\n      4.00\n      0.00\n      0.00\n    \n    \n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n    \n    \n      1792\n      0.00\n      0.00\n      4.00\n      10.00\n      13.00\n      6.00\n      0.00\n      0.00\n      0.00\n      1.00\n      ...\n      4.00\n      0.00\n      0.00\n      0.00\n      2.00\n      14.00\n      15.00\n      9.00\n      0.00\n      0.00\n    \n    \n      1793\n      0.00\n      0.00\n      6.00\n      16.00\n      13.00\n      11.00\n      1.00\n      0.00\n      0.00\n      0.00\n      ...\n      1.00\n      0.00\n      0.00\n      0.00\n      6.00\n      16.00\n      14.00\n      6.00\n      0.00\n      0.00\n    \n    \n      1794\n      0.00\n      0.00\n      1.00\n      11.00\n      15.00\n      1.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      2.00\n      9.00\n      13.00\n      6.00\n      0.00\n      0.00\n    \n    \n      1795\n      0.00\n      0.00\n      2.00\n      10.00\n      7.00\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      2.00\n      0.00\n      0.00\n      0.00\n      5.00\n      12.00\n      16.00\n      12.00\n      0.00\n      0.00\n    \n    \n      1796\n      0.00\n      0.00\n      10.00\n      14.00\n      8.00\n      1.00\n      0.00\n      0.00\n      0.00\n      2.00\n      ...\n      8.00\n      0.00\n      0.00\n      1.00\n      8.00\n      12.00\n      14.00\n      12.00\n      1.00\n      0.00\n    \n  \n\n1797 rows × 64 columns"
+  },
+  {
+    "objectID": "slides/lec-24.html#more-images---digit-1",
+    "href": "slides/lec-24.html#more-images---digit-1",
+    "title": "CISC482 - Lecture24",
+    "section": "More Images - Digit 1",
+    "text": "More Images - Digit 1"
+  },
+  {
+    "objectID": "slides/lec-24.html#more-images---digit-8",
+    "href": "slides/lec-24.html#more-images---digit-8",
+    "title": "CISC482 - Lecture24",
+    "section": "More Images - Digit 8",
+    "text": "More Images - Digit 8"
+  },
+  {
+    "objectID": "slides/lec-24.html#apply-pca",
+    "href": "slides/lec-24.html#apply-pca",
+    "title": "CISC482 - Lecture24",
+    "section": "Apply PCA",
+    "text": "Apply PCA\n\n\nCode\npca = PCA(n_components=64)\npca_data = pca.fit_transform(X)\npercentage_var_explained = pca.explained_variance_ / np.sum(pca.explained_variance_)\ncum_var_explained = np.cumsum(percentage_var_explained) * 100\n\nplt.plot(range(1,65), cum_var_explained, linewidth=2)\nplt.xlabel(\"Number of Components\")\nplt.ylabel(\"Cumulative Variance Explained\");\nplt.xticks(np.arange(0, 64, 4));\nplt.ylim(0,100);"
+  },
+  {
+    "objectID": "slides/lec-24.html#compression---using-10-pc---digit-8",
+    "href": "slides/lec-24.html#compression---using-10-pc---digit-8",
+    "title": "CISC482 - Lecture24",
+    "section": "Compression - Using 10 PC - Digit 8",
+    "text": "Compression - Using 10 PC - Digit 8"
+  },
+  {
+    "objectID": "slides/lec-24.html#compression---using-2-pc---digit-8",
+    "href": "slides/lec-24.html#compression---using-2-pc---digit-8",
+    "title": "CISC482 - Lecture24",
+    "section": "Compression - Using 2 PC - Digit 8",
+    "text": "Compression - Using 2 PC - Digit 8"
+  },
+  {
+    "objectID": "slides/lec-24.html#plot-pc1-and-pc2",
+    "href": "slides/lec-24.html#plot-pc1-and-pc2",
+    "title": "CISC482 - Lecture24",
+    "section": "Plot PC1 and PC2",
+    "text": "Plot PC1 and PC2\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-07.html#schedule",
@@ -2181,7 +2223,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fa2843a1480>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f4dcc144070>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3308,7 +3350,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f7ba1ce9600>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f886ede6560>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -4085,7 +4127,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'You', 'great', 'of', 'to', 'Folgers.', 'cup', 'Folgers', 'all', 'students!', 'best', 'in', 'proud', 'cup.', 'teacher', 'waking', 'is', 'part', 'your', 'up', 'a', 'I', 'Fill', 'be', 'so', 'The', 'are', 'am', 'with'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'with', 'I', 'waking', 'students!', 'part', 'best', 'to', 'Folgers.', 'so', 'of', 'proud', 'am', 'Fill', 'a', 'up', 'in', 'cup.', 'teacher', 'all', 'your', 'great', 'Folgers', 'is', 'The', 'be', 'You', 'cup', 'are'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
