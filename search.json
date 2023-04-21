@@ -746,7 +746,63 @@
     "href": "slides/lec-24.html#terms",
     "title": "CISC482 - Lecture24",
     "section": "Terms",
-    "text": "Terms\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Terms\n\nPrincipal component analysis, or PCA, is a dimensionality reduction technique.\nIt can be used to compress data.\nLets say we have \\(n=10\\) points that such that \\(x \\in\\mathbf{R}^2\\)\nPCA can reduce the data be \\(n=10\\) points inside \\(R^{1}\\)\nIt does this by finding the component, or feature vector that contains the largest variability\nLets looks at an example"
+  },
+  {
+    "objectID": "slides/lec-24.html#example-1-start",
+    "href": "slides/lec-24.html#example-1-start",
+    "title": "CISC482 - Lecture24",
+    "section": "Example 1 Start",
+    "text": "Example 1 Start\n\nFind me a vector or axis that when you project the data to it maximizes the variance"
+  },
+  {
+    "objectID": "slides/lec-24.html#projection",
+    "href": "slides/lec-24.html#projection",
+    "title": "CISC482 - Lecture24",
+    "section": "Projection",
+    "text": "Projection"
+  },
+  {
+    "objectID": "slides/lec-24.html#example-1-animation",
+    "href": "slides/lec-24.html#example-1-animation",
+    "title": "CISC482 - Lecture24",
+    "section": "Example 1 Animation",
+    "text": "Example 1 Animation"
+  },
+  {
+    "objectID": "slides/lec-24.html#example-2-start",
+    "href": "slides/lec-24.html#example-2-start",
+    "title": "CISC482 - Lecture24",
+    "section": "Example 2 Start",
+    "text": "Example 2 Start\n\n\n\n\nCode\nx = np.arange(0, 10) + np.random.randn(10) * 0.1\ny = x * 1 + np.random.randn(10) * 0.3\nsns.scatterplot(x=x,y=y)\n\n\n<Axes: >\n\n\n\n\n\n\nFind me a vector or axis that when you project the data to it maximizes the variance"
+  },
+  {
+    "objectID": "slides/lec-24.html#example-2---first-principle-component",
+    "href": "slides/lec-24.html#example-2---first-principle-component",
+    "title": "CISC482 - Lecture24",
+    "section": "Example 2 - First Principle Component",
+    "text": "Example 2 - First Principle Component\n\n\n\n\nCode\nx = np.arange(0, 10) + np.random.randn(10) * 0.1\ny = x * 1 + np.random.randn(10) * 0.3\nax = sns.scatterplot(x=x,y=y)\nax.plot([0, 10], [0, 10], ls='dashed', c='r')\n\n\n\n\n\n\nDo you see how this vector will maximize the variance? The vector is \\([1, 1]\\) or \\([.707, .707]\\) when normalized."
+  },
+  {
+    "objectID": "slides/lec-24.html#intuition",
+    "href": "slides/lec-24.html#intuition",
+    "title": "CISC482 - Lecture24",
+    "section": "Intuition",
+    "text": "Intuition"
+  },
+  {
+    "objectID": "slides/lec-24.html#back-to-example-2",
+    "href": "slides/lec-24.html#back-to-example-2",
+    "title": "CISC482 - Lecture24",
+    "section": "Back to Example 2",
+    "text": "Back to Example 2\n\n\n\n\nCode\nX = np.column_stack([x, y])\ndf = pd.DataFrame(X, columns=['x', 'y'])\ndf\n\n\n\n\n\n\n  \n    \n      \n      x\n      y\n    \n  \n  \n    \n      0\n      -0.20\n      -0.28\n    \n    \n      1\n      0.83\n      0.66\n    \n    \n      2\n      2.03\n      2.07\n    \n    \n      3\n      3.24\n      3.10\n    \n    \n      4\n      4.11\n      4.50\n    \n    \n      5\n      5.17\n      5.23\n    \n    \n      6\n      6.01\n      6.13\n    \n    \n      7\n      7.14\n      7.04\n    \n    \n      8\n      7.97\n      8.35\n    \n    \n      9\n      9.06\n      8.84\n    \n  \n\n\n\n\n\n\n\n\nCode\npc1 = np.array([[.707], [.707]])\nprint(f\"PC1 = {pc1.flatten()}\")\npc1_vals = X @ pc1\ndf = pd.DataFrame(pc1_vals, columns=['PC1'])\ndf\n\n\nPC1 = [0.7 0.7]\n\n\n\n\n\n\n  \n    \n      \n      PC1\n    \n  \n  \n    \n      0\n      -0.34\n    \n    \n      1\n      1.05\n    \n    \n      2\n      2.89\n    \n    \n      3\n      4.48\n    \n    \n      4\n      6.09\n    \n    \n      5\n      7.35\n    \n    \n      6\n      8.58\n    \n    \n      7\n      10.02\n    \n    \n      8\n      11.54\n    \n    \n      9\n      12.66"
+  },
+  {
+    "objectID": "slides/lec-24.html#compression-from-example-2",
+    "href": "slides/lec-24.html#compression-from-example-2",
+    "title": "CISC482 - Lecture24",
+    "section": "Compression from Example 2",
+    "text": "Compression from Example 2\n\n\n\n\nCode\nsns.scatterplot(x=x,y=y, label=\"Raw\");\n\n\n\n\n\n\n\n\nCode\npoints = pc1.flatten() * pc1_vals\nax = sns.scatterplot(x=x,y=y, label='Raw')\nax.scatter(x=points[:, 0],y=points[:, 1], label='Compressed')\nplt.legend();\n\n\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-07.html#schedule",
@@ -2062,7 +2118,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7fc79c719240>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f13489e12a0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3189,7 +3245,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f142caabbe0>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fc718f8e260>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3966,7 +4022,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'are', 'students!', 'cup', 'great', 'with', 'waking', 'so', 'proud', 'Folgers.', 'all', 'part', 'Fill', 'be', 'to', 'am', 'cup.', 'best', 'I', 'of', 'a', 'Folgers', 'is', 'your', 'You', 'The', 'in', 'teacher', 'up'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'Fill', 'I', 'The', 'part', 'proud', 'waking', 'of', 'in', 'Folgers', 'be', 'up', 'Folgers.', 'great', 'teacher', 'with', 'to', 'best', 'so', 'students!', 'your', 'cup', 'a', 'is', 'all', 'are', 'am', 'You', 'cup.'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
