@@ -802,7 +802,21 @@
     "href": "slides/lec-24.html#compression-from-example-2",
     "title": "CISC482 - Lecture24",
     "section": "Compression from Example 2",
-    "text": "Compression from Example 2\n\n\n\n\nCode\nsns.scatterplot(x=x,y=y, label=\"Raw\");\n\n\n\n\n\n\n\n\nCode\npoints = pc1.flatten() * pc1_vals\nax = sns.scatterplot(x=x,y=y, label='Raw')\nax.scatter(x=points[:, 0],y=points[:, 1], label='Compressed')\nplt.legend();\n\n\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Compression from Example 2\n\n\n\n\nCode\nsns.scatterplot(x=x,y=y, label=\"Raw\");\n\n\n\n\n\n\n\n\nCode\npoints = pc1.flatten() * pc1_vals\nax = sns.scatterplot(x=x,y=y, label='Raw')\nax.scatter(x=points[:, 0],y=points[:, 1], label='Compressed')\nplt.legend();"
+  },
+  {
+    "objectID": "slides/lec-24.html#d",
+    "href": "slides/lec-24.html#d",
+    "title": "CISC482 - Lecture24",
+    "section": "3D",
+    "text": "3D\n\n\nCode\nx = np.arange(0, 10) + np.random.randn(10) * 0.1\ny = np.arange(0, 10) + np.random.randn(10) * 0.1\nz = x * 1 + y * 2 + np.random.randn(10) * 1\nfig = plt.figure()\nax = fig.add_subplot(projection='3d')\n\nX = np.column_stack([x, y, z])\n\nax.scatter(x, y, z, marker='o')\nax.set_xlabel('X Label')\nax.set_ylabel('Y Label')\nax.set_zlabel('Z Label')\n\n\nText(0.5, 0, 'Z Label')"
+  },
+  {
+    "objectID": "slides/lec-24.html#pca",
+    "href": "slides/lec-24.html#pca",
+    "title": "CISC482 - Lecture24",
+    "section": "PCA",
+    "text": "PCA\n\n\n\nCode\nfrom sklearn.decomposition import PCA\npca = PCA(n_components=1)\n# fit and transform data\nX_pca = pca.fit_transform(X)\nprint(X_pca.shape)\nX_comp = pca.inverse_transform(X_pca)\n\nfig = plt.figure()\nax = fig.add_subplot(projection='3d')\n\nax.scatter(x, y, z, marker='o', label='Raw')\nax.scatter(X_comp[:, 0], X_comp[:, 1], X_comp[:, 2], marker='x', label='compressed')\nax.set_xlabel('X Label')\nax.set_ylabel('Y Label')\nax.set_zlabel('Z Label')\n\n\n\n(10, 1)\n\n\nText(0.5, 0, 'Z Label')\n\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-07.html#schedule",
@@ -2118,7 +2132,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f13489e12a0>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f4d48f406a0>"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -3245,7 +3259,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7fc718f8e260>"
+    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f039c6775e0>"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -4022,7 +4036,7 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'Fill', 'I', 'The', 'part', 'proud', 'waking', 'of', 'in', 'Folgers', 'be', 'up', 'Folgers.', 'great', 'teacher', 'with', 'to', 'best', 'so', 'students!', 'your', 'cup', 'a', 'is', 'all', 'are', 'am', 'You', 'cup.'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'The', 'Folgers', 'best', 'teacher', 'up', 'is', 'to', 'all', 'a', 'I', 'in', 'You', 'am', 'Fill', 'be', 'so', 'great', 'Folgers.', 'part', 'proud', 'your', 'with', 'cup', 'waking', 'are', 'cup.', 'students!', 'of'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
