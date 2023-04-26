@@ -4,11 +4,18 @@
     "href": "index.html",
     "title": "Overview",
     "section": "",
-    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 10\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 12\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 13\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 14"
+    "text": "Week\nSlides\nClass Activity\nHW\n\n\n\n\nWeek 1\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 2\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 3\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 4\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 5\n🖥️\nNone\nNone\n\n\nWeek 6\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 7\n🖥️ 🖥️\n📋\n⌨️ ⌨️\n\n\nWeek 8\n🖥️ 🖥️\n📋\nProposal!!!\n\n\nWeek 9\n🖥️ 🖥️\n📋\nProposal, ⌨️\n\n\nWeek 10\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 11\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 12\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 13\n🖥️ 🖥️\n📋\n⌨️\n\n\nWeek 14\n🖥️\n📋\n⌨️"
   },
   {
     "objectID": "project-description.html",
     "href": "project-description.html",
+    "title": "Project Description (Core Capstone)",
+    "section": "",
+    "text": "Topic ideas due Wed, Feb 22\nProposal due Wed, Mar 22\nDraft report due Wed, Apr 12\nPeer review due Wed, Apr 19\nFinal report due Friday, Apr 28\nFinal Presentation due Final Exam Day"
+  },
+  {
+    "objectID": "project-description.html#timeline",
+    "href": "project-description.html#timeline",
     "title": "Project Description (Core Capstone)",
     "section": "",
     "text": "Topic ideas due Wed, Feb 22\nProposal due Wed, Mar 22\nDraft report due Wed, Apr 12\nPeer review due Wed, Apr 19\nFinal report due Friday, Apr 28\nFinal Presentation due Final Exam Day"
@@ -165,7 +172,7 @@
     "href": "slides/lec-01.html#course-toolkit",
     "title": "Welcome to CISC 482",
     "section": "Course toolkit",
-    "text": "Course toolkit\n\nZybook: https://learn.zybooks.com/)\nGoogle Collab (Free): https://colab.research.google.com/\nDiscussion forum: Use Brightspace Discussion. Activities -> Discussions\nAssignment submission and feedback: Submit through Brightspace\n\n\n\n\n\n\n\nImportant\n\n\nPlease purchase the book as soon as possible. Reading assignments are due this Sunday night!"
+    "text": "Course toolkit\n\nZybook: https://learn.zybooks.com/)\nGoogle Collab (Free): https://colab.research.google.com/\nDiscussion forum: Use Brightspace Discussion. Activities -&gt; Discussions\nAssignment submission and feedback: Submit through Brightspace\n\n\n\n\n\n\n\nImportant\n\n\nPlease purchase the book as soon as possible. Reading assignments are due this Sunday night!"
   },
   {
     "objectID": "slides/lec-01.html#activities-prepare-participate-practice-perform",
@@ -557,7 +564,7 @@
     "href": "slides/lec-04.html#three-foundational-rules",
     "title": "CISC482 - Lecture04",
     "section": "Three Foundational Rules",
-    "text": "Three Foundational Rules\n\n\nThe probability of any event is non-negative, \\(P(A) >= 0\\)\nThe probability of the sample space is \\(P(S) = 1\\)\nIf A and be are disjoint events, \\(P(A \\; or \\; B) = P(A) + P(B)\\)\n\nNo outcomes in common."
+    "text": "Three Foundational Rules\n\n\nThe probability of any event is non-negative, \\(P(A) &gt;= 0\\)\nThe probability of the sample space is \\(P(S) = 1\\)\nIf A and be are disjoint events, \\(P(A \\; or \\; B) = P(A) + P(B)\\)\n\nNo outcomes in common."
   },
   {
     "objectID": "slides/lec-04.html#three-derived-rules",
@@ -774,7 +781,7 @@
     "href": "slides/lec-24.html#example-2-start",
     "title": "CISC482 - Lecture24",
     "section": "Example 2 Start",
-    "text": "Example 2 Start\n\n\n\n\nCode\nx = np.arange(0, 10) + np.random.randn(10) * 0.1\ny = x * 1 + np.random.randn(10) * 0.3\nsns.scatterplot(x=x,y=y)\n\n\n<Axes: >\n\n\n\n\n\n\nFind me a vector or axis that when you project the data to it maximizes the variance"
+    "text": "Example 2 Start\n\n\n\n\nCode\nx = np.arange(0, 10) + np.random.randn(10) * 0.1\ny = x * 1 + np.random.randn(10) * 0.3\nsns.scatterplot(x=x,y=y)\n\n\n&lt;Axes: &gt;\n\n\n\n\n\n\nFind me a vector or axis that when you project the data to it maximizes the variance"
   },
   {
     "objectID": "slides/lec-24.html#example-2---first-principle-component",
@@ -795,7 +802,7 @@
     "href": "slides/lec-24.html#back-to-example-2",
     "title": "CISC482 - Lecture24",
     "section": "Back to Example 2",
-    "text": "Back to Example 2\n\n\n\n\nCode\nX = np.column_stack([x, y])\ndf = pd.DataFrame(X, columns=['x', 'y'])\ndf\n\n\n\n\n\n\n  \n    \n      \n      x\n      y\n    \n  \n  \n    \n      0\n      -0.20\n      -0.28\n    \n    \n      1\n      0.83\n      0.66\n    \n    \n      2\n      2.03\n      2.07\n    \n    \n      3\n      3.24\n      3.10\n    \n    \n      4\n      4.11\n      4.50\n    \n    \n      5\n      5.17\n      5.23\n    \n    \n      6\n      6.01\n      6.13\n    \n    \n      7\n      7.14\n      7.04\n    \n    \n      8\n      7.97\n      8.35\n    \n    \n      9\n      9.06\n      8.84\n    \n  \n\n\n\n\n\n\n\n\nCode\npc1 = np.array([[.707], [.707]])\nprint(f\"PC1 = {pc1.flatten()}\")\npc1_vals = X @ pc1\ndf = pd.DataFrame(pc1_vals, columns=['PC1'])\ndf\n\n\nPC1 = [0.7 0.7]\n\n\n\n\n\n\n  \n    \n      \n      PC1\n    \n  \n  \n    \n      0\n      -0.34\n    \n    \n      1\n      1.05\n    \n    \n      2\n      2.89\n    \n    \n      3\n      4.48\n    \n    \n      4\n      6.09\n    \n    \n      5\n      7.35\n    \n    \n      6\n      8.58\n    \n    \n      7\n      10.02\n    \n    \n      8\n      11.54\n    \n    \n      9\n      12.66"
+    "text": "Back to Example 2\n\n\n\n\nCode\nX = np.column_stack([x, y])\ndf = pd.DataFrame(X, columns=['x', 'y'])\ndf\n\n\n\n\n\n\n\n\n\nx\ny\n\n\n\n\n0\n-0.20\n-0.28\n\n\n1\n0.83\n0.66\n\n\n2\n2.03\n2.07\n\n\n3\n3.24\n3.10\n\n\n4\n4.11\n4.50\n\n\n5\n5.17\n5.23\n\n\n6\n6.01\n6.13\n\n\n7\n7.14\n7.04\n\n\n8\n7.97\n8.35\n\n\n9\n9.06\n8.84\n\n\n\n\n\n\n\n\n\n\n\nCode\npc1 = np.array([[.707], [.707]])\nprint(f\"PC1 = {pc1.flatten()}\")\npc1_vals = X @ pc1\ndf = pd.DataFrame(pc1_vals, columns=['PC1'])\ndf\n\n\nPC1 = [0.7 0.7]\n\n\n\n\n\n\n\n\n\nPC1\n\n\n\n\n0\n-0.34\n\n\n1\n1.05\n\n\n2\n2.89\n\n\n3\n4.48\n\n\n4\n6.09\n\n\n5\n7.35\n\n\n6\n8.58\n\n\n7\n10.02\n\n\n8\n11.54\n\n\n9\n12.66"
   },
   {
     "objectID": "slides/lec-24.html#compression-from-example-2",
@@ -823,14 +830,14 @@
     "href": "slides/lec-24.html#the-data",
     "title": "CISC482 - Lecture24",
     "section": "The Data",
-    "text": "The Data\n\n\nFeatures: ['Alcohol', 'Malic acid', 'Ash', 'Alcalinity of ash', 'Magnesium', 'Total phenols', 'Flavanoids', 'Nonflavanoid phenols', 'Proanthocyanins', 'Color intensity', 'Hue', 'OD280/OD315 of diluted wines', 'Proline']\nClasses: (array([1, 2, 3]), array([59, 71, 48]))\n\n\n\n\n\n\n  \n    \n      \n      group\n      1\n      2\n      3\n      4\n      5\n      6\n      7\n      8\n      9\n      10\n      11\n      12\n      13\n    \n  \n  \n    \n      0\n      1\n      14.23\n      1.71\n      2.43\n      15.60\n      127\n      2.80\n      3.06\n      0.28\n      2.29\n      5.64\n      1.04\n      3.92\n      1065\n    \n    \n      1\n      1\n      13.20\n      1.78\n      2.14\n      11.20\n      100\n      2.65\n      2.76\n      0.26\n      1.28\n      4.38\n      1.05\n      3.40\n      1050\n    \n    \n      2\n      1\n      13.16\n      2.36\n      2.67\n      18.60\n      101\n      2.80\n      3.24\n      0.30\n      2.81\n      5.68\n      1.03\n      3.17\n      1185\n    \n    \n      3\n      1\n      14.37\n      1.95\n      2.50\n      16.80\n      113\n      3.85\n      3.49\n      0.24\n      2.18\n      7.80\n      0.86\n      3.45\n      1480\n    \n    \n      4\n      1\n      13.24\n      2.59\n      2.87\n      21.00\n      118\n      2.80\n      2.69\n      0.39\n      1.82\n      4.32\n      1.04\n      2.93\n      735\n    \n  \n\n\n\n\nCan we visualize this data? Why or why not?"
+    "text": "The Data\n\n\nFeatures: ['Alcohol', 'Malic acid', 'Ash', 'Alcalinity of ash', 'Magnesium', 'Total phenols', 'Flavanoids', 'Nonflavanoid phenols', 'Proanthocyanins', 'Color intensity', 'Hue', 'OD280/OD315 of diluted wines', 'Proline']\nClasses: (array([1, 2, 3]), array([59, 71, 48]))\n\n\n\n\n\n\n\n\n\ngroup\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n\n\n\n\n0\n1\n14.23\n1.71\n2.43\n15.60\n127\n2.80\n3.06\n0.28\n2.29\n5.64\n1.04\n3.92\n1065\n\n\n1\n1\n13.20\n1.78\n2.14\n11.20\n100\n2.65\n2.76\n0.26\n1.28\n4.38\n1.05\n3.40\n1050\n\n\n2\n1\n13.16\n2.36\n2.67\n18.60\n101\n2.80\n3.24\n0.30\n2.81\n5.68\n1.03\n3.17\n1185\n\n\n3\n1\n14.37\n1.95\n2.50\n16.80\n113\n3.85\n3.49\n0.24\n2.18\n7.80\n0.86\n3.45\n1480\n\n\n4\n1\n13.24\n2.59\n2.87\n21.00\n118\n2.80\n2.69\n0.39\n1.82\n4.32\n1.04\n2.93\n735\n\n\n\n\n\n\n\nCan we visualize this data? Why or why not?"
   },
   {
     "objectID": "slides/lec-24.html#split-data-and-scale",
     "href": "slides/lec-24.html#split-data-and-scale",
     "title": "CISC482 - Lecture24",
     "section": "Split Data and Scale",
-    "text": "Split Data and Scale\n\n\nCode\nfrom sklearn.preprocessing import StandardScaler\n\ndf_train, df_test = train_test_split(\n    df, test_size=0.30, random_state=0)\n\ny_train = df_train['group']\ny_test = df_test['group']\n\nscaler = StandardScaler().set_output(transform=\"pandas\")\nscaled_X_train = scaler.fit_transform(df_train.iloc[:, 1:])\nscaled_X_test = scaler.fit_transform(df_test.iloc[:, 1:])\nscaled_X_train.head()\n\n\n\n\n\n\n  \n    \n      \n      x0\n      x1\n      x2\n      x3\n      x4\n      x5\n      x6\n      x7\n      x8\n      x9\n      x10\n      x11\n      x12\n    \n  \n  \n    \n      22\n      0.91\n      -0.46\n      -0.01\n      -0.82\n      0.06\n      0.59\n      0.94\n      -0.76\n      0.13\n      -0.51\n      0.66\n      1.94\n      0.94\n    \n    \n      108\n      -0.96\n      -0.97\n      -1.54\n      -0.15\n      -0.55\n      0.17\n      0.07\n      0.21\n      0.78\n      -0.98\n      -0.41\n      0.58\n      -1.41\n    \n    \n      175\n      0.36\n      1.68\n      -0.37\n      0.13\n      1.36\n      -1.12\n      -1.31\n      0.53\n      -0.44\n      2.22\n      -1.56\n      -1.45\n      0.29\n    \n    \n      145\n      0.22\n      1.05\n      -0.77\n      0.41\n      0.13\n      -1.27\n      -1.46\n      0.53\n      -0.52\n      -0.43\n      -1.52\n      -1.28\n      0.27\n    \n    \n      71\n      1.10\n      -0.77\n      1.11\n      1.54\n      -0.96\n      1.16\n      0.92\n      -1.25\n      0.43\n      -0.69\n      1.72\n      0.78\n      -1.09\n    \n  \n\n\n\n\n\\(z = (x - \\mu) / \\sigma\\)"
+    "text": "Split Data and Scale\n\n\nCode\nfrom sklearn.preprocessing import StandardScaler\n\ndf_train, df_test = train_test_split(\n    df, test_size=0.30, random_state=0)\n\ny_train = df_train['group']\ny_test = df_test['group']\n\nscaler = StandardScaler().set_output(transform=\"pandas\")\nscaled_X_train = scaler.fit_transform(df_train.iloc[:, 1:])\nscaled_X_test = scaler.fit_transform(df_test.iloc[:, 1:])\nscaled_X_train.head()\n\n\n\n\n\n\n\n\n\nx0\nx1\nx2\nx3\nx4\nx5\nx6\nx7\nx8\nx9\nx10\nx11\nx12\n\n\n\n\n22\n0.91\n-0.46\n-0.01\n-0.82\n0.06\n0.59\n0.94\n-0.76\n0.13\n-0.51\n0.66\n1.94\n0.94\n\n\n108\n-0.96\n-0.97\n-1.54\n-0.15\n-0.55\n0.17\n0.07\n0.21\n0.78\n-0.98\n-0.41\n0.58\n-1.41\n\n\n175\n0.36\n1.68\n-0.37\n0.13\n1.36\n-1.12\n-1.31\n0.53\n-0.44\n2.22\n-1.56\n-1.45\n0.29\n\n\n145\n0.22\n1.05\n-0.77\n0.41\n0.13\n-1.27\n-1.46\n0.53\n-0.52\n-0.43\n-1.52\n-1.28\n0.27\n\n\n71\n1.10\n-0.77\n1.11\n1.54\n-0.96\n1.16\n0.92\n-1.25\n0.43\n-0.69\n1.72\n0.78\n-1.09\n\n\n\n\n\n\n\n\\(z = (x - \\mu) / \\sigma\\)"
   },
   {
     "objectID": "slides/lec-24.html#pca-1",
@@ -865,7 +872,7 @@
     "href": "slides/lec-24.html#minst-data",
     "title": "CISC482 - Lecture24",
     "section": "MINST Data",
-    "text": "MINST Data\n\n\nCode\npd.DataFrame(X)\n\n\n\n\n\n\n  \n    \n      \n      0\n      1\n      2\n      3\n      4\n      5\n      6\n      7\n      8\n      9\n      ...\n      54\n      55\n      56\n      57\n      58\n      59\n      60\n      61\n      62\n      63\n    \n  \n  \n    \n      0\n      0.00\n      0.00\n      5.00\n      13.00\n      9.00\n      1.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      6.00\n      13.00\n      10.00\n      0.00\n      0.00\n      0.00\n    \n    \n      1\n      0.00\n      0.00\n      0.00\n      12.00\n      13.00\n      5.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      11.00\n      16.00\n      10.00\n      0.00\n      0.00\n    \n    \n      2\n      0.00\n      0.00\n      0.00\n      4.00\n      15.00\n      12.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      5.00\n      0.00\n      0.00\n      0.00\n      0.00\n      3.00\n      11.00\n      16.00\n      9.00\n      0.00\n    \n    \n      3\n      0.00\n      0.00\n      7.00\n      15.00\n      13.00\n      1.00\n      0.00\n      0.00\n      0.00\n      8.00\n      ...\n      9.00\n      0.00\n      0.00\n      0.00\n      7.00\n      13.00\n      13.00\n      9.00\n      0.00\n      0.00\n    \n    \n      4\n      0.00\n      0.00\n      0.00\n      1.00\n      11.00\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      2.00\n      16.00\n      4.00\n      0.00\n      0.00\n    \n    \n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n      ...\n    \n    \n      1792\n      0.00\n      0.00\n      4.00\n      10.00\n      13.00\n      6.00\n      0.00\n      0.00\n      0.00\n      1.00\n      ...\n      4.00\n      0.00\n      0.00\n      0.00\n      2.00\n      14.00\n      15.00\n      9.00\n      0.00\n      0.00\n    \n    \n      1793\n      0.00\n      0.00\n      6.00\n      16.00\n      13.00\n      11.00\n      1.00\n      0.00\n      0.00\n      0.00\n      ...\n      1.00\n      0.00\n      0.00\n      0.00\n      6.00\n      16.00\n      14.00\n      6.00\n      0.00\n      0.00\n    \n    \n      1794\n      0.00\n      0.00\n      1.00\n      11.00\n      15.00\n      1.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      0.00\n      0.00\n      0.00\n      0.00\n      2.00\n      9.00\n      13.00\n      6.00\n      0.00\n      0.00\n    \n    \n      1795\n      0.00\n      0.00\n      2.00\n      10.00\n      7.00\n      0.00\n      0.00\n      0.00\n      0.00\n      0.00\n      ...\n      2.00\n      0.00\n      0.00\n      0.00\n      5.00\n      12.00\n      16.00\n      12.00\n      0.00\n      0.00\n    \n    \n      1796\n      0.00\n      0.00\n      10.00\n      14.00\n      8.00\n      1.00\n      0.00\n      0.00\n      0.00\n      2.00\n      ...\n      8.00\n      0.00\n      0.00\n      1.00\n      8.00\n      12.00\n      14.00\n      12.00\n      1.00\n      0.00\n    \n  \n\n1797 rows × 64 columns"
+    "text": "MINST Data\n\n\nCode\npd.DataFrame(X)\n\n\n\n\n\n\n\n\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n...\n54\n55\n56\n57\n58\n59\n60\n61\n62\n63\n\n\n\n\n0\n0.00\n0.00\n5.00\n13.00\n9.00\n1.00\n0.00\n0.00\n0.00\n0.00\n...\n0.00\n0.00\n0.00\n0.00\n6.00\n13.00\n10.00\n0.00\n0.00\n0.00\n\n\n1\n0.00\n0.00\n0.00\n12.00\n13.00\n5.00\n0.00\n0.00\n0.00\n0.00\n...\n0.00\n0.00\n0.00\n0.00\n0.00\n11.00\n16.00\n10.00\n0.00\n0.00\n\n\n2\n0.00\n0.00\n0.00\n4.00\n15.00\n12.00\n0.00\n0.00\n0.00\n0.00\n...\n5.00\n0.00\n0.00\n0.00\n0.00\n3.00\n11.00\n16.00\n9.00\n0.00\n\n\n3\n0.00\n0.00\n7.00\n15.00\n13.00\n1.00\n0.00\n0.00\n0.00\n8.00\n...\n9.00\n0.00\n0.00\n0.00\n7.00\n13.00\n13.00\n9.00\n0.00\n0.00\n\n\n4\n0.00\n0.00\n0.00\n1.00\n11.00\n0.00\n0.00\n0.00\n0.00\n0.00\n...\n0.00\n0.00\n0.00\n0.00\n0.00\n2.00\n16.00\n4.00\n0.00\n0.00\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n1792\n0.00\n0.00\n4.00\n10.00\n13.00\n6.00\n0.00\n0.00\n0.00\n1.00\n...\n4.00\n0.00\n0.00\n0.00\n2.00\n14.00\n15.00\n9.00\n0.00\n0.00\n\n\n1793\n0.00\n0.00\n6.00\n16.00\n13.00\n11.00\n1.00\n0.00\n0.00\n0.00\n...\n1.00\n0.00\n0.00\n0.00\n6.00\n16.00\n14.00\n6.00\n0.00\n0.00\n\n\n1794\n0.00\n0.00\n1.00\n11.00\n15.00\n1.00\n0.00\n0.00\n0.00\n0.00\n...\n0.00\n0.00\n0.00\n0.00\n2.00\n9.00\n13.00\n6.00\n0.00\n0.00\n\n\n1795\n0.00\n0.00\n2.00\n10.00\n7.00\n0.00\n0.00\n0.00\n0.00\n0.00\n...\n2.00\n0.00\n0.00\n0.00\n5.00\n12.00\n16.00\n12.00\n0.00\n0.00\n\n\n1796\n0.00\n0.00\n10.00\n14.00\n8.00\n1.00\n0.00\n0.00\n0.00\n2.00\n...\n8.00\n0.00\n0.00\n1.00\n8.00\n12.00\n14.00\n12.00\n1.00\n0.00\n\n\n\n\n1797 rows × 64 columns"
   },
   {
     "objectID": "slides/lec-24.html#more-images---digit-1",
@@ -1005,7 +1012,7 @@
     "href": "slides/lec-07.html#example-scatter-plot-data",
     "title": "CISC482 - Lecture07",
     "section": "Example Scatter Plot Data",
-    "text": "Example Scatter Plot Data\n\ntips = sns.load_dataset(\"tips\")\ntips.head()\n\n\n\n\n\n  \n    \n      \n      total_bill\n      tip\n      sex\n      smoker\n      day\n      time\n      size\n    \n  \n  \n    \n      0\n      16.99\n      1.01\n      Female\n      No\n      Sun\n      Dinner\n      2\n    \n    \n      1\n      10.34\n      1.66\n      Male\n      No\n      Sun\n      Dinner\n      3\n    \n    \n      2\n      21.01\n      3.50\n      Male\n      No\n      Sun\n      Dinner\n      3\n    \n    \n      3\n      23.68\n      3.31\n      Male\n      No\n      Sun\n      Dinner\n      2\n    \n    \n      4\n      24.59\n      3.61\n      Female\n      No\n      Sun\n      Dinner\n      4"
+    "text": "Example Scatter Plot Data\n\ntips = sns.load_dataset(\"tips\")\ntips.head()\n\n\n\n\n\n\n\n\ntotal_bill\ntip\nsex\nsmoker\nday\ntime\nsize\n\n\n\n\n0\n16.99\n1.01\nFemale\nNo\nSun\nDinner\n2\n\n\n1\n10.34\n1.66\nMale\nNo\nSun\nDinner\n3\n\n\n2\n21.01\n3.50\nMale\nNo\nSun\nDinner\n3\n\n\n3\n23.68\n3.31\nMale\nNo\nSun\nDinner\n2\n\n\n4\n24.59\n3.61\nFemale\nNo\nSun\nDinner\n4"
   },
   {
     "objectID": "slides/lec-07.html#example-scatter-plot",
@@ -1243,7 +1250,7 @@
     "href": "slides/lec-09.html#example-data",
     "title": "CISC482 - Lecture09",
     "section": "Example Data",
-    "text": "Example Data\n\n\n\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 344 entries, 0 to 343\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            344 non-null    object \n 1   island             344 non-null    object \n 2   bill_length_mm     342 non-null    float64\n 3   bill_depth_mm      342 non-null    float64\n 4   flipper_length_mm  342 non-null    float64\n 5   body_mass_g        342 non-null    float64\n 6   sex                333 non-null    object \n 7   year               344 non-null    int64  \ndtypes: float64(4), int64(1), object(3)\nmemory usage: 21.6+ KB\nNone\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.10\n      18.70\n      181.00\n      3,750.00\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.50\n      17.40\n      186.00\n      3,800.00\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.30\n      18.00\n      195.00\n      3,250.00\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.70\n      19.30\n      193.00\n      3,450.00\n      female\n      2007"
+    "text": "Example Data\n\n\n\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 344 entries, 0 to 343\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            344 non-null    object \n 1   island             344 non-null    object \n 2   bill_length_mm     342 non-null    float64\n 3   bill_depth_mm      342 non-null    float64\n 4   flipper_length_mm  342 non-null    float64\n 5   body_mass_g        342 non-null    float64\n 6   sex                333 non-null    object \n 7   year               344 non-null    int64  \ndtypes: float64(4), int64(1), object(3)\nmemory usage: 21.6+ KB\nNone\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.10\n18.70\n181.00\n3,750.00\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.50\n17.40\n186.00\n3,800.00\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.30\n18.00\n195.00\n3,250.00\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.70\n19.30\n193.00\n3,450.00\nfemale\n2007"
   },
   {
     "objectID": "slides/lec-09.html#relationship-1",
@@ -1320,7 +1327,7 @@
     "href": "slides/lec-09.html#data",
     "title": "CISC482 - Lecture09",
     "section": "Data",
-    "text": "Data\n\n\n\n\n\n\n  \n    \n      \n      ct_error\n      roll\n      pitch\n      yaw\n      downtracks\n      crosstracks\n    \n  \n  \n    \n      0\n      1.63\n      7.99\n      2.55\n      3.91\n      0.00\n      0.00\n    \n    \n      1\n      3.33\n      2.93\n      -2.10\n      3.89\n      4.02\n      1.10\n    \n    \n      2\n      2.43\n      0.12\n      -0.72\n      -0.41\n      8.03\n      2.20\n    \n    \n      3\n      3.24\n      -1.19\n      -2.21\n      -15.68\n      12.05\n      3.30\n    \n    \n      4\n      3.16\n      4.12\n      -3.75\n      -5.25\n      16.06\n      4.39"
+    "text": "Data\n\n\n\n\n\n\n\n\n\nct_error\nroll\npitch\nyaw\ndowntracks\ncrosstracks\n\n\n\n\n0\n1.63\n7.99\n2.55\n3.91\n0.00\n0.00\n\n\n1\n3.33\n2.93\n-2.10\n3.89\n4.02\n1.10\n\n\n2\n2.43\n0.12\n-0.72\n-0.41\n8.03\n2.20\n\n\n3\n3.24\n-1.19\n-2.21\n-15.68\n12.05\n3.30\n\n\n4\n3.16\n4.12\n-3.75\n-5.25\n16.06\n4.39"
   },
   {
     "objectID": "slides/lec-09.html#pair-plot",
@@ -1334,7 +1341,7 @@
     "href": "slides/lec-09.html#more-data",
     "title": "CISC482 - Lecture09",
     "section": "More Data!",
-    "text": "More Data!\n\n\n\n\n\n\n  \n    \n      \n      ct_error\n      roll\n      pitch\n      yaw\n      downtracks\n      crosstracks\n      alt\n    \n  \n  \n    \n      0\n      1.63\n      7.99\n      2.55\n      3.91\n      0.00\n      0.00\n      203.27\n    \n    \n      1\n      3.33\n      2.93\n      -2.10\n      3.89\n      4.02\n      1.10\n      206.84\n    \n    \n      2\n      2.43\n      0.12\n      -0.72\n      -0.41\n      8.03\n      2.20\n      205.51\n    \n    \n      3\n      3.24\n      -1.19\n      -2.21\n      -15.68\n      12.05\n      3.30\n      207.36\n    \n    \n      4\n      3.16\n      4.12\n      -3.75\n      -5.25\n      16.06\n      4.39\n      207.70"
+    "text": "More Data!\n\n\n\n\n\n\n\n\n\nct_error\nroll\npitch\nyaw\ndowntracks\ncrosstracks\nalt\n\n\n\n\n0\n1.63\n7.99\n2.55\n3.91\n0.00\n0.00\n203.27\n\n\n1\n3.33\n2.93\n-2.10\n3.89\n4.02\n1.10\n206.84\n\n\n2\n2.43\n0.12\n-0.72\n-0.41\n8.03\n2.20\n205.51\n\n\n3\n3.24\n-1.19\n-2.21\n-15.68\n12.05\n3.30\n207.36\n\n\n4\n3.16\n4.12\n-3.75\n-5.25\n16.06\n4.39\n207.70"
   },
   {
     "objectID": "slides/lec-09.html#the-error",
@@ -1474,7 +1481,7 @@
     "href": "slides/lec-15.html#cross-validation-1",
     "title": "CISC482 - Lecture15",
     "section": "Cross Validation",
-    "text": "Cross Validation\n\nIt seems a little strange to now judge our models just on the random selection of observations of validation set.\nIts like the choice of our model is biased towards this random selection of validation set.\nSolution: Do this process (fitting a model, validating model) multiple times using different subsets of data -> Cross Validation"
+    "text": "Cross Validation\n\nIt seems a little strange to now judge our models just on the random selection of observations of validation set.\nIts like the choice of our model is biased towards this random selection of validation set.\nSolution: Do this process (fitting a model, validating model) multiple times using different subsets of data -&gt; Cross Validation"
   },
   {
     "objectID": "slides/lec-15.html#k-folds",
@@ -1537,7 +1544,7 @@
     "href": "slides/lec-12.html#regression-diagram",
     "title": "CISC482 - Lecture12",
     "section": "Regression Diagram",
-    "text": "Regression Diagram\n\n\n\n\nflowchart LR\n  A[Features] --> B{Single Feature}\n  B -- Yes --> C{Curvature}\n  C -- No --> E[Simple Regression]\n  C -- Yes --> D[Simple Polynomial <br> Regression]\n  B -- No --> F{Non-linear Correlation <br> Between Features}\n  F -- No --> G[Multiple Linear <br> Regression]\n  F -- Yes --> H[Polynomial Regression]"
+    "text": "Regression Diagram\n\n\n\n\nflowchart LR\n  A[Features] --&gt; B{Single Feature}\n  B -- Yes --&gt; C{Curvature}\n  C -- No --&gt; E[Simple Regression]\n  C -- Yes --&gt; D[Simple Polynomial &lt;br&gt; Regression]\n  B -- No --&gt; F{Non-linear Correlation &lt;br&gt; Between Features}\n  F -- No --&gt; G[Multiple Linear &lt;br&gt; Regression]\n  F -- Yes --&gt; H[Polynomial Regression]"
   },
   {
     "objectID": "slides/lec-12.html#class-activity-1",
@@ -1565,7 +1572,7 @@
     "href": "slides/lec-12.html#linear-regression-for-classification",
     "title": "CISC482 - Lecture12",
     "section": "Linear Regression for Classification",
-    "text": "Linear Regression for Classification\n\nLinear Regression is generally not suitable for classification purposes\nHowever, you can use it to draw a line that whose value predicts the class\nE.g. if \\(\\hat{y} > 0.5 -> Positive\\)"
+    "text": "Linear Regression for Classification\n\nLinear Regression is generally not suitable for classification purposes\nHowever, you can use it to draw a line that whose value predicts the class\nE.g. if \\(\\hat{y} &gt; 0.5 -&gt; Positive\\)"
   },
   {
     "objectID": "slides/lec-12.html#lr-classification-okay",
@@ -1726,7 +1733,7 @@
     "href": "slides/lec-05.html#hypothesis-test",
     "title": "CISC482 - Lecture05",
     "section": "Hypothesis Test",
-    "text": "Hypothesis Test\n\nHypothesis Test - method for examining a claim, or hypothesis, about a population parameter.\nnull hypothesis, \\(H_0\\), by-chance, no-effect explanation\n\nmedicine has no effect\n\nalternative hypothesis, \\(H_a\\), explanation of an effect\n\nmedicine has a (positive) effect\n\np-value - or likelihood, of obtaining a statistic at least as extreme when \\(H_0\\) is true.\n\n\n\n\n\n\n\nDanger\n\n\nStatistics is widely and notoriously misunderstood. Even by experts. Including me."
+    "text": "Hypothesis Test\n\nHypothesis Test - method for examining a claim, or hypothesis, about a population parameter.\nnull hypothesis, \\(H_0\\), by-chance, no-effect explanation\n\nmedicine has no effect\n\nalternative hypothesis, \\(H_a\\), explanation of an effect\n\nmedicine has a (positive) effect\n\np-value - or likelihood, of obtaining a statistic at least as extreme when \\(H_0\\) is true.\n\n\n\n\n\n\n\nCaution\n\n\nStatistics is widely and notoriously misunderstood. Even by experts. Including me."
   },
   {
     "objectID": "slides/lec-05.html#visualization",
@@ -1740,7 +1747,7 @@
     "href": "slides/lec-05.html#questions",
     "title": "CISC482 - Lecture05",
     "section": "Questions",
-    "text": "Questions\n\nA graph of the sampling distribution of the sample proportion of correct detections out of 37 trials when the null hypothesis is true is given below. Based on this graph, observing a sample proportion of 0.78 or greater is\nCan the dog detect cancer?\n\n\n\n\n\n\n\n\nDanger\n\n\nThis does not mean the dog detects cancer! This just means the dog is doing better than guessing! Maybe cancer patients eat PB sandwiches and thats what the dog is smelling!"
+    "text": "Questions\n\nA graph of the sampling distribution of the sample proportion of correct detections out of 37 trials when the null hypothesis is true is given below. Based on this graph, observing a sample proportion of 0.78 or greater is\nCan the dog detect cancer?\n\n\n\n\n\n\n\n\nCaution\n\n\nThis does not mean the dog detects cancer! This just means the dog is doing better than guessing! Maybe cancer patients eat PB sandwiches and thats what the dog is smelling!"
   },
   {
     "objectID": "slides/lec-05.html#type-1-and-type-2-errors",
@@ -1796,7 +1803,7 @@
     "href": "slides/lec-05.html#z-table",
     "title": "CISC482 - Lecture05",
     "section": "Z-table",
-    "text": "Z-table\nZ Table\n\n\n\n\n\n\n\nDanger\n\n\nWhat if we didn’t gather that many samples, e.g., \\(< 30\\)? Then our sampling distribution follows a t-distribution."
+    "text": "Z-table\nZ Table\n\n\n\n\n\n\n\nCaution\n\n\nWhat if we didn’t gather that many samples, e.g., \\(&lt; 30\\)? Then our sampling distribution follows a t-distribution."
   },
   {
     "objectID": "slides/lec-05.html#t-vs-normal-distribution",
@@ -1852,7 +1859,7 @@
     "href": "slides/lec-02.html#ds-early-history",
     "title": "CISC482 - Lecture02",
     "section": "DS early history",
-    "text": "DS early history\n\n\nPeter Naur won the Turing Award\nAstronomer -> Computer Science -> Professor\nInventor of Algol Programming Language (PL)"
+    "text": "DS early history\n\n\nPeter Naur won the Turing Award\nAstronomer -&gt; Computer Science -&gt; Professor\nInventor of Algol Programming Language (PL)"
   },
   {
     "objectID": "slides/lec-02.html#ds-20th-century",
@@ -1908,7 +1915,7 @@
     "href": "slides/lec-02.html#example-data-set",
     "title": "CISC482 - Lecture02",
     "section": "Example Data Set",
-    "text": "Example Data Set\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007\n    \n  \n\n\n\n\n\nROW is an instance.\nCOLUMN represents a different feature.\n\n\n\nResearchers at the Palmer Archipelago in the Antarctic collected data on three local penguin species: Adelie, Chinstrap, and Gentoo."
+    "text": "Example Data Set\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n\n\n\n\n\n\nROW is an instance.\nCOLUMN represents a different feature.\n\n\n\nResearchers at the Palmer Archipelago in the Antarctic collected data on three local penguin species: Adelie, Chinstrap, and Gentoo."
   },
   {
     "objectID": "slides/lec-02.html#volume-variety-velocity",
@@ -1936,7 +1943,7 @@
     "href": "slides/lec-02.html#reproducibility",
     "title": "CISC482 - Lecture02",
     "section": "Reproducibility",
-    "text": "Reproducibility\n\n\nTwo data scientists are building models to classify brain tumors as benign or malignant.\nOne data scientist uses a programming language, such as Python, to write code to fit the model.\nAnother data scientist uses software instead of coding to fit the model.\nNew brain scans arrive. The data scientist who used coding re-runs the analysis -> a few minutes.\nSince the software uses a point and click interface, re-analyzing could take several hours."
+    "text": "Reproducibility\n\n\nTwo data scientists are building models to classify brain tumors as benign or malignant.\nOne data scientist uses a programming language, such as Python, to write code to fit the model.\nAnother data scientist uses software instead of coding to fit the model.\nNew brain scans arrive. The data scientist who used coding re-runs the analysis -&gt; a few minutes.\nSince the software uses a point and click interface, re-analyzing could take several hours."
   },
   {
     "objectID": "slides/lec-02.html#job-titles",
@@ -1985,7 +1992,7 @@
     "href": "slides/lec-02.html#cleaning-data---before",
     "title": "CISC482 - Lecture02",
     "section": "Cleaning Data - Before",
-    "text": "Cleaning Data - Before\n\n\n\n\n\n\n\n\n  \n    \n      \n      studyName\n      Sample Number\n      Species\n      Region\n      Island\n      Stage\n      Individual ID\n      Clutch Completion\n      Date Egg\n      Culmen Length (mm)\n      Culmen Depth (mm)\n      Flipper Length (mm)\n      Body Mass (g)\n      Sex\n      Delta 15 N (o/oo)\n      Delta 13 C (o/oo)\n      Comments\n    \n  \n  \n    \n      0\n      PAL0708\n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A1\n      Yes\n      2007-11-11\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      NaN\n      NaN\n      Not enough blood for isotopes.\n    \n    \n      1\n      PAL0708\n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A2\n      Yes\n      2007-11-11\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      8.94956\n      -24.69454\n      NaN\n    \n    \n      2\n      PAL0708\n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A1\n      Yes\n      2007-11-16\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      8.36821\n      -25.33302\n      NaN\n    \n    \n      3\n      PAL0708\n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A2\n      Yes\n      2007-11-16\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      Adult not sampled.\n    \n    \n      4\n      PAL0708\n      5\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N3A1\n      Yes\n      2007-11-16\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      8.76651\n      -25.32426\n      NaN"
+    "text": "Cleaning Data - Before\n\n\n\n\n\n\n\n\n\n\n\nstudyName\nSample Number\nSpecies\nRegion\nIsland\nStage\nIndividual ID\nClutch Completion\nDate Egg\nCulmen Length (mm)\nCulmen Depth (mm)\nFlipper Length (mm)\nBody Mass (g)\nSex\nDelta 15 N (o/oo)\nDelta 13 C (o/oo)\nComments\n\n\n\n\n0\nPAL0708\n1\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A1\nYes\n2007-11-11\n39.1\n18.7\n181.0\n3750.0\nMALE\nNaN\nNaN\nNot enough blood for isotopes.\n\n\n1\nPAL0708\n2\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A2\nYes\n2007-11-11\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n8.94956\n-24.69454\nNaN\n\n\n2\nPAL0708\n3\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A1\nYes\n2007-11-16\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n8.36821\n-25.33302\nNaN\n\n\n3\nPAL0708\n4\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A2\nYes\n2007-11-16\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nAdult not sampled.\n\n\n4\nPAL0708\n5\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN3A1\nYes\n2007-11-16\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n8.76651\n-25.32426\nNaN"
   },
   {
     "objectID": "slides/lec-02.html#important-features",
@@ -1999,7 +2006,7 @@
     "href": "slides/lec-02.html#cleaning-data---after",
     "title": "CISC482 - Lecture02",
     "section": "Cleaning Data - After",
-    "text": "Cleaning Data - After\n\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007"
+    "text": "Cleaning Data - After\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007"
   },
   {
     "objectID": "slides/lec-02.html#exploring-data",
@@ -2111,14 +2118,14 @@
     "href": "slides/lec-17.html#first-14",
     "title": "CISC482 - Lecture17",
     "section": "First 1/4",
-    "text": "First 1/4\n\n\n\n\nflowchart LR\n    A[Stats and Prob] --> B[Descriptive Statistics]\n    A --> C[Distribtuions]\n    A --> D[Population Inference]\n\n    E[Data Exploration] --> F[Plotting]\n    E --> G[Dataframes]\n    E --> H[Exploratory Data Analysis]"
+    "text": "First 1/4\n\n\n\n\nflowchart LR\n    A[Stats and Prob] --&gt; B[Descriptive Statistics]\n    A --&gt; C[Distribtuions]\n    A --&gt; D[Population Inference]\n\n    E[Data Exploration] --&gt; F[Plotting]\n    E --&gt; G[Dataframes]\n    E --&gt; H[Exploratory Data Analysis]"
   },
   {
     "objectID": "slides/lec-17.html#first-12",
     "href": "slides/lec-17.html#first-12",
     "title": "CISC482 - Lecture17",
     "section": "First 1/2",
-    "text": "First 1/2\n\n\n\n\nflowchart LR\n    A[Regression] --> B[Linear Regression]\n    A --> C[Mutliple Linear Regression]\n    A --> D[Polynomial Regression]\n    A --> Z[Logistic Regression]\n\n    E[Model Evaluation] --> F[RMSE, R^2]\n    E --> G[Precision, Recall]\n    E --> H[Train,Valid,Test ]"
+    "text": "First 1/2\n\n\n\n\nflowchart LR\n    A[Regression] --&gt; B[Linear Regression]\n    A --&gt; C[Mutliple Linear Regression]\n    A --&gt; D[Polynomial Regression]\n    A --&gt; Z[Logistic Regression]\n\n    E[Model Evaluation] --&gt; F[RMSE, R^2]\n    E --&gt; G[Precision, Recall]\n    E --&gt; H[Train,Valid,Test ]"
   },
   {
     "objectID": "slides/lec-17.html#whats-next",
@@ -2223,7 +2230,7 @@
     "href": "slides/lec-17.html#example---data",
     "title": "CISC482 - Lecture17",
     "section": "Example - Data",
-    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n<matplotlib.legend.Legend at 0x7f4dcc144070>"
+    "text": "Example - Data\n\n\nCode\nX, y = make_blobs(n_samples=100, centers=2, cluster_std=1.5, n_features=2,\n                  random_state=0)\nc_names = [\"Class 0\", \"Class 1\"]\nfig, ax = plt.subplots(nrows=1, ncols=1)\nscatter = ax.scatter(X[:, 0], X[:, 1], c=y, cmap='viridis');\nax.legend(handles=scatter.legend_elements()[0], \n           labels=c_names,\n           title=\"Class\")\n\n\n&lt;matplotlib.legend.Legend at 0x7f12d8dd24d0&gt;"
   },
   {
     "objectID": "slides/lec-17.html#split-into-train-and-test",
@@ -2384,7 +2391,7 @@
     "href": "slides/lec-14.html#dataset",
     "title": "CISC482 - Lecture14",
     "section": "Dataset",
-    "text": "Dataset\n\nWe will be using the penguin dataset\n\n\n\nCode\nX = df['bill_length_mm'].values[:, np.newaxis]\ny = df['body_mass_g'].values\ndf.head()\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.10\n      18.70\n      181.00\n      3,750.00\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.50\n      17.40\n      186.00\n      3,800.00\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.30\n      18.00\n      195.00\n      3,250.00\n      female\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.70\n      19.30\n      193.00\n      3,450.00\n      female\n      2007\n    \n    \n      5\n      Adelie\n      Torgersen\n      39.30\n      20.60\n      190.00\n      3,650.00\n      male\n      2007"
+    "text": "Dataset\n\nWe will be using the penguin dataset\n\n\n\nCode\nX = df['bill_length_mm'].values[:, np.newaxis]\ny = df['body_mass_g'].values\ndf.head()\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.10\n18.70\n181.00\n3,750.00\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.50\n17.40\n186.00\n3,800.00\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.30\n18.00\n195.00\n3,250.00\nfemale\n2007\n\n\n4\nAdelie\nTorgersen\n36.70\n19.30\n193.00\n3,450.00\nfemale\n2007\n\n\n5\nAdelie\nTorgersen\n39.30\n20.60\n190.00\n3,650.00\nmale\n2007"
   },
   {
     "objectID": "slides/lec-14.html#two-statistics",
@@ -2559,14 +2566,14 @@
     "href": "slides/lec-06.html#loading-pandas-from-python-lists",
     "title": "CISC482 - Lecture06",
     "section": "Loading Pandas from python lists",
-    "text": "Loading Pandas from python lists\n\n\nimport pandas as pd\nd = {'a': [1, 2, 3], \n    'b': [4.0, 5.0, 6.0]\n    }\ndf = pd.DataFrame(data=d)\ndf\n\n\n\n\n\n\n  \n    \n      \n      a\n      b\n    \n  \n  \n    \n      0\n      1\n      4.0\n    \n    \n      1\n      2\n      5.0\n    \n    \n      2\n      3\n      6.0\n    \n  \n\n\n\n\n\n\nPandas creates an index automatically (unnamed column)"
+    "text": "Loading Pandas from python lists\n\n\nimport pandas as pd\nd = {'a': [1, 2, 3], \n    'b': [4.0, 5.0, 6.0]\n    }\ndf = pd.DataFrame(data=d)\ndf\n\n\n\n\n\n\n\n\n\na\nb\n\n\n\n\n0\n1\n4.0\n\n\n1\n2\n5.0\n\n\n2\n3\n6.0\n\n\n\n\n\n\n\n\n\nPandas creates an index automatically (unnamed column)"
   },
   {
     "objectID": "slides/lec-06.html#loading-pandas-from-numpy",
     "href": "slides/lec-06.html#loading-pandas-from-numpy",
     "title": "CISC482 - Lecture06",
     "section": "Loading Pandas from NumPy",
-    "text": "Loading Pandas from NumPy\n\n\nd = {'a': np.array([1, 2, 3]), \n    'b': np.array([4.0, 5.0, 6.0])\n    }\ndf = pd.DataFrame(data=d)\ndf\n\n\n\n\n\n\n  \n    \n      \n      a\n      b\n    \n  \n  \n    \n      0\n      1\n      4.0\n    \n    \n      1\n      2\n      5.0\n    \n    \n      2\n      3\n      6.0\n    \n  \n\n\n\n\n\n\nYou can also use NumPy arrays"
+    "text": "Loading Pandas from NumPy\n\n\nd = {'a': np.array([1, 2, 3]), \n    'b': np.array([4.0, 5.0, 6.0])\n    }\ndf = pd.DataFrame(data=d)\ndf\n\n\n\n\n\n\n\n\n\na\nb\n\n\n\n\n0\n1\n4.0\n\n\n1\n2\n5.0\n\n\n2\n3\n6.0\n\n\n\n\n\n\n\n\n\nYou can also use NumPy arrays"
   },
   {
     "objectID": "slides/lec-06.html#csv-files",
@@ -2580,21 +2587,21 @@
     "href": "slides/lec-06.html#loading-pandas-from-a-csv",
     "title": "CISC482 - Lecture06",
     "section": "Loading Pandas from a CSV",
-    "text": "Loading Pandas from a CSV\n\n\n\ndf = pd.read_csv('https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv')\ndf.head()\n\n\n\n\n\n  \n    \n      \n      studyName\n      Sample Number\n      Species\n      Region\n      Island\n      Stage\n      Individual ID\n      Clutch Completion\n      Date Egg\n      Culmen Length (mm)\n      Culmen Depth (mm)\n      Flipper Length (mm)\n      Body Mass (g)\n      Sex\n      Delta 15 N (o/oo)\n      Delta 13 C (o/oo)\n      Comments\n    \n  \n  \n    \n      0\n      PAL0708\n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A1\n      Yes\n      2007-11-11\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      NaN\n      NaN\n      Not enough blood for isotopes.\n    \n    \n      1\n      PAL0708\n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N1A2\n      Yes\n      2007-11-11\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      8.94956\n      -24.69454\n      NaN\n    \n    \n      2\n      PAL0708\n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A1\n      Yes\n      2007-11-16\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      8.36821\n      -25.33302\n      NaN\n    \n    \n      3\n      PAL0708\n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N2A2\n      Yes\n      2007-11-16\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      Adult not sampled.\n    \n    \n      4\n      PAL0708\n      5\n      Adelie Penguin (Pygoscelis adeliae)\n      Anvers\n      Torgersen\n      Adult, 1 Egg Stage\n      N3A1\n      Yes\n      2007-11-16\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      8.76651\n      -25.32426\n      NaN"
+    "text": "Loading Pandas from a CSV\n\n\n\ndf = pd.read_csv('https://raw.githubusercontent.com/mcnakhaee/palmerpenguins/master/palmerpenguins/data/penguins-raw.csv')\ndf.head()\n\n\n\n\n\n\n\n\nstudyName\nSample Number\nSpecies\nRegion\nIsland\nStage\nIndividual ID\nClutch Completion\nDate Egg\nCulmen Length (mm)\nCulmen Depth (mm)\nFlipper Length (mm)\nBody Mass (g)\nSex\nDelta 15 N (o/oo)\nDelta 13 C (o/oo)\nComments\n\n\n\n\n0\nPAL0708\n1\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A1\nYes\n2007-11-11\n39.1\n18.7\n181.0\n3750.0\nMALE\nNaN\nNaN\nNot enough blood for isotopes.\n\n\n1\nPAL0708\n2\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A2\nYes\n2007-11-11\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n8.94956\n-24.69454\nNaN\n\n\n2\nPAL0708\n3\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A1\nYes\n2007-11-16\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n8.36821\n-25.33302\nNaN\n\n\n3\nPAL0708\n4\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A2\nYes\n2007-11-16\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nAdult not sampled.\n\n\n4\nPAL0708\n5\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN3A1\nYes\n2007-11-16\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n8.76651\n-25.32426\nNaN"
   },
   {
     "objectID": "slides/lec-06.html#pandas-methods---info",
     "href": "slides/lec-06.html#pandas-methods---info",
     "title": "CISC482 - Lecture06",
     "section": "Pandas Methods - Info",
-    "text": "Pandas Methods - Info\n\n\ndf.info()\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 344 entries, 0 to 343\nData columns (total 17 columns):\n #   Column               Non-Null Count  Dtype  \n---  ------               --------------  -----  \n 0   studyName            344 non-null    object \n 1   Sample Number        344 non-null    int64  \n 2   Species              344 non-null    object \n 3   Region               344 non-null    object \n 4   Island               344 non-null    object \n 5   Stage                344 non-null    object \n 6   Individual ID        344 non-null    object \n 7   Clutch Completion    344 non-null    object \n 8   Date Egg             344 non-null    object \n 9   Culmen Length (mm)   342 non-null    float64\n 10  Culmen Depth (mm)    342 non-null    float64\n 11  Flipper Length (mm)  342 non-null    float64\n 12  Body Mass (g)        342 non-null    float64\n 13  Sex                  333 non-null    object \n 14  Delta 15 N (o/oo)    330 non-null    float64\n 15  Delta 13 C (o/oo)    331 non-null    float64\n 16  Comments             54 non-null     object \ndtypes: float64(6), int64(1), object(10)\nmemory usage: 45.8+ KB"
+    "text": "Pandas Methods - Info\n\n\ndf.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 344 entries, 0 to 343\nData columns (total 17 columns):\n #   Column               Non-Null Count  Dtype  \n---  ------               --------------  -----  \n 0   studyName            344 non-null    object \n 1   Sample Number        344 non-null    int64  \n 2   Species              344 non-null    object \n 3   Region               344 non-null    object \n 4   Island               344 non-null    object \n 5   Stage                344 non-null    object \n 6   Individual ID        344 non-null    object \n 7   Clutch Completion    344 non-null    object \n 8   Date Egg             344 non-null    object \n 9   Culmen Length (mm)   342 non-null    float64\n 10  Culmen Depth (mm)    342 non-null    float64\n 11  Flipper Length (mm)  342 non-null    float64\n 12  Body Mass (g)        342 non-null    float64\n 13  Sex                  333 non-null    object \n 14  Delta 15 N (o/oo)    330 non-null    float64\n 15  Delta 13 C (o/oo)    331 non-null    float64\n 16  Comments             54 non-null     object \ndtypes: float64(6), int64(1), object(10)\nmemory usage: 45.8+ KB"
   },
   {
     "objectID": "slides/lec-06.html#select-only-interesting-columns",
     "href": "slides/lec-06.html#select-only-interesting-columns",
     "title": "CISC482 - Lecture06",
     "section": "Select Only Interesting Columns",
-    "text": "Select Only Interesting Columns\n\n\n\ninteresting_columns = ['Species', 'Island', 'Culmen Length (mm)', 'Culmen Depth (mm)', 'Flipper Length (mm)', 'Body Mass (g)', 'Sex', 'Date Egg']\ndf = df[interesting_columns]\ndf.head()\n\n\n\n\n\n  \n    \n      \n      Species\n      Island\n      Culmen Length (mm)\n      Culmen Depth (mm)\n      Flipper Length (mm)\n      Body Mass (g)\n      Sex\n      Date Egg\n    \n  \n  \n    \n      0\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      2007-11-11\n    \n    \n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      2007-11-11\n    \n    \n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      2007-11-16\n    \n    \n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007-11-16\n    \n    \n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      2007-11-16"
+    "text": "Select Only Interesting Columns\n\n\n\ninteresting_columns = ['Species', 'Island', 'Culmen Length (mm)', 'Culmen Depth (mm)', 'Flipper Length (mm)', 'Body Mass (g)', 'Sex', 'Date Egg']\ndf = df[interesting_columns]\ndf.head()\n\n\n\n\n\n\n\n\nSpecies\nIsland\nCulmen Length (mm)\nCulmen Depth (mm)\nFlipper Length (mm)\nBody Mass (g)\nSex\nDate Egg\n\n\n\n\n0\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nMALE\n2007-11-11\n\n\n1\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n2007-11-11\n\n\n2\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n2007-11-16\n\n\n3\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007-11-16\n\n\n4\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n2007-11-16"
   },
   {
     "objectID": "slides/lec-06.html#rename-columns",
@@ -2608,14 +2615,14 @@
     "href": "slides/lec-06.html#rename-columns-output",
     "title": "CISC482 - Lecture06",
     "section": "Rename Columns",
-    "text": "Rename Columns\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      2007-11-11\n    \n    \n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      2007-11-11\n    \n    \n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      2007-11-16\n    \n    \n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007-11-16\n    \n    \n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      2007-11-16"
+    "text": "Rename Columns\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nMALE\n2007-11-11\n\n\n1\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n2007-11-11\n\n\n2\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n2007-11-16\n\n\n3\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007-11-16\n\n\n4\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n2007-11-16"
   },
   {
     "objectID": "slides/lec-06.html#remove-nan",
     "href": "slides/lec-06.html#remove-nan",
     "title": "CISC482 - Lecture06",
     "section": "Remove Nan",
-    "text": "Remove Nan\n\n\n\ndf = df.dropna()\ndf = df.reset_index(drop=True) # used to be 343, now 333\ndf.info()\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 333 entries, 0 to 332\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            333 non-null    object \n 1   island             333 non-null    object \n 2   bill_length_mm     333 non-null    float64\n 3   bill_depth_mm      333 non-null    float64\n 4   flipper_length_mm  333 non-null    float64\n 5   body_mass_g        333 non-null    float64\n 6   sex                333 non-null    object \n 7   year               333 non-null    object \ndtypes: float64(4), object(4)\nmemory usage: 20.9+ KB"
+    "text": "Remove Nan\n\n\n\ndf = df.dropna()\ndf = df.reset_index(drop=True) # used to be 343, now 333\ndf.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 333 entries, 0 to 332\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            333 non-null    object \n 1   island             333 non-null    object \n 2   bill_length_mm     333 non-null    float64\n 3   bill_depth_mm      333 non-null    float64\n 4   flipper_length_mm  333 non-null    float64\n 5   body_mass_g        333 non-null    float64\n 6   sex                333 non-null    object \n 7   year               333 non-null    object \ndtypes: float64(4), object(4)\nmemory usage: 20.9+ KB"
   },
   {
     "objectID": "slides/lec-06.html#recap",
@@ -2636,63 +2643,63 @@
     "href": "slides/lec-06.html#selecting-data-view",
     "title": "CISC482 - Lecture06",
     "section": "Selecting Data, View",
-    "text": "Selecting Data, View\n\n\n\n\ndf2 = df[['year', 'sex']]\ndf2.head()\n\n\n\n\n\n\n  \n    \n      \n      year\n      sex\n    \n  \n  \n    \n      0\n      2007-11-11\n      MALE\n    \n    \n      1\n      2007-11-11\n      FEMALE\n    \n    \n      2\n      2007-11-16\n      FEMALE\n    \n    \n      3\n      2007-11-16\n      FEMALE\n    \n    \n      4\n      2007-11-16\n      MALE"
+    "text": "Selecting Data, View\n\n\n\n\ndf2 = df[['year', 'sex']]\ndf2.head()\n\n\n\n\n\n\n\n\n\nyear\nsex\n\n\n\n\n0\n2007-11-11\nMALE\n\n\n1\n2007-11-11\nFEMALE\n\n\n2\n2007-11-16\nFEMALE\n\n\n3\n2007-11-16\nFEMALE\n\n\n4\n2007-11-16\nMALE"
   },
   {
     "objectID": "slides/lec-06.html#create-a-new-column",
     "href": "slides/lec-06.html#create-a-new-column",
     "title": "CISC482 - Lecture06",
     "section": "Create a new column",
-    "text": "Create a new column\n\n\n\n\ndf2['test'] = 'CISC482'\ndf2.head()\n\n\n\n\n\n\n  \n    \n      \n      year\n      sex\n      test\n    \n  \n  \n    \n      0\n      2007-11-11\n      MALE\n      CISC482\n    \n    \n      1\n      2007-11-11\n      FEMALE\n      CISC482\n    \n    \n      2\n      2007-11-16\n      FEMALE\n      CISC482\n    \n    \n      3\n      2007-11-16\n      FEMALE\n      CISC482\n    \n    \n      4\n      2007-11-16\n      MALE\n      CISC482"
+    "text": "Create a new column\n\n\n\n\ndf2['test'] = 'CISC482'\ndf2.head()\n\n\n\n\n\n\n\n\n\nyear\nsex\ntest\n\n\n\n\n0\n2007-11-11\nMALE\nCISC482\n\n\n1\n2007-11-11\nFEMALE\nCISC482\n\n\n2\n2007-11-16\nFEMALE\nCISC482\n\n\n3\n2007-11-16\nFEMALE\nCISC482\n\n\n4\n2007-11-16\nMALE\nCISC482"
   },
   {
     "objectID": "slides/lec-06.html#changing-column",
     "href": "slides/lec-06.html#changing-column",
     "title": "CISC482 - Lecture06",
     "section": "Changing Column",
-    "text": "Changing Column\n\n\n\n\ndf2.loc[:, 'test'] = 'DataScience'\n# df2['test'] = \"Data Science\" # don't do it!\ndf2.head()\n\n\n\n\n\n\n  \n    \n      \n      year\n      sex\n      test\n    \n  \n  \n    \n      0\n      2007-11-11\n      MALE\n      DataScience\n    \n    \n      1\n      2007-11-11\n      FEMALE\n      DataScience\n    \n    \n      2\n      2007-11-16\n      FEMALE\n      DataScience\n    \n    \n      3\n      2007-11-16\n      FEMALE\n      DataScience\n    \n    \n      4\n      2007-11-16\n      MALE\n      DataScience"
+    "text": "Changing Column\n\n\n\n\ndf2.loc[:, 'test'] = 'DataScience'\n# df2['test'] = \"Data Science\" # don't do it!\ndf2.head()\n\n\n\n\n\n\n\n\n\nyear\nsex\ntest\n\n\n\n\n0\n2007-11-11\nMALE\nDataScience\n\n\n1\n2007-11-11\nFEMALE\nDataScience\n\n\n2\n2007-11-16\nFEMALE\nDataScience\n\n\n3\n2007-11-16\nFEMALE\nDataScience\n\n\n4\n2007-11-16\nMALE\nDataScience"
   },
   {
     "objectID": "slides/lec-06.html#selecting-some-rows",
     "href": "slides/lec-06.html#selecting-some-rows",
     "title": "CISC482 - Lecture06",
     "section": "Selecting Some Rows",
-    "text": "Selecting Some Rows\n\n\n\n\ndf_big_bills = df[df['bill_length_mm'] > 56]\ndf_big_bills\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      178\n      Gentoo penguin (Pygoscelis papua)\n      Biscoe\n      59.6\n      17.0\n      230.0\n      6050.0\n      MALE\n      2007-12-03\n    \n    \n      282\n      Chinstrap penguin (Pygoscelis antarctica)\n      Dream\n      58.0\n      17.8\n      181.0\n      3700.0\n      FEMALE\n      2007-11-30\n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nHow would I just select the male penguins\n\n\n\n\n\ndf_male = df[df['sex'] == \"MALE\"]"
+    "text": "Selecting Some Rows\n\n\n\n\ndf_big_bills = df[df['bill_length_mm'] &gt; 56]\ndf_big_bills\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n178\nGentoo penguin (Pygoscelis papua)\nBiscoe\n59.6\n17.0\n230.0\n6050.0\nMALE\n2007-12-03\n\n\n282\nChinstrap penguin (Pygoscelis antarctica)\nDream\n58.0\n17.8\n181.0\n3700.0\nFEMALE\n2007-11-30\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nHow would I just select the male penguins\n\n\n\n\n\ndf_male = df[df['sex'] == \"MALE\"]"
   },
   {
     "objectID": "slides/lec-06.html#fixing-the-year",
     "href": "slides/lec-06.html#fixing-the-year",
     "title": "CISC482 - Lecture06",
     "section": "Fixing the Year",
-    "text": "Fixing the Year\n\n\n\ndf.loc[:, 'year'] = df['year'].str[:4]\n# df.loc[:, 'year'] = df['year'].apply(lambda x: str(x).split('-')[0])\ndf.head()\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      2007\n    \n    \n      1\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      2007\n    \n    \n      2\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      2007\n    \n    \n      3\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      2007\n    \n    \n      4\n      Adelie Penguin (Pygoscelis adeliae)\n      Torgersen\n      39.3\n      20.6\n      190.0\n      3650.0\n      MALE\n      2007"
+    "text": "Fixing the Year\n\n\n\ndf.loc[:, 'year'] = df['year'].str[:4]\n# df.loc[:, 'year'] = df['year'].apply(lambda x: str(x).split('-')[0])\ndf.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nMALE\n2007\n\n\n1\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n2007\n\n\n2\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n2007\n\n\n3\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n2007\n\n\n4\nAdelie Penguin (Pygoscelis adeliae)\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nMALE\n2007"
   },
   {
     "objectID": "slides/lec-06.html#fixing-the-species",
     "href": "slides/lec-06.html#fixing-the-species",
     "title": "CISC482 - Lecture06",
     "section": "Fixing the Species",
-    "text": "Fixing the Species\n\n\n\nmapping = {\n  \"Adelie Penguin (Pygoscelis adeliae)\": \"Adelie\", \n  \"Gentoo penguin (Pygoscelis papua)\": \"Gentoo\",\n  \"Chinstrap penguin (Pygoscelis antarctica)\": \"Chinstrap\"\n}\ndf.loc[:, 'species'] = df['species'].map(mapping)\n# df.loc[:, 'species'] = df['species'].apply(lambda x: str(x).split('-')[0])\ndf.head()\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      MALE\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      FEMALE\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      FEMALE\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      FEMALE\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      39.3\n      20.6\n      190.0\n      3650.0\n      MALE\n      2007"
+    "text": "Fixing the Species\n\n\n\nmapping = {\n  \"Adelie Penguin (Pygoscelis adeliae)\": \"Adelie\", \n  \"Gentoo penguin (Pygoscelis papua)\": \"Gentoo\",\n  \"Chinstrap penguin (Pygoscelis antarctica)\": \"Chinstrap\"\n}\ndf.loc[:, 'species'] = df['species'].map(mapping)\n# df.loc[:, 'species'] = df['species'].apply(lambda x: str(x).split('-')[0])\ndf.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nMALE\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n2007\n\n\n3\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n2007\n\n\n4\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nMALE\n2007"
   },
   {
     "objectID": "slides/lec-06.html#fixing-the-sex",
     "href": "slides/lec-06.html#fixing-the-sex",
     "title": "CISC482 - Lecture06",
     "section": "Fixing the sex",
-    "text": "Fixing the sex\n\n\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.1\n      18.7\n      181.0\n      3750.0\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.5\n      17.4\n      186.0\n      3800.0\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.3\n      18.0\n      195.0\n      3250.0\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      36.7\n      19.3\n      193.0\n      3450.0\n      female\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      39.3\n      20.6\n      190.0\n      3650.0\n      male\n      2007\n    \n  \n\n\n\n\n\n\n\ndf.loc[:, 'sex'] = df['sex'].str.lower()"
+    "text": "Fixing the sex\n\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n4\nAdelie\nTorgersen\n39.3\n20.6\n190.0\n3650.0\nmale\n2007\n\n\n\n\n\n\n\n\n\n\ndf.loc[:, 'sex'] = df['sex'].str.lower()"
   },
   {
     "objectID": "slides/lec-06.html#checking-data-types",
     "href": "slides/lec-06.html#checking-data-types",
     "title": "CISC482 - Lecture06",
     "section": "Checking Data Types",
-    "text": "Checking Data Types\n\n\n\ndf.info()\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 333 entries, 0 to 332\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            333 non-null    object \n 1   island             333 non-null    object \n 2   bill_length_mm     333 non-null    float64\n 3   bill_depth_mm      333 non-null    float64\n 4   flipper_length_mm  333 non-null    float64\n 5   body_mass_g        333 non-null    float64\n 6   sex                333 non-null    object \n 7   year               333 non-null    object \ndtypes: float64(4), object(4)\nmemory usage: 20.9+ KB"
+    "text": "Checking Data Types\n\n\n\ndf.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 333 entries, 0 to 332\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            333 non-null    object \n 1   island             333 non-null    object \n 2   bill_length_mm     333 non-null    float64\n 3   bill_depth_mm      333 non-null    float64\n 4   flipper_length_mm  333 non-null    float64\n 5   body_mass_g        333 non-null    float64\n 6   sex                333 non-null    object \n 7   year               333 non-null    object \ndtypes: float64(4), object(4)\nmemory usage: 20.9+ KB"
   },
   {
     "objectID": "slides/lec-06.html#checking-data-types-1",
     "href": "slides/lec-06.html#checking-data-types-1",
     "title": "CISC482 - Lecture06",
     "section": "Checking Data Types",
-    "text": "Checking Data Types\n\n\n\ndf.loc[:, 'year'] = pd.to_numeric(df['year'])\ndf.info()\n\n<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 333 entries, 0 to 332\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            333 non-null    object \n 1   island             333 non-null    object \n 2   bill_length_mm     333 non-null    float64\n 3   bill_depth_mm      333 non-null    float64\n 4   flipper_length_mm  333 non-null    float64\n 5   body_mass_g        333 non-null    float64\n 6   sex                333 non-null    object \n 7   year               333 non-null    object \ndtypes: float64(4), object(4)\nmemory usage: 20.9+ KB"
+    "text": "Checking Data Types\n\n\n\ndf.loc[:, 'year'] = pd.to_numeric(df['year'])\ndf.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 333 entries, 0 to 332\nData columns (total 8 columns):\n #   Column             Non-Null Count  Dtype  \n---  ------             --------------  -----  \n 0   species            333 non-null    object \n 1   island             333 non-null    object \n 2   bill_length_mm     333 non-null    float64\n 3   bill_depth_mm      333 non-null    float64\n 4   flipper_length_mm  333 non-null    float64\n 5   body_mass_g        333 non-null    float64\n 6   sex                333 non-null    object \n 7   year               333 non-null    object \ndtypes: float64(4), object(4)\nmemory usage: 20.9+ KB"
   },
   {
     "objectID": "slides/lec-06.html#practice-pandas",
@@ -2727,7 +2734,7 @@
     "href": "slides/lec-10.html#example-data",
     "title": "CISC482 - Lecture10",
     "section": "Example Data",
-    "text": "Example Data\n\n\n\n\n\n\n  \n    \n      \n      species\n      island\n      bill_length_mm\n      bill_depth_mm\n      flipper_length_mm\n      body_mass_g\n      sex\n      year\n    \n  \n  \n    \n      0\n      Adelie\n      Torgersen\n      39.10\n      18.70\n      181.00\n      3,750.00\n      male\n      2007\n    \n    \n      1\n      Adelie\n      Torgersen\n      39.50\n      17.40\n      186.00\n      3,800.00\n      female\n      2007\n    \n    \n      2\n      Adelie\n      Torgersen\n      40.30\n      18.00\n      195.00\n      3,250.00\n      female\n      2007\n    \n    \n      3\n      Adelie\n      Torgersen\n      NaN\n      NaN\n      NaN\n      NaN\n      NaN\n      2007\n    \n    \n      4\n      Adelie\n      Torgersen\n      36.70\n      19.30\n      193.00\n      3,450.00\n      female\n      2007"
+    "text": "Example Data\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.10\n18.70\n181.00\n3,750.00\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.50\n17.40\n186.00\n3,800.00\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.30\n18.00\n195.00\n3,250.00\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.70\n19.30\n193.00\n3,450.00\nfemale\n2007"
   },
   {
     "objectID": "slides/lec-10.html#scatter-plot",
@@ -2846,7 +2853,7 @@
     "href": "slides/lec-10.html#computation-of-matrix-result",
     "title": "CISC482 - Lecture10",
     "section": "Computation of Matrix Result",
-    "text": "Computation of Matrix Result\n\nn = len(df_r)\nprint(x.shape, type(x))\nx = x.values\nprint(x.shape,type(x))\nx = np.expand_dims(x, axis=1) # convert to matrix\nprint(x.shape)\nA = np.append(x, np.ones(shape=(n, 1)), axis=1) # add one column\nprint(A.shape)\ny = y.values\nprint(x[:5, :]) # sample of matrix\n# intercept = y_bar - slope * x_bar\n# print(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\")\n\n(342,) <class 'pandas.core.series.Series'>\n(342,) <class 'numpy.ndarray'>\n(342, 1)\n(342, 2)\n[[39.1]\n [39.5]\n [40.3]\n [36.7]\n [39.3]]"
+    "text": "Computation of Matrix Result\n\nn = len(df_r)\nprint(x.shape, type(x))\nx = x.values\nprint(x.shape,type(x))\nx = np.expand_dims(x, axis=1) # convert to matrix\nprint(x.shape)\nA = np.append(x, np.ones(shape=(n, 1)), axis=1) # add one column\nprint(A.shape)\ny = y.values\nprint(x[:5, :]) # sample of matrix\n# intercept = y_bar - slope * x_bar\n# print(f\"Slope: {slope:.1f}; \\nIntercept: {intercept:.1f}\")\n\n(342,) &lt;class 'pandas.core.series.Series'&gt;\n(342,) &lt;class 'numpy.ndarray'&gt;\n(342, 1)\n(342, 2)\n[[39.1]\n [39.5]\n [40.3]\n [36.7]\n [39.3]]"
   },
   {
     "objectID": "slides/lec-10.html#computation-of-matrix-result-1",
@@ -2993,7 +3000,7 @@
     "href": "slides/lec-11.html#example-residual-4",
     "title": "CISC482 - Lecture11",
     "section": "Example, Residual 4",
-    "text": "Example, Residual 4\n\n\n\n\n\n\n\n\n\n\n\nDanger\n\n\nClearly see a huge jump in variance around 15"
+    "text": "Example, Residual 4\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\nClearly see a huge jump in variance around 15"
   },
   {
     "objectID": "slides/lec-11.html#example-mpg-prediction",
@@ -3070,7 +3077,7 @@
     "href": "slides/lec-11.html#definition",
     "title": "CISC482 - Lecture11",
     "section": "Definition",
-    "text": "Definition\n\nDataset has multiple input features\nIncorporate more than one input feature into a single regression equation -> multiple linear regression\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + ... \\beta_k x_k\\)\n\\(x_1, ..., x_k\\) = input features\n\\(\\hat{y}\\) = predicted feature\n\\(\\beta_0\\) = y-intercept. \\(\\beta_1, ..., \\beta_k\\) = slopes"
+    "text": "Definition\n\nDataset has multiple input features\nIncorporate more than one input feature into a single regression equation -&gt; multiple linear regression\n\\(\\hat{y} = \\beta_0 + \\beta_1 x_1 + ... \\beta_k x_k\\)\n\\(x_1, ..., x_k\\) = input features\n\\(\\hat{y}\\) = predicted feature\n\\(\\beta_0\\) = y-intercept. \\(\\beta_1, ..., \\beta_k\\) = slopes"
   },
   {
     "objectID": "slides/lec-11.html#example",
@@ -3210,7 +3217,7 @@
     "href": "slides/lec-03.html#stats-for-data-science-1",
     "title": "CISC482 - Lecture03",
     "section": "Stats for data science",
-    "text": "Stats for data science\n\n\n\nDescriptive statistics -> explore visualizations\nInferential statistics -> modeling and estimation\nStatisitcs is foundational to ensure results are interpreted correctly\n\n\n\n\n\n\nSpeaker notes go here."
+    "text": "Stats for data science\n\n\n\nDescriptive statistics -&gt; explore visualizations\nInferential statistics -&gt; modeling and estimation\nStatisitcs is foundational to ensure results are interpreted correctly\n\n\n\n\n\n\nSpeaker notes go here."
   },
   {
     "objectID": "slides/lec-03.html#sampling",
@@ -3350,7 +3357,7 @@
     "href": "slides/lec-03.html#shape",
     "title": "CISC482 - Lecture03",
     "section": "Shape",
-    "text": "Shape\nAdvanced statistics -> I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)\n\n\n\n<seaborn.axisgrid.FacetGrid at 0x7f886ede6560>"
+    "text": "Shape\nAdvanced statistics -&gt; I recommend using the library scipy. This library is built on top of numpy but has more functionality.\n\n\nfrom scipy.stats import skewnorm\nsamples_skewed = skewnorm.rvs(3, loc=15, scale=2, size=1000)\nsamples = skewnorm.rvs(0, loc=5, scale=1, size=1000)"
   },
   {
     "objectID": "slides/lec-03.html#skewness-and-kurtosis",
@@ -3672,7 +3679,7 @@
     "href": "slides/lec-16.html#example---flipper-length-vs-body-mass",
     "title": "CISC482 - Lecture16",
     "section": "Example - Flipper Length vs Body Mass",
-    "text": "Example - Flipper Length vs Body Mass\n\n\n\n\nCode\ndf = df[['flipper_length_mm', 'body_mass_g']]\ndf.head()\n\n\n\n\n\n\n  \n    \n      \n      flipper_length_mm\n      body_mass_g\n    \n  \n  \n    \n      0\n      181.00\n      3,750.00\n    \n    \n      1\n      186.00\n      3,800.00\n    \n    \n      2\n      195.00\n      3,250.00\n    \n    \n      4\n      193.00\n      3,450.00\n    \n    \n      5\n      190.00\n      3,650.00\n    \n  \n\n\n\n\n\n\n\nCode\nsns.regplot(data=df, x='flipper_length_mm', y='body_mass_g', ci=None);"
+    "text": "Example - Flipper Length vs Body Mass\n\n\n\n\nCode\ndf = df[['flipper_length_mm', 'body_mass_g']]\ndf.head()\n\n\n\n\n\n\n\n\n\nflipper_length_mm\nbody_mass_g\n\n\n\n\n0\n181.00\n3,750.00\n\n\n1\n186.00\n3,800.00\n\n\n2\n195.00\n3,250.00\n\n\n4\n193.00\n3,450.00\n\n\n5\n190.00\n3,650.00\n\n\n\n\n\n\n\n\n\n\nCode\nsns.regplot(data=df, x='flipper_length_mm', y='body_mass_g', ci=None);"
   },
   {
     "objectID": "slides/lec-16.html#bootrapping-1",
@@ -3742,7 +3749,7 @@
     "href": "slides/lec-23.html#groups",
     "title": "CISC482 - Lecture23",
     "section": "Groups",
-    "text": "Groups\nYou should have been e-mailed view only access to their drafts\n\nSupriya -> Review Jaydon and Carter\nAnmol -> Review Carter and Iana\nJaydon -> Review Iana and Chhandak\nCarter -> Review Prashant and Haven\nIana -> Review Haven and Chhandak\nHaven -> Review Prashant and Shivay\nChhandak -> Review Shivay and Supriya\nPrashant -> Review Supriya and Anmol\nShivay -> Review Anmol and Jaydon\n\n\n\n\n\n\n\nTip\n\n\nHow did it go?"
+    "text": "Groups\nYou should have been e-mailed view only access to their drafts\n\nSupriya -&gt; Review Jaydon and Carter\nAnmol -&gt; Review Carter and Iana\nJaydon -&gt; Review Iana and Chhandak\nCarter -&gt; Review Prashant and Haven\nIana -&gt; Review Haven and Chhandak\nHaven -&gt; Review Prashant and Shivay\nChhandak -&gt; Review Shivay and Supriya\nPrashant -&gt; Review Supriya and Anmol\nShivay -&gt; Review Anmol and Jaydon\n\n\n\n\n\n\n\nTip\n\n\nHow did it go?"
   },
   {
     "objectID": "slides/lec-23.html#questions-1",
@@ -3987,7 +3994,7 @@
     "href": "slides/lec-22.html#groups",
     "title": "CISC482 - Lecture22",
     "section": "Groups",
-    "text": "Groups\nYou should have been e-mailed view only access to their drafts\n\nSupriya -> Review Jaydon and Carter\nAnmol -> Review Carter and Iana\nJaydon -> Review Iana and Chhandak\nCarter -> Review Prashant and Haven\nIana -> Review Haven and Chhandak\nHaven -> Review Prashant and Shivay\nChhandak -> Review Shivay and Supriya\nPrashant -> Review Supriya and Anmol\nShivay -> Review Anmol and Jaydon\n\n\n\n\n\n\n\nTip\n\n\nIf someone does not have their draft report ready, you can skip theirs (luck you!)\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
+    "text": "Groups\nYou should have been e-mailed view only access to their drafts\n\nSupriya -&gt; Review Jaydon and Carter\nAnmol -&gt; Review Carter and Iana\nJaydon -&gt; Review Iana and Chhandak\nCarter -&gt; Review Prashant and Haven\nIana -&gt; Review Haven and Chhandak\nHaven -&gt; Review Prashant and Shivay\nChhandak -&gt; Review Shivay and Supriya\nPrashant -&gt; Review Supriya and Anmol\nShivay -&gt; Review Anmol and Jaydon\n\n\n\n\n\n\n\nTip\n\n\nIf someone does not have their draft report ready, you can skip theirs (luck you!)\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
     "objectID": "slides/lec-13.html#schedule",
@@ -4092,7 +4099,7 @@
     "href": "slides/lec-18.html#metric-space",
     "title": "CISC482 - Lecture18",
     "section": "Metric Space",
-    "text": "Metric Space\nA metric space is an unordered pair \\((M, d)\\) where \\(M\\) is a set and \\(d\\) is a metric on \\(M\\), a function where \\(d: M \\times M \\rightarrow \\mathbb{R}\\). Where \\(d\\) satisfies the following axioms for all points \\(x,y,z \\in M\\)\n\nThe distance from a point to itself is 0: \\(d(x,x) = 0\\)\nThe distance between any two distinct points is always positive: If \\(x \\neq y, then \\; d(y,x) > 0\\)\nThe distance from x to y is always the same distance from y to x: \\(d(x,y) = d(y,x)\\)\nTriangle Inequality holds: \\(d(x,z) \\geq d(x,y) + d(y, z)\\)"
+    "text": "Metric Space\nA metric space is an unordered pair \\((M, d)\\) where \\(M\\) is a set and \\(d\\) is a metric on \\(M\\), a function where \\(d: M \\times M \\rightarrow \\mathbb{R}\\). Where \\(d\\) satisfies the following axioms for all points \\(x,y,z \\in M\\)\n\nThe distance from a point to itself is 0: \\(d(x,x) = 0\\)\nThe distance between any two distinct points is always positive: If \\(x \\neq y, then \\; d(y,x) &gt; 0\\)\nThe distance from x to y is always the same distance from y to x: \\(d(x,y) = d(y,x)\\)\nTriangle Inequality holds: \\(d(x,z) \\geq d(x,y) + d(y, z)\\)"
   },
   {
     "objectID": "slides/lec-18.html#basic-idea",
@@ -4127,14 +4134,14 @@
     "href": "slides/lec-18.html#example",
     "title": "CISC482 - Lecture18",
     "section": "Example",
-    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'with', 'I', 'waking', 'students!', 'part', 'best', 'to', 'Folgers.', 'so', 'of', 'proud', 'am', 'Fill', 'a', 'up', 'in', 'cup.', 'teacher', 'all', 'your', 'great', 'Folgers', 'is', 'The', 'be', 'You', 'cup', 'are'}\n28"
+    "text": "Example\n\nD1 - The best part of waking up is Folgers in your cup. Fill your cup up with Folgers.\nD2 - You are all great students! I am so proud to be a teacher of great students!\n\n\nimport string\nvocabulary = set(d_1.split(' ') + d_2.split(' '))\nprint(vocabulary)\nprint(len(vocabulary))\n\n{'up', 'so', 'am', 'waking', 'of', 'Folgers.', 'be', 'your', 'teacher', 'cup.', 'cup', 'best', 'all', 'are', 'proud', 'Folgers', 'Fill', 'to', 'is', 'a', 'in', 'I', 'great', 'part', 'You', 'The', 'students!', 'with'}\n28"
   },
   {
     "objectID": "slides/lec-18.html#preprocess-text",
     "href": "slides/lec-18.html#preprocess-text",
     "title": "CISC482 - Lecture18",
     "section": "Preprocess Text",
-    "text": "Preprocess Text\n\nRemove Punctuation\nLeading and Ending White space - ’ Hey ’\nReplace common occurring text patterns with a single word, Regular Expression -‘http://spam.me’ –> url\n\n‘$’ ‘£’& –> ‘mnsymb’\n‘55555’ – ‘shrtcode’\n‘867-5309’ –> ‘phonenumber’\n‘88’ –> ‘number’\n\nLower case\nPort Stemmer - ‘testing’ -> ‘test’\nRemove Stop words - ‘the’, ‘a’"
+    "text": "Preprocess Text\n\nRemove Punctuation\nLeading and Ending White space - ’ Hey ’\nReplace common occurring text patterns with a single word, Regular Expression -‘http://spam.me’ –&gt; url\n\n‘$’ ‘£’& –&gt; ‘mnsymb’\n‘55555’ – ‘shrtcode’\n‘867-5309’ –&gt; ‘phonenumber’\n‘88’ –&gt; ‘number’\n\nLower case\nPort Stemmer - ‘testing’ -&gt; ‘test’\nRemove Stop words - ‘the’, ‘a’"
   },
   {
     "objectID": "slides/lec-18.html#creating-features-vectors",
@@ -4162,7 +4169,7 @@
     "href": "slides/lec-18.html#which-one-to-use",
     "title": "CISC482 - Lecture18",
     "section": "Which one to use?",
-    "text": "Which one to use?\n\nMultinomial is the more complex model. Bernoulli is the simpler model\nLess Data -> Bernoulli -> Less overfitting\nAlot of Data -> Multinomial\nZybook only shows Multinomial"
+    "text": "Which one to use?\n\nMultinomial is the more complex model. Bernoulli is the simpler model\nLess Data -&gt; Bernoulli -&gt; Less overfitting\nAlot of Data -&gt; Multinomial\nZybook only shows Multinomial"
   },
   {
     "objectID": "slides/lec-18.html#bayes-models",
@@ -4242,6 +4249,174 @@
     "text": "Log Functon Graph\n\n\n\nx = np.linspace(0, 1, 1000000)\ny = np.log(x)\nplt.plot(x, y)\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nWe can transfrom our probabilties with log and make everything numerically stable!!\n\n\n\n\n\n\n\n\n\n\nhttps://jeremybyu.github.io/intro-ds-website"
   },
   {
+    "objectID": "slides/lec-25.html#schedule",
+    "href": "slides/lec-25.html#schedule",
+    "title": "CISC482 - Lecture24",
+    "section": "Schedule",
+    "text": "Schedule\n\nFinal Report - April 28 @ Midnight\nFinal Presentation - May 5, Final"
+  },
+  {
+    "objectID": "slides/lec-25.html#today",
+    "href": "slides/lec-25.html#today",
+    "title": "CISC482 - Lecture24",
+    "section": "Today",
+    "text": "Today\n\nPart 1\nPart 2\nPart 3\nPart Future?"
+  },
+  {
+    "objectID": "slides/lec-25.html#triangle-of-doom",
+    "href": "slides/lec-25.html#triangle-of-doom",
+    "title": "CISC482 - Lecture24",
+    "section": "Triangle of Doom",
+    "text": "Triangle of Doom"
+  },
+  {
+    "objectID": "slides/lec-25.html#section",
+    "href": "slides/lec-25.html#section",
+    "title": "CISC482 - Lecture24",
+    "section": "",
+    "text": "flowchart LR\n    A[Stats and Prob] --&gt; B[Desc. Stats]\n    A --&gt; C[Distribtuions]\n    A --&gt; D[Population Inference]\n\n    E[Data Exploration] --&gt; F[Plotting]\n    E --&gt; G[Dataframes]\n    E --&gt; H[Exploratory Data Analysis]"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-1",
+    "href": "slides/lec-25.html#key-takeaways-1",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 1",
+    "text": "Key Takeaways 1\n\n\nData science relies on statistics to make data driven decisions\nSampling methods are used to efeciently collect data and reduce bias\nWe use descriptive statistics to describe our samples\n\nMeasure of: center, spread, position, shape"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-2",
+    "href": "slides/lec-25.html#key-takeaways-2",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 2",
+    "text": "Key Takeaways 2\n\n\nInferential statistics are methods that result in conclusions and estimates about the population based on a sample\nEstimating a Population Mean with a CONFIDENCE INTERVAL\nHypothesis Testing - Accepting or Rejecting the null hypthothesis\n\nDucks on our lake have mean weigh of 1500 grams."
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-3",
+    "href": "slides/lec-25.html#key-takeaways-3",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 3",
+    "text": "Key Takeaways 3\n\n\nWorking with data is a multi step process\nWe usually get a dataset as giant table. Often using a pandas dataframe\nEach row is sample, the columns are the features for that sample\nWe first do Exploratory Data Analsyis (EDA)\n\nTrying to understand our data.\nWhat is the sahpe of these features. How are they realted"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-3-continued",
+    "href": "slides/lec-25.html#key-takeaways-3-continued",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 3 (Continued)",
+    "text": "Key Takeaways 3 (Continued)\n\n\nWe also\n\nclean\nenrich\nvalidate\n\nThis preps us to start creating models for prediction"
+  },
+  {
+    "objectID": "slides/lec-25.html#section-1",
+    "href": "slides/lec-25.html#section-1",
+    "title": "CISC482 - Lecture24",
+    "section": "",
+    "text": "flowchart LR\n    A[Regression] --&gt; B[Linear Regression]\n    A --&gt; C[Mutliple Linear Regression]\n    A --&gt; D[Polynomial Regression]\n    A --&gt; Z[Logistic Regression]\n\n    E[Model Evaluation] --&gt; F[RMSE, R^2]\n    E --&gt; G[Precision, Recall]\n    E --&gt; H[Train,Valid,Test ]"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-1-1",
+    "href": "slides/lec-25.html#key-takeaways-1-1",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 1",
+    "text": "Key Takeaways 1\n\n\nAn input feature, \\(X\\), is used to predict …\nan output feature has values that vary in response to variation in some other feature(s).\n\nWe often called this the response variable\n\nIf the output feature is continous, we call this a regression"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-2-1",
+    "href": "slides/lec-25.html#key-takeaways-2-1",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 2",
+    "text": "Key Takeaways 2\n\n\nSet of data: \\(\\{(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\\}\\)\n\nx: input, y: output\n\n\n\n\n\nModel: \\(\\hat{y} = \\beta_0 + \\beta_1 x + \\epsilon\\)\n\n\\(\\hat{y}\\) = prediction\n\\(\\beta_0\\) = y-intercept\n\\(\\beta_1\\) = slope\n\\(\\epsilon = error\\)\n\n\n\n\n\\(\\beta_1 (slope) = \\frac{\\sum\\limits_{i=1}^{n}[(x_i-\\bar{x})(y_i- \\bar{y})]}{\\sum\\limits_{i=1}^{n} (x_i - \\bar{x})^2}\\)\n\\(\\beta_0\\) (intercept) - \\(\\bar{y} - \\beta_1 \\bar{x}\\)"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-3-1",
+    "href": "slides/lec-25.html#key-takeaways-3-1",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 3",
+    "text": "Key Takeaways 3\n\n\nAssumption of Linear Regression\n\n\\(x\\) and \\(y\\) have a linear relationship.\nThe residuals of the observations are independent.\nThe mean of the residuals is 0 and the variance of the residuals is constant.\nThe residuals are approximately normally distributed."
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-3-2",
+    "href": "slides/lec-25.html#key-takeaways-3-2",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 3",
+    "text": "Key Takeaways 3\n\n\n\\(R^2\\) and RMSE for Regression model evaluation\nPrecison, Recall, F1 Score for Classification Evaluation"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-4",
+    "href": "slides/lec-25.html#key-takeaways-4",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 4",
+    "text": "Key Takeaways 4\n\n\nUnderfit - model is too simple to fit the data well.\nOverfit - model is too complex to fit the data well."
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-5",
+    "href": "slides/lec-25.html#key-takeaways-5",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 5",
+    "text": "Key Takeaways 5\n\n\nTraining data is used to fit a model.\n\nUse this dataset to do K-Fold Cross Validation\n\nTest data is used to evaluate final model performance and compare different models.\nThe ratio for this split: 80/20 or 70/30"
+  },
+  {
+    "objectID": "slides/lec-25.html#section-4",
+    "href": "slides/lec-25.html#section-4",
+    "title": "CISC482 - Lecture24",
+    "section": "",
+    "text": "flowchart LR\n    A[Supervised Learning] --&gt; B[Linear Regression]\n    A --&gt; C[KNN]\n    A --&gt; D[Naive Bayes]\n    A --&gt; Z[SVM]\n\n    E[Unsupervised Learning] --&gt; F[Clustering]\n    F --&gt; I[K-Means]\n    F --&gt; J[AHC]\n    E --&gt; G[PCA]"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-1-2",
+    "href": "slides/lec-25.html#key-takeaways-1-2",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 1",
+    "text": "Key Takeaways 1\n\n\nRegression - Given \\(x_1, x_2, ..., x_n\\), predict a continous output, \\(y\\)\nClassification - Given \\(x_1, x_2, ..., x_n\\), predict a grouping/class, \\(y\\)\nRegression\n\nLinear Regression (Multiple, Polynomial, etc)\nK Nearest Neighbro (KNN)\nWe use the library sklearn to build our models for us."
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-2-2",
+    "href": "slides/lec-25.html#key-takeaways-2-2",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 2",
+    "text": "Key Takeaways 2\n\n\nLogistic Regression works great for simple linear classifications\nSVM are awesome and can do non-linear seperations. But you need to try different hyperparemters\n\nKernel - rpf, polynomial, linear\nTry C - Try 0.0001 -&gt; 10_000"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-3-3",
+    "href": "slides/lec-25.html#key-takeaways-3-3",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 3",
+    "text": "Key Takeaways 3\n\n\nK-Means clustering work for only easy clustering problems\nIf you clusters have compicated shapes or densities, stick with AHC or DBScan"
+  },
+  {
+    "objectID": "slides/lec-25.html#key-takeaways-4-1",
+    "href": "slides/lec-25.html#key-takeaways-4-1",
+    "title": "CISC482 - Lecture24",
+    "section": "Key Takeaways 4",
+    "text": "Key Takeaways 4\n\n\nPrincipal component analysis, or PCA, is a dimensionality reduction technique.\nIt can be used to compress data."
+  },
+  {
+    "objectID": "slides/lec-25.html#happy",
+    "href": "slides/lec-25.html#happy",
+    "title": "CISC482 - Lecture24",
+    "section": "Happy",
+    "text": "Happy\n\nI have really enjoyed teaching this course, I hope you enjoyed taking it!\n\n\nWhat are some concepts that were completely new to you in this course?"
+  },
+  {
+    "objectID": "slides/lec-25.html#future",
+    "href": "slides/lec-25.html#future",
+    "title": "CISC482 - Lecture24",
+    "section": "Future",
+    "text": "Future\n\nData science, machine learning, and artificial intelligence are not going anywhere\nThis course has laid a small foundation for you to build upon.\nMany jobs are becoming automated or enhanced by AI and Machine Learning.\nIn order to stay competitive in the workforce, you should have a basic understanding of these technologies and learn how to use them."
+  },
+  {
+    "objectID": "slides/lec-25.html#the-rise-of-ai",
+    "href": "slides/lec-25.html#the-rise-of-ai",
+    "title": "CISC482 - Lecture24",
+    "section": "The rise of AI",
+    "text": "The rise of AI\n\nLarge Language Models (ChatGPT) and AI image Generation (Midjourney) are the start of big changes to come\nJobs - Writing/Journalism, Digital Artists, Even Junior coding jobs"
+  },
+  {
+    "objectID": "slides/lec-25.html#you-have-the-skills",
+    "href": "slides/lec-25.html#you-have-the-skills",
+    "title": "CISC482 - Lecture24",
+    "section": "You have the skills!",
+    "text": "You have the skills!\n\nYou have more understanding of how AI works than most others\nIts just pattern matching. Thats it. Features come in, we apply some mathematical models, response variables come out.\nThere is a bright future ahead of you! Even if you dont pursue data science, you are now more prepared to use their tools effectively!"
+  },
+  {
     "objectID": "course-syllabus.html",
     "href": "course-syllabus.html",
     "title": "Syllabus",
@@ -4258,6 +4433,13 @@
   {
     "objectID": "project-tips-resources.html",
     "href": "project-tips-resources.html",
+    "title": "Project tips + resources",
+    "section": "",
+    "text": "You took Philosphy 106 (ethics) and you discussed the relationship between employers and employees. You submitted a signature assignment of a paper on unions (pro or against, it doesn’t matter). A possible dataset you could choose is the Right to Work Dataset and do an analysis on the relationship between state laws and their effect on union participation.\nYou took a BIO 101 class and discussed the biologcal mechanisms of diabetes. A possible dataset you could choose is the Diabetes Dataset and create a model that predict diabetes based on diagnostic measurements.\nYou took ARTS 104 (Creativity: Methods and Practices). A possible dataset you could choose is the Best Artworks of All Time and do a clustering analysis to see if there exists any patterns about great artists in our times (country, age, sex, etc.).\nYou took SOCIO 101. A possible dataset you could choose is the Student Performance Dataset that looks at student achievement in secondary education. You could create a regression model that predicts performance based upon a variety of factors.\n\n\n\n\n\nKaggle Datasets\nWorld Health Organization\nThe National Bureau of Economic Research\nInternational Monetary Fund\nGeneral Social Survey\nUnited Nations Data\nUnited Nations Statistics Division\nU.K. Data\nU.S. Data\nU.S. Census Data\nEuropean Statistics\nStatistics Canada\nPew Research\nUNICEF\nCDC\nWorld Bank\nElection Studies"
+  },
+  {
+    "objectID": "project-tips-resources.html#data-sources",
+    "href": "project-tips-resources.html#data-sources",
     "title": "Project tips + resources",
     "section": "",
     "text": "You took Philosphy 106 (ethics) and you discussed the relationship between employers and employees. You submitted a signature assignment of a paper on unions (pro or against, it doesn’t matter). A possible dataset you could choose is the Right to Work Dataset and do an analysis on the relationship between state laws and their effect on union participation.\nYou took a BIO 101 class and discussed the biologcal mechanisms of diabetes. A possible dataset you could choose is the Diabetes Dataset and create a model that predict diabetes based on diagnostic measurements.\nYou took ARTS 104 (Creativity: Methods and Practices). A possible dataset you could choose is the Best Artworks of All Time and do a clustering analysis to see if there exists any patterns about great artists in our times (country, age, sex, etc.).\nYou took SOCIO 101. A possible dataset you could choose is the Student Performance Dataset that looks at student achievement in secondary education. You could create a regression model that predicts performance based upon a variety of factors.\n\n\n\n\n\nKaggle Datasets\nWorld Health Organization\nThe National Bureau of Economic Research\nInternational Monetary Fund\nGeneral Social Survey\nUnited Nations Data\nUnited Nations Statistics Division\nU.K. Data\nU.S. Data\nU.S. Census Data\nEuropean Statistics\nStatistics Canada\nPew Research\nUNICEF\nCDC\nWorld Bank\nElection Studies"
@@ -4286,13 +4468,20 @@
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
     "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Intro to Data Science",
+    "title": "Attribution-ShareAlike 4.0 International",
     "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
     "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\nA. reproduce and Share the Licensed Material, in whole or in part; and\nB. produce, reproduce, and Share Adapted Material.\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nB. Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\nA. retain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nB. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nC. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
   },
   {
     "objectID": "weeks/week-6.html",
     "href": "weeks/week-6.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "📖 Read Assignments 5-1 📖 Read Assignments 5-2"
+  },
+  {
+    "objectID": "weeks/week-6.html#prepare",
+    "href": "weeks/week-6.html#prepare",
     "title": "Week 6",
     "section": "",
     "text": "📖 Read Assignments 5-1 📖 Read Assignments 5-2"
@@ -4326,6 +4515,13 @@
     "text": "📖 Read Assignments 8-1 📖 Read Assignments 8-2"
   },
   {
+    "objectID": "weeks/week-12.html#prepare",
+    "href": "weeks/week-12.html#prepare",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 8-1 📖 Read Assignments 8-2"
+  },
+  {
     "objectID": "weeks/week-12.html#participate",
     "href": "weeks/week-12.html#participate",
     "title": "Week 8",
@@ -4349,6 +4545,13 @@
   {
     "objectID": "weeks/week-10.html",
     "href": "weeks/week-10.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 6-3"
+  },
+  {
+    "objectID": "weeks/week-10.html#prepare",
+    "href": "weeks/week-10.html#prepare",
     "title": "Week 8",
     "section": "",
     "text": "📖 Read Assignments 6-3"
@@ -4382,6 +4585,13 @@
     "text": "📖 Read Assignments 2-1 and 2-2 in Zybooks."
   },
   {
+    "objectID": "weeks/week-2.html#prepare",
+    "href": "weeks/week-2.html#prepare",
+    "title": "Week 2",
+    "section": "",
+    "text": "📖 Read Assignments 2-1 and 2-2 in Zybooks."
+  },
+  {
     "objectID": "weeks/week-2.html#participate",
     "href": "weeks/week-2.html#participate",
     "title": "Week 2",
@@ -4403,8 +4613,50 @@
     "text": "Perform\n⌨️ HW 2 - Analyze Data"
   },
   {
+    "objectID": "weeks/week-14.html",
+    "href": "weeks/week-14.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Final Report and Presentation!"
+  },
+  {
+    "objectID": "weeks/week-14.html#prepare",
+    "href": "weeks/week-14.html#prepare",
+    "title": "Week 8",
+    "section": "",
+    "text": "Final Report and Presentation!"
+  },
+  {
+    "objectID": "weeks/week-14.html#participate",
+    "href": "weeks/week-14.html#participate",
+    "title": "Week 8",
+    "section": "Participate",
+    "text": "Participate\n🖥️ Lecture 25 - Hierarchial Clustering"
+  },
+  {
+    "objectID": "weeks/week-14.html#practice",
+    "href": "weeks/week-14.html#practice",
+    "title": "Week 8",
+    "section": "Practice",
+    "text": "Practice\nN/A"
+  },
+  {
+    "objectID": "weeks/week-14.html#perform",
+    "href": "weeks/week-14.html#perform",
+    "title": "Week 8",
+    "section": "Perform",
+    "text": "Perform\nFinal Report"
+  },
+  {
     "objectID": "weeks/week-7.html",
     "href": "weeks/week-7.html",
+    "title": "Week 7",
+    "section": "",
+    "text": "📖 Read Assignments 5-3"
+  },
+  {
+    "objectID": "weeks/week-7.html#prepare",
+    "href": "weeks/week-7.html#prepare",
     "title": "Week 7",
     "section": "",
     "text": "📖 Read Assignments 5-3"
@@ -4438,6 +4690,13 @@
     "text": "📖 Read Assignments 2-3 and 3-1 in Zybooks."
   },
   {
+    "objectID": "weeks/week-3.html#prepare",
+    "href": "weeks/week-3.html#prepare",
+    "title": "Week 3",
+    "section": "",
+    "text": "📖 Read Assignments 2-3 and 3-1 in Zybooks."
+  },
+  {
     "objectID": "weeks/week-3.html#participate",
     "href": "weeks/week-3.html#participate",
     "title": "Week 3",
@@ -4461,6 +4720,13 @@
   {
     "objectID": "weeks/week-11.html",
     "href": "weeks/week-11.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 7-2 📖 Read Assignments 7-3"
+  },
+  {
+    "objectID": "weeks/week-11.html#prepare",
+    "href": "weeks/week-11.html#prepare",
     "title": "Week 8",
     "section": "",
     "text": "📖 Read Assignments 7-2 📖 Read Assignments 7-3"
@@ -4494,6 +4760,13 @@
     "text": "📖 Read Assignments 3-2 and 4-1 in Zybooks."
   },
   {
+    "objectID": "weeks/week-4.html#prepare",
+    "href": "weeks/week-4.html#prepare",
+    "title": "Week 4",
+    "section": "",
+    "text": "📖 Read Assignments 3-2 and 4-1 in Zybooks."
+  },
+  {
     "objectID": "weeks/week-4.html#participate",
     "href": "weeks/week-4.html#participate",
     "title": "Week 4",
@@ -4517,6 +4790,13 @@
   {
     "objectID": "weeks/week-8.html",
     "href": "weeks/week-8.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 5-3"
+  },
+  {
+    "objectID": "weeks/week-8.html#prepare",
+    "href": "weeks/week-8.html#prepare",
     "title": "Week 8",
     "section": "",
     "text": "📖 Read Assignments 5-3"
@@ -4550,6 +4830,13 @@
     "text": "📖 Read Assignments 4-2"
   },
   {
+    "objectID": "weeks/week-5.html#prepare",
+    "href": "weeks/week-5.html#prepare",
+    "title": "Week 5",
+    "section": "",
+    "text": "📖 Read Assignments 4-2"
+  },
+  {
     "objectID": "weeks/week-5.html#participate",
     "href": "weeks/week-5.html#participate",
     "title": "Week 5",
@@ -4573,6 +4860,13 @@
   {
     "objectID": "weeks/week-1.html",
     "href": "weeks/week-1.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "📖 Read the syllabus 📖 Read the project description 📖 Read Chapter 1 in Zybook"
+  },
+  {
+    "objectID": "weeks/week-1.html#prepare",
+    "href": "weeks/week-1.html#prepare",
     "title": "Week 1",
     "section": "",
     "text": "📖 Read the syllabus 📖 Read the project description 📖 Read Chapter 1 in Zybook"
@@ -4606,6 +4900,13 @@
     "text": "📖 Read Assignments 6-3"
   },
   {
+    "objectID": "weeks/week-9.html#prepare",
+    "href": "weeks/week-9.html#prepare",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 6-3"
+  },
+  {
     "objectID": "weeks/week-9.html#participate",
     "href": "weeks/week-9.html#participate",
     "title": "Week 8",
@@ -4629,6 +4930,13 @@
   {
     "objectID": "weeks/week-13.html",
     "href": "weeks/week-13.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "📖 Read Assignments 8-1 📖 Read Assignments 8-2"
+  },
+  {
+    "objectID": "weeks/week-13.html#prepare",
+    "href": "weeks/week-13.html#prepare",
     "title": "Week 8",
     "section": "",
     "text": "📖 Read Assignments 8-1 📖 Read Assignments 8-2"
