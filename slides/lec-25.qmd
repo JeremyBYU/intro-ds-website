@@ -1,0 +1,366 @@
+---
+title: "CISC482 - Lecture24"
+subtitle: "The Recap"
+author: "Dr. Jeremy Castagno"
+footer:  "[https://jeremybyu.github.io/intro-ds-website](https://jeremybyu.github.io/intro-ds-website/)"
+logo: "../images/logo.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    show-slide-number: all 
+    chalkboard: true
+    code-copy: false
+    revealjs-plugins:
+      - noswipe
+editor: visual
+execute:
+  freeze: auto
+
+---
+
+
+```{python}
+#| context: setup
+#| include: false
+import pandas as pd
+import seaborn as sns 
+import numpy as np
+from sklearn.datasets import make_blobs
+from palmerpenguins import load_penguins, load_penguins_raw
+import matplotlib.pyplot as plt
+import matplotlib
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.datasets import make_blobs, make_regression
+from sklearn.model_selection import train_test_split
+df = load_penguins()
+df.dropna(inplace=True)
+np.set_printoptions(precision=1, suppress=True, formatter={'float_kind': "{:.1f}".format})
+pd.options.display.float_format = '{:,.2f}'.format
+np.random.seed(10)
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 16}
+
+matplotlib.rc('font', **font)
+```
+
+
+```{python}
+def show_images_by_digit(digit_to_see, images, y):
+    if digit_to_see in list(range(10)):
+        indices = np.where(y == digit_to_see) # pull indices for num of interest
+        for digit_num in range(0,50): 
+            plt.subplot(5,10, digit_num+1) #create subplots
+            #reshape images
+            image = images[indices][digit_num]
+            if image.shape != (8,8):
+              image = image.reshape(8,8)
+            plt.imshow(image, cmap='gray') #plot the data
+            plt.xticks([]) #removes numbered labels on x-axis
+            plt.yticks([]) #removes numbered labels on y-axis
+
+```
+
+
+```{python}
+
+def plot_components(X, y):
+    x_min, x_max = np.min(X, 0), np.max(X, 0)
+    X = (X - x_min) / (x_max - x_min)
+    plt.figure(figsize=(10, 6))
+    for i in range(X.shape[0]):
+        plt.text(X[i, 0], X[i, 1], str(y[i]), 
+                 color=plt.cm.Set1(y[i]), 
+                 fontdict={'size': 15})
+
+    plt.xticks([]), plt.yticks([]), plt.ylim([-0.1,1.1]), plt.xlim([-0.1,1.1])
+    plt.xlabel("PC1")
+    plt.ylabel("PC2")
+
+```
+
+# Class Business
+
+
+## Schedule
+
+- [Final Report](https://jeremybyu.github.io/intro-ds-website/project-description.html#final-report) - April 28 @ Midnight
+- [Final Presentation](https://jeremybyu.github.io/intro-ds-website/project-description.html#slides) - May 5, Final
+
+## Today
+
+- Part 1
+- Part 2
+- Part 3
+- Part Future?
+
+
+
+## Triangle of Doom
+
+![](./lec02_images/statistics_machine_learning.png){fig-align="center"}
+
+# Part 1 - Stats
+
+##
+
+```{mermaid}
+flowchart LR
+    A[Stats and Prob] --> B[Desc. Stats]
+    A --> C[Distribtuions]
+    A --> D[Population Inference]
+
+    E[Data Exploration] --> F[Plotting]
+    E --> G[Dataframes]
+    E --> H[Exploratory Data Analysis]
+```
+
+
+
+## Key Takeaways 1
+
+::: incremental
+- Data science relies on statistics to make data driven decisions
+- Sampling methods are used to efeciently collect data and reduce bias
+- We use **descriptive statistics** to describe our samples
+  - Measure of: center, spread, position, shape
+:::
+
+## Key Takeaways 2
+
+::: incremental
+- **Inferential statistics** are methods that result in *conclusions* and *estimates* about the population based on a *sample*
+- Estimating a Population Mean with a CONFIDENCE INTERVAL
+- Hypothesis Testing - Accepting or Rejecting the null hypthothesis
+  - Ducks on our lake have mean weigh of 1500 grams.
+:::
+
+
+## Key Takeaways 3
+
+::: incremental
+- Working with data is a multi step process
+- We usually get a dataset as giant table. Often using a pandas dataframe
+- Each row is sample, the columns are the features for that sample
+- We first do Exploratory Data Analsyis (EDA)
+  - Trying to understand our data.
+  - What is the sahpe of these features. How are they realted
+
+:::
+
+## Key Takeaways 3 (Continued)
+
+::: incremental
+- We also 
+  - clean
+  - enrich
+  - validate
+- This preps us to start creating models for prediction
+:::
+
+# Part 2 - Regression, Evaluation
+
+##
+
+```{mermaid}
+flowchart LR
+    A[Regression] --> B[Linear Regression]
+    A --> C[Mutliple Linear Regression]
+    A --> D[Polynomial Regression]
+    A --> Z[Logistic Regression]
+
+    E[Model Evaluation] --> F[RMSE, R^2]
+    E --> G[Precision, Recall]
+    E --> H[Train,Valid,Test ]
+
+```
+
+## Key Takeaways 1
+
+::: incremental
+- An **input** feature, $X$, is used to predict ...
+- an **output** feature has values that vary in **response** to variation in some other feature(s).
+  -  We often called this the **response** variable
+- If the output feature is continous, we call this a **regression**
+
+:::
+
+## Key Takeaways 2
+
+
+::: incremental
+- Set of data: $\{(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\}$
+  - x: input, y: output
+
+::: columns
+
+::: {.smaller .column width="50%"}
+- Model: $\hat{y} = \beta_0 + \beta_1 x + \epsilon$
+  - $\hat{y}$ = prediction
+  - $\beta_0$ = y-intercept 
+  - $\beta_1$ = slope 
+  - $\epsilon = error$
+:::
+
+::: {.smaller .column width="50%"}
+- $\beta_1 (slope) = \frac{\sum\limits_{i=1}^{n}[(x_i-\bar{x})(y_i- \bar{y})]}{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}$ 
+- $\beta_0$ (intercept) - $\bar{y} - \beta_1 \bar{x}$ 
+:::
+:::
+:::
+
+
+
+## Key Takeaways 3
+
+::: incremental
+- Assumption of Linear Regression
+  - $x$ and $y$ have a linear relationship.
+  - The residuals of the observations are independent.
+  - The **mean** of the residuals is 0 and the variance of the residuals is **constant**.
+  - The residuals are approximately normally distributed.
+:::
+
+## Key Takeaways 3
+
+::: incremental
+- $R^2$ and RMSE for Regression model evaluation
+- Precison, Recall, F1 Score for Classification Evaluation
+:::
+
+## Key Takeaways 4
+
+::: incremental
+- **Underfit** - model is too simple to fit the data well.
+- **Overfit** - model is too complex to fit the data well.
+:::
+
+## 
+
+![](./lec14_images/overfit_underfit.png){fig-align="center"}
+
+
+## Key Takeaways 5
+
+::: incremental
+- **Training** data is used to fit a model.
+  - Use this dataset to do K-Fold Cross Validation
+- **Test** data is used to evaluate final model performance and compare **different** models.
+- The ratio for this split: 80/20 or 70/30
+:::
+
+##
+
+![](./lec15_images/k-fold-split.png){fig-align="center"}
+
+![](./lec15_images/k-folds-validation.png){fig-align="center"}
+
+::: fragment
+![](./lec15_images/k-fold-validation-errors.png){fig-align="center"}
+:::
+
+
+
+# Part 3  - Supervised and Unsupervised Learning
+
+##
+
+```{mermaid}
+flowchart LR
+    A[Supervised Learning] --> B[Linear Regression]
+    A --> C[KNN]
+    A --> D[Naive Bayes]
+    A --> Z[SVM]
+
+    E[Unsupervised Learning] --> F[Clustering]
+    F --> I[K-Means]
+    F --> J[AHC]
+    E --> G[PCA]
+
+```
+
+
+## Key Takeaways 1
+
+::: incremental
+- Regression - Given $x_1, x_2, ..., x_n$, predict a continous output, $y$
+- Classification - Given $x_1, x_2, ..., x_n$, predict a grouping/class, $y$
+- Regression
+  - Linear Regression (Multiple, Polynomial, etc)
+  - K Nearest Neighbro (KNN)
+  - We use the library `sklearn` to build our models for us.
+:::
+
+## Key Takeaways 2
+
+::: incremental
+- Logistic Regression works great for simple linear classifications
+- SVM are awesome and can do non-linear seperations. But you need to try different hyperparemters
+  - Kernel - rpf, polynomial, linear
+  - Try C - Try 0.0001 -> 10_000
+:::
+
+
+## 
+
+![](./lec20_images/kernel_motivation.png){fig-align="center"}
+
+## Key Takeaways 3
+
+::: incremental
+- K-Means clustering work for only easy clustering problems
+- If you clusters have compicated shapes or densities, stick with AHC or DBScan
+:::
+
+## Key Takeaways 4
+
+::: incremental
+- **Principal component analysis**, or PCA, is a **dimensionality** reduction technique.
+- It can be used to **compress** data. 
+:::
+
+## 
+
+![](./lec24_images/pca_anim.gif)
+
+# Final Words
+
+## Happy
+
+- I have really enjoyed teaching this course, I hope you enjoyed taking it!
+
+::: question
+What are some concepts that were completely new to you in this course?
+:::
+
+## Future
+
+- Data science, machine learning, and artificial intelligence are not going anywhere
+- This course has laid a small foundation for you to build upon.
+- Many jobs are becoming automated or enhanced by AI and Machine Learning. 
+- In order to stay competitive in the workforce, you should have a basic understanding of these technologies and learn how to use them.
+
+## The rise of AI
+
+- Large Language Models (ChatGPT) and AI image Generation (Midjourney) are the start of big changes to come
+- Jobs - Writing/Journalism, Digital Artists, Even Junior coding jobs
+
+::: fragment
+![](./lec25_images/big_growth.gif){fig-align="center"}
+:::
+
+## You have the skills!
+
+- You have more understanding of how AI works than most others
+- Its just pattern matching. Thats it. Features come in, we apply some mathematical models, response variables come out.
+- There is a bright future ahead of you! Even if you dont pursue data science, you are now more prepared to use their tools effectively!
+
+# 
+![](./lec25_images/book_web.webp)
+
+
+
+
+

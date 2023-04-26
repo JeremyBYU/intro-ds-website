@@ -1,0 +1,23 @@
+---
+title: "Week 8"
+subtitle: "Unsupervised Learning"
+editor: visual
+---
+
+## Prepare
+
+Final Report and Presentation!
+
+## Participate
+
+🖥️ [Lecture 25 - Hierarchial Clustering](/slides/lec-25.html)
+
+
+## Practice
+
+N/A
+
+## Perform
+
+Final Report
+

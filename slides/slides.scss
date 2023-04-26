@@ -23,6 +23,11 @@ details>summary {
   vertical-align: top;
 }
 
+.label foreignObject {
+  font-size: 90%;
+  overflow: visible;
+}
+
 .reveal .slide .question {
   border-left: 3px solid #5B888C;
   padding-left: 0.5em;
